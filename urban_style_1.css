@@ -1,0 +1,52 @@
+#welcome {
+    font-size: 14px;
+    color: rgb(7,7,230);
+}
+
+
+
+h1 {
+  color: #fff;
+  padding: 10px 0;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: none;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  }
+  a {
+    color: initial;
+    &:hover {
+      text-decoration: initial;
+    }
+  }
+  .text-muted i {
+    margin: 0 10px;
+  }
+}
+
+.card {
+    display: inline-block;
+}
+
+img {
+    float: left;
+    width:  500px;
+    height: 500px;
+    object-fit: cover;
+} 
+
+/** I tried to add labels onto the slider with this datalist tag **/ 
+datalist {
+  display: flex;
+  justify-content: space-between;
+  color: red;
+  width: 20%;
+}
+
+input {
+  width: 20%;
+}
+
