@@ -39,10 +39,10 @@ h1 {
     display: inline-block;
 }
 
-img {
+img.homebutton {
     float: left;
-    width:  500px;
-    height: 500px;
+    width:  100%;
+    height: 100%;
     object-fit: cover;
 } 
 
