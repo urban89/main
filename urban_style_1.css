@@ -1,6 +1,6 @@
 
 
-#navi-1  {
+.navi-1  {
   background-color: #B1B2FF ;
   margin: 0 ;
   padding: 2% ;
@@ -58,3 +58,8 @@ input {
   width: 20%;
 }
 
+
+
+.navbar { 
+  --bs-navbar-padding-x: none;
+}
