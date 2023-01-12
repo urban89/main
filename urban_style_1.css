@@ -47,15 +47,6 @@ img.homebutton {
     object-fit: cover;
 } 
 
-/** I tried to add labels onto the slider with this datalist tag **/ 
-datalist {
-  display: flex;
-  justify-content: space-between;
-  color: red;
-  width: 20%;
-}
-
-
 
 .navbar { 
   --bs-navbar-padding-x: none;
