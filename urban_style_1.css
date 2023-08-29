@@ -70,3 +70,8 @@ img.homebutton {
   background-color: rgba(177,178,255,1);
   border:none
 } 
+
+#maindiv {
+ margin: 15px;
+}
+
