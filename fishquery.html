@@ -151,7 +151,7 @@
 
      <br> <br> 
 
-    <input type="submit" value="search" /> 
+     <input type="button" onclick = "test_click()" id = "search" value="search" /> 
   </select>
   
   
@@ -163,10 +163,15 @@
 </footer>
 
     <script>
-  console.log("script -_-")
+ console.log("This is just a regular test console log message")
+
 
   function test_click() {
+    console.log(document.getElementById('tempmin').value);
+  console.log(document.getElementById('tempmax').value);
   }
+
+  
 
   
   </script>
