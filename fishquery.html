@@ -114,10 +114,10 @@
 
         <label for="">Needs schooling</label>
     <br>
-    <input type="checkbox" id="schooling2" name="Might display aggrssion">
+    <input type="checkbox" id="schooling2" name="">
     <label for=""> Prefers schooling</label>
     <br>
-    <input type="checkbox" id="solitary" name="Often agressive">
+    <input type="checkbox" id="solitary" name="">
     <label for=""> Prefers/accepts solitary life </label>
 
      <!-- Behavior here --> 
@@ -126,15 +126,16 @@
      <!-- Agression level --> 
     <br> <br> 
     <label for="">Agression level</label><br>
-    <input type="checkbox" id="" name="peaceful1" value ="Peaceful">
+    <input type="checkbox" id="" name="peaceful1">
     <label for="">Peaceful</label>
     <br>
-    <input type="checkbox" id="peaceful2" name="Might display aggrssion">
+    <input type="checkbox" id="peaceful2" name="">
     <label for=""> Might display aggression</label>
     <br>
-    <input type="checkbox" id="aggressive" name="Often agressive">
+    <input type="checkbox" id="aggressive" name="">
     <label for="">  Often agressive </label>
     <br> <br> 
+
  <!-- Agression level --> 
 
  <!-- Breeding difficulty --> 
@@ -200,6 +201,10 @@
       var schooling1 = document.getElementById('schooling1').checked;
       var schooling2 = document.getElementById('schooling2').checked;
       var solitary = document.getElementById('solitary').checked;
+
+      var schooling1 = document.getElementById('peaceful1').checked;
+      var schooling2 = document.getElementById('peaceful2').checked;
+      var solitary = document.getElementById('aggressive').checked;
  
 
       
@@ -223,7 +228,15 @@
       console.log("Prefers group: " + schooling2);
       console.log("Can or must be solitary: " + solitary);
 
-            
+      console.log("Peaceful: " + peaceful1);
+      console.log("Might display agression: " + peaceful2);
+      console.log("Agressive: " + aggressive);
+
+      
+
+
+
+      
   }
 
   
