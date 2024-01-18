@@ -107,7 +107,7 @@
      <br> 
     
  <!-- Temperature here --> 
-  
+  <!-- Behavior here --> 
    
       <label for="">Social behavior</label><br>
      <input type="checkbox" id="schooling1" name="">
@@ -119,9 +119,12 @@
     <br>
     <input type="checkbox" id="solitary" name="Often agressive">
     <label for=""> Prefers/accepts solitary life </label>
+
+     <!-- Behavior here --> 
+
+    
+     <!-- Agression level --> 
     <br> <br> 
-
-
     <label for="">Agression level</label><br>
     <input type="checkbox" id="" name="peaceful1" value ="Peaceful">
     <label for="">Peaceful</label>
@@ -132,7 +135,9 @@
     <input type="checkbox" id="aggressive" name="Often agressive">
     <label for="">  Often agressive </label>
     <br> <br> 
+ <!-- Agression level --> 
 
+ <!-- Breeding difficulty --> 
     
      <label for="">Breeding difficulty</label><br>
      <input type="checkbox" id="b_easy" name="" value ="">
@@ -147,15 +152,19 @@
      <input type="checkbox" id="impossible" name="">
      <label for=""> Impossible in captivity </label>
      <br> <br> 
-     
+    
+      <!-- Breeding difficulty --> 
+
+    <!-- Origin --> 
    
-      <label for="">Region</label> <br>
+      <label for="">Geographical origin</label> <br>
     <select name="" id="">      <br> <br> 
     <option value="Brazil">Brazil</option>
     <option value="Peru">Peru</option>
     <option value="Colombia">Colombia</option>
-
      <br> <br> 
+
+  <!-- Origin -->
 
      <input type="button" onclick = "test_click()" id = "search" value="search" /> 
   </select>
@@ -188,12 +197,18 @@
       var rare = document.getElementById('rare').checked;
       var veryrare = document.getElementById('veryrare').checked;
 
+      var schooling1 = document.getElementById('schooling1').checked;
+      var schooling2 = document.getElementById('schooling2').checked;
+      var solitary = document.getElementById('solitary').checked;
+ 
+
       
 
     
             console.log("Minimum temperature: " + tempmin);
             console.log("Minimum temperature: " + tempmax);
             console.log("Minimum tank size: " + tank_size);
+      
        console.log("Keeping difficulty beginner: " + beginner);
        console.log("Keeping difficulty easy: " + easy);
        console.log("Keeping difficulty medium: " + medium);
@@ -203,6 +218,10 @@
       console.log("Store availability common: " + common);
       console.log("Store availability rare: " + rare);
       console.log("Store availability very rare: " + veryrare);
+
+      console.log("Requires group: " + schooling1);
+      console.log("Prefers group: " + schooling2);
+      console.log("Can or must be solitary: " + solitary);
 
             
   }
