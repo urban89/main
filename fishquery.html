@@ -58,6 +58,8 @@
     
   <input style="width:55px" value="75" type="text" id="tank_size" name=""><br><br>
 
+
+    <!-- Here hardiness --> 
   
    <label for="">Keeping difficulty</label><br>
    <input type="checkbox" id="beginner" name="" value ="Beginner">
@@ -73,6 +75,9 @@
    <label for="">Difficult</label>
    <br> 
 <br>
+
+<!-- Here hardiness --> 
+    
       <!-- Here store availability --> 
    <label for="">Store availability</label><br>
    <input type="checkbox" id="verycommon" name="">
@@ -169,13 +174,27 @@
 
   function test_click() {
      var tempmin = document.getElementById('tempmin').value;
-var tempmax = document.getElementById('tempmax').value; 
-      var tank_size = document.getElementById('tank_size').value; 
+     var tempmax = document.getElementById('tempmax').value; 
+      
+     var tank_size = document.getElementById('tank_size').value; 
+
+           var tank_size = document.getElementById('beginner').checked; 
+           var tank_size = document.getElementById('easy').checked; 
+           var tank_size = document.getElementById('medium').checked; 
+           var tank_size = document.getElementById('difficult').valcheckedue; 
+
+      
 
     
-  console.log("Minimum temperature: " + tempmin);
-      console.log("Minimum temperature: " + tempmax);
+            console.log("Minimum temperature: " + tempmin);
+            console.log("Minimum temperature: " + tempmax);
             console.log("Minimum tank size: " + tank_size);
+       console.log("Minimum tank size: " + beginner);
+       console.log("Minimum tank size: " + easy);
+       console.log("Minimum tank size: " + medium);
+       console.log("Minimum tank size: " + difficult);
+
+            
   }
 
   
