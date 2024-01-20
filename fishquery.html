@@ -53,9 +53,9 @@
     
 <label for=""> Minimum tank size: </label>
 <input style="width:55px" value="75" type="text" id="tank_size" name="">
-<span id = size> liters </span>
+<span id = size> </span>
 <br>
-<span class = switcher onclick = litergallon() > Click here to use Liter/Gallon </span> 
+<button type = button  id = switch_lg class = switcher onclick = litergallon() > </button> 
 
 
 
@@ -196,6 +196,29 @@
 
     <script>
  console.log("TEST 1")
+
+  let liter = "liter";
+ let gallon = "gallon"
+ let use_gallon = "Use gallon";
+ let use_liter = "Use liter";
+
+ document.getElementById("size").innerHTML = liter;
+ document.getElementById("switch_lg").innerHTML = use_gallon;
+
+ function litergallon() {
+  console.log("TEST 2");
+  document.getElementById("size").innerHTML = gallon;
+  document.getElementById("switch_lg").innerHTML = use_liter;
+  document.getElementById("switch_lg").onclick = gallonliter;
+ }
+
+ function gallonliter() {
+  console.log("TEST 3");
+  document.getElementById("size").innerHTML = liter;
+  document.getElementById("switch_lg").innerHTML = use_gallon;
+  document.getElementById("switch_lg").onclick = litergallon;
+
+ }
 
   function test_click() {
      var tempmin = document.getElementById('tempmin').value;
