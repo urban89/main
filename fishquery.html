@@ -53,9 +53,9 @@
     
 <label for=""> Minimum tank size: </label>
 <input style="width:55px" value="75" type="text" id="tank_size" name="">
-<span id = size> </span>
+<span id = size> Liter </span>
 <br>
-<button type = button  id = switch_lg class = switcher onclick = litergallon() > </button> 
+<button type = button  id = switch_lg class = switcher onclick = "litergallon()" > Use Gallon </button>
 
 
 
@@ -115,12 +115,21 @@
 
 <!-- Temperature here --> 
     
-   <label for="">Minimum temperature: </label> 
- <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" /><br>
+     <label for="">Minimum temperature: </label> 
+   
+ <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
+ <span id = min_t> Celsius </span>
+ <br>
+ 
     <label for="">Maximum temperature: </label> 
+    
     <input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
+    <span id = max_t> Celsius </span>
+    <br>
+
+    <button type = button  id = switch_cf class = switcher > Use Farenheit </button>
        <br> 
-     <br> 
+     <br>  
     
  <!-- Temperature here --> 
   <!-- Behavior here --> 
@@ -197,13 +206,23 @@
     <script>
  console.log("TEST 1")
 
-  let liter = "liter";
- let gallon = "gallon"
- let use_gallon = "Use gallon";
- let use_liter = "Use liter";
+  let liter = "Liter";
+ let gallon = "Gallon"
+ let use_gallon = "Use Gallon";
+ let use_liter = "Use Liter";
+ let celsius = "Celsius";
+ let farenheit = "Farenheit";
+ let use_farenheit = "Use Farenheit";
+ let use_celsius = "Use Celsius";
 
- document.getElementById("size").innerHTML = liter;
- document.getElementById("switch_lg").innerHTML = use_gallon;
+
+
+ //document.getElementById("min_t").innerHTML = celsius;
+ //document.getElementById("max_t").innerHTML = celsius;
+ document.getElementById("switch_cf").addEventListener("click", ctof);
+
+ //document.getElementById("size").innerHTML = liter;
+ //document.getElementById("switch_lg").innerHTML = use_gallon;
 
  function litergallon() {
   console.log("TEST 2");
@@ -219,6 +238,26 @@
   document.getElementById("switch_lg").onclick = litergallon;
 
  }
+  function ctof() {
+    console.log("TEST 4");
+    document.getElementById("min_t").innerHTML = farenheit;
+    document.getElementById("max_t").innerHTML = farenheit;
+    document.getElementById("switch_cf").innerHTML = use_celsius;
+    document.getElementById("switch_cf").removeEventListener("click", ctof);
+  document.getElementById("switch_cf").addEventListener("click", ftoc);
+
+  }
+ 
+
+  function ftoc() {
+    console.log("TEST 5");
+    document.getElementById("min_t").innerHTML = celsius;
+    document.getElementById("max_t").innerHTML = celsius;
+    document.getElementById("switch_cf").innerHTML = use_farenheit;
+    document.getElementById("switch_cf").addEventListener("click", ctof);
+  document.getElementById("switch_cf").onclick = ctof;
+  document.getElementById("switch_cf").removeEventListener("click", ftoc);
+  }
 
   function test_click() {
      var tempmin = document.getElementById('tempmin').value;
