@@ -47,7 +47,7 @@
     <div id = maindiv> 
 <h1 id =  "welcome"> Select your attributes to find the ideal freshwater aquarium fish for you! </h1> 
 
-<form action="">
+<form action="" id = "main_form">
      <!-- Tank size --> 
 
     
@@ -331,7 +331,7 @@
       console.log("Breeding hard: " + b_hard);
       console.log("Breeding impossible: " + impossible);
 
-      
+      document.getElementById("main_form").style.display = 'none';
   }
 
   
