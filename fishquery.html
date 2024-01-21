@@ -46,7 +46,9 @@
     
     <div id = maindiv> 
 <h1 id =  "welcome"> Select your attributes to find the ideal freshwater aquarium fish for you! </h1> 
-
+        
+<span id = "search_restart" style = "display: none" onclick = "restart_search()"> Click here to start another search </span>
+        
 <form action="" id = "main_form">
      <!-- Tank size --> 
 
@@ -332,9 +334,14 @@
       console.log("Breeding impossible: " + impossible);
 
       document.getElementById("main_form").style.display = 'none';
+       document.getElementById("search_restart").style.display = 'inline-block';
   }
 
-  
+  function restart_search() {
+    document.getElementById("main_form").style.display = 'inline-block';
+    document.getElementById("search_restart").style.display = 'none';
+  }
+
 
   
   </script>
