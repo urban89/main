@@ -215,6 +215,10 @@
  let use_farenheit = "Use Farenheit";
  let use_celsius = "Use Celsius";
 
+ let console_capacity = "Liter";
+ let console_temperature = "Celsius"
+
+
 
 
  //document.getElementById("min_t").innerHTML = celsius;
@@ -229,6 +233,8 @@
   document.getElementById("size").innerHTML = gallon;
   document.getElementById("switch_lg").innerHTML = use_liter;
   document.getElementById("switch_lg").onclick = gallonliter;
+
+    console_capacity = "Gallon";
  }
 
  function gallonliter() {
@@ -236,6 +242,8 @@
   document.getElementById("size").innerHTML = liter;
   document.getElementById("switch_lg").innerHTML = use_gallon;
   document.getElementById("switch_lg").onclick = litergallon;
+
+       console_capacity = "Liter";
 
  }
   function ctof() {
@@ -245,6 +253,8 @@
     document.getElementById("switch_cf").innerHTML = use_celsius;
     document.getElementById("switch_cf").removeEventListener("click", ctof);
   document.getElementById("switch_cf").addEventListener("click", ftoc);
+
+       console_temperature = "Farenheit"
 
   }
  
@@ -257,6 +267,8 @@
     document.getElementById("switch_cf").addEventListener("click", ctof);
   document.getElementById("switch_cf").onclick = ctof;
   document.getElementById("switch_cf").removeEventListener("click", ftoc);
+
+      console_temperature = "Celsius"
   }
 
   function test_click() {
@@ -292,9 +304,9 @@
       
 
         console.log("TEST 6"); 
-        console.log("Minimum temperature: " + tempmin);
-        console.log("Minimum temperature: " + tempmax);
-        console.log("Minimum tank size: " + tank_size);
+        console.log("Minimum temperature: " + tempmin + " " +  console_temperature);
+        console.log("Minimum temperature: " + tempmax + " " + console_temperature);
+        console.log("Minimum tank size: " + tank_size + " " + console_capacity);
       
        console.log("Keeping difficulty beginner: " + beginner);
        console.log("Keeping difficulty easy: " + easy);
