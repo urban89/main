@@ -53,7 +53,7 @@
 
   <p id = "p_tanksize">  </p>
   <p id = "p_temp">  </p>
-  <p id = "p_avail"> Store availability </p>
+  <p id = "p_avail">  </p>
   <p id = "p_social"> Social behavior </p>
   <p id =  "p_agression"> Agression level </p>
   <p id =  "p_breeding" >Breeding difficulty </p>
@@ -367,12 +367,42 @@
       console.log("Breeding impossible: " + impossible);
 
       document.getElementById("main_form").style.display = 'none';
-       document.getElementById("search_restart").style.display = 'inline-block';
+      document.getElementById("search_restart").style.display = 'inline-block';
       document.getElementById("search_pmeters").style.display = 'inline-block';
 
       document.getElementById("p_tanksize").innerHTML = " Minimum tank size ("+ console_capacity +"): " + tank_size;
-document.getElementById("p_temp").innerHTML = "Temperature range (" + console_temperature + "): between " + tempmin + " and " + tempmax;
+      document.getElementById("p_temp").innerHTML = "Temperature range (" + console_temperature + "): between " + tempmin + " and " + tempmax;
+ 
+  
+   /* store availabilty search parameter summary box*/ 
+      let p_avail_parameters = "Store availability: "
+     
+      if (verycommon === true) {
+        p_avail_parameters = p_avail_parameters.concat("very common, ");
+    }
+     
+      if (common === true) {
+      console.log("test 7")
+      p_avail_parameters = p_avail_parameters.concat("common, ");
+    }
+
+    if (rare === true) {
+      p_avail_parameters = p_avail_parameters.concat("rare, ");
+    }
+
+    if (veryrare === true) {
+      p_avail_parameters = p_avail_parameters.concat("very rare");
+    }
+      
+      document.getElementById("p_avail").innerHTML = p_avail_parameters;
+      
+  /* store availabilty search parameter summary box*/ 
+  
+  
+  
   }
+
+        
 
   function restart_search() {
     document.getElementById("main_form").style.display = 'inline-block';
