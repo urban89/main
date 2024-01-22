@@ -271,6 +271,8 @@
 
  }
   function ctof() {
+        var cal_tempmin = document.getElementById('tempmin').value;
+      var cal_tempmax = document.getElementById('tempmax').value;
     console.log("TEST 4");
     document.getElementById("min_t").innerHTML = farenheit;
     document.getElementById("max_t").innerHTML = farenheit;
@@ -279,11 +281,15 @@
   document.getElementById("switch_cf").addEventListener("click", ftoc);
 
        console_temperature = "Farenheit"
+      document.getElementById('tempmin').value = Math.round(((cal_tempmin * 9/5)*32)*10)/10;
+      document.getElementById('tempmax').value = Math.round(((cal_tempmax * 9/5)*32)*10)/10; 
 
   }
  
 
   function ftoc() {
+      var cal_temp1 = document.getElementById('tempmin').value;
+      var cal_temp1 = document.getElementById('tempmax').value;
     console.log("TEST 5");
     document.getElementById("min_t").innerHTML = celsius;
     document.getElementById("max_t").innerHTML = celsius;
