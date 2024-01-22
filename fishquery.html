@@ -256,7 +256,7 @@
   document.getElementById("switch_lg").onclick = gallonliter;
   
     console_capacity = "Gallon";
-    document.getElementById('tank_size').value = Math.round(cal_cap * 0.264172);  
+    document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
  }
 
  function gallonliter() {
@@ -267,7 +267,7 @@
   document.getElementById("switch_lg").onclick = litergallon;
 
        console_capacity = "Liter";
-       document.getElementById('tank_size').value = Math.round(cal_cap * 3.785); 
+       document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
 
  }
   function ctof() {
