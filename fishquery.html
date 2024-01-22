@@ -249,21 +249,25 @@
  //document.getElementById("switch_lg").innerHTML = use_gallon;
 
  function litergallon() {
+  var cal_cap = document.getElementById('tank_size').value;
   console.log("TEST 2");
   document.getElementById("size").innerHTML = gallon;
   document.getElementById("switch_lg").innerHTML = use_liter;
   document.getElementById("switch_lg").onclick = gallonliter;
-
+  
     console_capacity = "Gallon";
+    document.getElementById('tank_size').value = cal_cap * 0.264172;  
  }
 
  function gallonliter() {
+  var cal_cap = document.getElementById('tank_size').value;
   console.log("TEST 3");
   document.getElementById("size").innerHTML = liter;
   document.getElementById("switch_lg").innerHTML = use_gallon;
   document.getElementById("switch_lg").onclick = litergallon;
 
        console_capacity = "Liter";
+       document.getElementById('tank_size').value = cal_cap * 3.785; 
 
  }
   function ctof() {
