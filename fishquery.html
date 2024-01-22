@@ -288,8 +288,8 @@
  
 
   function ftoc() {
-      var cal_temp1 = document.getElementById('tempmin').value;
-      var cal_temp1 = document.getElementById('tempmax').value;
+      var cal_tempmin = document.getElementById('tempmin').value;
+      var cal_tempmax = document.getElementById('tempmax').value;
     console.log("TEST 5");
     document.getElementById("min_t").innerHTML = celsius;
     document.getElementById("max_t").innerHTML = celsius;
@@ -298,7 +298,11 @@
   document.getElementById("switch_cf").onclick = ctof;
   document.getElementById("switch_cf").removeEventListener("click", ftoc);
 
+      
+
       console_temperature = "Celsius"
+      document.getElementById('tempmin').value = Math.round((cal_tempmin-32)*5/9)*10)/10;
+      document.getElementById('tempmax').value = Math.round(((cal_tempmax-32)*5/9)*10)/10;
   }
 
   function test_click() {
