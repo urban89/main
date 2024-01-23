@@ -412,12 +412,61 @@
       
   /* store availabilty search parameter summary box*/ 
    document.getElementById("less_options_button").style.display = 'none';
-  
-  
+   on_search_page = false;
+   checker_1 ()
   }
+
+
 
         
 
+ function restart_search() {
+    on_search_page = true; 
+    checker_1 ()
+
+  }
+
+  function options_expand() {
+    expanded = true; 
+    checker_1 ()
+  }
+
+  function options_collapse() {
+    expanded = false; 
+    checker_1 ()
+  }
+
+  function checker_1 () {
+    if (on_search_page === true && expanded === false) {
+      document.getElementById("main_form").style.display = 'inline-block';
+      document.getElementById("search_restart").style.display = 'none';
+      document.getElementById("search_pmeters").style.display = 'none';
+      document.getElementById("more_options_button").style.display = 'inline-block';
+      document.getElementById("more_options").style.display = 'none';
+      document.getElementById("less_options_button").style.display = 'none';
+    }
+
+    if (on_search_page === true && expanded === true) {
+      document.getElementById("main_form").style.display = 'inline-block';
+      document.getElementById("search_restart").style.display = 'none';
+      document.getElementById("search_pmeters").style.display = 'none';
+      document.getElementById("more_options_button").style.display = 'none';
+      document.getElementById("more_options").style.display = 'inline-block';
+      document.getElementById("less_options_button").style.display = 'inline-block';
+    }
+
+    if ((on_search_page === false && expanded === true) || (on_search_page === false && expanded === false)) {
+      document.getElementById("main_form").style.display = 'none';
+      document.getElementById("search_restart").style.display = 'inline-block';
+      document.getElementById("search_pmeters").style.display = 'inline-block';
+      document.getElementById("more_options_button").style.display = 'none';
+      document.getElementById("more_options").style.display = 'none';
+      document.getElementById("less_options_button").style.display = 'none';
+
+  }
+  } 
+        
+/*
   function restart_search() {
     document.getElementById("main_form").style.display = 'inline-block';
     document.getElementById("search_restart").style.display = 'none';
@@ -436,7 +485,7 @@
             document.getElementById("more_options").style.display = 'none';
               document.getElementById("more_options_button").style.display = 'inline-block';
         }
-
+*/ 
   
   </script>
 <!-- useful links JS etc.
