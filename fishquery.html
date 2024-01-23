@@ -222,6 +222,7 @@
   <!-- Origin -->
 <br> <br> 
 
+     <!-- fewer search options below --> 
        <p id = less_options_button onclick = "options_collapse()" style = "display: none"> Click here for fewer search options</p>
      <input type="button" onclick = "test_click()" id = "search" value="search" /> 
 
@@ -425,11 +426,11 @@
           function options_expand() {
     document.getElementById("more_options_button").style.display = 'none';
     document.getElementById("more_options").style.display = 'inline-block';
-              document.getElementById("fewer_options_button").style.display = 'inline-block';
+    document.getElementById("less_options_button").style.display = 'inline-block';
   }
 
         function options_collapse() {
-            document.getElementById("fewer_options_button").style.display = 'none';
+            document.getElementById("less_options_button").style.display = 'none';
             document.getElementById("more_options").style.display = 'none';
               document.getElementById("more_options_button").style.display = 'inline-block'';
         }
