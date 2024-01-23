@@ -154,10 +154,12 @@
  <!-- Temperature here --> 
  <!-- advanced search options below --> 
 
-  <!-- Behavior here --> 
+ 
   <p id = more_options_button onclick = "options_expand()"> Click here for more search options</p>
   
   <div id = more_options style = "display: none"> 
+
+ <!-- Behavior here --> 
    
       <label for="">Social behavior</label><br>
      <input type="checkbox" id="schooling1" name="">
@@ -207,17 +209,20 @@
       <!-- Breeding difficulty --> 
 
     <!-- Origin --> 
-   </div>
+
 
       <label for="">Geographical origin</label> <br>
     <select name="" id="">      <br> <br> 
     <option value="Brazil">Brazil</option>
     <option value="Peru">Peru</option>
     <option value="Colombia">Colombia</option>
+           </div>
      <br> <br> 
   </select>
   <!-- Origin -->
+<br> <br> 
 
+       <p id = less_options_button onclick = "options_collapse()" style = "display: none"> Click here for fewer search options</p>
      <input type="button" onclick = "test_click()" id = "search" value="search" /> 
 
   
@@ -420,7 +425,14 @@
           function options_expand() {
     document.getElementById("more_options_button").style.display = 'none';
     document.getElementById("more_options").style.display = 'inline-block';
+              document.getElementById("fewer_options_button").style.display = 'inline-block';
   }
+
+        function options_collapse() {
+            document.getElementById("fewer_options_button").style.display = 'none';
+            document.getElementById("more_options").style.display = 'none';
+              document.getElementById("more_options_button").style.display = 'inline-block'';
+        }
 
   
   </script>
