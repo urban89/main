@@ -152,7 +152,12 @@
      <br>  
     
  <!-- Temperature here --> 
+ <!-- advanced search options below --> 
+
   <!-- Behavior here --> 
+  <p id = more_options_button onclick = "options_expand()"> Click here for more search options</p>
+  
+  <div id = more_options style = "display: none"> 
    
       <label for="">Social behavior</label><br>
      <input type="checkbox" id="schooling1" name="">
@@ -202,7 +207,8 @@
       <!-- Breeding difficulty --> 
 
     <!-- Origin --> 
-   
+   </div>
+
       <label for="">Geographical origin</label> <br>
     <select name="" id="">      <br> <br> 
     <option value="Brazil">Brazil</option>
@@ -410,6 +416,11 @@
         document.getElementById("search_pmeters").style.display = 'none';
   }
 
+
+          function options_expand() {
+    document.getElementById("more_options_button").style.display = 'none';
+    document.getElementById("more_options").style.display = 'inline-block';
+  }
 
   
   </script>
