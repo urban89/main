@@ -285,6 +285,8 @@ let expanded = false;
        document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
 
  }
+
+        /* celsius to farenheit calculation */ 
   function ctof() {
         var cal_tempmin = document.getElementById('tempmin').value;
       var cal_tempmax = document.getElementById('tempmax').value;
@@ -300,7 +302,8 @@ let expanded = false;
       document.getElementById('tempmax').value = Math.round(((cal_tempmax * 9/5)+32)*10)/10; 
 
   }
- 
+   /* celsius to farenheit calculation */ 
+    /* farenheit to celsius calculation */ 
 
   function ftoc() {
       var cal_tempmin = document.getElementById('tempmin').value;
@@ -312,15 +315,16 @@ let expanded = false;
     document.getElementById("switch_cf").addEventListener("click", ctof);
     document.getElementById("switch_cf").removeEventListener("click", ftoc
     //document.getElementById("switch_cf").onclick = ctof;
- );
-
-      
+ )
 
       console_temperature = "Celsius"
       document.getElementById('tempmin').value = Math.round(((cal_tempmin-32)*5/9)*10)/10;
       document.getElementById('tempmax').value = Math.round(((cal_tempmax-32)*5/9)*10)/10;
   }
 
+     /* farenheit to celsius calculation */ 
+
+        
   function search_button() {
      var tempmin = document.getElementById('tempmin').value;
      var tempmax = document.getElementById('tempmax').value; 
@@ -390,28 +394,29 @@ let expanded = false;
  
   
    /* store availabilty search parameter summary box*/ 
-      let p_avail_parameters = "Store availability: "
+      let p_avail = "Store availability: "
      
       if (verycommon === true) {
-        p_avail_parameters = p_avail_parameters.concat("very common, ");
+        p_avail = p_avail.concat("very common, ");
     }
      
       if (common === true) {
       console.log("test 7")
-      p_avail_parameters = p_avail_parameters.concat("common, ");
+      p_avail = p_avail.concat("common, ");
     }
 
     if (rare === true) {
-      p_avail_parameters = p_avail_parameters.concat("rare, ");
+      p_avail = p_avail.concat("rare, ");
     }
 
     if (veryrare === true) {
-      p_avail_parameters = p_avail_parameters.concat("very rare");
+      p_avail = p_avail.concat("very rare");
     }
       
-      document.getElementById("p_avail").innerHTML = p_avail_parameters;
+      document.getElementById("p_avail").innerHTML = p_avail;
       
   /* store availabilty search parameter summary box*/ 
+      
    document.getElementById("less_options_button").style.display = 'none';
    on_search_page = false;
    checker_1 ()
