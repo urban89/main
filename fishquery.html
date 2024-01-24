@@ -51,12 +51,12 @@
 <div id = "search_pmeters" style = "display: none">
   <p> Search parameters: </p>
 
-  <p id = "p_tanksize">  </p>
-  <p id = "p_temp">  </p>
-  <p id = "p_avail">  </p>
-  <p id = "p_social"> Social behavior </p>
-  <p id =  "p_agression"> Agression level </p>
-  <p id =  "p_breeding" >Breeding difficulty </p>
+  <span> Minimum tank size:   </span>  <span id ="p_tanksize"> </span> <br>
+  <span> Temperature range:   </span>  <span id ="p_temp">     </span> <br>
+  <span> Store availability:  </span>  <span id ="p_avail">    </span> <br>
+  <span> Social behavior:     </span>  <span id ="p_social">   </span> <br>
+  <span> Agression level:     </span>  <span id ="p_agression"></span> <br>
+  <span> Breeding difficulty: </span>  <span id ="p_breeding"> </span> <br>
 
   <br>
  </div>        
@@ -267,32 +267,32 @@ let expanded = false;
     document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
  }
 
- function gallonliter() {
+  function gallonliter() {
   var cal_cap = document.getElementById('tank_size').value;
   console.log("TEST 3");
   document.getElementById("size").innerHTML = liter;
   document.getElementById("switch_lg").innerHTML = use_gallon;
   document.getElementById("switch_lg").onclick = litergallon;
 
-       console_capacity = "Liter";
-       document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
+  console_capacity = "Liter";
+  document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
 
  }
 
         /* celsius to farenheit calculation */ 
-  function ctof() {
-        var cal_tempmin = document.getElementById('tempmin').value;
-      var cal_tempmax = document.getElementById('tempmax').value;
+    function ctof() {
+    var cal_tempmin = document.getElementById('tempmin').value;
+    var cal_tempmax = document.getElementById('tempmax').value;
     console.log("TEST 4");
     document.getElementById("min_t").innerHTML = farenheit;
     document.getElementById("max_t").innerHTML = farenheit;
     document.getElementById("switch_cf").innerHTML = use_celsius;
     document.getElementById("switch_cf").removeEventListener("click", ctof);
-  document.getElementById("switch_cf").addEventListener("click", ftoc);
+    document.getElementById("switch_cf").addEventListener("click", ftoc);
 
-       console_temperature = "Farenheit"
-      document.getElementById('tempmin').value = Math.round(((cal_tempmin * 9/5)+32)*10)/10;
-      document.getElementById('tempmax').value = Math.round(((cal_tempmax * 9/5)+32)*10)/10; 
+    console_temperature = "Farenheit"
+    document.getElementById('tempmin').value = Math.round(((cal_tempmin * 9/5)+32)*10)/10;
+    document.getElementById('tempmax').value = Math.round(((cal_tempmax * 9/5)+32)*10)/10; 
 
   }
    /* celsius to farenheit calculation */ 
@@ -382,33 +382,45 @@ let expanded = false;
       document.getElementById("search_restart").style.display = 'inline-block';
       document.getElementById("search_pmeters").style.display = 'inline-block';
 
-      document.getElementById("p_tanksize").innerHTML = " Minimum tank size ("+ console_capacity +"): " + tank_size;
-      document.getElementById("p_temp").innerHTML = "Temperature range (" + console_temperature + "): between " + tempmin + " and " + tempmax;
+
+//capacity and temperature parameters summary below 
+
+      document.getElementById("p_tanksize").innerHTML = "(" + console_capacity +"): " + tank_size;
+      document.getElementById("p_temp").innerHTML = "(" + console_temperature + "): between " + tempmin + " and " + tempmax;
  
   
-   /* store availabilty search parameter summary box*/ 
-      let p_avail = "Store availability: "
-     
-      if (verycommon === true) {
-        p_avail = p_avail.concat("very common, ");
+   /*populate search parameters sumamry*/ 
+
+      let p_avail = [];
+      avail_list(p_avail);
+  
+      document.getElementById("p_avail").innerHTML = p_avail.join(", ");
+
+   /*populate search parameters sumamry*/ 
+      
+  
+  /*function for populating search parameters*/ 
+
+function avail_list(x) {
+  if (verycommon === true) {
+        x.push("very common");
     }
      
       if (common === true) {
-      console.log("test 7")
-      p_avail = p_avail.concat("common, ");
+      x.push("common");
     }
 
     if (rare === true) {
-      p_avail = p_avail.concat("rare, ");
+      x.push("rare");
     }
 
     if (veryrare === true) {
-      p_avail = p_avail.concat("very rare");
+      x.push("very rare");
     }
-      
-      document.getElementById("p_avail").innerHTML = p_avail;
-      
-  /* store availabilty search parameter summary box*/ 
+
+}
+
+ /*function for populating search parameters*/ 
       
    document.getElementById("less_options_button").style.display = 'none';
    on_search_page = false;
