@@ -53,6 +53,7 @@
 
   <span> Minimum tank size:   </span>  <span id ="p_tanksize"> </span> <br>
   <span> Temperature range:   </span>  <span id ="p_temp">     </span> <br>
+  <span> Keeping difficult:   </span>  <span id ="p_hardiness"></span> <br>  
   <span> Store availability:  </span>  <span id ="p_avail">    </span> <br>
   <span> Social behavior:     </span>  <span id ="p_social">   </span> <br>
   <span> Agression level:     </span>  <span id ="p_agression"></span> <br>
@@ -392,9 +393,12 @@ let expanded = false;
    /*populate search parameters sumamry*/ 
 
       let p_avail = [];
+      let p_hardiness = []; 
       avail_list(p_avail);
+      hardiness_list(p_hardiness)
   
       document.getElementById("p_avail").innerHTML = p_avail.join(", ");
+      document.getElementById("p_hardiness").innerHTML = p_hardiness.join(", ");
 
    /*populate search parameters sumamry*/ 
       
@@ -416,6 +420,25 @@ function avail_list(x) {
 
     if (veryrare === true) {
       x.push("very rare");
+    }
+
+}
+
+      function hardiness_list(x) {
+  if (beginner === true) {
+        x.push("beginner");
+    }
+     
+      if (easy === true) {
+      x.push("easy");
+    }
+
+    if (medium === true) {
+      x.push("medium");
+    }
+
+    if (difficult === true) {
+      x.push("difficult");
     }
 
 }
