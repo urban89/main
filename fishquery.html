@@ -77,26 +77,11 @@
 <br>
 <button type = button  id = switch_lg class = switcher onclick = "litergallon()" > Use Gallon </button>
 
-
-
-    <!-- 
-    **Liter and Gallon Radio buttons that I don't need in the end**
-
-    
-    <label for="">Liter</label>  
-    <input type="radio" id="gallon_radio" name="" value="">
-    <br>
-    <label for="">Gallon</label>
-    <input type="radio" id="liter_radio" name="" value="">
-    --> 
-
-
-    
+<br>
+<br> 
  <!-- Tank size --> 
-   <br>
-   <br>
-
-    <!-- Here hardiness --> 
+    
+<!-- Here hardiness --> 
   
    <label for="" class = "parameter" >Keeping difficulty</label><br>
    <input type="checkbox" id="beginner" name="" value ="Beginner">
@@ -111,13 +96,13 @@
    <input type="checkbox" id="difficult" name="Difficult">
    <label for="">Difficult</label>
    <br> 
-<br>
+   <br>
 
 <!-- Here hardiness --> 
     
-      <!-- Here store availability --> 
-   <label for="" class = "parameter" >Store availability</label><br>
+<!-- Here store availability --> 
     
+   <label for="" class = "parameter" >Store availability</label><br>
    <input type="checkbox" id="verycommon" name="">
     <label for="">Very common</label>
    <br>
@@ -130,53 +115,54 @@
    <input type="checkbox" id="veryrare" name="">
    <label for="">Very rare</label>
    <br> 
-     <br> 
-          <!-- Here store availability --> 
+   <br> 
+<!-- Here store availability --> 
 
-<!-- Temperature here --> 
+<!-- Temperature --> 
     
-     <label for="" class = "parameter">Minimum temperature: </label> 
+<label for="" class = "parameter">Minimum temperature: </label> 
    
  <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
  <span id = min_t> Celsius </span>
  <br>
- 
-    <label for="" class = "parameter"> Maximum temperature: </label> 
+<label for="" class = "parameter"> Maximum temperature: </label>   
+<input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
+<span id = max_t> Celsius </span>
+<br>
+<button type = button  id = switch_cf class = switcher > Use Farenheit </button>
+<br> 
+<br>  
     
-    <input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
-    <span id = max_t> Celsius </span>
-    <br>
-
-    <button type = button  id = switch_cf class = switcher > Use Farenheit </button>
-       <br> 
-     <br>  
+ <!-- Temperature --> 
     
- <!-- Temperature here --> 
- <!-- advanced search options below --> 
+ <!-- advanced search options button --> 
 
  
   <p id = more_options_button onclick = "options_expand()"> Click here for more search options</p>
   
   <div id = more_options style = "display: none"> 
 
- <!-- Behavior here --> 
-   
-      <label for="" class = "parameter">Social behavior</label><br>
-     <input type="checkbox" id="schooling1" name="">
+ <!-- advanced search options nutton -->       
 
-        <label for="">Needs schooling</label>
+ <!-- Behavior --> 
+   
+    <label for="" class = "parameter">Social behavior</label><br>
+    <input type="checkbox" id="schooling1" name="">
+
+    <label for="">Needs schooling</label>
     <br>
     <input type="checkbox" id="schooling2" name="">
     <label for=""> Prefers schooling</label>
     <br>
     <input type="checkbox" id="solitary" name="">
     <label for=""> Prefers/accepts solitary life </label>
+    <br>
+    <br> 
 
-     <!-- Behavior here --> 
+     <!-- Behavior --> 
 
-    
      <!-- Agression level --> 
-    <br> <br> 
+
     <label for="" class = "parameter" >Agression level</label><br>
     <input type="checkbox" id="peaceful1" name="">
     <label for="">Peaceful</label>
@@ -186,7 +172,8 @@
     <br>
     <input type="checkbox" id="aggressive" name="">
     <label for="">  Often agressive </label>
-    <br> <br> 
+    <br>
+    <br> 
 
  <!-- Agression level --> 
 
@@ -201,38 +188,44 @@
      <br>
      <input type="checkbox" id="b_hard" name="">
      <label for=""> Hard </label>
-       <br> 
+     <br> 
      <input type="checkbox" id="impossible" name="">
      <label for=""> Impossible in captivity </label>
-     <br> <br> 
+     <br>
+     <br> 
     
-      <!-- Breeding difficulty --> 
+    <!-- Breeding difficulty --> 
 
     <!-- Origin --> 
 
-
-      <label for="" class = "parameter" >Geographical origin</label> <br>
+    <label for="" class = "parameter" >Geographical origin</label> <br>
     <select name="" id="">      <br> <br> 
     <option value="Brazil">Brazil</option>
     <option value="Peru">Peru</option>
     <option value="Colombia">Colombia</option>
-           </div>
-     <br> <br> 
+
+    <!-- Origin -->  
+        
+    </div>
+    
+    <br>
+    <br> 
   </select>
-  <!-- Origin -->
-<br> <br> 
-
-     <!-- fewer search options below --> 
 
 
-  
-  
-  
+    
+<br>
+<br>
 </form>
 </div>
-           <p id = less_options_button onclick = "options_collapse()" style = "display: none"> Click here for fewer search options</p>
+
+     <!-- fewer search options  --> 
+  
+    <p id = less_options_button onclick = "options_collapse()" style = "display: none"> Click here for fewer search options</p>
     <br>
-     <input type="button" onclick = "search_button()" id = "search" value="search" /> 
+    <input type="button" onclick = "search_button()" id = "search" value="search" /> 
+
+    <!-- fewer search options  --> 
     
 <footer>
 </footer>
