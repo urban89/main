@@ -413,9 +413,11 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
       let l_hardiness = []; 
       avail_list(l_avail);
       hardiness_list(l_hardiness)
+      behavior_list(l_behavior)
   
       document.getElementById("p_avail").innerHTML = l_avail.join(", ");
       document.getElementById("p_hardiness").innerHTML = l_hardiness.join(", ");
+      document.getElementById("p_social").innerHTML = l_behavior.join(", ");
 
    /*populate search parameters sumamry*/ 
       
@@ -458,6 +460,13 @@ function avail_list(x) {
       x.push("difficult");
     }
 
+}
+
+function behavior_list (x) {
+  if (expanded === false) {
+    x.splice(0, x.length);
+    x.push("all");
+  }
 }
 
  /*function for populating search parameters*/ 
