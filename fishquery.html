@@ -478,6 +478,7 @@ function avail_list(x) {
       document.getElementById("more_options_button").style.display = 'inline-block';
       document.getElementById("more_options").style.display = 'none';
       document.getElementById("less_options_button").style.display = 'none';
+      document.getElementById("search").style.display = 'inline-block';  
     }
 
     if (on_search_page === true && expanded === true) {
@@ -487,6 +488,7 @@ function avail_list(x) {
       document.getElementById("more_options_button").style.display = 'none';
       document.getElementById("more_options").style.display = 'inline-block';
       document.getElementById("less_options_button").style.display = 'inline-block';
+      document.getElementById("search").style.display = 'inline-block';  
     }
 
     if ((on_search_page === false && expanded === true) || (on_search_page === false && expanded === false)) {
