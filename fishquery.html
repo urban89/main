@@ -85,6 +85,10 @@
 <!-- Here hardiness --> 
   
    <label for="" class = "parameter" >Keeping difficulty</label><br>
+
+  <label for="" id="all_1">select all</label>
+   <br>
+    
    <input type="checkbox" id="beginner" name="" value ="Beginner">
    <label for="">Beginner</label>
    <br>
@@ -253,13 +257,9 @@
 let on_search_page = true;
 let expanded = false;
 
+document.getElementById("all_1").addEventListener("click", selectall_1);
 
- //document.getElementById("min_t").innerHTML = celsius;
- //document.getElementById("max_t").innerHTML = celsius;
- document.getElementById("switch_cf").addEventListener("click", ctof);
-
- //document.getElementById("size").innerHTML = liter;
- //document.getElementById("switch_lg").innerHTML = use_gallon;
+document.getElementById("switch_cf").addEventListener("click", ctof);
 
  function litergallon() {
   var cal_cap = document.getElementById('tank_size').value;
@@ -323,6 +323,18 @@ let expanded = false;
   }
 
      /* farenheit to celsius calculation */ 
+
+        /* select all functions */ 
+
+     function selectall_1 () {
+   
+           document.getElementById('beginner').checked = true; 
+           document.getElementById('easy').checked = true; 
+           document.getElementById('medium').checked = true; 
+           document.getElementById('difficult').checked = true;   
+    }
+
+     /* select all functions */ 
 
         
   function search_button() {
