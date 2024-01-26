@@ -396,22 +396,28 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
 
 
 
-function hardiness_list(x) {
+  function hardiness_list(x) {
+
   if (beginner) {
         x.push("beginner");
     }
      
-      if (easy) {
+     if (easy) {
       x.push("easy");
     }
 
-    if (medium) {
+     if(medium) {
       x.push("medium");
     }
 
-    if (difficult) {
+     if(difficult) {
       x.push("difficult");
     }
+
+    if (beginner && easy && medium && difficult) {
+    x.length = 0; 
+    x.push("All");
+  }
 
 }
       
