@@ -322,17 +322,33 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
 
      /* farenheit to celsius calculation */ 
 
-        /* select all functions */ 
+         /* select all/ deselect all functions */ 
 
      function selectall_1 () {
    
            document.getElementById('beginner').checked = true; 
            document.getElementById('easy').checked = true; 
            document.getElementById('medium').checked = true; 
-           document.getElementById('difficult').checked = true;   
+           document.getElementById('difficult').checked = true;
+           document.getElementById("all_1").addEventListener("click", deselectall_1);
+           document.getElementById("all_1").removeEventListener("click", selectall_1); 
+           document.getElementById("all_1").innerHTML = "deselect all";
+           
+    }
+      
+    function deselectall_1 () {
+
+           document.getElementById('beginner').checked = false; 
+           document.getElementById('easy').checked = false; 
+           document.getElementById('medium').checked = false; 
+           document.getElementById('difficult').checked = false;
+           document.getElementById("all_1").addEventListener("click", selectall_1);
+           document.getElementById("all_1").removeEventListener("click", deselectall_1);
+           document.getElementById("all_1").innerHTML = "select all";
     }
 
-     /* select all functions */ 
+
+      /* select all/ deselect all functions */
 
         
   function search_button() {
