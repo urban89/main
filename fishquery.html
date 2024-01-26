@@ -108,6 +108,10 @@
 <!-- Here store availability --> 
     
    <label for="" class = "parameter" >Store availability</label><br>
+
+   <label for="" id="all_2">select all</label>
+   <br>
+    
    <input type="checkbox" id="verycommon" name="">
     <label for="">Very common</label>
    <br>
@@ -258,7 +262,8 @@ let on_search_page = true;
 let expanded = false;
 
 document.getElementById("all_1").addEventListener("click", selectall_1);
-
+document.getElementById("all_2").addEventListener("click", selectall_2);
+        
 document.getElementById("switch_cf").addEventListener("click", ctof);
 
  function litergallon() {
