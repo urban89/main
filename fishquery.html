@@ -438,6 +438,11 @@ function avail_list(x) {
       x.push("very rare");
     }
 
+       if (verycommon && common && rare && veryrare) {
+    x.length = 0; 
+    x.push("All");
+  }
+
 }
 
 
