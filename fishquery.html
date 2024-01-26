@@ -394,6 +394,27 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
   
   /*function for populating search parameters*/ 
 
+
+
+function hardiness_list(x) {
+  if (beginner) {
+        x.push("beginner");
+    }
+     
+      if (easy) {
+      x.push("easy");
+    }
+
+    if (medium) {
+      x.push("medium");
+    }
+
+    if (difficult) {
+      x.push("difficult");
+    }
+
+}
+      
 function avail_list(x) {
   if (verycommon) {
         x.push("very common");
@@ -413,24 +434,7 @@ function avail_list(x) {
 
 }
 
-      function hardiness_list(x) {
-  if (beginner) {
-        x.push("beginner");
-    }
-     
-      if (easy) {
-      x.push("easy");
-    }
 
-    if (medium) {
-      x.push("medium");
-    }
-
-    if (difficult) {
-      x.push("difficult");
-    }
-
-}
 
 function behavior_list (x) {
   if (expanded === false) {
