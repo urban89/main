@@ -323,7 +323,7 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
      /* farenheit to celsius calculation */ 
 
          /* select all/ deselect all functions */ 
-
+         /* 1 */
      function selectall_1 () {
    
            document.getElementById('beginner').checked = true; 
@@ -346,6 +346,32 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
            document.getElementById("all_1").removeEventListener("click", deselectall_1);
            document.getElementById("all_1").innerHTML = "select all";
     }
+
+/* 2 */
+
+
+    function selectall_2 () {
+   
+   document.getElementById('verycommon').checked = true; 
+   document.getElementById('common').checked = true; 
+   document.getElementById('rare').checked = true; 
+   document.getElementById('veryrare').checked = true;
+   document.getElementById("all_2").addEventListener("click", deselectall_2);
+   document.getElementById("all_2").removeEventListener("click", selectall_2); 
+   document.getElementById("all_2").innerHTML = "deselect all";
+   
+}
+
+function deselectall_2 () {
+
+   document.getElementById('verycommon').checked = false; 
+   document.getElementById('common').checked = false; 
+   document.getElementById('rare').checked = false; 
+   document.getElementById('veryrare').checked = false;
+   document.getElementById("all_2").addEventListener("click", selectall_2);
+   document.getElementById("all_2").removeEventListener("click", deselectall_2);
+   document.getElementById("all_2").innerHTML = "select all";
+}
 
 
       /* select all/ deselect all functions */
