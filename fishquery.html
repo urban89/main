@@ -411,6 +411,19 @@ function deselectall_2 () {
       var b_hard = document.getElementById('b_hard').checked;
       var impossible = document.getElementById('impossible').checked;
 
+
+      if (!verycommon && !common && !rare && !veryrare) {
+      console.log("selection_checker test availability")
+      document.getElementById('availabilty').classList.add('notselected');
+      alert("Some search parameters are not selected");
+      return; 
+    }
+
+    if (verycommon || common || rare || veryrare) {
+      document.getElementById('availabilty').classList.remove('notselected');
+    }
+      
+
       document.getElementById("main_form").style.display = 'none';
       document.getElementById("search_restart").style.display = 'inline-block';
       document.getElementById("search_pmeters").style.display = 'inline-block';
