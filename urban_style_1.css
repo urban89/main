@@ -80,6 +80,8 @@ img.homebutton {
  font-weight: 666;
 }
 
-.red-checkbox {
-      color: red;
+.notselected {
+  font-style: italic;
+  color: #5e0045; 
     }
+
