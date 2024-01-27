@@ -493,7 +493,7 @@ function avail_list(x) {
 
 
 function behavior_list (x) {
-  if (expanded === false) {
+  if (!expanded) {
     x.splice(0, x.length);
     x.push("All");
   }
@@ -527,7 +527,7 @@ function behavior_list (x) {
   }
 
   function checker_1 () {
-    if (on_search_page === true && expanded === false) {
+    if (on_search_page && !expanded) {
       document.getElementById("main_form").style.display = 'inline-block';
       document.getElementById("search_restart").style.display = 'none';
       document.getElementById("search_pmeters").style.display = 'none';
@@ -537,7 +537,7 @@ function behavior_list (x) {
       document.getElementById("search").style.display = 'inline-block';  
     }
 
-    if (on_search_page === true && expanded === true) {
+    if (on_search_page && expanded) {
       document.getElementById("main_form").style.display = 'inline-block';
       document.getElementById("search_restart").style.display = 'none';
       document.getElementById("search_pmeters").style.display = 'none';
@@ -547,7 +547,7 @@ function behavior_list (x) {
       document.getElementById("search").style.display = 'inline-block';  
     }
 
-    if ((on_search_page === false && expanded === true) || (on_search_page === false && expanded === false)) {
+    if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
       document.getElementById("main_form").style.display = 'none';
       document.getElementById("search_restart").style.display = 'inline-block';
       document.getElementById("search_pmeters").style.display = 'inline-block';
