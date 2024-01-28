@@ -66,7 +66,7 @@
 
 
         
-<span id = "search_restart" style = "display: none" onclick = "restart_search()"> Click here to start another search </span>
+<span id = "search_restart" style = "display: none"> Click here to start another search </span>
         
 <form action="" id = "main_form">
      <!-- Tank size --> 
@@ -261,6 +261,7 @@
 let on_search_page = true;
 let expanded = false;
 
+document.getElementById("search_restart").addEventListener("click", restart_search);        
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
         
