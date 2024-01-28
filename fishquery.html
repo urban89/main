@@ -76,7 +76,7 @@
 <input style="width:55px" value="75" type="text" id="tank_size" name="">
 <span id = size> Liter </span>
 <br>
-<button type = button  id = switch_lg class = switcher onclick = "litergallon()" > Use Gallon </button>
+<button type = button  id = switch_lg class = switcher> Use Gallon </button>
 
 <br>
 <br> 
@@ -261,6 +261,7 @@
 let on_search_page = true;
 let expanded = false;
 
+document.getElementById("switch_lg").addEventListener("click", litergallon);
 document.getElementById("search_restart").addEventListener("click", restart_search);        
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
@@ -272,7 +273,8 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
   console.log("TEST 2");
   document.getElementById("size").innerHTML = gallon;
   document.getElementById("switch_lg").innerHTML = use_liter;
-  document.getElementById("switch_lg").onclick = gallonliter;
+   document.getElementById("switch_lg").removeEventListener("click", litergallon);
+  document.getElementById("switch_lg").addEventListener("click", gallonliter);
   
     console_capacity = "Gallon";
     document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
@@ -283,7 +285,9 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
   console.log("TEST 3");
   document.getElementById("size").innerHTML = liter;
   document.getElementById("switch_lg").innerHTML = use_gallon;
-  document.getElementById("switch_lg").onclick = litergallon;
+  document.getElementById("switch_lg").removeEventListener("click", gallonliter);
+  document.getElementById("switch_lg").addEventListener("click", litergallon);
+  
 
   console_capacity = "Liter";
   document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
