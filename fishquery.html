@@ -236,7 +236,7 @@
   
     <p id = less_options_button style = "display: none"> Click here for fewer search options</p>
     <br>
-    <input type="button" onclick = "search_button()" id = "search" value="search" /> 
+    <input type="button" id = "search" value="search" /> 
 
    <!-- fewer search options and search button  --> 
     
@@ -261,6 +261,7 @@
 let on_search_page = true;
 let expanded = false;
 
+document.getElementById("search").addEventListener("click", search_button);
 document.getElementById("switch_lg").addEventListener("click", litergallon);
 document.getElementById("search_restart").addEventListener("click", restart_search);
 document.getElementById("more_options_button").addEventListener("click", options_expand);        
