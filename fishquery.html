@@ -84,21 +84,21 @@
     
 <!-- Here hardiness --> 
   
-   <label for="" class = "parameter" >Keeping difficulty</label><br>
+   <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
 
   <label for="" id="all_1">select all</label>
    <br>
     
-   <input type="checkbox" id="beginner" name="" value ="Beginner">
+   <input type="checkbox" id="beginner" name="">
    <label for="">Beginner</label>
    <br>
-   <input type="checkbox" id="easy" name="Easy">
+   <input type="checkbox" id="easy" name="">
    <label for="">Easy</label>
    <br>
-   <input type="checkbox" id="medium" name="Medium">
+   <input type="checkbox" id="medium" name="">
    <label for="">Medium</label>
    <br> 
-   <input type="checkbox" id="difficult" name="Difficult">
+   <input type="checkbox" id="difficult" name="">
    <label for="">Difficult</label>
    <br> 
    <br>
@@ -412,16 +412,34 @@ function deselectall_2 () {
       var impossible = document.getElementById('impossible').checked;
 
 
+      let selection_missing;
+      var selection_alert = ["Some search parameters are not selected"];
+
       if (!verycommon && !common && !rare && !veryrare) {
-      console.log("selection_checker test availability")
+      selection_missing = true;
       document.getElementById('availabilty').classList.add('notselected');
-      alert("Some search parameters are not selected");
-      return; 
+      selection_alert.push (" availability");
     }
 
-    if (verycommon || common || rare || veryrare) {
-      document.getElementById('availabilty').classList.remove('notselected');
+    if (!beginner && !easy && !medium && !difficult) {
+      selection_missing = true;
+      document.getElementById('difficulty').classList.add('notselected');
+      selection_alert.push (" difficulty");
     }
+
+    if ((verycommon || common || rare || veryrare) && (beginner || easy || medium || difficult)) {
+      document.getElementById('availabilty').classList.remove('notselected');
+      document.getElementById('difficulty').classList.remove('notselected');
+      selection_missing = false;
+
+    }
+      
+
+
+      if (selection_missing) {
+        alert(selection_alert);
+        return; 
+      }
       
 
       document.getElementById("main_form").style.display = 'none';
