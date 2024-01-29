@@ -529,15 +529,32 @@ function avail_list(x) {
 
 }
 
-
-
 function behavior_list (x) {
   if (!expanded) {
-    x.splice(0, x.length);
+    x.length = 0; 
     x.push("All");
   }
+
+  if (schooling1) {
+    x.push("Needs schooling")
+  }
+
+  if (schooling2) {
+    x.push("Prefers schooling")
+  }
+
+  if (solitary) {
+    x.push("Prefers/accepts solitary life")
+  }
+
+  if (schooling1 && schooling2 && solitary) {
+    x.length = 0; 
+    x.push("All");
+  }
+
 }
 
+      
  /*function for populating search parameters*/ 
       
    document.getElementById("less_options_button").style.display = 'none';
