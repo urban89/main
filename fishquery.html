@@ -159,7 +159,7 @@
       
  <!-- Behavior --> 
    
-    <label for="" class = "parameter">Social behavior</label><br>
+    <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
     <input type="checkbox" id="schooling1" name="">
 
     <label for="">Needs schooling</label>
@@ -244,31 +244,29 @@
 </footer>
 
     <script>
- console.log("TEST 1")
+        
+let liter = "Liter";
+let gallon = "Gallon"
+let use_gallon = "Use Gallon";
+let use_liter = "Use Liter";
+let celsius = "Celsius";
+let farenheit = "Farenheit";
+let use_farenheit = "Use Farenheit";
+let use_celsius = "Use Celsius";
 
-  let liter = "Liter";
- let gallon = "Gallon"
- let use_gallon = "Use Gallon";
- let use_liter = "Use Liter";
- let celsius = "Celsius";
- let farenheit = "Farenheit";
- let use_farenheit = "Use Farenheit";
- let use_celsius = "Use Celsius";
-
- let console_capacity = "Liter";
- let console_temperature = "Celsius"
+let console_capacity = "Liter";
+let console_temperature = "Celsius"
 
 let on_search_page = true;
 let expanded = false;
 
 document.getElementById("search").addEventListener("click", search_button);
-document.getElementById("switch_lg").addEventListener("click", litergallon);
 document.getElementById("search_restart").addEventListener("click", restart_search);
 document.getElementById("more_options_button").addEventListener("click", options_expand);        
 document.getElementById("less_options_button").addEventListener("click", options_collapse);        
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
-        
+document.getElementById("switch_lg").addEventListener("click", litergallon);   
 document.getElementById("switch_cf").addEventListener("click", ctof);
 
 function litergallon() {
@@ -277,10 +275,9 @@ document.getElementById("size").innerHTML = gallon;
 document.getElementById("switch_lg").innerHTML = use_liter;
 document.getElementById("switch_lg").removeEventListener("click", litergallon);
 document.getElementById("switch_lg").addEventListener("click", gallonliter);
-  
 console_capacity = "Gallon";
 document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
- }
+}
 
 function gallonliter() {
 let cal_cap = document.getElementById('tank_size').value;
@@ -289,12 +286,9 @@ document.getElementById("size").innerHTML = liter;
 document.getElementById("switch_lg").innerHTML = use_gallon;
 document.getElementById("switch_lg").removeEventListener("click", gallonliter);
 document.getElementById("switch_lg").addEventListener("click", litergallon);
-  
-
 console_capacity = "Liter";
 document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
-
- }
+}
 
         /* celsius to farenheit calculation */ 
         
@@ -426,14 +420,22 @@ function deselectall_2 () {
       if (!verycommon && !common && !rare && !veryrare) {
       selection_missing = true;
       document.getElementById('availabilty').classList.add('notselected');
-      selection_alert_arr.push (" availability");
+      selection_alert_arr.push ("availability");
     }
 
     if (!beginner && !easy && !medium && !difficult) {
       selection_missing = true;
       document.getElementById('difficulty').classList.add('notselected');
-      selection_alert_arr.push (" difficulty");
+      selection_alert_arr.push ("difficulty");
     }
+
+     if (!schooling1 && !schooling2 && !solitary) {
+      selection_missing = true;
+      document.getElementById('behavior').classList.add('notselected');
+      selection_alert_arr.push ("behavior");
+    }
+
+      
 
     if ((verycommon || common || rare || veryrare) && (beginner || easy || medium || difficult)) {
       document.getElementById('availabilty').classList.remove('notselected');
