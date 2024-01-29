@@ -272,7 +272,7 @@ document.getElementById("all_2").addEventListener("click", selectall_2);
 document.getElementById("switch_cf").addEventListener("click", ctof);
 
  function litergallon() {
-  var cal_cap = document.getElementById('tank_size').value;
+  let cal_cap = document.getElementById('tank_size').value;
   console.log("TEST 2");
   document.getElementById("size").innerHTML = gallon;
   document.getElementById("switch_lg").innerHTML = use_liter;
@@ -284,7 +284,7 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
  }
 
   function gallonliter() {
-  var cal_cap = document.getElementById('tank_size').value;
+  let cal_cap = document.getElementById('tank_size').value;
   console.log("TEST 3");
   document.getElementById("size").innerHTML = liter;
   document.getElementById("switch_lg").innerHTML = use_gallon;
@@ -300,8 +300,8 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
         /* celsius to farenheit calculation */ 
         
     function ctof() {
-    var cal_tempmin = document.getElementById('tempmin').value;
-    var cal_tempmax = document.getElementById('tempmax').value;
+    let cal_tempmin = document.getElementById('tempmin').value;
+    let cal_tempmax = document.getElementById('tempmax').value;
     console.log("TEST 4");
     document.getElementById("min_t").innerHTML = farenheit;
     document.getElementById("max_t").innerHTML = farenheit;
@@ -319,8 +319,8 @@ document.getElementById("switch_cf").addEventListener("click", ctof);
     /* farenheit to celsius calculation */ 
 
   function ftoc() {
-      var cal_tempmin = document.getElementById('tempmin').value;
-      var cal_tempmax = document.getElementById('tempmax').value;
+      let cal_tempmin = document.getElementById('tempmin').value;
+      let cal_tempmax = document.getElementById('tempmax').value;
     console.log("TEST 5");
     document.getElementById("min_t").innerHTML = celsius;
     document.getElementById("max_t").innerHTML = celsius;
@@ -391,38 +391,38 @@ function deselectall_2 () {
 
         
   function search_button() {
-     var tempmin = document.getElementById('tempmin').value;
-     var tempmax = document.getElementById('tempmax').value; 
+     let tempmin = document.getElementById('tempmin').value;
+     let tempmax = document.getElementById('tempmax').value; 
       
-     var tank_size = document.getElementById('tank_size').value; 
+     let tank_size = document.getElementById('tank_size').value; 
 
-           var beginner = document.getElementById('beginner').checked; 
-           var easy = document.getElementById('easy').checked; 
-           var medium = document.getElementById('medium').checked; 
-           var difficult = document.getElementById('difficult').checked; 
+     let beginner = document.getElementById('beginner').checked; 
+     let easy = document.getElementById('easy').checked; 
+     let medium = document.getElementById('medium').checked; 
+     let difficult = document.getElementById('difficult').checked; 
 
-      var verycommon = document.getElementById('verycommon').checked;
-      var common = document.getElementById('common').checked;
-      var rare = document.getElementById('rare').checked;
-      var veryrare = document.getElementById('veryrare').checked;
+      let verycommon = document.getElementById('verycommon').checked;
+      let common = document.getElementById('common').checked;
+      let rare = document.getElementById('rare').checked;
+      let veryrare = document.getElementById('veryrare').checked;
 
-      var schooling1 = document.getElementById('schooling1').checked;
-      var schooling2 = document.getElementById('schooling2').checked;
-      var solitary = document.getElementById('solitary').checked;
+      let schooling1 = document.getElementById('schooling1').checked;
+      let schooling2 = document.getElementById('schooling2').checked;
+      let solitary = document.getElementById('solitary').checked;
 
-      var peaceful1 = document.getElementById('peaceful1').checked;
-      var peaceful2 = document.getElementById('peaceful2').checked;
-      var aggressive = document.getElementById('aggressive').checked;
+      let peaceful1 = document.getElementById('peaceful1').checked;
+      let peaceful2 = document.getElementById('peaceful2').checked;
+      let aggressive = document.getElementById('aggressive').checked;
 
-      var b_easy = document.getElementById('b_easy').checked;
-      var b_medium = document.getElementById('b_medium').checked;
-      var b_hard = document.getElementById('b_hard').checked;
-      var impossible = document.getElementById('impossible').checked;
+      let b_easy = document.getElementById('b_easy').checked;
+      let b_medium = document.getElementById('b_medium').checked;
+      let b_hard = document.getElementById('b_hard').checked;
+      let impossible = document.getElementById('impossible').checked;
 
 
       let selection_missing;
-      var selection_alert = "Some search parameters were not selected: ";
-      var selection_alert_arr = []; 
+      let selection_alert = "Some search parameters were not selected: ";
+      let selection_alert_arr = []; 
 
       if (!verycommon && !common && !rare && !veryrare) {
       selection_missing = true;
