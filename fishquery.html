@@ -300,7 +300,8 @@ document.getElementById("switch_lg").innerHTML = use_liter;
 document.getElementById("switch_lg").removeEventListener("click", litergallon);
 document.getElementById("switch_lg").addEventListener("click", gallonliter);
 console_capacity = gallon;
-document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
+document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;
+tank_size_check ()
 }
 
 // Conversion from gallon to liter [button]     
@@ -312,6 +313,7 @@ document.getElementById("switch_lg").removeEventListener("click", gallonliter);
 document.getElementById("switch_lg").addEventListener("click", litergallon);
 console_capacity = liter;
 document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
+tank_size_check ()
 }
 
 // Conversion from celsius to farenheit [button]      
