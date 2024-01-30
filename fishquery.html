@@ -249,8 +249,7 @@
 
     <script>
 
-//Variables 
-        
+//Declaring variables 
 let liter = "Liter";
 let gallon = "Gallon"
 let use_gallon = "Use Gallon";
@@ -266,7 +265,13 @@ let console_temperature = "Celsius"
 let on_search_page = true;
 let expanded = false;
 
+
+
+// Starting functions     
 all_select_behavior ()
+
+
+// Adding initial event listeners   
 document.getElementById("search").addEventListener("click", search_button);
 document.getElementById("search_restart").addEventListener("click", restart_search);
 document.getElementById("more_options_button").addEventListener("click", options_expand);        
@@ -277,6 +282,7 @@ document.getElementById("all_3").addEventListener("click", selectall_3);
 document.getElementById("switch_lg").addEventListener("click", litergallon);   
 document.getElementById("switch_cf").addEventListener("click", ctof);
 
+// Conversion from liter to gallon [button]         
 function litergallon() {
 let cal_cap = document.getElementById('tank_size').value;
 document.getElementById("size").innerHTML = gallon;
@@ -287,9 +293,9 @@ console_capacity = "Gallon";
 document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;  
 }
 
+// Conversion from gallon to liter [button]     
 function gallonliter() {
 let cal_cap = document.getElementById('tank_size').value;
-console.log("TEST 3");
 document.getElementById("size").innerHTML = liter;
 document.getElementById("switch_lg").innerHTML = use_gallon;
 document.getElementById("switch_lg").removeEventListener("click", gallonliter);
@@ -298,12 +304,10 @@ console_capacity = "Liter";
 document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
 }
 
-// Celsius to farenheit calculation
-        
+// Conversion from celsius to farenheit [button]      
 function ctof() {
 let cal_tempmin = document.getElementById('tempmin').value;
 let cal_tempmax = document.getElementById('tempmax').value;
-console.log("TEST 4");
 document.getElementById("min_t").innerHTML = farenheit;
 document.getElementById("max_t").innerHTML = farenheit;
 document.getElementById("switch_cf").innerHTML = use_celsius;
@@ -316,12 +320,10 @@ document.getElementById('tempmax').value = Math.round(((cal_tempmax * 9/5)+32)*1
 
   }
         
-// Farenheit to Celsius calculation
-
+// Conversion from farenheit to celsius [button] 
 function ftoc() {
     let cal_tempmin = document.getElementById('tempmin').value;
     let cal_tempmax = document.getElementById('tempmax').value;
-    console.log("TEST 5");
     document.getElementById("min_t").innerHTML = celsius;
     document.getElementById("max_t").innerHTML = celsius;
     document.getElementById("switch_cf").innerHTML = use_farenheit;
@@ -334,8 +336,8 @@ function ftoc() {
   }
 
 
-         /* select all/ deselect all functions */ 
-         /* 1 */
+// Select/deselect all [buttons] 
+//1 - Select/deselect all
      function selectall_1 () {
    
            document.getElementById('beginner').checked = true; 
@@ -359,7 +361,7 @@ function ftoc() {
            document.getElementById("all_1").innerHTML = "select all";
     }
 
-/* 2 */
+//2 - Select/deselect all
 
 
     function selectall_2 () {
@@ -385,7 +387,7 @@ function deselectall_2 () {
    document.getElementById("all_2").innerHTML = "select all";
 }
 
-        /* 3 */
+//3 - Select/deselect all
 
 function selectall_3 () {
    
@@ -404,9 +406,8 @@ function deselectall_3 () {
    document.getElementById("all_3").innerHTML = "select all";
 }
 
-      /* select all/ deselect all functions */
-
-   /*functions for select/deselect advanced options*/ 
+        
+// Check all checkboxes when advanced options are collapsed 
         
 function all_select_behavior () {
    document.getElementById('schooling1').checked = true; 
@@ -422,7 +423,7 @@ function all_deselect_behavior () {
 }
 
         
-
+//////////////////////////////
 /// Search button function 
   function search_button() {
      let tempmin = document.getElementById('tempmin').value;
@@ -597,7 +598,8 @@ function behavior_list (x) {
 }
 
       
- // Functions that take care of expanding/collapsing advanced search options and jumping between search/result pages 
+ // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
+
       
    document.getElementById("less_options_button").style.display = 'none';
    on_search_page = false;
@@ -605,8 +607,8 @@ function behavior_list (x) {
   }
 
 
-
-        
+  
+ // Expanding/collapsing advanced search options and jumping between search/result pages (separate functions)   
 
  function restart_search() {
     on_search_page = true; 
