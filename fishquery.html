@@ -248,6 +248,8 @@
 </footer>
 
     <script>
+
+//Variables 
         
 let liter = "Liter";
 let gallon = "Gallon"
@@ -331,7 +333,6 @@ function ftoc() {
     document.getElementById('tempmax').value = Math.round(((cal_tempmax-32)*5/9)*10)/10;
   }
 
-     /* farenheit to celsius calculation */ 
 
          /* select all/ deselect all functions */ 
          /* 1 */
@@ -422,7 +423,7 @@ function all_deselect_behavior () {
 
         
 
-/// search button function 
+/// Search button function 
   function search_button() {
      let tempmin = document.getElementById('tempmin').value;
      let tempmax = document.getElementById('tempmax').value; 
@@ -498,12 +499,12 @@ function all_deselect_behavior () {
       document.getElementById("search_pmeters").style.display = 'inline-block';
 
 
-//capacity and temperature parameters summary below 
+// Adding capacity and temeprature to search paramters summary 
 
     document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${tank_size}`;
     document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${tempmin} - ${tempmax}`;
   
-   /*populate search parameters sumamry*/ 
+  // Populating search parameters summary 
 
       let l_avail = [];
       let l_hardiness = [];
@@ -516,10 +517,8 @@ function all_deselect_behavior () {
       document.getElementById("p_hardiness").innerHTML = l_hardiness.join(", ");
       document.getElementById("p_social").innerHTML = l_behavior.join(", ");
 
-   /*populate search parameters sumamry*/ 
-      
   
-  /*function for populating search parameters*/ 
+   // Functions for populating search parameters summary 
 
 
 
@@ -598,7 +597,7 @@ function behavior_list (x) {
 }
 
       
- /*function for populating search parameters*/ 
+ // Functions that take care of expanding/collapsing advanced search options and jumping between search/result pages 
       
    document.getElementById("less_options_button").style.display = 'none';
    on_search_page = false;
