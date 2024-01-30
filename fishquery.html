@@ -437,9 +437,10 @@ function deselectall_2 () {
 
       
 
-    if ((verycommon || common || rare || veryrare) && (beginner || easy || medium || difficult)) {
+    if ((verycommon || common || rare || veryrare) && (beginner || easy || medium || difficult) && (schooling1 || schooling2 || solitary)) {
       document.getElementById('availabilty').classList.remove('notselected');
       document.getElementById('difficulty').classList.remove('notselected');
+      document.getElementById('behavior').classList.remove('notselected');
       selection_missing = false;
 
     }
