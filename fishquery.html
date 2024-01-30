@@ -264,6 +264,7 @@ let console_temperature = "Celsius"
 let on_search_page = true;
 let expanded = false;
 
+all_select_behavior ()
 document.getElementById("search").addEventListener("click", search_button);
 document.getElementById("search_restart").addEventListener("click", restart_search);
 document.getElementById("more_options_button").addEventListener("click", options_expand);        
@@ -388,9 +389,7 @@ function deselectall_2 () {
 
 function selectall_3 () {
    
-   document.getElementById('schooling1').checked = true; 
-   document.getElementById('schooling2').checked = true; 
-   document.getElementById('solitary').checked = true; 
+   all_select_behavior ()
    document.getElementById("all_3").addEventListener("click", deselectall_3);
    document.getElementById("all_3").removeEventListener("click", selectall_3); 
    document.getElementById("all_3").innerHTML = "deselect all";
@@ -399,9 +398,7 @@ function selectall_3 () {
 
 function deselectall_3 () {
 
-   document.getElementById('schooling1').checked = false; 
-   document.getElementById('schooling2').checked = false; 
-   document.getElementById('solitary').checked = false; 
+   all_deselect_behavior () 
    document.getElementById("all_3").addEventListener("click", selectall_3);
    document.getElementById("all_3").removeEventListener("click", deselectall_3);
    document.getElementById("all_3").innerHTML = "select all";
@@ -409,7 +406,24 @@ function deselectall_3 () {
 
       /* select all/ deselect all functions */
 
+   /*functions for select/deselect advanced options*/ 
         
+function all_select_behavior () {
+   document.getElementById('schooling1').checked = true; 
+   document.getElementById('schooling2').checked = true; 
+   document.getElementById('solitary').checked = true; 
+}
+
+
+function all_deselect_behavior () {
+   document.getElementById('schooling1').checked = false; 
+   document.getElementById('schooling2').checked = false; 
+   document.getElementById('solitary').checked = false; 
+}
+
+        
+
+/// search button function 
   function search_button() {
      let tempmin = document.getElementById('tempmin').value;
      let tempmax = document.getElementById('tempmax').value; 
@@ -605,11 +619,13 @@ function behavior_list (x) {
   function options_expand() {
     expanded = true; 
     checker_1 ()
+    all_deselect_behavior () 
   }
 
   function options_collapse() {
     expanded = false; 
     checker_1 ()
+    all_select_behavior ()
   }
 
   function checker_1 () {
