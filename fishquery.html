@@ -129,9 +129,10 @@
 <!-- Here store availability --> 
 
 <!-- Temperature --> 
-    
+
+<span id = "mintemp_alert"> Minimum temperature can't be greater than maximum temperature. </span>
+<br> 
 <label for="" class = "parameter">Minimum temperature: </label> 
-   
  <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
  <span id = min_t> Celsius </span>
  <br>
@@ -297,6 +298,7 @@ document.getElementById("tempmax").addEventListener("keyup", is_min_smaller);
 document.getElementById("tempmin").addEventListener("keyup", is_min_smaller);
         
 document.getElementById("tank_size_alert").style.display = 'none';
+document.getElementById("mintemp_alert").style.display = 'none';
 
 
 // Conversion from liter to gallon [button]         
@@ -710,8 +712,15 @@ function is_min_smaller () {
 let tempmin = document.getElementById('tempmin').value;
 let tempmax = document.getElementById('tempmax').value; 
   if (tempmin > tempmax) {
-    console.log("Minimum temp should not be bigger");
+    document.getElementById("mintemp_alert").style.display = 'inline-block';
+    document.getElementById('tempmin').style.borderColor = 'red';
   }
+
+ if (tempmax >= tempmin) {
+    document.getElementById("mintemp_alert").style.display = 'none';
+    document.getElementById('tempmin').style.borderColor = 'unset';
+ }
+
 }
 
         
