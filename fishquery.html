@@ -682,11 +682,13 @@ function tank_size_check () {
     if ((tank_size < 20) && (console_capacity === liter)) {
       tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_liter + console_capacity;
       tank_size_alert.style.display = 'inline-block';
+      document.getElementById('tank_size').style.borderColor = 'red';  
     } 
 
     if ((tank_size < 5.3) && (console_capacity === gallon)) {
       tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_gallon + console_capacity;
       tank_size_alert.style.display = 'inline-block';
+      document.getElementById('tank_size').style.borderColor = 'red';  
     }
 
     if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
