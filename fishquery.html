@@ -677,20 +677,24 @@ function behavior_list (x) {
 //Checking tank size before submission (shouldn't be too small)
   function tank_size_check () {
   let tank_size_alert = document.getElementById("tank_size_alert");
-  let tank_size = document.getElementById('tank_size').value;  
+  let tank_size_value = document.getElementById('tank_size').value;
+  let tank_size_ = document.getElementById('tank_size')
 
-    if ((tank_size < 20) && (console_capacity === liter)) {
+    if ((tank_size_value < 20) && (console_capacity === liter)) {
       tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_liter + console_capacity;
       tank_size_alert.style.display = 'inline-block';
+      tank_size.style.borderColor: 'red'; 
     } 
 
-    if ((tank_size < 5.3) && (console_capacity === gallon)) {
+    if ((tank_size_value < 5.3) && (console_capacity === gallon)) {
       tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_gallon + console_capacity;
       tank_size_alert.style.display = 'inline-block';
+      tank_size.style.borderColor: 'red'; 
     }
 
-    if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+    if (((tank_size_value >= 20) && (console_capacity === liter)) || ((tank_size_value >= 5.3) && (console_capacity === gallon))) {
       tank_size_alert.style.display = 'none';
+      tank_size.style.borderColor: 'unset'; 
     }
 
   }
