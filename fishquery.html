@@ -275,6 +275,7 @@ let = temp_alert = document.getElementById("mintemp_alert");
 let = tempmin = document.getElementById('tempmin'); 
 let = tempmax = document.getElementById('tempmax'); 
 
+let swtich_lg = document.getElementById("switch_lg"); 
 
 // Starting functions     
 all_select_behavior ()
@@ -288,7 +289,7 @@ document.getElementById("less_options_button").addEventListener("click", options
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
 document.getElementById("all_3").addEventListener("click", selectall_3);
-document.getElementById("switch_lg").addEventListener("click", litergallon);   
+swtich_lg.addEventListener("click", litergallon);    
 document.getElementById("switch_cf").addEventListener("click", ctof);
 document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
@@ -309,9 +310,9 @@ document.getElementById("mintemp_alert").style.display = 'none';
 function litergallon() {
 let cal_cap = document.getElementById('tank_size').value;
 document.getElementById("size").innerHTML = gallon;
-document.getElementById("switch_lg").innerHTML = use_liter;
-document.getElementById("switch_lg").removeEventListener("click", litergallon);
-document.getElementById("switch_lg").addEventListener("click", gallonliter);
+swtich_lg.innerHTML = use_liter;
+swtich_lg.removeEventListener("click", litergallon);
+swtich_lg.addEventListener("click", gallonliter);
 console_capacity = gallon;
 document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;
 tank_size_check ()
@@ -321,9 +322,9 @@ tank_size_check ()
 function gallonliter() {
 let cal_cap = document.getElementById('tank_size').value;
 document.getElementById("size").innerHTML = liter;
-document.getElementById("switch_lg").innerHTML = use_gallon;
-document.getElementById("switch_lg").removeEventListener("click", gallonliter);
-document.getElementById("switch_lg").addEventListener("click", litergallon);
+swtich_lg.innerHTML = use_gallon;
+swtich_lg.removeEventListener("click", gallonliter);
+swtich_lg.addEventListener("click", litergallon);
 console_capacity = liter;
 document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
 tank_size_check ()
