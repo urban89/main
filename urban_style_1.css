@@ -85,3 +85,9 @@ img.homebutton {
   color: #5e0045; 
     }
 
+
+  .validation_alert {
+    color: red;
+    font-size: small;
+  }
+
