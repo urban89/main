@@ -271,6 +271,10 @@ let expanded = false;
 let minimum_liter = 20;
 let minimum_gallon = 5.3; 
 
+let = temp_alert = document.getElementById("mintemp_alert"); 
+let = tempmin = document.getElementById('tempmin'); 
+let = tempmax = document.getElementById('tempmax'); 
+
 
 // Starting functions     
 all_select_behavior ()
@@ -707,21 +711,25 @@ function tank_size_check () {
 
   }
 
-// Checking if minimum temperature is greater than maximum temperature 
-function is_min_smaller () {
-let tempmin = document.getElementById('tempmin').value;
-let tempmax = document.getElementById('tempmax').value; 
-  if (tempmin > tempmax) {
-    document.getElementById("mintemp_alert").style.display = 'inline-block';
-    document.getElementById('tempmin').style.borderColor = 'red';
+  // Checking if minimum temperature is greater than maximum temperature 
+  function is_min_smaller () {
+/*
+  let tmin = document.getElementById('tempmin').value;
+  let tmax = document.getElementById('tempmax').value; 
+
+  */
+
+    if (tempmin.value > tempmax.value ) {
+      temp_alert.style.display = 'inline-block';
+      tempmin.style.borderColor = 'red';
+    }
+
+  if (tempmax.value >= tempmin.value) {
+    temp_alert.style.display = 'none';
+    tempmin.style.borderColor = 'unset';
   }
 
- if (tempmax >= tempmin) {
-    document.getElementById("mintemp_alert").style.display = 'none';
-    document.getElementById('tempmin').style.borderColor = 'unset';
- }
-
-}
+  }
 
         
   </script>
