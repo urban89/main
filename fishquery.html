@@ -278,6 +278,14 @@ let = tempmax = document.getElementById('tempmax');
 let swtich_lg = document.getElementById("switch_lg"); 
 let switch_cf = document.getElementById("switch_cf"); 
 
+let main_form = document.getElementById("main_form");
+let search_restart = document.getElementById("search_restart");
+let search_pmeters = document.getElementById("search_pmeters");
+let more_options_button = document.getElementById("more_options_button");
+let more_options = document.getElementById("more_options");
+let less_options_button = document.getElementById("less_options_button");
+let search = document.getElementById("search"); 
+
 // Starting functions     
 all_select_behavior ()
 
@@ -655,35 +663,35 @@ function behavior_list (x) {
     all_select_behavior ()
   }
 
-  function checker_1 () {
+    function checker_1 () {
     if (on_search_page && !expanded) {
-      document.getElementById("main_form").style.display = 'inline-block';
-      document.getElementById("search_restart").style.display = 'none';
-      document.getElementById("search_pmeters").style.display = 'none';
-      document.getElementById("more_options_button").style.display = 'inline-block';
-      document.getElementById("more_options").style.display = 'none';
-      document.getElementById("less_options_button").style.display = 'none';
-      document.getElementById("search").style.display = 'inline-block';  
+      main_form.style.display = 'inline-block';
+      search_restart.style.display = 'none';
+      search_pmeters.style.display = 'none';
+      more_options_button.style.display = 'inline-block';
+      more_options.style.display = 'none';
+      less_options_button.style.display = 'none';
+      search.style.display = 'inline-block';  
     }
 
     if (on_search_page && expanded) {
-      document.getElementById("main_form").style.display = 'inline-block';
-      document.getElementById("search_restart").style.display = 'none';
-      document.getElementById("search_pmeters").style.display = 'none';
-      document.getElementById("more_options_button").style.display = 'none';
-      document.getElementById("more_options").style.display = 'inline-block';
-      document.getElementById("less_options_button").style.display = 'inline-block';
-      document.getElementById("search").style.display = 'inline-block';  
+      main_form.style.display = 'inline-block';
+      search_restart.style.display = 'none';
+      search_pmeters.style.display = 'none';
+      more_options_button.style.display = 'none';
+      more_options.style.display = 'inline-block';
+      less_options_button.style.display = 'inline-block';
+      search.style.display = 'inline-block';  
     }
 
     if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
-      document.getElementById("main_form").style.display = 'none';
-      document.getElementById("search_restart").style.display = 'inline-block';
-      document.getElementById("search_pmeters").style.display = 'inline-block';
-      document.getElementById("more_options_button").style.display = 'none';
-      document.getElementById("more_options").style.display = 'none';
-      document.getElementById("less_options_button").style.display = 'none';
-      document.getElementById("search").style.display = 'none';
+      main_form.style.display = 'none';
+      search_restart.style.display = 'inline-block';
+      search_pmeters.style.display = 'inline-block';
+      more_options_button.style.display = 'none';
+      more_options.style.display = 'none';
+      less_options_button.style.display = 'none';
+      search.style.display = 'none';
         
   }
   } 
