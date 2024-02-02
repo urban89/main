@@ -291,15 +291,15 @@ all_select_behavior ()
 
 
 // Adding initial event listeners   
-document.getElementById("search").addEventListener("click", search_button);
-document.getElementById("search_restart").addEventListener("click", restart_search);
-document.getElementById("more_options_button").addEventListener("click", options_expand);        
-document.getElementById("less_options_button").addEventListener("click", options_collapse);        
+search.addEventListener("click", search_button);
+search_restart.addEventListener("click", restart_search);
+more_options_button.addEventListener("click", options_expand);        
+less_options_button.addEventListener("click", options_collapse);       
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
 document.getElementById("all_3").addEventListener("click", selectall_3);
 swtich_lg.addEventListener("click", litergallon);    
-document.getElementById("switch_cf").addEventListener("click", ctof);
+switch_cf.addEventListener("click", ctof);
 document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
 document.getElementById("tank_size").addEventListener("click", tank_size_check);
