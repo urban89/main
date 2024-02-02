@@ -304,12 +304,12 @@ document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
 document.getElementById("tank_size").addEventListener("click", tank_size_check);
         
-document.getElementById("tempmin").addEventListener("click", is_min_smaller);
-document.getElementById("tempmin").addEventListener("click", is_min_smaller);
-document.getElementById("tempmax").addEventListener("blur", is_min_smaller);
-document.getElementById("tempmin").addEventListener("blur", is_min_smaller);
-document.getElementById("tempmax").addEventListener("keyup", is_min_smaller);
-document.getElementById("tempmin").addEventListener("keyup", is_min_smaller);
+tempmax.addEventListener("click", is_min_smaller);
+tempmin.addEventListener("click", is_min_smaller);
+tempmax.addEventListener("blur", is_min_smaller);
+tempmin.addEventListener("blur", is_min_smaller);
+tempmax.addEventListener("keyup", is_min_smaller);
+tempmin.addEventListener("keyup", is_min_smaller);
         
 document.getElementById("tank_size_alert").style.display = 'none';
 document.getElementById("mintemp_alert").style.display = 'none';
