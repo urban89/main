@@ -276,6 +276,7 @@ let = tempmin = document.getElementById('tempmin');
 let = tempmax = document.getElementById('tempmax'); 
 
 let swtich_lg = document.getElementById("switch_lg"); 
+let switch_cf = document.getElementById("switch_cf"); 
 
 // Starting functions     
 all_select_behavior ()
@@ -336,9 +337,9 @@ let cal_tempmin = parseInt(tempmin.value);
 let cal_tempmax = parseInt(tempmax.value);
 document.getElementById("min_t").innerHTML = farenheit;
 document.getElementById("max_t").innerHTML = farenheit;
-document.getElementById("switch_cf").innerHTML = use_celsius;
-document.getElementById("switch_cf").removeEventListener("click", ctof);
-document.getElementById("switch_cf").addEventListener("click", ftoc);
+switch_cf.innerHTML = use_celsius;
+switch_cf.removeEventListener("click", ctof);
+switch_cf.addEventListener("click", ftoc);
 
 console_temperature = "Farenheit"
 document.getElementById('tempmin').value = Math.round(((cal_tempmin * 9/5)+32)*10)/10;
@@ -352,9 +353,9 @@ let cal_tempmin = parseInt(tempmin.value);
 let cal_tempmax = parseInt(tempmax.value);
 document.getElementById("min_t").innerHTML = celsius;
 document.getElementById("max_t").innerHTML = celsius;
-document.getElementById("switch_cf").innerHTML = use_farenheit;
-document.getElementById("switch_cf").addEventListener("click", ctof);
-document.getElementById("switch_cf").removeEventListener("click", ftoc)
+switch_cf.innerHTML = use_farenheit;
+switch_cf.addEventListener("click", ctof);
+switch_cf.removeEventListener("click", ftoc)
 
 console_temperature = "Celsius"
 document.getElementById('tempmin').value = Math.round(((cal_tempmin-32)*5/9)*10)/10;
