@@ -43,10 +43,6 @@ background-attachment: fixed;
 }
 
 
-.navbar { 
-  --bs-navbar-padding-x: none;
-}
-
 a:active {
   background: rgb(170,196,255);
   background: radial-gradient(circle, rgba(170,196,255,1) 25%, rgba(177,178,255,1) 88%); 
