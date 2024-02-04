@@ -338,8 +338,8 @@ switch_cf.removeEventListener("click", ctof);
 switch_cf.addEventListener("click", ftoc);
 
 console_temperature = "Farenheit"
-document.getElementById('tempmin').value = Math.round((cal_tempmin * 9/5)+32);
-document.getElementById('tempmax').value = Math.round((cal_tempmax * 9/5)+32); 
+tempmin.value = Math.round((cal_tempmin * 9/5)+32);
+tempmax.value = Math.round((cal_tempmax * 9/5)+32);
 tempmin.min = 39;
 tempmin.max = 95;
 tempmax.min = 39; 
@@ -358,8 +358,8 @@ switch_cf.addEventListener("click", ctof);
 switch_cf.removeEventListener("click", ftoc)
 
 console_temperature = "Celsius"
-document.getElementById('tempmin').value = Math.round((cal_tempmin-32)*5/9);
-document.getElementById('tempmax').value = Math.round((cal_tempmax-32)*5/9);
+tempmin.value = Math.round((cal_tempmin-32)*5/9);
+tempmax.value = Math.round((cal_tempmax-32)*5/9);
 tempmin.min = 4;
 tempmin.max = 35;
 tempmax.min = 4; 
