@@ -32,7 +32,7 @@
 <body class="body-color-1">
 
     
-    <div id = maindiv> 
+    <div id = "maindiv"> 
 <h1 id =  "welcome"> Select your attributes to find the ideal freshwater aquarium fish for you! </h1> 
 
 <!--  search parameters summary-->
@@ -59,20 +59,20 @@
 <form action="" id = "main_form">
      <!-- Tank size --> 
 
-    
+< div id = "div_tank_size"> 
 <label for="" class = "parameter"> Minimum tank size: </label>
 <input style="width:55px" value="75" type="number" id="tank_size" name="">
 <span id = size> Liter </span>
 <br>
 <button type = button  id = switch_lg class = switcher> Use Gallon </button>
 <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
-
+</div> 
 <br>
 <br> 
  <!-- Tank size --> 
     
 <!-- Here hardiness --> 
-  
+  < div id = "div_hardiness"> 
    <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
 
   <label for="" id="all_1">select all</label>
@@ -89,13 +89,15 @@
    <br> 
    <input type="checkbox" id="difficult" name="">
    <label for="">Difficult</label>
+
+  </div>
    <br> 
    <br>
 
 <!-- Here hardiness --> 
     
 <!-- Here store availability --> 
-    
+    < div id = "div_avail"> 
    <label for="" class = "parameter" id = "availabilty" >Store availability</label><br>
 
    <label for="" id="all_2">select all</label>
@@ -112,12 +114,13 @@
    <br> 
    <input type="checkbox" id="veryrare" name="">
    <label for="">Very rare</label>
+   </div>
    <br> 
    <br> 
 <!-- Here store availability --> 
 
 <!-- Temperature --> 
-
+<div id = "div_temp"> 
 <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
 <br> 
 <label for="" class = "parameter">Minimum temperature: </label> 
@@ -129,6 +132,7 @@
 <span id = max_t> Celsius </span>
 <br>
 <button type = button  id = switch_cf class = switcher > Use Farenheit </button>
+</div> 
 <br> 
 <br>  
     
@@ -136,10 +140,10 @@
     
  <!-- advanced search options button --> 
 
- 
+  <div id = "div_more_opt_button"> 
   <p id = more_options_button> Click here for more search options</p>
-  
-  <div id = more_options style = "display: none"> 
+  </div> 
+  <div id = "more_options" style = "display: none"> 
 
  <!-- advanced search options nutton -->       
 
@@ -148,7 +152,7 @@
       Maximum size -->
       
  <!-- Behavior --> 
-   
+    <div id= "div_behavior"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
 
     <label for="" id="all_3">select all</label>
@@ -163,6 +167,7 @@
     <br>
     <input type="checkbox" id="solitary" name="">
     <label for=""> Prefers/accepts solitary life </label>
+    </div> 
     <br>
     <br> 
 
@@ -170,6 +175,7 @@
 
      <!-- Agression level --> 
 
+    <div id = "div_agression> 
     <label for="" class = "parameter" >Agression level</label><br>
     <input type="checkbox" id="peaceful1" name="">
     <label for="">Peaceful</label>
@@ -179,13 +185,15 @@
     <br>
     <input type="checkbox" id="aggressive" name="">
     <label for="">  Often agressive </label>
+    </div> 
     <br>
     <br> 
 
  <!-- Agression level --> 
 
  <!-- Breeding difficulty --> 
-    
+
+     <div id = "div_breeding"> 
      <label for="" class = "parameter" >Breeding difficulty</label><br>
      <input type="checkbox" id="b_easy" name="" value ="">
      <label for="">Easy</label>
@@ -198,18 +206,13 @@
      <br> 
      <input type="checkbox" id="impossible" name="">
      <label for=""> Impossible in captivity </label>
+     </div>
      <br>
      <br> 
     
     <!-- Breeding difficulty --> 
 
     <!-- Origin --> 
-
-    <label for="" class = "parameter" >Geographical origin</label> <br>
-    <select name="" id="">      <br> <br> 
-    <option value="Brazil">Brazil</option>
-    <option value="Peru">Peru</option>
-    <option value="Colombia">Colombia</option>
 
     <!-- Origin -->  
         
