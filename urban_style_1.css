@@ -1,11 +1,12 @@
 
+
 body {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* This ensures that the container is centered vertically on the page */
+  height: fit-content; /* This ensures that the container is centered vertically on the page */
 }
 
 
