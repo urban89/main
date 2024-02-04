@@ -1,4 +1,23 @@
 
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This ensures that the container is centered vertically on the page */
+}
+
+
+#maindiv {
+  width: 50vw; /* Set the desired width of your rectangle */
+  margin: 0 auto; /* Center the container horizontally */
+  border: 10px solid #aeaef5; /* Optional: Add a border for better visualization */
+  padding: 20px; /* Optional: Add padding to the content inside the container */
+}
+
+
+
  
 .body-color-1 {
  /*background-color: #AAC4FF ; */
