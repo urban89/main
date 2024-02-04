@@ -454,52 +454,52 @@ function all_deselect_behavior () {
 //////////////////////////////
 /// Search button function 
   function search_button() {
-     let tempmin = document.getElementById('tempmin').value;
-     let tempmax = document.getElementById('tempmax').value; 
+     let v_tempmin = document.getElementById('tempmin').value;
+     let v_tempmax = document.getElementById('tempmax').value; 
       
-     let tank_size = document.getElementById('tank_size').value; 
+     let v_tank_size = document.getElementById('tank_size').value; 
 
-     let beginner = document.getElementById('beginner').checked; 
-     let easy = document.getElementById('easy').checked; 
-     let medium = document.getElementById('medium').checked; 
-     let difficult = document.getElementById('difficult').checked; 
+     let v_beginner = document.getElementById('beginner').checked; 
+     let v_easy = document.getElementById('easy').checked; 
+     let v_medium = document.getElementById('medium').checked; 
+     let v_difficult = document.getElementById('difficult').checked; 
 
-      let verycommon = document.getElementById('verycommon').checked;
-      let common = document.getElementById('common').checked;
-      let rare = document.getElementById('rare').checked;
-      let veryrare = document.getElementById('veryrare').checked;
+      let v_verycommon = document.getElementById('verycommon').checked;
+      let v_common = document.getElementById('common').checked;
+      let v_rare = document.getElementById('rare').checked;
+      let v_veryrare = document.getElementById('veryrare').checked;
 
-      let schooling1 = document.getElementById('schooling1').checked;
-      let schooling2 = document.getElementById('schooling2').checked;
-      let solitary = document.getElementById('solitary').checked;
+      let v_schooling1 = document.getElementById('schooling1').checked;
+      let v_schooling2 = document.getElementById('schooling2').checked;
+      let v_solitary = document.getElementById('solitary').checked;
 
-      let peaceful1 = document.getElementById('peaceful1').checked;
-      let peaceful2 = document.getElementById('peaceful2').checked;
-      let aggressive = document.getElementById('aggressive').checked;
+      let v_peaceful1 = document.getElementById('peaceful1').checked;
+      let v_peaceful2 = document.getElementById('peaceful2').checked;
+      let v_aggressive = document.getElementById('aggressive').checked;
 
-      let b_easy = document.getElementById('b_easy').checked;
-      let b_medium = document.getElementById('b_medium').checked;
-      let b_hard = document.getElementById('b_hard').checked;
-      let impossible = document.getElementById('impossible').checked;
+      let v_b_easy = document.getElementById('b_easy').checked;
+      let v_b_medium = document.getElementById('b_medium').checked;
+      let v_b_hard = document.getElementById('b_hard').checked;
+      let v_impossible = document.getElementById('impossible').checked;
 
 
       let selection_missing;
       let selection_alert = "Some search parameters were not selected: ";
       let selection_alert_arr = []; 
 
-      if (!verycommon && !common && !rare && !veryrare) {
+      if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
       selection_missing = true;
       document.getElementById('availabilty').classList.add('notselected');
       selection_alert_arr.push ("availability");
     }
 
-    if (!beginner && !easy && !medium && !difficult) {
+    if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
       selection_missing = true;
       document.getElementById('difficulty').classList.add('notselected');
       selection_alert_arr.push ("difficulty");
     }
 
-     if (!schooling1 && !schooling2 && !solitary) {
+     if (!v_schooling1 && !v_schooling2 && !v_solitary) {
       selection_missing = true;
       document.getElementById('behavior').classList.add('notselected');
       selection_alert_arr.push ("behavior");
@@ -507,7 +507,7 @@ function all_deselect_behavior () {
 
       
 
-    if ((verycommon || common || rare || veryrare) && (beginner || easy || medium || difficult) && (schooling1 || schooling2 || solitary)) {
+    if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)) {
       document.getElementById('availabilty').classList.remove('notselected');
       document.getElementById('difficulty').classList.remove('notselected');
       document.getElementById('behavior').classList.remove('notselected');
@@ -530,8 +530,8 @@ function all_deselect_behavior () {
 
 // Adding capacity and temeprature to search paramters summary 
 
-    document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${tank_size}`;
-    document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${tempmin} - ${tempmax}`;
+    document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
+    document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin} - ${v_tempmax}`;
   
   // Populating search parameters summary 
 
@@ -553,23 +553,23 @@ function all_deselect_behavior () {
 
   function hardiness_list(x) {
 
-  if (beginner) {
+  if (v_beginner) {
         x.push("beginner");
     }
      
-     if (easy) {
+     if (v_easy) {
       x.push("easy");
     }
 
-     if(medium) {
+     if(v_medium) {
       x.push("medium");
     }
 
-     if(difficult) {
+     if(v_difficult) {
       x.push("difficult");
     }
 
-    if (beginner && easy && medium && difficult) {
+    if (v_beginner && v_easy && v_medium && v_difficult) {
     x.length = 0; 
     x.push("All");
   }
@@ -577,23 +577,23 @@ function all_deselect_behavior () {
 }
       
 function avail_list(x) {
-  if (verycommon) {
+  if (v_verycommon) {
         x.push("very common");
     }
      
-      if (common) {
+      if (v_common) {
       x.push("common");
     }
 
-    if (rare) {
+    if (v_rare) {
       x.push("rare");
     }
 
-    if (veryrare) {
+    if (v_veryrare) {
       x.push("very rare");
     }
 
-       if (verycommon && common && rare && veryrare) {
+       if (v_verycommon && v_common && v_rare && v_veryrare) {
     x.length = 0; 
     x.push("All");
   }
@@ -606,25 +606,24 @@ function behavior_list (x) {
     x.push("All");
   }
 
-  if (schooling1) {
+  if (v_schooling1) {
     x.push("Needs schooling")
   }
 
-  if (schooling2) {
+  if (v_schooling2) {
     x.push("Prefers schooling")
   }
 
-  if (solitary) {
+  if (v_solitary) {
     x.push("Prefers/accepts solitary life")
   }
 
-  if (schooling1 && schooling2 && solitary) {
+  if (v_schooling1 && v_schooling2 && v_solitary) {
     x.length = 0; 
     x.push("All");
   }
 
 }
-
       
  // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
 
