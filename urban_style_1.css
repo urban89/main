@@ -16,9 +16,18 @@ body {
   border: 10px solid #aeaef5; /* Optional: Add a border for better visualization */
   padding: 20px; /* Optional: Add padding to the content inside the container */
   border-radius: 5px; 
+  display: inline-block; 
 }
 
+#main_form {
+  display: flex; 
+}
 
+.column {
+  flex: 1; /* This makes both columns take up equal width */
+  margin: 10px; /* Adjust margin as needed */
+
+} 
 
  
 .body-color-1 {
@@ -29,14 +38,6 @@ background-attachment: fixed;
 
 
 }
-
-
-/* 
-a:active {
-  background: rgb(170,196,255);
-  background: radial-gradient(circle, rgba(170,196,255,1) 25%, rgba(177,178,255,1) 88%); 
-}
-*/ 
 
 
 .parameter {
