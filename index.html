@@ -271,6 +271,31 @@ let more_options = document.getElementById("more_options");
 let less_options_button = document.getElementById("less_options_button");
 let search = document.getElementById("search"); 
 
+let tank_size = document.getElementById("tank_size"); 
+
+let beginner = document.getElementById("beginner");
+let easy = document.getElementById("easy");
+let medium = document.getElementById("medium");
+let difficult = document.getElementById("difficult");
+
+let verycommon = document.getElementById("verycommon");
+let common = document.getElementById("common");
+let rare = document.getElementById("rare");
+let veryrare = document.getElementById("veryrare");
+
+let schooling1 = document.getElementById("schooling1");
+let schooling2 = document.getElementById("schooling2");
+let solitary = document.getElementById("solitary");
+
+let peaceful1 = document.getElementById("peaceful1");
+let peaceful2 = document.getElementById("peaceful2");
+let aggressive = document.getElementById("aggressive");
+
+let b_easy = document.getElementById("b_easy"); 
+let b_medium = document.getElementById("b_medium"); 
+let b_hard = document.getElementById("b_hard"); 
+let impossible = document.getElementById("impossible");
+
 // Starting functions     
 all_select_behavior ()
 
@@ -368,10 +393,10 @@ tempmax.max = 35;
 //1 - Select/deselect all
      function selectall_1 () {
    
-           document.getElementById('beginner').checked = true; 
-           document.getElementById('easy').checked = true; 
-           document.getElementById('medium').checked = true; 
-           document.getElementById('difficult').checked = true;
+           beginner.checked = true; 
+           easy.checked = true; 
+           medium.checked = true; 
+           difficult.checked = true;
            document.getElementById("all_1").addEventListener("click", deselectall_1);
            document.getElementById("all_1").removeEventListener("click", selectall_1); 
            document.getElementById("all_1").innerHTML = "deselect all";
@@ -380,10 +405,10 @@ tempmax.max = 35;
       
     function deselectall_1 () {
 
-           document.getElementById('beginner').checked = false; 
-           document.getElementById('easy').checked = false; 
-           document.getElementById('medium').checked = false; 
-           document.getElementById('difficult').checked = false;
+           beginner.checked = false; 
+           easy.checked = false; 
+           medium.checked = false; 
+           difficult.checked = false;
            document.getElementById("all_1").addEventListener("click", selectall_1);
            document.getElementById("all_1").removeEventListener("click", deselectall_1);
            document.getElementById("all_1").innerHTML = "select all";
@@ -394,10 +419,10 @@ tempmax.max = 35;
 
     function selectall_2 () {
    
-   document.getElementById('verycommon').checked = true; 
-   document.getElementById('common').checked = true; 
-   document.getElementById('rare').checked = true; 
-   document.getElementById('veryrare').checked = true;
+   verycommon.checked = true; 
+   common.checked = true; 
+   rare.checked = true; 
+   veryrare.checked = true;
    document.getElementById("all_2").addEventListener("click", deselectall_2);
    document.getElementById("all_2").removeEventListener("click", selectall_2); 
    document.getElementById("all_2").innerHTML = "deselect all";
@@ -406,10 +431,10 @@ tempmax.max = 35;
 
 function deselectall_2 () {
 
-   document.getElementById('verycommon').checked = false; 
-   document.getElementById('common').checked = false; 
-   document.getElementById('rare').checked = false; 
-   document.getElementById('veryrare').checked = false;
+   verycommon.checked = false; 
+   common.checked = false; 
+   rare.checked = false; 
+   veryrare.checked = false;
    document.getElementById("all_2").addEventListener("click", selectall_2);
    document.getElementById("all_2").removeEventListener("click", deselectall_2);
    document.getElementById("all_2").innerHTML = "select all";
@@ -437,17 +462,19 @@ function deselectall_3 () {
         
 // Check all checkboxes when advanced options are collapsed 
         
+// Check all checkboxes when advanced options are collapsed 
+        
 function all_select_behavior () {
-   document.getElementById('schooling1').checked = true; 
-   document.getElementById('schooling2').checked = true; 
-   document.getElementById('solitary').checked = true; 
+  schooling1.checked = true; 
+  schooling2.checked = true; 
+  solitary.checked = true; 
 }
 
 
 function all_deselect_behavior () {
-   document.getElementById('schooling1').checked = false; 
-   document.getElementById('schooling2').checked = false; 
-   document.getElementById('solitary').checked = false; 
+  schooling1.checked = false; 
+  schooling2.checked = false; 
+  solitary.checked = false; 
 }
 
         
