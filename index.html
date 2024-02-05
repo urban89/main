@@ -58,7 +58,7 @@
         
 <form action="" id = "main_form">
      <!-- Tank size --> 
-
+<div class = "column"> 
 <div id = "div_tank_size"> 
 <label for="" class = "parameter"> Minimum tank size: </label>
 <input style="width:55px" value="75" type="number" id="tank_size" name="">
@@ -117,9 +117,11 @@
    </div>
    <br> 
    <br> 
+</div> <!-- column div ends here -->
 <!-- Here store availability --> 
 
 <!-- Temperature --> 
+<div class = "column">
 <div id = "div_temp"> 
 <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
 <br> 
@@ -209,7 +211,7 @@
      </div>
      <br>
      <br> 
-    
+    </div> <!-- second column div ends here -->
     <!-- Breeding difficulty --> 
 
     <!-- Origin --> 
@@ -684,28 +686,28 @@ function behavior_list (x) {
 
     function checker_1 () {
     if (on_search_page && !expanded) {
-      main_form.style.display = 'inline-block';
+      main_form.style.display = 'flex';
       search_restart.style.display = 'none';
       search_pmeters.style.display = 'none';
-      more_options_button.style.display = 'inline-block';
+      more_options_button.style.display = 'flex';
       more_options.style.display = 'none';
       less_options_button.style.display = 'none';
-      search.style.display = 'inline-block';  
+      search.style.display = 'flex';  
     }
 
     if (on_search_page && expanded) {
-      main_form.style.display = 'inline-block';
+      main_form.style.display = 'flex';
       search_restart.style.display = 'none';
       search_pmeters.style.display = 'none';
       more_options_button.style.display = 'none';
       more_options.style.display = 'inline-block';
-      less_options_button.style.display = 'inline-block';
-      search.style.display = 'inline-block';  
+      less_options_button.style.display = 'flex';
+      search.style.display = 'flex';  
     }
 
     if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
       main_form.style.display = 'none';
-      search_restart.style.display = 'inline-block';
+      search_restart.style.display = 'flex';
       search_pmeters.style.display = 'inline-block';
       more_options_button.style.display = 'none';
       more_options.style.display = 'none';
