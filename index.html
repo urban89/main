@@ -119,6 +119,11 @@
    <br> 
     <!-- Search button --> 
      <button id = "search" role = "button"> Search </button>
+
+<!-- Alerts --> 
+<br> 
+<span id = "search_alert_temp"> </span>
+    
 </div> <!-- column div ends here -->
 <!-- Here store availability --> 
 
@@ -246,7 +251,7 @@ let use_farenheit = "Use Farenheit";
 let use_celsius = "Use Celsius";
 
 let console_capacity = liter;
-let console_temperature = "Celsius"
+let console_temperature = celsius; 
 
 let on_search_page = true;
 let expanded = false;
@@ -254,6 +259,8 @@ let minimum_liter = 20;
 let minimum_gallon = 5.3; 
 
 let = temp_alert = document.getElementById("mintemp_alert"); 
+let search_alert_temp = document.getElementById("search_alert_temp");
+        
 let = tempmin = document.getElementById('tempmin'); 
 let = tempmax = document.getElementById('tempmax'); 
 
@@ -320,6 +327,7 @@ tempmin.addEventListener("keyup", is_min_smaller);
         
 document.getElementById("tank_size_alert").style.display = 'none';
 document.getElementById("mintemp_alert").style.display = 'none';
+search_alert_temp.style.display = 'none';
 
 
 // Conversion from liter to gallon [button]         
@@ -512,6 +520,8 @@ function all_deselect_behavior () {
       let selection_alert = "Some search parameters were not selected: ";
       let selection_alert_arr = []; 
 
+      preCheck(v_tempmin, v_tempmax);
+
       if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
       selection_missing = true;
       document.getElementById('availabilty').classList.add('notselected');
@@ -658,7 +668,27 @@ function behavior_list (x) {
    checker_1 ()
   }
 
+  // Check data before search and display alert if needed 
 
+function preCheck(min, max) {
+
+  if ((min < 4 || min > 35 ||max < 4 || max > 35) && console_temperature === celsius) {
+      search_alert_temp.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
+      search_alert_temp.style.display = 'inline-block';
+      return FALSE; 
+    }
+
+    else if ((min <  39 || min >  95 ||max <  39 || max >  95) && console_temperature === farenheit) {
+      search_alert_temp.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
+      search_alert_temp.style.display = 'inline-block';
+      return FALSE; 
+    }
+
+   else {
+    search_alert_temp.style.display = 'none';
+   }
+
+}
   
  // Expanding/collapsing advanced search options and jumping between search/result pages (separate functions)   
 
