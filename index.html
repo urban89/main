@@ -33,7 +33,7 @@
 
     
     <div id = "maindiv"> 
-<p id = "welcome"> Select attributes to find different freshwater aquarium fish based on their requirements. </p> 
+<p id = "welcome" class = "tiles"> Select attributes to find different freshwater aquarium fish based on their requirements. </p> 
 
 <!--  search parameters summary-->
 <div id = "search_pmeters" style = "display: none">
@@ -59,7 +59,7 @@
 <form action="" id = "main_form">
      <!-- Tank size --> 
 <div class = "column"> 
-<div id = "div_tank_size"> 
+<div id = "div_tank_size" class = "tiles"> 
 <label for="" class = "parameter"> Minimum tank size: </label>
 <input style="width:55px" value="75" type="number" id="tank_size" name="">
 <span id = size> Liter </span>
@@ -72,7 +72,7 @@
  <!-- Tank size --> 
     
 <!-- Here hardiness --> 
-  <div id = "div_hardiness"> 
+  <div id = "div_hardiness" class = "tiles"> 
    <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
 
   <label for="" id="all_1">select all</label>
@@ -97,7 +97,7 @@
 <!-- Here hardiness --> 
     
 <!-- Here store availability --> 
-    <div id = "div_avail"> 
+    <div id = "div_avail" class = "tiles"> 
    <label for="" class = "parameter" id = "availabilty" >Store availability</label><br>
 
    <label for="" id="all_2">select all</label>
@@ -129,7 +129,7 @@
 
 <!-- Temperature --> 
 <div class = "column">
-<div id = "div_temp"> 
+<div id = "div_temp" class = "tiles"> 
 <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
 <br> 
 <label for="" class = "parameter">Minimum temperature: </label> 
@@ -161,7 +161,7 @@
       Maximum size -->
       
  <!-- Behavior --> 
-    <div id= "div_behavior"> 
+    <div id= "div_behavior" class = "tiles"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
 
     <label for="" id="all_3">select all</label>
@@ -184,7 +184,7 @@
 
      <!-- Agression level --> 
 
-    <div id = "div_agression"> 
+    <div id = "div_agression" class = "tiles"> 
     <label for="" class = "parameter" >Agression level</label><br>
     <input type="checkbox" id="peaceful1" name="">
     <label for="">Peaceful</label>
@@ -202,7 +202,7 @@
 
  <!-- Breeding difficulty --> 
 
-     <div id = "div_breeding"> 
+     <div id = "div_breeding" class = "tiles"> 
      <label for="" class = "parameter" >Breeding difficulty</label><br>
      <input type="checkbox" id="b_easy" name="" value ="">
      <label for="">Easy</label>
