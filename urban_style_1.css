@@ -138,4 +138,12 @@ div_breeding
   outline: 0;
 }
 
+/*Tiles*/ 
 
+.tiles {
+  background: linear-gradient(188deg, #5ba0b1 0%, #367AF6 100%);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgba(42, 5, 252, 0.3);
+  border: 1px solid #ccc; /* Add a border to simulate depth */
+}
