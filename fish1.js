@@ -73,7 +73,7 @@ less_options_button.addEventListener("click", options_collapse);
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
 document.getElementById("all_3").addEventListener("click", selectall_3);
-swtich_lg.addEventListener("click", litergallon);    
+//swtich_lg.addEventListener("click", litergallon);    
 switch_cf.addEventListener("click", ctof);
 document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
