@@ -90,25 +90,25 @@ search_alert_temp.style.display = 'none';
 
 // Conversion from liter to gallon [button]         
 function litergallon() {
-let cal_cap = document.getElementById('tank_size').value;
+let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = gallon;
 swtich_lg.innerHTML = use_liter;
 swtich_lg.removeEventListener("click", litergallon);
 swtich_lg.addEventListener("click", gallonliter);
 console_capacity = gallon;
-document.getElementById('tank_size').value = Math.round((cal_cap * 0.264172)*10)/10;
+tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 tank_size_check ()
 }
 
 // Conversion from gallon to liter [button]     
 function gallonliter() {
-let cal_cap = document.getElementById('tank_size').value;
+let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = liter;
 swtich_lg.innerHTML = use_gallon;
 swtich_lg.removeEventListener("click", gallonliter);
 swtich_lg.addEventListener("click", litergallon);
 console_capacity = liter;
-document.getElementById('tank_size').value = Math.round((cal_cap * 3.785)*10)/10; 
+tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 tank_size_check ()
 }
 
