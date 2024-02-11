@@ -70,7 +70,6 @@
 <!-- 
 <button type = button  id = switch_lg class = switcher> Use Gallon </button>
 --> 
-<span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
 </div> 
 <br>
 <br> 
@@ -101,7 +100,37 @@
 
 <!-- Here hardiness --> 
     
-<!-- Here store availability --> 
+
+    <!-- Search button --> 
+     <button id = "search" role = "button"> Search </button>
+     <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
+     <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
+<!-- Alerts --> 
+<br> 
+<span id = "search_alert_temp"> </span>
+    
+</div> <!-- column div ends here -->
+
+
+<!-- Temperature --> 
+<div class = "column">
+<div id = "div_temp" class = "tiles"> 
+<label for="" class = "parameter">Minimum temperature: </label> 
+ <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
+ <span id = min_t> Celsius </span>
+ <br>
+<label for="" class = "parameter"> Maximum temperature: </label>   
+<input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
+<span id = max_t> Celsius </span>
+<br>
+<button type = button  id = switch_cf class = switcher > Use Farenheit </button>
+</div> 
+<br> 
+<br>  
+    
+ <!-- Temperature --> 
+
+    <!-- Here store availability --> 
     <div id = "div_avail" class = "tiles"> 
    <label for="" class = "parameter" id = "availabilty" >Store availability</label><br>
 
@@ -122,35 +151,7 @@
    </div>
    <br> 
    <br> 
-    <!-- Search button --> 
-     <button id = "search" role = "button"> Search </button>
-
-<!-- Alerts --> 
-<br> 
-<span id = "search_alert_temp"> </span>
-    
-</div> <!-- column div ends here -->
 <!-- Here store availability --> 
-
-<!-- Temperature --> 
-<div class = "column">
-<div id = "div_temp" class = "tiles"> 
-<span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
-<br> 
-<label for="" class = "parameter">Minimum temperature: </label> 
- <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
- <span id = min_t> Celsius </span>
- <br>
-<label for="" class = "parameter"> Maximum temperature: </label>   
-<input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
-<span id = max_t> Celsius </span>
-<br>
-<button type = button  id = switch_cf class = switcher > Use Farenheit </button>
-</div> 
-<br> 
-<br>  
-    
- <!-- Temperature --> 
     
  <!-- advanced search options button --> 
 
@@ -161,10 +162,6 @@
 
  <!-- advanced search options nutton -->       
 
- <!-- Maximum size 
- -- add later -- 
-      Maximum size -->
-      
  <!-- Behavior --> 
     <div id= "div_behavior" class = "tiles"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
