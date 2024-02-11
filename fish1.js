@@ -22,7 +22,7 @@ let search_alert_temp = document.getElementById("search_alert_temp");
 let = tempmin = document.getElementById('tempmin'); 
 let = tempmax = document.getElementById('tempmax'); 
 
-let swtich_lg = document.getElementById("switch_lg"); 
+//let swtich_lg = document.getElementById("switch_lg"); 
 let switch_cf = document.getElementById("switch_cf"); 
 
 let main_form = document.getElementById("main_form");
@@ -34,6 +34,9 @@ let less_options_button = document.getElementById("less_options_button");
 let search = document.getElementById("search"); 
 
 let tank_size = document.getElementById("tank_size"); 
+let liter_radio = document.getElementById("liter_radio"); 
+let gallon_radio = document.getElementById("gallon_radio"); 
+
 
 let beginner = document.getElementById("beginner");
 let easy = document.getElementById("easy");
@@ -83,33 +86,45 @@ tempmin.addEventListener("blur", is_min_smaller);
 tempmax.addEventListener("keyup", is_min_smaller);
 tempmin.addEventListener("keyup", is_min_smaller);
         
-document.getElementById("tank_size_alert").style.display = 'none';
-document.getElementById("mintemp_alert").style.display = 'none';
-search_alert_temp.style.display = 'none';
+document.addEventListener("DOMContentLoaded", function() {
+  liter_radio.checked = true;
+  document.getElementById("tank_size_alert").style.display = 'none';
+  document.getElementById("mintemp_alert").style.display = 'none';
+  search_alert_temp.style.display = 'none';
+
+  liter_radio.addEventListener("change", gallonliter);
+  gallon_radio.addEventListener("change", litergallon);
+        
+});
 
 
-// Conversion from liter to gallon [button]         
+// Conversion from liter to gallon [radio buttons]         
 function litergallon() {
+if (gallon_radio.checked == true) {
 let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = gallon;
-swtich_lg.innerHTML = use_liter;
-swtich_lg.removeEventListener("click", litergallon);
-swtich_lg.addEventListener("click", gallonliter);
+//swtich_lg.innerHTML = use_liter;
+//swtich_lg.removeEventListener("click", litergallon);
+//swtich_lg.addEventListener("click", gallonliter);
 console_capacity = gallon;
 tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 tank_size_check ()
 }
+}
 
-// Conversion from gallon to liter [button]     
+
+// Conversion from gallon to liter [radio buttons]        
 function gallonliter() {
+  if (liter_radio.checked == true) {
 let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = liter;
-swtich_lg.innerHTML = use_gallon;
-swtich_lg.removeEventListener("click", gallonliter);
-swtich_lg.addEventListener("click", litergallon);
+//swtich_lg.innerHTML = use_gallon;
+//swtich_lg.removeEventListener("click", gallonliter);
+//swtich_lg.addEventListener("click", litergallon);
 console_capacity = liter;
 tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 tank_size_check ()
+}
 }
 
 // Conversion from celsius to farenheit [button]      
