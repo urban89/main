@@ -97,6 +97,7 @@ div_breeding
   white-space: nowrap;
   will-change: box-shadow,transform;
   font-size: 18px;
+  border: 1px solid #ccc; /* Add a border to simulate depth */
 }
 
 #search:focus {
