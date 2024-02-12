@@ -115,15 +115,24 @@
 <!-- Temperature --> 
 <div class = "column">
 <div id = "div_temp" class = "tiles"> 
-<label for="" class = "parameter">Minimum temperature: </label> 
- <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
- <span id = min_t> Celsius </span>
+<label for="" class = "parameter">Water temperature: </label> 
+<input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
+<span id = min_t> Celsius </span>
+
+
+ <!--    removing temperature range for now and focus only on one temperature parameter
  <br>
 <label for="" class = "parameter"> Maximum temperature: </label>   
 <input type="number" style="width:55px" id="tempmax" name="" min="4" max="35" value = "26" />
 <span id = max_t> Celsius </span>
 <br>
 <button type = button  id = switch_cf class = switcher > Use Farenheit </button>
+-->
+<br>
+<input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
+<input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label>
+
+    
 </div> 
 <br> 
 <br>  
