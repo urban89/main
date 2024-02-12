@@ -93,10 +93,11 @@ tempmin.addEventListener("keyup", is_min_smaller);
         
 document.addEventListener("DOMContentLoaded", function() {
   liter_radio.checked = true;
+  convert_fc.checked = true; 
   document.getElementById("tank_size_alert").style.display = 'none';
   document.getElementById("mintemp_alert").style.display = 'none';
   search_alert_temp.style.display = 'none';
-
+  
   liter_radio.addEventListener("change", gallonliter);
   gallon_radio.addEventListener("change", litergallon);
   convert_fc.addEventListener("change", ftoc);
