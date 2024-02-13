@@ -56,6 +56,10 @@ let b_medium = document.getElementById("b_medium");
 let b_hard = document.getElementById("b_hard"); 
 let impossible = document.getElementById("impossible");
 
+let all_1 = document.getElementById("all_1");
+let all_2 = document.getElementById("all_2");
+let all_3 = document.getElementById("all_3");
+
 // Starting functions     
 all_select_behavior ()
 
@@ -65,9 +69,9 @@ search.addEventListener("click", search_button);
 search_restart.addEventListener("click", restart_search);
 more_options_button.addEventListener("click", options_expand);        
 less_options_button.addEventListener("click", options_collapse);       
-document.getElementById("all_1").addEventListener("click", selectall_1);
-document.getElementById("all_2").addEventListener("click", selectall_2);
-document.getElementById("all_3").addEventListener("click", selectall_3);
+//document.getElementById("all_1").addEventListener("click", selectall_1);
+//document.getElementById("all_2").addEventListener("click", selectall_2);
+//document.getElementById("all_3").addEventListener("click", selectall_3);
 document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
 document.getElementById("tank_size").addEventListener("click", tank_size_check);
@@ -84,6 +88,10 @@ document.addEventListener("DOMContentLoaded", function() {
   gallon_radio.addEventListener("change", litergallon);
   convert_fc.addEventListener("change", ftoc);
   convert_cf.addEventListener("change", ctof);
+  all_1.addEventListener("change",selectall_1);
+  all_2.addEventListener("change",selectall_2);
+  all_3.addEventListener("change",selectall_3);
+
         
 });
 
@@ -136,79 +144,63 @@ tempmin.min = 4;
 tempmin.max = 35;
   }
 
-// Select/deselect all [buttons] 
+// Select/deselect all [checkboxes] 
 //1 - Select/deselect all
      function selectall_1 () {
-   
+      if (all_1.checked == true) {
+
            beginner.checked = true; 
            easy.checked = true; 
            medium.checked = true; 
            difficult.checked = true;
-           document.getElementById("all_1").addEventListener("click", deselectall_1);
-           document.getElementById("all_1").removeEventListener("click", selectall_1); 
-           document.getElementById("all_1").innerHTML = "deselect all";
+          }
            
-    }
-      
-    function deselectall_1 () {
-
+      else {
            beginner.checked = false; 
            easy.checked = false; 
            medium.checked = false; 
            difficult.checked = false;
-           document.getElementById("all_1").addEventListener("click", selectall_1);
-           document.getElementById("all_1").removeEventListener("click", deselectall_1);
-           document.getElementById("all_1").innerHTML = "select all";
+      }
+
+
     }
+      
 
 //2 - Select/deselect all
 
 
     function selectall_2 () {
+      if (all_2.checked == true) {
+        verycommon.checked = true; 
+        common.checked = true; 
+        rare.checked = true; 
+        veryrare.checked = true;
+      }
    
-   verycommon.checked = true; 
-   common.checked = true; 
-   rare.checked = true; 
-   veryrare.checked = true;
-   document.getElementById("all_2").addEventListener("click", deselectall_2);
-   document.getElementById("all_2").removeEventListener("click", selectall_2); 
-   document.getElementById("all_2").innerHTML = "deselect all";
+     else {
+
+      verycommon.checked = false; 
+      common.checked = false; 
+      rare.checked = false; 
+      veryrare.checked = false;
+
+     }
    
-}
-
-function deselectall_2 () {
-
-   verycommon.checked = false; 
-   common.checked = false; 
-   rare.checked = false; 
-   veryrare.checked = false;
-   document.getElementById("all_2").addEventListener("click", selectall_2);
-   document.getElementById("all_2").removeEventListener("click", deselectall_2);
-   document.getElementById("all_2").innerHTML = "select all";
 }
 
 //3 - Select/deselect all
 
 function selectall_3 () {
    
-   all_select_behavior ()
-   document.getElementById("all_3").addEventListener("click", deselectall_3);
-   document.getElementById("all_3").removeEventListener("click", selectall_3); 
-   document.getElementById("all_3").innerHTML = "deselect all";
-   
+   if (all_3.checked == true) {
+    all_select_behavior ();
+   }
+   else {
+    all_deselect_behavior ();
+   }
 }
 
-function deselectall_3 () {
 
-   all_deselect_behavior () 
-   document.getElementById("all_3").addEventListener("click", selectall_3);
-   document.getElementById("all_3").removeEventListener("click", deselectall_3);
-   document.getElementById("all_3").innerHTML = "select all";
-}
-
-        
-// Check all checkboxes when advanced options are collapsed 
-        
 // Check all checkboxes when advanced options are collapsed 
         
 function all_select_behavior () {
@@ -223,8 +215,7 @@ function all_deselect_behavior () {
   schooling2.checked = false; 
   solitary.checked = false; 
 }
-
-        
+      
 //////////////////////////////
 /// Search button function 
   function search_button() {
