@@ -346,7 +346,7 @@ function all_deselect_behavior () {
 // Adding capacity and temeprature to search paramters summary 
 
     document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
-    document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin} - ${v_tempmax}`;
+    document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin}`;
   
   // Populating search parameters summary 
 
