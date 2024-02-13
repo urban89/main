@@ -1,13 +1,9 @@
-//Declaring variables 
+///////////////////////
 //Declaring variables 
 const liter = "Liter";
 const gallon = "Gallon";
-//let use_gallon = "Use Gallon";
-//let use_liter = "Use Liter";
 const celsius = "Celsius";
 const farenheit = "Farenheit";
-//let use_farenheit = "Use Farenheit";
-//let use_celsius = "Use Celsius";
 
 let console_capacity = liter;
 let console_temperature = celsius; 
@@ -23,10 +19,6 @@ let search_alert_temp = document.getElementById("search_alert_temp");
 let = tempmin = document.getElementById('tempmin'); 
 let convert_fc = document.getElementById("convert_fc");
 let convert_cf = document.getElementById("convert_cf");
-
-//let = tempmax = document.getElementById('tempmax'); 
-//let swtich_lg = document.getElementById("switch_lg"); 
-//let switch_cf = document.getElementById("switch_cf"); 
 
 let main_form = document.getElementById("main_form");
 let search_restart = document.getElementById("search_restart");
@@ -76,20 +68,10 @@ less_options_button.addEventListener("click", options_collapse);
 document.getElementById("all_1").addEventListener("click", selectall_1);
 document.getElementById("all_2").addEventListener("click", selectall_2);
 document.getElementById("all_3").addEventListener("click", selectall_3);
-//swtich_lg.addEventListener("click", litergallon);    
-//switch_cf.addEventListener("click", ctof);
 document.getElementById("tank_size").addEventListener("blur", tank_size_check);
 document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
 document.getElementById("tank_size").addEventListener("click", tank_size_check);
 
-/*
-tempmax.addEventListener("click", is_min_smaller);
-tempmin.addEventListener("click", is_min_smaller);
-tempmax.addEventListener("blur", is_min_smaller);
-tempmin.addEventListener("blur", is_min_smaller);
-tempmax.addEventListener("keyup", is_min_smaller);
-tempmin.addEventListener("keyup", is_min_smaller);
-*/
         
 document.addEventListener("DOMContentLoaded", function() {
   liter_radio.checked = true;
@@ -111,9 +93,7 @@ function litergallon() {
 if (gallon_radio.checked == true) {
 let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = gallon;
-//swtich_lg.innerHTML = use_liter;
-//swtich_lg.removeEventListener("click", litergallon);
-//swtich_lg.addEventListener("click", gallonliter);
+
 console_capacity = gallon;
 tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 tank_size_check ()
@@ -126,9 +106,6 @@ function gallonliter() {
   if (liter_radio.checked == true) {
 let cal_cap = tank_size.value;
 document.getElementById("size").innerHTML = liter;
-//swtich_lg.innerHTML = use_gallon;
-//swtich_lg.removeEventListener("click", gallonliter);
-//swtich_lg.addEventListener("click", litergallon);
 console_capacity = liter;
 tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 tank_size_check ()
@@ -138,40 +115,25 @@ tank_size_check ()
 // Conversion from celsius to farenheit [button]      
 function ctof() {
 let cal_tempmin = parseInt(tempmin.value);
-//let cal_tempmax = parseInt(tempmax.value);
 document.getElementById("min_t").innerHTML = farenheit;
-//document.getElementById("max_t").innerHTML = farenheit;
-//switch_cf.innerHTML = use_celsius;
-//switch_cf.removeEventListener("click", ctof);
-//switch_cf.addEventListener("click", ftoc);
 
 console_temperature =  farenheit;
 tempmin.value = Math.round((cal_tempmin * 9/5)+32);
-//tempmax.value = Math.round((cal_tempmax * 9/5)+32);
 tempmin.min = 39;
 tempmin.max = 95;
-//tempmax.min = 39; 
-//tempmax.max = 95;
+
 
   }
         
 // Conversion from farenheit to celsius [button] 
 function ftoc() {
 let cal_tempmin = parseInt(tempmin.value);
-//let cal_tempmax = parseInt(tempmax.value);
 document.getElementById("min_t").innerHTML = celsius;
-//document.getElementById("max_t").innerHTML = celsius;
-//switch_cf.innerHTML = use_farenheit;
-//switch_cf.addEventListener("click", ctof);
-//switch_cf.removeEventListener("click", ftoc)
 
 console_temperature = celsius;
 tempmin.value = Math.round((cal_tempmin-32)*5/9);
-//tempmax.value = Math.round((cal_tempmax-32)*5/9);
 tempmin.min = 4;
 tempmin.max = 35;
-//tempmax.min = 4; 
-//tempmax.max = 35;
   }
 
 // Select/deselect all [buttons] 
@@ -268,7 +230,6 @@ function all_deselect_behavior () {
   function search_button() {
       event.preventDefault();
       let v_tempmin = tempmin.value;
-     // let v_tempmax = tempmax.value; 
     
       let v_tank_size = tank_size.value; 
 
@@ -547,23 +508,4 @@ function tank_size_check () {
     }
 
   }
-
-  // Checking if minimum temperature is greater than maximum temperature 
-/*
-  function is_min_smaller () {
-  let tmin = parseInt(tempmin.value);
-  let tmax = parseInt(tempmax.value);
-
-  if (tmin > tmax ) {
-      temp_alert.style.display = 'inline-block';
-      tempmin.style.borderColor = 'red';
-    }
-
-  if (tmax >= tmin) {
-    temp_alert.style.display = 'none';
-    tempmin.style.borderColor = 'unset';
-  }
-
-  }
-*/ 
       
