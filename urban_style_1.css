@@ -125,19 +125,21 @@ div_breeding
 }
 
 
+/* more options div gird */ 
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto; 
-  /* gap: 10px; */
+   gap: 10px; 
   /* margin-top: 20px; */
   justify-content: center;
   align-items: center;
 }
 
 .grid-item {
-  /* width: 100px;
-  height: 100px;  */
+  /* width: 100px;  */
+  height: 100px; 
   /* display: flex; */
   justify-content: center;
   align-items: center;
