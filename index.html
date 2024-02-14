@@ -95,15 +95,16 @@
    <br>
 
 <!-- Here hardiness --> 
-    
 
-    <!-- Search button --> 
-     <button id = "search" role = "button"> Search </button>
-     <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
-     <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
-<!-- Alerts --> 
-<br> 
-<span id = "search_alert_temp"> </span>
+
+ <!-- advanced search options button --> 
+
+  <div id = "div_more_opt_button"> 
+  <p id = more_options_button> Click here for more search options</p>
+  </div> 
+
+
+ <!-- advanced search options nutton -->       
     
 </div> <!-- column div ends here -->
 
@@ -147,20 +148,13 @@
    <br> 
 <!-- Here store availability --> 
     
- <!-- advanced search options button --> 
 
-  <div id = "div_more_opt_button"> 
-  <p id = more_options_button> Click here for more search options</p>
-  </div> 
-
-
- <!-- advanced search options nutton -->       
 
     </div> <!-- second column div ends here -->
 
 </form>
         
-</div> <!-- main div --> 
+
 
 
 <div id = "more_options" style = "display: none" class = "grid-container"> 
@@ -223,6 +217,18 @@
     <!-- Breeding difficulty --> 
         
     </div> <!-- more options div --> 
+
+
+        <!-- Search button --> 
+    <button id = "search" role = "button"> Search </button>
+
+    <!-- Alerts --> 
+         <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
+         <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
+        <span id = "search_alert_temp"> </span>
+
+        
+    </div> <!-- main div --> 
 
 
 <script type="text/javascript" src="fish1.js"></script>
