@@ -143,23 +143,18 @@ tempmin.max = 35;
 
 // Select/deselect all [checkboxes] 
 //1 - Select/deselect all
-     function selectall_1 () {
+       function selectall_1 () {
+      var boxes = document.querySelectorAll('input[name="hardi"]');
       if (all_1.checked == true) {
-
-           beginner.checked = true; 
-           easy.checked = true; 
-           medium.checked = true; 
-           difficult.checked = true;
-          }
-           
+        boxes.forEach(function(box) {
+          box.checked = true;
+        });
+      } 
       else {
-           beginner.checked = false; 
-           easy.checked = false; 
-           medium.checked = false; 
-           difficult.checked = false;
+        boxes.forEach(function(box) {
+          box.checked = false;
+        });
       }
-
-
     }
       
 
