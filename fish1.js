@@ -455,7 +455,7 @@ function preCheck(min) {
       search_restart.style.display = 'none';
       search_pmeters.style.display = 'none';
       more_options_button.style.display = 'none';
-      more_options.style.display = 'inline-block';
+      more_options.style.display = 'grid';
       less_options_button.style.display = 'flex';
       search.style.display = 'flex';  
     }
