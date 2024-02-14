@@ -152,7 +152,7 @@
   <div id = "div_more_opt_button"> 
   <p id = more_options_button> Click here for more search options</p>
   </div> 
-  <div id = "more_options" style = "display: none"> 
+
 
  <!-- advanced search options nutton -->       
 
@@ -161,10 +161,12 @@
 </form>
         
 </div> <!-- main div --> 
-      
+
+
+<div id = "more_options" style = "display: none" class = "grid-container"> 
 
  <!-- Behavior --> 
-    <div id= "div_behavior" class = "tiles"> 
+    <div id= "div_behavior" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
 
    <input type="checkbox" id="all_3" name=""> <label for="all_3">select all</label>
@@ -185,7 +187,7 @@
 
      <!-- Agression level --> 
 
-    <div id = "div_agression" class = "tiles"> 
+    <div id = "div_agression" class = "tiles grid-item"> 
     <label for="" class = "parameter" >Agression level</label><br>
     <input type="checkbox" id="peaceful1" name="">
     <label for="">Peaceful</label>
@@ -201,7 +203,7 @@
 
  <!-- Breeding difficulty --> 
 
-     <div id = "div_breeding" class = "tiles"> 
+     <div id = "div_breeding" class = "tiles grid-item"> 
      <label for="" class = "parameter" >Breeding difficulty</label><br>
      <input type="checkbox" id="b_easy" name="" value ="">
      <label for="">Easy</label>
