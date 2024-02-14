@@ -3,7 +3,7 @@
 body {
   margin: 10px;
   padding: 0;
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: fit-content; /* This ensures that the container is centered vertically on the page */
@@ -122,4 +122,24 @@ div_breeding
   padding: 20px;
   box-shadow: 5px 5px 10px rgba(42, 5, 252, 0.3);
   border: 1px solid #ccc; /* Add a border to simulate depth */
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  /* gap: 10px; */
+  /* margin-top: 20px; */
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  /* width: 100px;
+  height: 100px;  */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
