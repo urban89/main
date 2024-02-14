@@ -90,6 +90,24 @@ document.addEventListener("DOMContentLoaded", function() {
   all_2.addEventListener("change",selectall_2);
   all_3.addEventListener("change",selectall_3);
   all_4.addEventListener("change",selectall_4);
+
+
+
+
+        // Uncheck select alls when any of the related checkboxes are unchecked 
+//////I need to split this into name reusable functions or something 
+  var hardi_chekboxes = document.querySelectorAll('input[name = "hardi"]');
+
+
+  hardi_chekboxes.forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
+      // If any individual checkbox is unchecked, uncheck the "select all" checkbox
+      if (!checkbox.checked) {
+        all_1.checked = false;
+      
+      }
+    });
+  });
         
 });
 
