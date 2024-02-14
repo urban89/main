@@ -59,6 +59,7 @@ let impossible = document.getElementById("impossible");
 let all_1 = document.getElementById("all_1");
 let all_2 = document.getElementById("all_2");
 let all_3 = document.getElementById("all_3");
+let all_4 = document.getElementById("all_4");
 
 // Starting functions     
 all_select_behavior ()
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
   all_1.addEventListener("change",selectall_1);
   all_2.addEventListener("change",selectall_2);
   all_3.addEventListener("change",selectall_3);
-
+  all_4.addEventListener("change",selectall_4);
         
 });
 
@@ -192,6 +193,25 @@ function selectall_3 () {
    }
 }
 
+//4 - Select/deselect all - agresssion 
+function selectall_4 () {
+  var boxes = document.querySelectorAll('input[name="agress"]');
+  if (all_4.checked == true) {
+
+    boxes.forEach(function(box) {
+      box.checked = true;
+    });
+  }
+       
+  else {
+
+    boxes.forEach(function(box) {
+      box.checked = false;
+    });
+  }
+
+
+}
 
 // Check all checkboxes when advanced options are collapsed 
         
