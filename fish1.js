@@ -61,6 +61,9 @@ let all_2 = document.getElementById("all_2");
 let all_3 = document.getElementById("all_3");
 let all_4 = document.getElementById("all_4");
 
+let hardi_chbx = document.querySelectorAll('input[name = "hardi"]');
+let avail_chbx = document.querySelectorAll('input[name = "avail"]');
+
 // Starting functions     
 all_select_behavior ()
 
@@ -91,23 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
   all_3.addEventListener("change",selectall_3);
   all_4.addEventListener("change",selectall_4);
 
-
-
-
-        // Uncheck select alls when any of the related checkboxes are unchecked 
-//////I need to split this into name reusable functions or something 
-  var hardi_chekboxes = document.querySelectorAll('input[name = "hardi"]');
-
-
-  hardi_chekboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('change', function () {
-      // If any individual checkbox is unchecked, uncheck the "select all" checkbox
-      if (!checkbox.checked) {
-        all_1.checked = false;
-      
-      }
-    });
-  });
+  listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
+  listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
         
 });
 
@@ -529,4 +517,26 @@ function tank_size_check () {
     }
 
   }
-      
+
+
+ //////Event listener adder for checkbox select/unselect logic 
+
+  function listenAdder (arr, funk) {
+      for (box of arr) {
+        box.addEventListener("change", funk);
+      }
+
+  }
+
+  function uncheckBox(arr, all_box) {
+    let checker = true; 
+    for (box of arr) {
+      if (!box.checked) {
+        all_box.checked = false; 
+        checker = false; 
+      }
+    }
+    if (checker) {
+      all_box.checked = true;
+    }
+  }
