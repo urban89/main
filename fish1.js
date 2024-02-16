@@ -302,7 +302,8 @@ function all_deselect_behavior () {
       let srch_soci = []; 
       let srch_agress = []; 
       let srch_breed = []; 
-      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, v_tank_size, v_tempmin];
+          
+     srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseInt(v_tank_size), parseInt(v_tempmin)];
 
      preCheck(v_tempmin);
 
