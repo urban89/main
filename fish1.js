@@ -442,17 +442,17 @@ function avail_list(x) {
 
 function behavior_list (x) {
   if (v_schooling1) {
-    x.push("Needs schooling")
+    x.push("Needs schooling");
     srch_soci.push(3);
   }
 
   if (v_schooling2) {
-    x.push("Prefers schooling")
+    x.push("Prefers schooling");
     srch_soci.push(2);
   }
 
   if (v_solitary) {
-    x.push("Prefers/accepts solitary life")
+    x.push("Prefers/accepts solitary life");
     srch_soci.push(1);
   }
 
