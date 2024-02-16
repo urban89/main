@@ -70,10 +70,6 @@ let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
 let srch_arr = []; 
 
-// Starting functions     
-all_select_behavior ()
-
-
 // Adding initial event listeners   
 search.addEventListener("click", search_button);
 search_restart.addEventListener("click", restart_search);
@@ -101,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
   all_4.addEventListener("change",selectall_4);
   all_5.addEventListener("change",selectall_5);
 
+  all_select_behavior (social_chbx);
+  all_select_behavior (agress_chbx);
+  all_select_behavior (breed_chbx);      
+
   listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
   listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
   listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
@@ -108,6 +108,22 @@ document.addEventListener("DOMContentLoaded", function() {
   listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
         
 });
+
+// Used for checking all checkboxes when advanced options are collapsed 
+        
+function all_select_behavior (x) {
+  x.forEach(function(box) {
+    box.checked = true; 
+  });
+}
+
+
+function all_deselect_behavior (x) {
+x.forEach(function(box) {
+ box.checked = false; 
+});; 
+}
+  
 
 
 // Conversion from liter to gallon [radio buttons]         
@@ -197,15 +213,15 @@ tempmin.max = 35;
    
 }
 
-//3 - Select/deselect all
+//3 - Select/deselect all - social behavior 
 
 function selectall_3 () {
    
    if (all_3.checked == true) {
-    all_select_behavior ();
+    all_select_behavior(social_chbx);
    }
    else {
-    all_deselect_behavior ();
+    all_deselect_behavior(social_chbx);
    }
 }
 
@@ -245,21 +261,6 @@ function selectall_5 () {
   }
 }
 
-
-// Check all checkboxes when advanced options are collapsed 
-        
-function all_select_behavior () {
-  schooling1.checked = true; 
-  schooling2.checked = true; 
-  solitary.checked = true; 
-}
-
-
-function all_deselect_behavior () {
-  schooling1.checked = false; 
-  schooling2.checked = false; 
-  solitary.checked = false; 
-}
       
 //////////////////////////////
 /// Search button function 
@@ -303,7 +304,7 @@ function all_deselect_behavior () {
       let srch_agress = []; 
       let srch_breed = []; 
           
-     srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseInt(v_tank_size), parseInt(v_tempmin)];
+     srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
 
      preCheck(v_tempmin);
 
@@ -359,12 +360,16 @@ function all_deselect_behavior () {
       let l_hardiness = [];
       let l_behavior = [];
       avail_list(l_avail);
-      hardiness_list(l_hardiness)
-      behavior_list(l_behavior)
+      hardiness_list(l_hardiness);
+      behavior_list(l_behavior);
+      agres_list(l_agress);
+      breed_list(l_breed);
   
       document.getElementById("p_avail").innerHTML = l_avail.join(", ");
       document.getElementById("p_hardiness").innerHTML = l_hardiness.join(", ");
       document.getElementById("p_social").innerHTML = l_behavior.join(", ");
+      document.getElementById("p_agression").innerHTML = l_agress.join(", ");
+      document.getElementById("p_breeding").innerHTML = l_breed.join(", ");
 
     console.log(srch_arr);
 
@@ -434,11 +439,6 @@ function avail_list(x) {
 }
 
 function behavior_list (x) {
-  if (!expanded) {
-    x.length = 0; 
-    x.push("All");
-  }
-
   if (v_schooling1) {
     x.push("Needs schooling")
     srch_soci.push(3);
@@ -454,11 +454,62 @@ function behavior_list (x) {
     srch_soci.push(1);
   }
 
-  if (all_3.checked) {
+  if (all_3.checked || (!expanded)) {
     x.length = 0; 
     x.push("All");
   }
 
+}
+  
+
+function agres_list(x) {
+  if (v_peaceful1) {
+    x.push("peaceful");
+    srch_agress.push(1);
+  }
+
+  if (v_peaceful2) {
+    x.push("semi-agresssive");
+    srch_agress.push(2);
+  }
+
+  if (v_aggressive) {
+    x.push("agressive");
+    srch_agress.push(3);
+  }
+
+  if (all_4.checked || (!expanded)) {
+    x.length = 0; 
+    x.push("All");
+  }
+
+}
+
+function breed_list(x) {
+  if (v_b_easy) {
+    x.push("easy");
+    srch_breed.push(1);
+  }
+
+  if (v_b_medium) {
+    x.push("medium");
+    srch_breed.push(2);
+  }
+
+  if (v_b_hard) {
+    x.push("hard");
+    srch_breed.push(3);
+  }
+
+  if (v_impossible) {
+    x.push("impossible");
+    srch_breed.push(4);
+  }
+
+  if (all_5.checked || (!expanded)) {
+    x.length = 0; 
+    x.push("All");
+  }
 }
       
  // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
@@ -502,13 +553,17 @@ function preCheck(min) {
   function options_expand() {
     expanded = true; 
     checker_1 ()
-    all_deselect_behavior () 
+    all_deselect_behavior (social_chbx);
+    all_deselect_behavior (agress_chbx);
+    all_deselect_behavior (breed_chbx);
   }
 
   function options_collapse() {
     expanded = false; 
     checker_1 ()
-    all_select_behavior ()
+    all_select_behavior (social_chbx);
+    all_select_behavior (agress_chbx);
+    all_select_behavior (breed_chbx);
   }
 
     function checker_1 () {
