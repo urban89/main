@@ -365,8 +365,13 @@ function all_deselect_behavior () {
       document.getElementById("p_hardiness").innerHTML = l_hardiness.join(", ");
       document.getElementById("p_social").innerHTML = l_behavior.join(", ");
 
-  
- // Functions for populating search results dashboard with the chosen parameters
+    console.log(srch_arr);
+
+
+          
+    ///// long ass search function ends here 
+       //////////////////////////
+   // Functions for populating search results dashboard with the chosen parameters
 
 
   function hardiness_list(x) {
