@@ -68,6 +68,8 @@ let social_chbx = document.querySelectorAll('input[name = "social"]');
 let agress_chbx = document.querySelectorAll('input[name = "agress"]');
 let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
+let srch_arr = []; 
+
 // Starting functions     
 all_select_behavior ()
 
@@ -295,6 +297,13 @@ function all_deselect_behavior () {
       let selection_alert = "Some search parameters were not selected: ";
       let selection_alert_arr = []; 
 
+      let srch_hardi = []; 
+      let srch_avail = []; 
+      let srch_soci = []; 
+      let srch_agress = []; 
+      let srch_breed = []; 
+      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, v_tank_size, v_tempmin];
+
      preCheck(v_tempmin);
 
       if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
@@ -357,29 +366,32 @@ function all_deselect_behavior () {
       document.getElementById("p_social").innerHTML = l_behavior.join(", ");
 
   
-   // Functions for populating search parameters summary 
-
+ // Functions for populating search results dashboard with the chosen parameters
 
 
   function hardiness_list(x) {
 
   if (v_beginner) {
         x.push("beginner");
+        srch_hardi.push(4);
     }
      
      if (v_easy) {
       x.push("easy");
+      srch_hardi.push(3);
     }
 
      if(v_medium) {
       x.push("medium");
+      srch_hardi.push(2);
     }
 
      if(v_difficult) {
       x.push("difficult");
+      srch_hardi.push(1);
     }
 
-    if (v_beginner && v_easy && v_medium && v_difficult) {
+    if (all_1.checked) {
     x.length = 0; 
     x.push("All");
   }
@@ -389,21 +401,26 @@ function all_deselect_behavior () {
 function avail_list(x) {
   if (v_verycommon) {
         x.push("very common");
+        srch_avail.push(4);
     }
      
       if (v_common) {
       x.push("common");
+      srch_avail.push(3);
     }
+    
 
     if (v_rare) {
       x.push("rare");
+      srch_avail.push(2);
     }
 
     if (v_veryrare) {
       x.push("very rare");
+      srch_avail.push(1);
     }
 
-       if (v_verycommon && v_common && v_rare && v_veryrare) {
+       if (all_2.checked) {
     x.length = 0; 
     x.push("All");
   }
@@ -418,17 +435,20 @@ function behavior_list (x) {
 
   if (v_schooling1) {
     x.push("Needs schooling")
+    srch_soci.push(3);
   }
 
   if (v_schooling2) {
     x.push("Prefers schooling")
+    srch_soci.push(2);
   }
 
   if (v_solitary) {
     x.push("Prefers/accepts solitary life")
+    srch_soci.push(1);
   }
 
-  if (v_schooling1 && v_schooling2 && v_solitary) {
+  if (all_3.checked) {
     x.length = 0; 
     x.push("All");
   }
