@@ -1,18 +1,3 @@
-let fish_list = []; 
-
-
-function fishSelect (uncare) {
-    for (fish of fish_master) {
-        if (uncare == fish.uncare)
-        fish_list.push(fish);
-       
-    }
-    console.log(fish_list);
-}
-
-
-
-
 ////////////////////////////////////////////////////////////
 ////// This is the array of all fishes /////////////////////
 
