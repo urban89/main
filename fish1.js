@@ -60,9 +60,13 @@ let all_1 = document.getElementById("all_1");
 let all_2 = document.getElementById("all_2");
 let all_3 = document.getElementById("all_3");
 let all_4 = document.getElementById("all_4");
+let all_5 = document.getElementById("all_5");
 
 let hardi_chbx = document.querySelectorAll('input[name = "hardi"]');
 let avail_chbx = document.querySelectorAll('input[name = "avail"]');
+let social_chbx = document.querySelectorAll('input[name = "social"]');
+let agress_chbx = document.querySelectorAll('input[name = "agress"]');
+let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
 // Starting functions     
 all_select_behavior ()
@@ -93,9 +97,13 @@ document.addEventListener("DOMContentLoaded", function() {
   all_2.addEventListener("change",selectall_2);
   all_3.addEventListener("change",selectall_3);
   all_4.addEventListener("change",selectall_4);
+  all_5.addEventListener("change",selectall_5);
 
   listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
   listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
+  listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
+  listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
+  listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
         
 });
 
@@ -215,9 +223,26 @@ function selectall_4 () {
       box.checked = false;
     });
   }
-
-
 }
+
+//5 - Select/deselect all - breeding
+function selectall_5 () {
+  var boxes = document.querySelectorAll('input[name="breed"]');
+  if (all_5.checked == true) {
+
+    boxes.forEach(function(box) {
+      box.checked = true;
+    });
+  }
+       
+  else {
+
+    boxes.forEach(function(box) {
+      box.checked = false;
+    });
+  }
+}
+
 
 // Check all checkboxes when advanced options are collapsed 
         
