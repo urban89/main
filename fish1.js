@@ -303,6 +303,7 @@ function selectall_5 () {
       let srch_soci = []; 
       let srch_agress = []; 
       let srch_breed = []; 
+      let fish_list = []; 
           
      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
 
@@ -375,8 +376,18 @@ function selectall_5 () {
 
     console.log(srch_arr);
 
-
           
+     function fishSelect ()  {
+    for (fish of fish_master) {
+       if (srch_hardi.includes(parseInt(fish.uncare))) {
+       fish_list.push(fish);
+    } 
+  }
+    console.log(fish_list);
+}
+          
+
+          fishSelect ()
     ///// long ass search function ends here 
        //////////////////////////
    // Functions for populating search results dashboard with the chosen parameters
