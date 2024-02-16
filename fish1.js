@@ -359,6 +359,8 @@ function selectall_5 () {
       let l_avail = [];
       let l_hardiness = [];
       let l_behavior = [];
+      let l_agress = [];
+      let l_breed = [];
       avail_list(l_avail);
       hardiness_list(l_hardiness);
       behavior_list(l_behavior);
