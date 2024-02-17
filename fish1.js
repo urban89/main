@@ -377,17 +377,38 @@ function selectall_5 () {
     console.log(srch_arr);
 
           
-     function fishSelect ()  {
+      function fishFinder ()  {
     for (fish of fish_master) {
-       if (srch_hardi.includes(parseInt(fish.uncare))) {
+       let fish_temp_min = parseFloat(fish.temperature_min);
+       let fish_temp_max = parseFloat(fish.temperature_max); 
+       let fish_cap = parseFloat(fish.tank_size_liter);
+
+       if (console_capacity == gallon) {
+        fish_cap = fish_cap * 0.264172;
+       }
+
+       if (console_temperature == farenheit) {
+        fish_temp_min = (fish_temp_min * 9/5)+32;
+        fish_temp_max = (fish_temp_max * 9/5)+32;
+       }
+
+       if ((srch_hardi.includes(parseInt(fish.uncare))) && 
+       (srch_avail.includes(parseInt(fish.availability))) && 
+       (srch_soci.includes(parseInt(fish.school))) && 
+       (srch_agress.includes(parseInt(fish.agression))) &&
+       (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
+       (v_tank_size > fish_cap) && 
+       (fish_temp_min < v_tempmin) && (v_tempmin < fish_temp_max)){
+
        fish_list.push(fish);
+
     } 
   }
     console.log(fish_list);
 }
           
 
-          fishSelect ()
+          fishFinder ()
     ///// long ass search function ends here 
        //////////////////////////
    // Functions for populating search results dashboard with the chosen parameters
