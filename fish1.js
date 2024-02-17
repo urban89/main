@@ -597,7 +597,8 @@ function preCheck(min) {
 
  function restart_search() {
     on_search_page = true; 
-    checker_1 ()
+    checker_1 ();
+    result_div.innerHTML = ""; 
 
   }
 
