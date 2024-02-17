@@ -68,6 +68,8 @@ let social_chbx = document.querySelectorAll('input[name = "social"]');
 let agress_chbx = document.querySelectorAll('input[name = "agress"]');
 let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
+let result_div = document.getElementById("result");
+
 let srch_arr = []; 
 
 // Adding initial event listeners   
@@ -376,8 +378,8 @@ function selectall_5 () {
 
     console.log(srch_arr);
 
-          
-      function fishFinder ()  {
+          /////using the user input to create a search result array by iterating over the fish_master 
+      function fishFinder ()  {   
     for (fish of fish_master) {
        let fish_temp_min = parseFloat(fish.temperature_min);
        let fish_temp_max = parseFloat(fish.temperature_max); 
@@ -406,9 +408,24 @@ function selectall_5 () {
   }
     console.log(fish_list);
 }
+
+
+   ///////////////////Outputting serach results to UI
+    function fishSelect () {
+    let list_fish = document.createElement("ul");
+
+    for (let i = 0; i < fish_list.length; i++) {
+      let list_fish_element = document.createElement("li");
+      list_fish_element.textContent = `${i+1} ${fish_list[i].name_english}`;
+      list_fish.appendChild(list_fish_element);
+    }
+
+    result_div.appendChild(list_fish);
+  }
           
 
           fishFinder ()
+          fishSelect ()
     ///// long ass search function ends here 
        //////////////////////////
    // Functions for populating search results dashboard with the chosen parameters
