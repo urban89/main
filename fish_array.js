@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 ////// This is the array of all fishes /////////////////////
 
-let fish_master =  [
+const fish_master =  [
   {
     fish_id: "1",
     name_english: "Brown-Point Shield Skin",
