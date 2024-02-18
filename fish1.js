@@ -410,14 +410,19 @@ function selectall_5 () {
 }
 
 
-   ///////////////////Outputting serach results to UI
+  ///////////////////Outputting serach results to UI
     function fishSelect () {
     let list_fish = document.createElement("ul");
 
     for (let i = 0; i < fish_list.length; i++) {
       let list_fish_element = document.createElement("li");
+      let image_element = document.createElement('img');
+      image_element.src = `fishimg/images/${fish_list[i].fish_id}.jpeg`;
+      image_element.width = 200;
+      image_element.height = 150;
       list_fish_element.textContent = `${i+1} ${fish_list[i].name_english}`;
       list_fish.appendChild(list_fish_element);
+      list_fish.appendChild(image_element);
     }
 
     result_div.appendChild(list_fish);
