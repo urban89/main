@@ -417,7 +417,7 @@ function selectall_5 () {
     for (let i = 0; i < fish_list.length; i++) {
       let list_fish_element = document.createElement("li");
       let image_element = document.createElement('img');
-      image_element.src = `fishimg/images/${fish_list[i].fish_id}.jpeg`;
+      image_element.src = `images/${fish_list[i].fish_id}.jpeg`;
       image_element.width = 200;
       image_element.height = 150;
       list_fish_element.textContent = `${i+1} ${fish_list[i].name_english}`;
