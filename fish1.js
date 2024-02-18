@@ -13,10 +13,10 @@ let expanded = false;
 let minimum_liter = 20;
 let minimum_gallon = 5.3; 
 
-let = temp_alert = document.getElementById("mintemp_alert"); 
+let temp_alert = document.getElementById("mintemp_alert"); 
 let search_alert_temp = document.getElementById("search_alert_temp");
         
-let = tempmin = document.getElementById('tempmin'); 
+let tempmin = document.getElementById('tempmin'); 
 let convert_fc = document.getElementById("convert_fc");
 let convert_cf = document.getElementById("convert_cf");
 
@@ -77,9 +77,9 @@ search.addEventListener("click", search_button);
 search_restart.addEventListener("click", restart_search);
 more_options_button.addEventListener("click", options_expand);        
 less_options_button.addEventListener("click", options_collapse);       
-document.getElementById("tank_size").addEventListener("blur", tank_size_check);
-document.getElementById("tank_size").addEventListener("keyup", tank_size_check);
-document.getElementById("tank_size").addEventListener("click", tank_size_check);
+tank_size.addEventListener("blur", tank_size_check);
+tank_size.addEventListener("keyup", tank_size_check);
+tank_size.addEventListener("click", tank_size_check);
 
         
 document.addEventListener("DOMContentLoaded", function() {
