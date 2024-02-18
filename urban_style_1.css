@@ -145,3 +145,9 @@ div_breeding
   align-items: center;
   padding: 20px;
 }
+
+
+ul {
+  list-style-type: none;
+  padding: 0; /* Optional: Remove default padding */
+}
