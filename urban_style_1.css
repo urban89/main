@@ -32,7 +32,7 @@ body {
 .body-color-1 {
  /*background-color: #AAC4FF ; */
  background: rgb(210,218,255);
- background: linear-gradient(0deg, rgba(210,218,255,1) 0%, rgba(170,196,255,1) 59%);
+  background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
 background-attachment: fixed;
 
 
