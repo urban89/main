@@ -413,22 +413,30 @@ function selectall_5 () {
 
 
   ///////////////////Outputting serach results to UI
-    function fishSelect () {
-    let list_fish = document.createElement("ul");
+      function fishSelect () {
+  
 
-    for (let i = 0; i < fish_list.length; i++) {
-      let list_fish_element = document.createElement("li");
+
+
+    let result_lists = document.createElement("div");
+    result_lists.className = "result_item"; 
+
+    for (let i = 0; i <fish_list.length; i++) {
+      let result_lists_element = document.createElement("p");
       let image_element = document.createElement('img');
       image_element.src = `images/${fish_list[i].fish_id}.jpeg`;
       image_element.width = 200;
       image_element.height = 150;
-      list_fish_element.textContent = `${i+1} ${fish_list[i].name_english}`;
-      list_fish.appendChild(list_fish_element);
-      list_fish.appendChild(image_element);
+      image_element.borderColor = "#05224f";
+      image_element.border = "1px"; 
+      image_element.style.borderRadius = '3px';
+      result_lists_element.textContent = `${i+1} ${fish_list[i].name_english}`;
+      result_lists.appendChild(result_lists_element);
+      result_lists.appendChild(image_element);
     }
-
-    result_div.appendChild(list_fish);
-  }
+  
+    result_div.appendChild(result_lists);
+} 
           
 
           fishFinder ()
