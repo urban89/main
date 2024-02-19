@@ -69,6 +69,7 @@ let agress_chbx = document.querySelectorAll('input[name = "agress"]');
 let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
 let result_div = document.getElementById("result");
+let num_results = document.getElementById("num_results");
 
 let srch_arr = []; 
 
@@ -407,6 +408,7 @@ function selectall_5 () {
     } 
   }
     console.log(fish_list);
+    num_results.innerHTML = fish_list.length;
 }
 
 
