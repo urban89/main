@@ -147,7 +147,26 @@ div_breeding
 }
 
 
-ul {
-  list-style-type: none;
-  padding: 0; /* Optional: Remove default padding */
+.column_result {
+  
+  margin: 10px; /* Adjust margin as needed */
+  display: flex; 
+
+} 
+
+
+.result_item {
+  flex: 0 0 calc(33.33% - 10px); /* 33.33% width with 10px spacing between items */
+  margin: 5px; /* Adjust margin as needed */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px;
+} 
+
+
+/* Not ussed at the moment */
+.fish_card {
+  border-color: black;
 }
+
+
