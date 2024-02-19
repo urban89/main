@@ -400,8 +400,8 @@ function selectall_5 () {
        (srch_soci.includes(parseInt(fish.school))) && 
        (srch_agress.includes(parseInt(fish.agression))) &&
        (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
-       (v_tank_size > fish_cap) && 
-       (fish_temp_min < v_tempmin) && (v_tempmin < fish_temp_max)){
+       (v_tank_size >= fish_cap) && 
+       (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
 
        fish_list.push(fish);
 
