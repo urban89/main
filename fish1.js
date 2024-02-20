@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
           
      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
 
-     preCheck(v_tempmin);
+     preCheckTemperature(v_tempmin);
 
       if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
       selection_missing = true;
@@ -437,15 +437,15 @@ function breed_list(x) {
 
   // Check data before search and display alert if needed 
 
-function preCheck(min) {
+function preCheckTemperature(temp) {
 
-  if ((min < 4 || min > 35) && console_temperature === celsius) {
+  if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
       search_alert_temp.style.display = 'inline-block';
       return FALSE; 
     }
 
-    else if ((min <  39 || min >  95) && console_temperature === farenheit) {
+    else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
       search_alert_temp.style.display = 'inline-block';
       return FALSE; 
