@@ -62,7 +62,10 @@ function all_select_behavior (x) {
   tempmin.min = 4;
   tempmin.max = 35;
     }
-  
+
+
+/* this has been simplified with one single function 
+
   // Select/deselect all [checkboxes] 
   //1 - Select/deselect all
          function selectall_1 () {
@@ -149,4 +152,4 @@ function all_select_behavior (x) {
       });
     }
   }
-  
+  */ 
