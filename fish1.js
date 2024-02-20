@@ -94,11 +94,12 @@ document.addEventListener("DOMContentLoaded", function() {
   gallon_radio.addEventListener("change", litergallon);
   convert_fc.addEventListener("change", ftoc);
   convert_cf.addEventListener("change", ctof);
-  all_1.addEventListener("change",selectall_1);
-  all_2.addEventListener("change",selectall_2);
-  all_3.addEventListener("change",selectall_3);
-  all_4.addEventListener("change",selectall_4);
-  all_5.addEventListener("change",selectall_5);
+
+  all_1.addEventListener("change",function () {selectall(hardi_chbx, all_1);});
+  all_2.addEventListener("change",function () {selectall(avail_chbx, all_2);});
+  all_3.addEventListener("change",function () {selectall(social_chbx, all_3);});
+  all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
+  all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
 
   all_select_behavior (social_chbx);
   all_select_behavior (agress_chbx);
@@ -559,5 +560,20 @@ function tank_size_check () {
     }
     if (checker) {
       all_box.checked = true;
+    }
+  }
+
+
+  //// Select all / deselect all function 
+  function selectall (group, all) {
+    if (all.checked == true) {
+      group.forEach(function(box) {
+        box.checked = true;
+      });
+    } 
+    else {
+      group.forEach(function(box) {
+        box.checked = false;
+      });
     }
   }
