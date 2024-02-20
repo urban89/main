@@ -15,6 +15,14 @@ let minimum_gallon = 5.3;
 
 let temp_alert = document.getElementById("mintemp_alert"); 
 let search_alert_temp = document.getElementById("search_alert_temp");
+
+let div_tank_size = document.getElementById("div_tank_size");
+let div_hardiness = document.getElementById("div_hardiness");
+let div_temp = document.getElementById("div_temp");
+let div_avail = document.getElementById("div_avail");
+let div_behavior = document.getElementById("div_behavior");
+let div_agression =  document.getElementById("div_agression");
+let div_breeding =  document.getElementById("div_breeding");
         
 let tempmin = document.getElementById('tempmin'); 
 let convert_fc = document.getElementById("convert_fc");
@@ -160,42 +168,90 @@ document.addEventListener("DOMContentLoaded", function() {
      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
 
      preCheckTemperature(v_tempmin);
+     preCheckCheckboxes (); 
 
+      function preCheckCheckboxes () {
       if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
       selection_missing = true;
-      document.getElementById('availabilty').classList.add('notselected');
-      selection_alert_arr.push ("availability");
+      div_avail.classList.add('notselected');
+      div_avail.classList.remove('tiles');
+    }
+
+    else {
+      div_avail.classList.remove('notselected');
+      div_avail.classList.add('tiles');
     }
 
     if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
       selection_missing = true;
-      document.getElementById('difficulty').classList.add('notselected');
-      selection_alert_arr.push ("difficulty");
+      div_hardiness.classList.add('notselected');
+      div_hardiness.classList.remove('tiles');
+    }
+
+    else {
+      div_hardiness.classList.remove('notselected');
+      div_hardiness.classList.add('tiles');
     }
 
      if (!v_schooling1 && !v_schooling2 && !v_solitary) {
       selection_missing = true;
-      document.getElementById('behavior').classList.add('notselected');
-      selection_alert_arr.push ("behavior");
+      div_behavior.classList.add('notselected');
+      div_behavior.classList.remove('tiles');
+    }
+
+    else {
+      div_behavior.classList.remove('notselected');
+      div_behavior.classList.add('tiles');
+    }
+
+    if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
+      selection_missing = true;
+      div_agression.classList.add('notselected');
+      div_agression.classList.remove('tiles');
+    }
+
+    else {
+      div_agression.classList.remove('notselected');
+      div_agression.classList.add('tiles');
+    }
+
+    if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
+      selection_missing = true;
+      div_breeding.classList.add('notselected');
+      div_breeding.classList.remove('tiles');
+    }
+
+    else {
+      div_breeding.classList.remove('notselected');
+      div_breeding.classList.add('tiles');
     }
 
       
 
-    if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)) {
-      document.getElementById('availabilty').classList.remove('notselected');
-      document.getElementById('difficulty').classList.remove('notselected');
-      document.getElementById('behavior').classList.remove('notselected');
+    if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
+    && (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)) {
+      div_avail.classList.remove('notselected');
+      div_hardiness.classList.remove('notselected');
+      div_behavior.classList.remove('notselected');
+      div_agression.classList.remove('notselected');
+      div_breeding.classList.remove('notselected');
+
+      div_avail.classList.add('tiles');
+      div_hardiness.classList.add('tiles');
+      div_behavior.classList.add('tiles');
+      div_agression.classList.add('tiles');
+      div_breeding.classList.add('tiles');
+
+
       selection_missing = false;
 
     }
       
-
-
+    
       if (selection_missing) {
-        alert(selection_alert + selection_alert_arr.join(", "));
-        return; 
+        return FALSE; 
       }
-      
+    }      
 
       document.getElementById("main_form").style.display = 'none';
       document.getElementById("search_restart").style.display = 'inline-block';
