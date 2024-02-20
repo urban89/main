@@ -44,8 +44,11 @@ background-attachment: fixed;
 }
 
 .notselected {
-  font-style: italic;
-  color: #5e0045; 
+  background: linear-gradient(188deg, #c0a2f6 0%, #a37d92 100%);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgb(70, 3, 4);
+  border: 1px solid #ccc; /* Add a border to simulate depth */
     }
 
 
@@ -168,5 +171,7 @@ div_breeding
 .fish_card {
   border-color: black;
 }
+
+
 
 
