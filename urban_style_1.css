@@ -33,6 +33,12 @@ body {
   }
 }
 
+@media screen and (min-width: 1110px) {
+  #maindiv {
+    width: 65vw;
+  }
+}
+
 @media screen and (min-width: 1300px) {
   #maindiv {
     width: 60vw;
