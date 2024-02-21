@@ -82,6 +82,8 @@ let num_results = document.getElementById("num_results");
 let srch_arr = []; 
 
 // Adding initial event listeners   
+document.addEventListener("DOMContentLoaded", function() {
+
 search.addEventListener("click", search_button);
 search_restart.addEventListener("click", restart_search);
 more_options_button.addEventListener("click", options_expand);        
@@ -89,9 +91,7 @@ less_options_button.addEventListener("click", options_collapse);
 tank_size.addEventListener("blur", tank_size_check);
 tank_size.addEventListener("keyup", tank_size_check);
 tank_size.addEventListener("click", tank_size_check);
-
-        
-document.addEventListener("DOMContentLoaded", function() {
+  
   liter_radio.checked = true;
   convert_fc.checked = true; 
   document.getElementById("tank_size_alert").style.display = 'none';
@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
           
      srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
 
+      // Checking if temperature and tank size are ok; + checking if checkboxes were selected     
      preCheckTemperature(v_tempmin);
      preCheckCheckboxes (); 
 
@@ -253,18 +254,21 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }      
 
+
+       // Should add these to a separate event listener and remove them from this search   
       document.getElementById("main_form").style.display = 'none';
       document.getElementById("search_restart").style.display = 'inline-block';
       document.getElementById("search_pmeters").style.display = 'inline-block';
 
-
-// Adding capacity and temeprature to search paramters summary 
+          
+ // Populating search search summary       
+// Adding capacity and temeprature to search summary   
 
     document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
     document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin}`;
   
-  // Populating search parameters summary 
-
+ 
+// Adding requirements to search paramters summary 
       let l_avail = [];
       let l_hardiness = [];
       let l_behavior = [];
@@ -284,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log(srch_arr);
 
-          /////using the user input to create a search result array by iterating over the fish_master 
+          /////using the user input to create a search result array by iterating over the fish_master array 
       function fishFinder ()  {   
     for (fish of fish_master) {
        let fish_temp_min = parseFloat(fish.temperature_min);
@@ -319,10 +323,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   ///////////////////Outputting serach results to UI
       function fishSelect () {
-  
-
-
-
     let result_lists = document.createElement("div");
     result_lists.className = "result_item"; 
 
@@ -348,9 +348,8 @@ document.addEventListener("DOMContentLoaded", function() {
           fishSelect ()
     ///// long ass search function ends here 
        //////////////////////////
-   // Functions for populating search results dashboard with the chosen parameters
-
-
+          
+   // Functions for populating search summary with the chosen parameters + this one is also responsible for building the array that I use to iterate over fish_master and find results 
   function hardiness_list(x) {
 
   if (v_beginner) {
@@ -484,7 +483,7 @@ function breed_list(x) {
 }
       
  // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
-
+// This too I should add to a separate function
       
    document.getElementById("less_options_button").style.display = 'none';
    on_search_page = false;
