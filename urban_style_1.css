@@ -11,12 +11,41 @@ body {
 
 
 #maindiv {
-  width: 50vw; /* Set the desired width of your rectangle */
+  width: 90vw; 
   margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Optional: Add padding to the content inside the container */
+  padding: 20px; /* Add padding to the content inside the container */
   border-radius: 5px; 
   display: inline-block; 
+  white-space: nowrap;
 }
+
+/* trying to make it adaptive */ 
+
+@media screen and (min-width: 800px) {
+  #maindiv {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  #maindiv {
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #maindiv {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #maindiv {
+    width: 50vw;
+  }
+}
+
+
 
 #main_form {
   display: flex; 
