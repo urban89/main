@@ -33,7 +33,7 @@
     <div id = "maindiv"> 
 <p id = "welcome" class = "tiles"> Select attributes to find different freshwater aquarium fish based on their requirements. </p> 
 
-<!--  search parameters summary-->
+<!--  search summary-->
 <div id = "search_pmeters" style = "display: none">
   <p> Search parameters </p>
 
@@ -49,15 +49,11 @@
 
   <br>
  </div>        
-
-<!-- search parameters summary -->
-
-
         
 <span id = "search_restart" style = "display: none"> Click here to start another search </span>
         
 <form action="" id = "main_form">
-     <!-- Tank size --> 
+<!-- Tank size --> 
 <div class = "column"> 
 <div id = "div_tank_size" class = "tiles"> 
 <label for="" class = "parameter"> Aquarium size: </label>
@@ -69,7 +65,7 @@
 </div> 
 <br>
 <br> 
- <!-- Tank size --> 
+
     
 <!-- Here hardiness --> 
   <div id = "div_hardiness" class = "tiles"> 
@@ -92,9 +88,6 @@
   </div>
    <br> 
    <br>
-
-<!-- Here hardiness --> 
-
 
  <!-- advanced search options button --> 
 
@@ -122,10 +115,8 @@
 </div> 
 <br> 
 <br>  
-    
- <!-- Temperature --> 
 
-    <!-- Here store availability --> 
+<!-- Here store availability --> 
     <div id = "div_avail" class = "tiles"> 
 <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
  <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
@@ -145,8 +136,6 @@
    </div>
    <br> 
    <br> 
-<!-- Here store availability --> 
-    
 
 
     </div> <!-- second column div ends here -->
@@ -174,10 +163,9 @@
     <input type="checkbox" id="solitary" name="social">
     <label for="solitary">Solitary</label>
     </div> 
+ 
 
-     <!-- Behavior --> 
-
-     <!-- Agression level --> 
+<!-- Agression level --> 
 
     <div id = "div_agression" class = "tiles grid-item"> 
     <label for="" class = "parameter" >Agression level</label><br>
@@ -191,8 +179,6 @@
     <input type="checkbox" id="aggressive" name="agress">
     <label for="aggressive">Agressive</label>
     </div> 
-
- <!-- Agression level --> 
 
  <!-- Breeding difficulty --> 
 
@@ -214,17 +200,16 @@
         <!-- fewer search options   --> 
      <p id = less_options_button style = "display: none"> Click here for fewer search options</p>
 
-    <!-- Breeding difficulty --> 
         
     </div> <!-- more options div --> 
 
 
-     <!-- Search button --> 
+<!-- Search button --> 
     <div id = "search_button_div">     
     <button id = "search" role = "button"> Search </button>
     </div>
-
-       <!-- Alerts --> 
+        
+<!-- Alerts --> 
          <div id = "alerts_div"> 
          <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
          <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
