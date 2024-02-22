@@ -33,58 +33,51 @@
     <div id = "maindiv"> 
 <p id = "welcome" class = "tiles"> Select attributes to find different freshwater aquarium fish based on their requirements. </p> 
 
-<!--  search summary-->
-<div id = "search_pmeters" style = "display: none">
-  <p> Search parameters </p>
-
-  <span> Aquarium size:   </span>  <span id ="p_tanksize"> </span> <br>
-  <span> Water temperature:   </span>  <span id ="p_temp">     </span> <br>
-  <span> Keeping difficult:   </span>  <span id ="p_hardiness"></span> <br>  
-  <span> Purchase availability:  </span>  <span id ="p_avail">    </span> <br>
-  <span> Social behavior:     </span>  <span id ="p_social">   </span> <br>
-  <span> Agression level:     </span>  <span id ="p_agression"></span> <br>
-  <span> Breeding difficulty: </span>  <span id ="p_breeding"> </span> <br>
-  <span> Number of search results: </span> <span id ="num_results"> </span>
-  <br>
-
-  <br>
- </div>        
+<!-- Search summary -->
+    <div id = "search_pmeters" style = "display: none">
+      <p> Search parameters </p>
+        <span> Aquarium size:   </span>  <span id ="p_tanksize"> </span> <br>
+        <span> Water temperature:   </span>  <span id ="p_temp">     </span> <br>
+        <span> Keeping difficult:   </span>  <span id ="p_hardiness"></span> <br>  
+        <span> Purchase availability:  </span>  <span id ="p_avail">    </span> <br>
+        <span> Social behavior:     </span>  <span id ="p_social">   </span> <br>
+        <span> Agression level:     </span>  <span id ="p_agression"></span> <br>
+        <span> Breeding difficulty: </span>  <span id ="p_breeding"> </span> <br>
+        <span> Number of search results: </span> <span id ="num_results"> </span>
+    </div>        
         
 <span id = "search_restart" style = "display: none"> Click here to start another search </span>
         
 <form action="" id = "main_form">
 <!-- Tank size --> 
-<div class = "column"> 
-<div id = "div_tank_size" class = "tiles"> 
-<label for="" class = "parameter"> Aquarium size: </label>
-<input style="width:55px" value="75" type="number" id="tank_size" name="">
-<span id = size> Liter </span>
-<br>
-<input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
-<input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
-</div> 
+  <div class = "column"> 
+    <div id = "div_tank_size" class = "tiles"> 
+      <label for="" class = "parameter"> Aquarium size: </label>
+      <input style="width:55px" value="75" type="number" id="tank_size" name="">
+      <span id = size> Liter </span> <br>
+      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
+      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
+    </div> 
 <br>
 <br> 
 
     
-<!-- Here hardiness --> 
+<!-- Hardiness --> 
   <div id = "div_hardiness" class = "tiles"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
- <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
-   <br>
-    
-   <input type="checkbox" id="beginner" name="hardi">
-   <label for="beginner">Beginner</label>
-   <br>
-   <input type="checkbox" id="easy" name="hardi">
-   <label for="easy">Easy</label>
-   <br>
-   <input type="checkbox" id="medium" name="hardi">
-   <label for="medium">Medium</label>
-   <br> 
-   <input type="checkbox" id="difficult" name="hardi">
-   <label for="difficult">Difficult</label>
-
+    <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
+    <br>
+    <input type="checkbox" id="beginner" name="hardi">
+    <label for="beginner">Beginner</label>
+    <br>
+    <input type="checkbox" id="easy" name="hardi">
+    <label for="easy">Easy</label>
+    <br>
+    <input type="checkbox" id="medium" name="hardi">
+    <label for="medium">Medium</label>
+    <br> 
+    <input type="checkbox" id="difficult" name="hardi">
+    <label for="difficult">Difficult</label>
   </div>
    <br> 
    <br>
@@ -92,48 +85,43 @@
  <!-- advanced search options button --> 
 
   <div id = "div_more_opt_button"> 
-  <p id = more_options_button> Click here for more search options</p>
+      <p id = more_options_button> Click here for more search options</p>
   </div> 
-
-
- <!-- advanced search options nutton -->       
+      
     
 </div> <!-- column div ends here -->
 
 
 <!-- Temperature --> 
-<div class = "column">
-<div id = "div_temp" class = "tiles"> 
-<label for="" class = "parameter">Water temperature: </label> 
-<input type="number" style="width:35px" id="tempmin" name="" min="4" max="35" value = "23" />
-<span id = min_t> Celsius </span>
-<br>
-<input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
-<input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label>
-
-    
-</div> 
+  <div class = "column">
+    <div id = "div_temp" class = "tiles"> 
+      <label for="" class = "parameter">Water temperature: </label> 
+      <input type="number" style="width:35px" id="tempmin" name="" min="4" max="35" value = "23" />
+      <span id = min_t> Celsius </span>
+      <br>
+      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
+      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
+    </div> 
 <br> 
 <br>  
 
-<!-- Here store availability --> 
+<!-- Store availability --> 
     <div id = "div_avail" class = "tiles"> 
-<label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
- <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
-   <br>
-    
-   <input type="checkbox" id="verycommon" name="avail">
-    <label for="verycommon">Very common</label>
-   <br>
-   <input type="checkbox" id="common" name="avail">
-   <label for="common">Common</label>
-   <br>
-   <input type="checkbox" id="rare" name="avail">
-   <label for="rare">Rare</label>
-   <br> 
-   <input type="checkbox" id="veryrare" name="avail">
-   <label for="veryrare">Very rare</label>
-   </div>
+      <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
+      <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
+      <br>
+      <input type="checkbox" id="verycommon" name="avail">
+      <label for="verycommon">Very common</label>
+      <br>
+      <input type="checkbox" id="common" name="avail">
+      <label for="common">Common</label>
+      <br>
+      <input type="checkbox" id="rare" name="avail">
+      <label for="rare">Rare</label>
+      <br> 
+      <input type="checkbox" id="veryrare" name="avail">
+      <label for="veryrare">Very rare</label>
+    </div>
    <br> 
    <br> 
 
@@ -147,13 +135,11 @@
 
 <div id = "more_options" style = "display: none" class = "grid-container"> 
 
- <!-- Behavior --> 
-    <div id= "div_behavior" class = "tiles grid-item"> 
+  <!-- Behavior --> 
+  <div id= "div_behavior" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
-
-   <input type="checkbox" id="all_3" name=""> <label for="all_3">select all</label>
+    <input type="checkbox" id="all_3" name=""> <label for="all_3">select all</label>
     <br>
-      
     <input type="checkbox" id="schooling1" name="social">
     <label for="schooling1">Schooling</label>
     <br>
@@ -162,12 +148,12 @@
     <br>
     <input type="checkbox" id="solitary" name="social">
     <label for="solitary">Solitary</label>
-    </div> 
+  </div> 
  
 
 <!-- Agression level --> 
 
-    <div id = "div_agression" class = "tiles grid-item"> 
+  <div id = "div_agression" class = "tiles grid-item"> 
     <label for="" class = "parameter" >Agression level</label><br>
     <input type="checkbox" id="all_4" name=""> <label for="all_4">select all</label> <br>
     <input type="checkbox" id="peaceful1" name="agress">
@@ -178,11 +164,11 @@
     <br>
     <input type="checkbox" id="aggressive" name="agress">
     <label for="aggressive">Agressive</label>
-    </div> 
+  </div>
 
  <!-- Breeding difficulty --> 
 
-     <div id = "div_breeding" class = "tiles grid-item"> 
+  <div id = "div_breeding" class = "tiles grid-item"> 
      <label for="" class = "parameter" >Breeding difficulty</label><br>
      <input type="checkbox" id="all_5" name=""> <label for="all_5">select all</label> <br>
      <input type="checkbox" id="b_easy" name="breed">
@@ -196,7 +182,8 @@
      <br> 
      <input type="checkbox" id="impossible" name="breed">
      <label for="impossible">Impossible</label>
-     </div>
+  </div>
+    
         <!-- fewer search options   --> 
      <p id = less_options_button style = "display: none"> Click here for fewer search options</p>
 
@@ -205,16 +192,15 @@
 
 
 <!-- Search button --> 
-    <div id = "search_button_div">     
+  <div id = "search_button_div">     
     <button id = "search" role = "button"> Search </button>
-    </div>
+  </div>
         
 <!-- Alerts --> 
-         <div id = "alerts_div"> 
+    <div id = "alerts_div"> 
          <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
          <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
-        <span id = "search_alert_temp"> </span>
-
+         <span id = "search_alert_temp"> </span>
     </div> <!-- alerts div ends here -->
 
         
