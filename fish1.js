@@ -344,7 +344,7 @@ tank_size.addEventListener("click", tank_size_check);
     } 
   }
     console.log(fish_list);
-    num_results.innerHTML = fish_list.length;
+    fishcount.innerHTML = fish_list.length;
 }
 
 
