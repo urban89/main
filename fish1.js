@@ -4,6 +4,8 @@ const liter = "Liter";
 const gallon = "Gallon";
 const celsius = "Celsius";
 const farenheit = "Farenheit";
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+const numberinputs = document.querySelectorAll('input[type="number"]');
 
 let console_capacity = liter;
 let console_temperature = celsius; 
@@ -77,17 +79,17 @@ let agress_chbx = document.querySelectorAll('input[name = "agress"]');
 let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
 let result_div = document.getElementById("result");
-let num_results = document.getElementById("num_results");
+let fishcount = document.getElementById("fishcount");
 
 let srch_arr = []; 
 
 // Adding initial event listeners   
 document.addEventListener("DOMContentLoaded", function() {
 
-search.addEventListener("click", search_button);
-search_restart.addEventListener("click", restart_search);
-more_options_button.addEventListener("click", options_expand);        
-less_options_button.addEventListener("click", options_collapse);       
+//search.addEventListener("click", search_button);
+//search_restart.addEventListener("click", restart_search);
+//more_options_button.addEventListener("click", options_expand);        
+//less_options_button.addEventListener("click", options_collapse);       
 tank_size.addEventListener("blur", tank_size_check);
 tank_size.addEventListener("keyup", tank_size_check);
 tank_size.addEventListener("click", tank_size_check);
@@ -119,12 +121,36 @@ tank_size.addEventListener("click", tank_size_check);
   listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
   listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
         
+  verycommon.checked = true; 
+  common.checked = true; 
+  beginner.checked = true
+  easy.checked = true;
+
+  all_3.checked = true; 
+  selectall(social_chbx, all_3)
+  all_4.checked = true; 
+  selectall(agress_chbx, all_4)
+  all_5.checked = true; 
+  selectall(breed_chbx, all_5)
+
+  checkboxes.forEach (checkbox => {
+    checkbox.addEventListener("change", search_button);
+  });
+
+  numberinputs.forEach (checkbox => {
+    checkbox.addEventListener("change", search_button);
+  });
+
+  search_button()
+
+        
 });
 
       
 //////////////////////////////
 /// Search button function 
   function search_button() {
+      result_div.innerHTML = "";
       event.preventDefault();
       let v_tempmin = tempmin.value;
     
@@ -250,22 +276,23 @@ tank_size.addEventListener("click", tank_size_check);
       
     
       if (selection_missing) {
-        return FALSE; 
+       //return FALSE; 
       }
     }      
 
 
-       // Should add these to a separate event listener and remove them from this search   
-      document.getElementById("main_form").style.display = 'none';
-      document.getElementById("search_restart").style.display = 'inline-block';
-      document.getElementById("search_pmeters").style.display = 'inline-block';
+              // Should add these to a separate event listener and remove them from this search   
+     // document.getElementById("main_form").style.display = 'none';
+     // document.getElementById("search_restart").style.display = 'inline-block';
+     // document.getElementById("search_pmeters").style.display = 'inline-block';
 
           
  // Populating search search summary       
 // Adding capacity and temeprature to search summary   
 
-    document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
-    document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin}`;
+   // document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
+   // document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin}`;
+  
   
  
 // Adding requirements to search paramters summary 
@@ -488,9 +515,9 @@ function breed_list(x) {
  // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
 // This too I should add to a separate function
       
-   document.getElementById("less_options_button").style.display = 'none';
-   on_search_page = false;
-   checker_1 ()
+   //document.getElementById("less_options_button").style.display = 'none';
+   //on_search_page = false;
+   //checker_1 ()
   }
 
   // Check data before search and display alert if needed 
@@ -499,80 +526,85 @@ function preCheckTemperature(temp) {
 
   if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
-      search_alert_temp.style.display = 'inline-block';
-      return FALSE; 
+      // search_alert_temp.style.display = 'inline-block';
+      // return FALSE; 
+          div_temp.classList.remove('tiles');
+      div_temp.classList.add('notselected');
     }
 
     else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
-      search_alert_temp.style.display = 'inline-block';
-      return FALSE; 
+      // search_alert_temp.style.display = 'inline-block';
+      // return FALSE; 
+             div_temp.classList.remove('tiles');
+             div_temp.classList.add('notselected');
     }
 
    else {
-    search_alert_temp.style.display = 'none';
+    // search_alert_temp.style.display = 'none';
+           div_temp.classList.add('tiles');
+            div_temp.classList.remove('notselected');
    }
 
 }
   
  // Expanding/collapsing advanced search options and jumping between search/result pages (separate functions)   
 
- function restart_search() {
-    on_search_page = true; 
-    checker_1 ();
-    result_div.innerHTML = ""; 
+//  function restart_search() {
+//     on_search_page = true; 
+//     checker_1 ();
+//     result_div.innerHTML = ""; 
 
-  }
+//   }
 
-  function options_expand() {
-    expanded = true; 
-    checker_1 ()
-    all_deselect_behavior (social_chbx);
-    all_deselect_behavior (agress_chbx);
-    all_deselect_behavior (breed_chbx);
-  }
+//   function options_expand() {
+//     expanded = true; 
+//     checker_1 ()
+//     all_deselect_behavior (social_chbx);
+//     all_deselect_behavior (agress_chbx);
+//     all_deselect_behavior (breed_chbx);
+//   }
 
-  function options_collapse() {
-    expanded = false; 
-    checker_1 ()
-    all_select_behavior (social_chbx);
-    all_select_behavior (agress_chbx);
-    all_select_behavior (breed_chbx);
-  }
+//   function options_collapse() {
+//     expanded = false; 
+//     checker_1 ()
+//     all_select_behavior (social_chbx);
+//     all_select_behavior (agress_chbx);
+//     all_select_behavior (breed_chbx);
+//   }
 
-    function checker_1 () {
-    if (on_search_page && !expanded) {
-      main_form.style.display = 'flex';
-      search_restart.style.display = 'none';
-      search_pmeters.style.display = 'none';
-      more_options_button.style.display = 'flex';
-      more_options.style.display = 'none';
-      less_options_button.style.display = 'none';
-      search.style.display = 'flex';  
-    }
+  //   function checker_1 () {
+  //   if (on_search_page && !expanded) {
+  //     main_form.style.display = 'flex';
+  //     search_restart.style.display = 'none';
+  //     search_pmeters.style.display = 'none';
+  //     more_options_button.style.display = 'flex';
+  //     more_options.style.display = 'none';
+  //     less_options_button.style.display = 'none';
+  //     search.style.display = 'flex';  
+  //   }
 
-    if (on_search_page && expanded) {
-      main_form.style.display = 'flex';
-      search_restart.style.display = 'none';
-      search_pmeters.style.display = 'none';
-      more_options_button.style.display = 'none';
-      more_options.style.display = 'grid';
-      less_options_button.style.display = 'flex';
-      search.style.display = 'flex';  
-    }
+  //   if (on_search_page && expanded) {
+  //     main_form.style.display = 'flex';
+  //     search_restart.style.display = 'none';
+  //     search_pmeters.style.display = 'none';
+  //     more_options_button.style.display = 'none';
+  //     more_options.style.display = 'grid';
+  //     less_options_button.style.display = 'flex';
+  //     search.style.display = 'flex';  
+  //   }
 
-    if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
-      main_form.style.display = 'none';
-      search_restart.style.display = 'flex';
-      search_pmeters.style.display = 'inline-block';
-      more_options_button.style.display = 'none';
-      more_options.style.display = 'none';
-      less_options_button.style.display = 'none';
-      search.style.display = 'none';
+  //   if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
+  //     main_form.style.display = 'none';
+  //     search_restart.style.display = 'flex';
+  //     search_pmeters.style.display = 'inline-block';
+  //     more_options_button.style.display = 'none';
+  //     more_options.style.display = 'none';
+  //     less_options_button.style.display = 'none';
+  //     search.style.display = 'none';
         
-  }
-  } 
-
+  // }
+  // } 
 
 //Checking tank size before submission (shouldn't be too small)
 function tank_size_check () {
