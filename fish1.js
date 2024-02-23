@@ -111,10 +111,6 @@ tank_size.addEventListener("click", tank_size_check);
   all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
   all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
 
-  all_select_behavior (social_chbx);
-  all_select_behavior (agress_chbx);
-  all_select_behavior (breed_chbx);      
-
   listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
   listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
   listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
