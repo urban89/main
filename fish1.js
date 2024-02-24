@@ -10,8 +10,6 @@ const numberinputs = document.querySelectorAll('input[type="number"]');
 let console_capacity = liter;
 let console_temperature = celsius; 
 
-let on_search_page = true;
-let expanded = false;
 let minimum_liter = 20;
 let minimum_gallon = 5.3; 
 
@@ -31,11 +29,7 @@ let convert_fc = document.getElementById("convert_fc");
 let convert_cf = document.getElementById("convert_cf");
 
 let main_form = document.getElementById("main_form");
-let search_restart = document.getElementById("search_restart");
-let search_pmeters = document.getElementById("search_pmeters");
-let more_options_button = document.getElementById("more_options_button");
 let more_options = document.getElementById("more_options");
-let less_options_button = document.getElementById("less_options_button");
 let search = document.getElementById("search"); 
 
 let tank_size = document.getElementById("tank_size"); 
@@ -85,11 +79,7 @@ let srch_arr = [];
 
 // Adding initial event listeners   
 document.addEventListener("DOMContentLoaded", function() {
-
-//search.addEventListener("click", search_button);
-//search_restart.addEventListener("click", restart_search);
-//more_options_button.addEventListener("click", options_expand);        
-//less_options_button.addEventListener("click", options_collapse);       
+      
 tank_size.addEventListener("blur", tank_size_check);
 tank_size.addEventListener("keyup", tank_size_check);
 tank_size.addEventListener("click", tank_size_check);
@@ -272,24 +262,9 @@ tank_size.addEventListener("click", tank_size_check);
       
     
       if (selection_missing) {
-       //return FALSE; 
       }
     }      
 
-
-              // Should add these to a separate event listener and remove them from this search   
-     // document.getElementById("main_form").style.display = 'none';
-     // document.getElementById("search_restart").style.display = 'inline-block';
-     // document.getElementById("search_pmeters").style.display = 'inline-block';
-
-          
- // Populating search search summary       
-// Adding capacity and temeprature to search summary   
-
-   // document.getElementById("p_tanksize").innerHTML = `(${console_capacity}):  ${v_tank_size}`;
-   // document.getElementById("p_temp").innerHTML = `(${console_temperature}): ${v_tempmin}`;
-  
-  
  
 // Adding requirements to search paramters summary 
       let l_avail = [];
@@ -507,14 +482,9 @@ function breed_list(x) {
     x.push("All");
   }
 }
-      
- // Expanding/collapsing advanced search options and jumping between search/result pages - part of search_buttton()
-// This too I should add to a separate function
-      
-   //document.getElementById("less_options_button").style.display = 'none';
-   //on_search_page = false;
-   //checker_1 ()
-  }
+
+          
+ // }
 
   // Check data before search and display alert if needed 
 
@@ -523,7 +493,6 @@ function preCheckTemperature(temp) {
   if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
       // search_alert_temp.style.display = 'inline-block';
-      // return FALSE; 
           div_temp.classList.remove('tiles');
       div_temp.classList.add('notselected');
     }
@@ -531,7 +500,6 @@ function preCheckTemperature(temp) {
     else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
       search_alert_temp.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
       // search_alert_temp.style.display = 'inline-block';
-      // return FALSE; 
              div_temp.classList.remove('tiles');
              div_temp.classList.add('notselected');
     }
@@ -544,64 +512,7 @@ function preCheckTemperature(temp) {
 
 }
   
- // Expanding/collapsing advanced search options and jumping between search/result pages (separate functions)   
-
-//  function restart_search() {
-//     on_search_page = true; 
-//     checker_1 ();
-//     result_div.innerHTML = ""; 
-
-//   }
-
-//   function options_expand() {
-//     expanded = true; 
-//     checker_1 ()
-//     all_deselect_behavior (social_chbx);
-//     all_deselect_behavior (agress_chbx);
-//     all_deselect_behavior (breed_chbx);
-//   }
-
-//   function options_collapse() {
-//     expanded = false; 
-//     checker_1 ()
-//     all_select_behavior (social_chbx);
-//     all_select_behavior (agress_chbx);
-//     all_select_behavior (breed_chbx);
-//   }
-
-  //   function checker_1 () {
-  //   if (on_search_page && !expanded) {
-  //     main_form.style.display = 'flex';
-  //     search_restart.style.display = 'none';
-  //     search_pmeters.style.display = 'none';
-  //     more_options_button.style.display = 'flex';
-  //     more_options.style.display = 'none';
-  //     less_options_button.style.display = 'none';
-  //     search.style.display = 'flex';  
-  //   }
-
-  //   if (on_search_page && expanded) {
-  //     main_form.style.display = 'flex';
-  //     search_restart.style.display = 'none';
-  //     search_pmeters.style.display = 'none';
-  //     more_options_button.style.display = 'none';
-  //     more_options.style.display = 'grid';
-  //     less_options_button.style.display = 'flex';
-  //     search.style.display = 'flex';  
-  //   }
-
-  //   if ((!on_search_page && expanded) || (!on_search_page && !expanded)) {
-  //     main_form.style.display = 'none';
-  //     search_restart.style.display = 'flex';
-  //     search_pmeters.style.display = 'inline-block';
-  //     more_options_button.style.display = 'none';
-  //     more_options.style.display = 'none';
-  //     less_options_button.style.display = 'none';
-  //     search.style.display = 'none';
-        
-  // }
-  // } 
-
+ 
 //Checking tank size before submission (shouldn't be too small)
 function tank_size_check () {
   let tank_size_alert = document.getElementById("tank_size_alert");
