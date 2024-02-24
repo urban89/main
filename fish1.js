@@ -267,22 +267,12 @@ tank_size.addEventListener("click", tank_size_check);
 
  
 // Adding requirements to search paramters summary 
-      let l_avail = [];
-      let l_hardiness = [];
-      let l_behavior = [];
-      let l_agress = [];
-      let l_breed = [];
-      avail_list(l_avail);
-      hardiness_list(l_hardiness);
-      behavior_list(l_behavior);
-      agres_list(l_agress);
-      breed_list(l_breed);
   
-      document.getElementById("p_avail").innerHTML = l_avail.join(", ");
-      document.getElementById("p_hardiness").innerHTML = l_hardiness.join(", ");
-      document.getElementById("p_social").innerHTML = l_behavior.join(", ");
-      document.getElementById("p_agression").innerHTML = l_agress.join(", ");
-      document.getElementById("p_breeding").innerHTML = l_breed.join(", ");
+      avail_list();
+      hardiness_list();
+      behavior_list();
+      agres_list();
+      breed_list();
 
     console.log(srch_arr);
 
@@ -348,84 +338,58 @@ function fishSelect () {
           fishFinder ()
           fishSelect ()
 
-   // Functions for populating search summary with the chosen parameters + this one is also responsible for building the array that I use to iterate over fish_master and find results 
-  function hardiness_list(x) {
+   // Responsible for building the array that I use to iterate over fish_master and find results 
+  function hardiness_list() {
 
   if (v_beginner) {
-        x.push("beginner");
         srch_hardi.push(4);
     }
      
      if (v_easy) {
-      x.push("easy");
       srch_hardi.push(3);
     }
 
      if(v_medium) {
-      x.push("medium");
       srch_hardi.push(2);
     }
 
      if(v_difficult) {
-      x.push("difficult");
       srch_hardi.push(1);
     }
-
-    if (all_1.checked) {
-    x.length = 0; 
-    x.push("All");
-  }
 
 }
       
 function avail_list(x) {
   if (v_verycommon) {
-        x.push("very common");
         srch_avail.push(4);
     }
      
       if (v_common) {
-      x.push("common");
       srch_avail.push(3);
     }
     
 
     if (v_rare) {
-      x.push("rare");
       srch_avail.push(2);
     }
 
     if (v_veryrare) {
-      x.push("very rare");
       srch_avail.push(1);
     }
-
-       if (all_2.checked) {
-    x.length = 0; 
-    x.push("All");
-  }
 
 }
 
 function behavior_list (x) {
   if (v_schooling1) {
-    x.push("Needs schooling");
     srch_soci.push(3);
   }
 
   if (v_schooling2) {
-    x.push("Prefers schooling");
     srch_soci.push(2);
   }
 
   if (v_solitary) {
-    x.push("Prefers/accepts solitary life");
     srch_soci.push(1);
-  }
-
-  if (all_3.checked || (!expanded)) {
-    x.length = 0; 
-    x.push("All");
   }
 
 }
@@ -433,55 +397,39 @@ function behavior_list (x) {
 
 function agres_list(x) {
   if (v_peaceful1) {
-    x.push("peaceful");
     srch_agress.push(1);
   }
 
   if (v_peaceful2) {
-    x.push("semi-agresssive");
     srch_agress.push(2);
   }
 
   if (v_aggressive) {
-    x.push("agressive");
     srch_agress.push(3);
-  }
-
-  if (all_4.checked || (!expanded)) {
-    x.length = 0; 
-    x.push("All");
   }
 
 }
 
 function breed_list(x) {
   if (v_b_easy) {
-    x.push("easy");
     srch_breed.push(1);
   }
 
   if (v_b_medium) {
-    x.push("medium");
     srch_breed.push(2);
   }
 
   if (v_b_hard) {
-    x.push("hard");
     srch_breed.push(3);
   }
 
   if (v_impossible) {
-    x.push("impossible");
     srch_breed.push(4);
   }
 
-  if (all_5.checked || (!expanded)) {
-    x.length = 0; 
-    x.push("All");
-  }
-}
- }
-// search_button function ends here 
+}      
+ } // search_button function ends here 
+
 
   // Check data before search and display alert if needed 
 
