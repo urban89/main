@@ -65,10 +65,12 @@ body {
 
  
 .body-color-1 {
- /*background-color: #AAC4FF ; */
- background: rgb(210,218,255);
-  background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
-background-attachment: fixed;
+  /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
+background-attachment: fixed; */
+background-image: url('IMG_9602.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed; /* This keeps the background fixed when scrolling */
 
 
 }
