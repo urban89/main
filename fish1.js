@@ -347,9 +347,7 @@ function fishSelect () {
 
           fishFinder ()
           fishSelect ()
-    ///// long ass search function ends here 
-       //////////////////////////
-          
+
    // Functions for populating search summary with the chosen parameters + this one is also responsible for building the array that I use to iterate over fish_master and find results 
   function hardiness_list(x) {
 
@@ -482,9 +480,8 @@ function breed_list(x) {
     x.push("All");
   }
 }
-
-          
- // }
+ }
+// search_button function ends here 
 
   // Check data before search and display alert if needed 
 
