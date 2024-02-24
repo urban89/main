@@ -154,10 +154,27 @@ div_breeding
   flex: 0 0 calc(33.33% - 10px); /* 33.33% width with 10px spacing between items */
   margin: 5px; 
   box-sizing: border-box;
-  /* border: 10px solid #4093fa; */
+  border: 1px solid #010a14;
+  border-radius: 3px; 
   padding: 10px;
+  background: linear-gradient(125deg, #ebbe5d83 12%, #ca8b2daf 66%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(229, 86%, 34%, 0.904);
+
 } 
 
+
+
+
+.fishcardimage {
+width: 200px;
+height: 150px;
+border-color: #05224f;
+border-width: 1px; 
+border-radius: 3px;
+border-style: solid;
+
+}
 
 
 
