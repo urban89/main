@@ -359,7 +359,7 @@ function fishSelect () {
 
 }
       
-function avail_list(x) {
+function avail_list() {
   if (v_verycommon) {
         srch_avail.push(4);
     }
@@ -379,7 +379,7 @@ function avail_list(x) {
 
 }
 
-function behavior_list (x) {
+function behavior_list () {
   if (v_schooling1) {
     srch_soci.push(3);
   }
@@ -395,7 +395,7 @@ function behavior_list (x) {
 }
   
 
-function agres_list(x) {
+function agres_list() {
   if (v_peaceful1) {
     srch_agress.push(1);
   }
@@ -410,7 +410,7 @@ function agres_list(x) {
 
 }
 
-function breed_list(x) {
+function breed_list() {
   if (v_b_easy) {
     srch_breed.push(1);
   }
