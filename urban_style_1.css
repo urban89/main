@@ -128,7 +128,8 @@ div_breeding
   background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-
+position: relative;
+  
 } 
 
 
@@ -166,6 +167,13 @@ input[type="radio"] {
   cursor: pointer;
 }
 
+.fishsize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  color: rgb(136, 105, 3); 
+}
 
 /* trying to make it adaptive */ 
 
