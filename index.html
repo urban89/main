@@ -31,7 +31,7 @@
 
     
     <div id = "maindiv"> 
-<p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p> 
+<!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 
 <form action="" id = "main_form">
 <!-- Tank size --> 
@@ -43,10 +43,7 @@
       <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
     </div> 
-<br>
-<br> 
 
-    
 <!-- Hardiness --> 
   <div id = "div_hardiness" class = "tiles"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
@@ -64,9 +61,7 @@
     <input type="checkbox" id="difficult" name="hardi">
     <label for="difficult">Difficult</label>
   </div>
-   <br> 
-   <br>
-      
+
 </div> <!-- column div ends here -->
 
 
@@ -80,9 +75,7 @@
       <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
       <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
     </div> 
-<br> 
-<br>  
-
+      
 <!-- Store availability --> 
     <div id = "div_avail" class = "tiles"> 
       <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
@@ -100,9 +93,6 @@
       <input type="checkbox" id="veryrare" name="avail">
       <label for="veryrare">Very rare</label>
     </div>
-   <br> 
-   <br> 
-
 
     </div> <!-- second column div ends here -->
 
@@ -165,7 +155,8 @@
         
     </div> <!-- more options div --> 
 
-        
+<p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p> 
+
 <!-- Alerts --> 
     <div id = "alerts_div"> 
          <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
