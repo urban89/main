@@ -337,13 +337,17 @@ function fishSelect () {
   for (let i = 0; i <fish_list.length; i++) {
     let result_lists_element = document.createElement("p");
     let image_element = document.createElement('img');
+    let size = document.createElement("span");
     let fishcard = document.createElement('div');
     image_element.src = `images/${fish_list[i].fish_id}.jpeg`;
     image_element.className = "fishcardimage";
     result_lists_element.textContent = `${fish_list[i].name_english}`;
+    size.textContent = `${fish_list[i].cm_max}` + " cm";
+    size.className = "fishsize";
     fishcard.className = "fish_card";
     fishcard.appendChild(image_element);
     fishcard.appendChild(result_lists_element);
+    fishcard.appendChild(size);
     result_lists.appendChild(fishcard);
   }
 
