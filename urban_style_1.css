@@ -110,11 +110,12 @@ div_breeding
 /*Tiles*/ 
 
 .tiles {
-  background: linear-gradient(188deg, #abd6e0 0%, #86a5de 100%);
-  border-radius: 14px;
+  background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%);
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 5px 5px 10px rgba(42, 5, 252, 0.3);
-  border: 1px solid #ccc; /* Add a border to simulate depth */
+  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+  border: 1px solid #0f1946; 
+  margin: 10px 0 0 0 ; 
 }
 
 
@@ -124,16 +125,13 @@ div_breeding
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto; 
-   gap: 10px; 
-  /* margin-top: 20px; */
+  gap: 10px; 
   justify-content: center;
   align-items: center;
 }
 
 .grid-item {
-  /* width: 100px;  */
   height: 100px; 
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   padding: 20px;
@@ -157,13 +155,14 @@ div_breeding
   margin: 5px; 
   box-sizing: border-box;
   border: 1px solid #010a14;
-  border-radius: 3px; 
+  border-radius: 10px;
   padding: 10px;
-  background: linear-gradient(125deg, #ebbe5d83 12%, #ca8b2daf 66%);
+  background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
 background-attachment: fixed;
-box-shadow: 5px 5px 10px hsla(229, 86%, 34%, 0.904);
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 
 } 
+ 
 
 
 
