@@ -152,6 +152,7 @@ select {
 
 input[type="number"] {
   background-color: rgba(171, 253, 246, 0.575);
+   box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.568);
   cursor: pointer;
 }
 
