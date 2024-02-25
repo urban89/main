@@ -555,5 +555,5 @@ function tank_size_check () {
 
 
   function compare_temp(a, b) {
-    return a.temperature_min - a.temperature_max;
+    return a.temperature_min - a.temperature_min;
   }
