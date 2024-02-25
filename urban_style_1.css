@@ -19,38 +19,6 @@ body {
   white-space: nowrap;
 }
 
-/* trying to make it adaptive */ 
-
-@media screen and (min-width: 800px) {
-  #maindiv {
-    width: 80vw;
-  }
-}
-
-@media screen and (min-width: 910px) {
-  #maindiv {
-    width: 70vw;
-  }
-}
-
-@media screen and (min-width: 1110px) {
-  #maindiv {
-    width: 65vw;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  #maindiv {
-    width: 60vw;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  #maindiv {
-    width: 50vw;
-  }
-}
-
 
 
 #main_form {
@@ -162,7 +130,6 @@ background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 
 } 
- 
 
 
 
@@ -177,6 +144,69 @@ border-style: solid;
 
 }
 
+select {
+  background-color: rgba(125, 195, 253, 0.575);
+  box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.74);
+  cursor: pointer;
+}
+
+input[type="number"] {
+  background-color: rgba(171, 253, 246, 0.575);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.568);
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  box-shadow: 1px 1px 2px rgba(3, 85, 110, 0.568);
+  cursor: pointer;
+}
 
 
+/* trying to make it adaptive */ 
 
+@media screen and (min-width: 800px) {
+  #maindiv {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 910px) {
+  #maindiv {
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  #maindiv {
+    width: 65vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #maindiv {
+    width: 60vw;
+  }
+  .fishcardimage {
+    width: 225px;
+    height: 175px;
+  
+}
+
+}
+
+@media screen and (min-width: 1600px) {
+  #maindiv {
+    width: 50vw;
+    
+  }
+
+  .fishcardimage {
+    width: 250px;
+    height: 200px;
+  
+}
+}
