@@ -44,6 +44,7 @@
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
     </div> 
 
+    
 <!-- Hardiness --> 
   <div id = "div_hardiness" class = "tiles"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
@@ -61,7 +62,7 @@
     <input type="checkbox" id="difficult" name="hardi">
     <label for="difficult">Difficult</label>
   </div>
-
+      
 </div> <!-- column div ends here -->
 
 
@@ -75,7 +76,6 @@
       <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
       <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
     </div> 
-      
 <!-- Store availability --> 
     <div id = "div_avail" class = "tiles"> 
       <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
@@ -155,7 +155,19 @@
         
     </div> <!-- more options div --> 
 
-<p id = "welcome" class = "tiles"> Results: <span id = fishcount> </span> </p> 
+<!-- Control panel -->
+
+    <p id = "welcome" class = "tiles"> Results: <span id = fishcount> </span> <laber for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
+    
+      <option value="size_min">Size min/max</option>
+      <option value="size_max">Size max/min</option>
+      <option value="temp_min">Temperature min/max</option>
+    
+    </Select>
+  
+  </p> 
+
+
 
 <!-- Alerts --> 
     <div id = "alerts_div"> 
