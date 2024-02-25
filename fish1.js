@@ -66,6 +66,8 @@ let all_3 = document.getElementById("all_3");
 let all_4 = document.getElementById("all_4");
 let all_5 = document.getElementById("all_5");
 
+let sort_select = document.getElementById("sort");
+
 let hardi_chbx = document.querySelectorAll('input[name = "hardi"]');
 let avail_chbx = document.querySelectorAll('input[name = "avail"]');
 let social_chbx = document.querySelectorAll('input[name = "social"]');
@@ -126,6 +128,8 @@ tank_size.addEventListener("click", tank_size_check);
   numberinputs.forEach (checkbox => {
     checkbox.addEventListener("change", search_button);
   });
+
+  sort_select.addEventListener("change", search_button);
 
   search_button()
 
@@ -304,6 +308,22 @@ tank_size.addEventListener("click", tank_size_check);
 
     } 
   }
+
+    if (sort_select.value == "size_min") {
+      fish_list.sort(compare_size);
+      console.log("size_min")
+    }
+
+    if (sort_select.value == "size_max") {
+      fish_list.sort(compare_size_descend);
+      console.log("size_max")
+    }
+
+    if (sort_select.value == "temp_min") {
+      fish_list.sort(compare_temp);
+      console.log("temp_min")
+    }
+
     console.log(fish_list);
     fishcount.innerHTML = fish_list.length;
 }
@@ -425,7 +445,10 @@ function breed_list() {
   }
 
 }      
- } // search_button function ends here 
+ }
+ 
+
+ // search_button function ends here 
 
 
   // Check data before search and display alert if needed 
@@ -515,4 +538,18 @@ function tank_size_check () {
         box.checked = false;
       });
     }
+  }
+
+
+  function compare_size(a, b) {
+    return a.cm_max - b.cm_max;
+  }
+
+  function compare_size_descend(a, b) {
+    return b.cm_max - a.cm_max;
+  }
+
+
+  function compare_temp(a, b) {
+    return a.temperature_min - a.temperature_max;
   }
