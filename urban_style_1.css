@@ -147,23 +147,19 @@ border-style: solid;
 
 select {
   background-color: rgba(125, 195, 253, 0.575);
-  box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.74);
   cursor: pointer;
 }
 
 input[type="number"] {
 background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%);
-box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.568);
 cursor: text;
 }
 
 input[type="checkbox"] {
-  box-shadow: 2px 2px 4px rgba(3, 85, 110, 0.568);
   cursor: pointer;
 }
 
 input[type="radio"] {
-  box-shadow: 1px 1px 2px rgba(3, 85, 110, 0.568);
   cursor: pointer;
 }
 
