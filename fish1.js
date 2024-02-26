@@ -67,6 +67,8 @@ let all_4 = document.getElementById("all_4");
 let all_5 = document.getElementById("all_5");
 
 let sort_select = document.getElementById("sort");
+let browse_button = document.getElementById("browse_button");
+let sum = document.getElementById("sum");
 
 let hardi_chbx = document.querySelectorAll('input[name = "hardi"]');
 let avail_chbx = document.querySelectorAll('input[name = "avail"]');
@@ -133,7 +135,7 @@ tank_size.addEventListener("click", tank_size_check);
 
   search_button()
 
-        
+  browse_button.addEventListener("click", browse);
 });
 
       
@@ -325,6 +327,7 @@ tank_size.addEventListener("click", tank_size_check);
     }
 
     console.log(fish_list);
+    console.log("len at stage 1: " + fish_list.length);
     fishcount.innerHTML = fish_list.length;
 }
 
@@ -333,8 +336,11 @@ tank_size.addEventListener("click", tank_size_check);
 function fishSelect () {
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
+  console.log("teszt 1");
+  console.log("len at stage 2: " + fish_list.length);
 
   for (let i = 0; i <fish_list.length; i++) {
+    console.log("teszt 2");
     let result_lists_element = document.createElement("p");
     let image_element = document.createElement('img');
     let size = document.createElement("span");
@@ -555,5 +561,41 @@ function tank_size_check () {
 
 
   function compare_temp(a, b) {
-    return a.temperature_min - a.temperature_min;
+    return (a.temperature_min + a.temperature_max) - (b.temperature_min + b.temperature_max);
   }
+
+
+
+  function browse () {
+    let fish_list_all = []; 
+    main_form.style.display = "none";
+    more_options.style.display = "none";
+    fishcount.innerHTML = fish_master.length;
+    sum.innerText = "Number of species in database: "
+
+    fishSelectAll ();
+  }
+
+  function fishSelectAll () {
+    let result_lists = document.createElement("div");
+    result_lists.className = "column_result"; 
+  
+    for (let i = 0; i <fish_master.length; i++) {
+      let result_lists_element = document.createElement("p");
+      let image_element = document.createElement('img');
+      let size = document.createElement("span");
+      let fishcard = document.createElement('div');
+      image_element.src = `images/${fish_master[i].fish_id}.jpeg`;
+      image_element.className = "fishcardimage";
+      result_lists_element.textContent = `${fish_master[i].name_english}`;
+      size.textContent = `${fish_master[i].cm_max}` + " cm";
+      size.className = "fishsize";
+      fishcard.className = "fish_card";
+      fishcard.appendChild(image_element);
+      fishcard.appendChild(result_lists_element);
+      fishcard.appendChild(size);
+      result_lists.appendChild(fishcard);
+    }
+  
+    result_div.appendChild(result_lists);
+  } 

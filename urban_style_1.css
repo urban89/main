@@ -171,6 +171,25 @@ input[type="radio"] {
   color: rgb(136, 105, 3); 
 }
 
+#cpanel {
+  position: relative; 
+}
+
+#browse_button {
+  width: 30px;
+  height: 30px; 
+  border: 1px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: #b1cdf8;
+  /* float: right;  */
+  position: absolute;
+  bottom: 15px;
+}
+
+
+
 /* trying to make it adaptive */ 
 
 @media screen and (min-width: 800px) {
