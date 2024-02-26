@@ -13,8 +13,10 @@ let console_temperature = celsius;
 let minimum_liter = 20;
 let minimum_gallon = 5.3; 
 
-let temp_alert = document.getElementById("mintemp_alert"); 
-let search_alert_temp = document.getElementById("search_alert_temp");
+let tempalert = document.getElementById("tempalert");
+let capalert = document.getElementById("capalert");
+let checkalert = document.getElementById("checkalert");
+
 
 let div_tank_size = document.getElementById("div_tank_size");
 let div_hardiness = document.getElementById("div_hardiness");
@@ -78,21 +80,21 @@ let breed_chbx = document.querySelectorAll('input[name = "breed"]');
 
 let result_div = document.getElementById("result");
 let fishcount = document.getElementById("fishcount");
+let noresults =  document.getElementById("noresults");
+let none_found = false; 
+let invalid_search = false; 
 
 let srch_arr = []; 
 
 // Adding initial event listeners   
 document.addEventListener("DOMContentLoaded", function() {
       
-tank_size.addEventListener("blur", tank_size_check);
-tank_size.addEventListener("keyup", tank_size_check);
-tank_size.addEventListener("click", tank_size_check);
+tank_size.addEventListener("blur", preCheckTank);
+tank_size.addEventListener("keyup", preCheckTank);
+tank_size.addEventListener("click", preCheckTank);
   
   liter_radio.checked = true;
   convert_fc.checked = true; 
-  document.getElementById("tank_size_alert").style.display = 'none';
-  document.getElementById("mintemp_alert").style.display = 'none';
-  search_alert_temp.style.display = 'none';
   
   liter_radio.addEventListener("change", gallonliter);
   gallon_radio.addEventListener("change", litergallon);
@@ -136,6 +138,11 @@ tank_size.addEventListener("click", tank_size_check);
   search_button()
 
   browse_button.addEventListener("click", browse);
+
+  tempalert.style.display = "none";
+  capalert.style.display = "none";
+  checkalert.style.display = "none";
+  
 });
 
       
@@ -171,10 +178,7 @@ tank_size.addEventListener("click", tank_size_check);
       let v_b_hard = b_hard.checked;
       let v_impossible = impossible.checked;
 
-
       let selection_missing;
-      let selection_alert = "Some search parameters were not selected: ";
-      let selection_alert_arr = []; 
 
       let srch_hardi = []; 
       let srch_avail = []; 
@@ -188,6 +192,7 @@ tank_size.addEventListener("click", tank_size_check);
       // Checking if temperature and tank size are ok; + checking if checkboxes were selected     
      preCheckTemperature(v_tempmin);
      preCheckCheckboxes (); 
+     preCheckTank(); 
 
       function preCheckCheckboxes () {
       if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
@@ -268,7 +273,15 @@ tank_size.addEventListener("click", tank_size_check);
       
     
       if (selection_missing) {
+        checkalert.style.display = "inline-block";
+        invalid_search = true; 
       }
+
+     else {
+      checkalert.style.display = "none";
+      invalid_search = false; 
+     }
+
     }      
 
  
@@ -309,6 +322,7 @@ tank_size.addEventListener("click", tank_size_check);
        fish_list.push(fish);
 
     } 
+
   }
 
     if (sort_select.value == "size_min") {
@@ -329,6 +343,12 @@ tank_size.addEventListener("click", tank_size_check);
     console.log(fish_list);
     console.log("len at stage 1: " + fish_list.length);
     fishcount.innerHTML = fish_list.length;
+    if (fish_list == 0) {
+      none_found = true;
+    }
+    else {
+      none_found = false; 
+    }
 }
 
 
@@ -364,6 +384,7 @@ function fishSelect () {
 
           fishFinder ()
           fishSelect ()
+          noResultAlert ()
 
    // Responsible for building the array that I use to iterate over fish_master and find results 
   function hardiness_list() {
@@ -466,48 +487,52 @@ function breed_list() {
 function preCheckTemperature(temp) {
 
   if ((temp < 4 || temp > 35) && console_temperature === celsius) {
-      search_alert_temp.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
-      // search_alert_temp.style.display = 'inline-block';
+    tempalert.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
           div_temp.classList.remove('tiles');
       div_temp.classList.add('notselected');
+      tempalert.style.display = "inline-block";
+      invalid_search = true; 
     }
 
     else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
-      search_alert_temp.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
-      // search_alert_temp.style.display = 'inline-block';
+      tempalert.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
              div_temp.classList.remove('tiles');
              div_temp.classList.add('notselected');
+             tempalert.style.display = "inline-block";
+             invalid_search = true; 
     }
 
    else {
-    // search_alert_temp.style.display = 'none';
            div_temp.classList.add('tiles');
             div_temp.classList.remove('notselected');
+            tempalert.style.display = "none";
+            invalid_search = false;
    }
 
 }
   
  
 //Checking tank size before submission (shouldn't be too small)
-function tank_size_check () {
+function preCheckTank() {
   let tank_size_alert = document.getElementById("tank_size_alert");
   let tank_size = document.getElementById('tank_size').value;  
 
     if ((tank_size < 20) && (console_capacity === liter)) {
-      tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_liter + console_capacity;
-      tank_size_alert.style.display = 'inline-block';
+      capalert.style.display = 'inline-block';
       document.getElementById('tank_size').style.borderColor = 'red';  
+      invalid_search = true; 
     } 
 
     if ((tank_size < 5.3) && (console_capacity === gallon)) {
-      tank_size_alert.innerHTML = "Tank size too small. At least " + minimum_gallon + console_capacity;
-      tank_size_alert.style.display = 'inline-block';
+      capalert.style.display = 'inline-block';
       document.getElementById('tank_size').style.borderColor = 'red';  
+      invalid_search = true; 
     }
 
     if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
-      tank_size_alert.style.display = 'none';
+      capalert.style.display = 'none';
       document.getElementById('tank_size').style.borderColor = 'unset';
+      invalid_search = false; 
     }
 
   }
@@ -599,3 +624,20 @@ function tank_size_check () {
   
     result_div.appendChild(result_lists);
   } 
+
+
+  // function preCheckTank() {
+  //     if (parseInt(tank_size) < 20) {
+  //       capalert.style.display = "inline-block";
+  //     }
+  // }
+
+//// duuplicate alert for now: a bug to resolve 
+  function noResultAlert () {
+    if ((none_found == true) && (invalid_search == false)) {
+      noresults.style.display = "inline-block"; 
+    }
+    else {
+      noresults.style.display = "none"; 
+    }
+  }

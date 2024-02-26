@@ -170,20 +170,22 @@
   </div> 
 
 
-
-<!-- Alerts --> 
-    <div id = "alerts_div"> 
-         <span id = "mintemp_alert" class = "validation_alert"> Minimum temperature can't be greater than maximum temperature. </span>
-         <span id = "tank_size_alert" class = "validation_alert"> "Tank size too small. At least " </span>
-         <span id = "search_alert_temp"> </span>
-    </div> <!-- alerts div ends here -->
-
         
     </div> <!-- main div --> 
 
     
     <div id = "result"> 
     </div> <!-- result div-->
+    <div id = alerts> 
+  <span id = "tempalert" class = "alert"> </span>
+  <br>
+  <span id = "capalert" class = "alert"> Aquarium size too small.</span>
+  <br>
+  <span id = "checkalert" class = "alert"> Some search parameters were not selected. </span>
+  <br>
+  <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
+
+    </div>
 
 <script type="text/javascript" src="fish1.js"></script>
 <script type="text/javascript" src="fish_functions_1.js"></script>

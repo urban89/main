@@ -53,7 +53,7 @@ background-attachment: fixed; /* This keeps the background fixed when scrolling 
   border-radius: 14px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
-  border: 1px solid #ccc; /* Add a border to simulate depth */
+  border: 1px solid #ccc; 
     }
 
 
@@ -188,6 +188,38 @@ input[type="radio"] {
   bottom: 15px;
 }
 
+#alerts {
+      margin: 0;
+      padding: 0;
+      display: grid; 
+      align-items: center;
+      justify-content: center;
+}
+
+.alert {
+  color:rgb(70, 3, 4);
+  /* font-size: 20px; */
+
+  background: linear-gradient(188deg, #c0a2f6 0%, #a37d92 100%);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px rgb(70, 3, 4);
+  border: 1px solid #0f1946; 
+  margin: 10px 0 0 0 ; 
+
+}
+
+.valid_alert {
+  color:rgb(114, 122, 3);
+  /* font-size: 20px; */
+
+  background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+  border: 1px solid #0f1946; 
+  margin: 10px 0 0 0 ; 
+}
 
 
 /* trying to make it adaptive */ 
@@ -234,3 +266,4 @@ input[type="radio"] {
   
 }
 }
+
