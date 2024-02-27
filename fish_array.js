@@ -3972,7 +3972,7 @@ const fish_master =  [
     school: "3",
     tank_size_liter: "45",
     temperature_min: "23",
-    temperature_max: "5",
+    temperature_max: "27",
     agression: "1"
   },
   {
