@@ -90,6 +90,8 @@ let invalid_search = false;
 
 let srch_arr = []; 
 
+let settings = document.getElementById("settings");
+
 // Adding initial event listeners   
 document.addEventListener("DOMContentLoaded", function() {
       
@@ -116,7 +118,9 @@ tank_size.addEventListener("click", preCheckTank);
   listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
   listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
   listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
-        
+
+  // settings.addEventListener("click", settingsShow);   // Settings button 
+  
   verycommon.checked = true; 
   common.checked = true; 
   beginner.checked = true
@@ -148,9 +152,21 @@ tank_size.addEventListener("click", preCheckTank);
   tempalert.style.display = "none";
   capalert.style.display = "none";
   checkalert.style.display = "none";
+
+  document.getElementById("settings").addEventListener("click", function () {
+    var dropdown = document.getElementById("settings_dropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
+window.addEventListener("click", function (event) {
+  var dropdown = document.getElementById("settings_dropdown");
+  if (event.target !== document.getElementById("settings")) {
+      dropdown.style.display = "none";
+  }
   
 });
 
+});
       
 //////////////////////////////
 /// Search button function 
