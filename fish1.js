@@ -145,8 +145,6 @@ tank_size.addEventListener("click", preCheckTank);
 
   search_button()
 
-  browse_button.addEventListener("click", browse);
-
   tempalert.style.display = "none";
   capalert.style.display = "none";
   checkalert.style.display = "none";
