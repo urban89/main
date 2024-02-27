@@ -1,14 +1,19 @@
 ///////////////////////
 //Declaring variables 
-const liter = "Liter";
-const gallon = "Gallon";
-const celsius = "Celsius";
-const farenheit = "Farenheit";
+const liter = "L";
+const gallon = "gal";
+const celsius = "℃";
+const farenheit = "℉";
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 const numberinputs = document.querySelectorAll('input[type="number"]');
+const radioinputs = document.querySelectorAll('input[type = "radio"]');
 
 let console_capacity = liter;
 let console_temperature = celsius; 
+
+let cap_modifier = 1; 
+let temp_modifier1 = 1;
+let temp_modifier2 = 0;
 
 let minimum_liter = 20;
 let minimum_gallon = 5.3; 
@@ -128,9 +133,13 @@ tank_size.addEventListener("click", preCheckTank);
     checkbox.addEventListener("change", search_button);
   });
 
-  numberinputs.forEach (checkbox => {
-    checkbox.addEventListener("change", search_button);
+  numberinputs.forEach (input => {
+    input.addEventListener("change", search_button);
   });
+
+  radioinputs.forEach (radio => {
+    radio.addEventListener("change", search_button);
+  })
 
   sort_select.addEventListener("change", search_button);
 
@@ -360,18 +369,32 @@ function fishSelect () {
     let result_lists_element = document.createElement("p"); // <p> holding the fish name 
     let image_element = document.createElement('img'); // <img> holding the fish image 
     let size = document.createElement("span"); // fish size in fish card 
- 
+    let temp = document.createElement("span"); // temperature in fish card 
+    let tanksize = document.createElement("span"); // tank size in fish card 
+    let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+    let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+    let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10)
+
+
+
     image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
     result_lists_element.textContent = `${fish_list[i].name_english}`; // adding name to <p> result_lists_element
     size.textContent = `${fish_list[i].cm_max}` + " cm"; // getting fish size from fish_master 
-
+    temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
+    tanksize.textContent = `${cap} ${console_capacity}`
+    
+    result_lists_element.className = "fishname";
     image_element.className = "fishcardimage"; 
     size.className = "fishsize";
     fishcard.className = "fish_card";
+    temp.className = "fishtemp";
+    tanksize.className = "tanksize"; 
 
     fishcard.appendChild(image_element);
     fishcard.appendChild(result_lists_element);
     fishcard.appendChild(size);
+    fishcard.appendChild(temp);
+    fishcard.appendChild(tanksize);
     result_lists.appendChild(fishcard);
   }
 

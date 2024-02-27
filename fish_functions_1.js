@@ -20,9 +20,10 @@ function all_select_behavior (x) {
   if (gallon_radio.checked == true) {
   let cal_cap = tank_size.value;
   document.getElementById("size").innerHTML = gallon;
-  
+  cap_modifier = 3.785; 
   console_capacity = gallon;
   tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
+
   tank_size_check ()
   }
   }
@@ -33,6 +34,7 @@ function all_select_behavior (x) {
     if (liter_radio.checked == true) {
   let cal_cap = tank_size.value;
   document.getElementById("size").innerHTML = liter;
+  cap_modifier = 1; 
   console_capacity = liter;
   tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
   tank_size_check ()
@@ -46,6 +48,8 @@ function all_select_behavior (x) {
   
   console_temperature =  farenheit;
   tempmin.value = Math.round((cal_tempmin * 9/5)+32);
+  temp_modifier1 = 1.8; 
+  temp_modifier2 = 32; 
   tempmin.min = 39;
   tempmin.max = 95;
   
@@ -59,6 +63,8 @@ function all_select_behavior (x) {
   
   console_temperature = celsius;
   tempmin.value = Math.round((cal_tempmin-32)*5/9);
+  temp_modifier1 = 1; 
+  temp_modifier2 = 0; 
   tempmin.min = 4;
   tempmin.max = 35;
     }
