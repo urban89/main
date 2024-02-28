@@ -47,7 +47,7 @@ function all_select_behavior (x) {
   document.getElementById("min_t").innerHTML = farenheit;
   
   console_temperature =  farenheit;
-  tempmin.value = Math.round((cal_tempmin * 9/5)+32);
+  tempmin.value = Math.round(((cal_tempmin * 9/5)+32)*10)/10;
   temp_modifier1 = 1.8; 
   temp_modifier2 = 32; 
   tempmin.min = 39;
@@ -62,7 +62,7 @@ function all_select_behavior (x) {
   document.getElementById("min_t").innerHTML = celsius;
   
   console_temperature = celsius;
-  tempmin.value = Math.round((cal_tempmin-32)*5/9);
+  tempmin.value = Math.round(((cal_tempmin-32)*5/9)*10)/10;
   temp_modifier1 = 1; 
   temp_modifier2 = 0; 
   tempmin.min = 4;
