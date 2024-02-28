@@ -11,13 +11,16 @@
   const inch = "inch";
   const show_inch = "Show fish size in inch";
   const show_cm = "Show fish size in cm";
+  const more = "Show more search options";
+  const fewer = "Show fewer search options";
 
   let console_capacity = liter;
   let console_temperature = celsius; 
   let console_fishsize = cm; 
   let fishsize_option = show_inch;
+  let options_option = fewer; 
 
-  let  cap_modifier = 1; 
+  let cap_modifier = 1; 
   let temp_modifier1 = 1;
   let temp_modifier2 = 0;
   let size_modifier = 1; 
@@ -661,8 +664,9 @@
     }
 
 function optionsToggle () {
-  more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";  
-  console.log("teszt 1");
+  more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";
+  options_option = (more_options.style.display === "grid") ? fewer : more; 
+  toggle_options.innerText = options_option; 
 
   if (more_options.style.display === "none") {
     all_3.checked = true; 
@@ -679,7 +683,7 @@ function optionsToggle () {
     div_agression.classList.add('tiles');
     div_breeding.classList.add('tiles');
     search_button()
-
+  
   }
 }
 
