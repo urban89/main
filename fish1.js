@@ -396,11 +396,13 @@
       let size = document.createElement("span"); // fish size in fish card 
       let temp = document.createElement("span"); // temperature in fish card 
       let tanksize = document.createElement("span"); // tank size in fish card 
+
       let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
       let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
-      let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10);
-      let card_size = (((fish_list[i].cm_max * size_modifier) * 10)/10).toFixed(1); 
-
+      let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
+      let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+      let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+      //((() * 10)/10).toFixed(1); 
 
       image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
       result_lists_element.textContent = `${fish_list[i].name_english}`; // adding name to <p> result_lists_element
@@ -408,7 +410,6 @@
       temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
       tanksize.textContent = `${cap} ${console_capacity}`;
       
-
       fishcard.className = "fish_card";
       image_element.className = "fishcardimage"; 
       result_lists_element.className = "fishname";
@@ -661,6 +662,7 @@
 
 function optionsToggle () {
   more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";  
+  console.log("teszt 1");
 
   if (more_options.style.display === "none") {
     all_3.checked = true; 
@@ -679,4 +681,14 @@ function optionsToggle () {
     search_button()
 
   }
+}
+
+//removing ".0" from round numbers 
+function sizeFormatter (num) {
+
+if (num % 1 !== 0) {
+  return num.toFixed(1);
+} else {
+  return num.toFixed(0); 
+}
 }
