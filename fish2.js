@@ -1,4 +1,11 @@
 
+
+let temp_modifier1 = 1; 
+let temp_modifier2 = 0; 
+let cap_modifier = 1; 
+let console_temperature = "℃"; 
+let console_capacity = "L"; 
+
 let result_div = document.getElementById("result")
 let sort_select = document.getElementById("sort");
 
@@ -41,20 +48,36 @@ function fishSelect (fish_list) {
   console.log("len at stage 2: " + fish_list.length);
 
   for (let i = 0; i <fish_list.length; i++) {
-    console.log("teszt 2");
+    let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
     let result_lists_element = document.createElement("p");
     let image_element = document.createElement('img');
     let size = document.createElement("span");
-    let fishcard = document.createElement('div');
-    image_element.src = `images/${fish_list[i].fish_id}.jpeg`;
-    image_element.className = "fishcardimage";
+    let temp = document.createElement("span"); // temperature in fish card 
+    let tanksize = document.createElement("span"); // tank size in fish card 
+    let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+    let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+    let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10)
+
+   
+    image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
     result_lists_element.textContent = `${fish_list[i].name_english}`;
     size.textContent = `${fish_list[i].cm_max}` + " cm";
-    size.className = "fishsize";
+    temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
+    tanksize.textContent = `${cap} ${console_capacity}`
+
+   
     fishcard.className = "fish_card";
+    image_element.className = "fishcardimage";
+    result_lists_element.className = "fishname";
+    size.className = "fishsize";
+    temp.className = "fishtemp";
+    tanksize.className = "tanksize"; 
+
     fishcard.appendChild(image_element);
     fishcard.appendChild(result_lists_element);
     fishcard.appendChild(size);
+    fishcard.appendChild(temp);
+    fishcard.appendChild(tanksize);
     result_lists.appendChild(fishcard);
   }
 

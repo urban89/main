@@ -397,10 +397,11 @@ function fishSelect () {
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
     tanksize.textContent = `${cap} ${console_capacity}`
     
-    result_lists_element.className = "fishname";
-    image_element.className = "fishcardimage"; 
-    size.className = "fishsize";
+
     fishcard.className = "fish_card";
+    image_element.className = "fishcardimage"; 
+    result_lists_element.className = "fishname";
+    size.className = "fishsize";
     temp.className = "fishtemp";
     tanksize.className = "tanksize"; 
 
