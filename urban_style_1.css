@@ -278,18 +278,27 @@ input[type="radio"] {
 }
 
 
-
+/*The button that opens the dropdown for Settings */ 
 .dropbtn {
-  background-color: #3498DB;
-  color: white;
+  text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
+  background: #abd6e0f5;
+  /* background-color: #72a2c2; */
+  color: rgb(8, 1, 1);
   padding: 16px;
   font-size: 16px;
-  border: none;
+  border: solid;
   cursor: pointer;
+  border-left: 1px solid #000;  /* Adjust color and width as needed */
+  border-right: 1px solid #000; /* Adjust color and width as needed */
+  border-top: none;             /* No top border */
+  border-bottom: none;
+  padding-top: 20px; /* Set the top padding to 20 pixels */
+  padding-bottom: 20px; /* Set the bottom padding to 30 pixels */
+  border-radius: 10px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color:  #86a5def8; 
 }
 
 .dropdown {
@@ -297,14 +306,20 @@ input[type="radio"] {
   display: inline-block;
 }
 
+/* The dropdown menu itself */ 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background:  #afeefcec;
   min-width: 160px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
   z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content:hover, .dropdown-content:focus {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
 }
 
 .dropdown-content span {
@@ -314,6 +329,6 @@ input[type="radio"] {
   display: block;
 }
 
-.dropdown span:hover {background-color: #ddd;}
+.dropdown span:hover {background-color:  #86a5def8; }
 
 .show {display: block;}
