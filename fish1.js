@@ -44,6 +44,7 @@
 
   let main_form = document.getElementById("main_form");
   let more_options = document.getElementById("more_options");
+  let toggle_options = document.getElementById("toggle_options"); 
   let search = document.getElementById("search"); 
 
   let tank_size = document.getElementById("tank_size"); 
@@ -135,11 +136,11 @@
     easy.checked = true;
 
     all_3.checked = true; 
-    selectall(social_chbx, all_3)
+    selectall(social_chbx, all_3);
     all_4.checked = true; 
-    selectall(agress_chbx, all_4)
+    selectall(agress_chbx, all_4);
     all_5.checked = true; 
-    selectall(breed_chbx, all_5)
+    selectall(breed_chbx, all_5);
 
     checkboxes.forEach (checkbox => {
       checkbox.addEventListener("change", search_button);
@@ -174,6 +175,7 @@
   });
 
   cmtoinch.addEventListener("click", fishsizemetric);
+  toggle_options.addEventListener("click", optionsToggle);
 
   });
         
@@ -657,4 +659,24 @@
       search_button()
     }
 
-    // dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+function optionsToggle () {
+  more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";  
+
+  if (more_options.style.display === "none") {
+    all_3.checked = true; 
+    selectall(social_chbx, all_3);
+    all_4.checked = true; 
+    selectall(agress_chbx, all_4);
+    all_5.checked = true; 
+    selectall(breed_chbx, all_5);
+
+    div_behavior.classList.remove('notselected');
+    div_agression.classList.remove('notselected');
+    div_breeding.classList.remove('notselected');
+    div_behavior.classList.add('tiles');
+    div_agression.classList.add('tiles');
+    div_breeding.classList.add('tiles');
+    search_button()
+
+  }
+}
