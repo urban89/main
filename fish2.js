@@ -1,17 +1,49 @@
 
+const liter = "L";
+const gallon = "gal";
+const celsius = "℃";
+const farenheit = "℉";
+const cm = "cm";
+const inch = "inch";
+const show_inch = "Show fish size in inch";
+const show_cm = "Show fish size in cm";
+const show_farenheit = "Show water temperature in farenheit";
+const show_celsius = "Show water temperature in celsius";
+const show_liter =  "Show aquarium capacity in liter";
+const show_gallon = "Show aquarium capacity in gallon"; 
 
 let temp_modifier1 = 1; 
 let temp_modifier2 = 0; 
 let cap_modifier = 1; 
-let console_temperature = "℃"; 
-let console_capacity = "L"; 
+let size_modifier = 1; 
+let console_temperature = celsius; 
+let console_capacity = liter; 
+let console_fishsize = cm;
+let fishsize_option = show_inch;
+
+let cmtoinch = document.getElementById("cmtoinch");
 
 let result_div = document.getElementById("result")
 let sort_select = document.getElementById("sort");
 
+// Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
     sort_select.addEventListener("change", output);
     output ()
+
+    document.getElementById("settings").addEventListener("click", function () {
+      var dropdown = document.getElementById("settings_dropdown");
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  });
+
+  window.addEventListener("click", function (event) {
+    var dropdown = document.getElementById("settings_dropdown");
+    if (event.target !== document.getElementById("settings")) {
+        dropdown.style.display = "none";
+    }
+  });
+
+  cmtoinch.addEventListener("click", fishsizemetric);
     
 });
 
@@ -57,11 +89,13 @@ function fishSelect (fish_list) {
     let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
     let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
     let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10)
+    let card_size_cal = parseFloat(fish_list[i].cm_max);
+    let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
    
     image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
     result_lists_element.textContent = `${fish_list[i].name_english}`;
-    size.textContent = `${fish_list[i].cm_max}` + " cm";
+    size.textContent = `${card_size} ${console_fishsize}`;
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
     tanksize.textContent = `${cap} ${console_capacity}`
 
@@ -107,4 +141,25 @@ function compare_size(a, b) {
     console.log("why doesn't it run? ")
     sort();
     fishSelect (fish_list);
+  }
+
+
+ function fishsizemetric () {
+      // console_fishsize = inch; 
+      console_fishsize = (console_fishsize === cm) ? inch : cm; 
+      fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
+      console.log(fishsize_option);
+      size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
+      cmtoinch.innerText = fishsize_option; 
+      output ();
+    }
+
+    //removing ".0" from round numbers 
+function sizeFormatter (num) {
+
+  if (num % 1 !== 0) {
+    return num.toFixed(1);
+  } else {
+    return num.toFixed(0); 
+  }
   }
