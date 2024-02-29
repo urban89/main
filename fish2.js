@@ -21,6 +21,7 @@ let console_capacity = liter;
 let console_fishsize = cm;
 let fishsize_option = show_inch;
 let capacity_button = show_gallon;
+let temp_button = show_farenheit; 
 
 let cmtoinch = document.getElementById("cmtoinch");
 
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   cmtoinch.addEventListener("click", fishsizemetric);
   cap_conversion.addEventListener("click", litergallon);
+  temp_conversion.addEventListener("click", celtofaren);
     
 });
 
@@ -170,5 +172,14 @@ function sizeFormatter (num) {
     capacity_button = (capacity_button === show_gallon) ? show_liter: show_gallon;
     cap_modifier = (cap_modifier === 1) ? 0.264172 : 1; 
     cap_conversion.innerText = capacity_button;
+    output ();
+  }
+
+  function celtofaren () {
+    console_temperature = (console_temperature === celsius) ? farenheit : celsius; 
+    temp_button = (temp_button === show_farenheit) ? show_celsius: show_farenheit;
+    temp_modifier1 = (temp_modifier1 === 1) ? 1.8 : 1; 
+    temp_modifier2 = (temp_modifier2 ===  0) ? 32 : 0; 
+    temp_conversion.innerText = temp_button;
     output ();
   }
