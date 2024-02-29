@@ -102,7 +102,7 @@
   let srch_arr = []; 
 
   let settings = document.getElementById("settings");
-  let cmtoinch = document.getElementById("cmtoinch")
+  let cmtoinch = document.getElementById("cmtoinch");
 
   // Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
