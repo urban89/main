@@ -88,8 +88,8 @@ function fishSelect (fish_list) {
     let tanksize = document.createElement("span"); // tank size in fish card 
     let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
     let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
-    let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10)
-    let card_size_cal = parseFloat(fish_list[i].cm_max);
+    let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10) // potential conersion of aquarium capacity with "cap_modifier" 
+    let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
     let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
    
