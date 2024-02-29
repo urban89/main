@@ -299,6 +299,7 @@ input[type="radio"] {
 
 .dropbtn:hover, .dropbtn:focus {
   background-color:  #86a5def8; 
+  font-size: 17px;
 }
 
 .dropdown {
