@@ -165,17 +165,35 @@
     capalert.style.display = "none";
     checkalert.style.display = "none";
 
-    document.getElementById("settings").addEventListener("click", function () {
-      var dropdown = document.getElementById("settings_dropdown");
+
+    ///Event listeners for SETTINGS dropdown 
+    document.getElementById("info").addEventListener("click", function () {
+      var dropdown = document.getElementById("info_dropdown");
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
   window.addEventListener("click", function (event) {
-    var dropdown = document.getElementById("settings_dropdown");
-    if (event.target !== document.getElementById("settings")) {
+    var dropdown = document.getElementById("info_dropdown");
+    if (event.target !== document.getElementById("info")) {
         dropdown.style.display = "none";
     }
   });
+
+  ///Event listeners for INFORMATION dropdown 
+
+  document.getElementById("settings").addEventListener("click", function () {
+    var dropdown = document.getElementById("settings_dropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
+window.addEventListener("click", function (event) {
+  var dropdown = document.getElementById("settings_dropdown");
+  if (event.target !== document.getElementById("settings")) {
+      dropdown.style.display = "none";
+  }
+});
+
+
 
   cmtoinch.addEventListener("click", fishsizemetric);
   toggle_options.addEventListener("click", optionsToggle);

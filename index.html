@@ -174,17 +174,20 @@
       <div id = "settings_dropdown" class="dropdown-content"> 
         <span id = "cmtoinch">Show fish size in inch</span>
         <span id = "toggle_options">Show fewer seach options</span>
+        <span id = "language">Change language</span>
       </div>
     </span>
     <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown -->
-
     &nbsp;&nbsp;&nbsp;
-    <span id = "info" class ="dropbtn"> Info </span>
+    <span class = "dropdown"> 
+      <span id = "info" class="dropbtn">Information</span>
+      <div id = "info_dropdown" class="dropdown-content"> 
+        <span id = "explain_button">Show explanations</span>
+        <span id = "feedback_button">Send feedback</span>
+      </div>
+    </span>
     &nbsp;&nbsp;&nbsp;
-    <span id = "feedback" class ="dropbtn"> Feedback </span>
-    &nbsp;&nbsp;&nbsp;
-    <span id = "language" class ="dropbtn"> English </span>
-  </div> 
+  </div> <!-- Cpanel ends here -->
 
 
         
@@ -192,7 +195,9 @@
 
     
     <div id = "result"> 
-    </div> <!-- result div-->
+      <!-- here the fish cards are generated dynamically -->
+    </div> 
+
     <div id = alerts> 
   <span id = "tempalert" class = "alert"> </span>
   <br>
