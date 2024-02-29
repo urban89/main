@@ -315,7 +315,7 @@ input[type="radio"] {
   overflow: auto;
   box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
   z-index: 1;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 10px;
 }
 
 .dropdown-content:hover, .dropdown-content:focus {
