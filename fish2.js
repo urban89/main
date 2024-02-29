@@ -20,11 +20,14 @@ let console_temperature = celsius;
 let console_capacity = liter; 
 let console_fishsize = cm;
 let fishsize_option = show_inch;
+let capacity_button = show_gallon;
 
 let cmtoinch = document.getElementById("cmtoinch");
 
-let result_div = document.getElementById("result")
+let result_div = document.getElementById("result");
 let sort_select = document.getElementById("sort");
+let cap_conversion = document.getElementById("cap_conversion");
+let temp_conversion = document.getElementById("temp_conversion");
 
 // Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   cmtoinch.addEventListener("click", fishsizemetric);
+  cap_conversion.addEventListener("click", litergallon);
     
 });
 
@@ -76,8 +80,6 @@ function fishSelect (fish_list) {
   result_div.innerHTML = '';  
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
-  console.log("teszt 1");
-  console.log("len at stage 2: " + fish_list.length);
 
   for (let i = 0; i <fish_list.length; i++) {
     let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
@@ -88,7 +90,7 @@ function fishSelect (fish_list) {
     let tanksize = document.createElement("span"); // tank size in fish card 
     let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
     let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
-    let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10) // potential conersion of aquarium capacity with "cap_modifier" 
+    let cap = Math.round(((fish_list[i].tank_size_liter * cap_modifier) * 10)/10)
     let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
     let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
@@ -148,7 +150,6 @@ function compare_size(a, b) {
       // console_fishsize = inch; 
       console_fishsize = (console_fishsize === cm) ? inch : cm; 
       fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
-      console.log(fishsize_option);
       size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
       cmtoinch.innerText = fishsize_option; 
       output ();
@@ -162,4 +163,12 @@ function sizeFormatter (num) {
   } else {
     return num.toFixed(0); 
   }
+  }
+
+  function litergallon () {
+    console_capacity = (console_capacity === liter) ? gallon : liter; 
+    capacity_button = (capacity_button === show_gallon) ? show_liter: show_gallon;
+    cap_modifier = (cap_modifier === 1) ? 0.264172 : 1; 
+    cap_conversion.innerText = capacity_button;
+    output ();
   }
