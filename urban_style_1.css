@@ -232,15 +232,29 @@ input[type="radio"] {
 }
 
 
-/* trying to make it adaptive */ 
+/* Making it a little bit responsive here  */ 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 450px) {
+  #maindiv {
+    width: 95vw;
+  }
+}
+
+
+@media screen and (min-width: 788px) {
+  #maindiv {
+    width: 85vw;
+  }
+}
+
+
+@media screen and (min-width: 839px) {
   #maindiv {
     width: 80vw;
   }
 }
 
-@media screen and (min-width: 910px) {
+@media screen and (min-width: 956px) {
   #maindiv {
     width: 70vw;
   }
@@ -259,9 +273,7 @@ input[type="radio"] {
   .fishcardimage {
     width: 225px;
     height: 175px;
-  
 }
-
 }
 
 @media screen and (min-width: 1600px) {
@@ -269,14 +281,11 @@ input[type="radio"] {
     width: 50vw;
     
   }
-
   .fishcardimage {
     width: 250px;
     height: 200px;
-  
 }
 }
-
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
