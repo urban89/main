@@ -6,14 +6,14 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: fit-content; /* This ensures that the container is centered vertically on the page */
+  height: fit-content; 
 }
 
 
 #maindiv {
   width: 90vw; 
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding to the content inside the container */
+  margin: 0 auto; 
+  padding: 20px; 
   border-radius: 5px; 
   display: inline-block; 
   white-space: nowrap;
@@ -26,19 +26,17 @@ body {
 }
 
 .column {
-  flex: 1; /* This makes both columns take up equal width */
-  margin: 10px; /* Adjust margin as needed */
+  flex: 1;
+  margin: 10px; 
 
 } 
 
  
 .body-color-1 {
-  /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
-background-attachment: fixed; */
 background-image: url('IMG_9602.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-background-attachment: fixed; /* This keeps the background fixed when scrolling */
+background-attachment: fixed; 
 
 
 }
@@ -119,7 +117,7 @@ div_breeding
 
 
 .fish_card {
-  flex: 0 0 calc(33.33% - 10px); /* 33.33% width with 10px spacing between items */
+  flex: 0 0 calc(33.33% - 10px); 
   margin: 5px; 
   box-sizing: border-box;
   border: 1px solid #010a14;
