@@ -424,6 +424,7 @@ window.addEventListener("click", function (event) {
       let size = document.createElement("span"); // fish size in fish card 
       let temp = document.createElement("span"); // temperature in fish card 
       let tanksize = document.createElement("span"); // tank size in fish card 
+      let name = uppercaser(fish_list[i].name_english);
 
       let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
       let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
@@ -432,7 +433,7 @@ window.addEventListener("click", function (event) {
       let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
      
       image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
-      fishname.textContent = `${fish_list[i].name_english}`; // adding name to <p> result_lists_element
+      fishname.textContent = name; // adding name to <p> result_lists_element
       size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
       temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
       tanksize.textContent = `${cap} ${console_capacity}`;
@@ -482,7 +483,7 @@ window.addEventListener("click", function (event) {
    infocard.className = "infocard";
 
    iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
-   fishname2.innerHTML = `${fish_list[i].name_english}`;
+   fishname2.innerHTML = name;
    latin.innerHTML = `${fish_list[i].name_latin}`;
    mintanksize.innerHTML = `Minimum aquarium size: ${cap} ${console_capacity}`;
    tempinfo.innerHTML = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
@@ -552,7 +553,7 @@ window.addEventListener("click", function (event) {
     details = details.filter(element => element !== divId);
     let re_card = fish_list.find(obj => obj.fish_id === divId) // This re_card might be completely unnecesary 
     console.log(re_card);
-  }
+  } 
   });
   });
 
@@ -870,4 +871,13 @@ let codes_breed =
   3: "Medium",
   2: "Hard",
   1: "Impossible"
+}
+
+
+
+//// Upper case first letter:
+function uppercaser(str) {
+  const words = str.split(' ');
+  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return capitalizedWords.join(' ');
 }
