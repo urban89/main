@@ -6,14 +6,14 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: fit-content; 
+  height: fit-content; /* This ensures that the container is centered vertically on the page */
 }
 
 
 #maindiv {
   width: 90vw; 
-  margin: 0 auto; 
-  padding: 20px; 
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding to the content inside the container */
   border-radius: 5px; 
   display: inline-block; 
   white-space: nowrap;
@@ -26,17 +26,19 @@ body {
 }
 
 .column {
-  flex: 1;
-  margin: 10px; 
+  flex: 1; /* This makes both columns take up equal width */
+  margin: 10px; /* Adjust margin as needed */
 
 } 
 
  
 .body-color-1 {
+  /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
+background-attachment: fixed; */
 background-image: url('IMG_9602.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-background-attachment: fixed; 
+background-attachment: fixed; /* This keeps the background fixed when scrolling */
 
 
 }
@@ -116,14 +118,14 @@ div_breeding
 } 
 
 
-.fish_card {
+.fish_card, .infocard {
   flex: 0 0 calc(33.33% - 10px); 
   margin: 5px; 
   box-sizing: border-box;
   border: 1px solid #010a14;
   border-radius: 10px;
   padding: 10px;
-  background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
+  background: linear-gradient(125deg, #ebbe5de0 25%, #ca8b2de0 66%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 position: relative;
@@ -341,3 +343,22 @@ input[type="radio"] {
 .dropdown span:hover {background-color:  #86a5def8; }
 
 .show {display: block;}
+
+
+.reveal_card {
+  display: none;
+}
+
+.infocardtext {
+  font-size: 15px;
+  margin: 0; 
+}
+
+.iconimage {
+width: 50px;
+height: 40px;
+border-color: #05224f;
+border-width: 1px; 
+border-radius: 3px;
+border-style: solid;
+}

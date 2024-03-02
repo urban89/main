@@ -104,6 +104,8 @@
   let settings = document.getElementById("settings");
   let cmtoinch = document.getElementById("cmtoinch");
 
+  let details = []; 
+
   // Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
         
@@ -407,12 +409,17 @@ window.addEventListener("click", function (event) {
 
   ///////////////////Outputting serach results to UI
   function fishSelect () {
+    console.log(fish_list);
     let result_lists = document.createElement("div");
     result_lists.className = "column_result"; 
 
     for (let i = 0; i <fish_list.length; i++) {
+
+      //Generating fish card (fish cards are displayed by default)
+      let fishid = fish_list[i].fish_id; 
+      let main_card = document.createElement('div'); //container card to hide/show info 
       let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
-      let result_lists_element = document.createElement("p"); // <p> holding the fish name 
+      let fishname = document.createElement("p"); // <p> holding the fish name 
       let image_element = document.createElement('img'); // <img> holding the fish image 
       let size = document.createElement("span"); // fish size in fish card 
       let temp = document.createElement("span"); // temperature in fish card 
@@ -423,31 +430,143 @@ window.addEventListener("click", function (event) {
       let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
       let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
       let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
-      //((() * 10)/10).toFixed(1); 
-
+     
       image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
-      result_lists_element.textContent = `${fish_list[i].name_english}`; // adding name to <p> result_lists_element
+      fishname.textContent = `${fish_list[i].name_english}`; // adding name to <p> result_lists_element
       size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
       temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
       tanksize.textContent = `${cap} ${console_capacity}`;
       
+      main_card.id = fishid;
       fishcard.className = "fish_card";
       image_element.className = "fishcardimage"; 
-      result_lists_element.className = "fishname";
+      fishname.className = "fishname";
       size.className = "fishsize";
       temp.className = "fishtemp";
       tanksize.className = "tanksize"; 
+      main_card.className = "maincard"; //container card to hide/show info 
 
       fishcard.appendChild(image_element);
-      fishcard.appendChild(result_lists_element);
+      fishcard.appendChild(fishname);
       fishcard.appendChild(size);
       fishcard.appendChild(temp);
       fishcard.appendChild(tanksize);
-      result_lists.appendChild(fishcard);
+    
+      main_card.appendChild(fishcard);
+      result_lists.appendChild(main_card);
+
+   //Generating info card (with display none a default)  
+   let info_id = `d${fish_list[i].fish_id}`; 
+   let hardi = fish_list[i].uncare; 
+   let avail = fish_list[i].availability; 
+   let behave = fish_list[i].school; 
+   let agres = fish_list[i].agression; 
+   let breed = fish_list[i].breeding_difficulty; 
+
+   let reveal_card = document.createElement('div'); //container card to hide/show info 
+   let infocard = document.createElement('div'); 
+
+   let iconimage = document.createElement("img");
+   let fishname2 = document.createElement("p");
+   let latin = document.createElement("p");
+   let mintanksize = document.createElement("p");
+   let tempinfo = document.createElement("p");
+   let sizeinfo = document.createElement("p");
+   let hardiness = document.createElement("p");
+   let availability = document.createElement("p");
+   let social = document.createElement("p");
+   let agression = document.createElement("p");
+   let breeding = document.createElement("p");
+
+   reveal_card.className = "reveal_card";
+   infocard.className = "infocard";
+
+   iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+   fishname2.innerHTML = `<strong> English Name: </strong>${fish_list[i].name_english}`;
+   latin.textContent = `Latin Name: ${fish_list[i].name_latin}`;
+   mintanksize.textContent = `Minimum aquarium size: ${cap} ${console_capacity}`;
+   tempinfo.textContent = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
+   sizeinfo.textContent = `Maximum fish size: ${card_size} ${console_fishsize}`;
+
+   hardiness.textContent = `Keeping difficulty: ${codes_hardi[hardi]}`;
+   availability.textContent = `Purchase availability: ${codes_avail[avail]}`;
+   social.textContent = `Social behavior: ${codes_behave[behave]}`;
+   agression.textContent = `Agression level: ${codes_agres[agres]}`;
+   breeding.textContent =  `Breeding difficulty: ${codes_breed[breed]}`;
+
+   iconimage.className = "iconimage";
+   fishname2.className = "infocardtext";
+   latin.className = "infocardtext";
+   mintanksize.className = "infocardtext";
+   tempinfo.className = "infocardtext";
+   sizeinfo.className = "infocardtext";
+
+   hardiness.className = "infocardtext";
+   availability.className = "infocardtext";
+   social.className = "infocardtext";
+   agression.className = "infocardtext";
+   breeding.className = "infocardtext";
+
+   reveal_card.id = info_id; 
+   infocard.appendChild(iconimage);
+   infocard.appendChild(fishname2);
+   infocard.appendChild(latin);
+   infocard.appendChild(mintanksize);
+   infocard.appendChild(tempinfo);
+   infocard.appendChild(sizeinfo);
+
+   infocard.appendChild(hardiness);
+   infocard.appendChild(availability);
+   infocard.appendChild(social);
+   infocard.appendChild(agression);
+   infocard.appendChild(breeding);
+
+   reveal_card.appendChild(infocard); //container card to hide/show info 
+   result_lists.appendChild(reveal_card);
+
+      // --> Remembering detail page after changing search and causing search_button function to run again 
+      // if (details.includes(fishid)) {
+      //   fishcard.innerHTML = "The details will be revealed here";
+      // }
+
     }
 
     result_div.appendChild(result_lists);
-  } 
+
+
+  // fish cards and infor cards when clicked it hides the div and the other div is displayed in its place
+  let maincard_divs = document.querySelectorAll(".maincard");
+  let revealcard_divs = document.querySelectorAll(".reveal_card");
+  
+  maincard_divs.forEach(div => {
+  let divId = div.id; 
+  div.addEventListener("click", function () {
+    div.style.display = "none"; 
+    var info_id = `d${divId}`; 
+    var info_card = document.getElementById(info_id);
+    info_card.style.display = "block"; 
+  if (!details.includes(divId)) {
+    console.log(divId);
+    details.push(divId);
+  } else {
+    details = details.filter(element => element !== divId);
+    let re_card = fish_list.find(obj => obj.fish_id === divId) // This re_card might be completely unnecesary 
+    console.log(re_card);
+  }
+  });
+  });
+
+  revealcard_divs.forEach(div => {
+    let divId = div.id; 
+    div.addEventListener("click", function () {
+      div.style.display = "none"; 
+      var fishcard_id = divId.slice(1); 
+      var fish_card = document.getElementById(fishcard_id);
+      fish_card.style.display = "block"; 
+  });
+  });
+
+  } // fishSelect () ends here 
     
             
 
@@ -546,10 +665,9 @@ window.addEventListener("click", function (event) {
 
   }      
   }
-  
+
 
   // search_button function ends here 
-
 
     // Check data before search and display alert if needed 
 
@@ -707,10 +825,49 @@ function optionsToggle () {
 
 //removing ".0" from round numbers 
 function sizeFormatter (num) {
-
 if (num % 1 !== 0) {
   return num.toFixed(1);
 } else {
   return num.toFixed(0); 
 }
+}
+
+
+
+//// Dictionary for numerical codes to categories
+/// Used in info_card 
+
+let codes_hardi = 
+{
+  4: "beginner",
+  3: "easy",
+  2: "medium",
+  1: "easy"
+}
+let codes_avail = 
+{
+  4: "very common",
+  3: "common",
+  2: "rare",
+  1: "very rare"
+}
+let codes_behave = 
+{
+  3: "schooling",
+  2: "social",
+  1: "solitary"
+}
+
+let codes_agres = 
+{
+  3: "aggressive",
+  2: "can be aggressive",
+  1: "peaceful"
+}
+let codes_breed = 
+{
+  4: "easy",
+  3: "medium",
+  2: "hard",
+  1: "impossible"
 }
