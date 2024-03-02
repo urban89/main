@@ -132,7 +132,9 @@ position: relative;
   
 } 
 
-
+.infocard {
+  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+}
 
 
 .fishcardimage {
