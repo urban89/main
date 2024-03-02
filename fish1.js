@@ -482,21 +482,21 @@ window.addEventListener("click", function (event) {
    infocard.className = "infocard";
 
    iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
-   fishname2.innerHTML = `<strong> English Name: </strong>${fish_list[i].name_english}`;
-   latin.textContent = `Latin Name: ${fish_list[i].name_latin}`;
-   mintanksize.textContent = `Minimum aquarium size: ${cap} ${console_capacity}`;
-   tempinfo.textContent = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
-   sizeinfo.textContent = `Maximum fish size: ${card_size} ${console_fishsize}`;
+   fishname2.innerHTML = `${fish_list[i].name_english}`;
+   latin.innerHTML = `${fish_list[i].name_latin}`;
+   mintanksize.innerHTML = `Minimum aquarium size: ${cap} ${console_capacity}`;
+   tempinfo.innerHTML = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
+   sizeinfo.innerHTML = `Maximum fish size: ${card_size} ${console_fishsize}`;
 
-   hardiness.textContent = `Keeping difficulty: ${codes_hardi[hardi]}`;
-   availability.textContent = `Purchase availability: ${codes_avail[avail]}`;
-   social.textContent = `Social behavior: ${codes_behave[behave]}`;
-   agression.textContent = `Agression level: ${codes_agres[agres]}`;
-   breeding.textContent =  `Breeding difficulty: ${codes_breed[breed]}`;
+   hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
+   availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
+   social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
+   agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
+   breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
 
    iconimage.className = "iconimage";
-   fishname2.className = "infocardtext";
-   latin.className = "infocardtext";
+   fishname2.className = "title";
+   latin.className = "subtitle";
    mintanksize.className = "infocardtext";
    tempinfo.className = "infocardtext";
    sizeinfo.className = "infocardtext";
@@ -839,35 +839,35 @@ if (num % 1 !== 0) {
 
 let codes_hardi = 
 {
-  4: "beginner",
-  3: "easy",
-  2: "medium",
-  1: "easy"
+  4: "Beginner",
+  3: "Easy",
+  2: "Medium",
+  1: "Easy"
 }
 let codes_avail = 
 {
-  4: "very common",
-  3: "common",
-  2: "rare",
-  1: "very rare"
+  4: "Very common",
+  3: "Common",
+  2: "Rare",
+  1: "Very rare"
 }
 let codes_behave = 
 {
-  3: "schooling",
-  2: "social",
-  1: "solitary"
+  3: "Schooling",
+  2: "Social",
+  1: "Solitary"
 }
 
 let codes_agres = 
 {
-  3: "aggressive",
-  2: "can be aggressive",
-  1: "peaceful"
+  3: "Aggressive",
+  2: "Can be aggressive",
+  1: "Peaceful"
 }
 let codes_breed = 
 {
-  4: "easy",
-  3: "medium",
-  2: "hard",
-  1: "impossible"
+  4: "Easy",
+  3: "Medium",
+  2: "Hard",
+  1: "Impossible"
 }
