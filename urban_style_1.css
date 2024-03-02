@@ -49,7 +49,7 @@ background-attachment: fixed; /* This keeps the background fixed when scrolling 
 }
 
 .notselected {
-  background: linear-gradient(188deg, #c0a2f6 0%, #a37d92 100%);
+  background: linear-gradient(188deg, #b39edaf1 22%, #a3768fee 100%);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
@@ -78,7 +78,9 @@ div_breeding
 /*Tiles*/ 
 
 .tiles {
-  background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%);
+  
+  background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%);
+  /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
@@ -128,13 +130,15 @@ div_breeding
   background: linear-gradient(125deg, #ebbe5de0 25%, #ca8b2de0 66%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-position: relative;
+position: relative; /*necessary for in card elements to allign as I want */ 
   
 } 
 
 .infocard {
   background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
 }
+
 
 
 .fishcardimage {
@@ -148,12 +152,13 @@ border-style: solid;
 }
 
 select {
-  background-color: rgba(125, 195, 253, 0.575);
+  background-color: #cedba3f6;
   cursor: pointer;
 }
 
 input[type="number"] {
-background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%);
+  background: linear-gradient(188deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
+/* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); */
 cursor: text;
 }
 
@@ -292,7 +297,7 @@ input[type="radio"] {
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background: #abd6e0f5;
+  background:#9abbd3ec;
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 16px;
@@ -322,7 +327,7 @@ input[type="radio"] {
 .dropdown-content {
   display: none;
   position: absolute;
-  background:  #afeefcec;
+  background:  #9dd4e0ec;
   min-width: 160px;
   overflow: auto;
   box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
@@ -363,4 +368,24 @@ border-color: #05224f;
 border-width: 1px; 
 border-radius: 3px;
 border-style: solid;
+}
+
+
+.title {
+  position: absolute;
+  font-weight: 666;
+  top: 0;
+  left: 50%;
+  transform: translateX(-40%);
+  white-space: nowrap;
+  font-size: 13px; 
+}
+
+.subtitle {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-40%);
+  white-space: nowrap;
+  font-size: 13px; 
 }
