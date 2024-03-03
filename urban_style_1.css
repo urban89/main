@@ -78,9 +78,9 @@ div_breeding
 /*Tiles*/ 
 
 .tiles, .infotile {
-  
-  background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%);
-  /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); */
+  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
+  /* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); dark the above is bright*/
+  /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); blue */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
