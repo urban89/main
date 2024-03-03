@@ -12,6 +12,7 @@ const show_celsius = "Show water temperature in celsius";
 const show_liter =  "Show aquarium capacity in liter";
 const show_gallon = "Show aquarium capacity in gallon"; 
 
+
 let temp_modifier1 = 1; 
 let temp_modifier2 = 0; 
 let cap_modifier = 1; 
@@ -22,6 +23,8 @@ let console_fishsize = cm;
 let fishsize_option = show_inch;
 let capacity_button = show_gallon;
 let temp_button = show_farenheit; 
+
+let details = []; 
 
 let cmtoinch = document.getElementById("cmtoinch");
 
@@ -84,12 +87,19 @@ function fishSelect (fish_list) {
   result_lists.className = "column_result"; 
 
   for (let i = 0; i <fish_list.length; i++) {
+
+     //Generating fish card (fish cards are displayed by default)
+
+    let fishid = fish_list[i].fish_id; 
+    let main_card = document.createElement('div'); //container card to hide/show info  
     let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
     let result_lists_element = document.createElement("p");
     let image_element = document.createElement('img');
     let size = document.createElement("span");
     let temp = document.createElement("span"); // temperature in fish card 
     let tanksize = document.createElement("span"); // tank size in fish card 
+    let name = uppercaser(fish_list[i].name_english);
+
     let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
     let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
     let cap = Math.round(((fish_list[i].tank_size_liter * cap_modifier) * 10)/10)
@@ -103,25 +113,136 @@ function fishSelect (fish_list) {
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
     tanksize.textContent = `${cap} ${console_capacity}`
 
-   
+    main_card.id = fishid;
     fishcard.className = "fish_card";
     image_element.className = "fishcardimage";
     result_lists_element.className = "fishname";
     size.className = "fishsize";
     temp.className = "fishtemp";
     tanksize.className = "tanksize"; 
+    main_card.className = "maincard"; //container card to hide/show info 
 
     fishcard.appendChild(image_element);
     fishcard.appendChild(result_lists_element);
     fishcard.appendChild(size);
     fishcard.appendChild(temp);
     fishcard.appendChild(tanksize);
-    result_lists.appendChild(fishcard);
-  }
+    main_card.appendChild(fishcard);
+    result_lists.appendChild(main_card);
+
+
+    //Generating info card (with display none a default)  
+    let info_id = `d${fish_list[i].fish_id}`; 
+    let hardi = fish_list[i].uncare; 
+    let avail = fish_list[i].availability; 
+    let behave = fish_list[i].school; 
+    let agres = fish_list[i].agression; 
+    let breed = fish_list[i].breeding_difficulty; 
+ 
+    let reveal_card = document.createElement('div'); //container card to hide/show info 
+    let infocard = document.createElement('div'); 
+ 
+    let iconimage = document.createElement("img");
+    let fishname2 = document.createElement("p");
+    let latin = document.createElement("p");
+    let mintanksize = document.createElement("p");
+    let tempinfo = document.createElement("p");
+    let sizeinfo = document.createElement("p");
+    let hardiness = document.createElement("p");
+    let availability = document.createElement("p");
+    let social = document.createElement("p");
+    let agression = document.createElement("p");
+    let breeding = document.createElement("p");
+ 
+    reveal_card.className = "reveal_card";
+    infocard.className = "infocard";
+ 
+    iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+    fishname2.innerHTML = name;
+    latin.innerHTML = `${fish_list[i].name_latin}`;
+    mintanksize.innerHTML = `Minimum aquarium size: ${cap} ${console_capacity}`;
+    tempinfo.innerHTML = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
+    sizeinfo.innerHTML = `Maximum fish size: ${card_size} ${console_fishsize}`;
+ 
+    hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
+    availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
+    social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
+    agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
+    breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+ 
+    iconimage.className = "iconimage";
+    fishname2.className = "title";
+    latin.className = "subtitle";
+    mintanksize.className = "infocardtext";
+    tempinfo.className = "infocardtext";
+    sizeinfo.className = "infocardtext";
+ 
+    hardiness.className = "infocardtext";
+    availability.className = "infocardtext";
+    social.className = "infocardtext";
+    agression.className = "infocardtext";
+    breeding.className = "infocardtext";
+ 
+    reveal_card.id = info_id; 
+    infocard.appendChild(iconimage);
+    infocard.appendChild(fishname2);
+    infocard.appendChild(latin);
+    infocard.appendChild(mintanksize);
+    infocard.appendChild(tempinfo);
+    infocard.appendChild(sizeinfo);
+ 
+    infocard.appendChild(hardiness);
+    infocard.appendChild(availability);
+    infocard.appendChild(social);
+    infocard.appendChild(agression);
+    infocard.appendChild(breeding);
+ 
+    reveal_card.appendChild(infocard); //container card to hide/show info 
+    result_lists.appendChild(reveal_card);
+ 
+
+  } // fishSelect contiune after for loop ends 
 
   result_div.appendChild(result_lists);
   fishcount.innerText = fish_list.length; 
-} 
+
+
+  // fish cards and infor cards when clicked it hides the div and the other div is displayed in its place
+  let maincard_divs = document.querySelectorAll(".maincard");
+  let revealcard_divs = document.querySelectorAll(".reveal_card");
+  
+  maincard_divs.forEach(div => {
+  let divId = div.id; 
+  div.addEventListener("click", function () {
+    div.style.display = "none"; 
+    var info_id = `d${divId}`; 
+    var info_card = document.getElementById(info_id);
+    info_card.style.display = "block"; 
+  if (!details.includes(divId)) {
+    console.log(divId);
+    details.push(divId);
+  }
+  //  else {
+  //   details = details.filter(element => element !== divId);
+  //   // let re_card = fish_list.find(obj => obj.fish_id === divId) // This re_card might be completely unnecesary 
+  //   console.log(divId + " was removed from 'details'");
+  // } 
+  });
+  });
+
+  revealcard_divs.forEach(div => {
+    let divId = div.id; 
+    div.addEventListener("click", function () {
+      div.style.display = "none"; 
+      var fishcard_id = divId.slice(1); 
+      details = details.filter(element => element !== fishcard_id); //removing fish id from remember function 
+      var fish_card = document.getElementById(fishcard_id);
+      fish_card.style.display = "block"; 
+  });
+  });
+
+
+} // fishSelect () ends here 
   
 
 
@@ -142,9 +263,9 @@ function compare_size(a, b) {
 
 
   function output () {
-    console.log("why doesn't it run? ")
     sort();
     fishSelect (fish_list);
+    remember (details)
   }
 
 
@@ -183,3 +304,63 @@ function sizeFormatter (num) {
     temp_conversion.innerText = temp_button;
     output ();
   }
+
+
+  //// Dictionary for numerical codes to categories
+/// Used in info_card 
+
+let codes_hardi = 
+{
+  4: "Beginner",
+  3: "Easy",
+  2: "Medium",
+  1: "Easy"
+}
+let codes_avail = 
+{
+  4: "Very common",
+  3: "Common",
+  2: "Rare",
+  1: "Very rare"
+}
+let codes_behave = 
+{
+  3: "Schooling",
+  2: "Social",
+  1: "Solitary"
+}
+
+let codes_agres = 
+{
+  3: "Aggressive",
+  2: "Can be aggressive",
+  1: "Peaceful"
+}
+let codes_breed = 
+{
+  4: "Easy",
+  3: "Medium",
+  2: "Hard",
+  1: "Impossible"
+}
+
+
+
+//// Upper case first letter:
+function uppercaser(str) {
+  const words = str.split(' ');
+  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return capitalizedWords.join(' ');
+}
+
+
+////Remembering info card display based on iterating the 'details' array that serves as cache? 
+function remember (details) {
+  for (let id of details) {
+   var fishcard = document.getElementById(id);
+   var d = "d";
+   var infocard = document.getElementById(d.concat(id));
+   fishcard.style.display = "none";
+   infocard.style.display = "block";
+  }
+}

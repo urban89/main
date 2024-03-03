@@ -604,6 +604,7 @@ window.addEventListener("click", function (event) {
   });
   });
 
+  remember (details)
   } // fishSelect () ends here 
     
             
@@ -917,4 +918,15 @@ function uppercaser(str) {
   const words = str.split(' ');
   const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
   return capitalizedWords.join(' ');
+}
+
+////Remembering info card display based on iterating the 'details' array that serves as cache? 
+function remember (details) {
+  for (let id of details) {
+   var fishcard = document.getElementById(id);
+   var d = "d";
+   var infocard = document.getElementById(d.concat(id));
+   fishcard.style.display = "none";
+   infocard.style.display = "block";
+  }
 }
