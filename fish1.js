@@ -106,6 +106,8 @@
 
   let details = []; 
 
+  let kdiv_tank_size = document.getElementById("kdiv_tank_size"); 
+
   // Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
         
@@ -195,10 +197,45 @@ window.addEventListener("click", function (event) {
   }
 });
 
-
-
   cmtoinch.addEventListener("click", fishsizemetric);
   toggle_options.addEventListener("click", optionsToggle);
+
+  //Event listener for the Qmark button for showing more info about search parameters.
+  var kmarks = document.querySelectorAll('.kmark');
+  kmarks.forEach(div => {
+ let divId = div.id;
+  div.addEventListener("click", function () {
+   var tileID = divId.slice(1);
+   var i = "i"; 
+   var infoID =  i.concat(divId.slice(1));
+   console.log(infoID);
+   var tile = document.getElementById(tileID);
+   var info = document.getElementById(infoID);
+   tile.style.display = "none";
+   info.style.display = "block";
+  });
+});
+
+  var infotiles = document.querySelectorAll('.infotile');
+  infotiles.forEach(div => {
+ let divId = div.id;
+  div.addEventListener("click", function () {
+   var tileID = divId.slice(1);
+   var i = "i"; 
+   var infoID =  i.concat(divId.slice(1));
+   console.log(infoID);
+   var tile = document.getElementById(tileID);
+   var info = document.getElementById(infoID);
+   tile.style.display = "block";
+   info.style.display = "none";
+  });
+
+  });
+
+  var kmarks = document.querySelectorAll('.kmark');
+  kmarks.forEach(div => {
+    div.innerHTML = "ⓘ"; 
+  })
 
   });
         

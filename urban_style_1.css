@@ -77,7 +77,7 @@ div_breeding
 
 /*Tiles*/ 
 
-.tiles {
+.tiles, .infotile {
   
   background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%);
   /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); */
@@ -86,8 +86,32 @@ div_breeding
   box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
   border: 1px solid #0f1946; 
   margin: 10px 0 0 0 ; 
+  position: relative;
 }
 
+.infotile { 
+  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
+  white-space: wrap;
+  display: none;
+}
+
+.infotile p { 
+ margin: 0; 
+}
+
+.kmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px; 
+  background-color: #20c4da3f;
+  border-radius: 10px;
+}
+
+.kmark:hover {
+  cursor: help;
+  background-color: #c2db70f6;
+}
 
 /* more options div gird */ 
 
