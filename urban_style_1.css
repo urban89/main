@@ -188,6 +188,7 @@ cursor: text;
 
 input[type="checkbox"] {
   cursor: pointer;
+  accent-color: #485d6bec;
 }
 
 input[type="radio"] {
