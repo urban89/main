@@ -309,39 +309,39 @@ function sizeFormatter (num) {
   //// Dictionary for numerical codes to categories
 /// Used in info_card 
 
-let codes_hardi = 
+const codes_hardi = 
 {
   4: "Beginner",
   3: "Easy",
   2: "Medium",
   1: "Easy"
 }
-let codes_avail = 
+const codes_avail = 
 {
   4: "Very common",
   3: "Common",
   2: "Rare",
   1: "Very rare"
 }
-let codes_behave = 
+const codes_behave = 
 {
   3: "Schooling",
   2: "Social",
   1: "Solitary"
 }
 
-let codes_agres = 
+const codes_agres = 
 {
   3: "Aggressive",
   2: "Can be aggressive",
   1: "Peaceful"
 }
-let codes_breed = 
+const codes_breed = 
 {
-  4: "Easy",
-  3: "Medium",
-  2: "Hard",
-  1: "Impossible"
+  4: "Impossible",
+  3: "Hard",
+  2: "Medium",
+  1: "Easy"
 }
 
 
