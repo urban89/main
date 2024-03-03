@@ -78,7 +78,7 @@ div_breeding
 /*Tiles*/ 
 
 .tiles, .infotile {
-  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
+  background: linear-gradient(145deg, #c2db70f6  5%, #9bb8cdec 50%);
   /* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); dark the above is bright*/
   /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); blue */
   border-radius: 10px;
@@ -322,7 +322,7 @@ input[type="radio"] {
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background:#9abbd3ec;
+  background:#85c9c9ec;
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 16px;
