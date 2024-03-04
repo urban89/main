@@ -919,7 +919,7 @@ const codes_hardi =
   4: "Beginner",
   3: "Easy",
   2: "Medium",
-  1: "Easy"
+  1: "Difficult"
 }
 const codes_avail = 
 {
