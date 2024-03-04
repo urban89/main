@@ -78,7 +78,7 @@ div_breeding
 /*Tiles*/ 
 
 .tiles, .infotile {
-  background: linear-gradient(145deg, #c2db70f6  5%, #9bb8cdec 50%);
+  background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
   /* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); dark the above is bright*/
   /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); blue */
   border-radius: 10px;
@@ -151,7 +151,7 @@ div_breeding
   border: 1px solid #010a14;
   border-radius: 10px;
   padding: 10px;
-  background: linear-gradient(125deg, #ebbe5de0 25%, #ca8b2de0 66%);
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 position: relative; /*necessary for in card elements to allign as I want */ 
