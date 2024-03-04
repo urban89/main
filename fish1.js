@@ -278,8 +278,7 @@ window.addEventListener("click", function (event) {
 function remember (details) {
   for (let id of details) {
    var fishcard = document.getElementById(id);
-   var d = "d";
-   var infocard = document.getElementById(d.concat(id));
+   var infocard = document.getElementById("d" + id);
    if (fishcard && infocard) {
     fishcard.style.display = "none";
     infocard.style.display = "block";
@@ -610,11 +609,6 @@ function remember (details) {
 
    reveal_card.appendChild(infocard); //container card to hide/show info 
    result_lists.appendChild(reveal_card);
-
-      // --> Remembering detail page after changing search and causing search_button function to run again 
-      // if (details.includes(fishid)) {
-      //   fishcard.innerHTML = "The details will be revealed here";
-      // }
 
     }
 
@@ -948,7 +942,7 @@ const codes_behave =
 const codes_agres = 
 {
   3: "Aggressive",
-  2: "Can be aggressive",
+  2: "Mostly peaceful",
   1: "Peaceful"
 }
 const codes_breed = 

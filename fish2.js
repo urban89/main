@@ -379,8 +379,7 @@ function flipCards() {
     function remember (details) {
       for (let id of details) {
        var fishcard = document.getElementById(id);
-       var d = "d";
-       var infocard = document.getElementById(d.concat(id));
+       var infocard = document.getElementById("d" + id);
        if (fishcard && infocard) {
         fishcard.style.display = "none";
         infocard.style.display = "block";
