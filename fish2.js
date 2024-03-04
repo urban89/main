@@ -11,8 +11,10 @@ const show_farenheit = "Show water temperature in farenheit";
 const show_celsius = "Show water temperature in celsius";
 const show_liter =  "Show aquarium capacity in liter";
 const show_gallon = "Show aquarium capacity in gallon"; 
+const fishshown = "Show all info cards";
+const infoshown = "Show all fish cards";
 
-
+let fish_list = fish_master; 
 let temp_modifier1 = 1; 
 let temp_modifier2 = 0; 
 let cap_modifier = 1; 
@@ -23,6 +25,8 @@ let console_fishsize = cm;
 let fishsize_option = show_inch;
 let capacity_button = show_gallon;
 let temp_button = show_farenheit; 
+let whichcard = fishshown; 
+let flipped = false; 
 
 let details = []; 
 
@@ -53,10 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
   cmtoinch.addEventListener("click", fishsizemetric);
   cap_conversion.addEventListener("click", litergallon);
   temp_conversion.addEventListener("click", celtofaren);
-    
+  cardswticher.addEventListener("click", flipCards);   
+
 });
 
-let fish_list = fish_master; 
+
 
 
 
@@ -354,13 +359,31 @@ function uppercaser(str) {
 }
 
 
-////Remembering info card display based on iterating the 'details' array that serves as cache? 
-function remember (details) {
-  for (let id of details) {
-   var fishcard = document.getElementById(id);
-   var d = "d";
-   var infocard = document.getElementById(d.concat(id));
-   fishcard.style.display = "none";
-   infocard.style.display = "block";
-  }
-}
+
+function flipCards() {
+  console.log("teszt1");
+  flipped = (flipped === false) ? true : false; 
+  console.log(flipped);
+  whichcard = (flipped === true) ? infoshown: fishshown; 
+  cardswticher.innerHTML = whichcard;
+  if (flipped) {
+    for (let fish of fish_master) {
+      details.push(fish.fish_id);
+    }} else {
+      details = []; 
+    }
+    output ()
+  } 
+
+    ////Remembering info card display based on iterating the 'details' array that serves as cache? 
+    function remember (details) {
+      for (let id of details) {
+       var fishcard = document.getElementById(id);
+       var d = "d";
+       var infocard = document.getElementById(d.concat(id));
+       if (fishcard && infocard) {
+        fishcard.style.display = "none";
+        infocard.style.display = "block";
+      }
+    }
+    }

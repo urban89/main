@@ -13,12 +13,15 @@
   const show_cm = "Show fish size in cm";
   const more = "Show more search options";
   const fewer = "Show fewer search options";
+  const fishshown = "Show all info cards";
+  const infoshown = "Show all fish cards";
 
   let console_capacity = liter;
   let console_temperature = celsius; 
   let console_fishsize = cm; 
   let fishsize_option = show_inch;
   let options_option = fewer; 
+  let whichcard = fishshown; 
 
   let cap_modifier = 1; 
   let temp_modifier1 = 1;
@@ -103,12 +106,14 @@
 
   let settings = document.getElementById("settings");
   let cmtoinch = document.getElementById("cmtoinch");
+  let cardswticher = document.getElementById("cardswticher"); 
+  let flipped = false; 
 
   let details = []; 
 
   let kdiv_tank_size = document.getElementById("kdiv_tank_size"); 
 
-  // Adding initial event listeners   
+  /// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
         
   tank_size.addEventListener("blur", preCheckTank);
@@ -237,8 +242,42 @@ window.addEventListener("click", function (event) {
     div.innerHTML = "ⓘ"; 
   })
 
-  });
+  cardswticher.addEventListener("click", flipCards); 
+  });  /// Eventlisteners end here   
         
+
+
+
+  function flipCards() {
+    console.log("teszt1");
+    flipped = (flipped === false) ? true : false; 
+    console.log(flipped);
+    whichcard = (flipped === true) ? infoshown: fishshown; 
+    cardswticher.innerHTML = whichcard;
+    if (flipped) {
+      for (let fish of fish_master) {
+        details.push(fish.fish_id);
+      }} else {
+        details = []; 
+      }
+      search_button()
+    } 
+
+
+    ////Remembering info card display based on iterating the 'details' array that serves as cache? 
+function remember (details) {
+  for (let id of details) {
+   var fishcard = document.getElementById(id);
+   var d = "d";
+   var infocard = document.getElementById(d.concat(id));
+   if (fishcard && infocard) {
+    fishcard.style.display = "none";
+    infocard.style.display = "block";
+  }
+}
+}
+
+
   //////////////////////////////
   /// Search button function 
     function search_button() {
@@ -586,19 +625,18 @@ window.addEventListener("click", function (event) {
   if (!details.includes(divId)) {
     console.log(divId);
     details.push(divId);
-  } else {
-    details = details.filter(element => element !== divId);
-    let re_card = fish_list.find(obj => obj.fish_id === divId) // This re_card might be completely unnecesary 
-    console.log(re_card);
   } 
   });
   });
 
   revealcard_divs.forEach(div => {
     let divId = div.id; 
+    
     div.addEventListener("click", function () {
       div.style.display = "none"; 
       var fishcard_id = divId.slice(1); 
+      var index = details.indexOf(fishcard_id); 
+      details.splice(index, 1);
       var fish_card = document.getElementById(fishcard_id);
       fish_card.style.display = "block"; 
   });
@@ -921,13 +959,3 @@ function uppercaser(str) {
   return capitalizedWords.join(' ');
 }
 
-////Remembering info card display based on iterating the 'details' array that serves as cache? 
-function remember (details) {
-  for (let id of details) {
-   var fishcard = document.getElementById(id);
-   var d = "d";
-   var infocard = document.getElementById(d.concat(id));
-   fishcard.style.display = "none";
-   infocard.style.display = "block";
-  }
-}
