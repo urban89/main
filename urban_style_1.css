@@ -414,3 +414,8 @@ border-style: solid;
   white-space: nowrap;
   font-size: 13px; 
 }
+
+
+#about {
+  display: none;
+}
