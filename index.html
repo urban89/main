@@ -32,7 +32,7 @@
     
     <div id = "maindiv"> 
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
-
+<div id = "search_tiles"> 
 <form action="" id = "main_form">
 <!-- Tank size --> 
   <div class = "column"> 
@@ -45,13 +45,6 @@
       <div id = "kdiv_tank_size" class = "kmark"> </div>
     </div> 
 
-    <!-- Tank size info -->
-    <div id = "idiv_tank_size" class = "infotile"> 
-      <p class = "parameter">Aquarium size</p>
-      <p> The minium tank size in case of a planted aquarium. Make sure to reserch each species before adding them to your tank.</p>
-    </div> 
-
-    
 <!-- Hardiness --> 
   <div id = "div_hardiness" class = "tiles"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
@@ -70,16 +63,7 @@
     <label for="difficult">Difficult</label>
     <div id = "kdiv_hardiness" class = "kmark"> </div>
   </div>
-
-     <!-- Hardiness info  -->
-     <div id = "idiv_hardiness" class = "infotile"> 
-      <p class = "parameter">Keeping difficulty</p>
-       <p> Beginner: These species are often recommended for beginners. </p>
-       <p> Easy: Hardy species tha </p>
-       <p> Medium:  </p>
-       <p> Difficult:  </p>
-    </div> 
-      
+ 
 </div> <!-- column div ends here -->
 
 
@@ -94,13 +78,7 @@
       <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
       <div id = "kdiv_temp" class = "kmark"> </div>
     </div> 
-
-      <!-- Temperature info  -->
-      <div id = "idiv_temp" class = "infotile"> 
-        <p class = "parameter">Water temperature</p>
-        <p>Temperature info comes here.</p>
-      </div> 
-      
+ 
 <!-- Store availability --> 
     <div id = "div_avail" class = "tiles"> 
       <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
@@ -119,15 +97,7 @@
       <label for="veryrare">Very rare</label>
       <div id = "kdiv_avail" class = "kmark"> </div>
     </div>
-        <!--  Availabilty info  -->
-        <div id = "idiv_avail" class = "infotile"> 
-          <p class = "parameter">Purchase availability</p>
-           <p> Very common: Info comes here. </p>
-           <p> Common: Hardy species tha </p>
-           <p> Uncommon:  </p>
-           <p> Very rare:  </p>
-        </div> 
-
+  
     </div> <!-- second column div ends here -->
 
 </form>
@@ -150,14 +120,6 @@
     <div id = "kdiv_behavior" class = "kmark"> </div>
   </div> 
 
-    <!-- Social info -->
-    <div id = "idiv_behavior" class = "infotile grid-item"> 
-      <p class = "parameter">Social behavior</p>
-       <p> Schooling: </p>
-       <p> Social: </p>
-       <p> Solitary: </p>
-      </div> 
- 
 <!-- Agression level --> 
 
   <div id = "div_agression" class = "tiles grid-item"> 
@@ -173,14 +135,6 @@
     <label for="aggressive">Agressive</label>
     <div id = "kdiv_agression" class = "kmark"> </div>
   </div>
-
-      <!-- Social info -->
-      <div id = "idiv_agression" class = "infotile grid-item"> 
-        <p class = "parameter">Agression level</p>
-         <p> Peaceful: </p>
-         <p> Semi-peaceful: </p>
-         <p> Agressive: </p>
-        </div>
 
  <!-- Breeding difficulty --> 
 
@@ -200,22 +154,13 @@
      <label for="impossible">Impossible</label>
      <div id = "kdiv_breeding" class = "kmark">  </div>
   </div>
-
-       <!-- Breeding info -->
-       <div id = "idiv_breeding" class = "infotile grid-item"> 
-        <p class = "parameter">Breeding difficulty</p>
-         <p> Easy: </p>
-         <p> Medium: </p>
-         <p> Hard: </p>
-         <p> Impossible: </p>
-        </div>
     
-        <!-- fewer search options   --> 
-     <p id = less_options_button style = "display: none"> Click here for fewer search options</p>
-
-        
     </div> <!-- more options div --> 
-
+  </div> <!-- search tiles div ends here -->
+  <div id="about" class = "tiles"> 
+   <h1> Welcome to SelectYourFish.com </h1>
+   <p id = "toselector"> Click here to get back to search page</p>
+  </div>
 <!-- Control panel -->
 
     <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount> </span> 
@@ -242,7 +187,7 @@
     <span class = "dropdown"> 
       <span id = "info" class="dropbtn">Information</span>
       <div id = "info_dropdown" class="dropdown-content"> 
-        <span id = "explain_button">Show explanations</span>
+        <span id = "about_button">About this page</span>
         <span id = "feedback_button">Send feedback</span>
       </div>
     </span>

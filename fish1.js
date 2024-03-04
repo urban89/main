@@ -108,11 +108,18 @@
   let cmtoinch = document.getElementById("cmtoinch");
   let cardswticher = document.getElementById("cardswticher"); 
   let flipped = false; 
+  let about = document.getElementById("about");
+  let about_button = document.getElementById("about_button");
+  let atabout = false; 
+  let toselector = document.getElementById("toselector"); 
+  let search_tiles = document.getElementById("search_tiles");
+  let cpanel = document.getElementById("cpanel");
 
   let details = []; 
 
   let kdiv_tank_size = document.getElementById("kdiv_tank_size"); 
 
+  /////////////////////////////////////
   /// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
         
@@ -206,43 +213,46 @@ window.addEventListener("click", function (event) {
   toggle_options.addEventListener("click", optionsToggle);
 
   //Event listener for the Qmark button for showing more info about search parameters.
-  var kmarks = document.querySelectorAll('.kmark');
-  kmarks.forEach(div => {
- let divId = div.id;
-  div.addEventListener("click", function () {
-   var tileID = divId.slice(1);
-   var i = "i"; 
-   var infoID =  i.concat(divId.slice(1));
-   console.log(infoID);
-   var tile = document.getElementById(tileID);
-   var info = document.getElementById(infoID);
-   tile.style.display = "none";
-   info.style.display = "block";
-  });
-});
+  // I decided to go with a different design but I will leave these block here for now. 
+//   var kmarks = document.querySelectorAll('.kmark');
+//   kmarks.forEach(div => {
+//  let divId = div.id;
+//   div.addEventListener("click", function () {
+//    var tileID = divId.slice(1);
+//    var i = "i"; 
+//    var infoID =  i.concat(divId.slice(1));
+//    console.log(infoID);
+//    var tile = document.getElementById(tileID);
+//    var info = document.getElementById(infoID);
+//    tile.style.display = "none";
+//    info.style.display = "block";
+//   });
+// });
 
-  var infotiles = document.querySelectorAll('.infotile');
-  infotiles.forEach(div => {
- let divId = div.id;
-  div.addEventListener("click", function () {
-   var tileID = divId.slice(1);
-   var i = "i"; 
-   var infoID =  i.concat(divId.slice(1));
-   console.log(infoID);
-   var tile = document.getElementById(tileID);
-   var info = document.getElementById(infoID);
-   tile.style.display = "block";
-   info.style.display = "none";
-  });
+//   var infotiles = document.querySelectorAll('.infotile');
+//   infotiles.forEach(div => {
+//  let divId = div.id;
+//   div.addEventListener("click", function () {
+//    var tileID = divId.slice(1);
+//    var i = "i"; 
+//    var infoID =  i.concat(divId.slice(1));
+//    console.log(infoID);
+//    var tile = document.getElementById(tileID);
+//    var info = document.getElementById(infoID);
+//    tile.style.display = "block";
+//    info.style.display = "none";
+//   });
 
-  });
+//   });
 
-  var kmarks = document.querySelectorAll('.kmark');
-  kmarks.forEach(div => {
-    div.innerHTML = "ⓘ"; 
-  })
+//   var kmarks = document.querySelectorAll('.kmark');
+//   kmarks.forEach(div => {
+//     div.innerHTML = "ⓘ"; 
+//   })
 
   cardswticher.addEventListener("click", flipCards); 
+  about_button.addEventListener("click", explain);
+  toselector.addEventListener("click", gotoselector);
   });  /// Eventlisteners end here   
         
 
@@ -959,3 +969,15 @@ function uppercaser(str) {
   return capitalizedWords.join(' ');
 }
 
+function explain () {
+  about.style.display = "block"; 
+  search_tiles.style.display = "none";
+  cpanel.style.display = "none";
+}
+
+
+function gotoselector () {
+  about.style.display = "none"; 
+  search_tiles.style.display = "block";
+  cpanel.style.display = "block";
+}
