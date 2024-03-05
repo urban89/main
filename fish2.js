@@ -13,8 +13,10 @@ const show_liter =  "Show aquarium capacity in liter";
 const show_gallon = "Show aquarium capacity in gallon"; 
 const fishshown = "Show all info cards";
 const infoshown = "Show all fish cards";
+const searchInput = document.getElementById("searchInput"); 
 
 let fish_list = fish_master; 
+let filteredFish = []; 
 let temp_modifier1 = 1; 
 let temp_modifier2 = 0; 
 let cap_modifier = 1; 
@@ -37,7 +39,8 @@ let sort_select = document.getElementById("sort");
 let cap_conversion = document.getElementById("cap_conversion");
 let temp_conversion = document.getElementById("temp_conversion");
 
-// Adding initial event listeners 
+/////////////////////////////////////
+/// Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
     sort_select.addEventListener("change", output);
     output ()
@@ -59,8 +62,19 @@ document.addEventListener("DOMContentLoaded", function() {
   temp_conversion.addEventListener("click", celtofaren);
   cardswticher.addEventListener("click", flipCards);   
 
-});
+  /// Search bar for filtering fish by name 
+  searchInput. addEventListener("input", function() {  
+  const searchTerm = searchInput.value.toLowerCase();
+  console.log(searchTerm + " is search input");
 
+  filteredFish = fish_list.filter(fish => fish.name_english.toLowerCase().includes(searchTerm));
+
+  console.log(filteredFish);
+  output(); 
+
+  }); 
+  }); 
+/////////////////////////////////////
 
 
 
@@ -87,6 +101,9 @@ function sort () {
 
 ///////////////////Outputting serach results to UI
 function fishSelect (fish_list) {
+  if (filteredFish.length > 0) {
+    fish_list = filteredFish; 
+  }
   result_div.innerHTML = '';  
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
@@ -386,3 +403,5 @@ function flipCards() {
       }
     }
     }
+
+
