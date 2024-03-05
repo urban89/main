@@ -98,7 +98,7 @@ function fishSelect (fish_list) {
     let fishid = fish_list[i].fish_id; 
     let main_card = document.createElement('div'); //container card to hide/show info  
     let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
-    let result_lists_element = document.createElement("p");
+    let fishname = document.createElement("p");
     let image_element = document.createElement('img');
     let size = document.createElement("span");
     let temp = document.createElement("span"); // temperature in fish card 
@@ -113,7 +113,7 @@ function fishSelect (fish_list) {
 
    
     image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
-    result_lists_element.textContent = `${fish_list[i].name_english}`;
+    fishname.textContent = name;
     size.textContent = `${card_size} ${console_fishsize}`;
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
     tanksize.textContent = `${cap} ${console_capacity}`
@@ -121,14 +121,14 @@ function fishSelect (fish_list) {
     main_card.id = fishid;
     fishcard.className = "fish_card";
     image_element.className = "fishcardimage";
-    result_lists_element.className = "fishname";
+    fishname.className = "fishname";
     size.className = "fishsize";
     temp.className = "fishtemp";
     tanksize.className = "tanksize"; 
     main_card.className = "maincard"; //container card to hide/show info 
 
     fishcard.appendChild(image_element);
-    fishcard.appendChild(result_lists_element);
+    fishcard.appendChild(fishname);
     fishcard.appendChild(size);
     fishcard.appendChild(temp);
     fishcard.appendChild(tanksize);
