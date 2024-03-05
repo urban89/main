@@ -67,7 +67,10 @@ document.addEventListener("DOMContentLoaded", function() {
   searchInput.addEventListener("input", function() {  
   const searchTerm = searchInput.value.trim().toLowerCase();
 
-  filteredFish = fish_list.filter(fish => fish.name_english.toLowerCase().includes(searchTerm));
+  filteredFish = fish_list.filter(fish => 
+    fish.name_english.toLowerCase().includes(searchTerm) ||
+    fish.alt_name.toLowerCase().includes(searchTerm)
+    );
 
   console.log(filteredFish);
 
@@ -78,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
   output();
   notfound.style.display = "none"; 
   } 
-
   }); 
+
   }); 
 /////////////////////////////////////
 
@@ -362,7 +365,7 @@ const codes_behave =
 const codes_agres = 
 {
   3: "Aggressive",
-  2: "Can be aggressive",
+  2: "Mostly peaceful",
   1: "Peaceful"
 }
 const codes_breed = 

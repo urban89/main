@@ -7,8 +7,33 @@ body {
   justify-content: center;
   align-items: center;
   height: fit-content; /* This ensures that the container is centered vertically on the page */
+  /* font-family: 'Noto Sans', sans-serif; */
+    /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
+background-attachment: fixed; */
+background-image: url('IMG_9602.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed; /* This keeps the background fixed when scrolling */
+
 }
 
+
+.noto-sans-urban {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.dm-sans-urban {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
+}
 
 #maindiv {
   width: 90vw; 
@@ -32,16 +57,10 @@ body {
 } 
 
  
-.body-color-1 {
-  /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
-background-attachment: fixed; */
-background-image: url('IMG_9602.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed; /* This keeps the background fixed when scrolling */
+/* .body-color-1 {
 
 
-}
+} */
 
 
 .parameter {
