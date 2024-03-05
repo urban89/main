@@ -98,6 +98,7 @@
 
   let result_div = document.getElementById("result");
   let fishcount = document.getElementById("fishcount");
+  let previousFishcouont = 42; 
   let noresults =  document.getElementById("noresults");
   let none_found = false; 
   let invalid_search = false; 
@@ -468,21 +469,30 @@ function remember (details) {
 
       if (sort_select.value == "size_min") {
         fish_list.sort(compare_size);
-        console.log("size_min")
       }
 
       if (sort_select.value == "size_max") {
         fish_list.sort(compare_size_descend);
-        console.log("size_max")
       }
 
       if (sort_select.value == "temp_min") {
         fish_list.sort(compare_temp);
-        console.log("temp_min")
       }
 
       console.log(fish_list);
+
+      ///Updating selector result value on page 
       fishcount.innerHTML = fish_list.length;
+
+      ///Displaying animation of selector result value changes
+      if (previousFishcouont !== fish_list.length) {
+      fishcount.classList.add('value-updated');
+      setTimeout(() => {
+        fishcount.classList.remove('value-updated');
+      }, 1000);
+    }
+      previousFishcouont = fish_list.length;
+
       if (fish_list == 0) {
         none_found = true;
       }

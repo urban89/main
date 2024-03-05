@@ -452,3 +452,21 @@ h1 {
 h2 {
   font-size: 16px; 
 }
+
+
+/* Number of selector results update animation; firing only if result number changes*/
+
+@keyframes highlight { 
+  0% { background-color: rgba(189, 206, 134, 0.336); color: rgb(204, 218, 157);}
+  10% { background-color:  rgba(185, 212, 95, 0.438); }
+  20% { background-color: rgba(218, 218, 104, 0.568); }
+  40% { background-color: rgba(221, 221, 78, 0.514);  }
+  60% { background-color: rgba(226, 226, 60, 0.541);  }
+  80% { background-color: rgba(214, 214, 82, 0.247); }
+  100% { background-color: rgba(209, 209, 114, 0.301);  }
+}
+
+.value-updated {
+  animation: highlight 1s ease;
+  border-radius: 25px;
+}
