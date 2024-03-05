@@ -261,6 +261,7 @@ input[type="radio"] {
   box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
   border: 1px solid #0f1946; 
   margin: 10px 0 0 0 ; 
+  display: none; 
 }
 
 

@@ -38,6 +38,7 @@ let result_div = document.getElementById("result");
 let sort_select = document.getElementById("sort");
 let cap_conversion = document.getElementById("cap_conversion");
 let temp_conversion = document.getElementById("temp_conversion");
+let notfound = document.getElementById("notfound"); 
 
 /////////////////////////////////////
 /// Adding initial event listeners 
@@ -63,14 +64,20 @@ document.addEventListener("DOMContentLoaded", function() {
   cardswticher.addEventListener("click", flipCards);   
 
   /// Search bar for filtering fish by name 
-  searchInput. addEventListener("input", function() {  
-  const searchTerm = searchInput.value.toLowerCase();
-  console.log(searchTerm + " is search input");
+  searchInput.addEventListener("input", function() {  
+  const searchTerm = searchInput.value.trim().toLowerCase();
 
   filteredFish = fish_list.filter(fish => fish.name_english.toLowerCase().includes(searchTerm));
 
   console.log(filteredFish);
-  output(); 
+
+  if (filteredFish.length == 0 && searchTerm !== "") {
+    notfound.style.display = "block"; 
+    result_div.innerHTML = '';  
+  } else {
+  output();
+  notfound.style.display = "none"; 
+  } 
 
   }); 
   }); 
@@ -80,22 +87,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function sort () {
+  // if (filteredFish.length > 0) {
+  //   fish_list = filteredFish; 
+  // }
     if (sort_select.value == "size_min") {
         fish_list = fish_list.sort(compare_size);
-        console.log("size_min")
-        console.log(fish_list);
+        console.log("size_min");
       }
   
       if (sort_select.value == "size_max") {
         fish_list =  fish_list.sort(compare_size_descend);
-        console.log("size_max")
-        console.log(fish_list);
+        console.log("size_max");
       }
   
       if (sort_select.value == "temp_min") {
         fish_list = fish_list.sort(compare_temp);
-        console.log("temp_min")
-        console.log(fish_list);
+        console.log("temp_min");
       }
 }
 
