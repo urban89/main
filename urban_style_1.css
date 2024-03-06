@@ -441,6 +441,10 @@ border-style: solid;
   display: none;
 }
 
+#feedback {
+  display: none; 
+}
+
 #searchInput {
   background-color: #ecf1bd;
 }
