@@ -1,4 +1,4 @@
- [
+const fish_master =   [
   {
     fish_id: "1",
     name_english: "Brown-Point Shield Skin",
