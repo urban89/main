@@ -424,4 +424,7 @@ function commaRemover (x) {
 if (x.endsWith(",")) {
   return x.slice(0, -1);
 }
+  else {
+    return x;
+  }
 }
