@@ -36,6 +36,40 @@
 
     
     <div id = "maindiv"> 
+
+      <!-- Control panel -->
+
+    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount> </span> 
+      <label for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
+    
+      <option value="size_min">Size min/max</option>
+      <option value="size_max">Size max/min</option>
+      <option value="temp_min">Temperature min/max</option>
+    
+    </Select>
+    &nbsp;&nbsp;&nbsp;
+        <a href = "browse.html" class = "dropbtn">Database</a> 
+    &nbsp;&nbsp;&nbsp;
+    <span class = "dropdown"> 
+      <span id = "settings" class="dropbtn">Settings</span>
+      <div id = "settings_dropdown" class="dropdown-content"> 
+        <span id = "cmtoinch">Show fish size in inch</span>
+        <span id = "toggle_options">Show fewer seach options</span>
+        <span id = "cardswticher">Show all info cards</span>
+      </div>
+    </span>
+    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown -->
+    &nbsp;&nbsp;&nbsp;
+    <span class = "dropdown"> 
+      <span id = "info" class="dropbtn">Information</span>
+      <div id = "info_dropdown" class="dropdown-content"> 
+        <span id = "about_button">About this page</span>
+        <span id = "feedback_button">Send feedback</span>
+      </div>
+    </span>
+    &nbsp;&nbsp;&nbsp;
+  </div> <!-- Cpanel ends here -->
+
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
 <form action="" id = "main_form">
@@ -162,7 +196,8 @@
     
     </div> <!-- more options div --> 
   </div> <!-- search tiles div ends here -->
-  <div id="about" class = "tiles"> 
+
+  <div id="about" class = "tiles">  <!-- about -->
    <h1> Welcome to SelectYourFish.com </h1>
 
    <h2>Aquarium size</h2>
@@ -175,40 +210,7 @@
 
    <p id = "toselector"> Click here to get back to search page</p>
 
-  </div>
-<!-- Control panel -->
-
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount> </span> 
-      <label for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
-    
-      <option value="size_min">Size min/max</option>
-      <option value="size_max">Size max/min</option>
-      <option value="temp_min">Temperature min/max</option>
-    
-    </Select>
-    &nbsp;&nbsp;&nbsp;
-        <a href = "browse.html" class = "dropbtn">Database</a> 
-    &nbsp;&nbsp;&nbsp;
-    <span class = "dropdown"> 
-      <span id = "settings" class="dropbtn">Settings</span>
-      <div id = "settings_dropdown" class="dropdown-content"> 
-        <span id = "cmtoinch">Show fish size in inch</span>
-        <span id = "toggle_options">Show fewer seach options</span>
-        <span id = "cardswticher">Show all info cards</span>
-      </div>
-    </span>
-    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown -->
-    &nbsp;&nbsp;&nbsp;
-    <span class = "dropdown"> 
-      <span id = "info" class="dropbtn">Information</span>
-      <div id = "info_dropdown" class="dropdown-content"> 
-        <span id = "about_button">About this page</span>
-        <span id = "feedback_button">Send feedback</span>
-      </div>
-    </span>
-    &nbsp;&nbsp;&nbsp;
-  </div> <!-- Cpanel ends here -->
-
+  </div> <!-- about ends -->
 
         
     </div> <!-- main div --> 
@@ -229,7 +231,7 @@
 
     </div>
 
-<script type="text/javascript" src="fish_array.js"></script>
+    <script type="text/javascript" src="fish_array.js"></script>
 <script type="text/javascript" src="fish1.js"></script>
 <script type="text/javascript" src="fish_functions_1.js"></script>
 
