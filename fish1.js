@@ -660,13 +660,15 @@ function remember (details) {
   });
   });
 
-  remember (details)
+  remember (details);
   } // fishSelect () ends here 
     
             
 
             fishFinder ()
             fishSelect ()
+            refreshAnimation("fish_card");
+            refreshAnimation("fishcardimage");
             noResultAlert ()
 
     // Responsible for building the array that I use to iterate over fish_master and find results 
@@ -1001,3 +1003,21 @@ function commaRemover (x) {
     return x;
   }
   }
+
+
+  function inputAnimation (x) {
+    x.classList.add('number-updated');
+    setTimeout(() => {
+      x.classList.remove('number-updated');
+    }, 1000);
+  }
+  
+
+  function refreshAnimation (x) {
+    var y = document.querySelectorAll(`.${x}`)
+    y.forEach(div => div.classList.add('tiles-refresh'));
+    setTimeout(() => {
+      y.forEach(div => div.classList.remove('tiles-refresh'));
+    }, 1000);
+  }
+  

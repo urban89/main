@@ -458,8 +458,8 @@ h2 {
 /* Number of selector results update animation; firing only if result number changes*/
 
 @keyframes resultflash { 
-  0% { background-color: rgba(189, 206, 134, 0.336); color: rgb(204, 218, 157);}
-  10% { background-color:  rgba(185, 212, 95, 0.438); }
+  0% { background-color: rgba(189, 206, 134, 0.336); color: rgb(255, 252, 76);}
+  10% { background-color:  rgba(185, 212, 95, 0.438); color: rgb(204, 218, 157);}
   20% { background-color: rgba(218, 218, 104, 0.568); }
   40% { background-color: rgba(221, 221, 78, 0.514);  }
   60% { background-color: rgba(226, 226, 60, 0.541);  }
@@ -472,22 +472,53 @@ h2 {
   border-radius: 25px;
 }
 
-
+/*Capacity and temperatur conversion animation*/
 @keyframes numberflash { 
   0% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%); color: yellow;}
-  10% { background: linear-gradient(192deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
-  20% { background: linear-gradient(228deg, #b5d7f0 22%, #e2f0b3 100%);}
-  30% { background: linear-gradient(264deg, #b5d7f0 22%, #e2f0b3 100%);}
-  40% { background: linear-gradient(300deg, #b5d7f0 22%, #e2f0b3 100%);}
-  50% { background: linear-gradient(336deg, #b5d7f0 22%, #e2f0b3 100%);}
-  60% { background: linear-gradient(10deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
-  70% { background: linear-gradient(46deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
-  80% { background: linear-gradient(82deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
-  90% { background: linear-gradient(118deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  10% { background: linear-gradient(125deg, #a6ceecec 22%, #e2f0b3f6 95%);color: rgba(255, 242, 65, 0.89);}
+  20% { background: linear-gradient(115deg, #a4c6e0 22%, #e2f0b3 90%);}
+  30% { background: linear-gradient(125deg, #a0c8e4 22%, #e2f0b3 85%);}
+  40% { background: linear-gradient(115deg, #b5d7f0ec 22%, #e2f0b3 83%);}
+  50% { background: linear-gradient(124deg,#b5d7f0 22%, #e2f0b3 85%);}
+  60% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 90%);}
+  70% { background: linear-gradient(123deg, #b5d7f0ec 22%, #e2f0b3f6 95%);}
+  80% { background: linear-gradient(112deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  90% { background: linear-gradient(117deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
   100% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
 }
 
 .number-updated {
-  animation: numberflash 2s ease;
+  animation: numberflash 1s ease;
   cursor: text;
 }
+
+
+@keyframes refresh { 
+  0% { border: 1px solid   #413e07; }
+  10% { border:1px solid  #5c580b; }
+  20% { border: 1px solid #777210; }
+  30% { border: 1px solid #979114; }
+  40% { border: 1px solid #77720f; }
+  50% { border: 1px solid #55510a; }
+  60% { border: 1px solid #363407; }
+  70% { border: 1px solid #1b1a04; }
+  80% { border: 1px solid  rgb(48, 45, 1);}
+  90% { border: 1px solid #141301;}
+  100% { border: 1px solid #141301;}
+}
+
+
+.tiles-refresh {
+  animation: refresh 1s ease; 
+  flex: 0 0 calc(33.33% - 10px); 
+  margin: 5px; 
+  box-sizing: border-box;
+  /* border: 1px solid #010a14; */
+  border-radius: 10px;
+  padding: 10px;
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+position: relative; /*necessary for in card elements to allign as I want */ 
+}
+
