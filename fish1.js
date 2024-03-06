@@ -15,6 +15,8 @@
   const fewer = "Show fewer search options";
   const fishshown = "Show all info cards";
   const infoshown = "Show all fish cards";
+  const feedbacknotshown = "Send feedback"; 
+  const feedbackshown = "Hide feedback window";
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -22,6 +24,7 @@
   let fishsize_option = show_inch;
   let options_option = fewer; 
   let whichcard = fishshown; 
+  let feedbackstatus = feedbacknotshown;
 
   let cap_modifier = 1; 
   let temp_modifier1 = 1;
@@ -118,7 +121,7 @@
 
   let details = []; 
 
-  let kdiv_tank_size = document.getElementById("kdiv_tank_size"); 
+ let feedback_button = document.getElementById("feedback_button"); 
 
   /////////////////////////////////////
   /// Adding initial event listeners   
@@ -254,6 +257,7 @@ window.addEventListener("click", function (event) {
   cardswticher.addEventListener("click", flipCards); 
   about_button.addEventListener("click", explain);
   toselector.addEventListener("click", gotoselector);
+  feedback_button.addEventListener("click", gotofeedback);
   });  /// Eventlisteners end here   
         
 
@@ -897,6 +901,13 @@ function remember (details) {
       search_button()
     }
 
+    
+function gotofeedback () {
+  feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
+  feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
+  feedback_button.innerText = feedbackstatus; 
+}
+
 function optionsToggle () {
   more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";
   options_option = (more_options.style.display === "grid") ? fewer : more; 
@@ -983,15 +994,15 @@ function uppercaser(str) {
 //Showing info page 
 function explain () {
   about.style.display = "block"; 
-  search_tiles.style.display = "none";
-  cpanel.style.display = "none";
+  // search_tiles.style.display = "none";
+  // cpanel.style.display = "none";
 }
 
 //Going back to main page 
 function gotoselector () {
   about.style.display = "none"; 
-  search_tiles.style.display = "block";
-  cpanel.style.display = "block";
+  // search_tiles.style.display = "block";
+  // cpanel.style.display = "block";
 }
 
 
