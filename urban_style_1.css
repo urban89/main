@@ -200,8 +200,8 @@ select {
   cursor: pointer;
 }
 
-input[type="number"] {
-  background: linear-gradient(188deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
+#tank_size, #tempmin {
+  background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
 /* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); */
 cursor: text;
 }
@@ -245,7 +245,7 @@ input[type="radio"] {
   margin-top: 0px;
 }
 
-#cpanel1,#cpanel2 {
+#cpanel1, #cpanel2 {
   position: relative; 
 }
 
@@ -454,10 +454,10 @@ h2 {
   font-size: 16px; 
 }
 
-
+/*Animations*/ 
 /* Number of selector results update animation; firing only if result number changes*/
 
-@keyframes highlight { 
+@keyframes resultflash { 
   0% { background-color: rgba(189, 206, 134, 0.336); color: rgb(204, 218, 157);}
   10% { background-color:  rgba(185, 212, 95, 0.438); }
   20% { background-color: rgba(218, 218, 104, 0.568); }
@@ -468,6 +468,26 @@ h2 {
 }
 
 .value-updated {
-  animation: highlight 1s ease;
+  animation: resultflash 1s ease;
   border-radius: 25px;
+}
+
+
+@keyframes numberflash { 
+  0% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  10% { background: linear-gradient(192deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  20% { background: linear-gradient(228deg, #b5d7f0 22%, #e2f0b3 100%);}
+  30% { background: linear-gradient(264deg, #b5d7f0 22%, #e2f0b3 100%);}
+  40% { background: linear-gradient(300deg, #b5d7f0 22%, #e2f0b3 100%);}
+  50% { background: linear-gradient(336deg, #b5d7f0 22%, #e2f0b3 100%);}
+  60% { background: linear-gradient(10deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  70% { background: linear-gradient(46deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  80% { background: linear-gradient(82deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  90% { background: linear-gradient(118deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  100% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+}
+
+.number-updated {
+  animation: numberflash 2s ease;
+  cursor: text;
 }

@@ -23,8 +23,7 @@ function all_select_behavior (x) {
   cap_modifier = 3.785; 
   console_capacity = gallon;
   tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
-
-  tank_size_check ()
+  inputAnimation(tank_size);
   }
   }
   
@@ -37,7 +36,7 @@ function all_select_behavior (x) {
   cap_modifier = 1; 
   console_capacity = liter;
   tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
-  tank_size_check ()
+  inputAnimation(tank_size);
   }
   }
   
@@ -52,7 +51,7 @@ function all_select_behavior (x) {
   temp_modifier2 = 32; 
   tempmin.min = 39;
   tempmin.max = 95;
-  
+  inputAnimation(tempmin);
   
     }
           
@@ -67,6 +66,7 @@ function all_select_behavior (x) {
   temp_modifier2 = 0; 
   tempmin.min = 4;
   tempmin.max = 35;
+  inputAnimation(tempmin);
     }
 
 
