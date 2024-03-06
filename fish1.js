@@ -573,6 +573,7 @@ function remember (details) {
    let social = document.createElement("p");
    let agression = document.createElement("p");
    let breeding = document.createElement("p");
+   let origin = document.createElement("p");
 
    reveal_card.className = "reveal_card";
    infocard.className = "infocard";
@@ -589,6 +590,7 @@ function remember (details) {
    social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
    agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
    breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+   origin.innerHTML = `Origin: ${commaRemover(fish_list[i].origin)}`; 
 
    iconimage.className = "iconimage";
    fishname2.className = "title";
@@ -602,6 +604,7 @@ function remember (details) {
    social.className = "infocardtext";
    agression.className = "infocardtext";
    breeding.className = "infocardtext";
+   origin.className = "infocardtext";
 
    reveal_card.id = info_id; 
    infocard.appendChild(iconimage);
@@ -616,6 +619,7 @@ function remember (details) {
    infocard.appendChild(social);
    infocard.appendChild(agression);
    infocard.appendChild(breeding);
+   infocard.appendChild(origin);
 
    reveal_card.appendChild(infocard); //container card to hide/show info 
    result_lists.appendChild(reveal_card);
@@ -973,15 +977,24 @@ function uppercaser(str) {
   return capitalizedWords.join(' ');
 }
 
+//Showing info page 
 function explain () {
   about.style.display = "block"; 
   search_tiles.style.display = "none";
   cpanel.style.display = "none";
 }
 
-
+//Going back to main page 
 function gotoselector () {
   about.style.display = "none"; 
   search_tiles.style.display = "block";
   cpanel.style.display = "block";
 }
+
+
+//Slicing comma off from the end for origin string 
+function commaRemover (x) {
+  if (x.endsWith(",")) {
+    return x.slice(0, -1);
+  }
+  }
