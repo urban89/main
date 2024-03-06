@@ -668,7 +668,7 @@ function remember (details) {
 
             fishFinder ()
             fishSelect ()
-            refreshAnimation("fish_card");
+            // refreshAnimation("fish_card");
             // refreshAnimation("fishcardimage");
             noResultAlert ()
 
