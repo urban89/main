@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////
+////// This is the array of all fishes /////////////////////
+
+
 const fish_master =   [
   {
     fish_id: "1",
@@ -120,7 +124,7 @@ const fish_master =   [
   },
   {
     fish_id: "8",
-    name_english: "Adolfo's catfish/corydoras",
+    name_english: "Adolfo's corydoras",
     alt_name: "",
     name_latin: "Corydoras adolfoi",
     cm_min: "5.5",
@@ -5041,7 +5045,7 @@ const fish_master =   [
     uncare: "2",
     breeding_difficulty: "1",
     availability: "1",
-    school: "",
+    school: "2",
     tank_size_liter: "55",
     temperature_min: "24",
     temperature_max: "28",
@@ -7363,7 +7367,7 @@ const fish_master =   [
   {
     fish_id: "249",
     name_english: "Redhook",
-    alt_name: "\"Silver dollar\",
+    alt_name: "Silver dollar",
     name_latin: "Myloplus rubripinnis",
     cm_min: "25",
     cm_max: "25",
