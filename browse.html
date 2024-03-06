@@ -35,14 +35,14 @@
 <body class="noto-sans-urban">
 
   <div id = "maindiv"> 
-<!-- Control panel -->
+<!-- Control panel line 1-->
 
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Fish in database: </span> <span id = fishcount> </span> 
+    <div id = "cpanel1" class = "tiles">  <span id = "sum"> Fish in database: </span> <span id = fishcount> </span> 
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
     
-      <option value="size_min">Size min/max</option>
-      <option value="size_max">Size max/min</option>
-      <option value="temp_min">Temperature min/max</option>
+      <option value="size_min">Size small to large</option>
+      <option value="size_max">Size large to small</option>
+      <option value="temp_min">Water cold to warm</option>
     
     </Select>
     &nbsp;&nbsp;&nbsp;
@@ -57,11 +57,20 @@
         <span id = "cardswticher">Show all info cards</span>
       </div>
     </span>
-    &nbsp;&nbsp;&nbsp;
-    <span>
-      <input type="text" id="searchInput" placeholder="Search for fish...">
-    </span>
-  </div> 
+
+  
+  </div> <!-- cpanel1 ends -->
+
+  <!-- Control panel line 2-->
+
+  <div id = "cpanel2" class = "tiles">  
+
+  </Select>
+  <span>
+    <span> Search: </span>
+    <input type="text" id="searchInput" placeholder="Enter fish name">
+  </span>
+</div> <!-- cpanel2 ends -->
 
 </div> <!-- main div --> 
         
