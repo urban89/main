@@ -656,6 +656,7 @@ function remember (details) {
       var index = details.indexOf(fishcard_id); 
       details.splice(index, 1);
       var fish_card = document.getElementById(fishcard_id);
+      // refreshAnimation(fishcard_id); //Need to edit this to make it apply to image only. 
       fish_card.style.display = "block"; 
   });
   });
@@ -668,7 +669,7 @@ function remember (details) {
             fishFinder ()
             fishSelect ()
             refreshAnimation("fish_card");
-            refreshAnimation("fishcardimage");
+            // refreshAnimation("fishcardimage");
             noResultAlert ()
 
     // Responsible for building the array that I use to iterate over fish_master and find results 
@@ -1012,12 +1013,12 @@ function commaRemover (x) {
     }, 1000);
   }
   
-
+//Need to edit this to make it apply to image only. 
   function refreshAnimation (x) {
-    var y = document.querySelectorAll(`.${x}`)
-    y.forEach(div => div.classList.add('tiles-refresh'));
+    var y = document.getElementById(x);
+    y.classList.add('tiles-refresh');
     setTimeout(() => {
-      y.forEach(div => div.classList.remove('tiles-refresh'));
+      y.classList.remove('tiles-refresh');
     }, 1000);
   }
   
