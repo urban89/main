@@ -474,7 +474,7 @@ h2 {
 
 
 @keyframes numberflash { 
-  0% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  0% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%); color: yellow;}
   10% { background: linear-gradient(192deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
   20% { background: linear-gradient(228deg, #b5d7f0 22%, #e2f0b3 100%);}
   30% { background: linear-gradient(264deg, #b5d7f0 22%, #e2f0b3 100%);}
