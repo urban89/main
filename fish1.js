@@ -115,7 +115,7 @@
   let about = document.getElementById("about");
   let about_button = document.getElementById("about_button");
   let atabout = false; 
-  let toselector = document.getElementById("toselector"); 
+  // let toselector = document.getElementById("toselector"); 
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
 
@@ -218,8 +218,18 @@ window.addEventListener("click", function (event) {
 
   cardswticher.addEventListener("click", flipCards); 
   about_button.addEventListener("click", explain);
-  toselector.addEventListener("click", gotoselector);
+  // toselector.addEventListener("click", gotoselector);
   feedback_button.addEventListener("click", gotofeedback);
+
+  let x_outs = document.querySelectorAll(".x-out");
+  x_outs.forEach(div => {
+    div.innerHTML = "x"; 
+    div.addEventListener("click", function() {
+      let parentDiv = div.parentNode;
+      parentDiv.style.display = "none";
+    })
+  });
+
   });  /// Eventlisteners end here   
         
 

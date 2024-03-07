@@ -436,11 +436,13 @@ border-style: solid;
   font-size: 13px; 
 }
 
+/*About and feedback*/ 
 
 #about {
   display: none;
-  white-space: normal;
+  white-space: wrap;
   text-align: justify;
+  position: relative;
 }
 
 #about p {
@@ -458,7 +460,22 @@ h2 {
 
 #feedback {
   display: none; 
+  position: relative;
 }
+
+.x-out {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px; 
+  cursor: pointer; 
+}
+
+.x-out:hover {
+  /* color: blue; */
+  font-size: 20px;
+}
+
 
 #noresults {
   display: none;
@@ -507,7 +524,7 @@ h2 {
   cursor: text;
 }
 
-
+/*Fishcard border color change when list changes  - it's not running now for some reason*/ 
 @keyframes refresh { 
   0% { border: 1px solid   #413e07; }
   10% { border:1px solid  #5c580b; }
