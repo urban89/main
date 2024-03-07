@@ -1,12 +1,5 @@
 
-
-
-        
-
-
-
-  function flipCards() {
-    console.log("teszt1");
+   function flipCards() {
     flipped = (flipped === false) ? true : false; 
     console.log(flipped);
     whichcard = (flipped === true) ? infoshown: fishshown; 
