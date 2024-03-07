@@ -409,95 +409,39 @@ function remember (details) {
             // refreshAnimation("fish_card");
             // refreshAnimation("fishcardimage");
 
-    // Responsible for building the array that I use to iterate over fish_master and find results 
+    ///// Functions below are responsible
+    ///// for building the array that I use to iterate over fish_master and find results 
     function hardiness_list() {
-
-    if (v_beginner) {
-          srch_hardi.push(4);
-      }
-      
-      if (v_easy) {
-        srch_hardi.push(3);
-      }
-
-      if(v_medium) {
-        srch_hardi.push(2);
-      }
-
-      if(v_difficult) {
-        srch_hardi.push(1);
-      }
-
-  }
+    if (v_beginner) {srch_hardi.push(4);}
+      if (v_easy) {srch_hardi.push(3);}
+      if(v_medium) {srch_hardi.push(2);}
+      if(v_difficult) { srch_hardi.push(1);}
+}
         
   function avail_list() {
-    if (v_verycommon) {
-          srch_avail.push(4);
-      }
-      
-        if (v_common) {
-        srch_avail.push(3);
-      }
-      
-
-      if (v_rare) {
-        srch_avail.push(2);
-      }
-
-      if (v_veryrare) {
-        srch_avail.push(1);
-      }
-
+    if (v_verycommon) {srch_avail.push(4);}
+        if (v_common) {srch_avail.push(3);}
+      if (v_rare) {srch_avail.push(2); }
+      if (v_veryrare) {srch_avail.push(1);}
   }
 
   function behavior_list () {
-    if (v_schooling1) {
-      srch_soci.push(3);
-    }
-
-    if (v_schooling2) {
-      srch_soci.push(2);
-    }
-
-    if (v_solitary) {
-      srch_soci.push(1);
-    }
-
+    if (v_schooling1) {srch_soci.push(3);}
+    if (v_schooling2) {srch_soci.push(2);}
+    if (v_solitary) {srch_soci.push(1);}
   }
     
-
   function agres_list() {
-    if (v_peaceful1) {
-      srch_agress.push(1);
-    }
-
-    if (v_peaceful2) {
-      srch_agress.push(2);
-    }
-
-    if (v_aggressive) {
-      srch_agress.push(3);
-    }
-
-  }
+    if (v_peaceful1) {srch_agress.push(1);}
+    if (v_peaceful2) {srch_agress.push(2);}
+    if (v_aggressive) {srch_agress.push(3);}
+}
 
   function breed_list() {
-    if (v_b_easy) {
-      srch_breed.push(1);
-    }
-
-    if (v_b_medium) {
-      srch_breed.push(2);
-    }
-
-    if (v_b_hard) {
-      srch_breed.push(3);
-    }
-
-    if (v_impossible) {
-      srch_breed.push(4);
-    }
-
+    if (v_b_easy) {srch_breed.push(1);}
+    if (v_b_medium) {srch_breed.push(2);}
+    if (v_b_hard) {srch_breed.push(3);}
+    if (v_impossible) {srch_breed.push(4);}
   }      
   }
 
@@ -505,7 +449,6 @@ function remember (details) {
 /////////////////////////////////////////////
 
     // Check data before search and display alert if needed 
-
   function preCheckTemperature(temp) {
 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
@@ -536,7 +479,6 @@ function remember (details) {
   
   //Checking tank size before submission (shouldn't be too small)
   function preCheckTank() {
-    let tank_size_alert = document.getElementById("tank_size_alert");
     let tank_size = document.getElementById('tank_size').value;  
 
       if ((tank_size < 20) && (console_capacity === liter)) {
@@ -560,57 +502,6 @@ function remember (details) {
     }
 
 
-  //////Event listener adder for checkbox select/unselect logic 
-
-    function listenAdder (arr, funk) {
-        for (box of arr) {
-          box.addEventListener("change", funk);
-        }
-
-    }
-
-    function uncheckBox(arr, all_box) {
-      let checker = true; 
-      for (box of arr) {
-        if (!box.checked) {
-          all_box.checked = false; 
-          checker = false; 
-        }
-      }
-      if (checker) {
-        all_box.checked = true;
-      }
-    }
-
-
-    //// Select all / deselect all function 
-    function selectall (group, all) {
-      if (all.checked == true) {
-        group.forEach(function(box) {
-          box.checked = true;
-        });
-      } 
-      else {
-        group.forEach(function(box) {
-          box.checked = false;
-        });
-      }
-    }
-
-
-    function compare_size(a, b) {
-      return a.cm_max - b.cm_max;
-    }
-
-    function compare_size_descend(a, b) {
-      return b.cm_max - a.cm_max;
-    }
-
-
-    function compare_temp(a, b) {
-      return (a.temperature_min + a.temperature_max) - (b.temperature_min + b.temperature_max);
-    }
-
 
 //Checking if output list lenght is zero 
 function noResultAlert (len, invalid) {
@@ -625,24 +516,24 @@ function noResultAlert (len, invalid) {
 }
 
 
+///// Metric change function (used in initial event listener)
+  function fishsizemetric () {
+  console_fishsize = (console_fishsize === cm) ? inch : cm; 
+  fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
+  console.log(fishsize_option);
+  size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
+  cmtoinch.innerText = fishsize_option; 
+  search_button()
+ }
 
-    function fishsizemetric () {
-      // console_fishsize = inch; 
-      console_fishsize = (console_fishsize === cm) ? inch : cm; 
-      fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
-      console.log(fishsize_option);
-      size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
-      cmtoinch.innerText = fishsize_option; 
-      search_button()
-    }
-
-// Showing feedback page 
+///// Showing feedback page 
 function gotofeedback () {
   feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
   feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
   feedback_button.innerText = feedbackstatus; 
 }
 
+///// Showing/hiding more options 
 function optionsToggle () {
   more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";
   options_option = (more_options.style.display === "grid") ? fewer : more; 
@@ -667,97 +558,23 @@ function optionsToggle () {
   }
 }
 
-//removing ".0" from round numbers 
-function sizeFormatter (num) {
-if (num % 1 !== 0) {
-  return num.toFixed(1);
-} else {
-  return num.toFixed(0); 
-}
-}
-
-
-
-//// Dictionary for numerical codes to categories
-/// Used in info_card 
-
-const codes_hardi = 
-{
-  4: "Beginner",
-  3: "Easy",
-  2: "Medium",
-  1: "Difficult"
-}
-const codes_avail = 
-{
-  4: "Very common",
-  3: "Common",
-  2: "Rare",
-  1: "Very rare"
-}
-const codes_behave = 
-{
-  3: "Schooling",
-  2: "Social",
-  1: "Solitary"
-}
-
-const codes_agres = 
-{
-  3: "Aggressive",
-  2: "Mostly peaceful",
-  1: "Peaceful"
-}
-const codes_breed = 
-{
-  4: "Impossible",
-  3: "Hard",
-  2: "Medium",
-  1: "Easy"
-}
-
-
-
-
-//// Upper case first letter:
-function uppercaser(str) {
-  const words = str.split(' ');
-  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-  return capitalizedWords.join(' ');
-}
-
-//Showing info page 
+//////Showing info page 
 function explain () {
   about.style.display = (about.style.display  === "block") ? "none" : "block"; 
   about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
 }
 
 
+///// Sorting functions 
+function compare_size(a, b) {
+  return a.cm_max - b.cm_max;
+}
 
-//Slicing comma off from the end for origin string 
-function commaRemover (x) {
-  if (x.endsWith(",")) {
-    return x.slice(0, -1);
-  }
-  else {
-    return x;
-  }
-  }
+function compare_size_descend(a, b) {
+  return b.cm_max - a.cm_max;
+}
 
 
-  function inputAnimation (x) {
-    x.classList.add('number-updated');
-    setTimeout(() => {
-      x.classList.remove('number-updated');
-    }, 1000);
-  }
-  
-//Need to edit this to make it apply to image only. 
-  function refreshAnimation (x) {
-    var y = document.getElementById(x);
-    y.classList.add('tiles-refresh');
-    setTimeout(() => {
-      y.classList.remove('tiles-refresh');
-    }, 1000);
-  }
-  
+function compare_temp(a, b) {
+  return (a.temperature_min + a.temperature_max) - (b.temperature_min + b.temperature_max);
+}

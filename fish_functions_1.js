@@ -69,4 +69,49 @@ function all_select_behavior (x) {
   inputAnimation(tempmin);
     }
 
+//Slicing comma off from the end for origin string 
+function commaRemover (x) {
+  if (x.endsWith(",")) {
+    return x.slice(0, -1);
+  }
+  else {
+    return x;
+  }
+  }
+
+  //// Upper case first letter:
+function uppercaser(str) {
+  const words = str.split(' ');
+  const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return capitalizedWords.join(' ');
+}
+
+//removing ".0" from round numbers 
+function sizeFormatter (num) {
+  if (num % 1 !== 0) {
+    return num.toFixed(1);
+  } else {
+    return num.toFixed(0); 
+  }
+  }
+
+
+/////////////////////////////////
+/////Adnimation functions
+
+function inputAnimation (x) {
+  x.classList.add('number-updated');
+  setTimeout(() => {
+    x.classList.remove('number-updated');
+  }, 1000);
+}
+
+//Need to edit this to make it apply to image only. 
+function refreshAnimation (x) {
+  var y = document.getElementById(x);
+  y.classList.add('tiles-refresh');
+  setTimeout(() => {
+    y.classList.remove('tiles-refresh');
+  }, 1000);
+}
 

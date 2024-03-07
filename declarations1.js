@@ -124,3 +124,42 @@
   let details = []; 
 
  let feedback_button = document.getElementById("feedback_button"); 
+
+ //////////////////////////////////////////////
+ //// Dictionary for numerical codes to categories
+/// Used in info_card 
+
+const codes_hardi = 
+{
+  4: "Beginner",
+  3: "Easy",
+  2: "Medium",
+  1: "Difficult"
+}
+const codes_avail = 
+{
+  4: "Very common",
+  3: "Common",
+  2: "Rare",
+  1: "Very rare"
+}
+const codes_behave = 
+{
+  3: "Schooling",
+  2: "Social",
+  1: "Solitary"
+}
+
+const codes_agres = 
+{
+  3: "Aggressive",
+  2: "Mostly peaceful",
+  1: "Peaceful"
+}
+const codes_breed = 
+{
+  4: "Impossible",
+  3: "Hard",
+  2: "Medium",
+  1: "Easy"
+}

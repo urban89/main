@@ -1,5 +1,5 @@
   /////////////////////////////////////
-  /// Adding initial event listeners   
+  ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
         
     tank_size.addEventListener("blur", preCheckTank);
@@ -114,3 +114,42 @@
     });
   
     });  /// Eventlisteners end here   
+    ///////////////////////////////////////////////
+
+    //////Functions supporting event listeners:
+    //////Event listener adder for checkbox select/unselect logic 
+
+    function listenAdder (arr, funk) {
+      for (box of arr) {
+        box.addEventListener("change", funk);
+      }
+
+  }
+
+  function uncheckBox(arr, all_box) {
+    let checker = true; 
+    for (box of arr) {
+      if (!box.checked) {
+        all_box.checked = false; 
+        checker = false; 
+      }
+    }
+    if (checker) {
+      all_box.checked = true;
+    }
+  }
+
+
+      ///// Select all / deselect all function 
+      function selectall (group, all) {
+        if (all.checked == true) {
+          group.forEach(function(box) {
+            box.checked = true;
+          });
+        } 
+        else {
+          group.forEach(function(box) {
+            box.checked = false;
+          });
+        }
+      }
