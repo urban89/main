@@ -14,7 +14,7 @@ background-image: url('IMG_9602.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed; /* This keeps the background fixed when scrolling */
-
+position: relative; 
 }
 
 
@@ -554,3 +554,19 @@ box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 position: relative; /*necessary for in card elements to allign as I want */ 
 }
 
+
+
+
+
+
+/**************************************/ 
+#devalert {
+  color: yellow;
+  font-style: oblique;
+  margin: 0;
+  display: inline-block;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
