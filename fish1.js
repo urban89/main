@@ -17,6 +17,8 @@
   const infoshown = "Show all fish cards";
   const feedbacknotshown = "Send feedback"; 
   const feedbackshown = "Hide feedback window";
+  const aboutoff = "About this page"; 
+  const abouton = "Hide page info";
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -25,6 +27,7 @@
   let options_option = fewer; 
   let whichcard = fishshown; 
   let feedbackstatus = feedbacknotshown;
+  let aboutstatus = aboutoff; 
 
   let cap_modifier = 1; 
   let temp_modifier1 = 1;
@@ -218,16 +221,24 @@ window.addEventListener("click", function (event) {
 
   cardswticher.addEventListener("click", flipCards); 
   about_button.addEventListener("click", explain);
-  // toselector.addEventListener("click", gotoselector);
   feedback_button.addEventListener("click", gotofeedback);
+
+
+
+document.getElementById("x-about").addEventListener("click", explain);
+document.getElementById("x-feedback").addEventListener("click", gotofeedback);
+
 
   let x_outs = document.querySelectorAll(".x-out");
   x_outs.forEach(div => {
     div.innerHTML = "x"; 
     div.addEventListener("click", function() {
       let parentDiv = div.parentNode;
+      let id = parentDiv.id;
       parentDiv.style.display = "none";
     })
+    explain();
+    gotofeedback(); 
   });
 
   });  /// Eventlisteners end here   
@@ -873,7 +884,7 @@ function noResultAlert (len, invalid) {
       search_button()
     }
 
-    
+// Showing feedback page 
 function gotofeedback () {
   feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
   feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
@@ -965,17 +976,10 @@ function uppercaser(str) {
 
 //Showing info page 
 function explain () {
-  about.style.display = "block"; 
-  // search_tiles.style.display = "none";
-  // cpanel.style.display = "none";
+  about.style.display = (about.style.display  === "block") ? "none" : "block"; 
+  about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
 }
 
-//Going back to main page 
-function gotoselector () {
-  about.style.display = "none"; 
-  // search_tiles.style.display = "block";
-  // cpanel.style.display = "block";
-}
 
 
 //Slicing comma off from the end for origin string 
