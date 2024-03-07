@@ -1,9 +1,10 @@
+
 ////////////////////////////////////////////////////////////
 ////// This is the object array of all fishes /////////////////////
-///////csv_master_v2////////////////////////////////////////
+///////csv_master_v3////////////////////////////////////////
 
 
-const fish_master =   [
+const fish_master = [
   {
     fish_id: "1",
     name_english: "Brown-Point Shield Skin",
@@ -1379,7 +1380,7 @@ const fish_master =   [
     temperature_min: "21",
     temperature_max: "28",
     agression: "1",
-    origin: "Malay Pen. Sunda Islands"
+    origin: "Malaysia, Sunda Islands"
   },
   {
     fish_id: "86",
@@ -1413,7 +1414,7 @@ const fish_master =   [
     temperature_min: "18",
     temperature_max: "24",
     agression: "2",
-    origin: "Malay Pen., Sunda Islands"
+    origin: "Malaysia, Sunda Islands"
   },
   {
     fish_id: "88",
@@ -4082,7 +4083,7 @@ const fish_master =   [
     temperature_min: "20",
     temperature_max: "26",
     agression: "1",
-    origin: "Thailand, Malay Pen.,"
+    origin: "Thailand, Malaysia,"
   },
   {
     fish_id: "252",
@@ -4099,7 +4100,7 @@ const fish_master =   [
     temperature_min: "20",
     temperature_max: "26",
     agression: "2",
-    origin: "Thailand, Malay Pen.,"
+    origin: "Thailand, Malaysia,"
   },
   {
     fish_id: "253",
@@ -4252,7 +4253,7 @@ const fish_master =   [
     temperature_min: "22",
     temperature_max: "28",
     agression: "1",
-    origin: "Malay Pen., Thailand, Sumatra,"
+    origin: "Malaysia, Thailand, Sumatra,"
   },
   {
     fish_id: "262",
@@ -4286,7 +4287,7 @@ const fish_master =   [
     temperature_min: "22",
     temperature_max: "28",
     agression: "1",
-    origin: "Malay Pen., Thailand, Sumatra,"
+    origin: "Malaysia, Thailand, Sumatra,"
   },
   {
     fish_id: "264",
@@ -4303,7 +4304,7 @@ const fish_master =   [
     temperature_min: "23",
     temperature_max: "28",
     agression: "2",
-    origin: "Malay Pen., Borneo, Sumatra,"
+    origin: "Malaysia, Borneo, Sumatra,"
   },
   {
     fish_id: "265",
@@ -5663,7 +5664,7 @@ const fish_master =   [
     temperature_min: "20",
     temperature_max: "28",
     agression: "2",
-    origin: "Malay Pen., Thailand, Sumatra,"
+    origin: "Malaysia, Thailand, Sumatra,"
   },
   {
     fish_id: "349",
@@ -5731,7 +5732,7 @@ const fish_master =   [
     temperature_min: "24",
     temperature_max: "30",
     agression: "1",
-    origin: "Malay Pen.,Thailand, Sumatra"
+    origin: "Malaysia,Thailand, Sumatra"
   },
   {
     fish_id: "353",
@@ -6207,7 +6208,7 @@ const fish_master =   [
     temperature_min: "23",
     temperature_max: "30",
     agression: "2",
-    origin: "Congo Basin, Angola, Nigeria, "
+    origin: "Congo Basin, Angola, Nigeria,"
   },
   {
     fish_id: "396",
@@ -6360,7 +6361,7 @@ const fish_master =   [
     temperature_min: "24",
     temperature_max: "28",
     agression: "2",
-    origin: "Sumatra, Malay Pen., Thailand,"
+    origin: "Sumatra, Malaysia, Thailand,"
   },
   {
     fish_id: "405",
@@ -6377,7 +6378,7 @@ const fish_master =   [
     temperature_min: "24",
     temperature_max: "27",
     agression: "2",
-    origin: "Sumatra, Malay Pen., Thailand,"
+    origin: "Sumatra, Malaysia, Thailand,"
   },
   {
     fish_id: "406",
@@ -6513,7 +6514,7 @@ const fish_master =   [
     temperature_min: "20",
     temperature_max: "28",
     agression: "2",
-    origin: "Malay Pen., Sumatra, Borneo,"
+    origin: "Malaysia, Sumatra, Borneo,"
   },
   {
     fish_id: "417",
@@ -6598,7 +6599,7 @@ const fish_master =   [
     temperature_min: "22",
     temperature_max: "26",
     agression: "2",
-    origin: "Cambodia, Malay Pen., Borneo,"
+    origin: "Cambodia, Malaysia, Borneo,"
   },
   {
     fish_id: "422",
@@ -7193,7 +7194,7 @@ const fish_master =   [
     temperature_min: "20",
     temperature_max: "26",
     agression: "2",
-    origin: "Sumatra, "
+    origin: "Sumatra,"
   },
   {
     fish_id: "458",
@@ -7431,6 +7432,6 @@ const fish_master =   [
     temperature_min: "18",
     temperature_max: "27",
     agression: "3",
-    origin: "United States, Mexico, "
+    origin: "United States, Mexico,"
   }
 ]
