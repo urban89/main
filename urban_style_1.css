@@ -439,16 +439,13 @@ border-style: solid;
 
 #about {
   display: none;
+  white-space: wrap;
+  text-align: justify;
 }
 
-#feedback {
-  display: none; 
+#about p {
+  margin: 0; 
 }
-
-#searchInput {
-  background-color: #ecf1bd;
-}
-
 
 h1 {
   font-size: 20px; 
@@ -456,7 +453,21 @@ h1 {
 
 h2 {
   font-size: 16px; 
+  margin-bottom: 2px;
 }
+
+#feedback {
+  display: none; 
+}
+
+#noresults {
+  display: none;
+}
+
+#searchInput {
+  background-color: #ecf1bd;
+}
+
 
 /*Animations*/ 
 /* Number of selector results update animation; firing only if result number changes*/
