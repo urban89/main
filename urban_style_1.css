@@ -439,7 +439,7 @@ border-style: solid;
 
 #about {
   display: none;
-  white-space: wrap;
+  white-space: normal;
   text-align: justify;
 }
 
