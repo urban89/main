@@ -104,7 +104,7 @@
   let previousFishcouont = 42; 
   let noresults =  document.getElementById("noresults");
   let none_found = false; 
-  let invalid_search = false; 
+  let invalid_search = false;
 
   let srch_arr = []; 
 
@@ -215,44 +215,6 @@ window.addEventListener("click", function (event) {
 
   cmtoinch.addEventListener("click", fishsizemetric);
   toggle_options.addEventListener("click", optionsToggle);
-
-  //Event listener for the Qmark button for showing more info about search parameters.
-  // I decided to go with a different design but I will leave these block here for now. 
-//   var kmarks = document.querySelectorAll('.kmark');
-//   kmarks.forEach(div => {
-//  let divId = div.id;
-//   div.addEventListener("click", function () {
-//    var tileID = divId.slice(1);
-//    var i = "i"; 
-//    var infoID =  i.concat(divId.slice(1));
-//    console.log(infoID);
-//    var tile = document.getElementById(tileID);
-//    var info = document.getElementById(infoID);
-//    tile.style.display = "none";
-//    info.style.display = "block";
-//   });
-// });
-
-//   var infotiles = document.querySelectorAll('.infotile');
-//   infotiles.forEach(div => {
-//  let divId = div.id;
-//   div.addEventListener("click", function () {
-//    var tileID = divId.slice(1);
-//    var i = "i"; 
-//    var infoID =  i.concat(divId.slice(1));
-//    console.log(infoID);
-//    var tile = document.getElementById(tileID);
-//    var info = document.getElementById(infoID);
-//    tile.style.display = "block";
-//    info.style.display = "none";
-//   });
-
-//   });
-
-//   var kmarks = document.querySelectorAll('.kmark');
-//   kmarks.forEach(div => {
-//     div.innerHTML = "ⓘ"; 
-//   })
 
   cardswticher.addEventListener("click", flipCards); 
   about_button.addEventListener("click", explain);
@@ -414,18 +376,20 @@ function remember (details) {
 
 
         selection_missing = false;
-
+ 
       }
         
-      
+      console.log("selection_missing: " + selection_missing);
         if (selection_missing) {
           checkalert.style.display = "inline-block";
           invalid_search = true; 
+          console.log("1: " + invalid_search);
         }
 
       else {
         checkalert.style.display = "none";
         invalid_search = false; 
+        console.log("2: " +invalid_search);
       }
 
       }      
@@ -497,12 +461,6 @@ function remember (details) {
     }
       previousFishcouont = fish_list.length;
 
-      if (fish_list == 0) {
-        none_found = true;
-      }
-      else {
-        none_found = false; 
-      }
   }
 
 
@@ -628,6 +586,7 @@ function remember (details) {
    reveal_card.appendChild(infocard); //container card to hide/show info 
    result_lists.appendChild(reveal_card);
 
+
     }
 
     result_div.appendChild(result_lists);
@@ -666,6 +625,8 @@ function remember (details) {
   });
 
   remember (details);
+  noResultAlert (fish_list, invalid_search);
+  console.log(invalid_search);
   } // fishSelect () ends here 
     
             
@@ -674,7 +635,6 @@ function remember (details) {
             fishSelect ()
             // refreshAnimation("fish_card");
             // refreshAnimation("fishcardimage");
-            noResultAlert ()
 
     // Responsible for building the array that I use to iterate over fish_master and find results 
     function hardiness_list() {
@@ -768,8 +728,8 @@ function remember (details) {
   }      
   }
 
-
   // search_button function ends here 
+/////////////////////////////////////////////
 
     // Check data before search and display alert if needed 
 
@@ -879,15 +839,17 @@ function remember (details) {
     }
 
 
-
-    function noResultAlert () {
-      if ((none_found == true) && (invalid_search == false)) {
-        noresults.style.display = "inline-block"; 
-      }
-      else {
-        noresults.style.display = "none"; 
-      }
-    }
+//Checking if output list lenght is zero 
+function noResultAlert (len, invalid) {
+  console.log("none_found: " + len.length);
+  console.log("invalid_search: " + invalid);
+  if ((len.length < 1) && (!invalid)) {
+    noresults.style.display = "inline-block"; 
+  }
+  else {
+    noresults.style.display = "none"; 
+  }
+}
 
 
 
