@@ -31,9 +31,6 @@
         let v_b_medium = b_medium.checked;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
-
-        let selection_missing;
-
    
         let srch_hardi = []; 
         let srch_avail = []; 
@@ -88,8 +85,8 @@
         (v_tank_size >= fish_cap) && 
         (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
 
-        fish_list.push(fish);
-
+        fish_list.push(fish); //pushing all that matches to fish list 
+  
       } 
 
     }
@@ -98,8 +95,9 @@
 
       console.log(fish_list);
 
-      ///Updating selector result value on page 
+      ///Updating number of search result value 
       fishcount.innerHTML = fish_list.length;
+      emptiness_checker = fish_list.length;
 
       ///Displaying animation of selector result value changes
       if (previousFishcouont !== fish_list.length) {
@@ -112,10 +110,6 @@
 
   }
 
-
-
-            
-
   fishFinder () 
   fishSelect () //Outputting serach results to UI
   // refreshAnimation("fish_card");
@@ -127,7 +121,7 @@
     flipper() // adds event listeners to newly created divs responsibe for toggling the two sides of the displayed cards 
 
   remember (details); //checks array to see which should remain flipped and which shouldn't
-  noResultAlert (fish_list, invalid_search);
+  noResultAlert ();
   }
   //////////////////////////////////////////////////////// 
 ///////////////Functions defined within search_button function 
@@ -187,58 +181,73 @@ function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible) {
 
   if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
-  selection_missing = true;
   div_avail.classList.add('notselected');
   div_avail.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
 }
 
 else {
   div_avail.classList.remove('notselected');
   div_avail.classList.add('tiles');
+  // checkalert.style.display = "none";
+  // invalid_search = false; 
 }
 
 if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
-  selection_missing = true;
   div_hardiness.classList.add('notselected');
   div_hardiness.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
 }
 
 else {
   div_hardiness.classList.remove('notselected');
   div_hardiness.classList.add('tiles');
+  // checkalert.style.display = "none";
+  // invalid_search = false; 
 }
 
 if (!v_schooling1 && !v_schooling2 && !v_solitary) {
-  selection_missing = true;
   div_behavior.classList.add('notselected');
   div_behavior.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
 }
 
 else {
   div_behavior.classList.remove('notselected');
   div_behavior.classList.add('tiles');
+  // checkalert.style.display = "none";
+  // invalid_search = false; 
 }
 
 if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
-  selection_missing = true;
   div_agression.classList.add('notselected');
   div_agression.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
 }
 
 else {
   div_agression.classList.remove('notselected');
   div_agression.classList.add('tiles');
+  // checkalert.style.display = "none";
+  // invalid_search = false; 
 }
 
 if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
-  selection_missing = true;
   div_breeding.classList.add('notselected');
   div_breeding.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
 }
 
 else {
   div_breeding.classList.remove('notselected');
   div_breeding.classList.add('tiles');
+  // checkalert.style.display = "none";
+  // invalid_search = false; 
 }
 
   
@@ -256,18 +265,9 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
   div_agression.classList.add('tiles');
   div_breeding.classList.add('tiles');
 
-  selection_missing = false;
-
-}
-  
-  if (selection_missing) {
-    checkalert.style.display = "inline-block";
-    invalid_search = true; 
-  }
-
-else {
   checkalert.style.display = "none";
-  invalid_search = false; 
+  invalid_search_checks = false; 
+
 }
 }   
 
@@ -289,20 +289,20 @@ else {
             div_temp.classList.remove('tiles');
         div_temp.classList.add('notselected');
         tempalert.style.display = "inline-block";
-        invalid_search = true; 
+        invalid_search_temp = true; 
       }
       else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
         tempalert.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
               div_temp.classList.remove('tiles');
               div_temp.classList.add('notselected');
               tempalert.style.display = "inline-block";
-              invalid_search = true; 
+              invalid_search_temp = true; 
       }
     else {
             div_temp.classList.add('tiles');
               div_temp.classList.remove('notselected');
               tempalert.style.display = "none";
-              invalid_search = false;
+              invalid_search_temp = false;
     }
   }
     
@@ -313,23 +313,23 @@ else {
       if ((tank_size < 20) && (console_capacity === liter)) {
         capalert.style.display = 'inline-block';
         document.getElementById('tank_size').style.borderColor = 'red';  
-        invalid_search = true; 
+        invalid_search_cap = true; 
       } 
       if ((tank_size < 5.3) && (console_capacity === gallon)) {
         capalert.style.display = 'inline-block';
         document.getElementById('tank_size').style.borderColor = 'red';  
-        invalid_search = true; 
+        invalid_search_cap = true; 
       }
       if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
         capalert.style.display = 'none';
         document.getElementById('tank_size').style.borderColor = 'unset';
-        invalid_search = false; 
+        invalid_search_cap = false; 
       }
     }
 
 //Checking if output list lenght is zero 
-function noResultAlert (len, invalid) {
-  if ((len.length < 1) && (!invalid)) {
+function noResultAlert () {
+  if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks)) {
     noresults.style.display = "inline-block"; 
   }
   else {

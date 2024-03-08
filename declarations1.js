@@ -41,7 +41,6 @@
   let capalert = document.getElementById("capalert");
   let checkalert = document.getElementById("checkalert");
 
-
   let div_tank_size = document.getElementById("div_tank_size");
   let div_hardiness = document.getElementById("div_hardiness");
   let div_temp = document.getElementById("div_temp");
@@ -62,7 +61,6 @@
   let tank_size = document.getElementById("tank_size"); 
   let liter_radio = document.getElementById("liter_radio"); 
   let gallon_radio = document.getElementById("gallon_radio"); 
-
 
   let beginner = document.getElementById("beginner");
   let easy = document.getElementById("easy");
@@ -106,8 +104,10 @@
   let fishcount = document.getElementById("fishcount");
   let previousFishcouont = 42; 
   let noresults =  document.getElementById("noresults");
-  let none_found = false; 
-  let invalid_search = false;
+  let invalid_search_cap = false;
+  let invalid_search_temp = false;
+  let invalid_search_checks = false;
+  let emptiness_checker; 
 
   let srch_arr = []; 
 
@@ -117,7 +117,6 @@
   let flipped = false; 
   let about = document.getElementById("about");
   let about_button = document.getElementById("about_button");
-  let atabout = false; 
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
 
