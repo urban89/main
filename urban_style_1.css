@@ -56,13 +56,6 @@ position: relative;
 
 } 
 
- 
-/* .body-color-1 {
-
-
-} */
-
-
 .parameter {
  font-weight: 666;
 }
@@ -80,18 +73,6 @@ position: relative;
     color: red;
     font-size: small;
   }
-
-/* 
-welcome
-div_tank_size
-div_hardiness
-div_avail
-div_temp
-div_more_opt_button
-div_behavior
-div_agression
-div_breeding
-*/ 
 
 
 /*Tiles*/ 
@@ -118,19 +99,6 @@ div_breeding
  margin: 0; 
 }
 
-.kmark {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 4px; 
-  background-color: #20c4da3f;
-  border-radius: 10px;
-}
-
-.kmark:hover {
-  cursor: help;
-  background-color: #c2db70f6;
-}
 
 /* more options div gird */ 
 
@@ -447,6 +415,10 @@ border-style: solid;
 
 #about p {
   margin: 0; 
+}
+
+#about p span {
+  font-weight: 600;
 }
 
 h1 {

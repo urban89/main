@@ -37,38 +37,52 @@
     <div id = "maindiv"> 
 
       <div id="about" class = "tiles">  <!-- about -->
-        <h1> Welcome to SelectYourFish.com </h1>
         <span id = "x-about" class = "x-out"> </span>
+        <h1> Welcome to SelectYourFish.com </h1>
+        <p> Find the perfect fish for your home aquarium. 
+          This guide provides essential information to keep them healthy. 
+          Remember, this page gives general advice. Always research each fish species before buying.
+        The percentage (%) value after each category represents the ratio of how many fish is included from the total of
+         <span id = "dbcount"> </span> in the database.</p>
+         
         <h2>Aquarium size</h2>
         <p> 
-        This minimum required tank size is applicable in case of a planted aquarium and 
-           if no other fish is added. The defined tanks size considers the rule that 
-           schooling/social species are best kept in groups. Make sure to research each species further 
-          before adding them to your tank.
-          Specimen must be introduced to newly setup tanks gradually. 
+          This is the smallest tank size recommended for a planted aquarium without additional fish. 
+          It assumes that fish which prefer to be in groups (schooling or social species) need enough space.
+          It's important to look into the specific needs of different species before adding them to your aquarium.
           </p>
         <h2>Water temperature</h2>
             <p> 
-         It's recommended to keep your fish at a constant temperature. 
+              Maintaining a consistent water temperature is crucial for the health of your aquarium inhabitants.
               </p>  
 
         <h2>Keeping difficulty</h2>
-         <p>Beginner: </p>
-          <p>Easy: </p>
-           <p>Medium: </p>
-            <p>Difficult: </p>
+         <p><span>Beginner <span id = "beginner$"></span>: </span>Ideal for those new to aquarium keeping. </p>
+          <p> <span>Easy <span id = "easy$"></span>: </span>Suitable for hobbyists with some experience. </p>
+           <p><span>Medium <span id = "medium$"></span>: </span> Requires knowledge and some diligence in maintaining specific environmental conditions.</p>
+            <p><span>Difficult <span id = "difficult$"></span>: </span>Demands advanced knowledge and dedicated care to sustain the appropriate environment.</p>
 
         <h2>Purchase availability</h2>
-         <p>Very common: </p>
-          <p>Common: </p>
-           <p>Rare: </p>
-            <p>Very rare: </p>
+         <p><span>Very common: </span>Widely available at local pet stores.</p>
+          <p><span>Common: </span>Generally available at local pet stores. </p>
+           <p><span>Rare: </span>Less likely to be found at local pet stores.</p>
+            <p><span>Very rare: </span>Usually requires special sourcing. </p>
 
         <h2>Social behavior</h2>
+        <p><span>Schooling: </span>Must be kept in groups of six or more of their kind. </p>
+          <p><span>Social: </span>It's much better for their health and behavior to live in groups. </p>
+           <p><span>Solitary: </span>Can or should be kept alone. </p>
 
         <h2>Agression level</h2>
-
+        <p><span>Peaceful: </span>Mostly calm but may have some minor squabbles. </p>
+          <p><span>Mostly peaceful: </span>Might fight over space or mates, or eat much smaller fish.</p>
+           <p><span>Agressive: </span> Can be very territorial. Needs a lot of room to live with others peacefully.</p>
+        
         <h2>Breeding difficulty</h2>
+        <p><span>Easy: </span>Often breeds without needing special water conditions.</p>
+          <p><span>Medium: </span>Might breed with some extra care. </p>
+           <p><span>Hard: </span> Needs specific steps to breed successfully. </p>
+            <p><span>No record: </span>No known cases of breeding by hobbyists. </p>
 
        </div> <!-- about ends -->
 
@@ -230,7 +244,7 @@
      <label for="b_hard">Hard </label>
      <br> 
      <input type="checkbox" id="impossible" name="breed">
-     <label for="impossible">Impossible</label>
+     <label for="impossible">No record</label>
      <div id = "kdiv_breeding" class = "kmark">  </div>
   </div>
     
@@ -255,9 +269,9 @@
 
     </div>
 
+<script type="text/javascript" src="fish_array.js"></script>
 <script type="text/javascript" src="declarations1.js"></script>
 <script type="text/javascript" src="listeners1.js"></script>
-<script type="text/javascript" src="fish_array.js"></script>
 <script type="text/javascript" src="fish1.js"></script>
 <script type="text/javascript" src="fish_functions_1.js"></script>
 

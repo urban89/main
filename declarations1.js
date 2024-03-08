@@ -19,6 +19,7 @@
   const feedbackshown = "Hide feedback window";
   const aboutoff = "About this page"; 
   const abouton = "Hide page info";
+  const maincount = fish_master.length; 
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -157,8 +158,30 @@ const codes_agres =
 }
 const codes_breed = 
 {
-  4: "Impossible",
+  4: "No record",
   3: "Hard",
   2: "Medium",
   1: "Easy"
+}
+
+
+
+//////////////////////////
+/////% counters for each category
+
+let beginner$$ = perCounter ("uncare", 4);
+let easy$$ = perCounter ("uncare", 3);
+let medium$$ = perCounter ("uncare", 2);
+let difficult$$ = perCounter ("uncare", 1);
+
+///Calculates the precentage value of each category compared to total
+
+function perCounter (property, code) {
+  let list = []; 
+  for (let fish of fish_master) {
+    if (fish[property] == parseInt(code)) {
+      list.push(fish);
+    }
+  }
+  return `(${Math.round((list.length/maincount)*100)}%)`; 
 }

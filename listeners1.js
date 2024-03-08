@@ -1,7 +1,14 @@
   /////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
-        
+
+    document.getElementById("dbcount").textContent = maincount;   
+    document.getElementById("beginner$").textContent = beginner$$;  
+    document.getElementById("easy$").textContent = easy$$; 
+    document.getElementById("medium$").textContent = medium$$; 
+    document.getElementById("difficult$").textContent = difficult$$; 
+    
+
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
     tank_size.addEventListener("click", preCheckTank);
