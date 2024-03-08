@@ -415,6 +415,8 @@ border-style: solid;
 
 #about p {
   margin: 0; 
+  white-space: wrap;
+  text-align: justify;
 }
 
 #about p span {
