@@ -7,6 +7,24 @@
     document.getElementById("easy$").textContent = easy$$; 
     document.getElementById("medium$").textContent = medium$$; 
     document.getElementById("difficult$").textContent = difficult$$; 
+
+    document.getElementById("verycommon$").textContent = verycommon$$;  
+    document.getElementById("common$").textContent = common$$; 
+    document.getElementById("rare$").textContent = rare$$; 
+    document.getElementById("veryrare$").textContent = veryrare$$; 
+
+    document.getElementById("schooling$").textContent = schooling$$;  
+    document.getElementById("social$").textContent = social$$; 
+    document.getElementById("solitary$").textContent = solitary$$; 
+
+    document.getElementById("peaceful$").textContent = peaceful$$;  
+    document.getElementById("mpeaceful$").textContent = mpeaceful$$; 
+    document.getElementById("agressive$").textContent = agressive$$; 
+
+    document.getElementById("beasy$").textContent = beasy$$;  
+    document.getElementById("bmedium$").textContent = bmedium$$; 
+    document.getElementById("bhard$").textContent = bhard$$; 
+    document.getElementById("norecord$").textContent = norecord$$; 
     
 
     tank_size.addEventListener("blur", preCheckTank);

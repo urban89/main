@@ -174,6 +174,26 @@ let easy$$ = perCounter ("uncare", 3);
 let medium$$ = perCounter ("uncare", 2);
 let difficult$$ = perCounter ("uncare", 1);
 
+let verycommon$$ = perCounter ("availability", 4);
+let common$$ = perCounter ("availability", 3);
+let rare$$ = perCounter ("availability", 2);
+let veryrare$$ = perCounter ("availability", 1);
+
+let schooling$$ = perCounter ("school", 3);
+let social$$ = perCounter ("school", 2);
+let solitary$$ = perCounter ("school", 1);
+
+let peaceful$$ = perCounter ("agression", 1);
+let mpeaceful$$ = perCounter ("agression", 2);
+let agressive$$ = perCounter ("agression", 3);
+
+let beasy$$ = perCounter ("breeding_difficulty", 1);
+let bmedium$$ = perCounter ("breeding_difficulty", 2);
+let bhard$$ = perCounter ("breeding_difficulty", 3);
+let norecord$$ = perCounter ("breeding_difficulty", 4);
+
+
+
 ///Calculates the precentage value of each category compared to total
 
 function perCounter (property, code) {
