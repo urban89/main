@@ -1,19 +1,17 @@
 
 
 body {
-  margin: 10px;
-  padding: 0;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: fit-content; /* This ensures that the container is centered vertically on the page */
-  font-family: 'Noto Sans', sans-serif;
-    /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
-background-attachment: fixed; */
+margin: 10px;
+padding: 0;
+display: grid;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-family: 'Noto Sans', sans-serif;
 background-color: #235197;
 background-image: url('backgrounds/3.jpg');
 background-size: cover;
-background-repeat: round;
+background-repeat: no-repeat;
 background-attachment: fixed; 
 position: relative; 
 }
@@ -263,6 +261,11 @@ input[type="radio"] {
 @media screen and (min-width: 788px) {
   #maindiv {
     width: 85vw;
+  }
+
+  body {
+    background-attachment: scroll; 
+    background-size: cover;  
   }
 }
 
