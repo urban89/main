@@ -418,6 +418,7 @@ border-style: solid;
   white-space: wrap;
   text-align: justify;
   word-wrap: break-word;
+  width: auto;
 }
 
 #about p span {
