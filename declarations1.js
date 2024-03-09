@@ -120,6 +120,9 @@
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
+  let imagechanger = document.getElementById("imagechanger"); 
+  let currentImage; 
+  const bcimages = 3; 
 
   let details = []; 
 

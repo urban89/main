@@ -115,3 +115,24 @@ function refreshAnimation (x) {
   }, 1000);
 }
 
+
+
+
+///Background image as initial
+function initialImage () {
+  let initial = Math.floor(Math.random() * bcimages) + 1;
+  currentImage = initial;
+  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+}
+
+
+function imageChange() {
+  if (currentImage === bcimages) {
+    currentImage = 1; 
+  }
+  else {
+    currentImage = currentImage+1; 
+  }
+
+  document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
+}

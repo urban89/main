@@ -10,9 +10,9 @@ body {
   /* font-family: 'Noto Sans', sans-serif; */
     /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
 background-attachment: fixed; */
-background-image: url('IMG_9602.jpg');
+background-image: url('backgrounds/3.jpg');
 background-size: cover;
-background-repeat: no-repeat;
+background-repeat: round;
 background-attachment: fixed; /* This keeps the background fixed when scrolling */
 position: relative; 
 }

@@ -136,7 +136,12 @@
       })
       explain();
       gotofeedback(); 
+      initialImage ()
     });
+
+
+    ////Background changer 
+    imagechanger.addEventListener("click", imageChange);
   
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
