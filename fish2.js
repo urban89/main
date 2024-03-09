@@ -14,6 +14,9 @@ const show_gallon = "Show aquarium capacity in gallon";
 const fishshown = "Show all info cards";
 const infoshown = "Show all fish cards";
 const searchInput = document.getElementById("searchInput"); 
+const bcimages = 5; 
+let imagechanger = document.getElementById("imagechanger"); 
+let currentImage; 
 
 let fish_list = fish_master; 
 let filteredFish = []; 
@@ -82,9 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
   notfound.style.display = "none"; 
   } 
   }); 
-
+  initialImage ()
+  imagechanger.addEventListener("click", imageChange);
   }); 
-/////////////////////////////////////
+/////////////////////////////////////Event listeners ends here //////////////////////////////
 
 
 
@@ -427,4 +431,24 @@ if (x.endsWith(",")) {
   else {
     return x;
   }
+}
+
+
+///Background image as initial
+function initialImage () {
+  let initial = Math.floor(Math.random() * bcimages) + 1;
+  currentImage = initial;
+  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+}
+
+
+function imageChange() {
+  if (currentImage === bcimages) {
+    currentImage = 1; 
+  }
+  else {
+    currentImage = currentImage+1; 
+  }
+
+  document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
 }
