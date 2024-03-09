@@ -1,21 +1,16 @@
 
 function sort () {
-  // if (filteredFish.length > 0) {
-  //   fish_list = filteredFish; 
-  // }
+
     if (sort_select.value == "size_min") {
         fish_list = fish_list.sort(compare_size);
-        console.log("size_min");
       }
   
       if (sort_select.value == "size_max") {
         fish_list =  fish_list.sort(compare_size_descend);
-        console.log("size_max");
       }
   
       if (sort_select.value == "temp_min") {
         fish_list = fish_list.sort(compare_temp);
-        console.log("temp_min");
       }
 }
 
@@ -23,6 +18,13 @@ function sort () {
 function fishSelect (fish_list) {
   if (filteredFish.length > 0) {
     fish_list = filteredFish; 
+    sort();
+    console.log("filter");
+  }
+  else {
+    fish_list = fish_master; 
+    sort();
+    console.log("master");
   }
   result_div.innerHTML = '';  
   let result_lists = document.createElement("div");
@@ -150,8 +152,8 @@ function fishSelect (fish_list) {
   } // fishSelect contiune after for loop ends 
 
   result_div.appendChild(result_lists);
-  fishcount.innerText = fish_list.length; 
-
+  fishcount.innerText = fish_master.length; 
+  displayed.innerText = fish_list.length; 
 
   // fish cards and infor cards when clicked it hides the div and the other div is displayed in its place
   let maincard_divs = document.querySelectorAll(".maincard");
@@ -184,7 +186,7 @@ function fishSelect (fish_list) {
   });
 
 
-} // fishSelect () ends here 
+} // fishSelect ends here 
   
 
 
@@ -205,6 +207,7 @@ function compare_size(a, b) {
 
 
   function output () {
+    fish_list = filteredFish.length > 0 ? filteredFish : fish_master;
     sort();
     fishSelect (fish_list);
     remember (details)
@@ -283,3 +286,32 @@ function flipCards() {
     }
     }
 
+//////Filter by fish name (latin, english and alternative name)
+
+function filterFishByName() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  fish_list = fish_master; 
+  if (searchTerm === "") {
+    filteredFish = []; // Reset to full list if search bar is cleared
+    output ()
+    return; }
+
+  // }
+   else {
+    filteredFish = fish_list.filter(fish => 
+      fish.name_english.toLowerCase().includes(searchTerm) ||
+      fish.alt_name.toLowerCase().includes(searchTerm) ||
+      fish.name_latin.toLowerCase().includes(searchTerm)
+    );
+
+    console.log(filteredFish);
+
+    if (filteredFish.length === 0) {
+      notfound.style.display = "block";
+      result_div.innerHTML = '';
+    } else {
+      notfound.style.display = "none";
+      output(); // Output based on filtered results
+    }
+  }
+}

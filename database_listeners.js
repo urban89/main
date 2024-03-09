@@ -22,26 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
   cardswticher.addEventListener("click", flipCards);   
 
   /// Search bar for filtering fish by name 
-  searchInput.addEventListener("input", function() {  
-  const searchTerm = searchInput.value.trim().toLowerCase();
-
-  filteredFish = fish_list.filter(fish => 
-    fish.name_english.toLowerCase().includes(searchTerm) ||
-    fish.alt_name.toLowerCase().includes(searchTerm)
-    );
-
-  console.log(filteredFish);
-
-  if (filteredFish.length == 0 && searchTerm !== "") {
-    notfound.style.display = "block"; 
-    result_div.innerHTML = '';  
-  } else {
-  output();
-  notfound.style.display = "none"; 
-  } 
-  }); 
-  initialImage ()
-  imagechanger.addEventListener("click", imageChange);
+  searchInput.addEventListener("input",filterFishByName); 
+  searchInput.addEventListener("keyup",filterFishByName); 
   }); 
 /////////////////////////////////////Event listeners ends here //////////////////////////////
 
