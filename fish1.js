@@ -1,5 +1,5 @@
-   //////////////////////////////
-  /// Search button function 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///// Search button function //////////////////////////////////////////////////////////////////////////////////////////
     function search_button() {
         result_div.innerHTML = "";
         event.preventDefault();
@@ -39,91 +39,35 @@
         let srch_breed = []; 
         let fish_list = []; 
       
-      //// srch_arr used for testing reasons - commenting it out for now 
-      // srch_arr = [srch_hardi, srch_avail, srch_soci, srch_agress,srch_breed, parseFloat(v_tank_size), parseFloat(v_tempmin)];
-      // console.log(srch_arr);
-
-        // Checking if temperature and tank size are ok; + checking if checkboxes were selected     
+///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
-      preCheckCheckboxes (v_verycommon,v_common,v_rare,
-        v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
-        v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
+      preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
       preCheckTank(); 
 
-         
-  ///// Adding search conditions to their respective arrays
-    
+///// Adding search conditions to their respective arrays
         avail_list();
         hardiness_list();
         behavior_list();
         agres_list();
         breed_list();
 
-///////////////////////////////////////////////////////
-///// Core search functionaliy ////////////////////////
-/////Using the user input to create a search result array by iterating over the fish_master array 
-        function fishFinder ()  {   
-      for (fish of fish_master) {
-        let fish_temp_min = parseFloat(fish.temperature_min);
-        let fish_temp_max = parseFloat(fish.temperature_max); 
-        let fish_cap = parseFloat(fish.tank_size_liter);
+/////Finding fish that meet selected criteria and pushing them to fish_list
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin); 
+/////Outputting serach results to UI
+  fishSelect ()
 
-        if (console_capacity == gallon) {
-          fish_cap = fish_cap * 0.264172;
-        }
 
-        if (console_temperature == farenheit) {
-          fish_temp_min = (fish_temp_min * 9/5)+32;
-          fish_temp_max = (fish_temp_max * 9/5)+32;
-        }
 
-        if ((srch_hardi.includes(parseInt(fish.uncare))) && 
-        (srch_avail.includes(parseInt(fish.availability))) && 
-        (srch_soci.includes(parseInt(fish.school))) && 
-        (srch_agress.includes(parseInt(fish.agression))) &&
-        (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
-        (v_tank_size >= fish_cap) && 
-        (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
+/////search_button CORE -->|||||
+///////////////////Outputting serach results to UI
+function fishSelect () {
+  fishFiller(fish_list); //fills all the fish info card divs displayed on page 
+  flipper() // adds event listeners to newly created divs responsibe for toggling the two sides of the displayed cards 
 
-        fish_list.push(fish); //pushing all that matches to fish list 
-  
-      } 
-
-    }
-
-    sort (fish_list)
-
-      console.log(fish_list);
-
-      ///Updating number of search result value 
-      fishcount.innerHTML = fish_list.length;
-      emptiness_checker = fish_list.length;
-
-      ///Displaying animation of selector result value changes
-      if (previousFishcouont !== fish_list.length) {
-      fishcount.classList.add('value-updated');
-      setTimeout(() => {
-        fishcount.classList.remove('value-updated');
-      }, 1000);
-    }
-      previousFishcouont = fish_list.length;
-
-  }
-
-  fishFinder () 
-  fishSelect () //Outputting serach results to UI
-  // refreshAnimation("fish_card");
-  // refreshAnimation("fishcardimage");
-
-  ///////////////////Outputting serach results to UI
-  function fishSelect () {
-    fishFiller(fish_list); //fills all the fish info card divs displayed on page 
-    flipper() // adds event listeners to newly created divs responsibe for toggling the two sides of the displayed cards 
-
-  remember (details); //checks array to see which should remain flipped and which shouldn't
-  noResultAlert ();
-  }
-  //////////////////////////////////////////////////////// 
+remember (details); //checks array to see which should remain flipped and which shouldn't
+noResultAlert (); // alert if no results were found 
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////Functions defined within search_button function 
 
 ////building the array that I use to iterate over fish_master and find results 
@@ -175,6 +119,56 @@ function sort (fish_list) {
 
 
 
+///// search_button function ends here /////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////Using the user input to create a search result array by iterating over the fish_master array 
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin)  {   
+  for (fish of fish_master) {
+    let fish_temp_min = parseFloat(fish.temperature_min);
+    let fish_temp_max = parseFloat(fish.temperature_max); 
+    let fish_cap = parseFloat(fish.tank_size_liter);
+
+    if (console_capacity == gallon) {
+      fish_cap = fish_cap * 0.264172;
+    }
+
+    if (console_temperature == farenheit) {
+      fish_temp_min = (fish_temp_min * 9/5)+32;
+      fish_temp_max = (fish_temp_max * 9/5)+32;
+    }
+
+    if ((srch_hardi.includes(parseInt(fish.uncare))) && 
+    (srch_avail.includes(parseInt(fish.availability))) && 
+    (srch_soci.includes(parseInt(fish.school))) && 
+    (srch_agress.includes(parseInt(fish.agression))) &&
+    (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
+    (v_tank_size >= fish_cap) && 
+    (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
+
+    fish_list.push(fish); //pushing all that matches to fish list 
+
+  } 
+}
+sort (fish_list)
+console.log(fish_list)
+
+  ///Updating number of search result value 
+  fishcount.innerHTML = fish_list.length;
+  emptiness_checker = fish_list.length;
+
+  ///Displaying animation of selector result value changes
+  if (previousFishcouont !== fish_list.length) {
+  fishcount.classList.add('value-updated');
+  setTimeout(() => {
+    fishcount.classList.remove('value-updated');
+  }, 1000);
+}
+  previousFishcouont = fish_list.length;
+} 
+/// fishFinder --> ||||| 
+
 /////Checking if user missed to checkbox the minimum required checkboxes 
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
@@ -190,8 +184,6 @@ function preCheckCheckboxes (v_verycommon,v_common,v_rare,
 else {
   div_avail.classList.remove('notselected');
   div_avail.classList.add('tiles');
-  // checkalert.style.display = "none";
-  // invalid_search = false; 
 }
 
 if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
@@ -204,8 +196,6 @@ if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
 else {
   div_hardiness.classList.remove('notselected');
   div_hardiness.classList.add('tiles');
-  // checkalert.style.display = "none";
-  // invalid_search = false; 
 }
 
 if (!v_schooling1 && !v_schooling2 && !v_solitary) {
@@ -218,8 +208,6 @@ if (!v_schooling1 && !v_schooling2 && !v_solitary) {
 else {
   div_behavior.classList.remove('notselected');
   div_behavior.classList.add('tiles');
-  // checkalert.style.display = "none";
-  // invalid_search = false; 
 }
 
 if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
@@ -232,8 +220,6 @@ if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
 else {
   div_agression.classList.remove('notselected');
   div_agression.classList.add('tiles');
-  // checkalert.style.display = "none";
-  // invalid_search = false; 
 }
 
 if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
@@ -246,8 +232,6 @@ if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
 else {
   div_breeding.classList.remove('notselected');
   div_breeding.classList.add('tiles');
-  // checkalert.style.display = "none";
-  // invalid_search = false; 
 }
 
   
@@ -269,15 +253,7 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
   invalid_search_checks = false; 
 
 }
-}   
-
-
-
-
-  // search_button function ends here 
-/////////////////////////////////////////////
-/////////////////////////////////////////////
-
+}  
 
 /////Component functions below////////////// - there are some general UI functions I will keep them here for now 
 
