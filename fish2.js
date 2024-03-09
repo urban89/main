@@ -1,98 +1,4 @@
 
-const liter = "L";
-const gallon = "gal";
-const celsius = "℃";
-const farenheit = "℉";
-const cm = "cm";
-const inch = "inch";
-const show_inch = "Show fish size in inch";
-const show_cm = "Show fish size in cm";
-const show_farenheit = "Show water temperature in farenheit";
-const show_celsius = "Show water temperature in celsius";
-const show_liter =  "Show aquarium capacity in liter";
-const show_gallon = "Show aquarium capacity in gallon"; 
-const fishshown = "Show all info cards";
-const infoshown = "Show all fish cards";
-const searchInput = document.getElementById("searchInput"); 
-const bcimages = 5; 
-let imagechanger = document.getElementById("imagechanger"); 
-let currentImage; 
-
-let fish_list = fish_master; 
-let filteredFish = []; 
-let temp_modifier1 = 1; 
-let temp_modifier2 = 0; 
-let cap_modifier = 1; 
-let size_modifier = 1; 
-let console_temperature = celsius; 
-let console_capacity = liter; 
-let console_fishsize = cm;
-let fishsize_option = show_inch;
-let capacity_button = show_gallon;
-let temp_button = show_farenheit; 
-let whichcard = fishshown; 
-let flipped = false; 
-
-let details = []; 
-
-let cmtoinch = document.getElementById("cmtoinch");
-
-let result_div = document.getElementById("result");
-let sort_select = document.getElementById("sort");
-let cap_conversion = document.getElementById("cap_conversion");
-let temp_conversion = document.getElementById("temp_conversion");
-let notfound = document.getElementById("notfound"); 
-
-/////////////////////////////////////
-/// Adding initial event listeners 
-document.addEventListener("DOMContentLoaded", function() {
-    sort_select.addEventListener("change", output);
-    output ()
-
-    document.getElementById("settings").addEventListener("click", function () {
-      var dropdown = document.getElementById("settings_dropdown");
-      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-  });
-
-  window.addEventListener("click", function (event) {
-    var dropdown = document.getElementById("settings_dropdown");
-    if (event.target !== document.getElementById("settings")) {
-        dropdown.style.display = "none";
-    }
-  });
-
-  cmtoinch.addEventListener("click", fishsizemetric);
-  cap_conversion.addEventListener("click", litergallon);
-  temp_conversion.addEventListener("click", celtofaren);
-  cardswticher.addEventListener("click", flipCards);   
-
-  /// Search bar for filtering fish by name 
-  searchInput.addEventListener("input", function() {  
-  const searchTerm = searchInput.value.trim().toLowerCase();
-
-  filteredFish = fish_list.filter(fish => 
-    fish.name_english.toLowerCase().includes(searchTerm) ||
-    fish.alt_name.toLowerCase().includes(searchTerm)
-    );
-
-  console.log(filteredFish);
-
-  if (filteredFish.length == 0 && searchTerm !== "") {
-    notfound.style.display = "block"; 
-    result_div.innerHTML = '';  
-  } else {
-  output();
-  notfound.style.display = "none"; 
-  } 
-  }); 
-  initialImage ()
-  imagechanger.addEventListener("click", imageChange);
-  }); 
-/////////////////////////////////////Event listeners ends here //////////////////////////////
-
-
-
-
 function sort () {
   // if (filteredFish.length > 0) {
   //   fish_list = filteredFish; 
@@ -262,11 +168,7 @@ function fishSelect (fish_list) {
     console.log(divId);
     details.push(divId);
   }
-  //  else {
-  //   details = details.filter(element => element !== divId);
-  //   // let re_card = fish_list.find(obj => obj.fish_id === divId) // This re_card might be completely unnecesary 
-  //   console.log(divId + " was removed from 'details'");
-  // } 
+
   });
   });
 
@@ -346,46 +248,6 @@ function sizeFormatter (num) {
   }
 
 
-  //// Dictionary for numerical codes to categories
-/// Used in info_card 
-
-const codes_hardi = 
-{
-  4: "Beginner",
-  3: "Easy",
-  2: "Medium",
-  1: "Difficult"
-}
-const codes_avail = 
-{
-  4: "Very common",
-  3: "Common",
-  2: "Rare",
-  1: "Very rare"
-}
-const codes_behave = 
-{
-  3: "Schooling",
-  2: "Social",
-  1: "Solitary"
-}
-
-const codes_agres = 
-{
-  3: "Aggressive",
-  2: "Mostly peaceful",
-  1: "Peaceful"
-}
-const codes_breed = 
-{
-  4: "Impossible",
-  3: "Hard",
-  2: "Medium",
-  1: "Easy"
-}
-
-
-
 //// Upper case first letter:
 function uppercaser(str) {
   const words = str.split(' ');
@@ -396,7 +258,6 @@ function uppercaser(str) {
 
 
 function flipCards() {
-  console.log("teszt1");
   flipped = (flipped === false) ? true : false; 
   console.log(flipped);
   whichcard = (flipped === true) ? infoshown: fishshown; 
@@ -422,33 +283,3 @@ function flipCards() {
     }
     }
 
-
-//Slicing comma off from the end for origin string 
-function commaRemover (x) {
-if (x.endsWith(",")) {
-  return x.slice(0, -1);
-}
-  else {
-    return x;
-  }
-}
-
-
-///Background image as initial
-function initialImage () {
-  let initial = Math.floor(Math.random() * bcimages) + 1;
-  currentImage = initial;
-  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-}
-
-
-function imageChange() {
-  if (currentImage === bcimages) {
-    currentImage = 1; 
-  }
-  else {
-    currentImage = currentImage+1; 
-  }
-
-  document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
-}

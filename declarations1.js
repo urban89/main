@@ -1,26 +1,9 @@
   ///////////////////////
   //Declaring variables 
-  const liter = "L";
-  const gallon = "gal";
-  const celsius = "℃";
-  const farenheit = "℉";
+
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const numberinputs = document.querySelectorAll('input[type="number"]');
   const radioinputs = document.querySelectorAll('input[type = "radio"]');
-  const cm = "cm";
-  const inch = "inch";
-  const show_inch = "Show fish size in inch";
-  const show_cm = "Show fish size in cm";
-  const more = "Show more search options";
-  const fewer = "Show fewer search options";
-  const fishshown = "Show all info cards";
-  const infoshown = "Show all fish cards";
-  const feedbacknotshown = "Send feedback"; 
-  const feedbackshown = "Hide feedback window";
-  const aboutoff = "About this page"; 
-  const abouton = "Hide page info";
-  const maincount = fish_master.length; 
-  const bcimages = 5; 
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -128,45 +111,6 @@
 
  let feedback_button = document.getElementById("feedback_button"); 
 
- //////////////////////////////////////////////
- //// Dictionary for numerical codes to categories
-/// Used in info_card 
-
-const codes_hardi = 
-{
-  4: "Beginner",
-  3: "Easy",
-  2: "Medium",
-  1: "Difficult"
-}
-const codes_avail = 
-{
-  4: "Very common",
-  3: "Common",
-  2: "Rare",
-  1: "Very rare"
-}
-const codes_behave = 
-{
-  3: "Schooling",
-  2: "Social",
-  1: "Solitary"
-}
-
-const codes_agres = 
-{
-  3: "Aggressive",
-  2: "Mostly peaceful",
-  1: "Peaceful"
-}
-const codes_breed = 
-{
-  4: "No record",
-  3: "Hard",
-  2: "Medium",
-  1: "Easy"
-}
-
 
 
 //////////////////////////
@@ -195,16 +139,11 @@ let bmedium$$ = perCounter ("breeding_difficulty", 2);
 let bhard$$ = perCounter ("breeding_difficulty", 3);
 let norecord$$ = perCounter ("breeding_difficulty", 4);
 
-
-
-///Calculates the precentage value of each category compared to total
-
-function perCounter (property, code) {
-  let list = []; 
-  for (let fish of fish_master) {
-    if (fish[property] == parseInt(code)) {
-      list.push(fish);
-    }
-  }
-  return `(${Math.round((list.length/maincount)*100)}%)`; 
+///Background image as initial
+function initialImage () {
+  let initial = Math.floor(Math.random() * bcimages) + 1;
+  currentImage = initial;
+  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
 }
+
+

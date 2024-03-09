@@ -69,7 +69,7 @@ function all_select_behavior (x) {
   inputAnimation(tempmin);
     }
 
-//Slicing comma off from the end for origin string 
+/////Slicing comma off from the end for origin string 
 function commaRemover (x) {
   if (x.endsWith(",")) {
     return x.slice(0, -1);
@@ -86,7 +86,7 @@ function uppercaser(str) {
   return capitalizedWords.join(' ');
 }
 
-//removing ".0" from round numbers 
+////removing ".0" from round numbers 
 function sizeFormatter (num) {
   if (num % 1 !== 0) {
     return num.toFixed(1);
@@ -106,7 +106,7 @@ function inputAnimation (x) {
   }, 1000);
 }
 
-//Need to edit this to make it apply to image only. 
+/////Need to edit this to make it apply to image only. 
 function refreshAnimation (x) {
   var y = document.getElementById(x);
   y.classList.add('tiles-refresh');
@@ -115,17 +115,14 @@ function refreshAnimation (x) {
   }, 1000);
 }
 
-
-
-
-///Background image as initial
+/////Background image as initial
 function initialImage () {
   let initial = Math.floor(Math.random() * bcimages) + 1;
   currentImage = initial;
   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
 }
 
-
+/////Change background 
 function imageChange() {
   if (currentImage === bcimages) {
     currentImage = 1; 
@@ -136,3 +133,16 @@ function imageChange() {
 
   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
 }
+
+///Calculates the precentage value of each category compared to total
+
+function perCounter (property, code) {
+  let list = []; 
+  for (let fish of fish_master) {
+    if (fish[property] == parseInt(code)) {
+      list.push(fish);
+    }
+  }
+  return `(${Math.round((list.length/maincount)*100)}%)`; 
+}
+
