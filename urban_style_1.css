@@ -10,6 +10,7 @@ body {
   /* font-family: 'Noto Sans', sans-serif; */
     /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
 background-attachment: fixed; */
+background-color: #235197;
 background-image: url('backgrounds/3.jpg');
 background-size: cover;
 background-repeat: round;
@@ -536,6 +537,17 @@ position: relative; /*necessary for in card elements to allign as I want */
 
 
 /**************************************/ 
+
+
+#signature {
+  position: fixed;
+    bottom: 0;
+    right: 0;
+    color: rgb(216, 175, 175);
+    font-size: 10px;
+}
+
+
 #devalert {
   color: yellow;
   font-style: oblique;
