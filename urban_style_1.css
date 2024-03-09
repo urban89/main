@@ -7,14 +7,14 @@ body {
   justify-content: center;
   align-items: center;
   height: fit-content; /* This ensures that the container is centered vertically on the page */
-  /* font-family: 'Noto Sans', sans-serif; */
+  font-family: 'Noto Sans', sans-serif;
     /* background: linear-gradient(125deg, rgb(139 154 225) 12%, rgb(122 139 176) 66%);
 background-attachment: fixed; */
 background-color: #235197;
 background-image: url('backgrounds/3.jpg');
 background-size: cover;
 background-repeat: round;
-background-attachment: fixed; /* This keeps the background fixed when scrolling */
+background-attachment: fixed; 
 position: relative; 
 }
 
@@ -38,8 +38,8 @@ position: relative;
 
 #maindiv {
   width: 90vw; 
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px; /* Add padding to the content inside the container */
+  margin: 0 auto;
+  padding: 20px; 
   border-radius: 5px; 
   display: inline-block; 
   white-space: nowrap;
@@ -52,8 +52,8 @@ position: relative;
 }
 
 .column {
-  flex: 1; /* This makes both columns take up equal width */
-  margin: 10px; /* Adjust margin as needed */
+  flex: 1; 
+  margin: 10px; 
 
 } 
 
@@ -80,8 +80,6 @@ position: relative;
 
 .tiles, .infotile {
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
-  /* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); dark the above is bright*/
-  /* background: linear-gradient(188deg, #abd6e0f5 25%, #86a5def8 88%); blue */
   border-radius: 10px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
@@ -171,7 +169,6 @@ select {
 
 #tank_size, #tempmin {
   background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
-/* background: linear-gradient(188deg, #9bb8cdec 22%, #a9b388f6 100%); */
 cursor: text;
 }
 
@@ -319,12 +316,12 @@ input[type="radio"] {
   font-size: 16px;
   border: solid;
   cursor: pointer;
-  border-left: 1px solid #000;  /* Adjust color and width as needed */
-  border-right: 1px solid #000; /* Adjust color and width as needed */
-  border-top: none;             /* No top border */
+  border-left: 1px solid #000;  
+  border-right: 1px solid #000; 
+  border-top: none;           
   border-bottom: none;
-  padding-top: 20px; /* Set the top padding to 20 pixels */
-  padding-bottom: 20px; /* Set the bottom padding to 30 pixels */
+  padding-top: 20px; 
+  padding-bottom: 20px; 
   border-radius: 10px;
 }
 
