@@ -20,6 +20,7 @@
   const aboutoff = "About this page"; 
   const abouton = "Hide page info";
   const maincount = fish_master.length; 
+  const bcimages = 5; 
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -122,7 +123,6 @@
   let cpanel = document.getElementById("cpanel");
   let imagechanger = document.getElementById("imagechanger"); 
   let currentImage; 
-  const bcimages = 3; 
 
   let details = []; 
 
