@@ -96,7 +96,7 @@
 
   let srch_arr = []; 
 
-  let settings = document.getElementById("settings");
+  // let settings$ = document.getElementById("settings");
   let cmtoinch = document.getElementById("cmtoinch");
   let cardswticher = document.getElementById("cardswticher"); 
   let flipped = false; 
@@ -228,18 +228,18 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
       checkalert.style.display = "none";
   
   
-      ///Event listeners for SETTINGS dropdown 
-      document.getElementById("info").addEventListener("click", function () {
-        var dropdown = document.getElementById("info_dropdown");
-        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-    });
+      ///Event listeners for SETTINGS dropdown --> removed this button because of responsiveness 
+    //   document.getElementById("info").addEventListener("click", function () {
+    //     var dropdown = document.getElementById("info_dropdown");
+    //     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    // });
   
-    window.addEventListener("click", function (event) {
-      var dropdown = document.getElementById("info_dropdown");
-      if (event.target !== document.getElementById("info")) {
-          dropdown.style.display = "none";
-      }
-    });
+    // window.addEventListener("click", function (event) {
+    //   var dropdown = document.getElementById("info_dropdown");
+    //   if (event.target !== document.getElementById("info")) {
+    //       dropdown.style.display = "none";
+    //   }
+    // });
   
     ///Event listeners for INFORMATION dropdown 
   
