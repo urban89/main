@@ -3,73 +3,57 @@
     function search_button() {
         result_div.innerHTML = "";
         event.preventDefault();
-
         //// Declaring variables used in the function. 
         let v_tempmin = tempmin.value;
-      
         let v_tank_size = tank_size.value; 
-
         let v_beginner = beginner.checked; 
         let v_easy = easy.checked; 
         let v_medium = medium.checked; 
         let v_difficult = difficult.checked; 
-
         let v_verycommon = verycommon.checked;
         let v_common = common.checked;
         let v_rare = rare.checked;
         let v_veryrare = veryrare.checked;
-
         let v_schooling1 = schooling1.checked;
         let v_schooling2 = schooling2.checked;
         let v_solitary = solitary.checked;
-
         let v_peaceful1 = peaceful1.checked;
         let v_peaceful2 = peaceful2.checked;
         let v_aggressive = aggressive.checked;
-
         let v_b_easy = b_easy.checked;
         let v_b_medium = b_medium.checked;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
-   
         let srch_hardi = []; 
         let srch_avail = []; 
         let srch_soci = []; 
         let srch_agress = []; 
         let srch_breed = []; 
         let fish_list = []; 
-      
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
       preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
       preCheckTank(); 
-
 ///// Adding search conditions to their respective arrays
         avail_list();
         hardiness_list();
         behavior_list();
         agres_list();
         breed_list();
-
 /////Finding fish that meet selected criteria and pushing them to fish_list
   fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin); 
 /////Outputting serach results to UI
-  fishSelect ()
-
-
-
+  fishSelect ();
 /////search_button CORE -->|||||
 ///////////////////Outputting serach results to UI
 function fishSelect () {
   fishFiller(fish_list); //fills all the fish info card divs displayed on page 
   flipper() // adds event listeners to newly created divs responsibe for toggling the two sides of the displayed cards 
-
 remember (details); //checks array to see which should remain flipped and which shouldn't
 noResultAlert (); // alert if no results were found 
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////Functions defined within search_button function 
-
 ////building the array that I use to iterate over fish_master and find results 
     function hardiness_list() {
     if (v_beginner) {srch_hardi.push(4);}
@@ -101,7 +85,6 @@ noResultAlert (); // alert if no results were found
   }      
   }
 ////////////////// sort function
-
 function sort (fish_list) {
   if (sort_select.value == "size_min") {
     fish_list.sort(compare_size);
@@ -116,12 +99,8 @@ function sort (fish_list) {
   }
 
 }
-
-
-
 ///// search_button function ends here /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
 function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin)  {   
@@ -129,16 +108,13 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
     let fish_temp_min = parseFloat(fish.temperature_min);
     let fish_temp_max = parseFloat(fish.temperature_max); 
     let fish_cap = parseFloat(fish.tank_size_liter);
-
     if (console_capacity == gallon) {
       fish_cap = fish_cap * 0.264172;
     }
-
     if (console_temperature == farenheit) {
       fish_temp_min = (fish_temp_min * 9/5)+32;
       fish_temp_max = (fish_temp_max * 9/5)+32;
     }
-
     if ((srch_hardi.includes(parseInt(fish.uncare))) && 
     (srch_avail.includes(parseInt(fish.availability))) && 
     (srch_soci.includes(parseInt(fish.school))) && 
@@ -148,7 +124,6 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
     (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
 
     fish_list.push(fish); //pushing all that matches to fish list 
-
   } 
 }
 sort (fish_list)
@@ -157,7 +132,6 @@ console.log(fish_list)
   ///Updating number of search result value 
   fishcount.innerHTML = fish_list.length;
   emptiness_checker = fish_list.length;
-
   ///Displaying animation of selector result value changes
   if (previousFishcouont !== fish_list.length) {
   fishcount.classList.add('value-updated');
@@ -168,7 +142,6 @@ console.log(fish_list)
   previousFishcouont = fish_list.length;
 } 
 /// fishFinder --> ||||| 
-
 /////Checking if user missed to checkbox the minimum required checkboxes 
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
@@ -180,61 +153,50 @@ function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
 }
-
 else {
   div_avail.classList.remove('notselected');
   div_avail.classList.add('tiles');
 }
-
 if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
   div_hardiness.classList.add('notselected');
   div_hardiness.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
 }
-
 else {
   div_hardiness.classList.remove('notselected');
   div_hardiness.classList.add('tiles');
 }
-
 if (!v_schooling1 && !v_schooling2 && !v_solitary) {
   div_behavior.classList.add('notselected');
   div_behavior.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
 }
-
 else {
   div_behavior.classList.remove('notselected');
   div_behavior.classList.add('tiles');
 }
-
 if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
   div_agression.classList.add('notselected');
   div_agression.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
 }
-
 else {
   div_agression.classList.remove('notselected');
   div_agression.classList.add('tiles');
 }
-
 if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
   div_breeding.classList.add('notselected');
   div_breeding.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
 }
-
 else {
   div_breeding.classList.remove('notselected');
   div_breeding.classList.add('tiles');
 }
-
-  
 if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
 && (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)) {
   div_avail.classList.remove('notselected');
@@ -242,19 +204,15 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
   div_behavior.classList.remove('notselected');
   div_agression.classList.remove('notselected');
   div_breeding.classList.remove('notselected');
-
   div_avail.classList.add('tiles');
   div_hardiness.classList.add('tiles');
   div_behavior.classList.add('tiles');
   div_agression.classList.add('tiles');
   div_breeding.classList.add('tiles');
-
   checkalert.style.display = "none";
   invalid_search_checks = false; 
-
 }
 }  
-
 /////Component functions below////////////// - there are some general UI functions I will keep them here for now 
 
     // Check data before search and display alert if needed 
@@ -281,8 +239,6 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
               invalid_search_temp = false;
     }
   }
-    
-
   //Checking tank size before submission (shouldn't be too small)
   function preCheckTank() {
     let tank_size = document.getElementById('tank_size').value;  
@@ -302,7 +258,6 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
         invalid_search_cap = false; 
       }
     }
-
 //Checking if output list lenght is zero 
 function noResultAlert () {
   if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks)) {
@@ -312,7 +267,6 @@ function noResultAlert () {
     noresults.style.display = "none"; 
   }
 }
-
 
 function flipCards() {
   flipped = (flipped === false) ? true : false; 
@@ -327,8 +281,6 @@ function flipCards() {
     }
     search_button()
   } 
-
-
   ////Remembering info card display based on iterating the 'details' array that serves as 'cache' 
 function remember (details) {
 for (let id of details) {
@@ -340,8 +292,6 @@ for (let id of details) {
 }
 }
 }
-
-
 ///// Metric change function (used in initial event listener)
   function fishsizemetric () {
   console_fishsize = (console_fishsize === cm) ? inch : cm; 
@@ -351,21 +301,17 @@ for (let id of details) {
   cmtoinch.innerText = fishsize_option; 
   search_button()
  }
-
 ///// Showing feedback page 
 function gotofeedback () {
   feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
   feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
   feedback_button.innerText = feedbackstatus; 
 }
-
-
 ///// Showing/hiding more options 
 function optionsToggle () {
   more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";
   options_option = (more_options.style.display === "grid") ? fewer : more; 
   toggle_options.innerText = options_option; 
-
 //Select all checkboxes in more options tiles in more options tiles are hidden
   if (more_options.style.display === "none") {
     all_3.checked = true; 
@@ -385,14 +331,11 @@ function optionsToggle () {
   
   }
 }
-
 //////Showing info page 
 function explain () {
   about.style.display = (about.style.display  === "block") ? "none" : "block"; 
   about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
 }
-
-
 ///// Sorting functions 
 function compare_size(a, b) {
   return a.cm_max - b.cm_max;
@@ -403,11 +346,7 @@ function compare_size_descend(a, b) {
 function compare_temp(a, b) {
   return (a.temperature_min + a.temperature_max) - (b.temperature_min + b.temperature_max);
 }
-
-
-
 /////Filling up the fish cards - main_card and reveal_card
-
 function fishFiller(fish_list) {
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
