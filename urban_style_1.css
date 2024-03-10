@@ -6,8 +6,8 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: 'Noto Sans', sans-serif;
+  height: fit-content;
+  font-family: "Noto Sans", sans-serif;
   background-color: #235197;
   background-image: url('backgrounds/3.jpg');
   background-size: cover;
@@ -22,8 +22,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings:  "wdth" 100;
 }
 
 
@@ -553,4 +552,15 @@ position: relative; /*necessary for in card elements to allign as I want */
   position: absolute;
   top: 0;
   left: 0;
+}
+
+
+.google-form-wrapper {
+  max-width: 640px; 
+  margin: auto;
+  border: 1px solid #ccc; 
+  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+  border-radius: 10px; 
+  overflow: hidden; 
+  background: linear-gradient(145deg, #d4e796f6  5%, #b4d6eeec 50%);
 }
