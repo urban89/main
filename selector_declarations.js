@@ -144,35 +144,20 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
-    document.getElementById("dbcount").textContent = maincount;   
-    document.getElementById("beginner$").textContent = beginner$$;  
-    document.getElementById("beginner$$$").textContent = beginner$$; 
-    document.getElementById("easy$").textContent = easy$$; 
-    document.getElementById("easy$$$").textContent = easy$$; 
-    document.getElementById("medium$").textContent = medium$$; 
-    document.getElementById("medium$$$").textContent = medium$$; 
-    document.getElementById("difficult$").textContent = difficult$$; 
-    document.getElementById("difficult$$$").textContent = difficult$$; 
-
-    document.getElementById("verycommon$").textContent = verycommon$$;  
-    document.getElementById("common$").textContent = common$$; 
-    document.getElementById("rare$").textContent = rare$$; 
-    document.getElementById("veryrare$").textContent = veryrare$$; 
-
-    document.getElementById("schooling$").textContent = schooling$$;  
-    document.getElementById("social$").textContent = social$$; 
-    document.getElementById("solitary$").textContent = solitary$$; 
-
-    document.getElementById("peaceful$").textContent = peaceful$$;  
-    document.getElementById("mpeaceful$").textContent = mpeaceful$$; 
-    document.getElementById("agressive$").textContent = agressive$$; 
-
-    document.getElementById("beasy$").textContent = beasy$$;  
-    document.getElementById("bmedium$").textContent = bmedium$$; 
-    document.getElementById("bhard$").textContent = bhard$$; 
-    document.getElementById("norecord$").textContent = norecord$$; 
+    document.getElementById("dbcount").textContent = maincount; 
     
+    let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
+    "schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
 
+    for (let fish of keylist) {
+      document.getElementById(fish + "$").textContent = eval(fish + "$$");  
+    }
+
+    for (let fish of keylist) {
+      document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
+    }
+
+   
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
     tank_size.addEventListener("click", preCheckTank);

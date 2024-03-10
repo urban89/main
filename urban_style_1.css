@@ -574,14 +574,43 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 
-.pertile {
+.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile {
   display: none;
   font-size: 12px;
 }
 
 
 #div_hardiness:hover {
-  .pertile {
+  .hardipertile {
     display: inline-block;
   }
 }
+
+#div_avail:hover {
+  .availpertile {
+    display: inline-block;
+  }
+}
+
+#div_behavior:hover {
+  .behpertile {
+    display: inline-block;
+  }
+}
+
+#div_agression:hover {
+  .agrespertile {
+    display: inline-block;
+  }
+}
+
+
+#div_breeding:hover  {
+  .breedpertile {
+    display: inline-block;
+  }
+}
+
+
+
+
