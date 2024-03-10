@@ -250,6 +250,14 @@ input[type="radio"] {
 
 /* Making it a little bit responsive here  */ 
 
+
+@media screen and (max-width: 450px) {
+  .column_result {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 @media screen and (min-width: 450px) {
   #maindiv {
     width: 95vw;
