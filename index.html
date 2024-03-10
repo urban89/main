@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="urban_style_1.css">
-        <title>FishFinder</title>
+
+    <meta name="description" content="Explore SelectYourFish.com interactive search tool to find your perfect aquarium fish. 
+    Filter by size, water temperature, and more. Browse fish profiles and make informed decisions for your tank.">
+
+    <title>SelectYourFish - Fish Finder</title>
        <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
             <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
             <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
@@ -33,17 +37,16 @@
 
 
 <body class="dm-sans-urban">
-    <span id = "devalert"> This page is under development. v1.13</span>
     <div id = "maindiv"> 
 
       <div id="about" class = "tiles">  <!-- about -->
         <span id = "x-about" class = "x-out"> </span>
         <h1> Welcome to SelectYourFish.com </h1>
         <p> Find the perfect fish for your home aquarium. 
-          This guide provides essential information to keep them healthy. 
+         This page provides an interactive way to search for freshwater aquarium fish based on their requirements. 
           Remember, this page gives general advice. Always research each fish species before buying.
           The percentage value next to each category
-           reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
+          reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
        </p>
          
         <h2>Aquarium size</h2>
@@ -51,6 +54,7 @@
           This is the smallest tank size recommended for a planted aquarium without additional fish. 
           It assumes that fish which prefer to be in groups (schooling or social species) need enough space.
           It's important to look into the specific needs of different species before adding them to your aquarium.
+          To browse all fish in database, go to <a href = "browse.html">Database.</a> 
           </p>
         <h2>Water temperature</h2>
             <p> 
@@ -85,6 +89,9 @@
            <p><span>Hard  <span id = "bhard$"></span>: </span> Needs specific steps to breed successfully. </p>
             <p><span>No record  <span id = "norecord$"></span>: </span>No known cases of breeding by fishkeepers. </p>
 
+            <h2>Fish cards</h2>
+            <p>You will see your search results below. Click the fish cards to see more info about each fish</p>
+
        </div> <!-- about ends -->
 
        <div id = "feedback" class = "tiles"> <!-- Feedback -->
@@ -97,7 +104,7 @@
       <!-- Control panel -->
 
     <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount> </span> 
-      <label for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
+      <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
         <option value="size_max">Size large to small</option>
@@ -115,8 +122,8 @@
         <span id = "toggle_options">Show fewer seach options</span>
         <span id = "cardswticher">Show all info cards</span>
         <span id = "imagechanger">Change background</span>
-        <span id = "about_button">About this page</span>
         <span id = "feedback_button">Send feedback</span>
+        <span id = "about_button">About this page</span>
       </div>
     </span>
     &nbsp;&nbsp;&nbsp;
@@ -141,17 +148,17 @@
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
     <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
     <br>
-    <input type="checkbox" id="beginner" name="hardi">
-    <label for="beginner">Beginner</label>
+    <input type="checkbox" id="beginner" name="hardi"> 
+    <label for="beginner">Beginner </label> <span id = "beginner$$$" class = pertile></span>
     <br>
     <input type="checkbox" id="easy" name="hardi">
-    <label for="easy">Easy</label>
+    <label for="easy">Easy</label> <span id = "easy$$$" class = pertile></span>
     <br>
     <input type="checkbox" id="medium" name="hardi">
-    <label for="medium">Medium</label>
-    <br> 
+    <label for="medium">Medium</label> <span id = "medium$$$" class = pertile></span>
+    <br>  
     <input type="checkbox" id="difficult" name="hardi">
-    <label for="difficult">Difficult</label>
+    <label for="difficult">Difficult</label> <span id = "difficult$$$" class = pertile></span>
     <div id = "kdiv_hardiness" class = "kmark"> </div>
   </div>
  
@@ -266,7 +273,7 @@
   <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
 
     </div>
-    <span id = "signature"> created by istvan urban </span>
+
 
 <script type="text/javascript" src="fish_array.js"></script>
 <script type="text/javascript" src="constants.js"></script>

@@ -146,9 +146,13 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
 
     document.getElementById("dbcount").textContent = maincount;   
     document.getElementById("beginner$").textContent = beginner$$;  
+    document.getElementById("beginner$$$").textContent = beginner$$; 
     document.getElementById("easy$").textContent = easy$$; 
+    document.getElementById("easy$$$").textContent = easy$$; 
     document.getElementById("medium$").textContent = medium$$; 
+    document.getElementById("medium$$$").textContent = medium$$; 
     document.getElementById("difficult$").textContent = difficult$$; 
+    document.getElementById("difficult$$$").textContent = difficult$$; 
 
     document.getElementById("verycommon$").textContent = verycommon$$;  
     document.getElementById("common$").textContent = common$$; 
