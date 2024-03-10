@@ -47,14 +47,8 @@
 <!-- Control panel line 1-->
 
     <div id = "cpanel1" class = "tiles">  <span id = "sum"> Fish in database: </span> <span id = fishcount> </span> 
-      <label for = "sort">&nbsp;&nbsp;&nbsp; Sort by: </label> <Select id = "sort">
-    
-      <option value="size_min">Size small to large</option>
-      <option value="size_max">Size large to small</option>
-      <option value="temp_min">Water cold to warm</option>
-   
-    
-    </Select>
+      &nbsp;&nbsp;&nbsp;
+      
     &nbsp;&nbsp;&nbsp;
     <a href = "index.html" class = "dropbtn">Selector</a> 
     &nbsp;&nbsp;&nbsp;
@@ -68,7 +62,7 @@
         <span id = "imagechanger">Change background</span>
       </div>
     </span>
-
+ 
   
   </div> <!-- cpanel1 ends -->
 
@@ -76,11 +70,17 @@
 
   <div id = "cpanel2" class = "tiles">  
 
-  </Select>
   <span>
     <span> Search: </span>
     <input type="text" id="searchInput" placeholder="Latin or English name">
     &nbsp;&nbsp;&nbsp;
+    <label for = "sort"> Sort by: </label> 
+    <Select id = "sort">
+    <option value="size_min">Size small to large</option>
+    <option value="size_max">Size large to small</option>
+    <option value="temp_min">Water cold to warm</option>
+  </Select>
+  &nbsp;&nbsp;&nbsp;
     <span id = "sum"> Displayed: </span> <span id = displayed> </span> 
   </span>
 </div> <!-- cpanel2 ends -->
