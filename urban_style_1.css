@@ -574,7 +574,7 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 
-.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile {
+.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
   display: none;
   font-size: 12px;
 }
@@ -611,6 +611,14 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
 }
 
+#div_tank_size:hover {
+  #perliter{
+    display: inline-block;
+  }
+}
 
-
-
+#div_temp:hover {
+  #pertemp{
+    display: inline-block;
+  }
+}

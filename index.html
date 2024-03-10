@@ -47,14 +47,16 @@
           Remember, this page gives general advice. Always research each fish species before buying.
           The percentage value next to each category
           reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
-       </p>
+         <br>
+         To browse all fish in database, go to <a href = "browse.html">Database.</a> 
+        </p>
          
         <h2>Aquarium size</h2>
         <p> 
           This is the smallest tank size recommended for a planted aquarium without additional fish. 
           It assumes that fish which prefer to be in groups (schooling or social species) need enough space.
           It's important to look into the specific needs of different species before adding them to your aquarium.
-          To browse all fish in database, go to <a href = "browse.html">Database.</a> 
+          
           </p>
         <h2>Water temperature</h2>
             <p> 
@@ -137,10 +139,9 @@
     <div id = "div_tank_size" class = "tiles"> 
       <label for="" class = "parameter"> Aquarium size: </label>
       <input style="width:55px" value="90" type="number" id="tank_size" name="">
-      <span id = size>L</span> <br>
+      <span id = size>L</span> <span id = perliter></span><br>
       <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
-      <div id = "kdiv_tank_size" class = "kmark"> </div>
     </div> 
 
 <!-- Hardiness --> 
@@ -159,7 +160,6 @@
     <br>  
     <input type="checkbox" id="difficult" name="hardi">
     <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
-    <div id = "kdiv_hardiness" class = "kmark"> </div>
   </div>
  
 </div> <!-- column div ends here -->
@@ -170,11 +170,10 @@
     <div id = "div_temp" class = "tiles"> 
       <label for="" class = "parameter">Water temperature: </label> 
       <input type="number" style="width:55px" id="tempmin" name="" min="4" max="35" value = "23" />
-      <span id = min_t> ℃ </span>
+      <span id = min_t> ℃ </span> <span id = pertemp></span>
       <br>
       <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
       <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
-      <div id = "kdiv_temp" class = "kmark"> </div>
     </div> 
  
 <!-- Store availability --> 
@@ -193,7 +192,6 @@
       <br> 
       <input type="checkbox" id="veryrare" name="avail">
       <label for="veryrare">Very rare</label> <span id = "veryrare$$$" class = availpertile></span>
-      <div id = "kdiv_avail" class = "kmark"> </div>
     </div>
   
     </div> <!-- second column div ends here -->
@@ -215,7 +213,6 @@
     <br>
     <input type="checkbox" id="solitary" name="social">
     <label for="solitary">Solitary</label> <span id = "solitary$$$" class = behpertile></span>
-    <div id = "kdiv_behavior" class = "kmark"> </div>
   </div> 
 
 <!-- Agression level --> 
@@ -231,7 +228,6 @@
     <br>
     <input type="checkbox" id="aggressive" name="agress">
     <label for="aggressive">Agressive</label> <span id = "agressive$$$" class = agrespertile></span>
-    <div id = "kdiv_agression" class = "kmark"> </div>
   </div>
 
  <!-- Breeding difficulty --> 
@@ -250,7 +246,6 @@
      <br> 
      <input type="checkbox" id="impossible" name="breed">
      <label for="impossible">No record</label> <span id = "norecord$$$" class = breedpertile></span>
-     <div id = "kdiv_breeding" class = "kmark">  </div>
   </div>
     
     </div> <!-- more options div --> 
