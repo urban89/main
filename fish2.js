@@ -157,8 +157,9 @@ function fishSelect (fish_list) {
 
   // fish cards and infor cards when clicked it hides the div and the other div is displayed in its place
   let maincard_divs = document.querySelectorAll(".maincard");
-  let revealcard_divs = document.querySelectorAll(".reveal_card");
+  const iconImages = document.querySelectorAll('.iconimage');
   
+  // Hides fish image card and shows fish info card 
   maincard_divs.forEach(div => {
   let divId = div.id; 
   div.addEventListener("click", function () {
@@ -174,14 +175,25 @@ function fishSelect (fish_list) {
   });
   });
 
-  revealcard_divs.forEach(div => {
-    let divId = div.id; 
-    div.addEventListener("click", function () {
-      div.style.display = "none"; 
-      var fishcard_id = divId.slice(1); 
-      details = details.filter(element => element !== fishcard_id); //removing fish id from remember function 
-      var fish_card = document.getElementById(fishcard_id);
-      fish_card.style.display = "block"; 
+//Hides fish info card and shows fish image card and  
+iconImages.forEach(iconImage => {
+  iconImage.addEventListener("click", function () {
+  const src = this.getAttribute('src');
+  const idRegex = /images\/(\d+)\.jpeg/;
+  const match = src.match(idRegex);
+  if (match) {
+    const id = match[1];
+  let reveal_id = eval("d" + id); 
+  const fishcard_id = id; // This assumes the id extracted is directly the fishcard_id
+  const index = details.indexOf(fishcard_id);
+  
+  
+    reveal_id.style.display = "none"; 
+    details.splice(index, 1);
+    var fish_card = document.getElementById(fishcard_id);
+    // refreshAnimation(fishcard_id); //Need to edit this to make it apply to image only. 
+    fish_card.style.display = "block"; 
+  }
   });
   });
 
