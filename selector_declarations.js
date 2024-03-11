@@ -194,17 +194,22 @@ tempmin.addEventListener("click", updatePerTemp);
   
       // settings.addEventListener("click", settingsShow);   // Settings button 
       
-      verycommon.checked = true; 
-      common.checked = true; 
-      beginner.checked = true
-      easy.checked = true;
+      // verycommon.checked = true; 
+      // common.checked = true; 
+      // beginner.checked = true
+      // easy.checked = true;
   
-      all_3.checked = true; 
-      selectall(social_chbx, all_3);
-      all_4.checked = true; 
-      selectall(agress_chbx, all_4);
-      all_5.checked = true; 
-      selectall(breed_chbx, all_5);
+      // all_3.checked = true; 
+      // selectall(social_chbx, all_3);
+      // all_4.checked = true; 
+      // selectall(agress_chbx, all_4);
+      // all_5.checked = true; 
+      // selectall(breed_chbx, all_5);
+
+      ///All checkboxes checked as default: 
+      checkboxes.forEach (checkbox => {
+        checkbox.checked = true; 
+      })
   
       checkboxes.forEach (checkbox => {
         checkbox.addEventListener("change", search_button);
