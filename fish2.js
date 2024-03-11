@@ -208,6 +208,9 @@ function compare_size(a, b) {
 
   function output () {
     fish_list = filteredFish.length > 0 ? filteredFish : fish_master;
+    if (fish_list.length === 0)  {
+      console.log("x");
+    }
     sort();
     fishSelect (fish_list);
     remember (details)
@@ -309,6 +312,7 @@ function filterFishByName() {
     if (filteredFish.length === 0) {
       notfound.style.display = "block";
       result_div.innerHTML = '';
+      displayed.innerText = filteredFish.length; 
     } else {
       notfound.style.display = "none";
       output(); // Output based on filtered results
