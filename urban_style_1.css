@@ -16,6 +16,14 @@ body {
   position: relative; 
   }
 
+  @media screen and (max-width: 830px) {
+  body {
+    background-size: auto;
+    background-repeat: round;
+    background-attachment: fixed;
+  }
+} 
+  
 
 .noto-sans-urban {
   font-family: "Noto Sans", sans-serif;
@@ -251,11 +259,11 @@ input[type="radio"] {
 /* Making it a little bit responsive here  */ 
 
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 
 @media screen and (min-width: 450px) {
