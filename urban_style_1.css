@@ -399,13 +399,32 @@ border-style: solid;
   font-size: 13px; 
 }
 
-.subtitle {
+.subtitle, .bigsubtitle, .verybigsubtitle {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-40%);
   white-space: nowrap;
   font-size: 13px; 
+}
+
+@media screen and (max-width: 1288px) {
+  .verybigsubtitle {
+    font-size: 67%;
+    /* color: red; */
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bigsubtitle {
+    font-size: 70%;
+    /* color: red; */
+  }
+
+  .verybigsubtitle {
+    font-size: 64%;
+    /* color: rgb(44, 202, 71); */
+  }
 }
 
 /*About and feedback*/ 

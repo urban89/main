@@ -399,6 +399,8 @@ let avail = fish_list[i].availability;
 let behave = fish_list[i].school; 
 let agres = fish_list[i].agression; 
 let breed = fish_list[i].breeding_difficulty; 
+let latin_len = (`${fish_list[i].name_latin}`).length
+console.log(latin_len);
 
 let reveal_card = document.createElement('div'); //container card to hide/show info 
 let infocard = document.createElement('div'); 
@@ -435,7 +437,20 @@ origin.innerHTML = `Origin: ${commaRemover(fish_list[i].origin)}`;
 
 iconimage.className = "iconimage";
 fishname2.className = "title";
-latin.className = "subtitle";
+
+
+
+if (latin_len > 21) {
+  latin.className = "bigsubtitle";
+  console.log("teszt");
+}
+ if (latin_len > 25)  {
+  latin.className = "verybigsubtitle";
+ }
+if (latin_len <= 21) {
+  latin.className = "subtitle";
+}
+
 mintanksize.className = "infocardtext";
 tempinfo.className = "infocardtext";
 sizeinfo.className = "infocardtext";
