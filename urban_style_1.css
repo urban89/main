@@ -20,6 +20,9 @@ body {
     body {
       background-image: none;
     }
+    #imagechanger {
+      display: none;
+    }
 } 
   
 
