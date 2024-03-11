@@ -17,7 +17,7 @@ body {
   }
 
   @media screen and (max-width: 830px) {
-    body:before {
+    body {
       content: "";
       display: block;
       position: fixed;
@@ -26,7 +26,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -10;
-      background: url(photos/2452.jpg) fixed center center;
+      background: url(photos/2452.jpg) no-repeat center center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
