@@ -19,7 +19,7 @@ body {
   @media screen and (max-width: 830px) {
   body {
     background-size: auto;
-    background-repeat: round;
+    background-repeat: no-repeat;
     background-attachment: fixed;
   }
 } 
