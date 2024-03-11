@@ -21,6 +21,8 @@
 
   let minimum_liter = 20;
   let minimum_gallon = 5.3; 
+  let exactCel = null;
+  let exactFar = null;
 
   let tempalert = document.getElementById("tempalert");
   let capalert = document.getElementById("capalert");

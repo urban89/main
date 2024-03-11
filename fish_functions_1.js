@@ -40,32 +40,48 @@ function all_select_behavior (x) {
   }
   }
   
+
+
   // Conversion from celsius to farenheit [button]      
   function ctof() {
-  let cal_tempmin = parseInt(tempmin.value);
-  document.getElementById("min_t").innerHTML = farenheit;
+  let cal_tempmin = parseFloat(tempmin.value);
+
+  if (!exactCel || cal_tempmin !== Math.round(exactCel*10)/10) {
+    exactCel = cal_tempmin;
+    exactFar = (exactCel * 9/5) + 32;
+  }
+   
   
   console_temperature =  farenheit;
-  tempmin.value = Math.round(((cal_tempmin * 9/5)+32)*10)/10;
+  let rouondedFar = Math.round(exactFar*10)/10;
+  tempmin.value = rouondedFar;
   temp_modifier1 = 1.8; 
   temp_modifier2 = 32; 
   tempmin.min = 39;
   tempmin.max = 95;
+  document.getElementById("min_t").innerHTML = farenheit;
   inputAnimation(tempmin);
   
     }
           
   // Conversion from farenheit to celsius [button] 
   function ftoc() {
-  let cal_tempmin = parseInt(tempmin.value);
-  document.getElementById("min_t").innerHTML = celsius;
+  let cal_tempmin = parseFloat(tempmin.value);
+
+  if (!exactFar ||cal_tempmin !==  Math.round(exactFar*10)/10) {
+    exactFar = cal_tempmin;
+    exactCel = (exactFar - 32) * 5/9;
+  }
+ 
   
   console_temperature = celsius;
-  tempmin.value = Math.round(((cal_tempmin-32)*5/9)*10)/10;
+  let rouondedCel = Math.round(exactCel*10)/10; 
+  tempmin.value = rouondedCel;
   temp_modifier1 = 1; 
   temp_modifier2 = 0; 
   tempmin.min = 4;
   tempmin.max = 35;
+  document.getElementById("min_t").innerHTML = celsius;
   inputAnimation(tempmin);
     }
 
