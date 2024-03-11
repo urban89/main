@@ -439,7 +439,7 @@ iconimage.className = "iconimage";
 fishname2.className = "title";
 
 
-
+//Fitting latin names to info card UI 
 if (latin_len > 21) {
   latin.className = "bigsubtitle";
   console.log("teszt");
