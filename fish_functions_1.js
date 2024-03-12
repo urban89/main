@@ -132,13 +132,25 @@ function refreshAnimation (x) {
 }
 
 /////Background image as initial
-function initialImage () {
+function updateBackground() {
   if (window.innerWidth > 767) {
-  let initial = Math.floor(Math.random() * bcimages) + 1;
-  currentImage = initial;
-  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+    if (!document.body.style.backgroundImage) {
+      let initial = Math.floor(Math.random() * bcimages) + 1;
+      currentImage = initial;
+      document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+    }
+  } else {
+    document.body.style.backgroundImage = '';
+  }
 }
-}
+
+// function initialImage () {
+//   if (window.innerWidth > 767) {
+//   let initial = Math.floor(Math.random() * bcimages) + 1;
+//   currentImage = initial;
+//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+// }
+// }
 
 /////Change background 
 function imageChange() {

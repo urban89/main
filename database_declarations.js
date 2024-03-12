@@ -128,7 +128,9 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     explain();
     gotofeedback(); 
-    initialImage ()
+    updateBackground();
+    window.addEventListener('resize', updateBackground);
+    // initialImage ()
   });
   document.getElementById("dbcount").textContent = maincount; 
   document.getElementById("dbcount2").textContent = maincount; 

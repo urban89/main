@@ -284,7 +284,9 @@ tempmin.addEventListener("click", updatePerTemp);
       })
       explain();
       gotofeedback(); 
-      initialImage ()
+      // initialImage ()
+      updateBackground();
+      window.addEventListener('resize', updateBackground);
     });
 
 
