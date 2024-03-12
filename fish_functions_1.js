@@ -18,7 +18,7 @@ function all_select_behavior (x) {
   // Conversion from liter to gallon [radio buttons]         
   function litergallon() {
   if (gallon_radio.checked == true) {
-  let cal_cap = parseIn(tank_size.value);
+  let cal_cap = parseFloat(tank_size.value);
   document.getElementById("size").innerHTML = gallon;
   cap_modifier = 3.78541253426; 
   console_capacity = gallon;
@@ -31,7 +31,7 @@ function all_select_behavior (x) {
   // Conversion from gallon to liter [radio buttons]        
   function gallonliter() {
     if (liter_radio.checked == true) {
-  let cal_cap = parseIn(tank_size.value);
+  let cal_cap = parseFloat(tank_size.value);
   document.getElementById("size").innerHTML = liter;
   cap_modifier = 1; 
   console_capacity = liter;
