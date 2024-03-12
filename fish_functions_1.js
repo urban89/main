@@ -133,9 +133,11 @@ function refreshAnimation (x) {
 
 /////Background image as initial
 function initialImage () {
+  if (window.innerWidth > 767) {
   let initial = Math.floor(Math.random() * bcimages) + 1;
   currentImage = initial;
   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+}
 }
 
 /////Change background 
