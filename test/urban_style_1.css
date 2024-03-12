@@ -68,7 +68,7 @@ body {
 }
 
 .notselected {
-  background: linear-gradient(188deg, #b39edaf1 22%, #a3768fee 100%);
+  background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
@@ -80,6 +80,46 @@ body {
     color: red;
     font-size: small;
   }
+
+
+  #alerts {
+    margin: 0;
+    padding: 0;
+    display: grid; 
+    align-items: center;
+    justify-content: center;
+}
+
+.alert {
+  color:rgb(17, 7, 7);
+/* color:rgb(70, 3, 4); */
+/* font-size: 20px; */
+font-weight: 800;
+background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
+border-radius: 10px;
+padding: 20px;
+box-shadow: 5px 5px 10px rgb(70, 3, 4);
+border: 1px solid #0f1946; 
+margin: 10px 0 0 0 ; 
+}
+
+.inputalert {
+  border-color: red;  
+  background: linear-gradient(188deg, #ac9fc2f1 22%, #9571b3ee 100%);
+}
+
+.valid_alert {
+color:rgb(114, 122, 3);
+/* font-size: 20px; */
+
+background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
+border-radius: 10px;
+padding: 20px;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+border: 1px solid #0f1946; 
+margin: 10px 0 0 0 ; 
+display: none; 
+}
 
 
 /*Tiles*/ 
@@ -173,7 +213,7 @@ select {
   cursor: pointer;
 }
 
-#tank_size, #tempmin {
+.numberbox {
   background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
 cursor: text;
 }
@@ -222,39 +262,7 @@ input[type="radio"] {
 }
 
 
-#alerts {
-      margin: 0;
-      padding: 0;
-      display: grid; 
-      align-items: center;
-      justify-content: center;
-}
 
-.alert {
-  color:rgb(70, 3, 4);
-  /* font-size: 20px; */
-
-  background: linear-gradient(188deg, #c0a2f6 0%, #a37d92 100%);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 5px 5px 10px rgb(70, 3, 4);
-  border: 1px solid #0f1946; 
-  margin: 10px 0 0 0 ; 
-
-}
-
-.valid_alert {
-  color:rgb(114, 122, 3);
-  /* font-size: 20px; */
-
-  background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-  border: 1px solid #0f1946; 
-  margin: 10px 0 0 0 ; 
-  display: none; 
-}
 
 
 /* Making it a little bit responsive here  */ 
