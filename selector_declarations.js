@@ -106,7 +106,7 @@
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
-  let imagechanger = document.getElementById("imagechanger"); 
+  // let imagechanger = document.getElementById("imagechanger"); 
   let currentImage; 
 
   let details = []; 
@@ -285,13 +285,13 @@ tempmin.addEventListener("click", updatePerTemp);
       explain();
       gotofeedback(); 
       // initialImage ()
-      updateBackground();
-      window.addEventListener('resize', updateBackground);
+      // updateBackground();
+      // window.addEventListener('resize', updateBackground);
     });
 
 
     ////Background changer 
-    imagechanger.addEventListener("click", imageChange);
+    // imagechanger.addEventListener("click", imageChange);
   
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////

@@ -9,20 +9,18 @@ body {
   height: fit-content;
   font-family: "Noto Sans", sans-serif;
   background-color: #235197;
-  background-image: url('backgrounds/3.jpg');
   background-size: cover;
   background-repeat: round;
   background-attachment: fixed; 
   position: relative; 
   }
 
-  @media screen and (max-width: 767px) {
+
+  @media screen and (min-width: 767px) {
     body {
-      background-image: none;
+      background-image: url('backgrounds/1.jpg');
     }
-    #imagechanger {
-      display: none;
-    }
+
 } 
   
 
@@ -708,4 +706,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   #pertemp{
     display: inline-block;
   }
+}
+
+
+#imagechanger {
+  display: none; /*dont need it for now */ 
 }
