@@ -217,44 +217,59 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
 
     // Check data before search and display alert if needed 
   function preCheckTemperature(temp) {
-
+    var temp = document.getElementById('tempmin').value; 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
-      tempalert.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
+      tempalert.innerHTML = "Temperature should not be lower than 4℃ or higher than 35℃";
             div_temp.classList.remove('tiles');
         div_temp.classList.add('notselected');
+        tempmin.classList.remove('numberbox');
+        tempmin.classList.add('inputalert');
         tempalert.style.display = "inline-block";
         invalid_search_temp = true; 
       }
       else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
-        tempalert.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
+        tempalert.innerHTML = "Temperature should not be lower than 39℉ or higher than 95℉";
               div_temp.classList.remove('tiles');
               div_temp.classList.add('notselected');
+              tempmin.classList.remove('numberbox');
+              tempmin.classList.add('inputalert');
               tempalert.style.display = "inline-block";
               invalid_search_temp = true; 
       }
     else {
             div_temp.classList.add('tiles');
               div_temp.classList.remove('notselected');
+              tempmin.classList.add('numberbox');
+              tempmin.classList.remove('inputalert');
               tempalert.style.display = "none";
               invalid_search_temp = false;
     }
   }
   //Checking tank size before submission (shouldn't be too small)
   function preCheckTank() {
-    let tank_size = document.getElementById('tank_size').value;  
-      if ((tank_size < 20) && (console_capacity === liter)) {
-        capalert.style.display = 'inline-block';
-        document.getElementById('tank_size').style.borderColor = 'red';  
+    var tank = document.getElementById('tank_size').value;  
+      if ((tank < 20) && (console_capacity === liter)) {
+        div_tank_size.classList.remove('tiles');
+        div_tank_size.classList.add('notselected')
+        tank_size.classList.remove('numberbox');
+        tank_size.classList.add('inputalert');
+        capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       } 
-      if ((tank_size < 5.3) && (console_capacity === gallon)) {
-        capalert.style.display = 'inline-block';
-        document.getElementById('tank_size').style.borderColor = 'red';  
+      if ((tank < 5.3) && (console_capacity === gallon)) {
+        div_tank_size.classList.remove('tiles');
+        div_tank_size.classList.add('notselected')
+        tank_size.classList.remove('numberbox');
+        tank_size.classList.add('inputalert');
+        capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       }
-      if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+      if (((tank >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+        div_tank_size.classList.add('tiles');
+        div_tank_size.classList.remove('notselected')
+        tank_size.classList.add('numberbox');
+        tank_size.classList.remove('inputalert');
         capalert.style.display = 'none';
-        document.getElementById('tank_size').style.borderColor = 'unset';
         invalid_search_cap = false; 
       }
     }
