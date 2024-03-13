@@ -106,7 +106,8 @@
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
-  // let imagechanger = document.getElementById("imagechanger"); 
+  // let imagechanger = document.getElementById("imagechanger");
+  let allcount = document.getElementById("allcount");
   let currentImage; 
 
   let details = []; 
@@ -158,6 +159,8 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
     for (let fish of keylist) {
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
+
+    allcount.textContent = fish_master.length;
    
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);

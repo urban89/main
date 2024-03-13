@@ -712,3 +712,8 @@ position: relative; /*necessary for in card elements to allign as I want */
 #imagechanger {
   display: none; /*dont need it for now */ 
 }
+
+
+.filler {
+  font-size: 0.7rem; 
+}
