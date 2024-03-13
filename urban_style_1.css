@@ -426,21 +426,40 @@ border-style: solid;
 @media screen and (max-width: 1288px) {
   .verybigsubtitle {
     font-size: 67%;
-    /* color: red; */
+    transform: translateX(-40%);
   }
 }
 
 @media screen and (max-width: 1200px) {
   .bigsubtitle {
     font-size: 70%;
-    /* color: red; */
+    transform: translateX(-40%);
   }
 
   .verybigsubtitle {
     font-size: 64%;
-    /* color: rgb(44, 202, 71); */
   }
 }
+
+@media screen and (max-width: 830px) {
+  
+
+  .verybigsubtitle {
+    font-size: 60%;
+    transform: translateX(-38%);
+  }
+}
+
+@media screen and (max-width: 812px) {
+  
+
+  .bigsubtitle {
+    font-size: 65%;
+    transform: translateX(-38%);
+  }
+}
+
+
 
 /*About and feedback*/ 
 

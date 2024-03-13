@@ -19,12 +19,10 @@ function fishSelect (fish_list) {
   if (filteredFish.length > 0) {
     fish_list = filteredFish; 
     sort();
-    console.log("filter");
   }
   else {
     fish_list = fish_master; 
     sort();
-    console.log("master");
   }
   result_div.innerHTML = '';  
   let result_lists = document.createElement("div");
@@ -81,7 +79,8 @@ function fishSelect (fish_list) {
     let avail = fish_list[i].availability; 
     let behave = fish_list[i].school; 
     let agres = fish_list[i].agression; 
-    let breed = fish_list[i].breeding_difficulty; 
+    let breed = fish_list[i].breeding_difficulty;
+    let latin_len = (`${fish_list[i].name_latin}`).length /////AIRPLANE
  
     let reveal_card = document.createElement('div'); //container card to hide/show info 
     let infocard = document.createElement('div'); 
@@ -105,20 +104,32 @@ function fishSelect (fish_list) {
     iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish_list[i].name_latin}`;
-    mintanksize.innerHTML = `Minimum aquarium size: ${cap} ${console_capacity}`;
-    tempinfo.innerHTML = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
+    mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+    tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
     sizeinfo.innerHTML = `Maximum fish size: ${card_size} ${console_fishsize}`;
  
-    hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
-    availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
-    social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
-    agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
-    breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+    hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
+    availability.innerHTML = `Availability: ${codes_avail[avail]}`;
+    social.innerHTML = `Behavior: ${codes_behave[behave]}`;
+    agression.innerHTML = `Agression: ${codes_agres[agres]}`;
+    breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
     origin.innerHTML = `Origin: ${commaRemover(fish_list[i].origin)}`; 
  
     iconimage.className = "iconimage";
     fishname2.className = "title";
-    latin.className = "subtitle";
+
+//Fitting latin names to info card UI   /////AIRPLANE
+if (latin_len > 21) {
+  latin.className = "bigsubtitle";
+}
+ if (latin_len > 25)  {
+  latin.className = "verybigsubtitle";
+ }
+if (latin_len <= 21) {
+  latin.className = "subtitle";
+}
+
+    // latin.className = "subtitle"; /////AIRPLANE
     mintanksize.className = "infocardtext";
     tempinfo.className = "infocardtext";
     sizeinfo.className = "infocardtext";
@@ -225,7 +236,6 @@ function compare_size(a, b) {
     remember (details)
      ///Displaying animation of selector result value changes
   if (previousFishcount !== fish_list.length) {
-    console.log("xxx");
     displayed.classList.add('value-updated');
     setTimeout(() => {
       displayed.classList.remove('value-updated');
@@ -283,7 +293,6 @@ function uppercaser(str) {
 
 function flipCards() {
   flipped = (flipped === false) ? true : false; 
-  console.log(flipped);
   whichcard = (flipped === true) ? infoshown: fishshown; 
   cardswticher.innerHTML = whichcard;
   if (flipped) {
