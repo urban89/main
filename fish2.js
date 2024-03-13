@@ -220,12 +220,18 @@ function compare_size(a, b) {
 
   function output () {
     fish_list = filteredFish.length > 0 ? filteredFish : fish_master;
-    if (fish_list.length === 0)  {
-      console.log("x");
-    }
     sort();
     fishSelect (fish_list);
     remember (details)
+     ///Displaying animation of selector result value changes
+  if (previousFishcount !== fish_list.length) {
+    console.log("xxx");
+    displayed.classList.add('value-updated');
+    setTimeout(() => {
+      displayed.classList.remove('value-updated');
+    }, 1000);
+  }
+  previousFishcount = fish_list.length;
   }
 
 

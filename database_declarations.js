@@ -16,6 +16,7 @@ let whichcard = fishshown;
 let flipped = false; 
 let feedbackstatus = feedbacknotshown;
 let aboutstatus = aboutoff; 
+let previousFishcount = 42; 
 
 let details = []; 
 
