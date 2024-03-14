@@ -7,40 +7,25 @@ body {
   justify-content: center;
   align-items: center;
   height: fit-content;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
   background-color: #235197;
-  background-image: url('backgrounds/3.jpg');
   background-size: cover;
   background-repeat: round;
   background-attachment: fixed; 
   position: relative; 
   }
 
-  @media screen and (max-width: 767px) {
+
+  @media screen and (min-width: 767px) {
     body {
-      background-image: none;
+      background-image: url('backgrounds/1.jpg');
     }
-    #imagechanger {
-      display: none;
-    }
+
 } 
   
-
-.noto-sans-urban {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 550;
-  font-style: normal;
-  font-variation-settings:  "wdth" 100;
-}
-
-
-.dm-sans-urban {
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 550;
-  font-style: normal;
-}
 
 #maindiv {
   width: 90vw; 
@@ -428,21 +413,40 @@ border-style: solid;
 @media screen and (max-width: 1288px) {
   .verybigsubtitle {
     font-size: 67%;
-    /* color: red; */
+    transform: translateX(-40%);
   }
 }
 
 @media screen and (max-width: 1200px) {
   .bigsubtitle {
     font-size: 70%;
-    /* color: red; */
+    transform: translateX(-40%);
   }
 
   .verybigsubtitle {
     font-size: 64%;
-    /* color: rgb(44, 202, 71); */
   }
 }
+
+@media screen and (max-width: 830px) {
+  
+
+  .verybigsubtitle {
+    font-size: 60%;
+    transform: translateX(-38%);
+  }
+}
+
+@media screen and (max-width: 812px) {
+  
+
+  .bigsubtitle {
+    font-size: 65%;
+    transform: translateX(-38%);
+  }
+}
+
+
 
 /*About and feedback*/ 
 
@@ -538,36 +542,6 @@ h2 {
 .number-updated {
   animation: numberflash 1s ease;
   cursor: text;
-}
-
-/*Fishcard border color change when list changes  - it's not running now for some reason*/ 
-@keyframes refresh { 
-  0% { border: 1px solid   #413e07; }
-  10% { border:1px solid  #5c580b; }
-  20% { border: 1px solid #777210; }
-  30% { border: 1px solid #979114; }
-  40% { border: 1px solid #77720f; }
-  50% { border: 1px solid #55510a; }
-  60% { border: 1px solid #363407; }
-  70% { border: 1px solid #1b1a04; }
-  80% { border: 1px solid  rgb(48, 45, 1);}
-  90% { border: 1px solid #141301;}
-  100% { border: 1px solid #141301;}
-}
-
-
-.tiles-refresh {
-  animation: refresh 1s ease; 
-  flex: 0 0 calc(33.33% - 10px); 
-  margin: 5px; 
-  box-sizing: border-box;
-  /* border: 1px solid #010a14; */
-  border-radius: 10px;
-  padding: 10px;
-  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
-background-attachment: fixed;
-box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-position: relative; /*necessary for in card elements to allign as I want */ 
 }
 
 
@@ -708,4 +682,15 @@ position: relative; /*necessary for in card elements to allign as I want */
   #pertemp{
     display: inline-block;
   }
+}
+
+
+#imagechanger {
+  display: none; /*dont need it for now */ 
+}
+
+
+.filler {
+  font-size: 0.7rem; 
+  color:#413e07;
 }

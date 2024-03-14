@@ -16,12 +16,13 @@ let whichcard = fishshown;
 let flipped = false; 
 let feedbackstatus = feedbacknotshown;
 let aboutstatus = aboutoff; 
+let previousFishcount = 42; 
 
 let details = []; 
 
 let cmtoinch = document.getElementById("cmtoinch");
 let searchInput = document.getElementById("searchInput"); 
-let imagechanger = document.getElementById("imagechanger"); 
+// let imagechanger = document.getElementById("imagechanger"); 
 let result_div = document.getElementById("result");
 let sort_select = document.getElementById("sort");
 let cap_conversion = document.getElementById("cap_conversion");
@@ -128,7 +129,9 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     explain();
     gotofeedback(); 
-    initialImage ()
+    // updateBackground();
+    // window.addEventListener('resize', updateBackground);
+    // // initialImage ()
   });
   document.getElementById("dbcount").textContent = maincount; 
   document.getElementById("dbcount2").textContent = maincount; 

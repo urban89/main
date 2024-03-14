@@ -131,26 +131,9 @@ function refreshAnimation (x) {
   }, 1000);
 }
 
-/////Background image as initial
-function initialImage () {
-  if (window.innerWidth > 767) {
-  let initial = Math.floor(Math.random() * bcimages) + 1;
-  currentImage = initial;
-  document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-}
-}
 
-/////Change background 
-function imageChange() {
-  if (currentImage === bcimages) {
-    currentImage = 1; 
-  }
-  else {
-    currentImage = currentImage+1; 
-  }
 
-  document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
-}
+
 
 ///Calculates the precentage value of each category compared to total
 
@@ -164,3 +147,38 @@ function perCounter (property, code) {
   return `(${Math.round((list.length/maincount)*100)}%)`; 
 }
 
+
+
+// /////Change background 
+// function imageChange() {
+//   if (currentImage === bcimages) {
+//     currentImage = 1; 
+//   }
+//   else {
+//     currentImage = currentImage+1; 
+//   }
+
+//   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
+// }
+
+
+/////Background image as initial
+// function updateBackground() {
+//   if (window.innerWidth > 767) {
+//     if (!document.body.style.backgroundImage) {
+//       let initial = Math.floor(Math.random() * bcimages) + 1;
+//       currentImage = initial;
+//       document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+//     }
+//   } else {
+//     document.body.style.backgroundImage = '';
+//   }
+// }
+
+// function initialImage () {
+//   if (window.innerWidth > 767) {
+//   let initial = Math.floor(Math.random() * bcimages) + 1;
+//   currentImage = initial;
+//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+// }
+// }

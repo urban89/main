@@ -217,44 +217,59 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
 
     // Check data before search and display alert if needed 
   function preCheckTemperature(temp) {
-
+    var temp = document.getElementById('tempmin').value; 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
-      tempalert.innerHTML = "Temperature should not be lower than 4C or higher than 35C";
+      tempalert.innerHTML = "Temperature should not be lower than 4℃ or higher than 35℃";
             div_temp.classList.remove('tiles');
         div_temp.classList.add('notselected');
+        tempmin.classList.remove('numberbox');
+        tempmin.classList.add('inputalert');
         tempalert.style.display = "inline-block";
         invalid_search_temp = true; 
       }
       else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
-        tempalert.innerHTML = "Temperature should not be lower than 39F or higher than 95F";
+        tempalert.innerHTML = "Temperature should not be lower than 39℉ or higher than 95℉";
               div_temp.classList.remove('tiles');
               div_temp.classList.add('notselected');
+              tempmin.classList.remove('numberbox');
+              tempmin.classList.add('inputalert');
               tempalert.style.display = "inline-block";
               invalid_search_temp = true; 
       }
     else {
             div_temp.classList.add('tiles');
               div_temp.classList.remove('notselected');
+              tempmin.classList.add('numberbox');
+              tempmin.classList.remove('inputalert');
               tempalert.style.display = "none";
               invalid_search_temp = false;
     }
   }
   //Checking tank size before submission (shouldn't be too small)
   function preCheckTank() {
-    let tank_size = document.getElementById('tank_size').value;  
-      if ((tank_size < 20) && (console_capacity === liter)) {
-        capalert.style.display = 'inline-block';
-        document.getElementById('tank_size').style.borderColor = 'red';  
+    var tank = document.getElementById('tank_size').value;  
+      if ((tank < 20) && (console_capacity === liter)) {
+        div_tank_size.classList.remove('tiles');
+        div_tank_size.classList.add('notselected')
+        tank_size.classList.remove('numberbox');
+        tank_size.classList.add('inputalert');
+        capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       } 
-      if ((tank_size < 5.3) && (console_capacity === gallon)) {
-        capalert.style.display = 'inline-block';
-        document.getElementById('tank_size').style.borderColor = 'red';  
+      if ((tank < 5.3) && (console_capacity === gallon)) {
+        div_tank_size.classList.remove('tiles');
+        div_tank_size.classList.add('notselected')
+        tank_size.classList.remove('numberbox');
+        tank_size.classList.add('inputalert');
+        capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       }
-      if (((tank_size >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+      if (((tank >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+        div_tank_size.classList.add('tiles');
+        div_tank_size.classList.remove('notselected')
+        tank_size.classList.add('numberbox');
+        tank_size.classList.remove('inputalert');
         capalert.style.display = 'none';
-        document.getElementById('tank_size').style.borderColor = 'unset';
         invalid_search_cap = false; 
       }
     }
@@ -368,7 +383,7 @@ function fishFiller(fish_list) {
  let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
  let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
- image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+ image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
  fishname.textContent = name; // adding name to <p> result_lists_element
  size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
  temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
@@ -400,7 +415,6 @@ let behave = fish_list[i].school;
 let agres = fish_list[i].agression; 
 let breed = fish_list[i].breeding_difficulty; 
 let latin_len = (`${fish_list[i].name_latin}`).length
-console.log(latin_len);
 
 let reveal_card = document.createElement('div'); //container card to hide/show info 
 let infocard = document.createElement('div'); 
@@ -421,18 +435,18 @@ let origin = document.createElement("p");
 reveal_card.className = "reveal_card";
 infocard.className = "infocard";
 
-iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+iconimage.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
 fishname2.innerHTML = name;
 latin.innerHTML = `${fish_list[i].name_latin}`;
-mintanksize.innerHTML = `Minimum aquarium size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `Temperature range: ${temp_min} - ${temp_max} ${console_temperature}`; 
+mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
 sizeinfo.innerHTML = `Maximum fish size: ${card_size} ${console_fishsize}`;
 
-hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
-availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
-social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
-agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
-breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
+availability.innerHTML = `Availability: ${codes_avail[avail]}`;
+social.innerHTML = `Behavior: ${codes_behave[behave]}`;
+agression.innerHTML = `Agression: ${codes_agres[agres]}`;
+breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
 origin.innerHTML = `Origin: ${commaRemover(fish_list[i].origin)}`; 
 
 iconimage.className = "iconimage";
@@ -442,7 +456,6 @@ fishname2.className = "title";
 //Fitting latin names to info card UI 
 if (latin_len > 21) {
   latin.className = "bigsubtitle";
-  console.log("teszt");
 }
  if (latin_len > 25)  {
   latin.className = "verybigsubtitle";
@@ -509,7 +522,7 @@ function flipper() {
 iconImages.forEach(iconImage => {
   iconImage.addEventListener("click", function () {
   const src = this.getAttribute('src');
-  const idRegex = /images\/(\d+)\.jpeg/;
+  const idRegex = /webps1\/(\d+)\.webp/;
   const match = src.match(idRegex);
   if (match) {
     const id = match[1];
