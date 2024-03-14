@@ -49,7 +49,7 @@ function fishSelect (fish_list) {
     let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
    
-    image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+    image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
     fishname.textContent = name;
     size.textContent = `${card_size} ${console_fishsize}`;
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
@@ -101,7 +101,7 @@ function fishSelect (fish_list) {
     reveal_card.className = "reveal_card";
     infocard.className = "infocard";
  
-    iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+    iconimage.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish_list[i].name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
@@ -190,7 +190,7 @@ if (latin_len <= 21) {
 iconImages.forEach(iconImage => {
   iconImage.addEventListener("click", function () {
   const src = this.getAttribute('src');
-  const idRegex = /images\/(\d+)\.jpeg/;
+  const idRegex = /webps1\/(\d+)\.webp/;
   const match = src.match(idRegex);
   if (match) {
     const id = match[1];

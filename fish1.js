@@ -383,7 +383,7 @@ function fishFiller(fish_list) {
  let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
  let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
- image_element.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+ image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
  fishname.textContent = name; // adding name to <p> result_lists_element
  size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
  temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
@@ -435,7 +435,7 @@ let origin = document.createElement("p");
 reveal_card.className = "reveal_card";
 infocard.className = "infocard";
 
-iconimage.src = `images/${fish_list[i].fish_id}.jpeg`; //finding jpeg file for each fish based on fish ID 
+iconimage.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
 fishname2.innerHTML = name;
 latin.innerHTML = `${fish_list[i].name_latin}`;
 mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
@@ -522,7 +522,7 @@ function flipper() {
 iconImages.forEach(iconImage => {
   iconImage.addEventListener("click", function () {
   const src = this.getAttribute('src');
-  const idRegex = /images\/(\d+)\.jpeg/;
+  const idRegex = /webps1\/(\d+)\.webp/;
   const match = src.match(idRegex);
   if (match) {
     const id = match[1];
