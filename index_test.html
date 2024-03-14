@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="urban_style_1.css">
+    <link rel="stylesheet" href="test/urban_style_1.css">
 
     <meta name="description" content="Find aquarium fish with this search tool. Filter by tank size, temperature, difficulty. Browse our database to find new species. All available fish in one place">
 
@@ -44,7 +44,7 @@
           The percentage value next to each category
           reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
          <br>
-         To browse all fish in database, go to <a href = "browse.html">Database.</a> 
+         To browse all fish in database, go to <a href = "browse_test.html">Database.</a> 
         </p>
          
         <h2>Aquarium size</h2>
@@ -101,7 +101,7 @@
 
       <!-- Control panel -->
  
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
+<div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -129,10 +129,10 @@
 
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
-<form action="" id = "main_form">
+<div id = "main_form" class = "grid-container_main">
 <!-- Tank size --> 
-  <div class = "column"> 
-    <div id = "div_tank_size" class = "tiles"> 
+  <!-- <div class = "column">  -->
+    <div id = "div_tank_size" class = "tiles grid-item"> 
       <label for="" class = "parameter"> Aquarium size: </label>
       <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="">
       <span id = size>L</span> <span id = perliter></span><br>
@@ -140,8 +140,19 @@
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
     </div> 
 
+    <!-- Temperature --> 
+  <!-- <div class = "column"> -->
+    <div id = "div_temp" class = "tiles grid-item"> 
+      <label for="" class = "parameter">Water temperature: </label> 
+      <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="" min="4" max="35" value = "25" /> 
+      <span id = min_t> ℃ </span> <span id = pertemp></span>
+      <br>
+      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
+      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
+    </div> 
+
 <!-- Hardiness --> 
-  <div id = "div_hardiness" class = "tiles"> 
+  <div id = "div_hardiness" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
     <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
     <br>
@@ -158,22 +169,14 @@
     <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
   </div>
  
-</div> <!-- column div ends here -->
+<!-- </div>  -->
+<!-- column div ends here -->
 
 
-<!-- Temperature --> 
-  <div class = "column">
-    <div id = "div_temp" class = "tiles"> 
-      <label for="" class = "parameter">Water temperature: </label> 
-      <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="" min="4" max="35" value = "25" /> 
-      <span id = min_t> ℃ </span> <span id = pertemp></span>
-      <br>
-      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
-      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
-    </div> 
+
  
 <!-- Store availability --> 
-    <div id = "div_avail" class = "tiles"> 
+    <div id = "div_avail" class = "tiles grid-item"> 
       <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
       <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
       <br>
@@ -190,11 +193,12 @@
       <label for="veryrare">Very rare</label> <span id = "veryrare$$$" class = availpertile></span>
     </div>
   
-    </div> <!-- second column div ends here -->
+    <!-- </div>  -->
+    <!-- second column div ends here -->
 
-</form>
+  </div> <!-- main search categoires ENDS-->
         
-<div id = "more_options" class = "grid-container" style= "display: grid"> 
+<div id = "more_options" class = "grid-container"> 
 
   <!-- Behavior --> 
   <div id= "div_behavior" class = "tiles grid-item"> 
@@ -266,11 +270,11 @@
     </div>
 
 
-<script type="text/javascript" src="fish_array.js"></script>
-<script type="text/javascript" src="constants.js"></script>
-<script type="text/javascript" src="selector_declarations.js"></script>
-<script type="text/javascript" src="fish_functions_1.js"></script>
-<script type="text/javascript" src="fish1.js"></script>
+<script type="text/javascript" src="test/fish_array.js"></script>
+<script type="text/javascript" src="test/constants.js"></script>
+<script type="text/javascript" src="test/selector_declarations.js"></script>
+<script type="text/javascript" src="test/fish_functions_1.js"></script>
+<script type="text/javascript" src="test/fish1.js"></script>
 
     
 </body>
