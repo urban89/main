@@ -16,6 +16,7 @@ body {
   background-repeat: round;
   background-attachment: fixed; 
   position: relative; 
+  overflow-x: hidden;
   }
 
 
