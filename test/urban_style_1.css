@@ -258,6 +258,7 @@ input[type="radio"] {
 
 #cpanel1, #cpanel2 {
   position: relative; 
+  background-color: red;
 }
 
 
@@ -273,11 +274,7 @@ input[type="radio"] {
   }
 } */
 
-@media (max-width: 768px) {
-  #maindiv {
-    width: 51%; /* Adjustments for smaller devices */
-  }
-}
+
 
 @media screen and (min-width: 450px) {
   #maindiv {
@@ -331,6 +328,12 @@ input[type="radio"] {
     width: 250px;
     height: 200px;
 }
+}
+
+@media (max-width: 768px) {
+  #maindiv {
+    width: 51%; 
+  }
 }
 
 /*The button that opens the dropdown for Settings */ 
