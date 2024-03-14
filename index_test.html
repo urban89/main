@@ -6,8 +6,9 @@
 
     <link rel="stylesheet" href="urban_style_1.css">
 
-    <meta name="description" content="Explore SelectYourFish.com interactive search tool to find your perfect aquarium fish. 
-    Filter by size, water temperature, and more. Browse fish profiles and make informed decisions for your tank.">
+    <meta name="description" content="Find aquarium fish with this search tool. Filter by tank size, temperature, difficulty. Browse our database to find new species. All available fish in one place">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>SelectYourFish - Fish Finder</title>
        <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
@@ -27,16 +28,11 @@
             <meta name="msapplication-TileColor" content="#ffffff">
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
             <meta name="theme-color" content="#ffffff">
-
-             <!-- DM SANS SERIF-->
-             <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-            
+        
 </head>
 
 
-<body class="dm-sans-urban">
+<body>
     <div id = "maindiv"> 
 
       <div id="about" class = "tiles">  <!-- about -->
@@ -104,8 +100,8 @@
         </div>
 
       <!-- Control panel -->
-
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount> </span> 
+ 
+    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -273,8 +269,9 @@
 <script type="text/javascript" src="fish_array.js"></script>
 <script type="text/javascript" src="constants.js"></script>
 <script type="text/javascript" src="selector_declarations.js"></script>
-<script type="text/javascript" src="fish1.js"></script>
 <script type="text/javascript" src="fish_functions_1.js"></script>
+<script type="text/javascript" src="fish1.js"></script>
+
     
 </body>
 </html>
