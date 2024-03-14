@@ -7,7 +7,10 @@ body {
   justify-content: center;
   align-items: center;
   height: fit-content;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 550;
+  font-style: normal;
   background-color: #235197;
   background-size: cover;
   background-repeat: round;
@@ -24,7 +27,7 @@ body {
 } 
   
 
-.noto-sans-urban {
+/* .noto-sans-urban {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 550;
@@ -38,7 +41,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
-}
+} */
 
 #maindiv {
   width: 90vw; 
