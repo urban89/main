@@ -4,10 +4,9 @@ body {
   margin: 10px;
   padding: 0;
   display: grid;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* height: fit-content;  */
-  /* width: fit-content; */
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
   font-family: "Trebuchet MS", sans-serif;
   font-optical-sizing: auto;
   font-weight: 550;
@@ -17,7 +16,6 @@ body {
   background-repeat: round;
   background-attachment: fixed; 
   position: relative; 
-  overflow-x: hidden;
   }
 
 
@@ -38,65 +36,15 @@ body {
   white-space: nowrap;
 }
 
-#more_options {
-  display: grid;
+
+
+#main_form {
+  display: flex; 
 }
 
-/* #main_form {
-  display: grid; 
-} */
-
-/* .column {
+.column {
   flex: 1; 
   margin: 10px; 
-
-} */
-
-.grid-container-cpanel {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto; 
-  gap: 10px; 
-  justify-content: center;
-  align-items: center;
-}
-
-.grid-container_main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto; 
-  gap: 10px; 
-  justify-content: center;
-  align-items: center;
-}
-
-/* more options div gird */ 
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; 
-  gap: 10px; 
-  justify-content: center;
-  align-items: center;
-}
-
-.grid-item {
-  height: 100px; 
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  height: auto;
-}
-
-.column_result {
-    
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; 
-  gap: 10px; 
-  justify-content: center;
-  align-items: center;
 
 } 
 
@@ -182,6 +130,36 @@ display: none;
 }
 
 
+/* more options div gird */ 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item {
+  height: 100px; 
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: auto;
+}
+
+
+.column_result {
+    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+
+} 
 
 
 .fish_card, .infocard {
@@ -266,7 +244,6 @@ input[type="radio"] {
 
 #cpanel1, #cpanel2 {
   position: relative; 
-  background-color: red;
 }
 
 
@@ -283,8 +260,7 @@ input[type="radio"] {
 } */
 
 
-
-/* @media screen and (min-width: 450px) {
+@media screen and (min-width: 450px) {
   #maindiv {
     width: 95vw;
   }
@@ -336,13 +312,7 @@ input[type="radio"] {
     width: 250px;
     height: 200px;
 }
-} */
-
-/* @media (max-width: 768px) {
-  #maindiv {
-    width: 100%; 
-  }
-} */
+}
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
