@@ -34,8 +34,8 @@
 
 <body>
     <div id = "maindiv"> 
-
-      <div id="about" class = "tiles">  <!-- about -->
+ <div class = "grid-container-cpanel">
+      <div id="about" class = "grid-item tiles">  <!-- about -->
         <span id = "x-about" class = "x-out"> </span>
         <h1> Welcome to SelectYourFish.com </h1>
         <p> Find the perfect fish for your home aquarium. 
@@ -92,7 +92,7 @@
 
        </div> <!-- about ends -->
 
-       <div id = "feedback" class = "tiles"> <!-- Feedback -->
+       <div id = "feedback" class = "grid-item tiles"> <!-- Feedback -->
         <span id = "x-feedback" class = "x-out"> </span>
         <div class="google-form-wrapper">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
@@ -101,7 +101,7 @@
 
       <!-- Control panel -->
  
-<div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
+<div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -126,6 +126,7 @@
     </span>
     &nbsp;&nbsp;&nbsp;
   </div> <!-- Cpanel ends here -->
+</div> <!-- container for testing reasons now -->
 
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
