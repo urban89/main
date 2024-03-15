@@ -45,8 +45,8 @@
 
 <body>
   <div id = "maindiv"> 
-
-    <div id="about" class = "tiles">  <!-- about -->
+ <div class = "grid-container-cpanel">
+    <div id="about" class = "tiles grid-item">  <!-- about -->
       <span id = "x-about" class = "x-out"> </span>
       <h1> Welcome to SelectYourFish.com </h1>
       <p> Find the perfect fish for your home aquarium. 
@@ -103,7 +103,7 @@
 
      </div> <!-- about ends -->
 
-     <div id = "feedback" class = "tiles"> <!-- Feedback -->
+     <div id = "feedback" class = "tiles grid-item"> <!-- Feedback -->
       <span id = "x-feedback" class = "x-out"> </span>
       <div class="google-form-wrapper">
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
@@ -111,7 +111,7 @@
       </div>
 <!-- Control panel line 1-->
 
-    <div id = "cpanel1" class = "tiles">  <span id = "sum"> Displayed: <span id = displayed></span></span><span class = "filler">/</span><span id = fishcount class="filler"></span> 
+    <div id = "cpanel1" class = "tiles grid-item ">  <span id = "sum"> Displayed: <span id = displayed></span></span><span class = "filler">/</span><span id = fishcount class="filler"></span> 
       &nbsp;&nbsp;&nbsp;
       
     &nbsp;&nbsp;&nbsp;
@@ -134,7 +134,7 @@
   </div> <!-- cpanel1 ends -->
   <!-- Control panel line 2-->
 
-  <div id = "cpanel2" class = "tiles">  
+  <div id = "cpanel2" class = "tiles grid-item ">  
 
   <span>
     <span> Search: </span>
@@ -150,7 +150,7 @@
     <span id = "sum"> Displayed: </span>   -->
   </span>
 </div> <!-- cpanel2 ends -->
-
+</div> <!--grid-container-cpanel-->
 
         
 
@@ -159,7 +159,7 @@
     </div> <!-- result div-->
  <div id = "alerts">
   <span id = "notfound" class = "valid_alert"> No fish found with the above entered search word(s) </span> 
- </div>
+ </div> <!-- alerts -->
 </div> <!-- main div --> 
 <script type="text/javascript" src="test/fish_array.js"></script>
 <script type="text/javascript" src="test/constants.js"></script>
