@@ -14,12 +14,13 @@ body {
   font-weight: 550;
   font-style: normal;
   background-color: #235197;
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: round;
-  background-attachment: fixed; 
+  background-attachment: fixed;  */
   position: relative; 
   /* overflow-x: hidden; */
-  background-image: url('backgrounds/1.jpg');
+  background: rgb(71,71,187);
+background: linear-gradient(143deg, rgba(71,71,187,1) 15%, rgba(117,127,50,1) 37%, rgba(81,106,28,1) 49%, rgba(27,97,62,0.8649509974888393) 67%);
   }
 
 
