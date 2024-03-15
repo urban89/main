@@ -52,6 +52,15 @@ body {
 
 } */
 
+.grid-container-cpanel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto; 
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-container_main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -79,6 +88,17 @@ body {
   padding: 20px;
   height: auto;
 }
+
+.column_result {
+    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+
+} 
 
 .parameter {
  font-weight: 666;
@@ -162,19 +182,6 @@ display: none;
 }
 
 
-
-
-
-.column_result {
-    
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; 
-  gap: 10px; 
-  justify-content: center;
-  align-items: center;
-
-} 
 
 
 .fish_card, .infocard {
