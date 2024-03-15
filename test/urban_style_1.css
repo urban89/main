@@ -19,6 +19,7 @@ body {
   background-attachment: fixed;  */
   position: relative; 
   min-height: fit-content;
+  max-width: fit-content; 
   }
 
 
