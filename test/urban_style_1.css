@@ -36,7 +36,7 @@ body {
   margin: 0 auto;
   padding: 20px; 
   border-radius: 5px; 
-  display: inline-block; 
+  /* display: inline-block;  */
   white-space: nowrap;
   display: grid; 
 }
@@ -185,8 +185,6 @@ display: none;
 }
 
 
-
-
 .fish_card, .infocard {
   flex: 0 0 calc(33.33% - 10px); 
   margin: 5px; 
@@ -279,11 +277,11 @@ input[type="radio"] {
 /* Making it a little bit responsive here  */ 
 
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
   }
-}
+} */
 
 
 
