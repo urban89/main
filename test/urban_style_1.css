@@ -1,4 +1,9 @@
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 body {
   margin: 10px;
@@ -35,7 +40,7 @@ body {
   width: 90vw; 
   margin: 0 auto;
   padding: 20px; 
-  border-radius: 5px; 
+  /* border-radius: 5px;  */
   /* display: inline-block;  */
   white-space: nowrap;
   display: grid; 
