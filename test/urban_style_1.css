@@ -341,11 +341,11 @@ input[type="radio"] {
 }
 } */
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   #maindiv {
     width: 100%; 
   }
-} */
+}
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
@@ -600,7 +600,7 @@ h2 {
 
 .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
   display: none;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 
