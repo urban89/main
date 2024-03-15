@@ -14,9 +14,9 @@ body {
   font-weight: 550;
   font-style: normal;
   background-color: #235197;
-  /* background-size: cover;
+  background-size: cover;
   background-repeat: round;
-  background-attachment: fixed;  */
+  background-attachment: fixed; 
   position: relative; 
   /* overflow-x: hidden; */
   background-image: url('backgrounds/1.jpg');
