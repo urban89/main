@@ -279,15 +279,15 @@ input[type="radio"] {
 /* Making it a little bit responsive here  */ 
 
 
-/* @media screen and (max-width: 450px) {
+@media screen and (max-width: 450px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
   }
-} */
+}
 
 
 
-/* @media screen and (min-width: 450px) {
+@media screen and (min-width: 450px) {
   #maindiv {
     width: 95vw;
   }
@@ -339,13 +339,13 @@ input[type="radio"] {
     width: 250px;
     height: 200px;
 }
-} */
+}
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #maindiv {
     width: 100%; 
   }
-}
+} */
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
