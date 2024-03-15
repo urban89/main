@@ -277,7 +277,7 @@ input[type="radio"] {
 
 
 
-@media screen and (min-width: 450px) {
+/* @media screen and (min-width: 450px) {
   #maindiv {
     width: 95vw;
   }
@@ -329,13 +329,13 @@ input[type="radio"] {
     width: 250px;
     height: 200px;
 }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #maindiv {
     width: 100%; 
   }
-}
+} */
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
