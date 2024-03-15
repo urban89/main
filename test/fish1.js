@@ -320,7 +320,8 @@ for (let id of details) {
 function gotofeedback () {
   feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
   feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
-  feedback_button.innerText = feedbackstatus; 
+  feedback_button.innerText = feedbackstatus;
+  createAndAppendIframe(); 
 }
 ///// Showing/hiding more options 
 function optionsToggle () {
@@ -518,7 +519,7 @@ function flipper() {
   });
   });
 
-//Hides fish info card and shows fish image card and  
+//Hides fish info card and shows fish card  
 iconImages.forEach(iconImage => {
   iconImage.addEventListener("click", function () {
   const src = this.getAttribute('src');
@@ -532,11 +533,41 @@ iconImages.forEach(iconImage => {
   
   
     reveal_id.style.display = "none"; 
-    details.splice(index, 1);
+    details.splice(index, 1); // removing fishID from details array 
     var fish_card = document.getElementById(fishcard_id);
     // refreshAnimation(fishcard_id); //Need to edit this to make it apply to image only. 
     fish_card.style.display = "block"; 
   }
   });
   });
+}
+
+function createAndAppendIframe() {
+  // Check if the iframe already exists to avoid duplicates
+  const existingIframe = document.querySelector('#feedbackchecker');
+  if (!existingIframe) {
+      // Create the iframe element
+      const iframe = document.createElement('iframe');
+
+      // Set the iframe's attributes
+      iframe.setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true');
+      iframe.setAttribute('width', '640');
+      iframe.setAttribute('height', '371');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('marginheight', '0');
+      iframe.setAttribute('marginwidth', '0');
+      iframe.innerHTML = 'Loading…';
+      iframe.id = "feedbackchecker";
+
+      // Find the feedback div and append the iframe to it
+      const iframed_div = document.getElementById('iframed');
+      if (iframed_div) {
+        iframed_div.appendChild(iframe);
+      } else {
+          console.error('No element with id "inframed" found to append the iframe.');
+      }
+  }
+  else {
+    document.getElementById("iframed").innerHTML = ""; 
+  }
 }
