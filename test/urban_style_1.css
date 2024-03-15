@@ -18,6 +18,7 @@ body {
   background-repeat: round;
   background-attachment: fixed;  */
   position: relative; 
+  min-height: fit-content;
   }
 
 
