@@ -41,7 +41,7 @@ body {
   display: grid; 
   /* justify-content: center;
   align-items: center; */
-  /* height: fit-content;  */
+  height: fit-content; 
   width: fit-content;
 }
 
