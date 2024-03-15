@@ -19,6 +19,7 @@ body {
   background-attachment: fixed;  */
   position: relative; 
   /* overflow-x: hidden; */
+  background-image: url('backgrounds/1.jpg');
   }
 
 
