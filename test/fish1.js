@@ -349,8 +349,8 @@ function optionsToggle () {
 }
 //////Showing info page 
 function explain () {
-  about.style.display = (about.style.display  === "block") ? "none" : "block"; 
-  about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
+  about.style.display = (about.style.display  === "flex") ? "none" : "flex"; 
+  about_button.innerHTML = (about.style.display  === "flex") ? abouton: aboutoff;
 }
 ///// Sorting functions 
 function compare_size(a, b) {
@@ -385,6 +385,7 @@ function fishFiller(fish_list) {
  let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
  image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+ image_element.alt = `"image of ${name}`;
  fishname.textContent = name; // adding name to <p> result_lists_element
  size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
  temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
