@@ -51,14 +51,89 @@ body {
   display: grid;
 }
 
-/* #main_form {
-  display: grid; 
+/* Making it a little bit responsive here  */ 
+
+
+@media screen and (max-width: 450px) {
+  .column_result {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+@media screen and (min-width: 450px) {
+  #maindiv {
+    width: 100vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
+  }
+}
+
+
+@media screen and (min-width: 788px) {
+  #maindiv {
+    width: 90vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
+
+}
+
+
+@media screen and (min-width: 839px) {
+  #maindiv {
+    width: 80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (min-width: 956px) {
+  #maindiv {
+    width: 75vw;
+    margin-right: 12vw;
+    margin-left: 12vw;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  #maindiv {
+    width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #maindiv {
+    width: 65vw;
+    margin-right: 17vw;
+    margin-left: 17vw;
+  }
+  /* .fishcardimage {
+    width: 225px;
+    height: 175px;
 } */
+}
 
-/* .column {
-  flex: 1; 
-  margin: 10px; 
+@media screen and (min-width: 1600px) {
+  #maindiv {
+    width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    
+  }
+  /* .fishcardimage {
+    width: 250px;
+    height: 200px;
+} */
+}
 
+/* @media (max-width: 768px) {
+  #maindiv {
+    width: 100%; 
+  }
 } */
 
 .grid-container-cpanel {
@@ -279,90 +354,7 @@ input[type="radio"] {
 
 
 
-/* Making it a little bit responsive here  */ 
 
-
-@media screen and (max-width: 450px) {
-  .column_result {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-
-@media screen and (min-width: 450px) {
-  #maindiv {
-    width: 100vw;
-    margin-right: 0vw;
-    margin-left: 0vw;
-  }
-}
-
-
-@media screen and (min-width: 788px) {
-  #maindiv {
-    width: 90vw;
-    margin-right: 5vw;
-    margin-left: 5vw;
-  }
-
-}
-
-
-@media screen and (min-width: 839px) {
-  #maindiv {
-    width: 80vw;
-    margin-right: 10vw;
-    margin-left: 10vw;
-  }
-}
-
-@media screen and (min-width: 956px) {
-  #maindiv {
-    width: 75vw;
-    margin-right: 12vw;
-    margin-left: 12vw;
-  }
-}
-
-@media screen and (min-width: 1110px) {
-  #maindiv {
-    width: 70vw;
-    margin-right: 15vw;
-    margin-left: 15vw;
-  }
-}
-
-@media screen and (min-width: 1300px) {
-  #maindiv {
-    width: 65vw;
-    margin-right: 17vw;
-    margin-left: 17vw;
-  }
-  /* .fishcardimage {
-    width: 225px;
-    height: 175px;
-} */
-}
-
-@media screen and (min-width: 1600px) {
-  #maindiv {
-    width: 60vw;
-    margin-right: 20vw;
-    margin-left: 20vw;
-    
-  }
-  /* .fishcardimage {
-    width: 250px;
-    height: 200px;
-} */
-}
-
-/* @media (max-width: 768px) {
-  #maindiv {
-    width: 100%; 
-  }
-} */
 
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
