@@ -491,6 +491,7 @@ border-style: solid;
   white-space: wrap;
   text-align: justify;
   position: relative;
+  max-width: 100%;
 }
 
 #about p {
