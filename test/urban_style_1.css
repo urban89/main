@@ -488,8 +488,10 @@ border-style: solid;
 
 #about {
   display: none;
-  white-space: wrap;
-  text-align: justify;
+  /* white-space: wrap; */
+  justify-content: flex-start;
+  flex-wrap:wrap;
+  text-align: left;
   position: relative;
   max-width: 100%;
 }
