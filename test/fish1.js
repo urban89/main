@@ -438,6 +438,7 @@ reveal_card.className = "reveal_card";
 infocard.className = "infocard";
 
 iconimage.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+iconimage.alt = `"small image of ${name}`;
 fishname2.innerHTML = name;
 latin.innerHTML = `${fish_list[i].name_latin}`;
 mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
