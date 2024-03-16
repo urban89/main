@@ -37,8 +37,8 @@ body {
     padding: 2vw; 
     /* border-radius: 5px;  */
     /* display: inline-block;  */
-    white-space: nowrap;
-    display: grid; 
+    /* white-space: nowrap; */
+    /* display: grid;  */
     /* justify-content: center;
     align-items: center; */
     /* height: fit-content; 
@@ -108,7 +108,7 @@ body {
   } */
   
   
-  
+/*   
   @media screen and (min-width: 450px) {
     #maindiv {
       width: 60vw;
@@ -146,10 +146,10 @@ body {
     #maindiv {
       width: 100vw;
     }
-    /* .fishcardimage {
+    .fishcardimage {
       width: 225px;
       height: 175px;
-  } */
+  }
   }
   
   @media screen and (min-width: 1600px) {
@@ -157,11 +157,11 @@ body {
       width: 50vw;
       
     }
-    /* .fishcardimage {
+    .fishcardimage {
       width: 250px;
       height: 200px;
-  } */
   }
+  } */
   
   /* @media (max-width: 768px) {
     #maindiv {
