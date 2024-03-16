@@ -18,8 +18,7 @@ body {
   background-repeat: round;
   background-attachment: fixed;  */
   position: relative; 
-  min-height: fit-content;
-  max-width: fit-content; 
+  min-height:100vh;
   }
 
 
