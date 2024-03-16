@@ -292,14 +292,14 @@ input[type="radio"] {
 
 @media screen and (min-width: 450px) {
   #maindiv {
-    width: 95vw;
+    width: 60vw;
   }
 }
 
 
 @media screen and (min-width: 788px) {
   #maindiv {
-    width: 85vw;
+    width: 70vw;
   }
 
 }
@@ -313,24 +313,24 @@ input[type="radio"] {
 
 @media screen and (min-width: 956px) {
   #maindiv {
-    width: 70vw;
+    width: 90vw;
   }
 }
 
 @media screen and (min-width: 1110px) {
   #maindiv {
-    width: 65vw;
+    width: 100vw;
   }
 }
 
 @media screen and (min-width: 1300px) {
   #maindiv {
-    width: 60vw;
+    width: 100vw;
   }
-  .fishcardimage {
+  /* .fishcardimage {
     width: 225px;
     height: 175px;
-}
+} */
 }
 
 @media screen and (min-width: 1600px) {
@@ -338,10 +338,10 @@ input[type="radio"] {
     width: 50vw;
     
   }
-  .fishcardimage {
+  /* .fishcardimage {
     width: 250px;
     height: 200px;
-}
+} */
 }
 
 /* @media (max-width: 768px) {
