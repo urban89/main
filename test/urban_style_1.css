@@ -51,12 +51,26 @@ body {
   display: grid;
 }
 
+.fishcardimage {
+  width: 25vw;
+  height: 16vh;
+  border-color: #05224f;
+  border-width: 1px; 
+  border-radius: 3px;
+  border-style: solid;
+  
+  }
+
 /* Making it a little bit responsive here  */ 
 
 
 @media screen and (max-width: 450px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .fishcardimage {
+    width: 35vw;
+    height: 22vw;
   }
 }
 
@@ -285,16 +299,6 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 
-
-.fishcardimage {
-width: 25vw;
-height: 20vw;
-border-color: #05224f;
-border-width: 1px; 
-border-radius: 3px;
-border-style: solid;
-
-}
 
 select {
   background-color: #cedba3f6;
