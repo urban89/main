@@ -112,7 +112,7 @@
 
   let details = []; 
 
- let feedback_button = document.getElementById("feedback_button"); 
+//  let feedback_button = document.getElementById("feedback_button"); 
 
 
 
@@ -257,12 +257,12 @@ tempmin.addEventListener("click", updatePerTemp);
   
     cardswticher.addEventListener("click", flipCards); 
     // about_button.addEventListener("click", explain);
-    feedback_button.addEventListener("click", gotofeedback);
+    // feedback_button.addEventListener("click", gotofeedback);
   
   
   
   // document.getElementById("x-about").addEventListener("click", explain);
-  document.getElementById("x-feedback").addEventListener("click", gotofeedback);
+  // document.getElementById("x-feedback").addEventListener("click", gotofeedback);
   
   
     // let x_outs = document.querySelectorAll(".x-out");
