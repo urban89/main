@@ -350,13 +350,13 @@ function filterFishByName() {
 }
 
 //////Showing info page 
-function explain () {
-  about.style.display = (about.style.display  === "block") ? "none" : "block"; 
-  about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
-}
+// function explain () {
+//   about.style.display = (about.style.display  === "block") ? "none" : "block"; 
+//   about_button.innerHTML = (about.style.display  === "block") ? abouton: aboutoff;
+// }
 
-function gotofeedback () {
-  feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
-  feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
-  feedback_button.innerText = feedbackstatus; 
-}
+// function gotofeedback () {
+//   feedback.style.display = (feedback.style.display === "block") ? "none" : "block"; 
+//   feedbackstatus = (feedbackstatus === feedbacknotshown) ? feedbackshown: feedbacknotshown; 
+//   feedback_button.innerText = feedbackstatus; 
+// }
