@@ -50,6 +50,7 @@ function fishSelect (fish_list) {
 
    
     image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+    image_element.alt = `"image of ${name}`;
     fishname.textContent = name;
     size.textContent = `${card_size} ${console_fishsize}`;
     temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
@@ -102,6 +103,7 @@ function fishSelect (fish_list) {
     infocard.className = "infocard";
  
     iconimage.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+    iconimage.alt = `"small image of ${name}`;
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish_list[i].name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
