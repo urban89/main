@@ -105,8 +105,8 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 .fishcardimage {
-  width: 25vw;
-  height: 16vh;
+  width: 20vw;
+  height: 15vh;
   border-color: #05224f;
   border-width: 1px; 
   border-radius: 3px;
@@ -117,23 +117,27 @@ position: relative; /*necessary for in card elements to allign as I want */
 /* Making it a little bit responsive here  */ 
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
   }
   .fishcardimage {
     width: 35vw;
-    height: 22vw;
+    height: 22vh;
   }
 }
 
 
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 550px) {
   #maindiv {
-    width: 100vw;
-    margin-right: 0vw;
-    margin-left: 0vw;
+    width: 95vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+  .fishcardimage {
+    width: 20vw;
+    height: 15vh;
   }
 }
 
@@ -143,6 +147,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 90vw;
     margin-right: 5vw;
     margin-left: 5vw;
+  }
+  .fishcardimage {
+    width: 25vw;
+    height: 20vh;
   }
 
 }
