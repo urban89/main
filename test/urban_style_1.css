@@ -36,16 +36,16 @@ body {
 /* #maindiv {
   width: 95vw; 
   margin: auto;
-  padding: 2vw;  */
-  /* border-radius: 5px;  */
-  /* display: inline-block;  */
-  /* white-space: nowrap;
-  display: grid;  */
-  /* justify-content: center;
-  align-items: center; */
-  /* height: fit-content; 
+  padding: 2vw;  
+  border-radius: 5px; 
+  display: inline-block; 
+  white-space: nowrap;
+  display: grid; 
+  justify-content: center;
+  align-items: center;
+  height: fit-content; 
   width: fit-content;
-} */
+}  */
 
 #more_options {
   display: grid;
@@ -293,6 +293,8 @@ input[type="radio"] {
 @media screen and (min-width: 450px) {
   #maindiv {
     width: 100vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
   }
 }
 
@@ -300,6 +302,8 @@ input[type="radio"] {
 @media screen and (min-width: 788px) {
   #maindiv {
     width: 90vw;
+    margin-right: 5vw;
+    margin-left: 5vw;
   }
 
 }
@@ -308,24 +312,32 @@ input[type="radio"] {
 @media screen and (min-width: 839px) {
   #maindiv {
     width: 80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
   }
 }
 
 @media screen and (min-width: 956px) {
   #maindiv {
     width: 75vw;
+    margin-right: 12vw;
+    margin-left: 12vw;
   }
 }
 
 @media screen and (min-width: 1110px) {
   #maindiv {
     width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
   }
 }
 
 @media screen and (min-width: 1300px) {
   #maindiv {
     width: 65vw;
+    margin-right: 17vw;
+    margin-left: 17vw;
   }
   /* .fishcardimage {
     width: 225px;
@@ -336,6 +348,8 @@ input[type="radio"] {
 @media screen and (min-width: 1600px) {
   #maindiv {
     width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
     
   }
   /* .fishcardimage {
