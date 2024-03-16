@@ -35,7 +35,7 @@ body {
 #maindiv {
   width: 95vw; 
   margin: auto;
-  padding: 20px; 
+  padding: 2vw; 
   /* border-radius: 5px;  */
   /* display: inline-block;  */
   white-space: nowrap;
@@ -64,7 +64,7 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto; 
-  gap: 10px; 
+  gap: 1vw; 
   justify-content: center;
   align-items: center;
 }
@@ -73,7 +73,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto; 
-  gap: 10px; 
+  gap: 1vw; 
   justify-content: center;
   align-items: center;
 }
@@ -84,16 +84,15 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto; 
-  gap: 10px; 
+  gap: 1vw; 
   justify-content: center;
   align-items: center;
 }
 
 .grid-item {
-  height: 100px; 
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 2vw;
   height: auto;
 }
 
@@ -102,7 +101,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto; 
-  gap: 10px; 
+  gap: 1vw; 
   justify-content: center;
   align-items: center;
 
@@ -115,7 +114,7 @@ body {
 .notselected {
   background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
   border-radius: 14px;
-  padding: 20px;
+  padding: 2vw;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
   border: 1px solid #ccc; 
     }
@@ -172,10 +171,10 @@ display: none;
 .tiles, .infotile {
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
   border-radius: 10px;
-  padding: 20px;
+  padding: 2vw;
   box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
   border: 1px solid #0f1946; 
-  margin: 10px 0 0 0 ; 
+  margin: 5vw 0 0 0 ; 
   position: relative;
 }
 
@@ -196,7 +195,7 @@ display: none;
   box-sizing: border-box;
   border: 1px solid #010a14;
   border-radius: 10px;
-  padding: 10px;
+  padding: 2vw;
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
@@ -212,8 +211,8 @@ position: relative; /*necessary for in card elements to allign as I want */
 
 
 .fishcardimage {
-width: 200px;
-height: 150px;
+width: 25vw;
+height: 20vw;
 border-color: #05224f;
 border-width: 1px; 
 border-radius: 3px;
