@@ -1,0 +1,420 @@
+
+
+
+body {
+    /* margin: 10px; */
+    /* padding: 0; */
+    display: grid;
+    /* justify-content: center;
+    align-items: center;
+    height: fit-content; 
+    width: fit-content; */
+    font-family: "Trebuchet MS", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+    background-color: #235197;
+    /* background-size: cover;
+    background-repeat: round;
+    background-attachment: fixed;  */
+    position: relative; 
+    min-height:100vh;
+    max-width: 100vw;
+    }
+  
+  
+    /* @media screen and (min-width: 767px) {
+      body {
+        background-image: url('backgrounds/1.jpg');
+      }
+  
+  }  */
+
+  
+  #maindiv {
+    width: 95vw; 
+    margin: auto;
+    padding: 2vw; 
+    /* border-radius: 5px;  */
+    /* display: inline-block;  */
+    white-space: nowrap;
+    display: grid; 
+    /* justify-content: center;
+    align-items: center; */
+    height: fit-content; 
+    width: fit-content;
+  }
+  
+  
+  .grid-container-cpanel {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto; 
+    gap: 1vw; 
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+
+  
+  /* .column_result {
+      
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto; 
+    gap: 1vw; 
+    justify-content: center;
+    align-items: center;
+  
+  }  */
+  
+  
+  
+  /*Tiles*/ 
+  
+  .tiles, .infotile {
+    background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
+    border-radius: 10px;
+    padding: 2vw;
+    box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+    border: 1px solid #0f1946; 
+    margin: 5vw 0 0 0 ; 
+    position: relative;
+  }
+  
+  
+  
+  
+
+
+  
+  #cpanel1, #cpanel2 {
+    position: relative; 
+    background-color: red;
+  }
+  
+  
+  
+  
+  
+  /* Making it a little bit responsive here  */ 
+  
+  
+  /* @media screen and (max-width: 450px) {
+    .column_result {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  } */
+  
+  
+  
+  @media screen and (min-width: 450px) {
+    #maindiv {
+      width: 60vw;
+    }
+  }
+  
+  
+  @media screen and (min-width: 788px) {
+    #maindiv {
+      width: 70vw;
+    }
+  
+  }
+  
+  
+  @media screen and (min-width: 839px) {
+    #maindiv {
+      width: 80vw;
+    }
+  }
+  
+  @media screen and (min-width: 956px) {
+    #maindiv {
+      width: 90vw;
+    }
+  }
+  
+  @media screen and (min-width: 1110px) {
+    #maindiv {
+      width: 100vw;
+    }
+  }
+  
+  @media screen and (min-width: 1300px) {
+    #maindiv {
+      width: 100vw;
+    }
+    /* .fishcardimage {
+      width: 225px;
+      height: 175px;
+  } */
+  }
+  
+  @media screen and (min-width: 1600px) {
+    #maindiv {
+      width: 50vw;
+      
+    }
+    /* .fishcardimage {
+      width: 250px;
+      height: 200px;
+  } */
+  }
+  
+  /* @media (max-width: 768px) {
+    #maindiv {
+      width: 100%; 
+    }
+  } */
+  
+
+  
+
+  
+ 
+  
+  
+  /*About and feedback*/ 
+  
+  #about {
+    white-space: wrap;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    text-align: left;
+    position: relative;
+    max-width: 100%;
+  }
+  
+  #about p {
+    margin: 0; 
+    white-space: wrap;
+    text-align: justify;
+    word-wrap: break-word;
+    width: auto;
+  }
+  
+  #about p span {
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 1.3rem; 
+  }
+  
+  h2 {
+    font-size: 1rem; 
+    margin-bottom: 2px;
+  }
+  
+
+  
+  
+
+
+/*******************************************************************/
+  /* For the example card*/
+
+  
+  /* .fish_card, .infocard {
+    flex: 0 0 calc(33.33% - 10px); 
+    margin: 5px; 
+    box-sizing: border-box;
+    border: 1px solid #010a14;
+    border-radius: 10px;
+    padding: 2vw;
+    background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+  background-attachment: fixed;
+  box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+  position: relative;
+  }  */
+  
+  /* .infocard {
+    background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+    box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+  } */
+  
+  
+  
+  /* .fishcardimage {
+  width: 25vw;
+  height: 20vw;
+  border-color: #05224f;
+  border-width: 1px; 
+  border-radius: 3px;
+  border-style: solid;
+  
+  } */
+
+ /* .infocardtext {
+    font-size: 0.9rem;
+    margin: 0; 
+  }
+  
+  .iconimage {
+  width: 15vw;
+  height: 13vh;
+  border-color: #05224f;
+  border-width: 1px; 
+  border-radius: 3px;
+  border-style: solid;
+  }
+  
+  
+  .title {
+    position: absolute;
+    font-weight: 666;
+    top: 0;
+    left: 50%;
+    transform: translateX(-40%);
+    white-space: nowrap;
+    font-size: 0.8rem; 
+  }
+  
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-40%);
+    white-space: nowrap;
+    font-size: 13px; 
+  }
+  
+  @media screen and (max-width: 1288px) {
+    .verybigsubtitle {
+      font-size: 67%;
+      transform: translateX(-40%);
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .bigsubtitle {
+      font-size: 70%;
+      transform: translateX(-40%);
+    }
+  
+    .verybigsubtitle {
+      font-size: 64%;
+    }
+  }
+  
+  @media screen and (max-width: 830px) {
+    
+  
+    .verybigsubtitle {
+      font-size: 60%;
+      transform: translateX(-38%);
+    }
+  }
+  
+  @media screen and (max-width: 812px) {
+    
+  
+    .bigsubtitle {
+      font-size: 65%;
+      transform: translateX(-38%);
+    }
+  } */
+  
+
+    
+  /* .fishsize {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    color: rgb(136, 105, 3); 
+  }
+  
+  .fishtemp {
+    position: absolute;
+    color: rgb(136, 105, 3); 
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-77%);
+    margin: 10px;
+  }
+  
+  .tanksize {
+    position: absolute;
+    color: rgb(136, 105, 3); 
+    bottom: 0;
+    left: 5%;
+    transform: translateX(-50%);
+    margin: 10px;
+  }
+  
+  .fishname {
+    margin-top: 0px;
+  } */
+
+
+  /* .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
+    display: none;
+    font-size: 0.7rem;
+  }
+  
+  
+  #div_hardiness:hover {
+    .hardipertile {
+      display: inline-block;
+    }
+  }
+  
+  #div_avail:hover {
+    .availpertile {
+      display: inline-block;
+    }
+  }
+  
+  #div_behavior:hover {
+    .behpertile {
+      display: inline-block;
+    }
+  }
+  
+  #div_agression:hover {
+    .agrespertile {
+      display: inline-block;
+    }
+  }
+  
+  
+  #div_breeding:hover  {
+    .breedpertile {
+      display: inline-block;
+    }
+  }
+  
+  #div_tank_size:hover {
+    #perliter{
+      display: inline-block;
+    }
+  }
+  
+  #div_temp:hover {
+    #pertemp{
+      display: inline-block;
+    }
+  } */
+
+
+  /* @keyframes glow { 
+    0% { border: 1px solid   #05224f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
+    10% { border:1px solid  #5c580b; box-shadow: 5px 5px 10px hsla(49, 85%, 33%, 0.904);width: 51px;height: 41px;}
+    20% { border: 1px solid #a7871f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 41px;}
+    30% { border: 1px solid #96701e; box-shadow: 5px 5px 10px hsla(49, 95%, 26%, 0.904);width: 51px;height: 41px;}
+    40% { border: 1px solid #915d22; box-shadow: 5px 5px 10px hsla(49, 85%, 26%, 0.904);width: 50px;height: 41px;}
+    50% { border: 1px solid #9c7c11;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904); width: 51px;height: 43px;}
+    60% { border: 1px solid #976328;box-shadow: 5px 5px 10px hsla(49, 66%, 33%, 0.904); width: 50px;height: 42px;}
+    70% { border: 1px solid #806429; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
+    80% { border: 1px solid  #a7871f;box-shadow: 5px 5px 10px hsla(49, 71%, 29%, 0.904);width: 50px;height: 41px;}
+    90% { border: 1px solid #5f4e16;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
+    100% { border: 1px solid #05224f;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
+  }
+  
+  
+  .reveal_card:hover .iconimage { 
+    animation: glow 7s infinite; 
+  } */
