@@ -47,6 +47,59 @@ body {
   width: fit-content;
 }  */
 
+/*fish card grid*/
+.column_result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+  align-items: center;
+} 
+
+/*Tiles*/ 
+
+.tiles, .infotile {
+  background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
+  border-radius: 10px;
+  padding: 2vw;
+  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+  border: 1px solid #0f1946; 
+  margin: 0.5vw 0 0 0 ; 
+  position: relative;
+}
+
+.infotile { 
+  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
+  white-space: wrap;
+  display: none;
+}
+
+.infotile p { 
+ margin: 0; 
+}
+
+
+.fish_card, .infocard {
+  flex: 0 0 calc(33.33% - 10px); 
+  margin: 5px; 
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 10px;
+  padding: 2vw;
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+position: relative; /*necessary for in card elements to allign as I want */ 
+  
+} 
+
+.infocard {
+  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+
 #more_options {
   display: grid;
 }
@@ -186,16 +239,7 @@ body {
   height: auto;
 }
 
-.column_result {
-    
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; 
-  gap: 1vw; 
-  justify-content: center;
-  align-items: center;
 
-} 
 
 .parameter {
  font-weight: 666;
@@ -256,47 +300,6 @@ display: none;
 }
 
 
-/*Tiles*/ 
-
-.tiles, .infotile {
-  background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
-  border-radius: 10px;
-  padding: 2vw;
-  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
-  border: 1px solid #0f1946; 
-  margin: 0.5vw 0 0 0 ; 
-  position: relative;
-}
-
-.infotile { 
-  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
-  white-space: wrap;
-  display: none;
-}
-
-.infotile p { 
- margin: 0; 
-}
-
-
-.fish_card, .infocard {
-  flex: 0 0 calc(33.33% - 10px); 
-  margin: 5px; 
-  box-sizing: border-box;
-  border: 1px solid #010a14;
-  border-radius: 10px;
-  padding: 2vw;
-  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
-background-attachment: fixed;
-box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-position: relative; /*necessary for in card elements to allign as I want */ 
-  
-} 
-
-.infocard {
-  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
-  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
-}
 
 
 
