@@ -57,6 +57,37 @@ body {
   align-items: center;
 } 
 
+/*fish card items*/
+.fishsize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  color: rgb(136, 105, 3); 
+}
+
+.fishtemp {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-77%);
+  margin: 10px;
+}
+
+.tanksize {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 5%;
+  transform: translateX(-50%);
+  margin: 10px;
+}
+
+.fishname {
+  margin-top: 0px;
+}
+
 /*Tiles*/ 
 
 .tiles, .infotile {
@@ -123,7 +154,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 35vw;
-    height: 22vh;
+    height: 17vh;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 3vw;
   }
 }
 
@@ -330,35 +364,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.fishsize {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 10px;
-  color: rgb(136, 105, 3); 
-}
 
-.fishtemp {
-  position: absolute;
-  color: rgb(136, 105, 3); 
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-77%);
-  margin: 10px;
-}
-
-.tanksize {
-  position: absolute;
-  color: rgb(136, 105, 3); 
-  bottom: 0;
-  left: 5%;
-  transform: translateX(-50%);
-  margin: 10px;
-}
-
-.fishname {
-  margin-top: 0px;
-}
 
 #cpanel1, #cpanel2 {
   position: relative; 
