@@ -348,10 +348,10 @@ function optionsToggle () {
   }
 }
 //////Showing info page 
-function explain () {
-  about.style.display = (about.style.display  === "flex") ? "none" : "flex"; 
-  about_button.innerHTML = (about.style.display  === "flex") ? abouton: aboutoff;
-}
+// function explain () {
+//   about.style.display = (about.style.display  === "flex") ? "none" : "flex"; 
+//   about_button.innerHTML = (about.style.display  === "flex") ? abouton: aboutoff;
+// }
 ///// Sorting functions 
 function compare_size(a, b) {
   return a.cm_max - b.cm_max;

@@ -147,18 +147,6 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
-    document.getElementById("dbcount").textContent = maincount; 
-    
-    let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
-    "schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
-
-    for (let fish of keylist) {
-      document.getElementById(fish + "$").textContent = eval(fish + "$$");  
-    }
-
-    for (let fish of keylist) {
-      document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
-    }
 
     allcount.textContent = fish_master.length;
    
@@ -268,34 +256,40 @@ tempmin.addEventListener("click", updatePerTemp);
     toggle_options.addEventListener("click", optionsToggle);
   
     cardswticher.addEventListener("click", flipCards); 
-    about_button.addEventListener("click", explain);
+    // about_button.addEventListener("click", explain);
     feedback_button.addEventListener("click", gotofeedback);
   
   
   
-  document.getElementById("x-about").addEventListener("click", explain);
+  // document.getElementById("x-about").addEventListener("click", explain);
   document.getElementById("x-feedback").addEventListener("click", gotofeedback);
   
   
-    let x_outs = document.querySelectorAll(".x-out");
-    x_outs.forEach(div => {
-      div.innerHTML = "x"; 
-      div.addEventListener("click", function() {
-        let parentDiv = div.parentNode;
-        let id = parentDiv.id;
-        parentDiv.style.display = "none";
-      })
-      explain();
-      gotofeedback(); 
+    // let x_outs = document.querySelectorAll(".x-out");
+    // x_outs.forEach(div => {
+    //   div.innerHTML = "x"; 
+    //   div.addEventListener("click", function() {
+    //     let parentDiv = div.parentNode;
+    //     let id = parentDiv.id;
+    //     parentDiv.style.display = "none";
+    //   })
+    //   explain();
+    //   gotofeedback(); 
       // initialImage ()
       // updateBackground();
-      // window.addEventListener('resize', updateBackground);
-    });
+    //   // window.addEventListener('resize', updateBackground);
+    // });
 
 
     ////Background changer 
     // imagechanger.addEventListener("click", imageChange);
   
+let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
+"schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
+    for (let fish of keylist) {
+      document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
+    }
+
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
 
