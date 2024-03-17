@@ -78,8 +78,8 @@
       <label for="tank_size" class = "parameter"> Aquarium size: </label>
       <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="tank_size">
       <span id = size>L</span> <span id = perliter></span><br>
-      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
-      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
+      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio" class ="capradiolabel"> Liter</label>
+      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio" class ="capradiolabel"> Gallon</label>
     </div> 
 
     <!-- Temperature --> 
@@ -89,12 +89,12 @@
       <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="tempmin" min="4" max="35" value = "25" /> 
       <span id = min_t> ℃ </span> <span id = pertemp></span>
       <br>
-      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
-      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
+      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc" class ="capradiolabel"> Celsius</label>
+      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf" class ="capradiolabel"> Farenheit</label> 
     </div> 
 
 <!-- Hardiness --> 
-  <div id = "div_hardiness" class = "tiles grid-item"> 
+  <!-- <div id = "div_hardiness" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
     <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label>
     <br>
@@ -109,7 +109,26 @@
     <br>  
     <input type="checkbox" id="difficult" name="hardi">
     <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
+  </div> -->
+
+  <div id="div_hardiness" class="dropdown">
+    <p> Keeping difficulty: </p>
+    <button onclick="toggleDropdown()" class="dropbtn">Selected: All</button>
+    <div id="dropdownContent" class="dropdown-content">
+      <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label><br>
+      <input type="checkbox" id="beginner" name="hardi"> 
+      <label for="beginner">Beginner</label> <span id="beginner$$$" class="hardipertile"></span><br>
+      <input type="checkbox" id="easy" name="hardi">
+      <label for="easy">Easy</label> <span id="easy$$$" class="hardipertile"></span><br>
+      <input type="checkbox" id="medium" name="hardi">
+      <label for="medium">Medium</label> <span id="medium$$$" class="hardipertile"></span><br>  
+      <input type="checkbox" id="difficult" name="hardi">
+      <label for="difficult">Difficult</label> <span id="difficult$$$" class="hardipertile"></span>
+    </div>
   </div>
+
+
+
  
 <!-- </div>  -->
 <!-- column div ends here -->
