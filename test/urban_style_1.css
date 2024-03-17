@@ -165,6 +165,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishsize, .fishtemp, .tanksize {
     font-size: 2.92vw;
   }
+  .capradiolabel {
+    font-size: 3vw;
+  }
 }
 
 
@@ -471,7 +474,7 @@ input[type="radio"] {
   color: black;
   padding: 1vh 1.5vh;
   text-decoration: none;
-  display: block;
+  display: inline-block;
 }
 
 .dropdown span:hover {background-color:  #86a5def8; }
@@ -588,7 +591,7 @@ h2 {
   margin-bottom: 2px;
 }
 
-#feedback {
+/* #feedback {
   display: none; 
   position: relative;
 }
@@ -602,9 +605,8 @@ h2 {
 }
 
 .x-out:hover {
-  /* color: blue; */
   font-size: 1.3rem;
-}
+} */
 
 
 #noresults {
@@ -676,12 +678,12 @@ h2 {
 
 
 .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
-  display: none;
+  /* display: none; */
   font-size: 0.7rem;
 }
 
 
-#div_hardiness:hover {
+/* #div_hardiness:hover {
   .hardipertile {
     display: inline-block;
   }
@@ -722,7 +724,7 @@ h2 {
   #pertemp{
     display: inline-block;
   }
-}
+} */
 
 
 #imagechanger {

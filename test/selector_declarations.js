@@ -290,6 +290,11 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
 
+// Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
+    document.getElementById("dropdownContent").addEventListener('click', function(event){
+      event.stopPropagation();
+    });
+
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
 
