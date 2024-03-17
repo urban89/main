@@ -163,10 +163,9 @@ position: relative; /*necessary for in card elements to allign as I want */
     height: 25vw;
   }
   .fishsize, .fishtemp, .tanksize {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 }
-
 
 
 @media screen and (min-width: 550px) {
@@ -254,23 +253,34 @@ position: relative; /*necessary for in card elements to allign as I want */
     /* font-size: 2vw; */
     margin: 0.25vw;
   }
-  /* .fishcardimage {
-    width: 225px;
-    height: 175px;
-} */
+  .fishcardimage {
+    width: 15vw;
+    height: 11vw;
+}
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1530px) {
   #maindiv {
     width: 60vw;
     margin-right: 20vw;
     margin-left: 20vw;
     
   }
-  /* .fishcardimage {
-    width: 250px;
-    height: 200px;
-} */
+
+  .column_result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .fishcardimage {
+    width: 13vw;
+    height: 9vw;
+}
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1vw;
+}
+
+.fishname {
+  font-size: 1vw;
+}
 }
 
 /* @media (max-width: 768px) {
