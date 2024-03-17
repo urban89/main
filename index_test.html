@@ -111,9 +111,10 @@
     <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
   </div> -->
 
-  <div id="div_hardiness" class="dropdown tiles">
-    <p> Keeping difficulty: </p>
-    <button onclick="toggleDropdown(event)" class="dropbtn">Selected: All</button>
+  <div id="div_hardiness" class="tiles">
+    <label for="dropdownButtonHardi">Keeping difficulty: </label>
+    <span class="dropdown">
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonHardi" class="dropbtn">Selected: All</button>
     <div id="dropdownContentHardi" class="dropdown-content">
       <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label><br>
       <input type="checkbox" id="beginner" name="hardi"> 
@@ -125,6 +126,7 @@
       <input type="checkbox" id="difficult" name="hardi">
       <label for="difficult">Difficult</label> <span id="difficult$$$" class="hardipertile"></span>
     </div>
+  </span>
   </div>
 
 
@@ -154,9 +156,10 @@
       <label for="veryrare">Very rare</label> <span id = "veryrare$$$" class = availpertile></span>
     </div> -->
 
-    <div id="div_avail" class="dropdown tiles">
-      <p> Purchase availability: </p>
-      <button onclick="toggleDropdown(event)" class="dropbtn">Selected: All</button>
+    <div id="div_avail" class="tiles">
+      <label for="dropdownButtonAvail"> Purchase availability: </label>
+      <span class="dropdown">
+      <button onclick="toggleDropdown(event)" id = "dropdownButtonAvail" class="dropbtn">Selected: All</button>
       <div id="dropdownContentHardiAvail" class="dropdown-content">
         <input type="checkbox" id="all_2" name="all_2"> <label for="all_2">select all</label><br>
         <input type="checkbox" id="verycommon" name="avail"> 
@@ -168,6 +171,7 @@
         <input type="checkbox" id="veryrare" name="avail">
         <label for="veryrare">Very rare</label> <span id="veryrare$$$" class="availpertile"></span>
       </div>
+      </span>
     </div>
   
     <!-- </div>  -->
@@ -191,9 +195,10 @@
     <input type="checkbox" id="solitary" name="social">
     <label for="solitary">Solitary</label> <span id = "solitary$$$" class = behpertile></span>
   </div>  -->
-  <div id="div_behavior" class="dropdown tiles">
-    <p> Social behavior: </p>
-    <button onclick="toggleDropdown(event)" class="dropbtn">Selected: All</button>
+  <div id="div_behavior" class="tiles">
+    <label for="dropdownButtonBehavior"> Social behavior: </label>
+    <span class="dropdown">
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonBehavior" class="dropbtn">Selected: All</button>
     <div id="dropdownContentBehavior" class="dropdown-content">
       <input type="checkbox" id="all_3" name="all_3"> <label for="all_3">select all</label><br>
       <input type="checkbox" id="schooling1" name="social"> 
@@ -203,6 +208,7 @@
       <input type="checkbox" id="solitary" name="social">
       <label for="solitary">Solitary</label> <span id="solitary$$$" class="behpertile"></span><br>  
     </div>
+    </span>
   </div>
 
 <!-- Agression level --> 
@@ -220,9 +226,10 @@
     <label for="aggressive">Agressive</label> <span id = "agressive$$$" class = agrespertile></span>
   </div> -->
 
-  <div id="div_agression" class="dropdown tiles">
-    <p> Aggression level: </p>
-    <button onclick="toggleDropdown(event)" class="dropbtn">Selected: All</button>
+  <div id="div_agression" class="tiles">
+    <label for="dropdownButtonAgression"> Aggression level: </label>
+    <span class="dropdown">
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonAgression" class="dropbtn">Selected: All</button>
     <div id="dropdownContentAgression" class="dropdown-content">
       <input type="checkbox" id="all_4" name="all_4"> <label for="all_4">select all</label><br>
       <input type="checkbox" id="peaceful1" name="agress"> 
@@ -232,6 +239,7 @@
       <input type="checkbox" id="aggressive" name="agress">
       <label for="aggressive">Aggressive</label> <span id="agressive$$$" class="agrespertile"></span><br>  
     </div>
+  </span>
   </div>
 
  <!-- Breeding difficulty --> 
@@ -252,9 +260,10 @@
      <label for="impossible">No record</label> <span id = "norecord$$$" class = breedpertile></span>
   </div> -->
     
-  <div id="div_breeding" class="dropdown tiles">
-    <p> Breeding difficulty: </p>
-    <button onclick="toggleDropdown(event)" class="dropbtn">Selected: All</button>
+  <div id="div_breeding" class="tiles">
+    <label for="dropdownButtonBreeding"> Breeding difficulty: </label>
+    <span class="dropdown">
+    <button onclick="toggleDropdown(event)" is = "dropdownButtonBreeding" class="dropbtn">Selected: All</button>
     <div id="dropdownContentBreeding" class="dropdown-content">
       <input type="checkbox" id="all_5" name="all_5"> <label for="all_5">select all</label><br>
       <input type="checkbox" id="b_easy" name="breed"> 
@@ -266,6 +275,7 @@
       <input type="checkbox" id="impossible" name="breed">
       <label for="impossible">No record</label> <span id="norecord$$$" class="breedpertile"></span><br>  
     </div>
+    </span>
   </div>
 
     </div> <!-- more options div --> 
