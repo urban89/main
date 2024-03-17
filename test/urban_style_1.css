@@ -91,7 +91,7 @@ body {
 
 .fishname {
   margin-top: 0px;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 
 /*Tiles*/ 
@@ -182,6 +182,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishsize, .fishtemp, .tanksize {
     font-size: 2vw;
   }
+
+  .fishname {
+    font-size: 2.5vw;
+  }
 }
 
 
@@ -194,6 +198,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishcardimage {
     width: 25vw;
     height: 20vw;
+  }
+  .fishname {
+    font-size: 2vw;
   }
 
 }
@@ -208,6 +215,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishsize, .fishtemp, .tanksize {
     font-size: 1.8vw;
     margin: 0.5vw;
+  }
+  .fishname {
+    font-size: 1.7vw;
   }
 }
 
