@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="urban_style_1.css">
+    <link rel="stylesheet" href="test/urban_style_1.css">
 
     <meta name="description" content="Find aquarium fish with this search tool. Filter by tank size, temperature, difficulty. Browse our database to find new species. All available fish in one place">
 
@@ -24,7 +24,7 @@
             <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
             <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
             <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-            <link rel="manifest" href="/manifest.json">
+            <link rel="manifest" href="test/manifest.json">
             <meta name="msapplication-TileColor" content="#ffffff">
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
             <meta name="theme-color" content="#ffffff">
@@ -34,74 +34,18 @@
 
 <body>
     <div id = "maindiv"> 
+ <div class = "grid-container-cpanel">
 
-      <div id="about" class = "tiles">  <!-- about -->
-        <span id = "x-about" class = "x-out"> </span>
-        <h1> Welcome to SelectYourFish.com </h1>
-        <p> Find the perfect fish for your home aquarium. 
-         This page provides an interactive way to search for freshwater aquarium fish based on their requirements. 
-          Remember, this page gives general advice. Always research each fish species before buying.
-          The percentage value next to each category
-          reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
-         <br>
-         To browse all fish in database, go to <a href = "browse.html">Database.</a> 
-        </p>
-         
-        <h2>Aquarium size</h2>
-        <p> 
-          This is the smallest tank size recommended for a planted aquarium without additional fish. 
-          It assumes that fish which prefer to be in groups (schooling or social species) need enough space.
-          It's important to look into the specific needs of different species before adding them to your aquarium.
-          
-          </p>
-        <h2>Water temperature</h2>
-            <p> 
-              Maintaining a consistent water temperature is crucial for the health of your aquarium inhabitants.
-              </p>  
-
-        <h2>Keeping difficulty</h2>
-         <p><span>Beginner <span id = "beginner$"></span>: </span>Ideal for those new to aquarium keeping. </p>
-          <p> <span>Easy <span id = "easy$"></span>: </span>Suitable for hobbyists with some experience. </p>
-           <p><span>Medium <span id = "medium$"></span>: </span> Requires knowledge and some diligence in maintaining specific environmental conditions.</p>
-            <p><span>Difficult <span id = "difficult$"></span>: </span>Demands advanced knowledge and dedicated care to sustain the appropriate environment.</p>
-
-        <h2>Purchase availability</h2>
-         <p><span>Very common  <span id = "verycommon$"></span>: </span>Widely available at local pet stores.</p>
-          <p><span>Common  <span id = "common$"></span>: </span>Generally available at local pet stores. </p>
-           <p><span>Rare  <span id = "rare$"></span>: </span>Less likely to be found at local pet stores.</p>
-            <p><span>Very rare  <span id = "veryrare$"></span>: </span>Usually requires special sourcing. </p>
-
-        <h2>Social behavior</h2>
-        <p><span>Schooling  <span id = "schooling$"></span>: </span>Must be kept in groups of six or more of their kind. </p>
-          <p><span>Social  <span id = "social$"></span>: </span>It's much better for their health and behavior to live in groups. </p>
-           <p><span>Solitary  <span id = "solitary$"></span>: </span>Can or should be kept alone. </p>
-
-        <h2>Agression level</h2>
-        <p><span>Peaceful  <span id = "peaceful$"></span>: </span>Mostly calm but may have some minor squabbles. </p>
-          <p><span>Mostly peaceful  <span id = "mpeaceful$"></span>: </span>Might fight over space or mates, or eat much smaller fish.</p>
-           <p><span>Agressive  <span id = "agressive$"></span>: </span> Can be very territorial. Needs a lot of room to live with others peacefully.</p>
-        
-        <h2>Breeding difficulty</h2>
-        <p><span>Easy  <span id = "beasy$"></span>: </span>Often breeds without needing special water conditions.</p>
-          <p><span>Medium  <span id = "bmedium$"></span>: </span>Might breed with some extra care. </p>
-           <p><span>Hard  <span id = "bhard$"></span>: </span> Needs specific steps to breed successfully. </p>
-            <p><span>No record  <span id = "norecord$"></span>: </span>No known cases of breeding by fishkeepers. </p>
-
-            <h2>Fish cards</h2>
-            <p>You will see your search results below. Click the fish cards to see more info about each fish</p>
-
-       </div> <!-- about ends -->
-
-       <div id = "feedback" class = "tiles"> <!-- Feedback -->
+       <!-- <div id = "feedback" class = "grid-item tiles"> 
         <span id = "x-feedback" class = "x-out"> </span>
-        <div class="google-form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div id = "iframed" class="google-form-wrapper">
+  
       </div>
-        </div>
+        </div> -->
 
       <!-- Control panel -->
  
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
+<div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -110,7 +54,7 @@
     
     </Select>
     &nbsp;&nbsp;&nbsp;
-        <a href = "browse.html" class = "dropbtn">Database</a> 
+        <a href = "browse_test.html" class = "dropbtn">Database</a> 
     &nbsp;&nbsp;&nbsp;
  
     <span class = "dropdown"> 
@@ -119,31 +63,40 @@
         <span id = "cmtoinch">Show fish size in inch</span>
         <span id = "toggle_options">Show fewer seach options</span>
         <span id = "cardswticher">Show all info cards</span>
-        <span id = "imagechanger">Change background</span>
-        <span id = "feedback_button">Send feedback</span>
-        <span id = "about_button">About this page</span>
       </div>
     </span>
     &nbsp;&nbsp;&nbsp;
   </div> <!-- Cpanel ends here -->
+</div> <!-- container for testing reasons now -->
 
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
-<form action="" id = "main_form">
+<div id = "main_form" class = "grid-container_main">
 <!-- Tank size --> 
-  <div class = "column"> 
-    <div id = "div_tank_size" class = "tiles"> 
-      <label for="" class = "parameter"> Aquarium size: </label>
-      <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="">
+  <!-- <div class = "column">  -->
+    <div id = "div_tank_size" class = "tiles grid-item"> 
+      <label for="tank_size" class = "parameter"> Aquarium size: </label>
+      <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="tank_size">
       <span id = size>L</span> <span id = perliter></span><br>
-      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
-      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
+      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio" class ="capradiolabel"> Liter</label>
+      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio" class ="capradiolabel"> Gallon</label>
+    </div> 
+
+    <!-- Temperature --> 
+  <!-- <div class = "column"> -->
+    <div id = "div_temp" class = "tiles grid-item"> 
+      <label for="tempmin" class = "parameter">Water temperature: </label> 
+      <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="tempmin" min="4" max="35" value = "25" /> 
+      <span id = min_t> ℃ </span> <span id = pertemp></span>
+      <br>
+      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc" class ="capradiolabel"> Celsius</label>
+      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf" class ="capradiolabel"> Farenheit</label> 
     </div> 
 
 <!-- Hardiness --> 
-  <div id = "div_hardiness" class = "tiles"> 
+  <!-- <div id = "div_hardiness" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
-    <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
+    <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label>
     <br>
     <input type="checkbox" id="beginner" name="hardi"> 
     <label for="beginner">Beginner </label> <span id = "beginner$$$" class = hardipertile></span>
@@ -156,26 +109,37 @@
     <br>  
     <input type="checkbox" id="difficult" name="hardi">
     <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
+  </div> -->
+
+  <div id="div_hardiness" class="dropdown tiles">
+    <label for="dropdownButtonHardi">Keeping difficulty: </label>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonHardi" class="dropbtn">Selected: All</button>
+    <div id="dropdownContentHardi" class="dropdown-content">
+      <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label><br>
+      <input type="checkbox" id="beginner" name="hardi"> 
+      <label for="beginner">Beginner</label> <span id="beginner$$$" class="hardipertile"></span><br>
+      <input type="checkbox" id="easy" name="hardi">
+      <label for="easy">Easy</label> <span id="easy$$$" class="hardipertile"></span><br>
+      <input type="checkbox" id="medium" name="hardi">
+      <label for="medium">Medium</label> <span id="medium$$$" class="hardipertile"></span><br>  
+      <input type="checkbox" id="difficult" name="hardi">
+      <label for="difficult">Difficult</label> <span id="difficult$$$" class="hardipertile"></span>
+    </div>
   </div>
+
+
+
  
-</div> <!-- column div ends here -->
+<!-- </div>  -->
+<!-- column div ends here -->
 
 
-<!-- Temperature --> 
-  <div class = "column">
-    <div id = "div_temp" class = "tiles"> 
-      <label for="" class = "parameter">Water temperature: </label> 
-      <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="" min="4" max="35" value = "25" /> 
-      <span id = min_t> ℃ </span> <span id = pertemp></span>
-      <br>
-      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
-      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
-    </div> 
+
  
 <!-- Store availability --> 
-    <div id = "div_avail" class = "tiles"> 
+    <!-- <div id = "div_avail" class = "tiles grid-item"> 
       <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
-      <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
+      <input type="checkbox" id="all_2" name="all_2"> <label for="all_2">select all</label>
       <br>
       <input type="checkbox" id="verycommon" name="avail">
       <label for="verycommon">Very common</label> <span id = "verycommon$$$" class = availpertile></span>
@@ -188,18 +152,35 @@
       <br> 
       <input type="checkbox" id="veryrare" name="avail">
       <label for="veryrare">Very rare</label> <span id = "veryrare$$$" class = availpertile></span>
+    </div> -->
+
+    <div id="div_avail" class="dropdown tiles">
+      <label for="dropdownButtonAvail"> Purchase availability: </label>
+      <button onclick="toggleDropdown(event)" id = "dropdownButtonAvail" class="dropbtn">Selected: All</button>
+      <div id="dropdownContentHardiAvail" class="dropdown-content">
+        <input type="checkbox" id="all_2" name="all_2"> <label for="all_2">select all</label><br>
+        <input type="checkbox" id="verycommon" name="avail"> 
+        <label for="verycommon">Very common</label> <span id="verycommon$$$" class="availpertile"></span><br>
+        <input type="checkbox" id="common" name="avail">
+        <label for="common">Common</label> <span id="common$$$" class="availpertile"></span><br>
+        <input type="checkbox" id="rare" name="avail">
+        <label for="rare">Rare</label> <span id="rare$$$" class="availpertile"></span><br>  
+        <input type="checkbox" id="veryrare" name="avail">
+        <label for="veryrare">Very rare</label> <span id="veryrare$$$" class="availpertile"></span>
+      </div>
     </div>
   
-    </div> <!-- second column div ends here -->
+    <!-- </div>  -->
+    <!-- second column div ends here -->
 
-</form>
+  </div> <!-- main search categoires ENDS-->
         
-<div id = "more_options" class = "grid-container" style= "display: grid"> 
+<div id = "more_options" class = "grid-container"> 
 
   <!-- Behavior --> 
-  <div id= "div_behavior" class = "tiles grid-item"> 
+  <!-- <div id= "div_behavior" class = "tiles grid-item"> 
     <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
-    <input type="checkbox" id="all_3" name=""> <label for="all_3">select all</label>
+    <input type="checkbox" id="all_3" name="all_3"> <label for="all_3">select all</label>
     <br>
     <input type="checkbox" id="schooling1" name="social">
     <label for="schooling1">Schooling</label> <span id = "schooling$$$" class = behpertile></span>
@@ -209,13 +190,26 @@
     <br>
     <input type="checkbox" id="solitary" name="social">
     <label for="solitary">Solitary</label> <span id = "solitary$$$" class = behpertile></span>
-  </div> 
+  </div>  -->
+  <div id="div_behavior" class="dropdown tiles">
+    <label for="dropdownButtonBehavior"> Social behavior: </label>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonBehavior" class="dropbtn">Selected: All</button>
+    <div id="dropdownContentBehavior" class="dropdown-content">
+      <input type="checkbox" id="all_3" name="all_3"> <label for="all_3">select all</label><br>
+      <input type="checkbox" id="schooling1" name="social"> 
+      <label for="schooling1">Schooling</label> <span id="schooling$$$" class="behpertile"></span><br>
+      <input type="checkbox" id="schooling2" name="social">
+      <label for="schooling2">Social</label> <span id="social$$$" class="behpertile"></span><br>
+      <input type="checkbox" id="solitary" name="social">
+      <label for="solitary">Solitary</label> <span id="solitary$$$" class="behpertile"></span><br>  
+    </div>
+  </div>
 
 <!-- Agression level --> 
 
-  <div id = "div_agression" class = "tiles grid-item"> 
+  <!-- <div id = "div_agression" class = "tiles grid-item"> 
     <label for="" class = "parameter" >Agression level</label><br>
-    <input type="checkbox" id="all_4" name=""> <label for="all_4">select all</label> <br>
+    <input type="checkbox" id="all_4" name="all_4"> <label for="all_4">select all</label> <br>
     <input type="checkbox" id="peaceful1" name="agress">
     <label for="peaceful1">Peaceful</label> <span id = "peaceful$$$" class = agrespertile></span>
     <br>
@@ -224,13 +218,27 @@
     <br>
     <input type="checkbox" id="aggressive" name="agress">
     <label for="aggressive">Agressive</label> <span id = "agressive$$$" class = agrespertile></span>
+  </div> -->
+
+  <div id="div_agression" class="dropdown tiles">
+    <label for="dropdownButtonAgression"> Aggression level: </label>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonAgression" class="dropbtn">Selected: All</button>
+    <div id="dropdownContentAgression" class="dropdown-content">
+      <input type="checkbox" id="all_4" name="all_4"> <label for="all_4">select all</label><br>
+      <input type="checkbox" id="peaceful1" name="agress"> 
+      <label for="peaceful1">Peaceful</label> <span id="peaceful$$$" class="agrespertile"></span><br>
+      <input type="checkbox" id="peaceful2" name="agress">
+      <label for="peaceful2">Mostly peaceful</label> <span id="mpeaceful$$$" class="agrespertile"></span><br>
+      <input type="checkbox" id="aggressive" name="agress">
+      <label for="aggressive">Aggressive</label> <span id="agressive$$$" class="agrespertile"></span><br>  
+    </div>
   </div>
 
  <!-- Breeding difficulty --> 
 
-  <div id = "div_breeding" class = "tiles grid-item"> 
+  <!-- <div id = "div_breeding" class = "tiles grid-item"> 
      <label for="" class = "parameter" >Breeding difficulty</label><br>
-     <input type="checkbox" id="all_5" name=""> <label for="all_5">select all</label> <br>
+     <input type="checkbox" id="all_5" name="all_5"> <label for="all_5">select all</label> <br>
      <input type="checkbox" id="b_easy" name="breed">
      <label for="b_easy">Easy</label> <span id = "beasy$$$" class = breedpertile></span>
      <br>
@@ -242,19 +250,35 @@
      <br> 
      <input type="checkbox" id="impossible" name="breed">
      <label for="impossible">No record</label> <span id = "norecord$$$" class = breedpertile></span>
-  </div>
+  </div> -->
     
+  <div id="div_breeding" class="dropdown tiles">
+    <label for="dropdownButtonBreeding"> Breeding difficulty: </label>
+    <button onclick="toggleDropdown(event)" is = "dropdownButtonBreeding" class="dropbtn">Selected: All</button>
+    <div id="dropdownContentBreeding" class="dropdown-content">
+      <input type="checkbox" id="all_5" name="all_5"> <label for="all_5">select all</label><br>
+      <input type="checkbox" id="b_easy" name="breed"> 
+      <label for="b_easy">Easy</label> <span id="beasy$$$" class="breedpertile"></span><br>
+      <input type="checkbox" id="b_medium" name="breed">
+      <label for="b_medium">Medium</label> <span id="bmedium$$$" class="breedpertile"></span><br>
+      <input type="checkbox" id="b_hard" name="breed">
+      <label for="b_hard">Hard</label> <span id="bhard$$$" class="breedpertile"></span><br>  
+      <input type="checkbox" id="impossible" name="breed">
+      <label for="impossible">No record</label> <span id="norecord$$$" class="breedpertile"></span><br>  
+    </div>
+  </div>
+
     </div> <!-- more options div --> 
   </div> <!-- search tiles div ends here -->
 
-    </div> <!-- main div --> 
+ 
 
     
     <div id = "result"> 
       <!-- here the fish cards are generated dynamically -->
     </div> 
 
-    <div id = alerts> 
+    <div id = alerts class = "grid-container-cpanel"> 
   <span id = "tempalert" class = "alert"> </span>
   <br>
   <span id = "capalert" class = "alert"> Aquarium size too small.</span>
@@ -262,15 +286,25 @@
   <span id = "checkalert" class = "alert"> Some search parameters were not selected. </span>
   <br>
   <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
+</div> <!-- last container div with alerts -->
+    
 
-    </div>
+    <div class = "grid-container-cpanel">
+    <footer class = "grid-item">
+      <span class = "dropdown"> 
+        <span id = "about_button2" class="dropbtn"> <a href = "about.html">About</a></span>
+      
+      </span>
+    </footer>
+  </div> <!-- footer containting div -->
 
+  </div> <!-- main div --> 
 
-<script type="text/javascript" src="fish_array.js"></script>
-<script type="text/javascript" src="constants.js"></script>
-<script type="text/javascript" src="selector_declarations.js"></script>
-<script type="text/javascript" src="fish_functions_1.js"></script>
-<script type="text/javascript" src="fish1.js"></script>
+<script type="text/javascript" src="test/fish_array.js"></script>
+<script type="text/javascript" src="test/constants.js"></script>
+<script type="text/javascript" src="test/selector_declarations.js"></script>
+<script type="text/javascript" src="test/fish_functions_1.js"></script>
+<script type="text/javascript" src="test/fish1.js"></script>
 
     
 </body>
