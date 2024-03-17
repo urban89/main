@@ -47,6 +47,14 @@ body {
   height: fit-content; 
   width: fit-content;
 }  */
+.grid-container_main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  /* justify-content: center; */
+  align-items: center;
+}
 
 /*fish card grid*/
 .column_result {
@@ -236,6 +244,18 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishname {
     font-size: 1.5vw;
   }
+
+  #div_tank_size:hover {
+    #perliter{
+      display: inline-block;
+    }
+  }
+  
+  #div_temp:hover {
+    #pertemp{
+      display: inline-block;
+    }
+  }
 }
 
 @media screen and (min-width: 1110px) {
@@ -243,6 +263,9 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 70vw;
     margin-right: 15vw;
     margin-left: 15vw;
+  }
+  .grid-container_main {
+    gap: 0.5vw; 
   }
 }
 
@@ -284,6 +307,10 @@ position: relative; /*necessary for in card elements to allign as I want */
 .fishname {
   font-size: 1vw;
 }
+
+.grid-container_main {
+  grid-template-columns: repeat(2, 1fr); /*apply the same for bigger vp size will test it on big screen at home*/
+}
 }
 
 /* @media (max-width: 768px) {
@@ -301,25 +328,17 @@ position: relative; /*necessary for in card elements to allign as I want */
   align-items: center;
 }
 
-.grid-container_main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto; 
-  gap: 1vw; 
-  /* justify-content: center; */
-  align-items: center;
-}
+
 
 /* more options div gird */ 
-
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto; 
   gap: 1vw; 
   justify-content: center;
   align-items: center;
-}
+} */
 
 .grid-item {
   justify-content: center;
@@ -458,7 +477,7 @@ input[type="radio"] {
   display: none;
   position: absolute;
   background:  #9dd4e0ec;
-  min-width: 0.4vw;
+  /* min-width: 5vw; */
   overflow: auto;
   box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
   z-index: 1;
@@ -678,7 +697,7 @@ h2 {
 
 
 .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
-  /* display: none; */
+  display: none;
   font-size: 0.7rem;
 }
 
@@ -712,19 +731,9 @@ h2 {
   .breedpertile {
     display: inline-block;
   }
-}
-
-#div_tank_size:hover {
-  #perliter{
-    display: inline-block;
-  }
-}
-
-#div_temp:hover {
-  #pertemp{
-    display: inline-block;
-  }
 } */
+
+
 
 
 #imagechanger {
