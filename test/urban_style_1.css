@@ -31,6 +31,7 @@ body {
 }  */
   .search_tiles {
     font-size: 1rem;
+   
   }
 
 /* #maindiv {
@@ -54,7 +55,7 @@ body {
   grid-template-rows: auto; 
   gap: 1vw; 
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 } 
 
 /*fish card items*/
@@ -62,7 +63,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 10px;
+  margin: 1vw;
   color: rgb(136, 105, 3); 
 }
 
@@ -72,7 +73,7 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-77%);
-  margin: 10px;
+  margin: 1vw;
 }
 
 .tanksize {
@@ -81,7 +82,11 @@ body {
   bottom: 0;
   left: 5%;
   transform: translateX(-50%);
-  margin: 10px;
+  margin: 1vw;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 2.1vw;
 }
 
 .fishname {
@@ -154,7 +159,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 35vw;
-    height: 16vh;
+    height: 25vw;
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 3vw;
@@ -171,7 +176,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 20vw;
-    height: 15vh;
+    height: 15vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 2vw;
   }
 }
 
@@ -184,7 +192,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 25vw;
-    height: 20vh;
+    height: 20vw;
   }
 
 }
@@ -259,7 +267,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto; 
   gap: 1vw; 
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
