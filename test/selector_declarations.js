@@ -291,9 +291,12 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
     }
 
 // Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
-    document.getElementById("dropdownContent").addEventListener('click', function(event){
-      event.stopPropagation();
-    });
+document.querySelectorAll('.dropdown-content').forEach(function(element) {
+  element.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+});
+
 
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
