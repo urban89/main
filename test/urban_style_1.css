@@ -144,6 +144,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
 }
 
+.infocardtext {
+  font-size: 0.9rem;
+  margin: 0; 
+}
 
 #more_options {
   display: grid;
@@ -156,8 +160,16 @@ position: relative; /*necessary for in card elements to allign as I want */
   border-width: 1px; 
   border-radius: 3px;
   border-style: solid;
-  
   }
+
+  .iconimage {
+    width: 5vw;
+    height: 3.75vw;
+    border-color: #05224f;
+    border-width: 1px; 
+    border-radius: 3px;
+    border-style: solid;
+    }
 
 /* Making it a little bit responsive here  */ 
 
@@ -170,7 +182,11 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 35vw;
     height: 25vw;
   }
-  .fishsize, .fishtemp, .tanksize {
+  .iconimage  {
+    width: 10vw;
+    height: 7.5vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
     font-size: 2.92vw;
   }
   .capradiolabel {
@@ -467,12 +483,14 @@ input[type="radio"] {
   font-size: 1.05rem;
 }
 
+/* paremeter dropdown */ 
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* The dropdown menu itself */ 
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -500,24 +518,71 @@ input[type="radio"] {
 
 .show {display: block;}
 
+/* Cpanel dropdown */ 
+.dropbtn-cpanel {
+  text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
+  background:#85c9c9ec;
+  /* background-color: #72a2c2; */
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  font-size: 1rem;
+  border: solid;
+  cursor: pointer;
+  border-left: 0.2vw solid #000;  
+  border-right: 0.2vw solid #000; 
+  border-top: none;           
+  border-bottom: none;
+  padding-top: 1vh; 
+  padding-bottom: 1vh; 
+  border-radius: 10px;
+}
+
+.dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
+  background-color:  #86a5def8; 
+  font-size: 1.05rem;
+}
+
+/* paremeter dropdown */ 
+
+/* .dropdown {
+  position: relative;
+  display: inline-block;
+} */
+
+
+.dropdown-cpcontent {
+  display: none;
+  position: absolute;
+  background:  #9dd4e0ec;
+  /* min-width: 5vw; */
+  overflow: auto;
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
+  z-index: 1;
+  border-radius: 0 10px 10px 10px;
+  white-space: nowrap; 
+}
+
+.dropdown-cpcontent:hover, .dropdown-content:focus {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+}
+
+.dropdown-cpcontent span {
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: block;
+}
+
+/* .dropdown span:hover {background-color:  #86a5def8; } */
+/******************************************/
 
 .reveal_card {
   display: none;
 }
 
-.infocardtext {
-  font-size: 0.9rem;
-  margin: 0; 
-}
 
-.iconimage {
-width: 15vw;
-height: 13vh;
-border-color: #05224f;
-border-width: 1px; 
-border-radius: 3px;
-border-style: solid;
-}
+
+
 
 
 .title {
@@ -677,17 +742,17 @@ h2 {
 
 
 @keyframes glow { 
-  0% { border: 1px solid   #05224f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
-  10% { border:1px solid  #5c580b; box-shadow: 5px 5px 10px hsla(49, 85%, 33%, 0.904);width: 51px;height: 41px;}
-  20% { border: 1px solid #a7871f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 41px;}
-  30% { border: 1px solid #96701e; box-shadow: 5px 5px 10px hsla(49, 95%, 26%, 0.904);width: 51px;height: 41px;}
-  40% { border: 1px solid #915d22; box-shadow: 5px 5px 10px hsla(49, 85%, 26%, 0.904);width: 50px;height: 41px;}
-  50% { border: 1px solid #9c7c11;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904); width: 51px;height: 43px;}
-  60% { border: 1px solid #976328;box-shadow: 5px 5px 10px hsla(49, 66%, 33%, 0.904); width: 50px;height: 42px;}
-  70% { border: 1px solid #806429; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
-  80% { border: 1px solid  #a7871f;box-shadow: 5px 5px 10px hsla(49, 71%, 29%, 0.904);width: 50px;height: 41px;}
-  90% { border: 1px solid #5f4e16;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
-  100% { border: 1px solid #05224f;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
+  0% { border: 1px solid   #05224f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  10% { border:1px solid  #5c580b; box-shadow: 5px 5px 10px hsla(49, 85%, 33%, 0.904);}
+  20% { border: 1px solid #a7871f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  30% { border: 1px solid #96701e; box-shadow: 5px 5px 10px hsla(49, 95%, 26%, 0.904);}
+  40% { border: 1px solid #915d22; box-shadow: 5px 5px 10px hsla(49, 85%, 26%, 0.904);}
+  50% { border: 1px solid #9c7c11;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  60% { border: 1px solid #976328;box-shadow: 5px 5px 10px hsla(49, 66%, 33%, 0.904); }
+  70% { border: 1px solid #806429; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  80% { border: 1px solid  #a7871f;box-shadow: 5px 5px 10px hsla(49, 71%, 29%, 0.904);}
+  90% { border: 1px solid #5f4e16;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  100% { border: 1px solid #05224f;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
 }
 
 
