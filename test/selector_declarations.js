@@ -356,11 +356,11 @@ function perCounter (property, code) {
 function perCapCount () {
   let tank_size = document.getElementById('tank_size').value;  
   if (console_capacity === gallon) {
-    cap_modifier = 0.264172;
+    cap_modifier = 3.78541253426;
   }
   let bigger = [];
   for (let fish of fish_master) {
-    if ((parseInt(fish.tank_size_liter)) * cap_modifier <= tank_size) {
+    if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
       bigger.push(fish.fish_id);
     }
   }
