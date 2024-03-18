@@ -37,6 +37,11 @@ body {
  #main_form {
   margin-bottom: 1vw;
  }
+
+ #cpanel span, #cpanel a {
+padding-top: 2vw;
+padding-bottom: 2vw;
+}
   
 .grid-container_main {
   display: grid;
@@ -71,7 +76,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 50%;
-  transform: translateX(-77%);
+  transform: translateX(-70%);
   margin: 1vw;
 }
 
@@ -80,7 +85,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 5%;
-  transform: translateX(-50%);
+  transform: translateX(-45%);
   margin: 1vw;
 }
 
@@ -219,6 +224,11 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishname {
     font-size: 2vw;
   }
+
+  #cpanel span, #cpanel a {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    }
 
 }
 
@@ -450,10 +460,8 @@ input[type="radio"] {
 }
 
 
-
 #cpanel1, #cpanel2 {
   position: relative; 
-  background-color: red;
 }
 
 
@@ -474,12 +482,13 @@ input[type="radio"] {
   border-bottom: none; */
   padding-top: 0.3vw; 
   padding-bottom: 0.3vw; 
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
   background-color:  #86a5def8; 
   font-size: 0.82rem;
+  border-radius: 5px;
 }
 
 /* paremeter dropdown */ 
