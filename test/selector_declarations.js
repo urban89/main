@@ -72,11 +72,11 @@
   let b_hard = document.getElementById("b_hard"); 
   let impossible = document.getElementById("impossible");
 
-  let all_1 = document.getElementById("all_1");
-  let all_2 = document.getElementById("all_2");
-  let all_3 = document.getElementById("all_3");
-  let all_4 = document.getElementById("all_4");
-  let all_5 = document.getElementById("all_5");
+  // let all_1 = document.getElementById("all_1");
+  // let all_2 = document.getElementById("all_2");
+  // let all_3 = document.getElementById("all_3");
+  // let all_4 = document.getElementById("all_4");
+  // let all_5 = document.getElementById("all_5");
 
   let sort_select = document.getElementById("sort");
   let sum = document.getElementById("sum");
@@ -173,17 +173,17 @@ tempmin.addEventListener("click", updatePerTemp);
       convert_fc.addEventListener("change", ftoc);
       convert_cf.addEventListener("change", ctof);
   
-      all_1.addEventListener("change",function () {selectall(hardi_chbx, all_1);});
-      all_2.addEventListener("change",function () {selectall(avail_chbx, all_2);});
-      all_3.addEventListener("change",function () {selectall(social_chbx, all_3);});
-      all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
-      all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
+      // all_1.addEventListener("change",function () {selectall(hardi_chbx, all_1);});
+      // all_2.addEventListener("change",function () {selectall(avail_chbx, all_2);});
+      // all_3.addEventListener("change",function () {selectall(social_chbx, all_3);});
+      // all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
+      // all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
   
-      listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
-      listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
-      listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
-      listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
-      listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
+      // listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
+      // listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
+      // listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
+      // listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
+      // listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
   
       // settings.addEventListener("click", settingsShow);   // Settings button 
       
@@ -311,33 +311,33 @@ document.querySelectorAll('.dropdown-content').forEach(function(element) {
 
   }
 
-  function uncheckBox(arr, all_box) {
-    let checker = true; 
-    for (box of arr) {
-      if (!box.checked) {
-        all_box.checked = false; 
-        checker = false; 
-      }
-    }
-    if (checker) {
-      all_box.checked = true;
-    }
-  }
+  // function uncheckBox(arr, all_box) {
+  //   let checker = true; 
+  //   for (box of arr) {
+  //     if (!box.checked) {
+  //       all_box.checked = false; 
+  //       checker = false; 
+  //     }
+  //   }
+  //   if (checker) {
+  //     all_box.checked = true;
+  //   }
+  // }
 
 
       ///// Select all / deselect all function 
-      function selectall (group, all) {
-        if (all.checked == true) {
-          group.forEach(function(box) {
-            box.checked = true;
-          });
-        } 
-        else {
-          group.forEach(function(box) {
-            box.checked = false;
-          });
-        }
-      }
+      // function selectall (group, all) {
+      //   if (all.checked == true) {
+      //     group.forEach(function(box) {
+      //       box.checked = true;
+      //     });
+      //   } 
+      //   else {
+      //     group.forEach(function(box) {
+      //       box.checked = false;
+      //     });
+      //   }
+      // }
 
 
 ///Calculates the precentage value of each category compared to total

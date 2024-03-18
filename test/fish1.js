@@ -330,12 +330,12 @@ function optionsToggle () {
   toggle_options.innerText = options_option; 
 //Select all checkboxes in more options tiles in more options tiles are hidden
   if (more_options.style.display === "none") {
-    all_3.checked = true; 
-    selectall(social_chbx, all_3);
-    all_4.checked = true; 
-    selectall(agress_chbx, all_4);
-    all_5.checked = true; 
-    selectall(breed_chbx, all_5);
+    // all_3.checked = true; 
+    // selectall(social_chbx, all_3);
+    // all_4.checked = true; 
+    // selectall(agress_chbx, all_4);
+    // all_5.checked = true; 
+    // selectall(breed_chbx, all_5);
 
     div_behavior.classList.remove('notselected');
     div_agression.classList.remove('notselected');
