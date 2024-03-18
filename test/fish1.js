@@ -217,7 +217,7 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
 
     // Check data before search and display alert if needed 
   function preCheckTemperature(temp) {
-    var temp = document.getElementById('tempmin').value; 
+    var temp = parseFloat(document.getElementById('tempmin').value); 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       tempalert.innerHTML = "Temperature should not be lower than 4℃ or higher than 35℃";
             div_temp.classList.remove('tiles');
@@ -247,7 +247,7 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
   }
   //Checking tank size before submission (shouldn't be too small)
   function preCheckTank() {
-    var tank = document.getElementById('tank_size').value;  
+    var tank = parseFloat(document.getElementById('tank_size').value);  
       if ((tank < 20) && (console_capacity === liter)) {
         div_tank_size.classList.remove('tiles');
         div_tank_size.classList.add('notselected')
@@ -264,7 +264,7 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
         capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       }
-      if (((tank >= 20) && (console_capacity === liter)) || ((tank_size >= 5.3) && (console_capacity === gallon))) {
+      if (((tank >= 20) && (console_capacity === liter)) || ((tank >= 5.3) && (console_capacity === gallon))) {
         div_tank_size.classList.add('tiles');
         div_tank_size.classList.remove('notselected')
         tank_size.classList.add('numberbox');
