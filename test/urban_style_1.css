@@ -202,8 +202,8 @@ position: relative; /*necessary for in card elements to allign as I want */
     margin-left: 2vw;
   }
   .fishcardimage {
-    width: 20vw;
-    height: 15vw;
+    width: 25vw;
+    height: 18.75vw;
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 2vw;
@@ -223,7 +223,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 25vw;
-    height: 20vw;
+    height: 18.75vw;
   }
   .fishname {
     font-size: 2vw;
@@ -237,6 +237,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 80vw;
     margin-right: 10vw;
     margin-left: 10vw;
+  }
+  .fishcardimage {
+    width: 22.5vw;
+    height: 16.875vw;
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 1.8vw;
@@ -252,6 +256,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 75vw;
     margin-right: 12vw;
     margin-left: 12vw;
+  }
+  .fishcardimage {
+    width: 21vw;
+    height: 15.75vw;
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 1.5vw;
@@ -280,6 +288,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     margin-right: 15vw;
     margin-left: 15vw;
   }
+  .fishcardimage {
+    width: 20vw;
+    height: 15vw;
+  }
   .grid-container_main {
     gap: 0.5vw; 
   }
@@ -292,12 +304,12 @@ position: relative; /*necessary for in card elements to allign as I want */
     margin-left: 17vw;
   }
   .fishsize, .fishtemp, .tanksize {
-    /* font-size: 2vw; */
+    font-size: 1.25vw;
     margin: 0.25vw;
   }
   .fishcardimage {
-    width: 15vw;
-    height: 11vw;
+    width: 18vw;
+    height: 13.5vw;
 }
 }
 
