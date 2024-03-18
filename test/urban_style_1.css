@@ -34,19 +34,10 @@ body {
    
   }
 
-/* #maindiv {
-  width: 95vw; 
-  margin: auto;
-  padding: 2vw;  
-  border-radius: 5px; 
-  display: inline-block; 
-  white-space: nowrap;
-  display: grid; 
-  justify-content: center;
-  align-items: center;
-  height: fit-content; 
-  width: fit-content;
-}  */
+ #main_form {
+  margin-bottom: 1vw;
+ }
+  
 .grid-container_main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -304,7 +295,7 @@ position: relative; /*necessary for in card elements to allign as I want */
     margin-left: 17vw;
   }
   .fishsize, .fishtemp, .tanksize {
-    font-size: 1.25vw;
+    font-size: 1.2vw;
     margin: 0.25vw;
   }
   .fishcardimage {
@@ -325,8 +316,8 @@ position: relative; /*necessary for in card elements to allign as I want */
     grid-template-columns: repeat(4, 1fr);
   }
   .fishcardimage {
-    width: 13vw;
-    height: 9vw;
+    width: 14.5vw;
+    height: 10.875vw;
 }
 .fishsize, .fishtemp, .tanksize {
   font-size: 1vw;
@@ -655,53 +646,8 @@ input[type="radio"] {
 /*About and feedback*/ 
 
 #about {
-  display: none;
-  /* white-space: wrap; */
-  justify-content: flex-start;
-  flex-wrap:wrap;
-  text-align: left;
-  position: relative;
-  max-width: 100%;
+  margin-left: 3vw; 
 }
-
-#about p {
-  margin: 0; 
-  white-space: wrap;
-  text-align: justify;
-  word-wrap: break-word;
-  width: auto;
-}
-
-#about p span {
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 1.3rem; 
-}
-
-h2 {
-  font-size: 1rem; 
-  margin-bottom: 2px;
-}
-
-/* #feedback {
-  display: none; 
-  position: relative;
-}
-
-.x-out {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 4px; 
-  cursor: pointer; 
-}
-
-.x-out:hover {
-  font-size: 1.3rem;
-} */
-
 
 #noresults {
   display: none;
