@@ -78,6 +78,8 @@
   // let all_4 = document.getElementById("all_4");
   // let all_5 = document.getElementById("all_5");
 
+  let div_breeding_x = document.getElementById('div_breeding_x');
+
   let sort_select = document.getElementById("sort");
   let sum = document.getElementById("sum");
 
@@ -297,6 +299,12 @@ document.querySelectorAll('.dropdown-content').forEach(function(element) {
   });
 });
 
+/// Select dorpdown value event listener
+breed_chbx.forEach(function(chbx) {
+  chbx.addEventListener('change', function() {
+      selectValueDisplay(breed_chbx, div_breeding_x);
+  });
+});
 
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
@@ -406,3 +414,31 @@ function updatePerTemp () {
 //   cmtoinch.innerText = fishsize_option; 
 //   search_button()
 //  }
+
+
+function selectValueDisplay (checkboxArr, targetSpan) {
+ var len = checkboxArr.length;
+ var checkedArr = [];
+ for (let box of checkboxArr) {
+  if (box.checked) {
+    checkedArr.push(box);
+  }
+ }
+//  console.log(len); 
+//  console.log(checkedArr.length);
+if (checkedArr.length === len) {
+  targetSpan.textContent = "All";
+}
+else if (checkedArr.length < len && checkedArr.length > 0) {
+  targetSpan.textContent = checkedArr.length;
+}
+
+else if (checkedArr.length === 0) {
+  targetSpan.textContent = "None";
+}
+
+}
+
+//breed_chbx
+//selectValueDisplay (breed_chbx, div_breeding_x);
+//div_breeding_x
