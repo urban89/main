@@ -36,6 +36,11 @@
     <div id = "maindiv"> 
  <div class = "grid-container-cpanel">
 
+<!--Welcome-->
+<div id = "cpanel" class = "tiles grid-item"> 
+Welcome to the Fresh Water Fish Selector page! Select your parameters and see the fish card results below. 
+
+</div>
       <!-- Control panel -->
  
 <div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
@@ -59,8 +64,9 @@
       </div>
     </span>
     &nbsp;&nbsp;&nbsp;
+    <a href = "about.html" id = "about" class="dropbtn-cpanel">About</a>
   </div> <!-- Cpanel ends here -->
-</div> <!-- container for testing reasons now -->
+</div> <!--"grid-container-cpanel"-->
 
 <!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
@@ -89,7 +95,7 @@
   <div id="div_hardiness" class="tiles">
     <label for="dropdownButtonHardi">Keeping difficulty: </label>
     <span class="dropdown">
-    <button onclick="toggleDropdown(event)" id = "dropdownButtonHardi" class="dropbtn">Selected: All</button>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonHardi" class="dropbtn">Selected: <span id = "div_hardiness_x">All</span></button>
     <div id="dropdownContentHardi" class="dropdown-content">
       <!-- <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label><br> -->
       <input type="checkbox" id="beginner" name="hardi"> 
@@ -109,7 +115,7 @@
     <div id="div_avail" class="tiles">
       <label for="dropdownButtonAvail"> Purchase availability: </label>
       <span class="dropdown">
-      <button onclick="toggleDropdown(event)" id = "dropdownButtonAvail" class="dropbtn">Selected: All</button>
+      <button onclick="toggleDropdown(event)" id = "dropdownButtonAvail" class="dropbtn">Selected: <span id = "div_avail_x">All</span></button>
       <div id="dropdownContentHardiAvail" class="dropdown-content">
         <!-- <input type="checkbox" id="all_2" name="all_2"> <label for="all_2">select all</label><br> -->
         <input type="checkbox" id="verycommon" name="avail"> 
@@ -133,7 +139,7 @@
   <div id="div_behavior" class="tiles">
     <label for="dropdownButtonBehavior"> Social behavior: </label>
     <span class="dropdown">
-    <button onclick="toggleDropdown(event)" id = "dropdownButtonBehavior" class="dropbtn">Selected: All</button>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonBehavior" class="dropbtn">Selected: <span id = "div_behavior_x">All</span></button>
     <div id="dropdownContentBehavior" class="dropdown-content">
       <!-- <input type="checkbox" id="all_3" name="all_3"> <label for="all_3">select all</label><br> -->
       <input type="checkbox" id="schooling1" name="social"> 
@@ -149,7 +155,7 @@
   <div id="div_agression" class="tiles">
     <label for="dropdownButtonAgression"> Aggression level: </label>
     <span class="dropdown">
-    <button onclick="toggleDropdown(event)" id = "dropdownButtonAgression" class="dropbtn">Selected: All</button>
+    <button onclick="toggleDropdown(event)" id = "dropdownButtonAgression" class="dropbtn">Selected: <span id = "div_agression_x">All</span></button>
     <div id="dropdownContentAgression" class="dropdown-content">
       <!-- <input type="checkbox" id="all_4" name="all_4"> <label for="all_4">select all</label><br> -->
       <input type="checkbox" id="peaceful1" name="agress"> 
@@ -200,16 +206,6 @@
   <br>
   <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
 </div> <!-- last container div with alerts -->
-    
-
-    <div class = "grid-container-cpanel">
-    <footer class = "tiles grid-item">
-      <!-- <span class = "dropdown">  -->
-        <a href = "about.html" id = "about" class="dropbtn-cpanel">About</a>
-      
-      <!-- </span> -->
-    </footer>
-  </div> <!-- footer containting div -->
 
   </div> <!-- main div --> 
 
