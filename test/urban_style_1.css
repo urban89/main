@@ -236,9 +236,11 @@ position: relative; /*necessary for in card elements to allign as I want */
 
   .subtitle, .bigsubtitle, .verybigsubtitle {
    font-size: 1.6vw;
+   margin: 0.25vw;
   }
    .title {
     font-size: 1.8vw;
+    margin: 0.25vw;
    }
 }
 
@@ -269,6 +271,15 @@ position: relative; /*necessary for in card elements to allign as I want */
     padding-top: 1vw;
     padding-bottom: 1vw;
     }
+
+    .subtitle, .bigsubtitle, .verybigsubtitle {
+      font-size: 1.2vw;
+      margin: 0.17vw;
+     }
+      .title {
+       font-size: 1.4vw;
+       margin: 0.17vw;
+      }
 
 }
 
