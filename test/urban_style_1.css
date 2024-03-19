@@ -13,7 +13,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
-  background-color: #235197;
+  /* background-color: #235197; */
+  background: linear-gradient(175deg, #235197  35%, #556ad1ec 50%);
   /* background-size: cover;
   background-repeat: round;
   background-attachment: fixed;  */
@@ -141,7 +142,7 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 .infocardtext {
-  font-size: 0.9rem;
+  font-size: 2.5vw;
   margin: 0; 
 }
 
@@ -167,7 +168,30 @@ position: relative; /*necessary for in card elements to allign as I want */
     border-style: solid;
     }
 
-/* Making it a little bit responsive here  */ 
+    .title {
+      position: absolute;
+      font-weight: 666;
+      top: 0.2vw;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2.5vw; 
+    }
+    
+    .subtitle, .bigsubtitle, .verybigsubtitle {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2vw; 
+    }
+
+    .bigsubtitle, .verybigsubtitle {
+      transform: translateX(-38%);
+    }
+
+/* Media queries ************************************************/ 
 
 
 @media screen and (max-width: 550px) {
@@ -201,13 +225,19 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 25vw;
     height: 18.75vw;
   }
-  .fishsize, .fishtemp, .tanksize {
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
     font-size: 2vw;
   }
-
   .fishname {
     font-size: 2.5vw;
   }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+   font-size: 1.6vw;
+  }
+   .title {
+    font-size: 1.8vw;
+   }
 }
 
 
@@ -223,6 +253,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishname {
     font-size: 2vw;
+  }
+
+  .infocardtext {
+    font-size: 1.5vw;
   }
 
   #cpanel span, #cpanel a {
@@ -341,6 +375,45 @@ position: relative; /*necessary for in card elements to allign as I want */
   grid-template-columns: repeat(2, 1fr); /*apply the same for bigger vp size will test it on big screen at home*/
 }
 }
+
+
+@media screen and (max-width: 1288px) {
+  .verybigsubtitle {
+    font-size: 67%;
+    transform: translateX(-40%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bigsubtitle {
+    font-size: 70%;
+    transform: translateX(-40%);
+  }
+
+  .verybigsubtitle {
+    font-size: 64%;
+  }
+}
+
+/* @media screen and (max-width: 830px) {
+  
+
+  .verybigsubtitle {
+    font-size: 60%;
+    transform: translateX(-38%);
+  }
+}
+
+@media screen and (max-width: 812px) {
+  
+
+  .bigsubtitle {
+    font-size: 65%;
+    transform: translateX(-38%);
+  }
+} */
+/************************************************/ 
+
 
 /* @media (max-width: 768px) {
   #maindiv {
@@ -594,61 +667,6 @@ input[type="radio"] {
 
 
 
-
-.title {
-  position: absolute;
-  font-weight: 666;
-  top: 0;
-  left: 50%;
-  transform: translateX(-40%);
-  white-space: nowrap;
-  font-size: 0.8rem; 
-}
-
-.subtitle, .bigsubtitle, .verybigsubtitle {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-40%);
-  white-space: nowrap;
-  font-size: 13px; 
-}
-
-@media screen and (max-width: 1288px) {
-  .verybigsubtitle {
-    font-size: 67%;
-    transform: translateX(-40%);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .bigsubtitle {
-    font-size: 70%;
-    transform: translateX(-40%);
-  }
-
-  .verybigsubtitle {
-    font-size: 64%;
-  }
-}
-
-@media screen and (max-width: 830px) {
-  
-
-  .verybigsubtitle {
-    font-size: 60%;
-    transform: translateX(-38%);
-  }
-}
-
-@media screen and (max-width: 812px) {
-  
-
-  .bigsubtitle {
-    font-size: 65%;
-    transform: translateX(-38%);
-  }
-}
 
 
 
