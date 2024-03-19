@@ -275,6 +275,7 @@ position: relative; /*necessary for in card elements to allign as I want */
     .subtitle, .bigsubtitle, .verybigsubtitle {
       font-size: 1.2vw;
       margin: 0.17vw;
+      top:2.1vw;
      }
       .title {
        font-size: 1.4vw;
@@ -321,6 +322,16 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 1.5vw;
   }
 
+  .title {
+    font-size: 1.2vw;
+    top: 0.1vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:1.8vw;
+  }
+
   #div_tank_size:hover {
     #perliter{
       display: inline-block;
@@ -347,9 +358,14 @@ position: relative; /*necessary for in card elements to allign as I want */
   .grid-container_main {
     gap: 0.5vw; 
   }
+
+  .title {
+    font-size: 1.2vw;
+  }
   .subtitle, .bigsubtitle, .verybigsubtitle {
     font-size: 1.1vw;
     transform: translateX(-40%);
+    top:2vw;
   }
 }
 
@@ -391,6 +407,26 @@ position: relative; /*necessary for in card elements to allign as I want */
 .fishname {
   font-size: 1vw;
 }
+
+.iconimage  {
+  width: 4vw;
+  height: 3vw;
+}
+.title {
+  font-size: 0.8vw;
+  margin: 0.15vw;
+  top:0.1vw;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.6vw;
+  margin: 0.1vw;
+  top: 1.15vw;
+ }
+.infocardtext {
+  font-size: 0.8vw;
+}
+
+
 
 .grid-container_main {
   grid-template-columns: repeat(2, 1fr); /*apply the same for bigger vp size will test it on big screen at home*/
@@ -654,9 +690,9 @@ input[type="radio"] {
 
 /*About and feedback*/ 
 
-#about {
+/* #about {
   margin-left: 3vw; 
-}
+} */
 
 #noresults {
   display: none;

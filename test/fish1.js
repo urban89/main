@@ -576,9 +576,17 @@ function createAndAppendIframe() {
 
 function toggleDropdown(event) {
   // event.preventDefault();//it's a button right now but it won't be a button in the future and I will remove this comment 
-
+  event.stopPropagation();
   // Find the closest parent element with the class 'dropdown' from the clicked button
   let dropdown = event.target.closest('.dropdown');
+
+   // Close all other dropdowns before toggling the current one
+  var allDropdowns = document.querySelectorAll('.dropdown-content');
+  allDropdowns.forEach(function(dropdownContent) {
+    if (dropdown && !dropdown.contains(dropdownContent)) {
+      dropdownContent.classList.remove('show');
+    }
+  });
 
   // Toggle the 'show' class on the dropdown-content within this specific dropdown
   if (dropdown) {

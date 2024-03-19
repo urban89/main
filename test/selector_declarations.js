@@ -78,6 +78,11 @@
   // let all_4 = document.getElementById("all_4");
   // let all_5 = document.getElementById("all_5");
 
+
+  let div_hardiness_x = document.getElementById("div_hardiness_x");
+  let div_avail_x = document.getElementById("div_avail_x");
+  let div_behavior_x = document.getElementById("div_behavior_x");
+  let div_agression_x = document.getElementById("div_agression_x");
   let div_breeding_x = document.getElementById('div_breeding_x');
 
   let sort_select = document.getElementById("sort");
@@ -116,7 +121,13 @@
 
 //  let feedback_button = document.getElementById("feedback_button"); 
 
-
+var selects = [
+  {checkboxArray: hardi_chbx, targetSpan: div_hardiness_x},
+  {checkboxArray: avail_chbx, targetSpan: div_avail_x},
+  {checkboxArray: social_chbx, targetSpan: div_behavior_x},
+  {checkboxArray: agress_chbx, targetSpan: div_agression_x},
+  {checkboxArray: breed_chbx, targetSpan: div_breeding_x},
+];
 
 //////////////////////////
 /////% counters for each category
@@ -300,9 +311,11 @@ document.querySelectorAll('.dropdown-content').forEach(function(element) {
 });
 
 /// Select dorpdown value event listener
-breed_chbx.forEach(function(chbx) {
-  chbx.addEventListener('change', function() {
-      selectValueDisplay(breed_chbx, div_breeding_x);
+selects.forEach(function(group) {
+  group.checkboxArray.forEach(function(chbx) {
+    chbx.addEventListener('change', function() {
+      selectValueDisplay(group.checkboxArray, group.targetSpan);
+    });
   });
 });
 
