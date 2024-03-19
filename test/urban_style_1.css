@@ -171,11 +171,12 @@ position: relative; /*necessary for in card elements to allign as I want */
     .title {
       position: absolute;
       font-weight: 666;
-      top: 0.2vw;
+      top: 0;
       left: 50%;
       transform: translateX(-40%);
       white-space: nowrap;
       font-size: 2.5vw; 
+      margin: 0.5vw; 
     }
     
     .subtitle, .bigsubtitle, .verybigsubtitle {
@@ -185,6 +186,7 @@ position: relative; /*necessary for in card elements to allign as I want */
       transform: translateX(-40%);
       white-space: nowrap;
       font-size: 2vw; 
+      margin: 0.5vw; 
     }
 
     .bigsubtitle, .verybigsubtitle {
@@ -246,6 +248,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 90vw;
     margin-right: 5vw;
     margin-left: 5vw;
+  }
+
+  .fish_card, .infocard {
+    padding: 0.5vw; 
   }
   .fishcardimage {
     width: 25vw;
@@ -330,6 +336,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   .grid-container_main {
     gap: 0.5vw; 
   }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+  }
 }
 
 @media screen and (min-width: 1300px) {
@@ -377,49 +387,10 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 
-@media screen and (max-width: 1288px) {
-  .verybigsubtitle {
-    font-size: 67%;
-    transform: translateX(-40%);
-  }
-}
 
-@media screen and (max-width: 1200px) {
-  .bigsubtitle {
-    font-size: 70%;
-    transform: translateX(-40%);
-  }
 
-  .verybigsubtitle {
-    font-size: 64%;
-  }
-}
-
-/* @media screen and (max-width: 830px) {
-  
-
-  .verybigsubtitle {
-    font-size: 60%;
-    transform: translateX(-38%);
-  }
-}
-
-@media screen and (max-width: 812px) {
-  
-
-  .bigsubtitle {
-    font-size: 65%;
-    transform: translateX(-38%);
-  }
-} */
 /************************************************/ 
 
-
-/* @media (max-width: 768px) {
-  #maindiv {
-    width: 100%; 
-  }
-} */
 
 .grid-container-cpanel {
   display: grid;
