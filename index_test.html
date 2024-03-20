@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; img-src 'self' data:;">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; img-src 'self' data:;"> -->
 
     <link rel="stylesheet" href="test/urban_style_1.css">
 
@@ -40,7 +40,7 @@
 
 <!--Welcome-->
 <div id = "cpanel" class = "tiles grid-item"> 
-Welcome to the Fresh Water Fish Selector page! Select your parameters and see the fish card results below. 
+Welcome to the Fresh Water Fish Selector page! Select your parameters and see the results below. Click on cards to see more details about each species. 
 
 </div>
       <!-- Control panel -->
@@ -78,7 +78,8 @@ Welcome to the Fresh Water Fish Selector page! Select your parameters and see th
     <div id = "div_tank_size" class = "tiles grid-item"> 
       <label for="tank_size" class = "parameter"> Aquarium size: </label>
       <span id= "tank_size_block"> <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="tank_size">
-      <span id = size>L</span> <span id = perliter></span> </span><br class = "smallvpbreak">
+      <span id = size>L</span> <span id = perliter></span> </span>
+      <br class = "smallvpbreak">
       <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio" class ="capradiolabel"> Liter</label>
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio" class ="capradiolabel"> Gallon</label>
     </div> 
