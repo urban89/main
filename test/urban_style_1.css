@@ -39,6 +39,10 @@ body {
   margin-bottom: 1vw;
  }
 
+ #cpanel  {
+  padding-top: 2vw;
+ }
+
  #cpanel span, #cpanel a {
 padding-top: 2vw;
 padding-bottom: 2vw;
@@ -203,6 +207,10 @@ position: relative; /*necessary for in card elements to allign as I want */
       margin:0;
     }
 
+    #sort {
+      margin-bottom: 5px;
+    }
+
 
 /* Media queries ************************************************/ 
 
@@ -228,11 +236,15 @@ position: relative; /*necessary for in card elements to allign as I want */
 
   #tank_size_block, #tempmin_block {
     display: block;
-    margin-bottom: 2vw;
+    margin-bottom: 2.5vw;
   }
  
   .smallvpbreak {
     display: none;
+  }
+
+  #sort {
+    margin-bottom: 3vw;
   }
 }
 
@@ -293,6 +305,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   #cpanel span, #cpanel a {
     padding-top: 1vw;
     padding-bottom: 1vw;
+    /* margin-top: 1px; */
     }
 
     .subtitle, .bigsubtitle, .verybigsubtitle {
@@ -304,6 +317,10 @@ position: relative; /*necessary for in card elements to allign as I want */
        font-size: 1.4vw;
        margin: 0.17vw;
       }
+
+      #cpanel  {
+        padding-top: 1vw;
+       }
 
 }
 
