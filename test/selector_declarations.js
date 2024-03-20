@@ -4,6 +4,8 @@
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const numberinputs = document.querySelectorAll('input[type="number"]');
   const radioinputs = document.querySelectorAll('input[type = "radio"]');
+  const listviewstring = "Results in list view";
+  const tileviewstring = "Results in tiles view"
 
   let console_capacity = liter;
   let console_temperature = celsius; 
@@ -13,6 +15,8 @@
   let whichcard = fishshown; 
   let feedbackstatus = feedbacknotshown;
   let aboutstatus = aboutoff; 
+  let viewoption = listviewstring;
+  let listview = false; 
 
   let cap_modifier = 1; 
   let temp_modifier1 = 1;
@@ -41,8 +45,8 @@
   let convert_cf = document.getElementById("convert_cf");
 
   let main_form = document.getElementById("main_form");
-  let more_options = document.getElementById("more_options");
-  let toggle_options = document.getElementById("toggle_options"); 
+  // let more_options = document.getElementById("more_options");
+  let view_options = document.getElementById("view_options"); 
   let search = document.getElementById("search"); 
 
   let tank_size = document.getElementById("tank_size"); 
@@ -108,7 +112,7 @@
   // let settings$ = document.getElementById("settings");
   let cmtoinch = document.getElementById("cmtoinch");
   let cardswticher = document.getElementById("cardswticher"); 
-  let flipped = false; 
+  let flipped = false; // this will be deprecated - I remove all flip function plus info cards will eb individually dynamically generated to reduce DOM size 
   let about = document.getElementById("about");
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
@@ -266,9 +270,9 @@ tempmin.addEventListener("click", updatePerTemp);
   });
   
     cmtoinch.addEventListener("click", fishsizemetric);
-    toggle_options.addEventListener("click", optionsToggle);
+    view_options.addEventListener("click", viewToggle);
   
-    cardswticher.addEventListener("click", flipCards); 
+    // cardswticher.addEventListener("click", flipCards); 
     // about_button.addEventListener("click", explain);
     // feedback_button.addEventListener("click", gotofeedback);
   

@@ -13,8 +13,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
-  /* background-color: #235197; */
-  background: linear-gradient(175deg, #235197  35%, #556ad1ec 50%);
+  background-color: #235197;
+  /* background: linear-gradient(175deg, #235197  35%, #556ad1ec 50%); */
   /* background-size: cover;
   background-repeat: round;
   background-attachment: fixed;  */
@@ -193,6 +193,21 @@ position: relative; /*necessary for in card elements to allign as I want */
       transform: translateX(-38%);
     }
 
+    .list-view {
+      background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2vw;
+      border-radius: 5px;
+      padding: 0.5vw;
+    }
+
+    .list-view p {
+      flex: 1 1 100%;
+      margin:0;
+    }
+
+
 /* Media queries ************************************************/ 
 
 
@@ -214,6 +229,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   .capradiolabel {
     font-size: 3vw;
   }
+ 
 }
 
 
@@ -242,6 +258,9 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 1.8vw;
     margin: 0.25vw;
    }
+   .list-view p {
+    flex: 1 1 calc(50% - 5vw);
+  }
 }
 
 
@@ -301,6 +320,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishname {
     font-size: 1.7vw;
+  }
+  .list-view p {
+    flex: 1 1 calc(33.333% - 3vw);
   }
 }
 
@@ -757,7 +779,7 @@ input[type="radio"] {
 }
 
 
-.reveal_card:hover .iconimage { 
+.infocard:hover .iconimage { 
   animation: glow 7s infinite; 
 }
 
