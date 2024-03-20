@@ -323,6 +323,16 @@ selects.forEach(function(group) {
   });
 });
 
+window.addEventListener('scroll', function() {
+  var welcomePanel = document.getElementById('welcomepanel');
+  if (welcomePanel) {
+    var scrollThreshold = welcomePanel.offsetHeight + welcomePanel.offsetTop;
+    if (window.pageYOffset > scrollThreshold) {
+      welcomePanel.remove();
+    }
+  }
+});
+
     });  /// Eventlisteners end here   
     ///////////////////////////////////////////////
 
