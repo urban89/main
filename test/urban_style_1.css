@@ -236,7 +236,7 @@ position: relative; /*necessary for in card elements to allign as I want */
 
   #tank_size_block, #tempmin_block {
     display: block;
-    margin-bottom: 2.5vw;
+    margin-bottom: 3vw;
   }
  
   .smallvpbreak {
