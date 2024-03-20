@@ -146,10 +146,6 @@ position: relative; /*necessary for in card elements to allign as I want */
   margin: 0; 
 }
 
-#more_options {
-  display: grid;
-}
-
 .fishcardimage {
   width: 20vw;
   height: 15vh;
@@ -229,7 +225,15 @@ position: relative; /*necessary for in card elements to allign as I want */
   .capradiolabel {
     font-size: 3vw;
   }
+
+  #tank_size_block, #tempmin_block {
+    display: block;
+    margin-bottom: 2vw;
+  }
  
+  .smallvpbreak {
+    display: none;
+  }
 }
 
 
@@ -570,6 +574,7 @@ input[type="checkbox"] {
 
 input[type="radio"] {
   cursor: pointer;
+  margin: 5px;
 }
 
 
