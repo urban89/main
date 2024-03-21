@@ -46,7 +46,7 @@
 </div>
       <!-- Control panel -->
  
-<div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
+<div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount>184</span><span class = "filler">/</span><span id = "allcount" class = "filler">438</span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -201,14 +201,14 @@
       <!-- here the fish cards are generated dynamically -->
     </div> 
 
-    <div id = alerts class = "grid-container-cpanel"> 
-  <span id = "tempalert" class = "alert"> </span>
+    <div id = alerts class = "grid-container-cpanel"> <!-- need to make it style display none-->
+  <span id = "tempalert" class = "alert grid-item" style="display: none;"> </span>
   <br>
-  <span id = "capalert" class = "alert"> Aquarium size too small.</span>
+  <span id = "capalert" class = "alert grid-item"  style="display: none;"> Aquarium size too small.</span>
   <br>
-  <span id = "checkalert" class = "alert"> Some search parameters were not selected. </span>
+  <span id = "checkalert" class = "alert grid-item"  style="display: none;"> Some search parameters were not selected. </span>
   <br>
-  <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
+  <span id = "noresults" class = "valid_alert grid-item"  style="display: none;"> There are no results with the above chosen parameters. </span>
 </div> <!-- last container div with alerts -->
 
   </div> <!-- main div --> 
