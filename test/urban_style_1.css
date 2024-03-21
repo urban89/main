@@ -207,6 +207,18 @@ position: relative; /*necessary for in card elements to allign as I want */
       text-align: center;
     }
 
+    .welcometext.welcometitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .titleicon {
+    content: url('icon/android-icon-192x192.png'); 
+    height: 8vw;
+    width:8vw;
+}
+
 
 /* Media queries ************************************************/ 
 
