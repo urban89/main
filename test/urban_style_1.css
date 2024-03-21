@@ -2,45 +2,29 @@
 
 
 body {
-  /* margin: 10px; */
-  /* padding: 0; */
-  /* display: grid; */
-  /* justify-content: center;
-  align-items: center;
-  height: fit-content; 
-  width: fit-content; */
+
   font-family: "Trebuchet MS", sans-serif;
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
   background-color: #235197;
-  /* background: linear-gradient(175deg, #235197  35%, #556ad1ec 50%); */
-  /* background-size: cover;
-  background-repeat: round;
-  background-attachment: fixed;  */
-  /* position: relative; 
-  min-height:100vh;
-  max-width: 100vw; */
+
   }
-
-
-  /* @media screen and (min-width: 767px) {
-    body {
-      background-image: url('backgrounds/1.jpg');
-    }
-
-}  */
+  
+  #welcomepanel {
+    margin-top:0;
+  }
   .search_tiles {
     font-size: 1rem;
-   
   }
 
  #main_form {
   margin-bottom: 1vw;
  }
 
- #cpanel  {
-  padding-top: 2vw;
+ #cpanel,  #cpanel1,  #cpanel2  {
+  padding: 2vw;
+  margin-top: 0;
  }
 
  #cpanel span, #cpanel a {
@@ -211,6 +195,18 @@ position: relative; /*necessary for in card elements to allign as I want */
       margin-bottom: 5px;
     }
 
+    #sortdb {
+      margin-top: 5px;
+    }
+
+    .welcometext {
+      margin:0;
+    }
+
+    .welcometitle {
+      text-align: center;
+    }
+
 
 /* Media queries ************************************************/ 
 
@@ -246,6 +242,10 @@ position: relative; /*necessary for in card elements to allign as I want */
   #sort {
     margin-bottom: 3vw;
   }
+
+  #sort_database {
+    display: block;
+  }
 }
 
 
@@ -280,51 +280,6 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 
-@media screen and (min-width: 788px) {
-  #maindiv {
-    width: 90vw;
-    margin-right: 5vw;
-    margin-left: 5vw;
-  }
-
-  .fish_card, .infocard {
-    padding: 0.5vw; 
-  }
-  .fishcardimage {
-    width: 25vw;
-    height: 18.75vw;
-  }
-  .fishname {
-    font-size: 2vw;
-  }
-
-  .infocardtext {
-    font-size: 1.5vw;
-  }
-
-  #cpanel span, #cpanel a {
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-    /* margin-top: 1px; */
-    }
-
-    .subtitle, .bigsubtitle, .verybigsubtitle {
-      font-size: 1.2vw;
-      margin: 0.17vw;
-      top:2.1vw;
-     }
-      .title {
-       font-size: 1.4vw;
-       margin: 0.17vw;
-      }
-
-      #cpanel  {
-        padding-top: 1vw;
-       }
-
-}
-
-
 @media screen and (min-width: 839px) {
   #maindiv {
     width: 80vw;
@@ -345,6 +300,29 @@ position: relative; /*necessary for in card elements to allign as I want */
   .list-view p {
     flex: 1 1 calc(33.333% - 3vw);
   }
+
+  .title {
+    font-size: 1.4vw;
+    margin: 0.17vw;
+   }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.2vw;
+    margin: 0.17vw;
+    top:2.1vw;
+   }
+   .infocardtext {
+    font-size: 1.5vw;
+  }
+
+  .fish_card, .infocard {
+    padding: 0.5vw; 
+  }
+
+  #cpanel span, #cpanel a {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    }
 }
 
 @media screen and (min-width: 956px) {
@@ -386,6 +364,7 @@ position: relative; /*necessary for in card elements to allign as I want */
       display: inline-block;
     }
   }
+
 }
 
 @media screen and (min-width: 1110px) {
@@ -410,6 +389,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     transform: translateX(-40%);
     top:2vw;
   }
+
+  #cpanel, #cpanel1, #cpanel2  {
+    padding: 1.5vw;
+   }
 }
 
 @media screen and (min-width: 1300px) {
@@ -469,7 +452,9 @@ position: relative; /*necessary for in card elements to allign as I want */
   font-size: 0.8vw;
 }
 
-
+#cpanel, #cpanel1, #cpanel2  {
+  padding: 1vw;
+ }
 
 .grid-container_main {
   grid-template-columns: repeat(2, 1fr); /*apply the same for bigger vp size will test it on big screen at home*/
@@ -491,17 +476,6 @@ position: relative; /*necessary for in card elements to allign as I want */
   align-items: center;
 }
 
-
-
-/* more options div gird */ 
-/* .grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto; 
-  gap: 1vw; 
-  justify-content: center;
-  align-items: center;
-} */
 
 .grid-item {
   justify-content: center;
@@ -668,23 +642,25 @@ input[type="radio"] {
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 1vw;
-  padding-top: 4vw;
-  padding-bottom:4vw; 
+  padding-top: 1vw;
+  padding-bottom:1vw; 
   font-size: 1rem;
   border: solid;
   cursor: pointer;
   border-left: 0.15vw solid #000;  
   border-right: 0.15vw solid #000; 
-  border-top: none;           
-  border-bottom: none;
-  padding-top: 1vh; 
-  padding-bottom: 1vh; 
+  border-top: none;        
+  border-bottom: none;   
   border-radius: 10px;
 }
 
 .dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
   background-color:  #86a5def8; 
   font-size: 1.05rem;
+  border-top: 0.01vw solid #000;          
+  border-bottom: 0.01vw solid #000;
+  box-shadow:#05224f;
+  box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
 }
 
 /* paremeter dropdown */ 
@@ -744,6 +720,7 @@ input[type="radio"] {
 
 #searchInput {
   background-color: #ecf1bd;
+  margin-bottom: 5px;
 }
 
 
