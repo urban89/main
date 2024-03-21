@@ -47,6 +47,13 @@
   <div id = "maindiv"> 
  <div class = "grid-container-cpanel">
 
+  <!--Welcome-->
+<div id = "welcomepanel" class = "tiles grid-item"> 
+  <p class="welcometext welcometitle">Fresh Water Database</p>
+  <p class="welcometext">See the full database below. Search by english or latin name. Click on fish cards to see more info about each species
+  </p>
+  </div>
+
 <!-- Control panel line 1-->
 
     <div id = "cpanel1" class = "tiles grid-item ">  <span id = "sum"> Displayed: <span id = displayed></span></span><span class = "filler">/</span><span id = fishcount class="filler"></span> 
@@ -75,12 +82,13 @@
     <span> Search: </span>
     <input type="text" id="searchInput" placeholder="Latin or English name">
     &nbsp;&nbsp;&nbsp;
-    <label for = "sort"> Sort: </label> 
-    <Select id = "sort">
+    <span id = "sort_database"> <label for = "sort"> Sort: </label> 
+    <Select id = "sortdb">
     <option value="size_min">Size small to large</option>
     <option value="size_max">Size large to small</option>
     <option value="temp_min">Water cold to warm</option>
   </Select>
+  </span> <!-- sort database span-->
   <!-- &nbsp;&nbsp;&nbsp;
     <span id = "sum"> Displayed: </span>   -->
   </span>
