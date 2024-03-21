@@ -2,15 +2,14 @@
 
 
 body {
-
   font-family: "Trebuchet MS", sans-serif;
   font-optical-sizing: auto;
   font-weight: 550;
   font-style: normal;
   background-color: #235197;
-
   }
-  
+
+
   #welcomepanel {
     margin-top:0;
   }
@@ -863,3 +862,5 @@ input[type="radio"] {
   overflow: hidden; 
   background: linear-gradient(145deg, #d4e796f6  5%, #b4d6eeec 50%);
 }
+
+

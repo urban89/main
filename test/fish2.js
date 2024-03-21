@@ -1,4 +1,416 @@
 
+/////Used by both Selector and Database pages. 
+
+const liter = "L";
+const gallon = "gal";
+const celsius = "℃";
+const farenheit = "℉";
+const cm = "cm";
+const inch = "inch";
+const show_inch = "Show fish size in inch";
+const show_cm = "Show fish size in cm";
+const show_farenheit = "Show water temperature in farenheit";
+const show_celsius = "Show water temperature in celsius";
+const show_liter =  "Show aquarium capacity in liter";
+const show_gallon = "Show aquarium capacity in gallon"; 
+const fishshown = "Show all info cards";
+const infoshown = "Show all fish cards";
+const more = "Show more search options";
+const fewer = "Show fewer search options";
+const feedbacknotshown = "Send feedback"; 
+const feedbackshown = "Hide feedback window";
+const aboutoff = "About this page"; 
+const abouton = "Hide page info";
+const maincount = fish_master.length; 
+const bcimages = 5; 
+
+
+ //////////////////////////////////////////////
+ //// Dictionary for numerical codes to categories
+/// Used in info_card 
+
+const codes_hardi = 
+{
+  4: "Beginner",
+  3: "Easy",
+  2: "Medium",
+  1: "Difficult"
+}
+const codes_avail = 
+{
+  4: "Very common",
+  3: "Common",
+  2: "Rare",
+  1: "Very rare"
+}
+const codes_behave = 
+{
+  3: "Schooling",
+  2: "Social",
+  1: "Solitary"
+}
+
+const codes_agres = 
+{
+  3: "Aggressive",
+  2: "Mostly peaceful",
+  1: "Peaceful"
+}
+const codes_breed = 
+{
+  4: "No record",
+  3: "Hard",
+  2: "Medium",
+  1: "Easy"
+}
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////variables for database page 
+let currentImage; 
+let fish_list = fish_master; 
+let filteredFish = []; 
+let temp_modifier1 = 1; 
+let temp_modifier2 = 0; 
+let cap_modifier = 1; 
+let size_modifier = 1; 
+let console_temperature = celsius; 
+let console_capacity = liter; 
+let console_fishsize = cm;
+let fishsize_option = show_inch;
+let capacity_button = show_gallon;
+let temp_button = show_farenheit; 
+let whichcard = fishshown; 
+let flipped = false; 
+// let feedbackstatus = feedbacknotshown;
+// let aboutstatus = aboutoff; 
+let previousFishcount = 42; 
+
+let details = []; 
+
+let cmtoinch = document.getElementById("cmtoinch");
+let searchInput = document.getElementById("searchInput"); 
+// let imagechanger = document.getElementById("imagechanger"); 
+let result_div = document.getElementById("result");
+let sort_select = document.getElementById("sortdb");
+let cap_conversion = document.getElementById("cap_conversion");
+let temp_conversion = document.getElementById("temp_conversion");
+let notfound = document.getElementById("notfound"); 
+let fishcount = document.getElementById("fishcount");
+let displayed = document.getElementById("displayed");
+let about = document.getElementById("about");
+let about_button = document.getElementById("about_button");
+// let feedback_button = document.getElementById("feedback_button"); 
+
+
+//////////////////////////
+/////% counters for each category
+
+let beginner$$ = perCounter ("uncare", 4);
+let easy$$ = perCounter ("uncare", 3);
+let medium$$ = perCounter ("uncare", 2);
+let difficult$$ = perCounter ("uncare", 1);
+
+let verycommon$$ = perCounter ("availability", 4);
+let common$$ = perCounter ("availability", 3);
+let rare$$ = perCounter ("availability", 2);
+let veryrare$$ = perCounter ("availability", 1);
+
+let schooling$$ = perCounter ("school", 3);
+let social$$ = perCounter ("school", 2);
+let solitary$$ = perCounter ("school", 1);
+
+let peaceful$$ = perCounter ("agression", 1);
+let mpeaceful$$ = perCounter ("agression", 2);
+let agressive$$ = perCounter ("agression", 3);
+
+let beasy$$ = perCounter ("breeding_difficulty", 1);
+let bmedium$$ = perCounter ("breeding_difficulty", 2);
+let bhard$$ = perCounter ("breeding_difficulty", 3);
+let norecord$$ = perCounter ("breeding_difficulty", 4);
+
+
+/////////////////////////////////////
+/// Adding initial event listeners 
+document.addEventListener("DOMContentLoaded", function() {
+  // document.getElementById("dbcount").textContent = maincount;   
+  // document.getElementById("beginner$").textContent = beginner$$;  
+  // document.getElementById("easy$").textContent = easy$$; 
+  // document.getElementById("medium$").textContent = medium$$; 
+  // document.getElementById("difficult$").textContent = difficult$$; 
+
+  // document.getElementById("verycommon$").textContent = verycommon$$;  
+  // document.getElementById("common$").textContent = common$$; 
+  // document.getElementById("rare$").textContent = rare$$; 
+  // document.getElementById("veryrare$").textContent = veryrare$$; 
+
+  // document.getElementById("schooling$").textContent = schooling$$;  
+  // document.getElementById("social$").textContent = social$$; 
+  // document.getElementById("solitary$").textContent = solitary$$; 
+
+  // document.getElementById("peaceful$").textContent = peaceful$$;  
+  // document.getElementById("mpeaceful$").textContent = mpeaceful$$; 
+  // document.getElementById("agressive$").textContent = agressive$$; 
+
+  // document.getElementById("beasy$").textContent = beasy$$;  
+  // document.getElementById("bmedium$").textContent = bmedium$$; 
+  // document.getElementById("bhard$").textContent = bhard$$; 
+  // document.getElementById("norecord$").textContent = norecord$$; 
+
+    sort_select.addEventListener("change", output);
+    output ()
+
+    document.getElementById("settings").addEventListener("click", function () {
+      var dropdown = document.getElementById("settings_dropdown");
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  });
+
+  window.addEventListener("click", function (event) {
+    var dropdown = document.getElementById("settings_dropdown");
+    if (event.target !== document.getElementById("settings")) {
+        dropdown.style.display = "none";
+    }
+  });
+
+  cmtoinch.addEventListener("click", fishsizemetric);
+  cap_conversion.addEventListener("click", litergallon);
+  temp_conversion.addEventListener("click", celtofaren);
+  // cardswticher.addEventListener("click", flipCards);   
+
+  /// Search bar for filtering fish by name 
+  searchInput.addEventListener("input",filterFishByName); 
+  searchInput.addEventListener("keyup",filterFishByName); 
+
+  // about_button.addEventListener("click", explain);
+  // feedback_button.addEventListener("click", gotofeedback);
+
+  // document.getElementById("x-about").addEventListener("click", explain);
+  // document.getElementById("x-feedback").addEventListener("click", gotofeedback);
+
+  // let x_outs = document.querySelectorAll(".x-out");
+  // x_outs.forEach(div => {
+  //   div.innerHTML = "x"; 
+  //   div.addEventListener("click", function() {
+  //     let parentDiv = div.parentNode;
+  //     let id = parentDiv.id;
+  //     parentDiv.style.display = "none";
+  //   })
+  //   explain();
+  //   gotofeedback(); 
+    // updateBackground();
+    // window.addEventListener('resize', updateBackground);
+    // // initialImage ()
+  });
+  // document.getElementById("dbcount").textContent = maincount; 
+  // document.getElementById("dbcount2").textContent = maincount; 
+
+  // }); 
+/////////////////////////////////////Event listeners ends here //////////////////////////////
+
+///Calculates the precentage value of each category compared to total
+function perCounter (property, code) {
+  let list = []; 
+  for (let fish of fish_master) {
+    if (fish[property] == parseInt(code)) {
+      list.push(fish);
+    }
+  }
+  return `(${Math.round((list.length/maincount)*100)}%)`; 
+}
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Used for checking all checkboxes when advanced options are collapsed 
+        
+function all_select_behavior (x) {
+  x.forEach(function(box) {
+    box.checked = true; 
+  });
+}
+
+
+function all_deselect_behavior (x) {
+x.forEach(function(box) {
+ box.checked = false; 
+});; 
+}
+  
+
+
+// Conversion from liter to gallon [radio buttons]         
+function litergallon() {
+if (gallon_radio.checked == true) {
+let cal_cap = parseFloat(tank_size.value);
+document.getElementById("size").innerHTML = gallon;
+cap_modifier = 3.78541253426; 
+console_capacity = gallon;
+tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
+inputAnimation(tank_size);
+}
+}
+
+
+// Conversion from gallon to liter [radio buttons]        
+function gallonliter() {
+  if (liter_radio.checked == true) {
+let cal_cap = parseFloat(tank_size.value);
+document.getElementById("size").innerHTML = liter;
+cap_modifier = 1; 
+console_capacity = liter;
+tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
+inputAnimation(tank_size);
+}
+}
+
+
+
+// Conversion from celsius to farenheit [button]      
+function ctof() {
+let cal_tempmin = parseFloat(tempmin.value);
+
+if (!exactCel || cal_tempmin !== Math.round(exactCel*10)/10) {
+  exactCel = cal_tempmin;
+  exactFar = (exactCel * 9/5) + 32;
+}
+ 
+
+console_temperature =  farenheit;
+let rouondedFar = Math.round(exactFar*10)/10;
+tempmin.value = rouondedFar;
+temp_modifier1 = 1.8; 
+temp_modifier2 = 32; 
+tempmin.min = 39;
+tempmin.max = 95;
+document.getElementById("min_t").innerHTML = farenheit;
+inputAnimation(tempmin);
+
+  }
+        
+// Conversion from farenheit to celsius [button] 
+function ftoc() {
+let cal_tempmin = parseFloat(tempmin.value);
+
+if (!exactFar ||cal_tempmin !==  Math.round(exactFar*10)/10) {
+  exactFar = cal_tempmin;
+  exactCel = (exactFar - 32) * 5/9;
+}
+
+
+console_temperature = celsius;
+let rouondedCel = Math.round(exactCel*10)/10; 
+tempmin.value = rouondedCel;
+temp_modifier1 = 1; 
+temp_modifier2 = 0; 
+tempmin.min = 4;
+tempmin.max = 35;
+document.getElementById("min_t").innerHTML = celsius;
+inputAnimation(tempmin);
+  }
+
+/////Slicing comma off from the end for origin string 
+function commaRemover (x) {
+if (x.endsWith(",")) {
+  return x.slice(0, -1);
+}
+else {
+  return x;
+}
+}
+
+//// Upper case first letter:
+function uppercaser(str) {
+const words = str.split(' ');
+const capitalizedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+return capitalizedWords.join(' ');
+}
+
+////removing ".0" from round numbers 
+function sizeFormatter (num) {
+if (num % 1 !== 0) {
+  return num.toFixed(1);
+} else {
+  return num.toFixed(0); 
+}
+}
+
+
+/////////////////////////////////
+/////Adnimation functions
+
+function inputAnimation (x) {
+x.classList.add('number-updated');
+setTimeout(() => {
+  x.classList.remove('number-updated');
+}, 1000);
+}
+
+/////Need to edit this to make it apply to image only. 
+function refreshAnimation (x) {
+var y = document.getElementById(x);
+y.classList.add('tiles-refresh');
+setTimeout(() => {
+  y.classList.remove('tiles-refresh');
+}, 1000);
+}
+
+
+
+
+
+///Calculates the precentage value of each category compared to total
+
+function perCounter (property, code) {
+let list = []; 
+for (let fish of fish_master) {
+  if (fish[property] == parseInt(code)) {
+    list.push(fish);
+  }
+}
+return `(${Math.round((list.length/maincount)*100)}%)`; 
+}
+
+
+
+// /////Change background 
+// function imageChange() {
+//   if (currentImage === bcimages) {
+//     currentImage = 1; 
+//   }
+//   else {
+//     currentImage = currentImage+1; 
+//   }
+
+//   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
+// }
+
+
+/////Background image as initial
+// function updateBackground() {
+//   if (window.innerWidth > 767) {
+//     if (!document.body.style.backgroundImage) {
+//       let initial = Math.floor(Math.random() * bcimages) + 1;
+//       currentImage = initial;
+//       document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+//     }
+//   } else {
+//     document.body.style.backgroundImage = '';
+//   }
+// }
+
+// function initialImage () {
+//   if (window.innerWidth > 767) {
+//   let initial = Math.floor(Math.random() * bcimages) + 1;
+//   currentImage = initial;
+//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
+// }
+// }
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 function sort () {
 
     if (sort_select.value == "size_min") {
@@ -210,30 +622,30 @@ function uppercaser(str) {
 
 
 
-function flipCards() {
-  flipped = (flipped === false) ? true : false; 
-  whichcard = (flipped === true) ? infoshown: fishshown; 
-  cardswticher.innerHTML = whichcard;
-  if (flipped) {
-    for (let fish of fish_master) {
-      details.push(fish.fish_id);
-    }} else {
-      details = []; 
-    }
-    output ()
-  } 
+// function flipCards() {
+//   flipped = (flipped === false) ? true : false; 
+//   whichcard = (flipped === true) ? infoshown: fishshown; 
+//   cardswticher.innerHTML = whichcard;
+//   if (flipped) {
+//     for (let fish of fish_master) {
+//       details.push(fish.fish_id);
+//     }} else {
+//       details = []; 
+//     }
+//     output ()
+//   } 
 
     ////Remembering info card display based on iterating the 'details' array that serves as cache? 
-    function remember (details) {
-      for (let id of details) {
-       var fishcard = document.getElementById(id);
-       var infocard = document.getElementById("d" + id);
-       if (fishcard && infocard) {
-        fishcard.style.display = "none";
-        infocard.style.display = "block";
-      }
-    }
-    }
+    // function remember (details) {
+    //   for (let id of details) {
+    //    var fishcard = document.getElementById(id);
+    //    var infocard = document.getElementById("d" + id);
+    //    if (fishcard && infocard) {
+    //     fishcard.style.display = "none";
+    //     infocard.style.display = "block";
+    //   }
+    // }
+    // }
 
 //////Filter by fish name (latin, english and alternative name)
 
