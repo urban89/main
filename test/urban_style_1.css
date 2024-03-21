@@ -289,6 +289,11 @@ position: relative; /*necessary for in card elements to allign as I want */
    .list-view p {
     flex: 1 1 calc(50% - 5vw);
   }
+  .titleicon {
+    height: 4vw;
+    width:4vw;
+}
+  
 }
 
 
@@ -405,6 +410,11 @@ position: relative; /*necessary for in card elements to allign as I want */
   #cpanel, #cpanel1, #cpanel2  {
     padding: 1.5vw;
    }
+
+   .titleicon {
+    height: 2vw;
+    width:2vw;
+}
 }
 
 @media screen and (min-width: 1300px) {
@@ -527,8 +537,6 @@ position: relative; /*necessary for in card elements to allign as I want */
 
 .alert {
   color:rgb(17, 7, 7);
-/* color:rgb(70, 3, 4); */
-/* font-size: 20px; */
 font-weight: 800;
 background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
 border-radius: 10px;
