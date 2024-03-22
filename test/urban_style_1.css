@@ -295,16 +295,13 @@ position: relative; /*necessary for in card elements to allign as I want */
 
     .list-view {
       background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
-      display: flex;
       flex-wrap: wrap;
-      gap: 2vw;
       border-radius: 5px;
       padding: 0.5vw;
     }
 
     .list-view p {
-      flex: 1 1 100%;
-      margin:0;
+     margin:1vw;
     }
 
     #sort {
@@ -383,8 +380,20 @@ position: relative; /*necessary for in card elements to allign as I want */
     display: block;
   }
 
+.listname {
+  font-size: 3vw;
 }
-@media screen and (max-width: 870px) {
+  .listlatin {
+    font-size: 2.5vw;
+  }
+
+  .listnum {
+    font-size: 2vw;
+  }
+}
+
+
+@media screen and (max-width: 820px) {
   .paradrop {
     display: block;
   }
@@ -431,6 +440,16 @@ position: relative; /*necessary for in card elements to allign as I want */
   padding: 0.5vw;
   margin: 0.5vw; 
 }
+.listname {
+  font-size: 2.4vw;
+}
+  .listlatin {
+    font-size: 1.8vw;
+  }
+
+  .listnum {
+    font-size: 1.5vw;
+  }
 }
 
 @media screen and (max-width: 770px) {
@@ -476,6 +495,17 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fish_card, .infocard {
     padding: 0.5vw; 
   }
+
+  .listname {
+    font-size: 1rem;
+  }
+    .listlatin {
+      font-size: 0.8rem;
+    }
+
+    .listnum {
+      font-size: 0.75rem;
+    }
 
 }
 
