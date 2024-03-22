@@ -931,10 +931,6 @@ input[type="radio"] {
 
 
 
-#imagechanger {
-  display: none; /*dont need it for now */ 
-}
-
 
 .filler {
   font-size: 0.7rem; 
@@ -946,18 +942,3 @@ input[type="radio"] {
   text-decoration: none;
   color: inherit;
 }
-
-
-
-
-.google-form-wrapper {
-  max-width: 640px; 
-  margin: auto;
-  border: 1px solid #ccc; 
-  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
-  border-radius: 10px; 
-  overflow: hidden; 
-  background: linear-gradient(145deg, #d4e796f6  5%, #b4d6eeec 50%);
-}
-
-

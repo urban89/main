@@ -82,15 +82,13 @@ let capacity_button = show_gallon;
 let temp_button = show_farenheit; 
 let whichcard = fishshown; 
 let flipped = false; 
-// let feedbackstatus = feedbacknotshown;
-// let aboutstatus = aboutoff; 
 let previousFishcount = 42; 
 
 let details = []; 
 
 let cmtoinch = document.getElementById("cmtoinch");
 let searchInput = document.getElementById("searchInput"); 
-// let imagechanger = document.getElementById("imagechanger"); 
+
 let result_div = document.getElementById("result");
 let sort_select = document.getElementById("sortdb");
 let cap_conversion = document.getElementById("cap_conversion");
@@ -100,8 +98,6 @@ let fishcount = document.getElementById("fishcount");
 let displayed = document.getElementById("displayed");
 let about = document.getElementById("about");
 let about_button = document.getElementById("about_button");
-// let feedback_button = document.getElementById("feedback_button"); 
-
 
 //////////////////////////
 /////% counters for each category
@@ -133,29 +129,7 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
 /////////////////////////////////////
 /// Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
-  // document.getElementById("dbcount").textContent = maincount;   
-  // document.getElementById("beginner$").textContent = beginner$$;  
-  // document.getElementById("easy$").textContent = easy$$; 
-  // document.getElementById("medium$").textContent = medium$$; 
-  // document.getElementById("difficult$").textContent = difficult$$; 
 
-  // document.getElementById("verycommon$").textContent = verycommon$$;  
-  // document.getElementById("common$").textContent = common$$; 
-  // document.getElementById("rare$").textContent = rare$$; 
-  // document.getElementById("veryrare$").textContent = veryrare$$; 
-
-  // document.getElementById("schooling$").textContent = schooling$$;  
-  // document.getElementById("social$").textContent = social$$; 
-  // document.getElementById("solitary$").textContent = solitary$$; 
-
-  // document.getElementById("peaceful$").textContent = peaceful$$;  
-  // document.getElementById("mpeaceful$").textContent = mpeaceful$$; 
-  // document.getElementById("agressive$").textContent = agressive$$; 
-
-  // document.getElementById("beasy$").textContent = beasy$$;  
-  // document.getElementById("bmedium$").textContent = bmedium$$; 
-  // document.getElementById("bhard$").textContent = bhard$$; 
-  // document.getElementById("norecord$").textContent = norecord$$; 
 
     sort_select.addEventListener("change", output);
     output ()
@@ -193,31 +167,9 @@ document.addEventListener("DOMContentLoaded", function() {
   searchInput.addEventListener("input",filterFishByName); 
   searchInput.addEventListener("keyup",filterFishByName); 
 
-  // about_button.addEventListener("click", explain);
-  // feedback_button.addEventListener("click", gotofeedback);
 
-  // document.getElementById("x-about").addEventListener("click", explain);
-  // document.getElementById("x-feedback").addEventListener("click", gotofeedback);
-
-  // let x_outs = document.querySelectorAll(".x-out");
-  // x_outs.forEach(div => {
-  //   div.innerHTML = "x"; 
-  //   div.addEventListener("click", function() {
-  //     let parentDiv = div.parentNode;
-  //     let id = parentDiv.id;
-  //     parentDiv.style.display = "none";
-  //   })
-  //   explain();
-  //   gotofeedback(); 
-    // updateBackground();
-    // window.addEventListener('resize', updateBackground);
-    // // initialImage ()
   });
-  // document.getElementById("dbcount").textContent = maincount; 
-  // document.getElementById("dbcount2").textContent = maincount; 
 
-  // }); 
-/////////////////////////////////////Event listeners ends here //////////////////////////////
 
 ///Calculates the precentage value of each category compared to total
 function perCounter (property, code) {
@@ -508,47 +460,6 @@ function fishSelect (fish_list) {
   fishcount.innerText = fish_master.length; 
   displayed.innerText = fish_list.length; 
 
-  // fish cards and infor cards when clicked it hides the div and the other div is displayed in its place
-  // let maincard_divs = document.querySelectorAll(".maincard");
-  // const iconImages = document.querySelectorAll('.iconimage');
-  
-  // // Hides fish image card and shows fish info card 
-  // maincard_divs.forEach(div => {
-  // let divId = div.id; 
-  // div.addEventListener("click", function () {
-  //   div.style.display = "none"; 
-  //   var info_id = `d${divId}`; 
-  //   var info_card = document.getElementById(info_id);
-  //   info_card.style.display = "block"; 
-  // if (!details.includes(divId)) {
-  //   console.log(divId);
-  //   details.push(divId);
-  // }
-
-  // });
-  // });
-
-//Hides fish info card and shows fish image card and  
-// iconImages.forEach(iconImage => {
-//   iconImage.addEventListener("click", function () {
-//   const src = this.getAttribute('src');
-//   const idRegex = /webps1\/(\d+)\.webp/;
-//   const match = src.match(idRegex);
-//   if (match) {
-//     const id = match[1];
-//   let reveal_id = eval("d" + id); 
-//   const fishcard_id = id; // This assumes the id extracted is directly the fishcard_id
-//   const index = details.indexOf(fishcard_id);
-  
-  
-//     reveal_id.style.display = "none"; 
-//     details.splice(index, 1);
-//     var fish_card = document.getElementById(fishcard_id);
-//     // refreshAnimation(fishcard_id); //Need to edit this to make it apply to image only. 
-//     fish_card.style.display = "block"; 
-//   }
-//   });
-//   });
 
 
 } // fishSelect ends here 
