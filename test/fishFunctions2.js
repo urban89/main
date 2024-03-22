@@ -165,9 +165,21 @@ document.addEventListener("DOMContentLoaded", function() {
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
+  document.getElementById("more").addEventListener("click", function () {
+    var dropdown = document.getElementById("more_dropdown");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
     if (event.target !== document.getElementById("settings")) {
+        dropdown.style.display = "none";
+    }
+  });
+
+  window.addEventListener("click", function (event) {
+    var dropdown = document.getElementById("more_dropdown");
+    if (event.target !== document.getElementById("more")) {
         dropdown.style.display = "none";
     }
   });
