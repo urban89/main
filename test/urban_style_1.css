@@ -339,6 +339,14 @@ position: relative; /*necessary for in card elements to allign as I want */
 /* Media queries ************************************************/ 
 
 
+@media screen and (max-width: 540px) {
+  .buttonsdb {
+   display: block;
+   margin-top: 3vw;
+  }
+ }
+ 
+
 @media screen and (max-width: 550px) {
   .column_result {
     grid-template-columns: repeat(2, 1fr);
@@ -423,7 +431,13 @@ position: relative; /*necessary for in card elements to allign as I want */
   padding: 0.5vw;
   margin: 0.5vw; 
 }
-  
+}
+
+@media screen and (max-width: 770px) {
+ .buttons {
+  display: block;
+  margin-top: 3vw;
+ }
 }
 
 
