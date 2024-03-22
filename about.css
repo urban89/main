@@ -230,6 +230,15 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 2.92vw;
   }
 
+  h1 {
+    font-size: 4vw; 
+  }
+  h2 {
+    font-size: 3vw; 
+  }
+p {
+  font-size: 3.5vw; 
+  }
 }
 
 
