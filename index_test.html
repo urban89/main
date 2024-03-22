@@ -43,7 +43,7 @@
 
 <!--Welcome-->
 <div id = "welcomepanel" class = "tiles grid-item"> 
-<p class="welcometext welcometitle"><span class = "titleicon"></span>Fresh Water Fish Selector<span class = "titleicon"></span></p>
+<p class="welcometext welcometitle"><span class = "titleicon"></span>Selector: Fresh Water<span class = "titleicon"></span></p>
 <p class="welcometext">Select your parameters and see the results below. Click on fish cards to see more details.
 </p>
 </div>
@@ -70,7 +70,16 @@
       </div>
     </span>
     &nbsp;&nbsp;&nbsp;
-    <a href = "about.html" id = "about" class="dropbtn-cpanel">About</a>
+    <span class = "dropdown"> 
+      <span id = "more" class="dropbtn-cpanel">More info</span>
+      <div id = "more_dropdown" class="dropdown-cpcontent"> 
+        <span id = "about"> <a href = "about.html" class = "menuhref">About</a></span>
+        <span id = "feedback" ><a href = "https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?usp=sf_link" target="_blank" class = "menuhref" >Feedback </a></span>
+      </div>
+    </span>
+
+
+   
   </div> <!-- Cpanel ends here -->
 </div> <!--"grid-container-cpanel"-->
 
@@ -101,7 +110,7 @@
 
   <div id="div_hardiness" class="tiles">
     <label for="dropdownButtonHardi">Keeping difficulty </label>
-    <span class="dropdown">
+    <span class="dropdown paradrop">
     <button onclick="toggleDropdown(event)" id = "dropdownButtonHardi" class="dropbtn">Selected: <span id = "div_hardiness_x">All</span></button>
     <div id="dropdownContentHardi" class="dropdown-content">
       <!-- <input type="checkbox" id="all_1" name="all_1"> <label for="all_1">select all</label><br> -->
@@ -121,7 +130,7 @@
 
     <div id="div_avail" class="tiles">
       <label for="dropdownButtonAvail"> Purchase availability </label>
-      <span class="dropdown">
+      <span class="dropdown paradrop">
       <button onclick="toggleDropdown(event)" id = "dropdownButtonAvail" class="dropbtn">Selected: <span id = "div_avail_x">All</span></button>
       <div id="dropdownContentHardiAvail" class="dropdown-content">
         <!-- <input type="checkbox" id="all_2" name="all_2"> <label for="all_2">select all</label><br> -->
@@ -145,7 +154,7 @@
 
   <div id="div_behavior" class="tiles">
     <label for="dropdownButtonBehavior"> Social behavior </label>
-    <span class="dropdown">
+    <span class="dropdown paradrop">
     <button onclick="toggleDropdown(event)" id = "dropdownButtonBehavior" class="dropbtn">Selected: <span id = "div_behavior_x">All</span></button>
     <div id="dropdownContentBehavior" class="dropdown-content">
       <!-- <input type="checkbox" id="all_3" name="all_3"> <label for="all_3">select all</label><br> -->
@@ -161,7 +170,7 @@
 
   <div id="div_agression" class="tiles">
     <label for="dropdownButtonAgression"> Aggression level </label>
-    <span class="dropdown">
+    <span class="dropdown paradrop">
     <button onclick="toggleDropdown(event)" id = "dropdownButtonAgression" class="dropbtn">Selected: <span id = "div_agression_x">All</span></button>
     <div id="dropdownContentAgression" class="dropdown-content">
       <!-- <input type="checkbox" id="all_4" name="all_4"> <label for="all_4">select all</label><br> -->
@@ -177,7 +186,7 @@
     
   <div id="div_breeding" class="tiles">
     <label for="dropdownButtonBreeding"> Breeding difficulty </label>
-    <span class="dropdown">
+    <span class="dropdown paradrop">
     <button onclick="toggleDropdown(event)" is = "dropdownButtonBreeding" class="dropbtn">Selected: <span id = "div_breeding_x">All</span></button>
     <div id="dropdownContentBreeding" class="dropdown-content">
       <!-- <input type="checkbox" id="all_5" name="all_5"> <label for="all_5">select all</label><br> -->
