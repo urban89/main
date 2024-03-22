@@ -15,11 +15,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="about.css">
 
-    <meta name="description" content="Find aquarium fish with this search tool. Filter by tank size, temperature, difficulty. See this page for info about the tool">
+    <meta name="description" content="Learn about SelectYourFish.com, your ultimate online destination for exploring and selecting aquarium fish. Discover how our Selector tool simplifies finding the perfect fish for your tank and delve into our extensive fish Database for in-depth species information.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SelectYourFish - Fish Database</title>
+    <meta name="viewport" content="width=device-width height=device-height, initial-scale=0 maximum-scale=3">
+
+    <title>About SelectYourFish.com</title>
        <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
             <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
             <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
@@ -46,16 +47,20 @@
 <body>
   <div id = "maindiv"> 
     <div id = "about" class = "tiles">
-    <h1> Welcome to SelectYourFish.com </h1>
-    <p> Find the perfect fish for your home aquarium. 
-     This page provides an interactive way to search for freshwater aquarium fish based on their requirements. 
-      Remember, this page gives general advice. Always research each fish species before buying.
-      The percentage value next to each category
-      reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
+      <h1><span class = "titleicon"></span>  Welcome to SelectYourFish.com <span class = "titleicon"></span> </h1> 
+    <p> Learn about SelectYourFish.com, your ultimate online destination for exploring and selecting aquarium fish.
+       Discover how the Selector tool simplifies finding the perfect fish for your tank and delve into the extensive fish Database for detailed species information. 
+     This site provides an interactive way to search for freshwater aquarium fish based on their requirements. 
+      Remember, this is all general advice. Always research each fish species before buying.
      <br>
      To browse all fish in database, go to <a href = "browse_test.html">Database.</a> 
+     <br>
+     To filter fish by different attributes, go to <a href = "index_test.html">Selector.</a> 
     </p>
      
+    <h2>Search categories</h2>
+    See each category explained below. The percentage value next to each category
+    reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
     <h2>Aquarium size</h2>
     <p> 
       This is the smallest tank size recommended for a planted aquarium without additional fish. 
@@ -69,43 +74,46 @@
           </p>  
 
     <h2>Keeping difficulty</h2>
-     <p><span>Beginner <span id = "beginner$"></span>: </span>Ideal for those new to aquarium keeping. </p>
-      <p> <span>Easy <span id = "easy$"></span>: </span>Suitable for hobbyists with some experience. </p>
-       <p><span>Medium <span id = "medium$"></span>: </span> Requires knowledge and some diligence in maintaining specific environmental conditions.</p>
-        <p><span>Difficult <span id = "difficult$"></span>: </span>Demands advanced knowledge and dedicated care to sustain the appropriate environment.</p>
+     <p><span class = "cat">Beginner <span id = "beginner$" class = "pregrey"></span>: </span>Ideal for those new to aquarium keeping. </p>
+      <p> <span class = "cat"></span>Easy <span id = "easy$" class = "pregrey"></span>: </span>Suitable for hobbyists with some experience. </p>
+       <p><span class = "cat"></span>Medium <span id = "medium$" class = "pregrey"></span>: </span> Requires knowledge and some diligence in maintaining specific environmental conditions.</p>
+        <p><span class = "cat"></span>Difficult <span id = "difficult$" class = "pregrey"></span>: </span>Demands advanced knowledge and dedicated care to sustain the appropriate environment.</p>
 
     <h2>Purchase availability</h2>
-     <p><span>Very common  <span id = "verycommon$"></span>: </span>Widely available at local pet stores.</p>
-      <p><span>Common  <span id = "common$"></span>: </span>Generally available at local pet stores. </p>
-       <p><span>Rare  <span id = "rare$"></span>: </span>Less likely to be found at local pet stores.</p>
-        <p><span>Very rare  <span id = "veryrare$"></span>: </span>Usually requires special sourcing. </p>
+     <p><span class = "cat"></span>Very common  <span id = "verycommon$" class = "pregrey"></span>: </span>Widely available at local pet stores.</p>
+      <p><span class = "cat"></span>Common  <span id = "common$" class = "pregrey"></span>: </span>Generally available at local pet stores. </p>
+       <p><span class = "cat"></span>Rare  <span id = "rare$" class = "pregrey"></span>: </span>Less likely to be found at local pet stores.</p>
+        <p><span class = "cat"></span>Very rare  <span id = "veryrare$" class = "pregrey"></span>: </span>Usually requires special sourcing. </p>
 
     <h2>Social behavior</h2>
-    <p><span>Schooling  <span id = "schooling$"></span>: </span>Must be kept in groups of six or more of their kind. </p>
-      <p><span>Social  <span id = "social$"></span>: </span>It's much better for their health and behavior to live in groups. </p>
-       <p><span>Solitary  <span id = "solitary$"></span>: </span>Can or should be kept alone. </p>
+    <p><span class = "cat"></span>Schooling  <span id = "schooling$" class = "pregrey"></span>: </span>Must be kept in groups of six or more of their kind. </p>
+      <p><span class = "cat"></span>Social  <span id = "social$" class = "pregrey"></span>: </span>It's much better for their health and behavior to live in groups. </p>
+       <p><span class = "cat"></span>Solitary  <span id = "solitary$" class = "pregrey"></span>: </span>Can or should be kept alone. </p>
 
     <h2>Agression level</h2>
-    <p><span>Peaceful  <span id = "peaceful$"></span>: </span>Mostly calm but may have some minor squabbles. </p>
-      <p><span>Mostly peaceful  <span id = "mpeaceful$"></span>: </span>Might fight over space or mates, or eat much smaller fish.</p>
-       <p><span>Agressive  <span id = "agressive$"></span>: </span> Can be very territorial. Needs a lot of room to live with others peacefully.</p>
+    <p><span class = "cat"></span>Peaceful  <span id = "peaceful$" class = "pregrey"></span>: </span>Mostly calm but may have some minor squabbles. </p>
+      <p><span class = "cat"></span>Mostly peaceful  <span id = "mpeaceful$" class = "pregrey"></span>: </span>Might fight over space or mates, or eat much smaller fish.</p>
+       <p><span class = "cat"></span>Agressive  <span id = "agressive$" class = "pregrey"></span>: </span> Can be very territorial. Needs a lot of room to live with others peacefully.</p>
     
     <h2>Breeding difficulty</h2>
-    <p><span>Easy  <span id = "beasy$"></span>: </span>Often breeds without needing special water conditions.</p>
-      <p><span>Medium  <span id = "bmedium$"></span>: </span>Might breed with some extra care. </p>
-       <p><span>Hard  <span id = "bhard$"></span>: </span> Needs specific steps to breed successfully. </p>
-        <p><span>No record  <span id = "norecord$"></span>: </span>No known cases of breeding by fishkeepers. </p>
+    <p><span class = "cat"></span>Easy  <span id = "beasy$" class = "pregrey"></span>: </span>Often breeds without needing special water conditions.</p>
+      <p><span class = "cat"></span>Medium  <span id = "bmedium$" class = "pregrey"></span>: </span>Might breed with some extra care. </p>
+       <p><span class = "cat"></span>Hard  <span id = "bhard$" class = "pregrey"></span>: </span> Needs specific steps to breed successfully. </p>
+        <p><span class = "cat"></span>No record  <span id = "norecord$" class = "pregrey"></span>: </span>No known cases of breeding by fishkeepers. </p>
 
         <h2>Fish cards</h2>
-        <p>You will see your search results below. Click the fish cards to see more info about each fish</p>
+        <p>Both the Selector and the Databse use fish cards to display each fish. Click on the a fish card to see more details. You'll see some examples below.</p>
+        <br>
+
     </div> <!-- about tile -->
-   </div> <!-- about ends -->
+
+  
+    <div id = "result"> 
+      <!-- example fish cards come here -->
+    </div> 
+
 </div> <!-- main div --> 
 <script type="text/javascript" src="test/fish_array.js"></script>
-<script type="text/javascript" src="test/constants.js"></script>
-<!-- <script type="text/javascript" src="test/database_declarations.js"></script>
-<script type="text/javascript" src="test/fish_functions_1.js"></script>
-<script type="text/javascript" src="test/fish2.js"></script> -->
 <script type="text/javascript" src="test/about.js"></script>
 
     

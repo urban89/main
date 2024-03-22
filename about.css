@@ -1,50 +1,24 @@
 
 
-
 body {
-    /* margin: 10px; */
-    /* padding: 0; */
-    /* display: grid; */
-    /* justify-content: center;
-    align-items: center;
-    height: fit-content; 
-    width: fit-content; */
+ 
     font-family: "Trebuchet MS", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 550;
+    font-weight: 400;
     font-style: normal;
     background-color: #235197;
-    /* background-size: cover;
-    background-repeat: round;
-    background-attachment: fixed;  */
     position: relative; 
-    /* min-height:100vh;
-    max-width: 100vw; */
+   
     }
   
   
-    /* @media screen and (min-width: 767px) {
-      body {
-        background-image: url('backgrounds/1.jpg');
-      }
-  
-  }  */
-
-  
   #maindiv {
-    /* width: 95vw;  */
-    /* margin: auto; */
     padding: 2vw; 
-    /* border-radius: 5px;  */
-    /* display: inline-block;  */
-    /* white-space: nowrap; */
-    /* display: grid;  */
-    /* justify-content: center;
-    align-items: center; */
-    /* height: fit-content; 
-    width: fit-content; */
+    position: relative;
   }
-  
+  #about {
+    padding:1vw;
+  }
   
   .grid-container-cpanel {
     display: grid;
@@ -56,20 +30,6 @@ body {
   }
   
   
-
-  
-  /* .column_result {
-      
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto; 
-    gap: 1vw; 
-    justify-content: center;
-    align-items: center;
-  
-  }  */
-  
-  
   
   /*Tiles*/ 
   
@@ -79,102 +39,14 @@ body {
     padding: 2vw;
     box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
     border: 1px solid #0f1946; 
-    margin: 5vw 0 0 0 ; 
+    margin: 1vw 0 0 0 ; 
     position: relative;
   }
   
-  
-  
-  
 
-
-  
   #cpanel1, #cpanel2 {
     position: relative; 
-    background-color: red;
   }
-  
-  
-  
-  
-  
-  /* Making it a little bit responsive here  */ 
-  
-  
-  /* @media screen and (max-width: 450px) {
-    .column_result {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  } */
-  
-  
-/*   
-  @media screen and (min-width: 450px) {
-    #maindiv {
-      width: 60vw;
-    }
-  }
-  
-  
-  @media screen and (min-width: 788px) {
-    #maindiv {
-      width: 70vw;
-    }
-  
-  }
-  
-  
-  @media screen and (min-width: 839px) {
-    #maindiv {
-      width: 80vw;
-    }
-  }
-  
-  @media screen and (min-width: 956px) {
-    #maindiv {
-      width: 90vw;
-    }
-  }
-  
-  @media screen and (min-width: 1110px) {
-    #maindiv {
-      width: 100vw;
-    }
-  }
-  
-  @media screen and (min-width: 1300px) {
-    #maindiv {
-      width: 100vw;
-    }
-    .fishcardimage {
-      width: 225px;
-      height: 175px;
-  }
-  }
-  
-  @media screen and (min-width: 1600px) {
-    #maindiv {
-      width: 50vw;
-      
-    }
-    .fishcardimage {
-      width: 250px;
-      height: 200px;
-  }
-  } */
-  
-  /* @media (max-width: 768px) {
-    #maindiv {
-      width: 100%; 
-    }
-  } */
-  
-
-  
-
-  
- 
-  
   
   /*About and feedback*/ 
   
@@ -194,227 +66,404 @@ body {
     word-wrap: break-word;
     width: auto;
   }
+
   
-  #about p span {
-    font-weight: 600;
-  }
-  
+.fish_card #about p {
+  margin: unset; 
+  white-space: unset;
+  text-align: unset; 
+  word-wrap: unset;
+  width: unset;
+}
+   
   h1 {
     font-size: 1.3rem; 
+    font-weight: 700;
   }
   
   h2 {
     font-size: 1rem; 
     margin-bottom: 2px;
+    font-weight: 650;
   }
-  
 
-  
-  
+  .titleicon {
+    content: url('icon/titleicon.webp'); 
+    height: 8vw;
+    width:8vw;
+}
 
+.pregrey {
+  color: rgb(63, 30, 30);
+}
+.cat {
+  font-weight: 500;
+}
+/*fish card grid*/
+.column_result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+} 
 
-/*******************************************************************/
-  /* For the example card*/
+.fish_card, .infocard {
+  flex: 0 0 calc(33.33% - 2vw); 
+  margin: 5px; 
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 10px;
+  padding: 1vw;
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+position: relative; /*necessary for in card elements to allign as I want */ 
+}
+/*fish card items*/
+.fishsize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1vw;
+  color: rgb(136, 105, 3); 
+}
 
-  
-  /* .fish_card, .infocard {
-    flex: 0 0 calc(33.33% - 10px); 
-    margin: 5px; 
-    box-sizing: border-box;
-    border: 1px solid #010a14;
-    border-radius: 10px;
-    padding: 2vw;
-    background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
-  background-attachment: fixed;
-  box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-  position: relative;
-  }  */
-  
-  /* .infocard {
-    background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
-    box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
-  } */
-  
-  
-  
-  /* .fishcardimage {
-  width: 25vw;
-  height: 20vw;
+.fishtemp {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-70%);
+  margin: 1vw;
+}
+
+.tanksize {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 5%;
+  transform: translateX(-45%);
+  margin: 1vw;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 2vw;
+}
+
+.fishname {
+  margin-top: 0px;
+  font-size: 3vw;
+}
+
+.infocard {
+  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+.infocardtext {
+  font-size: 2.5vw;
+  margin: 0; 
+}
+
+.fishcardimage {
+  width: 20vw;
+  height: 15vh;
   border-color: #05224f;
   border-width: 1px; 
   border-radius: 3px;
   border-style: solid;
-  
-  } */
-
- /* .infocardtext {
-    font-size: 0.9rem;
-    margin: 0; 
   }
-  
+
   .iconimage {
-  width: 15vw;
-  height: 13vh;
-  border-color: #05224f;
-  border-width: 1px; 
-  border-radius: 3px;
-  border-style: solid;
-  }
-  
-  
-  .title {
-    position: absolute;
-    font-weight: 666;
-    top: 0;
-    left: 50%;
-    transform: translateX(-40%);
-    white-space: nowrap;
-    font-size: 0.8rem; 
-  }
-  
-  .subtitle, .bigsubtitle, .verybigsubtitle {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-40%);
-    white-space: nowrap;
-    font-size: 13px; 
-  }
-  
-  @media screen and (max-width: 1288px) {
-    .verybigsubtitle {
-      font-size: 67%;
-      transform: translateX(-40%);
+    width: 5vw;
+    height: 3.75vw;
+    border-color: #05224f;
+    border-width: 1px; 
+    border-radius: 3px;
+    border-style: solid;
     }
-  }
-  
-  @media screen and (max-width: 1200px) {
-    .bigsubtitle {
-      font-size: 70%;
-      transform: translateX(-40%);
-    }
-  
-    .verybigsubtitle {
-      font-size: 64%;
-    }
-  }
-  
-  @media screen and (max-width: 830px) {
-    
-  
-    .verybigsubtitle {
-      font-size: 60%;
-      transform: translateX(-38%);
-    }
-  }
-  
-  @media screen and (max-width: 812px) {
-    
-  
-    .bigsubtitle {
-      font-size: 65%;
-      transform: translateX(-38%);
-    }
-  } */
-  
 
+    .title {
+      position: absolute;
+      font-weight: 666;
+      top: 0;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2.5vw; 
+      margin: 0.5vw; 
+    }
     
-  /* .fishsize {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    color: rgb(136, 105, 3); 
+    .subtitle, .bigsubtitle, .verybigsubtitle {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2vw; 
+      margin: 0.5vw; 
+    }
+
+    .bigsubtitle, .verybigsubtitle {
+      transform: translateX(-38%);
+    }
+/*******************************************************************/
+/* Media queries ************************************************/ 
+
+
+
+
+@media screen and (max-width: 550px) {
+  .column_result {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .fishtemp {
-    position: absolute;
-    color: rgb(136, 105, 3); 
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-77%);
-    margin: 10px;
+  .fishcardimage {
+    width: 35vw;
+    height: 25vw;
   }
-  
-  .tanksize {
-    position: absolute;
-    color: rgb(136, 105, 3); 
-    bottom: 0;
-    left: 5%;
-    transform: translateX(-50%);
-    margin: 10px;
+  .iconimage  {
+    width: 10vw;
+    height: 7.5vw;
   }
-  
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2.92vw;
+  }
+
+}
+
+
+@media screen and (min-width: 550px) {
+
+  .fishcardimage {
+    width: 25vw;
+    height: 18.75vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2vw;
+  }
   .fishname {
-    margin-top: 0px;
-  } */
+    font-size: 2.5vw;
+  }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+   font-size: 1.6vw;
+   margin: 0.25vw;
+  }
+   .title {
+    font-size: 1.8vw;
+    margin: 0.25vw;
+   }
+
+  .titleicon {
+    height: 4vw;
+    width:4vw;
+}
+
+}
 
 
-  /* .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
-    display: none;
-    font-size: 0.7rem;
+@media screen and (min-width: 839px) {
+
+  .fishcardimage {
+    width: 22.5vw;
+    height: 16.875vw;
   }
-  
-  
-  #div_hardiness:hover {
-    .hardipertile {
-      display: inline-block;
-    }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.8vw;
+    margin: 0.5vw;
   }
-  
-  #div_avail:hover {
-    .availpertile {
-      display: inline-block;
-    }
+  .fishname {
+    font-size: 1.7vw;
   }
-  
-  #div_behavior:hover {
-    .behpertile {
-      display: inline-block;
-    }
+
+  .title {
+    font-size: 1.4vw;
+    margin: 0.17vw;
+   }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.2vw;
+    margin: 0.17vw;
+    top:2.1vw;
+   }
+   .infocardtext {
+    font-size: 1.5vw;
   }
-  
-  #div_agression:hover {
-    .agrespertile {
-      display: inline-block;
-    }
+
+  .fish_card, .infocard {
+    padding: 0.5vw; 
   }
-  
-  
-  #div_breeding:hover  {
-    .breedpertile {
-      display: inline-block;
-    }
+
+}
+
+@media screen and (min-width: 956px) {
+
+  .fishcardimage {
+    width: 21vw;
+    height: 15.75vw;
   }
-  
-  #div_tank_size:hover {
-    #perliter{
-      display: inline-block;
-    }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.5vw;
   }
-  
-  #div_temp:hover {
-    #pertemp{
-      display: inline-block;
-    }
-  } */
+
+  .fishname {
+    font-size: 1.5vw;
+  }
+
+  .title {
+    font-size: 1.2vw;
+    top: 0.1vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:1.8vw;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .fishcardimage {
+    width: 20vw;
+    height: 15vw;
+  }
+  .grid-container_main {
+    gap: 0.5vw; 
+  }
+
+  .title {
+    font-size: 1.2vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:2vw;
+  }
 
 
-  /* @keyframes glow { 
-    0% { border: 1px solid   #05224f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
-    10% { border:1px solid  #5c580b; box-shadow: 5px 5px 10px hsla(49, 85%, 33%, 0.904);width: 51px;height: 41px;}
-    20% { border: 1px solid #a7871f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 41px;}
-    30% { border: 1px solid #96701e; box-shadow: 5px 5px 10px hsla(49, 95%, 26%, 0.904);width: 51px;height: 41px;}
-    40% { border: 1px solid #915d22; box-shadow: 5px 5px 10px hsla(49, 85%, 26%, 0.904);width: 50px;height: 41px;}
-    50% { border: 1px solid #9c7c11;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904); width: 51px;height: 43px;}
-    60% { border: 1px solid #976328;box-shadow: 5px 5px 10px hsla(49, 66%, 33%, 0.904); width: 50px;height: 42px;}
-    70% { border: 1px solid #806429; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
-    80% { border: 1px solid  #a7871f;box-shadow: 5px 5px 10px hsla(49, 71%, 29%, 0.904);width: 50px;height: 41px;}
-    90% { border: 1px solid #5f4e16;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 51px;height: 41px;}
-    100% { border: 1px solid #05224f;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);width: 50px;height: 40px;}
+   .titleicon {
+    height: 2vw;
+    width:2vw;
+}
+
+}
+
+@media screen and (min-width: 1300px) {
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.2vw;
+    margin: 0.25vw;
   }
-  
-  
-  .reveal_card:hover .iconimage { 
-    animation: glow 7s infinite; 
-  } */
+  .fishcardimage {
+    width: 18vw;
+    height: 13.5vw;
+}
+}
+
+@media screen and (min-width: 1530px) {
+
+
+  .column_result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .fishcardimage {
+    width: 14.5vw;
+    height: 10.875vw;
+}
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1vw;
+}
+
+.fishname {
+  font-size: 1vw;
+}
+
+.iconimage  {
+  width: 4vw;
+  height: 3vw;
+}
+.title {
+  font-size: 0.8vw;
+  margin: 0.15vw;
+  top:0.1vw;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.6vw;
+  margin: 0.1vw;
+  top: 1.15vw;
+ }
+.infocardtext {
+  font-size: 0.8vw;
+}
+}
+
+@media screen and (min-width: 1800px) {
+.fishcardimage {
+  width: 260px;
+  height: 195px;
+}
+.fishname {
+  font-size: 1.3rem;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1.3rem;
+}
+.iconimage  {
+  width: 76px;
+  height: 57px;
+}
+.title {
+  font-size: 1.1rem;
+  margin: 0.3rem;
+  top:5px;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  top: 30px;
+ }
+.infocardtext {
+  font-size: 1rem;
+  margin-top: 0.18rem;
+  margin-bottom: 0.18rem;
+}
+ .grid-container_main {
+  gap: 10px; 
+}
+.fish_card, .infocard {
+  padding:9px;
+  padding-top: 8px;
+}
+
+
+.search_tiles {
+  font-size: 1.1rem;
+}
+.tiles, .infotile {
+  padding: 18px;
+  margin: 9px 0 0 0 ; 
+}
+.dropbtn {
+
+  padding-left: 18px;
+  padding-right: 18px;  
+}
+
+.grid-item {
+  padding: 18px;
+}
+.titleicon {
+  height: 40px;
+  width:40px;
+}
+
+.column_result {
+  gap: 28px; 
+}
+
+.fishsize, .fishtemp, .tanksize {
+  margin: 5px;
+}
+
+
+}
