@@ -355,34 +355,7 @@ tempmin.addEventListener("click", updatePerTemp);
     cmtoinch.addEventListener("click", fishsizemetric);
     view_options.addEventListener("click", viewToggle);
   
-    // cardswticher.addEventListener("click", flipCards); 
-    // about_button.addEventListener("click", explain);
-    // feedback_button.addEventListener("click", gotofeedback);
   
-  
-  
-  // document.getElementById("x-about").addEventListener("click", explain);
-  // document.getElementById("x-feedback").addEventListener("click", gotofeedback);
-  
-  
-    // let x_outs = document.querySelectorAll(".x-out");
-    // x_outs.forEach(div => {
-    //   div.innerHTML = "x"; 
-    //   div.addEventListener("click", function() {
-    //     let parentDiv = div.parentNode;
-    //     let id = parentDiv.id;
-    //     parentDiv.style.display = "none";
-    //   })
-    //   explain();
-    //   gotofeedback(); 
-      // initialImage ()
-      // updateBackground();
-    //   // window.addEventListener('resize', updateBackground);
-    // });
-
-
-    ////Background changer 
-    // imagechanger.addEventListener("click", imageChange);
   
 let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
 "schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
@@ -419,33 +392,6 @@ selects.forEach(function(group) {
 
   }
 
-  // function uncheckBox(arr, all_box) {
-  //   let checker = true; 
-  //   for (box of arr) {
-  //     if (!box.checked) {
-  //       all_box.checked = false; 
-  //       checker = false; 
-  //     }
-  //   }
-  //   if (checker) {
-  //     all_box.checked = true;
-  //   }
-  // }
-
-
-      ///// Select all / deselect all function 
-      // function selectall (group, all) {
-      //   if (all.checked == true) {
-      //     group.forEach(function(box) {
-      //       box.checked = true;
-      //     });
-      //   } 
-      //   else {
-      //     group.forEach(function(box) {
-      //       box.checked = false;
-      //     });
-      //   }
-      // }
 
 
 ///Calculates the precentage value of each category compared to total
@@ -1335,10 +1281,25 @@ function listFiller (fish_list) {
   let list_view_divs = document.createElement("div");
   list_view_divs.classList.add("list-view");
   for (let i = 0; i <fish_list.length; i++) {
-      let fishname = document.createElement("p");
+      let listnumber = document.createElement("span");
+      let fishname = document.createElement("span");
+      let latinname = document.createElement("span");
+      let brr = document.createElement("br");
       let name = uppercaser(fish_list[i].name_english);
-      fishname.textContent = name;
+      let latin = uppercaser(fish_list[i].name_latin);
+
+      listnumber.className ="listnum";
+      fishname.className = "listname";
+      latinname.className = "listlatin";
+      
+      
+      listnumber.textContent = `${i+1}. `
+      fishname.textContent = `${name} `;
+      latinname.textContent =  `(${latin})`;
+      list_view_divs.appendChild(listnumber);
       list_view_divs.appendChild(fishname);
+      list_view_divs.appendChild(latinname);
+      list_view_divs.appendChild(brr);
   }
       result_div.appendChild(list_view_divs); 
 }
