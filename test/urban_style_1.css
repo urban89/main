@@ -17,9 +17,26 @@ body {
     font-size: 1rem;
   }
 
+  .grid-item {
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    height: auto;
+  }
+
  #main_form {
   margin-bottom: 1vw;
  }
+
+ .grid-container-cpanel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+  align-items: center;
+}
+
 
  #cpanel,  #cpanel1,  #cpanel2  {
   padding: 2vw;
@@ -31,10 +48,106 @@ body {
   display: inline-block;
 }
 
- /* #cpanel span, #cpanel a {
-padding-top: 2vw;
-padding-bottom: 2vw;
-} */
+/*The button that opens the dropdown for Settings */ 
+.dropbtn {
+  text-decoration: none;
+  background:#9ac1c1ec;
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  font-size: 0.8rem;
+  border: solid;
+  cursor: pointer;
+  border-width: 0.01vw;
+  padding-top: 0.3vw; 
+  padding-bottom: 0.3vw; 
+  border-radius: 3px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color:  #86a5def8; 
+  font-size: 0.82rem;
+  border-radius: 5px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background:  #9dd4e0ec;
+  overflow: auto;
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
+  z-index: 1;
+  border-radius: 0 10px 10px 10px;
+  white-space: nowrap; 
+}
+
+.dropdown-content:hover, .dropdown-content:focus {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.dropdown span:hover {background-color:  #86a5def8; }
+
+.show {display: block;}
+
+
+
+.dropdown-cpcontent {
+  display: none;
+  position: absolute;
+  background:  #9dd4e0ec;
+  /* min-width: 5vw; */
+  overflow: auto;
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
+  z-index: 1;
+  border-radius: 0 10px 10px 10px;
+  white-space: nowrap; 
+}
+
+.dropdown-cpcontent:hover, .dropdown-content:focus {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+}
+
+.dropdown-cpcontent span {
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cpanel dropdown */ 
+.dropbtn-cpanel {
+  text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
+  background:#85c9c9ec;
+  /* background-color: #72a2c2; */
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  padding-top: 1vw;
+  padding-bottom:1vw; 
+  font-size: 1rem;
+  border: solid;
+  cursor: pointer;
+  border-left: 0.15vw solid #000;  
+  border-right: 0.15vw solid #000; 
+  border-top: none;        
+  border-bottom: none;   
+  border-radius: 10px;
+}
+
+.dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
+  background-color:  #86a5def8; 
+  font-size: 1.05rem;
+  border-top: 0.01vw solid #000;          
+  border-bottom: 0.01vw solid #000;
+  box-shadow:#05224f;
+  box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
+}
   
 .grid-container_main {
   display: grid;
@@ -52,7 +165,6 @@ padding-bottom: 2vw;
   grid-template-rows: auto; 
   gap: 1vw; 
   justify-content: center;
-  /* align-items: center; */
 } 
 
 /*fish card items*/
@@ -269,6 +381,11 @@ position: relative; /*necessary for in card elements to allign as I want */
     display: block;
   }
 
+  .alert {
+    padding: 0.7vw;
+    margin: 0.9vw; 
+  }
+
 }
 
 
@@ -297,14 +414,15 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 1.8vw;
     margin: 0.25vw;
    }
-   .list-view p {
-    flex: 1 1 calc(50% - 5vw);
-  }
+
   .titleicon {
     height: 4vw;
     width:4vw;
 }
-
+.alert {
+  padding: 0.5vw;
+  margin: 0.5vw; 
+}
   
 }
 
@@ -326,9 +444,6 @@ position: relative; /*necessary for in card elements to allign as I want */
   .fishname {
     font-size: 1.7vw;
   }
-  .list-view p {
-    flex: 1 1 calc(33.333% - 3vw);
-  }
 
   .title {
     font-size: 1.4vw;
@@ -348,10 +463,6 @@ position: relative; /*necessary for in card elements to allign as I want */
     padding: 0.5vw; 
   }
 
-  /* #cpanel span, #cpanel a {
-    padding-top: 1vw;
-    padding-bottom: 1vw;
-    } */
 }
 
 @media screen and (min-width: 956px) {
@@ -427,6 +538,10 @@ position: relative; /*necessary for in card elements to allign as I want */
     height: 2vw;
     width:2vw;
 }
+
+.alert {
+  padding: 0.4vw;
+}
 }
 
 @media screen and (min-width: 1300px) {
@@ -490,34 +605,115 @@ position: relative; /*necessary for in card elements to allign as I want */
   padding: 1vw;
  }
 
-.grid-container_main {
-  grid-template-columns: repeat(2, 1fr); /*apply the same for bigger vp size will test it on big screen at home*/
-}
 }
 
-
-
-
-/************************************************/ 
-
-
-.grid-container-cpanel {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: auto; 
-  gap: 1vw; 
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 1800px) {
+  #maindiv {
+  width: 1080px;
+  margin-right: 360px;
+  margin-left: 360px;
 }
 
+.fishcardimage {
+  width: 260px;
+  height: 195px;
+}
+.fishname {
+  font-size: 1.3rem;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1.3rem;
+}
+.iconimage  {
+  width: 76px;
+  height: 57px;
+}
+.title {
+  font-size: 1.1rem;
+  margin: 0.3rem;
+  top:5px;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  top: 30px;
+ }
+.infocardtext {
+  font-size: 1rem;
+  margin-top: 0.18rem;
+  margin-bottom: 0.18rem;
+}
+
+#cpanel, #cpanel1, #cpanel2  {
+  padding: 17px;
+ }
+
+ .grid-container_main {
+  gap: 10px; 
+}
+.fish_card, .infocard {
+  padding:9px;
+  padding-top: 8px;
+}
+
+.dropbtn {
+  padding-top: 5.5px;
+  padding-bottom: 5.5px;
+  padding-left: 18px;
+  padding-right: 18px;
+
+}
+
+.dropbtn-cpanel {
+  padding: 18px;
+  padding-top: 18px;
+  padding-bottom:18px; 
+  border-left: 2.6px solid #000;  
+  border-right: 2.6px solid #000; 
+}
+
+.search_tiles {
+  font-size: 1.1rem;
+}
+.tiles, .infotile {
+  padding: 18px;
+  margin: 9px 0 0 0 ; 
+}
+.dropbtn {
+
+  padding-left: 18px;
+  padding-right: 18px;  
+}
 
 .grid-item {
-  justify-content: center;
-  align-items: center;
-  padding: 1vw;
-  height: auto;
+  padding: 18px;
+}
+.grid-container-cpanel {
+  gap: 20px; 
+}
+.titleicon {
+  height: 40px;
+  width:40px;
 }
 
+.column_result {
+  gap: 28px; 
+}
+
+.fishsize, .fishtemp, .tanksize {
+  margin: 5px;
+}
+
+.alert {
+  padding: 5px;
+  margin: 5px; 
+}
+
+}
+
+
+/**************media queries end here**********************************/ 
 
 
 .parameter {
@@ -552,10 +748,10 @@ position: relative; /*necessary for in card elements to allign as I want */
 font-weight: 800;
 background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
 border-radius: 10px;
-padding: 5vh;
+padding: 2vw;
 box-shadow: 5px 5px 10px rgb(70, 3, 4);
 border: 1px solid #0f1946; 
-margin: 10px 0 0 0 ; 
+margin: 1vw 0 0 0 ; 
 }
 
 .inputalert {
@@ -565,8 +761,6 @@ margin: 10px 0 0 0 ;
 
 .valid_alert {
 color:rgb(114, 122, 3);
-/* font-size: 20px; */
-
 background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
 border-radius: 10px;
 padding: 20px;
@@ -606,140 +800,13 @@ input[type="radio"] {
 }
 
 
-/*The button that opens the dropdown for Settings */ 
-.dropbtn {
-  text-decoration: none;
-  background:#9ac1c1ec;
-  color: rgb(8, 1, 1);
-  padding: 1vw;
-  font-size: 0.8rem;
-  border: solid;
-  cursor: pointer;
-  border-width: 0.01vw;
-  padding-top: 0.3vw; 
-  padding-bottom: 0.3vw; 
-  border-radius: 3px;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color:  #86a5def8; 
-  font-size: 0.82rem;
-  border-radius: 5px;
-}
-
-/* paremeter dropdown */ 
-
-/* .dropdown {
-  position: relative;
-  display: inline-block;
-} */
 
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background:  #9dd4e0ec;
-  /* min-width: 5vw; */
-  overflow: auto;
-  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
-  z-index: 1;
-  border-radius: 0 10px 10px 10px;
-  white-space: nowrap; 
-}
-
-.dropdown-content:hover, .dropdown-content:focus {
-  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
-}
-
-.dropdown-content span {
-  color: black;
-  padding: 1vh 1.5vh;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.dropdown span:hover {background-color:  #86a5def8; }
-
-.show {display: block;}
-
-/* Cpanel dropdown */ 
-.dropbtn-cpanel {
-  text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background:#85c9c9ec;
-  /* background-color: #72a2c2; */
-  color: rgb(8, 1, 1);
-  padding: 1vw;
-  padding-top: 1vw;
-  padding-bottom:1vw; 
-  font-size: 1rem;
-  border: solid;
-  cursor: pointer;
-  border-left: 0.15vw solid #000;  
-  border-right: 0.15vw solid #000; 
-  border-top: none;        
-  border-bottom: none;   
-  border-radius: 10px;
-}
-
-.dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
-  background-color:  #86a5def8; 
-  font-size: 1.05rem;
-  border-top: 0.01vw solid #000;          
-  border-bottom: 0.01vw solid #000;
-  box-shadow:#05224f;
-  box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
-}
-
-/* paremeter dropdown */ 
-
-/* .dropdown {
-  position: relative;
-  display: inline-block;
-} */
-
-
-.dropdown-cpcontent {
-  display: none;
-  position: absolute;
-  background:  #9dd4e0ec;
-  /* min-width: 5vw; */
-  overflow: auto;
-  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
-  z-index: 1;
-  border-radius: 0 10px 10px 10px;
-  white-space: nowrap; 
-}
-
-.dropdown-cpcontent:hover, .dropdown-content:focus {
-  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
-}
-
-.dropdown-cpcontent span {
-  color: black;
-  padding: 1vh 1.5vh;
-  text-decoration: none;
-  display: block;
-}
-
-/* .dropdown span:hover {background-color:  #86a5def8; } */
-/******************************************/
 
 .reveal_card {
   display: none;
 }
 
-
-
-
-
-
-
-
-/*About and feedback*/ 
-
-/* #about {
-  margin-left: 3vw; 
-} */
 
 #noresults {
   display: none;
