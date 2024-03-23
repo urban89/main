@@ -3,25 +3,24 @@
 <html lang="en">
 <head>
 
-          <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PTN5CHLMFD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PTN5CHLMFD');
-</script>
-
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTN5CHLMFD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-PTN5CHLMFD');
+        </script>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="prod/urban_style_1.css">
 
-    <link rel="stylesheet" href="urban_style_1.css">
+    <meta name="description" content="Find aquarium fish with this search tool and discover new fish. Search by tank size, temperature, difficulty and more. Ideal for both beginners and experienced fish keepers.">
 
-    <meta name="description" content="Find aquarium fish with this search tool. Filter by tank size, temperature, difficulty. Browse our database to find new species. All available fish in one place">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">  -->
 
-    <title>SelectYourFish - Fish Finder</title>
+    <title>Selector: Fresh Water</title>
        <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
             <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
             <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
@@ -35,7 +34,7 @@
             <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
             <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
             <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
-            <link rel="manifest" href="/manifest.json">
+            <link rel="manifest" href="test/manifest.json">
             <meta name="msapplication-TileColor" content="#ffffff">
             <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
             <meta name="theme-color" content="#ffffff">
@@ -44,75 +43,21 @@
 
 
 <body>
+  <noscript>
+    <p style="color: yellow;">JavaScript is required for this website to work. Enable JavaScript to use see the fish.</p>
+</noscript>
     <div id = "maindiv"> 
+ <div class = "grid-container-cpanel">
 
-      <div id="about" class = "tiles">  <!-- about -->
-        <span id = "x-about" class = "x-out"> </span>
-        <h1> Welcome to SelectYourFish.com </h1>
-        <p> Find the perfect fish for your home aquarium. 
-         This page provides an interactive way to search for freshwater aquarium fish based on their requirements. 
-          Remember, this page gives general advice. Always research each fish species before buying.
-          The percentage value next to each category
-          reflects the proportion of fish included out of the total <span id = "dbcount"> </span> entries in the database.
-         <br>
-         To browse all fish in database, go to <a href = "browse.html">Database.</a> 
-        </p>
-         
-        <h2>Aquarium size</h2>
-        <p> 
-          This is the smallest tank size recommended for a planted aquarium without additional fish. 
-          It assumes that fish which prefer to be in groups (schooling or social species) need enough space.
-          It's important to look into the specific needs of different species before adding them to your aquarium.
-          
-          </p>
-        <h2>Water temperature</h2>
-            <p> 
-              Maintaining a consistent water temperature is crucial for the health of your aquarium inhabitants.
-              </p>  
-
-        <h2>Keeping difficulty</h2>
-         <p><span>Beginner <span id = "beginner$"></span>: </span>Ideal for those new to aquarium keeping. </p>
-          <p> <span>Easy <span id = "easy$"></span>: </span>Suitable for hobbyists with some experience. </p>
-           <p><span>Medium <span id = "medium$"></span>: </span> Requires knowledge and some diligence in maintaining specific environmental conditions.</p>
-            <p><span>Difficult <span id = "difficult$"></span>: </span>Demands advanced knowledge and dedicated care to sustain the appropriate environment.</p>
-
-        <h2>Purchase availability</h2>
-         <p><span>Very common  <span id = "verycommon$"></span>: </span>Widely available at local pet stores.</p>
-          <p><span>Common  <span id = "common$"></span>: </span>Generally available at local pet stores. </p>
-           <p><span>Rare  <span id = "rare$"></span>: </span>Less likely to be found at local pet stores.</p>
-            <p><span>Very rare  <span id = "veryrare$"></span>: </span>Usually requires special sourcing. </p>
-
-        <h2>Social behavior</h2>
-        <p><span>Schooling  <span id = "schooling$"></span>: </span>Must be kept in groups of six or more of their kind. </p>
-          <p><span>Social  <span id = "social$"></span>: </span>It's much better for their health and behavior to live in groups. </p>
-           <p><span>Solitary  <span id = "solitary$"></span>: </span>Can or should be kept alone. </p>
-
-        <h2>Agression level</h2>
-        <p><span>Peaceful  <span id = "peaceful$"></span>: </span>Mostly calm but may have some minor squabbles. </p>
-          <p><span>Mostly peaceful  <span id = "mpeaceful$"></span>: </span>Might fight over space or mates, or eat much smaller fish.</p>
-           <p><span>Agressive  <span id = "agressive$"></span>: </span> Can be very territorial. Needs a lot of room to live with others peacefully.</p>
-        
-        <h2>Breeding difficulty</h2>
-        <p><span>Easy  <span id = "beasy$"></span>: </span>Often breeds without needing special water conditions.</p>
-          <p><span>Medium  <span id = "bmedium$"></span>: </span>Might breed with some extra care. </p>
-           <p><span>Hard  <span id = "bhard$"></span>: </span> Needs specific steps to breed successfully. </p>
-            <p><span>No record  <span id = "norecord$"></span>: </span>No known cases of breeding by fishkeepers. </p>
-
-            <h2>Fish cards</h2>
-            <p>You will see your search results below. Click the fish cards to see more info about each fish</p>
-
-       </div> <!-- about ends -->
-
-       <div id = "feedback" class = "tiles"> <!-- Feedback -->
-        <span id = "x-feedback" class = "x-out"> </span>
-        <div class="google-form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true" width="640" height="371" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
-        </div>
-
+<!--Welcome-->
+<div id = "welcomepanel" class = "tiles grid-item"> 
+<p class="welcometext welcometitle"><span class = "titleicon"></span>Selector: Fresh Water<span class = "titleicon"></span></p>
+<p class="welcometext">Select your parameters and see the results below. Click on fish cards to see more details.
+</p>
+</div>
       <!-- Control panel -->
  
-    <div id = "cpanel" class = "tiles">  <span id = "sum"> Results: </span> <span id = fishcount></span><span class = "filler">/</span><span id = "allcount" class = "filler"></span>
+<div id = "cpanel" class = "tiles grid-item">  <span id = "sum"> Results: </span> <span id = fishcount>184</span><span class = "filler">/</span><span id = "allcount" class = "filler">438</span>
       <label for = "sort">&nbsp;&nbsp;&nbsp; Sort: </label> <Select id = "sort">
     
         <option value="size_min">Size small to large</option>
@@ -121,167 +66,225 @@
     
     </Select>
     &nbsp;&nbsp;&nbsp;
-        <a href = "browse.html" class = "dropbtn">Database</a> 
+    <span class = "buttons"> 
+        <a href = "browse.html" class = "dropbtn-cpanel">Database</a> 
     &nbsp;&nbsp;&nbsp;
  
     <span class = "dropdown"> 
-      <span id = "settings" class="dropbtn">Settings</span>
-      <div id = "settings_dropdown" class="dropdown-content"> 
+      <span id = "settings" class="dropbtn-cpanel">Settings</span>
+      <div id = "settings_dropdown" class="dropdown-cpcontent"> 
         <span id = "cmtoinch">Show fish size in inch</span>
-        <span id = "toggle_options">Show fewer seach options</span>
-        <span id = "cardswticher">Show all info cards</span>
-        <span id = "imagechanger">Change background</span>
-        <span id = "feedback_button">Send feedback</span>
-        <span id = "about_button">About this page</span>
+        <span id = "view_options">Results in list view</span>
+        <!-- <span id = "cardswticher">Show all info cards</span> -->
       </div>
     </span>
     &nbsp;&nbsp;&nbsp;
+    <span class = "dropdown"> 
+      <span id = "more" class="dropbtn-cpanel">More info</span>
+      <div id = "more_dropdown" class="dropdown-cpcontent"> 
+        <span id = "about"> <a href = "about.html" class = "menuhref">About</a></span>
+        <span id = "feedback" ><a href = "https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?usp=sf_link" target="_blank" class = "menuhref" >Feedback </a></span>
+      </div>
+    </span> <!--buttons class ends-->
+    </span>
+
+
+   
   </div> <!-- Cpanel ends here -->
+</div> <!--"grid-container-cpanel"-->
 
-<!-- <p id = "welcome" class = "tiles"> Specify attributes and see results below. Number of search results: <span id = fishcount> </span> </p>  -->
 <div id = "search_tiles"> 
-<form action="" id = "main_form">
+<div id = "main_form" class = "grid-container_main">
 <!-- Tank size --> 
-  <div class = "column"> 
-    <div id = "div_tank_size" class = "tiles"> 
-      <label for="" class = "parameter"> Aquarium size: </label>
-      <input style="width:55px" value="110" type="number" id="tank_size" class = "numberbox" name="">
-      <span id = size>L</span> <span id = perliter></span><br>
-      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio"> Liter</label>
-      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio"> Gallon</label>
+    <div id = "div_tank_size" class = "tiles grid-item"> 
+      <label for="tank_size" class = "parameter"> Aquarium size </label>
+      <span id= "tank_size_block"> <input style="width:55px" value="90" type="number" id="tank_size" class = "numberbox" name="tank_size">
+      <span id = size>L</span> <span id = perliter></span> </span>
+      <br class = "smallvpbreak">
+      <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio" class ="capradiolabel"> Liter</label>
+      <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio" class ="capradiolabel"> Gallon</label>
     </div> 
 
-<!-- Hardiness --> 
-  <div id = "div_hardiness" class = "tiles"> 
-    <label for="" class = "parameter" id = "difficulty">Keeping difficulty</label><br>
-    <input type="checkbox" id="all_1" name=""> <label for="all_1">select all</label>
-    <br>
-    <input type="checkbox" id="beginner" name="hardi"> 
-    <label for="beginner">Beginner </label> <span id = "beginner$$$" class = hardipertile></span>
-    <br>
-    <input type="checkbox" id="easy" name="hardi">
-    <label for="easy">Easy</label> <span id = "easy$$$" class = hardipertile></span>
-    <br>
-    <input type="checkbox" id="medium" name="hardi">
-    <label for="medium">Medium</label> <span id = "medium$$$" class = hardipertile></span>
-    <br>  
-    <input type="checkbox" id="difficult" name="hardi">
-    <label for="difficult">Difficult</label> <span id = "difficult$$$" class = hardipertile></span>
-  </div>
- 
-</div> <!-- column div ends here -->
-
-
-<!-- Temperature --> 
-  <div class = "column">
-    <div id = "div_temp" class = "tiles"> 
-      <label for="" class = "parameter">Water temperature: </label> 
-      <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="" min="4" max="35" value = "25" /> 
-      <span id = min_t> ℃ </span> <span id = pertemp></span>
-      <br>
-      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc"> Celsius</label>
-      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf"> Farenheit</label> 
+    <!-- Temperature --> 
+    <div id = "div_temp" class = "tiles grid-item"> 
+      <label for="tempmin" class = "parameter">Water temperature </label> 
+      <span id = "tempmin_block"> <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="tempmin" min="4" max="35" value = "25" /> 
+      <span id = min_t> ℃ </span> <span id = pertemp></span> </span>
+      <br class = "smallvpbreak">
+      <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc" class ="capradiolabel"> Celsius</label>
+      <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf" class ="capradiolabel"> Farenheit</label> 
     </div> 
- 
-<!-- Store availability --> 
-    <div id = "div_avail" class = "tiles"> 
-      <label for="" class = "parameter" id = "availabilty" >Purchase availability</label><br>
-      <input type="checkbox" id="all_2" name=""> <label for="all_2">select all</label>
-      <br>
-      <input type="checkbox" id="verycommon" name="avail">
-      <label for="verycommon">Very common</label> <span id = "verycommon$$$" class = availpertile></span>
-      <br>
-      <input type="checkbox" id="common" name="avail">
-      <label for="common">Common</label> <span id = "common$$$" class = availpertile></span>
-      <br>
-      <input type="checkbox" id="rare" name="avail">
-      <label for="rare">Rare</label> <span id = "rare$$$" class = availpertile></span>
-      <br> 
-      <input type="checkbox" id="veryrare" name="avail">
-      <label for="veryrare">Very rare</label> <span id = "veryrare$$$" class = availpertile></span>
+
+    <div id="div_hardiness" class="tiles">
+      <label for="dropdownButtonHardi">Keeping difficulty </label>
+      <span class="dropdown paradrop">
+        <button onclick="toggleDropdown(event)" id="dropdownButtonHardi" class="dropbtn">Selected: <span id="div_hardiness_x">All</span></button>
+        <div id="dropdownContentHardi" class="dropdown-content">
+          <div class="dropdown-item">
+            <input type="checkbox" id="beginner" name="hardi">
+            <label for="beginner">Beginner</label>
+            <span id="beginner$$$" class="hardipertile"></span>
+          </div>
+          <div class="dropdown-item">
+            <input type="checkbox" id="easy" name="hardi">
+            <label for="easy">Easy</label>
+            <span id="easy$$$" class="hardipertile"></span>
+          </div>
+          <div class="dropdown-item">
+            <input type="checkbox" id="medium" name="hardi">
+            <label for="medium">Medium</label>
+            <span id="medium$$$" class="hardipertile"></span>
+          </div>
+          <div class="dropdown-item">
+            <input type="checkbox" id="difficult" name="hardi">
+            <label for="difficult">Difficult</label>
+            <span id="difficult$$$" class="hardipertile"></span>
+          </div>
+        </div>
+      </span>
     </div>
-  
-    </div> <!-- second column div ends here -->
-
-</form>
-        
-<div id = "more_options" class = "grid-container" style= "display: grid"> 
-
-  <!-- Behavior --> 
-  <div id= "div_behavior" class = "tiles grid-item"> 
-    <label for="" class = "parameter" id = "behavior">Social behavior</label><br>
-    <input type="checkbox" id="all_3" name=""> <label for="all_3">select all</label>
-    <br>
-    <input type="checkbox" id="schooling1" name="social">
-    <label for="schooling1">Schooling</label> <span id = "schooling$$$" class = behpertile></span>
-    <br>
-    <input type="checkbox" id="schooling2" name="social">
-    <label for="schooling2">Social</label> <span id = "social$$$" class = behpertile></span>
-    <br>
-    <input type="checkbox" id="solitary" name="social">
-    <label for="solitary">Solitary</label> <span id = "solitary$$$" class = behpertile></span>
-  </div> 
-
-<!-- Agression level --> 
-
-  <div id = "div_agression" class = "tiles grid-item"> 
-    <label for="" class = "parameter" >Agression level</label><br>
-    <input type="checkbox" id="all_4" name=""> <label for="all_4">select all</label> <br>
-    <input type="checkbox" id="peaceful1" name="agress">
-    <label for="peaceful1">Peaceful</label> <span id = "peaceful$$$" class = agrespertile></span>
-    <br>
-    <input type="checkbox" id="peaceful2" name="agress">
-    <label for="peaceful2">Mostly peaceful</label> <span id = "mpeaceful$$$" class = agrespertile></span>
-    <br>
-    <input type="checkbox" id="aggressive" name="agress">
-    <label for="aggressive">Agressive</label> <span id = "agressive$$$" class = agrespertile></span>
-  </div>
-
- <!-- Breeding difficulty --> 
-
-  <div id = "div_breeding" class = "tiles grid-item"> 
-     <label for="" class = "parameter" >Breeding difficulty</label><br>
-     <input type="checkbox" id="all_5" name=""> <label for="all_5">select all</label> <br>
-     <input type="checkbox" id="b_easy" name="breed">
-     <label for="b_easy">Easy</label> <span id = "beasy$$$" class = breedpertile></span>
-     <br>
-     <input type="checkbox" id="b_medium" name="breed">
-     <label for="b_medium">Medium </label> <span id = "bmedium$$$" class = breedpertile></span>
-     <br>
-     <input type="checkbox" id="b_hard" name="breed">
-     <label for="b_hard">Hard </label> <span id = "bhard$$$" class = breedpertile></span>
-     <br> 
-     <input type="checkbox" id="impossible" name="breed">
-     <label for="impossible">No record</label> <span id = "norecord$$$" class = breedpertile></span>
-  </div>
     
-    </div> <!-- more options div --> 
+
+
+  <div id="div_avail" class="tiles">
+    <label for="dropdownButtonAvail"> Purchase availability </label>
+    <span class="dropdown paradrop">
+      <button onclick="toggleDropdown(event)" id="dropdownButtonAvail" class="dropbtn">Selected: <span id="div_avail_x">All</span></button>
+      <div id="dropdownContentHardiAvail" class="dropdown-content">
+        <div class="dropdown-item">
+          <input type="checkbox" id="verycommon" name="avail">
+          <label for="verycommon">Very common</label>
+          <span id="verycommon$$$" class="availpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="common" name="avail">
+          <label for="common">Common</label>
+          <span id="common$$$" class="availpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="rare" name="avail">
+          <label for="rare">Rare</label>
+          <span id="rare$$$" class="availpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="veryrare" name="avail">
+          <label for="veryrare">Very rare</label>
+          <span id="veryrare$$$" class="availpertile"></span>
+        </div>
+      </div>
+    </span>
+  </div>
+  
+  
+
+  <div id="div_behavior" class="tiles">
+    <label for="dropdownButtonBehavior"> Social behavior </label>
+    <span class="dropdown paradrop">
+      <button onclick="toggleDropdown(event)" id="dropdownButtonBehavior" class="dropbtn">Selected: <span id="div_behavior_x">All</span></button>
+      <div id="dropdownContentBehavior" class="dropdown-content">
+        <div class="dropdown-item">
+          <input type="checkbox" id="schooling1" name="social">
+          <label for="schooling1">Schooling</label>
+          <span id="schooling$$$" class="behpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="schooling2" name="social">
+          <label for="schooling2">Social</label>
+          <span id="social$$$" class="behpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="solitary" name="social">
+          <label for="solitary">Solitary</label>
+          <span id="solitary$$$" class="behpertile"></span>
+        </div>
+      </div>
+    </span>
+  </div>
+  
+
+  <div id="div_agression" class="tiles">
+    <label for="dropdownButtonAgression"> Aggression level </label>
+    <span class="dropdown paradrop">
+      <button onclick="toggleDropdown(event)" id="dropdownButtonAgression" class="dropbtn">Selected: <span id="div_agression_x">All</span></button>
+      <div id="dropdownContentAgression" class="dropdown-content">
+        <div class="dropdown-item">
+          <input type="checkbox" id="peaceful1" name="agress">
+          <label for="peaceful1">Peaceful</label> 
+          <span id="peaceful$$$" class="agrespertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="peaceful2" name="agress">
+          <label for="peaceful2">Mostly peaceful</label> 
+          <span id="mpeaceful$$$" class="agrespertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="aggressive" name="agress">
+          <label for="aggressive">Aggressive</label> 
+          <span id="agressive$$$" class="agrespertile"></span>
+        </div>
+      </div>
+    </span>
+  </div>
+  
+    
+  <div id="div_breeding" class="tiles">
+    <label for="dropdownButtonBreeding"> Breeding difficulty </label>
+    <span class="dropdown paradrop">
+      <button onclick="toggleDropdown(event)" id="dropdownButtonBreeding" class="dropbtn">Selected: <span id="div_breeding_x">All</span></button>
+      <div id="dropdownContentBreeding" class="dropdown-content">
+        <div class="dropdown-item">
+          <input type="checkbox" id="b_easy" name="breed"> 
+          <label for="b_easy">Easy</label> 
+          <span id="beasy$$$" class="breedpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="b_medium" name="breed">
+          <label for="b_medium">Medium</label> 
+          <span id="bmedium$$$" class="breedpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="b_hard" name="breed">
+          <label for="b_hard">Hard</label> 
+          <span id="bhard$$$" class="breedpertile"></span>
+        </div>
+        <div class="dropdown-item">
+          <input type="checkbox" id="impossible" name="breed">
+          <label for="impossible">No record</label> 
+          <span id="norecord$$$" class="breedpertile"></span>
+        </div>
+      </div>
+    </span>
+  </div>
+  
+
+    <!-- </div> more options div  -->
+  </div> <!-- main search categoires ENDS-->
   </div> <!-- search tiles div ends here -->
 
-    </div> <!-- main div --> 
+ 
 
     
     <div id = "result"> 
       <!-- here the fish cards are generated dynamically -->
     </div> 
 
-    <div id = alerts> 
-  <span id = "tempalert" class = "alert"> </span>
+    <div id = alerts class = "grid-container-cpanel"> <!-- need to make it style display none-->
+  <span id = "tempalert" class = "alert grid-item" style="display: none;"> </span>
   <br>
-  <span id = "capalert" class = "alert"> Aquarium size too small.</span>
+  <span id = "capalert" class = "alert grid-item"  style="display: none;"> Aquarium size too small.</span>
   <br>
-  <span id = "checkalert" class = "alert"> Some search parameters were not selected. </span>
+  <span id = "checkalert" class = "alert grid-item"  style="display: none;"> Some search parameters were not selected. </span>
   <br>
-  <span id = "noresults" class = "valid_alert"> There are no results with the above chosen parameters. </span>
+  <span id = "noresults" class = "valid_alert grid-item"  style="display: none;"> There are no results with the above chosen parameters. </span>
+</div> <!-- last container div with alerts -->
 
-    </div>
+  </div> <!-- main div --> 
 
-
-<script type="text/javascript" src="fish_array.js"></script>
-<script type="text/javascript" src="constants.js"></script>
-<script type="text/javascript" src="selector_declarations.js"></script>
-<script type="text/javascript" src="fish_functions_1.js"></script>
-<script type="text/javascript" src="fish1.js"></script>
+<script type="text/javascript" src="prod/fish_array.js"></script>
+<script type="text/javascript" src="prod/fishFunctions1.js"></script>
+<!-- <script type="text/javascript" src="test/selector_declarations.js"></script>
+<script type="text/javascript" src="test/fish_functions_1.js"></script>
+<script type="text/javascript" src="test/fish1.js"></script> -->
 
     
 </body>
