@@ -210,7 +210,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 50%;
-  transform: translateX(-70%);
+  transform: translateX(-65%);
   margin: 1vw;
 }
 
@@ -219,7 +219,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 5%;
-  transform: translateX(-45%);
+  transform: translateX(-30%);
   margin: 1vw;
 }
 
