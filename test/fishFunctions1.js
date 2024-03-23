@@ -145,11 +145,11 @@ const codes_breed =
   let b_hard = document.getElementById("b_hard"); 
   let impossible = document.getElementById("impossible");
 
-  // let all_1 = document.getElementById("all_1");
-  // let all_2 = document.getElementById("all_2");
-  // let all_3 = document.getElementById("all_3");
-  // let all_4 = document.getElementById("all_4");
-  // let all_5 = document.getElementById("all_5");
+let dropdownButtonHardi = document.getElementById("dropdownButtonHardi");
+let dropdownButtonAvail = document.getElementById("dropdownButtonAvail");
+let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
+let dropdownButtonAgression = document.getElementById("dropdownButtonAgression");
+let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
 
 
   let div_hardiness_x = document.getElementById("div_hardiness_x");
@@ -835,50 +835,70 @@ function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   div_avail.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
+  dropdownButtonAvail.classList.add("dropbtnalert");
+  dropdownButtonAvail.classList.remove("dropbtn");
 }
 else {
   div_avail.classList.remove('notselected');
   div_avail.classList.add('tiles');
+  dropdownButtonAvail.classList.remove("dropbtnalert");
+  dropdownButtonAvail.classList.add("dropbtn");
 }
 if (!v_beginner && !v_easy && !v_medium && !v_difficult) {
   div_hardiness.classList.add('notselected');
   div_hardiness.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
+  dropdownButtonHardi.classList.add("dropbtnalert");
+  dropdownButtonHardi.classList.remove("dropbtn");
 }
 else {
   div_hardiness.classList.remove('notselected');
   div_hardiness.classList.add('tiles');
+  dropdownButtonHardi.classList.remove("dropbtnalert");
+  dropdownButtonHardi.classList.add("dropbtn");
 }
 if (!v_schooling1 && !v_schooling2 && !v_solitary) {
   div_behavior.classList.add('notselected');
   div_behavior.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
+  dropdownButtonBehavior.classList.add("dropbtnalert");
+  dropdownButtonBehavior.classList.remove("dropbtn");
 }
 else {
   div_behavior.classList.remove('notselected');
   div_behavior.classList.add('tiles');
+  dropdownButtonBehavior.classList.remove("dropbtnalert");
+  dropdownButtonBehavior.classList.add("dropbtn");
 }
 if (!v_peaceful1 && !v_peaceful2 && !v_aggressive) {
   div_agression.classList.add('notselected');
   div_agression.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
+  dropdownButtonAgression.classList.add("dropbtnalert");
+  dropdownButtonAgression.classList.remove("dropbtn");
 }
 else {
   div_agression.classList.remove('notselected');
   div_agression.classList.add('tiles');
+  dropdownButtonAgression.classList.remove("dropbtnalert");
+  dropdownButtonAgression.classList.add("dropbtn");
 }
 if (!v_b_easy && !v_b_medium && !v_b_hard && !v_impossible) {
   div_breeding.classList.add('notselected');
   div_breeding.classList.remove('tiles');
   checkalert.style.display = "inline-block";
   invalid_search_checks = true; 
+  dropdownButtonBreeding.classList.add("dropbtnalert");
+  dropdownButtonBreeding.classList.remove("dropbtn");
 }
 else {
   div_breeding.classList.remove('notselected');
   div_breeding.classList.add('tiles');
+  dropdownButtonBreeding.classList.remove("dropbtnalert");
+  dropdownButtonBreeding.classList.add("dropbtn");
 }
 if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
 && (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)) {
@@ -887,11 +907,22 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
   div_behavior.classList.remove('notselected');
   div_agression.classList.remove('notselected');
   div_breeding.classList.remove('notselected');
+  dropdownButtonHardi.classList.remove("dropbtnalert");
+  dropdownButtonAvail.classList.remove("dropbtnalert");
+  dropdownButtonBehavior.classList.remove("dropbtnalert");
+  dropdownButtonAgression.classList.remove("dropbtnalert");
+  dropdownButtonBreeding.classList.remove("dropbtnalert");
+
   div_avail.classList.add('tiles');
   div_hardiness.classList.add('tiles');
   div_behavior.classList.add('tiles');
   div_agression.classList.add('tiles');
   div_breeding.classList.add('tiles');
+  dropdownButtonHardi.classList.add("dropbtn");
+  dropdownButtonAvail.classList.add("dropbtn");
+  dropdownButtonBehavior.classList.add("dropbtn");
+  dropdownButtonAgression.classList.add("dropbtn");
+  dropdownButtonBreeding.classList.add("dropbtn");
   checkalert.style.display = "none";
   invalid_search_checks = false; 
 }

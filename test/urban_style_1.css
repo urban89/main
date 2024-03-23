@@ -4,7 +4,7 @@
 body {
   font-family: "Trebuchet MS", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 550;
+  font-weight: 400;
   font-style: normal;
   background-color: #235197;
   }
@@ -13,8 +13,14 @@ body {
   #welcomepanel {
     margin-top:0;
   }
-  .search_tiles {
+
+  #search_tiles, #cpanel, #cpanel1, #cpanel2, #welcomepanel {
     font-size: 1rem;
+    font-weight: 550;
+  }
+
+  .dropdown-item {
+    font-weight: 400;
   }
 
   .grid-item {
@@ -63,10 +69,32 @@ body {
   border-radius: 3px;
 }
 
+.dropbtnalert {
+  text-decoration: none;
+  background:#eb66beec;
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  font-size: 0.8rem;
+  border: solid;
+  cursor: pointer;
+  border-width: 0.01vw;
+  padding-top: 0.3vw; 
+  padding-bottom: 0.3vw; 
+  border-radius: 3px;
+}
+
+.dropbtnalert:hover, .dropbtnalert:focus {
+  background-color:  #b9689eec;
+  font-size: 0.82rem;
+  border-radius: 5px;
+  z-index: 0;
+}
+
 .dropbtn:hover, .dropbtn:focus {
   background-color:  #86a5def8; 
   font-size: 0.82rem;
   border-radius: 5px;
+  z-index: 1;
 }
 
 
@@ -81,8 +109,9 @@ body {
   white-space: nowrap; 
 }
 
-.dropdown-content:hover, .dropdown-content:focus {
+.dropdown-item:hover {
   box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+  background-color:  #86a5def8; 
 }
 
 .dropdown-content span {
@@ -318,6 +347,7 @@ position: relative; /*necessary for in card elements to allign as I want */
 
     .welcometitle {
       text-align: center;
+      font-weight: 600;
     }
 
     .welcometext.welcometitle {
@@ -924,39 +954,8 @@ input[type="radio"] {
 .hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
   display: none;
   font-size: 0.7rem;
+  font-weight: 400;
 }
-
-
-/* #div_hardiness:hover {
-  .hardipertile {
-    display: inline-block;
-  }
-}
-
-#div_avail:hover {
-  .availpertile {
-    display: inline-block;
-  }
-}
-
-#div_behavior:hover {
-  .behpertile {
-    display: inline-block;
-  }
-}
-
-#div_agression:hover {
-  .agrespertile {
-    display: inline-block;
-  }
-}
-
-
-#div_breeding:hover  {
-  .breedpertile {
-    display: inline-block;
-  }
-} */
 
 
 
