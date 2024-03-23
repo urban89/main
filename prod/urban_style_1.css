@@ -357,7 +357,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
 
   .titleicon {
-    content: url('icon/titleicon.webp'); 
+    content: url('titleicon.webp'); 
     height: 8vw;
     width:8vw;
 }
