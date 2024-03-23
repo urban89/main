@@ -1,0 +1,973 @@
+
+
+
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #235197;
+  }
+
+
+  #welcomepanel {
+    margin-top:0;
+  }
+
+  #search_tiles, #cpanel, #cpanel1, #cpanel2, #welcomepanel {
+    font-size: 1rem;
+    font-weight: 550;
+  }
+
+  .dropdown-item {
+    font-weight: 400;
+  }
+
+  .grid-item {
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    height: auto;
+  }
+
+ #main_form {
+  margin-bottom: 1vw;
+ }
+
+ .grid-container-cpanel {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+ #cpanel,  #cpanel1,  #cpanel2  {
+  padding: 2vw;
+  margin-top: 0;
+ }
+
+ .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/*The button that opens the dropdown for Settings */ 
+.dropbtn {
+  text-decoration: none;
+  background:#9ac1c1ec;
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  font-size: 0.8rem;
+  border: solid;
+  cursor: pointer;
+  border-width: 0.01vw;
+  padding-top: 0.3vw; 
+  padding-bottom: 0.3vw; 
+  border-radius: 3px;
+}
+
+.dropbtnalert {
+  text-decoration: none;
+  background:#eb66beec;
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  font-size: 0.8rem;
+  border: solid;
+  cursor: pointer;
+  border-width: 0.01vw;
+  padding-top: 0.3vw; 
+  padding-bottom: 0.3vw; 
+  border-radius: 3px;
+}
+
+.dropbtnalert:hover, .dropbtnalert:focus {
+  background-color:  #b9689eec;
+  font-size: 0.82rem;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color:  #86a5def8; 
+  font-size: 0.82rem;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background:  #9dd4e0ec;
+  overflow: auto;
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
+  z-index: 1;
+  border-radius: 0 10px 10px 10px;
+  white-space: nowrap; 
+}
+
+.dropdown-item:hover {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+  background-color:  #86a5def8; 
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.dropdown span:hover {background-color:  #86a5def8; }
+
+.show {display: block;}
+
+
+
+.dropdown-cpcontent {
+  display: none;
+  position: absolute;
+  background:  #9dd4e0ec;
+  /* min-width: 5vw; */
+  overflow: auto;
+  box-shadow: 5px 5px 10px rgba(53, 72, 247, 0.473);
+  z-index: 1;
+  border-radius: 0 10px 10px 10px;
+  white-space: nowrap; 
+}
+
+.dropdown-cpcontent:hover, .dropdown-content:focus {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+}
+
+.dropdown-cpcontent span {
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cpanel dropdown */ 
+.dropbtn-cpanel {
+  text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
+  background:#85c9c9ec;
+  /* background-color: #72a2c2; */
+  color: rgb(8, 1, 1);
+  padding: 1vw;
+  padding-top: 1vw;
+  padding-bottom:1vw; 
+  font-size: 1rem;
+  border: solid;
+  cursor: pointer;
+  border-left: 0.15vw solid #000;  
+  border-right: 0.15vw solid #000; 
+  border-top: none;        
+  border-bottom: none;   
+  border-radius: 10px;
+}
+
+.dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
+  background-color:  #86a5def8; 
+  font-size: 1.05rem;
+  border-top: 0.01vw solid #000;          
+  border-bottom: 0.01vw solid #000;
+  box-shadow:#05224f;
+  box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
+}
+  
+.grid-container_main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/*fish card grid*/
+.column_result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+} 
+
+/*fish card items*/
+.fishsize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1vw;
+  color: rgb(136, 105, 3); 
+}
+
+.fishtemp {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-70%);
+  margin: 1vw;
+}
+
+.tanksize {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 5%;
+  transform: translateX(-45%);
+  margin: 1vw;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 2vw;
+}
+
+.fishname {
+  margin-top: 0px;
+  font-size: 3vw;
+}
+
+/*Tiles*/ 
+
+.tiles, .infotile {
+  background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
+  border-radius: 10px;
+  padding: 1vw;
+  box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+  border: 1px solid #0f1946; 
+  margin: 0.5vw 0 0 0 ; 
+  position: relative;
+}
+
+.infotile { 
+  background: linear-gradient(145deg, #c2db70f6  22%, #9bb8cdec 88%);
+  white-space: wrap;
+  display: none;
+}
+
+.infotile p { 
+ margin: 0; 
+}
+
+
+.fish_card, .infocard {
+  flex: 0 0 calc(33.33% - 2vw); 
+  margin: 5px; 
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 10px;
+  padding: 1vw;
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+position: relative; /*necessary for in card elements to allign as I want */ 
+  
+} 
+
+.infocard {
+  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+.infocardtext {
+  font-size: 2.5vw;
+  margin: 0; 
+}
+
+.fishcardimage {
+  width: 20vw;
+  height: 15vh;
+  border-color: #05224f;
+  border-width: 1px; 
+  border-radius: 3px;
+  border-style: solid;
+  }
+
+  .iconimage {
+    width: 5vw;
+    height: 3.75vw;
+    border-color: #05224f;
+    border-width: 1px; 
+    border-radius: 3px;
+    border-style: solid;
+    }
+
+    .title {
+      position: absolute;
+      font-weight: 666;
+      top: 0;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2.5vw; 
+      margin: 0.5vw; 
+    }
+    
+    .subtitle, .bigsubtitle, .verybigsubtitle {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2vw; 
+      margin: 0.5vw; 
+    }
+
+    .bigsubtitle, .verybigsubtitle {
+      transform: translateX(-38%);
+    }
+
+    .list-view {
+      background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+      flex-wrap: wrap;
+      border-radius: 5px;
+      padding: 0.5vw;
+    }
+
+    .list-view p {
+     margin:1vw;
+    }
+
+    #sort {
+      margin-bottom: 5px;
+    }
+
+    #sortdb {
+      margin-top: 5px;
+    }
+
+    .welcometext {
+      margin:0;
+    }
+
+    .welcometitle {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .welcometext.welcometitle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .titleicon {
+    content: url('icon/titleicon.webp'); 
+    height: 8vw;
+    width:8vw;
+}
+
+
+/* Media queries ************************************************/ 
+
+
+@media screen and (max-width: 540px) {
+  .buttonsdb {
+   display: block;
+   margin-top: 3vw;
+  }
+ }
+ 
+
+@media screen and (max-width: 550px) {
+  .column_result {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fishcardimage {
+    width: 35vw;
+    height: 25vw;
+  }
+  .iconimage  {
+    width: 10vw;
+    height: 7.5vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2.92vw;
+  }
+  .capradiolabel {
+    font-size: 3vw;
+  }
+
+  #tank_size_block, #tempmin_block {
+    display: block;
+    margin-bottom: 3vw;
+  }
+ 
+  .smallvpbreak {
+    display: none;
+  }
+
+  #sort {
+    margin-bottom: 3vw;
+  }
+
+  #sort_database, .paradrop {
+    display: block;
+  }
+
+.listname {
+  font-size: 3vw;
+}
+  .listlatin {
+    font-size: 2.5vw;
+  }
+
+  .listnum {
+    font-size: 2vw;
+  }
+}
+
+
+@media screen and (max-width: 820px) {
+  .paradrop {
+    display: block;
+  }
+
+  .alert {
+    padding: 0.7vw;
+    margin: 0.9vw; 
+  }
+
+}
+
+
+@media screen and (min-width: 550px) {
+  #maindiv {
+    width: 95vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+  .fishcardimage {
+    width: 25vw;
+    height: 18.75vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2vw;
+  }
+  .fishname {
+    font-size: 2.5vw;
+  }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+   font-size: 1.6vw;
+   margin: 0.25vw;
+  }
+   .title {
+    font-size: 1.8vw;
+    margin: 0.25vw;
+   }
+
+  .titleicon {
+    height: 4vw;
+    width:4vw;
+}
+.alert {
+  padding: 0.5vw;
+  margin: 0.5vw; 
+}
+.listname {
+  font-size: 2.4vw;
+}
+  .listlatin {
+    font-size: 1.8vw;
+  }
+
+  .listnum {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 770px) {
+ .buttons {
+  display: block;
+  margin-top: 3vw;
+ }
+}
+
+
+@media screen and (min-width: 839px) {
+  #maindiv {
+    width: 80vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+  }
+  .fishcardimage {
+    width: 22.5vw;
+    height: 16.875vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.8vw;
+    margin: 0.5vw;
+  }
+  .fishname {
+    font-size: 1.7vw;
+  }
+
+  .title {
+    font-size: 1.4vw;
+    margin: 0.17vw;
+   }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.2vw;
+    margin: 0.17vw;
+    top:2.1vw;
+   }
+   .infocardtext {
+    font-size: 1.5vw;
+  }
+
+  .fish_card, .infocard {
+    padding: 0.5vw; 
+  }
+
+  .listname {
+    font-size: 1rem;
+  }
+    .listlatin {
+      font-size: 0.8rem;
+    }
+
+    .listnum {
+      font-size: 0.75rem;
+    }
+
+}
+
+@media screen and (min-width: 956px) {
+  #maindiv {
+    width: 75vw;
+    margin-right: 12vw;
+    margin-left: 12vw;
+  }
+  .fishcardimage {
+    width: 21vw;
+    height: 15.75vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.5vw;
+  }
+
+  .fishname {
+    font-size: 1.5vw;
+  }
+
+  .title {
+    font-size: 1.2vw;
+    top: 0.1vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:1.8vw;
+  }
+
+  #div_tank_size:hover {
+    #perliter{
+      display: inline-block;
+    }
+  }
+  
+  #div_temp:hover {
+    #pertemp{
+      display: inline-block;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1110px) {
+  #maindiv {
+    width: 70vw;
+    margin-right: 15vw;
+    margin-left: 15vw;
+  }
+  .fishcardimage {
+    width: 20vw;
+    height: 15vw;
+  }
+  .grid-container_main {
+    gap: 0.5vw; 
+  }
+
+  .title {
+    font-size: 1.2vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:2vw;
+  }
+
+  #cpanel, #cpanel1, #cpanel2  {
+    padding: 1.5vw;
+   }
+
+   .titleicon {
+    height: 2vw;
+    width:2vw;
+}
+
+.alert {
+  padding: 0.4vw;
+}
+}
+
+@media screen and (min-width: 1300px) {
+  #maindiv {
+    width: 65vw;
+    margin-right: 17vw;
+    margin-left: 17vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.2vw;
+    margin: 0.25vw;
+  }
+  .fishcardimage {
+    width: 18vw;
+    height: 13.5vw;
+}
+}
+
+@media screen and (min-width: 1530px) {
+  #maindiv {
+    width: 60vw;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    
+  }
+
+  .column_result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .fishcardimage {
+    width: 14.5vw;
+    height: 10.875vw;
+}
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1vw;
+}
+
+.fishname {
+  font-size: 1vw;
+}
+
+.iconimage  {
+  width: 4vw;
+  height: 3vw;
+}
+.title {
+  font-size: 0.8vw;
+  margin: 0.15vw;
+  top:0.1vw;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.6vw;
+  margin: 0.1vw;
+  top: 1.15vw;
+ }
+.infocardtext {
+  font-size: 0.8vw;
+}
+
+#cpanel, #cpanel1, #cpanel2  {
+  padding: 1vw;
+ }
+
+}
+
+@media screen and (min-width: 1800px) {
+  #maindiv {
+  width: 1080px;
+  margin-right: 360px;
+  margin-left: 360px;
+}
+
+.fishcardimage {
+  width: 260px;
+  height: 195px;
+}
+.fishname {
+  font-size: 1.3rem;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1.3rem;
+}
+.iconimage  {
+  width: 76px;
+  height: 57px;
+}
+.title {
+  font-size: 1.1rem;
+  margin: 0.3rem;
+  top:5px;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  top: 30px;
+ }
+.infocardtext {
+  font-size: 1rem;
+  margin-top: 0.18rem;
+  margin-bottom: 0.18rem;
+}
+
+#cpanel, #cpanel1, #cpanel2  {
+  padding: 17px;
+ }
+
+ .grid-container_main {
+  gap: 10px; 
+}
+.fish_card, .infocard {
+  padding:9px;
+  padding-top: 8px;
+}
+
+.dropbtn {
+  padding-top: 5.5px;
+  padding-bottom: 5.5px;
+  padding-left: 18px;
+  padding-right: 18px;
+
+}
+
+.dropbtn-cpanel {
+  padding: 18px;
+  padding-top: 18px;
+  padding-bottom:18px; 
+  border-left: 2.6px solid #000;  
+  border-right: 2.6px solid #000; 
+}
+
+.search_tiles {
+  font-size: 1.1rem;
+}
+.tiles, .infotile {
+  padding: 18px;
+  margin: 9px 0 0 0 ; 
+}
+.dropbtn {
+
+  padding-left: 18px;
+  padding-right: 18px;  
+}
+
+.grid-item {
+  padding: 18px;
+}
+.grid-container-cpanel {
+  gap: 20px; 
+}
+.titleicon {
+  height: 40px;
+  width:40px;
+}
+
+.column_result {
+  gap: 28px; 
+}
+
+.fishsize, .fishtemp, .tanksize {
+  margin: 5px;
+}
+
+.alert {
+  padding: 5px;
+  margin: 5px; 
+}
+
+}
+
+
+/**************media queries end here**********************************/ 
+
+
+.parameter {
+ font-weight: 666;
+}
+
+.notselected {
+  background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
+  border-radius: 14px;
+  padding: 2vw;
+  box-shadow: 5px 5px 10px rgb(70, 3, 4);
+  border: 1px solid #ccc; 
+    }
+
+
+  .validation_alert {
+    color: red;
+    font-size: small;
+  }
+
+
+  #alerts {
+    margin: 0;
+    padding: 0;
+    display: grid; 
+    align-items: center;
+    justify-content: center;
+}
+
+.alert {
+  color:rgb(17, 7, 7);
+font-weight: 800;
+background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
+border-radius: 10px;
+padding: 2vw;
+box-shadow: 5px 5px 10px rgb(70, 3, 4);
+border: 1px solid #0f1946; 
+margin: 1vw 0 0 0 ; 
+}
+
+.inputalert {
+  border-color: red;  
+  background: linear-gradient(188deg, #ac9fc2f1 22%, #9571b3ee 100%);
+}
+
+.valid_alert {
+color:rgb(114, 122, 3);
+background: linear-gradient(125deg, #ebbe5de0 12%, #ca8b2de0 66%);
+border-radius: 10px;
+padding: 20px;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+border: 1px solid #0f1946; 
+margin: 10px 0 0 0 ; 
+display: none; 
+}
+
+
+
+
+
+select {
+  background-color: #cedba3f6;
+  cursor: pointer;
+}
+
+.numberbox {
+  background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
+cursor: text;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: #485d6bec;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+#cpanel1, #cpanel2 {
+  position: relative; 
+}
+
+
+
+
+
+.reveal_card {
+  display: none;
+}
+
+
+#noresults {
+  display: none;
+}
+
+#searchInput {
+  background-color: #ecf1bd;
+  margin-bottom: 5px;
+}
+
+
+/*Animations*/ 
+/* Number of selector results update animation; firing only if result number changes*/
+
+@keyframes resultflash { 
+  0% { background-color: rgba(189, 206, 134, 0.336); color: rgb(255, 252, 76);}
+  10% { background-color:  rgba(185, 212, 95, 0.438); color: rgb(204, 218, 157);}
+  20% { background-color: rgba(218, 218, 104, 0.568); }
+  40% { background-color: rgba(221, 221, 78, 0.514);  }
+  60% { background-color: rgba(226, 226, 60, 0.541);  }
+  80% { background-color: rgba(214, 214, 82, 0.247); }
+  100% { background-color: rgba(209, 209, 114, 0.301);  }
+}
+
+.value-updated {
+  animation: resultflash 1s ease;
+  border-radius: 25px;
+}
+
+/*Capacity and temperatur conversion animation*/
+@keyframes numberflash { 
+  0% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%); color: yellow;}
+  10% { background: linear-gradient(125deg, #a6ceecec 22%, #e2f0b3f6 95%);color: rgba(255, 242, 65, 0.89);}
+  20% { background: linear-gradient(115deg, #a4c6e0 22%, #e2f0b3 90%);}
+  30% { background: linear-gradient(125deg, #a0c8e4 22%, #e2f0b3 85%);}
+  40% { background: linear-gradient(115deg, #b5d7f0ec 22%, #e2f0b3 83%);}
+  50% { background: linear-gradient(124deg,#b5d7f0 22%, #e2f0b3 85%);}
+  60% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 90%);}
+  70% { background: linear-gradient(123deg, #b5d7f0ec 22%, #e2f0b3f6 95%);}
+  80% { background: linear-gradient(112deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  90% { background: linear-gradient(117deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+  100% { background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);}
+}
+
+.number-updated {
+  animation: numberflash 1s ease;
+  cursor: text;
+}
+
+
+@keyframes glow { 
+  0% { border: 1px solid   #05224f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  10% { border:1px solid  #5c580b; box-shadow: 5px 5px 10px hsla(49, 85%, 33%, 0.904);}
+  20% { border: 1px solid #a7871f; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  30% { border: 1px solid #96701e; box-shadow: 5px 5px 10px hsla(49, 95%, 26%, 0.904);}
+  40% { border: 1px solid #915d22; box-shadow: 5px 5px 10px hsla(49, 85%, 26%, 0.904);}
+  50% { border: 1px solid #9c7c11;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  60% { border: 1px solid #976328;box-shadow: 5px 5px 10px hsla(49, 66%, 33%, 0.904); }
+  70% { border: 1px solid #806429; box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  80% { border: 1px solid  #a7871f;box-shadow: 5px 5px 10px hsla(49, 71%, 29%, 0.904);}
+  90% { border: 1px solid #5f4e16;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+  100% { border: 1px solid #05224f;box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);}
+}
+
+
+.infocard:hover .iconimage { 
+  animation: glow 7s infinite; 
+}
+
+
+.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
+  display: none;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+
+
+
+
+.filler {
+  font-size: 0.7rem; 
+  color:#413e07;
+}
+
+
+.menuhref {
+  text-decoration: none;
+  color: inherit;
+}
