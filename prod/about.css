@@ -1,0 +1,478 @@
+
+
+body {
+ 
+    font-family: "Trebuchet MS", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #235197;
+    position: relative; 
+   
+    }
+  
+  
+  #maindiv {
+    padding: 2vw; 
+    position: relative;
+  }
+  #about {
+    padding:1vw;
+  }
+  
+  .grid-container-cpanel {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto; 
+    gap: 1vw; 
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  /*Tiles*/ 
+  
+  .tiles, .infotile {
+    background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cdec 50%);
+    border-radius: 10px;
+    padding: 2vw;
+    box-shadow: 5px 5px 10px rgba(3, 85, 110, 0.74);
+    border: 1px solid #0f1946; 
+    margin: 1vw 0 0 0 ; 
+    position: relative;
+  }
+  
+
+  #cpanel1, #cpanel2 {
+    position: relative; 
+  }
+  
+  /*About and feedback*/ 
+  
+  #about {
+    white-space: wrap;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    text-align: left;
+    position: relative;
+    max-width: 100%;
+  }
+  
+  #about p {
+    margin: 0; 
+    white-space: wrap;
+    text-align: justify;
+    word-wrap: break-word;
+    width: auto;
+  }
+
+  
+.fish_card #about p {
+  margin: unset; 
+  white-space: unset;
+  text-align: unset; 
+  word-wrap: unset;
+  width: unset;
+}
+   
+  h1 {
+    font-size: 1.3rem; 
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 1rem; 
+    margin-bottom: 2px;
+    font-weight: 650;
+  }
+
+  .titleicon {
+    content: url('icon/titleicon.webp'); 
+    height: 8vw;
+    width:8vw;
+}
+
+.pregrey {
+  color: rgb(63, 30, 30);
+}
+.cat {
+  font-weight: 500;
+}
+/*fish card grid*/
+.column_result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; 
+  gap: 1vw; 
+  justify-content: center;
+} 
+
+.fish_card, .infocard {
+  flex: 0 0 calc(33.33% - 2vw); 
+  margin: 5px; 
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 10px;
+  padding: 1vw;
+  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+background-attachment: fixed;
+box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+position: relative; /*necessary for in card elements to allign as I want */ 
+}
+/*fish card items*/
+.fishsize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1vw;
+  color: rgb(136, 105, 3); 
+}
+
+.fishtemp {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-70%);
+  margin: 1vw;
+}
+
+.tanksize {
+  position: absolute;
+  color: rgb(136, 105, 3); 
+  bottom: 0;
+  left: 5%;
+  transform: translateX(-45%);
+  margin: 1vw;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 2vw;
+}
+
+.fishname {
+  margin-top: 0px;
+  font-size: 3vw;
+}
+
+.infocard {
+  background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
+  box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+.infocardtext {
+  font-size: 2.5vw;
+  margin: 0; 
+}
+
+.fishcardimage {
+  width: 20vw;
+  height: 15vh;
+  border-color: #05224f;
+  border-width: 1px; 
+  border-radius: 3px;
+  border-style: solid;
+  }
+
+  .iconimage {
+    width: 5vw;
+    height: 3.75vw;
+    border-color: #05224f;
+    border-width: 1px; 
+    border-radius: 3px;
+    border-style: solid;
+    }
+
+    .title {
+      position: absolute;
+      font-weight: 666;
+      top: 0;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2.5vw; 
+      margin: 0.5vw; 
+    }
+    
+    .subtitle, .bigsubtitle, .verybigsubtitle {
+      position: absolute;
+      top: 3vw;
+      left: 50%;
+      transform: translateX(-40%);
+      white-space: nowrap;
+      font-size: 2vw; 
+      margin: 0.5vw; 
+    }
+
+    .bigsubtitle, .verybigsubtitle {
+      transform: translateX(-38%);
+    }
+/*******************************************************************/
+/* Media queries ************************************************/ 
+
+
+
+
+@media screen and (max-width: 550px) {
+  .column_result {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fishcardimage {
+    width: 35vw;
+    height: 25vw;
+  }
+  .iconimage  {
+    width: 10vw;
+    height: 7.5vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2.92vw;
+  }
+
+  h1 {
+    font-size: 4vw; 
+  }
+  h2 {
+    font-size: 3vw; 
+  }
+p {
+  font-size: 3.5vw; 
+  }
+}
+
+
+@media screen and (min-width: 550px) {
+
+  .fishcardimage {
+    width: 25vw;
+    height: 18.75vw;
+  }
+  .fishsize, .fishtemp, .tanksize, .infocardtext {
+    font-size: 2vw;
+  }
+  .fishname {
+    font-size: 2.5vw;
+  }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+   font-size: 1.6vw;
+   margin: 0.25vw;
+  }
+   .title {
+    font-size: 1.8vw;
+    margin: 0.25vw;
+   }
+
+  .titleicon {
+    height: 4vw;
+    width:4vw;
+}
+
+}
+
+
+@media screen and (min-width: 839px) {
+
+  .fishcardimage {
+    width: 22.5vw;
+    height: 16.875vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.8vw;
+    margin: 0.5vw;
+  }
+  .fishname {
+    font-size: 1.7vw;
+  }
+
+  .title {
+    font-size: 1.4vw;
+    margin: 0.17vw;
+   }
+
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.2vw;
+    margin: 0.17vw;
+    top:2.1vw;
+   }
+   .infocardtext {
+    font-size: 1.5vw;
+  }
+
+  .fish_card, .infocard {
+    padding: 0.5vw; 
+  }
+
+}
+
+@media screen and (min-width: 956px) {
+
+  .fishcardimage {
+    width: 21vw;
+    height: 15.75vw;
+  }
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.5vw;
+  }
+
+  .fishname {
+    font-size: 1.5vw;
+  }
+
+  .title {
+    font-size: 1.2vw;
+    top: 0.1vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:1.8vw;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .fishcardimage {
+    width: 20vw;
+    height: 15vw;
+  }
+  .grid-container_main {
+    gap: 0.5vw; 
+  }
+
+  .title {
+    font-size: 1.2vw;
+  }
+  .subtitle, .bigsubtitle, .verybigsubtitle {
+    font-size: 1.1vw;
+    transform: translateX(-40%);
+    top:2vw;
+  }
+
+
+   .titleicon {
+    height: 2vw;
+    width:2vw;
+}
+
+}
+
+@media screen and (min-width: 1300px) {
+  .fishsize, .fishtemp, .tanksize {
+    font-size: 1.2vw;
+    margin: 0.25vw;
+  }
+  .fishcardimage {
+    width: 18vw;
+    height: 13.5vw;
+}
+}
+
+@media screen and (min-width: 1530px) {
+
+
+  .column_result {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .fishcardimage {
+    width: 14.5vw;
+    height: 10.875vw;
+}
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1vw;
+}
+
+.fishname {
+  font-size: 1vw;
+}
+
+.iconimage  {
+  width: 4vw;
+  height: 3vw;
+}
+.title {
+  font-size: 0.8vw;
+  margin: 0.15vw;
+  top:0.1vw;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.6vw;
+  margin: 0.1vw;
+  top: 1.15vw;
+ }
+.infocardtext {
+  font-size: 0.8vw;
+}
+}
+
+@media screen and (min-width: 1800px) {
+.fishcardimage {
+  width: 260px;
+  height: 195px;
+}
+.fishname {
+  font-size: 1.3rem;
+}
+
+.fishsize, .fishtemp, .tanksize {
+  font-size: 1.3rem;
+}
+.iconimage  {
+  width: 76px;
+  height: 57px;
+}
+.title {
+  font-size: 1.1rem;
+  margin: 0.3rem;
+  top:5px;
+ }
+.subtitle, .bigsubtitle, .verybigsubtitle {
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  top: 30px;
+ }
+.infocardtext {
+  font-size: 1rem;
+  margin-top: 0.18rem;
+  margin-bottom: 0.18rem;
+}
+ .grid-container_main {
+  gap: 10px; 
+}
+.fish_card, .infocard {
+  padding:9px;
+  padding-top: 8px;
+}
+
+
+.search_tiles {
+  font-size: 1.1rem;
+}
+.tiles, .infotile {
+  padding: 18px;
+  margin: 9px 0 0 0 ; 
+}
+.dropbtn {
+
+  padding-left: 18px;
+  padding-right: 18px;  
+}
+
+.grid-item {
+  padding: 18px;
+}
+.titleicon {
+  height: 40px;
+  width:40px;
+}
+
+.column_result {
+  gap: 28px; 
+}
+
+.fishsize, .fishtemp, .tanksize {
+  margin: 5px;
+}
+
+
+}
