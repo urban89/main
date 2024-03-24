@@ -64,6 +64,22 @@ const codes_breed =
   2: "Medium",
   1: "Easy"
 }
+
+
+///this is not used in code but need it here for reference: 
+const regionsOb = 
+{
+  "1": "South America",
+  "2": "Africa",
+  "3": "Southeast Asia",
+  "4": "South Asia",
+  "5": "Central America",
+  "6": "East Asia",
+  "7": "Europe",
+  "8": "North America",
+  "9": "Australia",
+  "A": "Artificial Origin",
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +130,6 @@ const codes_breed =
   let convert_cf = document.getElementById("convert_cf");
 
   let main_form = document.getElementById("main_form");
-  // let more_options = document.getElementById("more_options");
   let view_options = document.getElementById("view_options"); 
   let search = document.getElementById("search"); 
 
@@ -166,6 +181,7 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
   let social_chbx = document.querySelectorAll('input[name = "social"]');
   let agress_chbx = document.querySelectorAll('input[name = "agress"]');
   let breed_chbx = document.querySelectorAll('input[name = "breed"]');
+  let orig_chbx = document.querySelectorAll('input[name = "origin"]');
 
   let result_div = document.getElementById("result");
   let fishcount = document.getElementById("fishcount");
@@ -192,14 +208,13 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
 
   let details = []; 
 
-//  let feedback_button = document.getElementById("feedback_button"); 
-
 var selects = [
   {checkboxArray: hardi_chbx, targetSpan: div_hardiness_x},
   {checkboxArray: avail_chbx, targetSpan: div_avail_x},
   {checkboxArray: social_chbx, targetSpan: div_behavior_x},
   {checkboxArray: agress_chbx, targetSpan: div_agression_x},
   {checkboxArray: breed_chbx, targetSpan: div_breeding_x},
+  {checkboxArray: orig_chbx, targetSpan: div_origin_x},
 ];
 
 //////////////////////////
@@ -259,31 +274,7 @@ tempmin.addEventListener("click", updatePerTemp);
       convert_fc.addEventListener("change", ftoc);
       convert_cf.addEventListener("change", ctof);
   
-      // all_1.addEventListener("change",function () {selectall(hardi_chbx, all_1);});
-      // all_2.addEventListener("change",function () {selectall(avail_chbx, all_2);});
-      // all_3.addEventListener("change",function () {selectall(social_chbx, all_3);});
-      // all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
-      // all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
-  
-      // listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
-      // listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
-      // listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
-      // listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
-      // listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
-  
-      // settings.addEventListener("click", settingsShow);   // Settings button 
-      
-      // verycommon.checked = true; 
-      // common.checked = true; 
-      // beginner.checked = true
-      // easy.checked = true;
-  
-      // all_3.checked = true; 
-      // selectall(social_chbx, all_3);
-      // all_4.checked = true; 
-      // selectall(agress_chbx, all_4);
-      // all_5.checked = true; 
-      // selectall(breed_chbx, all_5);
+
 
       ///All checkboxes checked as default: 
       checkboxes.forEach (checkbox => {
@@ -309,20 +300,7 @@ tempmin.addEventListener("click", updatePerTemp);
       tempalert.style.display = "none";
       capalert.style.display = "none";
       checkalert.style.display = "none";
-  
-  
-      ///Event listeners for SETTINGS dropdown --> removed this button because of responsiveness 
-    //   document.getElementById("info").addEventListener("click", function () {
-    //     var dropdown = document.getElementById("info_dropdown");
-    //     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-    // });
-  
-    // window.addEventListener("click", function (event) {
-    //   var dropdown = document.getElementById("info_dropdown");
-    //   if (event.target !== document.getElementById("info")) {
-    //       dropdown.style.display = "none";
-    //   }
-    // });
+
   
     ///Event listeners for INFORMATION dropdown 
   
@@ -385,12 +363,12 @@ selects.forEach(function(group) {
     //////Functions supporting event listeners:
     //////Event listener adder for checkbox select/unselect logic 
 
-    function listenAdder (arr, funk) {
-      for (box of arr) {
-        box.addEventListener("change", funk);
-      }
+  //   function listenAdder (arr, funk) {
+  //     for (box of arr) {
+  //       box.addEventListener("change", funk);
+  //     }
 
-  }
+  // } -- 24032024
 
 
 
@@ -451,15 +429,6 @@ function updatePerTemp () {
   document.getElementById("pertemp").textContent = perTempCount ();
 }
 
-// ///// Metric change function (used in initial event listener)
-// function fishsizemetric () {
-//   console_fishsize = (console_fishsize === cm) ? inch : cm; 
-//   fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
-//   console.log(fishsize_option);
-//   size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
-//   cmtoinch.innerText = fishsize_option; 
-//   search_button()
-//  }
 
 
 function selectValueDisplay (checkboxArr, targetSpan) {
@@ -641,40 +610,6 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
 
 
 
-// /////Change background 
-// function imageChange() {
-//   if (currentImage === bcimages) {
-//     currentImage = 1; 
-//   }
-//   else {
-//     currentImage = currentImage+1; 
-//   }
-
-//   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
-// }
-
-
-/////Background image as initial
-// function updateBackground() {
-//   if (window.innerWidth > 767) {
-//     if (!document.body.style.backgroundImage) {
-//       let initial = Math.floor(Math.random() * bcimages) + 1;
-//       currentImage = initial;
-//       document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-//     }
-//   } else {
-//     document.body.style.backgroundImage = '';
-//   }
-// }
-
-// function initialImage () {
-//   if (window.innerWidth > 767) {
-//   let initial = Math.floor(Math.random() * bcimages) + 1;
-//   currentImage = initial;
-//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-// }
-// }
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///// Search button function //////////////////////////////////////////////////////////////////////////////////////////
@@ -702,12 +637,24 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let v_b_medium = b_medium.checked;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
+        let samerica = document.getElementById("r1").checked;
+        let camerica = document.getElementById("r5").checked;
+        let namerica = document.getElementById("r8").checked; 
+        let africa = document.getElementById("r2").checked; 
+        let australia = document.getElementById("r9").checked;
+        let seasia = document.getElementById("r3").checked;
+        let sasia = document.getElementById("r4").checked;
+        let easia = document.getElementById("r6").checked;
+        let europe = document.getElementById("r7").checked;
+        let arti = document.getElementById("rA").checked;
+
         let srch_hardi = []; 
         let srch_avail = []; 
         let srch_soci = []; 
         let srch_agress = []; 
         let srch_breed = []; 
         let fish_list = []; 
+        let reg_list = [];
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
       preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
@@ -718,8 +665,10 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         behavior_list();
         agres_list();
         breed_list();
+        regio_list();
+        console.log(reg_list);
 /////Finding fish that meet selected criteria and pushing them to fish_list
-  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin); 
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list); 
 /////Outputting serach results to UI
   fishSelect ();
 /////search_button CORE -->|||||
@@ -766,6 +715,19 @@ noResultAlert (); // alert if no results were found
     if (v_b_hard) {srch_breed.push(3);}
     if (v_impossible) {srch_breed.push(4);}
   }      
+
+ function regio_list() {
+  if (samerica) {reg_list.push("1");}
+  if (camerica) {reg_list.push("5");}
+  if (namerica) {reg_list.push("8");}
+  if (africa) {reg_list.push("2");}
+  if (australia) {reg_list.push("9");}
+  if (seasia) {reg_list.push("3");}
+  if (sasia) {reg_list.push("4");}
+  if (easia) {reg_list.push("6");}
+  if (europe) {reg_list.push("7");}
+  if (arti) {reg_list.push("A");}
+ }
   }
 ////////////////// sort function
 function sort (fish_list) {
@@ -780,14 +742,22 @@ function sort (fish_list) {
   if (sort_select.value == "temp_min") {
     fish_list.sort(compare_temp);
   }
-
 }
 ///// search_button function ends here /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
-function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin)  {   
-  for (fish of fish_master) {
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list)  {   
+  for (let fish of fish_master) {
+    let region = fish.region; 
+    if (region.includes(',')) { 
+      region = region.split(',').map(num => num.trim());
+    } else {
+      region = [region.trim()]; 
+    }
+
+    let regionMatch = region.some(r => reg_list.includes(r));
+
     let fish_temp_min = parseFloat(fish.temperature_min);
     let fish_temp_max = parseFloat(fish.temperature_max); 
     let fish_cap = parseFloat(fish.tank_size_liter);
@@ -798,18 +768,21 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
       fish_temp_min = (fish_temp_min * 9/5)+32;
       fish_temp_max = (fish_temp_max * 9/5)+32;
     }
+
+
     if ((srch_hardi.includes(parseInt(fish.uncare))) && 
     (srch_avail.includes(parseInt(fish.availability))) && 
     (srch_soci.includes(parseInt(fish.school))) && 
     (srch_agress.includes(parseInt(fish.agression))) &&
     (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
     (v_tank_size >= fish_cap) && 
-    (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
+    (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max) &&
+    regionMatch) {
 
     fish_list.push(fish); //pushing all that matches to fish list 
   } 
 }
-sort (fish_list)
+sort(fish_list)
 console.log(fish_list)
 
   ///Updating number of search result value 
@@ -823,7 +796,7 @@ console.log(fish_list)
   }, 1000);
 }
   previousFishcouont = fish_list.length;
-} 
+};
 /// fishFinder --> ||||| 
 /////Checking if user missed to checkbox the minimum required checkboxes 
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
