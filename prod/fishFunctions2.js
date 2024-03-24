@@ -13,14 +13,6 @@ const show_farenheit = "Show water temperature in farenheit";
 const show_celsius = "Show water temperature in celsius";
 const show_liter =  "Show aquarium capacity in liter";
 const show_gallon = "Show aquarium capacity in gallon"; 
-const fishshown = "Show all info cards";
-const infoshown = "Show all fish cards";
-const more = "Show more search options";
-const fewer = "Show fewer search options";
-const feedbacknotshown = "Send feedback"; 
-const feedbackshown = "Hide feedback window";
-const aboutoff = "About this page"; 
-const abouton = "Hide page info";
 const maincount = fish_master.length; 
 const bcimages = 5; 
 
@@ -80,7 +72,6 @@ let console_fishsize = cm;
 let fishsize_option = show_inch;
 let capacity_button = show_gallon;
 let temp_button = show_farenheit; 
-let whichcard = fishshown; 
 let flipped = false; 
 let previousFishcount = 42; 
 
@@ -334,42 +325,6 @@ for (let fish of fish_master) {
 return `(${Math.round((list.length/maincount)*100)}%)`; 
 }
 
-
-
-// /////Change background 
-// function imageChange() {
-//   if (currentImage === bcimages) {
-//     currentImage = 1; 
-//   }
-//   else {
-//     currentImage = currentImage+1; 
-//   }
-
-//   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
-// }
-
-
-/////Background image as initial
-// function updateBackground() {
-//   if (window.innerWidth > 767) {
-//     if (!document.body.style.backgroundImage) {
-//       let initial = Math.floor(Math.random() * bcimages) + 1;
-//       currentImage = initial;
-//       document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-//     }
-//   } else {
-//     document.body.style.backgroundImage = '';
-//   }
-// }
-
-// function initialImage () {
-//   if (window.innerWidth > 767) {
-//   let initial = Math.floor(Math.random() * bcimages) + 1;
-//   currentImage = initial;
-//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-// }
-// }
-
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -543,32 +498,6 @@ function uppercaser(str) {
 }
 
 
-
-// function flipCards() {
-//   flipped = (flipped === false) ? true : false; 
-//   whichcard = (flipped === true) ? infoshown: fishshown; 
-//   cardswticher.innerHTML = whichcard;
-//   if (flipped) {
-//     for (let fish of fish_master) {
-//       details.push(fish.fish_id);
-//     }} else {
-//       details = []; 
-//     }
-//     output ()
-//   } 
-
-    ////Remembering info card display based on iterating the 'details' array that serves as cache? 
-    // function remember (details) {
-    //   for (let id of details) {
-    //    var fishcard = document.getElementById(id);
-    //    var infocard = document.getElementById("d" + id);
-    //    if (fishcard && infocard) {
-    //     fishcard.style.display = "none";
-    //     infocard.style.display = "block";
-    //   }
-    // }
-    // }
-
 //////Filter by fish name (latin, english and alternative name)
 
 function filterFishByName() {
@@ -627,7 +556,7 @@ fishcard_divs.forEach(div => {
     
     let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
     let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
-    let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
+    let cap = Math.round(((fish.tank_size_liter * cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
     let card_size_cal = Math.round(fish.cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
     let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
     
