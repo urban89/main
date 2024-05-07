@@ -498,7 +498,7 @@ function uppercaser(str) {
 }
 
 
-//////Filter by fish name (latin, english and alternative name)
+//////Filter by fish name (latin, english and alternative name or fish id )
 
 function filterFishByName() {
   const searchTerm = searchInput.value.trim().toLowerCase();
@@ -513,7 +513,8 @@ function filterFishByName() {
     filteredFish = fish_list.filter(fish => 
       fish.name_english.toLowerCase().includes(searchTerm) ||
       fish.alt_name.toLowerCase().includes(searchTerm) ||
-      fish.name_latin.toLowerCase().includes(searchTerm)
+      fish.name_latin.toLowerCase().includes(searchTerm) ||
+      fish.fish_id.includes(searchTerm)
     );
 
     console.log(filteredFish);
