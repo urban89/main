@@ -992,32 +992,6 @@ function noResultAlert () {
   }
 }
 
-
-///////no more flip for all!!
-// function flipCards() {
-//   flipped = (flipped === false) ? true : false; 
-//   console.log(flipped);
-//   whichcard = (flipped === true) ? infoshown: fishshown; 
-//   cardswticher.innerHTML = whichcard;
-//   if (flipped) {
-//     for (let fish of fish_master) {
-//       details.push(fish.fish_id);
-//     }} else {
-//       details = []; 
-//     }
-// //     search_button()
-//   } 
-  ////Remembering info card display based on iterating the 'details' array that serves as 'cache' 
-// function remember (details) {
-// for (let id of details) {
-//  var fishcard = document.getElementById(id);
-//  var infocard = document.getElementById("d" + id);
-//  if (fishcard && infocard) {
-//   fishcard.style.display = "none";
-//   infocard.style.display = "block";
-// }
-// }
-// }
 ///// Metric change function (used in initial event listener)
   function fishsizemetric () {
   console_fishsize = (console_fishsize === cm) ? inch : cm; 
