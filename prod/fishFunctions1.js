@@ -65,6 +65,13 @@ const codes_breed =
   1: "Easy"
 }
 
+const codes_swim = 
+{
+  3: "Top",
+  2: "Middle",
+  1: "Bottom"
+}
+
 
 ///this is not used in code but need it here for reference: 
 const regionsOb = 
@@ -165,6 +172,7 @@ let dropdownButtonAvail = document.getElementById("dropdownButtonAvail");
 let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
 let dropdownButtonAgression = document.getElementById("dropdownButtonAgression");
 let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
+let dropdownButtonSwim = document.getElementById("dropdownButtonSwim");
 
 
   let div_hardiness_x = document.getElementById("div_hardiness_x");
@@ -182,6 +190,7 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
   let agress_chbx = document.querySelectorAll('input[name = "agress"]');
   let breed_chbx = document.querySelectorAll('input[name = "breed"]');
   let orig_chbx = document.querySelectorAll('input[name = "origin"]');
+  let swim_chbx = document.querySelectorAll('input[name = "swim"]');
 
   let result_div = document.getElementById("result");
   let fishcount = document.getElementById("fishcount");
@@ -202,7 +211,6 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
-  // let imagechanger = document.getElementById("imagechanger");
   let allcount = document.getElementById("allcount");
   let currentImage; 
 
@@ -215,6 +223,7 @@ var selects = [
   {checkboxArray: agress_chbx, targetSpan: div_agression_x},
   {checkboxArray: breed_chbx, targetSpan: div_breeding_x},
   {checkboxArray: orig_chbx, targetSpan: div_origin_x},
+  {checkboxArray: swim_chbx, targetSpan: div_swim_x},
 ];
 
 //////////////////////////
@@ -648,6 +657,10 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let europe = document.getElementById("r7").checked;
         let arti = document.getElementById("rA").checked;
 
+        let v_bottom = document.getElementById("bottom").checked;
+        let v_middle = document.getElementById("middle").checked;
+        let v_top = document.getElementById("top").checked;
+
         let srch_hardi = []; 
         let srch_avail = []; 
         let srch_soci = []; 
@@ -655,6 +668,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let srch_breed = []; 
         let fish_list = []; 
         let reg_list = [];
+        let srch_swim = []; 
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
       preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
@@ -666,9 +680,9 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         agres_list();
         breed_list();
         regio_list();
-        console.log(reg_list);
+        swim_list()
 /////Finding fish that meet selected criteria and pushing them to fish_list
-  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list); 
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim); 
 /////Outputting serach results to UI
   fishSelect ();
 /////search_button CORE -->|||||
@@ -716,6 +730,12 @@ noResultAlert (); // alert if no results were found
     if (v_impossible) {srch_breed.push(4);}
   }      
 
+function swim_list() {
+  if (v_bottom) {srch_swim.push(1);}
+  if (v_middle) {srch_swim.push(2);}
+  if (v_top) {srch_swim.push(3);}
+}
+
  function regio_list() {
   if (samerica) {reg_list.push("1");}
   if (camerica) {reg_list.push("5");}
@@ -747,7 +767,7 @@ function sort (fish_list) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
-function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list)  {   
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim)  {   
   for (let fish of fish_master) {
     let region = fish.region; 
     if (region.includes(',')) { 
@@ -777,6 +797,8 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
     (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
     (v_tank_size >= fish_cap) && 
     (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max) &&
+    (srch_swim.includes(parseInt(fish.swim)))
+    &&
     regionMatch) {
 
     fish_list.push(fish); //pushing all that matches to fish list 
