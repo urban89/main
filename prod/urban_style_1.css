@@ -795,9 +795,9 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 .notselected {
-  background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
+  background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);
   border-radius: 14px;
-  padding: 2vw;
+  padding: 1vw;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
   border: 1px solid #ccc; 
     }

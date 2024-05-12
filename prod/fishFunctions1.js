@@ -173,6 +173,7 @@ let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
 let dropdownButtonAgression = document.getElementById("dropdownButtonAgression");
 let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
 let dropdownButtonSwim = document.getElementById("dropdownButtonSwim");
+let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
 
 
   let div_hardiness_x = document.getElementById("div_hardiness_x");
@@ -366,19 +367,7 @@ selects.forEach(function(group) {
   });
 });
 
-    });  /// Eventlisteners end here   
-    ///////////////////////////////////////////////
-
-    //////Functions supporting event listeners:
-    //////Event listener adder for checkbox select/unselect logic 
-
-  //   function listenAdder (arr, funk) {
-  //     for (box of arr) {
-  //       box.addEventListener("change", funk);
-  //     }
-
-  // } -- 24032024
-
+    });  
 
 
 ///Calculates the precentage value of each category compared to total
@@ -646,6 +635,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let v_b_medium = b_medium.checked;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
+
         let samerica = document.getElementById("r1").checked;
         let camerica = document.getElementById("r5").checked;
         let namerica = document.getElementById("r8").checked; 
@@ -671,7 +661,12 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let srch_swim = []; 
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
-      preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
+      preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,
+        v_beginner,v_easy,v_medium,v_difficult,
+         v_schooling1,v_schooling2,v_solitary,v_peaceful1,
+          v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,
+          v_bottom,v_middle,v_top,
+          samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti);
       preCheckTank(); 
 ///// Adding search conditions to their respective arrays
         avail_list();
@@ -823,7 +818,8 @@ console.log(fish_list)
 /////Checking if user missed to checkbox the minimum required checkboxes 
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
-  v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible) {
+  v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,v_bottom,v_middle,v_top, 
+  samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti) {
 
   if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
   div_avail.classList.add('notselected');
@@ -895,32 +891,79 @@ else {
   dropdownButtonBreeding.classList.remove("dropbtnalert");
   dropdownButtonBreeding.classList.add("dropbtn");
 }
+////
+if (!v_bottom && !v_middle && !v_top) {
+  div_swim.classList.add('notselected');
+  div_swim.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
+  dropdownButtonSwim.classList.add("dropbtnalert");
+  dropdownButtonSwim.classList.remove("dropbtn");
+}
+else {
+  div_swim.classList.remove('notselected');
+  div_swim.classList.add('tiles');
+  dropdownButtonSwim.classList.remove("dropbtnalert");
+  dropdownButtonSwim.classList.add("dropbtn");
+}
+/////
+
+////
+if (!samerica && !camerica && !namerica && !africa && !australia && !seasia && !sasia && !easia && !europe && !arti) {
+  div_origin.classList.add('notselected');
+  div_origin.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
+  dropdownButtonOrigin.classList.add("dropbtnalert");
+  dropdownButtonOrigin.classList.remove("dropbtn");
+}
+else {
+  div_origin.classList.remove('notselected');
+  div_origin.classList.add('tiles');
+  dropdownButtonOrigin.classList.remove("dropbtnalert");
+  dropdownButtonOrigin.classList.add("dropbtn");
+}
+/////
+
 if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
-&& (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)) {
+&& (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)
+&& (v_bottom || v_middle || v_top) && (samerica || camerica || namerica || africa || australia || seasia || sasia || easia || europe || arti)) {
   div_avail.classList.remove('notselected');
   div_hardiness.classList.remove('notselected');
   div_behavior.classList.remove('notselected');
   div_agression.classList.remove('notselected');
   div_breeding.classList.remove('notselected');
+  div_swim.classList.remove('notselected');
+  div_origin.classList.remove('notselected');
   dropdownButtonHardi.classList.remove("dropbtnalert");
   dropdownButtonAvail.classList.remove("dropbtnalert");
   dropdownButtonBehavior.classList.remove("dropbtnalert");
   dropdownButtonAgression.classList.remove("dropbtnalert");
   dropdownButtonBreeding.classList.remove("dropbtnalert");
+  dropdownButtonSwim.classList.remove("dropbtnalert");
+  dropdownButtonOrigin.classList.remove("dropbtnalert");
+
 
   div_avail.classList.add('tiles');
   div_hardiness.classList.add('tiles');
   div_behavior.classList.add('tiles');
   div_agression.classList.add('tiles');
   div_breeding.classList.add('tiles');
+  div_swim.classList.add('tiles');
+  div_origin.classList.add('tiles');
   dropdownButtonHardi.classList.add("dropbtn");
   dropdownButtonAvail.classList.add("dropbtn");
   dropdownButtonBehavior.classList.add("dropbtn");
   dropdownButtonAgression.classList.add("dropbtn");
   dropdownButtonBreeding.classList.add("dropbtn");
+  dropdownButtonSwim.classList.add("dropbtn");
+  dropdownButtonOrigin.classList.add("dropbtn");
   checkalert.style.display = "none";
   invalid_search_checks = false; 
 }
+
+
+
 }  
 /////Component functions below////////////// - there are some general UI functions I will keep them here for now 
 
