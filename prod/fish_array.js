@@ -7887,7 +7887,7 @@ const fish_master = [
     fish_id: "315",
     name_english: "Orange Hatchet Danio",
     alt_name: "",
-    name_latin: "Laubuka dadiburjori ",
+    name_latin: "Laubuka dadiburjori",
     swim: "2",
     cm_max: "3",
     uncare: "3",
