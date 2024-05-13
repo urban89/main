@@ -1,4 +1,4 @@
-const fish_master =  [
+const fish_master = [
   {
     fish_id: "1",
     name_english: "Brown-Point Shield Skin",
@@ -7882,5 +7882,23 @@ const fish_master =  [
     agression: "2",
     origin: "no natural occurrence,",
     region: "A"
+  },
+  {
+    fish_id: "315",
+    name_english: "Orange Hatchet Danio",
+    alt_name: "",
+    name_latin: "Laubuka dadiburjori ",
+    swim: "2",
+    cm_max: "3",
+    uncare: "3",
+    breeding_difficulty: "2",
+    availability: "2",
+    school: "3",
+    tank_size_liter: "50",
+    temperature_min: "20",
+    temperature_max: "24",
+    agression: "1",
+    origin: "India",
+    region: "4"
   }
 ]
