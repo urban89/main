@@ -86,6 +86,7 @@ const regionsOb =
   "8": "North America",
   "9": "Australia",
   "A": "Artificial Origin",
+  "W": "West Asia"
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -646,6 +647,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let easia = document.getElementById("r6").checked;
         let europe = document.getElementById("r7").checked;
         let arti = document.getElementById("rA").checked;
+        let wasia = document.getElementById("rw").checked;
 
         let v_bottom = document.getElementById("bottom").checked;
         let v_middle = document.getElementById("middle").checked;
@@ -666,7 +668,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
          v_schooling1,v_schooling2,v_solitary,v_peaceful1,
           v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,
           v_bottom,v_middle,v_top,
-          samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti);
+          samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia);
       preCheckTank(); 
 ///// Adding search conditions to their respective arrays
         avail_list();
@@ -742,6 +744,7 @@ function swim_list() {
   if (easia) {reg_list.push("6");}
   if (europe) {reg_list.push("7");}
   if (arti) {reg_list.push("A");}
+  if (wasia) {reg_list.push("W");}
  }
   }
 ////////////////// sort function
@@ -819,7 +822,7 @@ console.log(fish_list)
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
   v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,v_bottom,v_middle,v_top, 
-  samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti) {
+  samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia) {
 
   if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
   div_avail.classList.add('notselected');
@@ -909,7 +912,7 @@ else {
 /////
 
 ////
-if (!samerica && !camerica && !namerica && !africa && !australia && !seasia && !sasia && !easia && !europe && !arti) {
+if (!samerica && !camerica && !namerica && !africa && !australia && !seasia && !sasia && !easia && !europe && !arti && !wasia) {
   div_origin.classList.add('notselected');
   div_origin.classList.remove('tiles');
   checkalert.style.display = "inline-block";
@@ -927,7 +930,7 @@ else {
 
 if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
 && (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)
-&& (v_bottom || v_middle || v_top) && (samerica || camerica || namerica || africa || australia || seasia || sasia || easia || europe || arti)) {
+&& (v_bottom || v_middle || v_top) && (samerica || camerica || namerica || africa || australia || seasia || sasia || easia || europe || arti || wasia)) {
   div_avail.classList.remove('notselected');
   div_hardiness.classList.remove('notselected');
   div_behavior.classList.remove('notselected');
