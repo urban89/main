@@ -124,9 +124,9 @@ document.addEventListener("DOMContentLoaded", function() {
      //home button
      var backToTopButton = document.getElementById("backToTop");
 
-     // Show the button when scrolled down 20px from the top
+     // Show the button when scrolled down 50px from the top
      window.onscroll = function() {
-         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
              backToTopButton.style.display = "block";
          } else {
              backToTopButton.style.display = "none";
