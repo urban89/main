@@ -121,6 +121,22 @@ let norecord$$ = perCounter ("breeding_difficulty", 4);
 /// Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
 
+     //home button
+     var backToTopButton = document.getElementById("backToTop");
+
+     // Show the button when scrolled down 20px from the top
+     window.onscroll = function() {
+         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+             backToTopButton.style.display = "block";
+         } else {
+             backToTopButton.style.display = "none";
+         }
+     };
+ 
+     // Scroll to the top of the page when the button is clicked
+     backToTopButton.onclick = function() {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+     }; //home button ends
 
     sort_select.addEventListener("change", output);
     output ()

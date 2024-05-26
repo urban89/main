@@ -352,6 +352,23 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
 
+    //home button
+    var backToTopButton = document.getElementById("backToTop");
+
+    // Show the button when scrolled down 20px from the top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // Scroll to the top of the page when the button is clicked
+    backToTopButton.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
 // Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
 document.querySelectorAll('.dropdown-content').forEach(function(element) {
   element.addEventListener('click', function(event) {

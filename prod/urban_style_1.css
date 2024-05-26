@@ -623,6 +623,11 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 65vw;
     margin-right: 17vw;
     margin-left: 17vw;
+
+    .grid-container_main { /*search tiles responsive*/
+  grid-template-columns: repeat(3, 1fr);
+  }
+
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 1.2vw;
@@ -970,4 +975,28 @@ input[type="radio"] {
 .menuhref {
   text-decoration: none;
   color: inherit;
+}
+
+
+#backToTop {
+  position: fixed !important;
+  border-color: #4B3F3F;
+  font-size: 20px;
+  bottom: 20px;
+  left: 10px;
+  display: none; 
+  background-color: #98FB98;
+  color: #3b5268;
+  border-width: 2px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow:3px 3px 7px #9ad19a;
+}
+
+#backToTop:hover {
+  background-color:#66C966;
+  box-shadow:4px 4px 8px #6aad6a;
+  color: black;
 }
