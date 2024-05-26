@@ -985,14 +985,15 @@ input[type="radio"] {
   bottom: 20px;
   left: 10px;
   display: none; 
-  background-color: #98FB98;
+  background-color: rgba(152,251,152, 0.74);
   color: #3b5268;
   border-width: 2px;
   padding: 5px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 1000;
-  box-shadow:3px 3px 7px #9ad19a;
+  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  font-weight: 700;
 }
 
 #backToTop:hover {
