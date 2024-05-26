@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // Show the button when scrolled down 50px from the top
      window.onscroll = function() {
-         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+         if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
              backToTopButton.style.display = "block";
          } else {
              backToTopButton.style.display = "none";
