@@ -357,7 +357,7 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
 
     // Show the button when scrolled down 60px from the top
     window.onscroll = function() {
-        if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
