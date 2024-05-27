@@ -294,8 +294,8 @@ tempmin.addEventListener("click", updatePerTemp);
   document.getElementById("pertemp").textContent = perTempCount ();
     
 
-  gallon_radio.checked = true;
-  convert_cf.checked = true; 
+  liter_radio.checked = true;
+  convert_fc.checked = true; 
       
       liter_radio.addEventListener("change", gallonliter);
       gallon_radio.addEventListener("change", litergallon);
