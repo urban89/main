@@ -956,7 +956,7 @@ input[type="radio"] {
 }
 
 
-.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
+.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp, .swimpertile, .regiopertile {
   display: none;
   font-size: 0.7rem;
   font-weight: 400;
