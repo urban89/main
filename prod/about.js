@@ -54,6 +54,28 @@ const codes_breed =
   1: "Easy"
 }
 
+const codes_swim =
+{
+  1: "Bottom",
+  2: "Middle",
+  3: "Top"
+}
+
+const regionsOb = 
+{
+  "1": "South America",
+  "2": "Africa",
+  "3": "Southeast Asia",
+  "4": "South Asia",
+  "5": "Central America",
+  "6": "East Asia",
+  "7": "Europe",
+  "8": "North America",
+  "9": "Australia",
+  "A": "Artificial Origin",
+  "W": "West Asia"
+};
+
 
 //////////////////////////
 /////% counters for each category
@@ -81,19 +103,41 @@ let bmedium$$ = perCounter ("breeding_difficulty", 2);
 let bhard$$ = perCounter ("breeding_difficulty", 3);
 let norecord$$ = perCounter ("breeding_difficulty", 4);
 
+let bottom$$  = perCounter ("swim", 1);
+let middle$$  = perCounter ("swim", 2);
+let top$$  = perCounter ("swim", 3);
+
+let samerica$$  = perCounter ("region", 1);
+let camerica$$  = perCounter ("region", 5);
+let namerica$$  = perCounter ("region", 8);
+let africa$$  = perCounter ("region", 2);
+let australia$$  = perCounter ("region", 9);
+let seasia$$  = perCounter ("region",3);
+let sasia$$  = perCounter ("region", 4);
+let easia$$  = perCounter ("region", 6);
+let europe$$  = perCounter ("region", 7);
+let arti$$  = perCounter ("region", "A");
+let wasia$$  = perCounter ("region", "W");
+
+
+
 //adding event listeners 
 document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("dbcount").textContent = maincount; 
 
 let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
-    "schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
+    "schooling","social","solitary","peaceful",
+    "mpeaceful","agressive","beasy","bmedium","bhard","norecord", "bottom","middle","top",
+  "samerica","camerica","namerica", "africa","australia","seasia", "sasia","easia",
+  ///"europe","arti","wasia" --> these are less than 1%
+];
 
     for (let fish of keylist) {
       document.getElementById(fish + "$").textContent = eval(fish + "$$");  
     }
 
    
-}); // even listeners end here 
+}); // event listeners end here 
 
   
 function perCounter (property, code) {
