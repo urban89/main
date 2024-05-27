@@ -254,6 +254,23 @@ let bmedium$$ = perCounter ("breeding_difficulty", 2);
 let bhard$$ = perCounter ("breeding_difficulty", 3);
 let norecord$$ = perCounter ("breeding_difficulty", 4);
 
+let bottom$$ = perCounter ("swim", 1);
+let middle$$ = perCounter ("swim", 2);
+let top$$ = perCounter ("swim", 3);
+
+let samerica$$  = perCounter ("region", 1);
+let camerica$$  = perCounter ("region", 5);
+let namerica$$  = perCounter ("region", 8);
+let africa$$  = perCounter ("region", 2);
+let australia$$  = perCounter ("region", 9);
+let seasia$$  = perCounter ("region",3);
+let sasia$$  = perCounter ("region", 4);
+let easia$$  = perCounter ("region", 6);
+//let europe$$  = perCounter ("region", 7);
+//let arti$$  = perCounter ("region", "A");
+//let wasia$$  = perCounter ("region", "W");
+
+
 
   /////////////////////////////////////
   ////// Adding initial event listeners   
@@ -277,8 +294,8 @@ tempmin.addEventListener("click", updatePerTemp);
   document.getElementById("pertemp").textContent = perTempCount ();
     
 
-      liter_radio.checked = true;
-      convert_fc.checked = true; 
+  gallon_radio.checked = true;
+  convert_cf.checked = true; 
       
       liter_radio.addEventListener("change", gallonliter);
       gallon_radio.addEventListener("change", litergallon);
@@ -347,7 +364,11 @@ tempmin.addEventListener("click", updatePerTemp);
   
   
 let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
-"schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
+"schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord",
+"bottom", "middle", "top",
+"samerica","camerica","namerica", "africa","australia","seasia", "sasia","easia",
+///"europe","arti","wasia" --> these are less than 1%
+];
     for (let fish of keylist) {
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
@@ -355,9 +376,9 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
     //home button
     var backToTopButton = document.getElementById("backToTop");
 
-    // Show the button when scrolled down 550px from the top
+    // Show the button when scrolled down 20px from the top
     window.onscroll = function() {
-        if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             backToTopButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
@@ -393,7 +414,7 @@ selects.forEach(function(group) {
 function perCounter (property, code) {
   let list = []; 
   for (let fish of fish_master) {
-    if (fish[property] == parseInt(code)) {
+    if (fish[property] == parseInt(code) || fish[property] == code) {
       list.push(fish);
     }
   }
