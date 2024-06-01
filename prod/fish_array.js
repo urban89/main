@@ -1,4 +1,4 @@
- const fish_master = [
+  const fish_master = [
   {
     fish_id: "102",
     name_english: "Black phantom tetra",
