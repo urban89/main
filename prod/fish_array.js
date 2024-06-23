@@ -1,4 +1,4 @@
-  const fish_master = [
+const fish_master = [
   {
     fish_id: "102",
     name_english: "Black phantom tetra",
@@ -8296,5 +8296,59 @@
     agression: "1",
     origin: "United States, Mexico",
     region: "8"
+  },
+  {
+    fish_id: "463",
+    name_english: "Spot-tail Tetra",
+    alt_name: "",
+    name_latin: "Brycinus imberi",
+    swim: "2",
+    cm_max: "27",
+    uncare: "2",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "2",
+    tank_size_liter: "245",
+    temperature_min: "22",
+    temperature_max: "27",
+    agression: "2",
+    origin: "Africa",
+    region: "2"
+  },
+  {
+    fish_id: "464",
+    name_english: "Arrowhead Puffer",
+    alt_name: "",
+    name_latin: "Tetraodon suvattii",
+    swim: "1",
+    cm_max: "15",
+    uncare: "2",
+    breeding_difficulty: "3",
+    availability: "2",
+    school: "1",
+    tank_size_liter: "100",
+    temperature_min: "22",
+    temperature_max: "26",
+    agression: "3",
+    origin: "Thailand, Laos",
+    region: "3"
+  },
+  {
+    fish_id: "465",
+    name_english: "Violet Goby",
+    alt_name: "",
+    name_latin: "Gobioides brousonnetti",
+    swim: "1",
+    cm_max: "55",
+    uncare: "1",
+    breeding_difficulty: "4",
+    availability: "2",
+    school: "1",
+    tank_size_liter: "450",
+    temperature_min: "22",
+    temperature_max: "26",
+    agression: "3",
+    origin: "United States, Mexico, South America",
+    region: "1, 5, 8"
   }
 ]
