@@ -154,7 +154,7 @@ function perCounter (property, code) {
   /////////////////4 random integers for example fish cards
   function getRandomIndexes(array) {
     let indexes = new Set(); // Useing a Set to ensure uniqueness
-    while(indexes.size < 4) {
+    while(indexes.size < 20) {
       let randomIndex = Math.floor(Math.random() * array.length);
       indexes.add(randomIndex);
     }
