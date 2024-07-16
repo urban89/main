@@ -168,6 +168,9 @@ const regionsOb =
   let b_hard = document.getElementById("b_hard"); 
   let impossible = document.getElementById("impossible");
 
+  let check_fish = document.getElementById("check_fish");
+  let check_notfish = document.getElementById("check_notfish");
+
 let dropdownButtonHardi = document.getElementById("dropdownButtonHardi");
 let dropdownButtonAvail = document.getElementById("dropdownButtonAvail");
 let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
@@ -271,13 +274,20 @@ let easia$$  = perCounter ("region", 6);
 //let wasia$$  = perCounter ("region", "W");
 
 
+function updatePool() { 
+let poolcount = poolCounter (); 
+allcount.textContent = poolcount;
+}
 
   /////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
-
-    allcount.textContent = fish_master.length;
+    check_fish.addEventListener('change', updatePool);
+    check_notfish.addEventListener('change', updatePool);
+    check_fish.addEventListener('change', PoolFlash);
+    check_notfish.addEventListener('change', PoolFlash);
+    
    
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
@@ -308,6 +318,8 @@ tempmin.addEventListener("click", updatePerTemp);
       checkboxes.forEach (checkbox => {
         checkbox.checked = true; 
       })
+
+      check_notfish.checked = false; 
   
       checkboxes.forEach (checkbox => {
         checkbox.addEventListener("change", search_button);
@@ -337,10 +349,10 @@ tempmin.addEventListener("click", updatePerTemp);
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
-  document.getElementById("more").addEventListener("click", function () {
-    var dropdown = document.getElementById("more_dropdown");
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-});
+//   document.getElementById("more").addEventListener("click", function () {
+//     var dropdown = document.getElementById("more_dropdown");
+//     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+// });
   
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
@@ -349,12 +361,12 @@ tempmin.addEventListener("click", updatePerTemp);
     }
   });
 
-  window.addEventListener("click", function (event) {
-    var dropdown = document.getElementById("more_dropdown");
-    if (event.target !== document.getElementById("more")) {
-        dropdown.style.display = "none";
-    }
-  });
+  // window.addEventListener("click", function (event) {
+  //   var dropdown = document.getElementById("more_dropdown");
+  //   if (event.target !== document.getElementById("more")) {
+  //       dropdown.style.display = "none";
+  //   }
+  // });
 
 
   
@@ -408,8 +420,18 @@ selects.forEach(function(group) {
 
     });  
 
-
+///event listeners end here 
 ///Calculates the precentage value of each category compared to total
+
+function poolCounter () {
+  let num = 0;
+ for  (let fish of fish_master) {
+   if (check_fish.checked && fish.isfish == "1") {num = num + 1;}
+   if (check_notfish.checked && fish.isfish == "0") {num = num + 1;}
+ }
+ console.log(num);
+ return num;
+}
 
 function perCounter (property, code) {
   let list = []; 
@@ -675,6 +697,9 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
 
+        let v_check_fish = check_fish.checked;
+        let v_check_notfish = check_notfish.checked;
+
         let samerica = document.getElementById("r1").checked;
         let camerica = document.getElementById("r5").checked;
         let namerica = document.getElementById("r8").checked; 
@@ -699,6 +724,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let fish_list = []; 
         let reg_list = [];
         let srch_swim = []; 
+        let isit_fish = [];
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
       preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,
@@ -708,7 +734,9 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
           v_bottom,v_middle,v_top,
           samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia);
       preCheckTank(); 
+      updatePool();
 ///// Adding search conditions to their respective arrays
+        isfish()
         avail_list();
         hardiness_list();
         behavior_list();
@@ -717,7 +745,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         regio_list();
         swim_list()
 /////Finding fish that meet selected criteria and pushing them to fish_list
-  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim); 
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish); 
 /////Outputting serach results to UI
   fishSelect ();
 /////search_button CORE -->|||||
@@ -736,6 +764,12 @@ noResultAlert (); // alert if no results were found
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////Functions defined within search_button function 
 ////building the array that I use to iterate over fish_master and find results 
+
+function isfish() {
+  if (v_check_fish) {isit_fish.push(1);}
+  if (v_check_notfish) {isit_fish.push(0);}
+}
+
     function hardiness_list() {
     if (v_beginner) {srch_hardi.push(4);}
     if (v_easy) {srch_hardi.push(3);}
@@ -803,7 +837,7 @@ function sort (fish_list) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
-function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim)  {   
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish)  {   
   for (let fish of fish_master) {
     let region = fish.region; 
     if (region.includes(',')) { 
@@ -826,7 +860,9 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
     }
 
 
-    if ((srch_hardi.includes(parseInt(fish.uncare))) && 
+    if ((isit_fish.includes(parseInt(fish.isfish))) && 
+      
+      (srch_hardi.includes(parseInt(fish.uncare))) && 
     (srch_avail.includes(parseInt(fish.availability))) && 
     (srch_soci.includes(parseInt(fish.school))) && 
     (srch_agress.includes(parseInt(fish.agression))) &&
@@ -1146,7 +1182,11 @@ function fishFiller(fish_list) {
  tanksize.textContent = `${cap} ${console_capacity}`;
  
  fishcard.id = fishid;  // changed from main card!! 
+ if (fish_list[i].isfish == "1")  {
  fishcard.className = "fish_card";
+}
+else {fishcard.className = "nonfish_card"}
+
  image_element.className = "fishcardimage"; 
  fishname.className = "fishname";
  size.className = "fishsize";
@@ -1171,36 +1211,7 @@ result_div.appendChild(result_lists);
 }/// fishFiller ends here 
 
 
-// need to remove this below
-function createAndAppendIframe() {
-  // Check if the iframe already exists to avoid duplicates
-  const existingIframe = document.querySelector('#feedbackchecker');
-  if (!existingIframe) {
-      // Create the iframe element
-      const iframe = document.createElement('iframe');
 
-      // Set the iframe's attributes
-      iframe.setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true');
-      iframe.setAttribute('width', '640');
-      iframe.setAttribute('height', '371');
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('marginheight', '0');
-      iframe.setAttribute('marginwidth', '0');
-      iframe.innerHTML = 'Loading…';
-      iframe.id = "feedbackchecker";
-
-      // Find the feedback div and append the iframe to it
-      const iframed_div = document.getElementById('iframed');
-      if (iframed_div) {
-        iframed_div.appendChild(iframe);
-      } else {
-          console.error('No element with id "inframed" found to append the iframe.');
-      }
-  }
-  else {
-    document.getElementById("iframed").innerHTML = ""; 
-  }
-}
 
 function toggleDropdown(event) {
   // event.preventDefault();//it's a button right now but it won't be a button in the future and I will remove this comment 
@@ -1240,7 +1251,7 @@ window.onclick = function(event) {
 
 function flipListener() {
   //Event listener for flipcard to each main card//
-let fishcard_divs = document.querySelectorAll(".fish_card");
+let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
   let divId = div.id; 
   div.addEventListener("click", function () {
@@ -1252,6 +1263,8 @@ fishcard_divs.forEach(div => {
            fish = x; 
         }
     }
+
+    
     
     let info_id = `d${fish.fish_id}`; 
     let name = uppercaser(fish.name_english);
@@ -1285,7 +1298,12 @@ fishcard_divs.forEach(div => {
     let origin = document.createElement("p");
     
     // reveal_card.className = "reveal_card";
-    infocard.className = "infocard";
+    // infocard.className = "infocard";
+
+    if (fish.isfish == "1")  {
+      infocard.className = "infocard";
+     }
+     else {infocard.className = "ninfocard"}
     
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
@@ -1294,7 +1312,13 @@ fishcard_divs.forEach(div => {
     latin.innerHTML = `${fish.name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
     tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
-    sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+
+    if (fish.isfish == "1")  {
+      sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+     }
+     else { sizeinfo.innerHTML = `Creature size: ${card_size} ${console_fishsize}`;}
+
+   
     
     hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
     availability.innerHTML = `Availability: ${codes_avail[avail]}`;
@@ -1386,4 +1410,12 @@ function listFiller (fish_list) {
       list_view_divs.appendChild(brr);
   }
       result_div.appendChild(list_view_divs); 
+}
+
+
+function PoolFlash () {
+  allcount.classList.add('value-updated');
+  setTimeout(() => {
+    allcount.classList.remove('value-updated');
+  }, 1000);
 }

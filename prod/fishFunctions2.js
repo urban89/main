@@ -60,7 +60,10 @@ const codes_breed =
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////variables for database page 
 let currentImage; 
-let fish_list = fish_master; 
+
+
+
+let fish_list = []; 
 let filteredFish = []; 
 let temp_modifier1 = 1; 
 let temp_modifier2 = 0; 
@@ -90,6 +93,23 @@ let displayed = document.getElementById("displayed");
 let about = document.getElementById("about");
 let about_button = document.getElementById("about_button");
 
+let check_fish = document.getElementById("check_fish");
+let check_notfish = document.getElementById("check_notfish");
+
+
+///checkes categories and creates new list that will be displayed 
+// function isFisher(fish_list) {
+// for (fish of fish_master) {
+//   if (check_fish.checked && fish.isfish == "1") {
+//     fish_list.push(fish); 
+//   }
+//     if (check_notfish.checked && fish.isfish == "0") {
+//       fish_list.push(fish); 
+//   }
+// }
+// console.log(fish_list);
+// }
+
 //////////////////////////
 /////% counters for each category
 
@@ -116,10 +136,33 @@ let bmedium$$ = perCounter ("breeding_difficulty", 2);
 let bhard$$ = perCounter ("breeding_difficulty", 3);
 let norecord$$ = perCounter ("breeding_difficulty", 4);
 
+function updatePool() { 
+  fishcount.textContent = poolcount;
+  }
 
 /////////////////////////////////////
 /// Adding initial event listeners 
 document.addEventListener("DOMContentLoaded", function() {
+
+  check_fish.checked = true; 
+  check_notfish.checked = true; 
+
+  fishcount.innerText = fish_master.length; 
+ check_fish.addEventListener('change', () => fishSelect (fish_list));
+ check_notfish.addEventListener('change', () => fishSelect (fish_list));
+ check_fish.addEventListener('change', flipListener);
+ check_notfish.addEventListener('change', flipListener);
+ check_fish.addEventListener('change', updatePool);
+ check_notfish.addEventListener('change', updatePool);
+ check_fish.addEventListener('change', poolChanges);
+ check_notfish.addEventListener('change', poolChanges);
+
+
+
+  // check_fish.addEventListener('change', updatePool);
+  // check_notfish.addEventListener('change', updatePool);
+  // check_fish.addEventListener('change', PoolFlash);
+  // check_notfish.addEventListener('change', PoolFlash);
 
      //home button
      var backToTopButton = document.getElementById("backToTop");
@@ -146,10 +189,10 @@ document.addEventListener("DOMContentLoaded", function() {
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
-  document.getElementById("more").addEventListener("click", function () {
-    var dropdown = document.getElementById("more_dropdown");
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-});
+//   document.getElementById("more").addEventListener("click", function () {
+//     var dropdown = document.getElementById("more_dropdown");
+//     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+// });
 
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
@@ -158,12 +201,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  window.addEventListener("click", function (event) {
-    var dropdown = document.getElementById("more_dropdown");
-    if (event.target !== document.getElementById("more")) {
-        dropdown.style.display = "none";
-    }
-  });
+  // window.addEventListener("click", function (event) {
+  //   var dropdown = document.getElementById("more_dropdown");
+  //   if (event.target !== document.getElementById("more")) {
+  //       dropdown.style.display = "none";
+  //   }
+  // });
 
   cmtoinch.addEventListener("click", fishsizemetric);
   cap_conversion.addEventListener("click", litergallon);
@@ -174,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
   searchInput.addEventListener("input",filterFishByName); 
   searchInput.addEventListener("keyup",filterFishByName); 
 
-
+  
   });
 
 
@@ -374,12 +417,23 @@ function fishSelect (fish_list) {
   result_div.innerHTML = '';  
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
-
+ let final_list = [];
   for (let i = 0; i <fish_list.length; i++) {
+
+    if (check_fish.checked && fish_list[i].isfish == "1") {
+      final_list.push(fish_list[i]);
+    }
+      if (check_notfish.checked && fish_list[i].isfish == "0") {
+        final_list.push(fish_list[i]);
+    }
+  }
+
+  poolcount = final_list.length;
+  for (let i = 0; i <final_list.length; i++) {
 
      //Generating fish card (fish cards are displayed by default)
 
-    let fishid = fish_list[i].fish_id; 
+    let fishid = final_list[i].fish_id; 
     let main_card = document.createElement('div'); //container card to hide/show info  
     let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
     let fishname = document.createElement("p");
@@ -387,16 +441,16 @@ function fishSelect (fish_list) {
     let size = document.createElement("span");
     let temp = document.createElement("span"); // temperature in fish card 
     let tanksize = document.createElement("span"); // tank size in fish card 
-    let name = uppercaser(fish_list[i].name_english);
+    let name = uppercaser(final_list[i].name_english);
 
-    let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
-    let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
-    let cap = Math.round(((fish_list[i].tank_size_liter * cap_modifier) * 10)/10)
-    let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+    let temp_min = Math.round((final_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+    let temp_max = Math.round((final_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+    let cap = Math.round(((final_list[i].tank_size_liter * cap_modifier) * 10)/10)
+    let card_size_cal = Math.round(final_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
     let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
 
    
-    image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+    image_element.src = `webps1/${final_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
     image_element.alt = `"image of ${name}`;
     fishname.textContent = name;
     size.textContent = `${card_size} ${console_fishsize}`;
@@ -404,7 +458,13 @@ function fishSelect (fish_list) {
     tanksize.textContent = `${cap} ${console_capacity}`
 
     fishcard.id = fishid;  // changed from main card!! 
-    fishcard.className = "fish_card";
+    // fishcard.className = "fish_card";
+
+    if (final_list[i].isfish == "1")  {
+      fishcard.className = "fish_card";
+     }
+     else {fishcard.className = "nonfish_card"}
+
     image_element.className = "fishcardimage";
     fishname.className = "fishname";
     size.className = "fishsize";
@@ -428,8 +488,8 @@ function fishSelect (fish_list) {
   } // fishSelect contiune after for loop ends 
 
   result_div.appendChild(result_lists);
-  fishcount.innerText = fish_master.length; 
-  displayed.innerText = fish_list.length; 
+  
+  displayed.innerText = final_list.length; 
 
 
 
@@ -549,7 +609,7 @@ function filterFishByName() {
 
 /////////////////// //Event listener for flipcard to each main card//
 function flipListener() {
-let fishcard_divs = document.querySelectorAll(".fish_card");
+let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
   let divId = div.id; 
   div.addEventListener("click", function () {
@@ -594,7 +654,11 @@ fishcard_divs.forEach(div => {
     let origin = document.createElement("p");
     
     // reveal_card.className = "reveal_card";
-    infocard.className = "infocard";
+
+    if (fish.isfish == "1")  {
+      infocard.className = "infocard";
+     }
+     else {infocard.className = "ninfocard"}
     
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
@@ -667,4 +731,13 @@ fishcard_divs.forEach(div => {
 
     });
 });
+}
+
+
+
+function poolChanges () {
+  fishcount.classList.add('value-updated');
+  setTimeout(() => {
+    fishcount.classList.remove('value-updated');
+  }, 1000);
 }

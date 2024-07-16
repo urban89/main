@@ -119,6 +119,8 @@ let europe$$  = perCounter ("region", 7);
 let arti$$  = perCounter ("region", "A");
 let wasia$$  = perCounter ("region", "W");
 
+let count_fish = document.getElementById("count_fish");
+let count_other = document.getElementById("count_other");
 
 
 //adding event listeners 
@@ -136,7 +138,8 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
       document.getElementById(fish + "$").textContent = eval(fish + "$$");  
     }
 
-   
+    count_fish.innerText = fishCounter ();
+    count_other.innerText = maincount - fishCounter ();
 }); // event listeners end here 
 
   
@@ -385,4 +388,15 @@ function commaRemover (x) {
     
         });
     });
+    }
+
+
+    function fishCounter () {
+      let count = 0; 
+      for (fish of fish_master) {
+        if (fish.isfish == "1") {
+          count = count + 1;
+        }
+      }
+      return count
     }

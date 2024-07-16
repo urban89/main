@@ -265,13 +265,30 @@ body {
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-position: relative; /*necessary for in card elements to allign as I want */ 
-  
+position: relative; 
 } 
+
+.nonfish_card, .ninfocard {
+    flex: 0 0 calc(33.33% - 2vw); 
+    margin: 5px; 
+    box-sizing: border-box;
+    border: 1px solid #010a14;
+    border-radius: 10px;
+    padding: 1vw;
+    background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
+  background-attachment: fixed;
+  box-shadow: 5px 5px 10px hsla(194, 40%, 41%, 0.904);
+  position: relative; 
+}
 
 .infocard {
   background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
   box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+.ninfocard {
+  background: linear-gradient(125deg, #d4cbc1 25%, #89868f 66%);
+  box-shadow: 5px 5px 10px hsla(194, 35%, 45%, 0.904);
 }
 
 .infocardtext {
@@ -522,7 +539,7 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 1.5vw;
   }
 
-  .fish_card, .infocard {
+  .fish_card, .infocard, .nonfish_card, .ninfocard {
     padding: 0.5vw; 
   }
 
@@ -731,7 +748,7 @@ position: relative; /*necessary for in card elements to allign as I want */
  .grid-container_main {
   gap: 10px; 
 }
-.fish_card, .infocard {
+.fish_card, .infocard, .nonfish_card, .ninfocard {
   padding:9px;
   padding-top: 8px;
 }
