@@ -329,6 +329,10 @@ p {
     padding: 0.5vw; 
   }
 
+   .fish_card, .infocard, .nonfish_card, .ninfocard {
+    padding: 0.5vw; 
+  }
+
 }
 
 @media screen and (min-width: 956px) {
