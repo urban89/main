@@ -200,7 +200,14 @@ function perCounter (property, code) {
     tanksize.textContent = `${cap} ${console_capacity}`
 
     fishcard.id = fishid;  // changed from main card!! 
-    fishcard.className = "fish_card";
+    // fishcard.className = "fish_card";
+
+
+     if (fish_list[fish].isfish == "1")  {
+ fishcard.className = "fish_card";
+}
+else {fishcard.className = "nonfish_card"}
+
     image_element.className = "fishcardimage";
     fishname.className = "fishname";
     size.className = "fishsize";
@@ -270,7 +277,7 @@ function commaRemover (x) {
 
   ////Flip the cards 
   function flipListener() {
-    let fishcard_divs = document.querySelectorAll(".fish_card");
+    let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
     fishcard_divs.forEach(div => {
       let divId = div.id; 
       div.addEventListener("click", function () {
@@ -315,7 +322,12 @@ function commaRemover (x) {
         let origin = document.createElement("p");
         
         // reveal_card.className = "reveal_card";
-        infocard.className = "infocard";
+        // infocard.className = "infocard";
+
+            if (fish.isfish == "1")  {
+      infocard.className = "infocard";
+     }
+     else {infocard.className = "ninfocard"}
         
         iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
         iconimage.alt = `"small image of ${name}`;
