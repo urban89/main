@@ -1,6 +1,6 @@
-///csv_master_v7.1
+///////////csv_master_v7.1
 
-const fish_master = [
+const fish_master =  [
   {
     fish_id: "102",
     name_english: "Black phantom tetra",
@@ -9369,22 +9369,22 @@ const fish_master = [
     isfish: "0"
   },
   {
-    fish_id: "928",
-    name_english: "Golden Apple Snail",
+    fish_id: "936",
+    name_english: "Apple Snail ",
     alt_name: "",
     name_latin: "Pomacea canaliculata",
     swim: "1",
     cm_max: "15",
-    uncare: "3",
-    breeding_difficulty: "2",
-    availability: "2",
+    uncare: "4",
+    breeding_difficulty: "3",
+    availability: "3",
     school: "1",
-    tank_size_liter: "60",
+    tank_size_liter: "80",
     temperature_min: "18",
     temperature_max: "27",
     agression: "1",
-    origin: "United States",
-    region: "8",
+    origin: "South America",
+    region: "1",
     isfish: "0"
   },
   {
@@ -9500,27 +9500,8 @@ const fish_master = [
     origin: "Southeast Asia, Northern Australia",
     region: "9",
     isfish: "0"
-  },
-  {
-    fish_id: "936",
-    name_english: "Apple Snail ",
-    alt_name: "",
-    name_latin: "Pomacea canaliculata",
-    swim: "1",
-    cm_max: "15",
-    uncare: "4",
-    breeding_difficulty: "3",
-    availability: "3",
-    school: "1",
-    tank_size_liter: "",
-    temperature_min: "18",
-    temperature_max: "27",
-    agression: "1",
-    origin: "South America",
-    region: "1",
-    isfish: "0"
   }
 ]
 
 
-///csv_master_v7.1
+////////////////////////csv_master_v7.1
