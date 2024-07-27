@@ -1311,7 +1311,7 @@ fishcard_divs.forEach(div => {
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish.name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-    tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
+    tempinfo.innerHTML = `T: ${temp_min} - ${temp_max} ${console_temperature}   pH: ${fish.phmin} - ${fish.phmax}`; 
 
     if (fish.isfish == "1")  {
       sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
