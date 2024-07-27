@@ -667,7 +667,15 @@ fishcard_divs.forEach(div => {
     latin.innerHTML = `${fish.name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
     tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
-    sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+
+
+    // sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+
+    if (fish.isfish == "1")  {
+      sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+     }
+     else { sizeinfo.innerHTML = `Creature size: ${card_size} ${console_fishsize}`;}
+
     
     hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
     availability.innerHTML = `Availability: ${codes_avail[avail]}`;
