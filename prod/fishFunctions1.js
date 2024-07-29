@@ -171,6 +171,8 @@ const regionsOb =
   let check_fish = document.getElementById("check_fish");
   let check_notfish = document.getElementById("check_notfish");
 
+  let ph = document.getElementById("ph");
+
 let dropdownButtonHardi = document.getElementById("dropdownButtonHardi");
 let dropdownButtonAvail = document.getElementById("dropdownButtonAvail");
 let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
@@ -678,6 +680,8 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         //// Declaring variables used in the function. 
         let v_tempmin = tempmin.value;
         let v_tank_size = tank_size.value; 
+        let v_ph = ph.value; 
+
         let v_beginner = beginner.checked; 
         let v_easy = easy.checked; 
         let v_medium = medium.checked; 
@@ -745,7 +749,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         regio_list();
         swim_list()
 /////Finding fish that meet selected criteria and pushing them to fish_list
-  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish); 
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish, v_ph); 
 /////Outputting serach results to UI
   fishSelect ();
 /////search_button CORE -->|||||
@@ -837,7 +841,7 @@ function sort (fish_list) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
-function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish)  {   
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish, v_ph)  {   
   for (let fish of fish_master) {
     let region = fish.region; 
     if (region.includes(',')) { 
@@ -850,6 +854,10 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
 
     let fish_temp_min = parseFloat(fish.temperature_min);
     let fish_temp_max = parseFloat(fish.temperature_max); 
+
+    let phmin = parseFloat(fish.phmin); 
+    let phmax = parseFloat(fish.phmax); 
+
     let fish_cap = parseFloat(fish.tank_size_liter);
     if (console_capacity == gallon) {
       fish_cap = fish_cap * 0.264172;
@@ -869,7 +877,8 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
     (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
     (v_tank_size >= fish_cap) && 
     (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max) &&
-    (srch_swim.includes(parseInt(fish.swim)))
+    (srch_swim.includes(parseInt(fish.swim))) &&
+    (v_ph <= phmax) && (phmin <= v_ph)
     &&
     regionMatch) {
 
