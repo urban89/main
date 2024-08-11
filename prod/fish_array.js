@@ -1,4 +1,5 @@
-/////csv_master_v8.1
+////////////////csv_master_v8.2
+
 
 const fish_master =  [
   {
@@ -964,7 +965,7 @@ const fish_master =  [
     origin: "Peru, Colombia, Brazil,",
     region: "1",
     isfish: "1",
-    phmin: "5.5",
+    phmin: "5",
     phmax: "7"
   },
   {
@@ -3211,7 +3212,7 @@ const fish_master =  [
     origin: "Malaysia, Thailand, Sumatra,",
     region: "3",
     isfish: "1",
-    phmin: "5.5",
+    phmin: "5",
     phmax: "7"
   },
   {
@@ -9956,6 +9957,111 @@ const fish_master =  [
     phmax: "7.5"
   },
   {
+    fish_id: "476",
+    name_english: "Akar Betta",
+    alt_name: "",
+    name_latin: "Betta akarensis ",
+    swim: "2",
+    cm_max: "8",
+    uncare: "2",
+    breeding_difficulty: "3",
+    availability: "2",
+    school: "1",
+    tank_size_liter: "75",
+    temperature_min: "21",
+    temperature_max: "27",
+    agression: "2",
+    origin: "Borneo",
+    region: "3",
+    isfish: "1",
+    phmin: "5.5",
+    phmax: "7"
+  },
+  {
+    fish_id: "477",
+    name_english: "Arulius barb",
+    alt_name: "",
+    name_latin: "Dawkinsia arulius",
+    swim: "2",
+    cm_max: "9",
+    uncare: "2",
+    breeding_difficulty: "2",
+    availability: "3",
+    school: "3",
+    tank_size_liter: "100",
+    temperature_min: "19",
+    temperature_max: "25",
+    agression: "1",
+    origin: "India",
+    region: "4",
+    isfish: "1",
+    phmin: "6",
+    phmax: "7.5"
+  },
+  {
+    fish_id: "478",
+    name_english: "Azureus",
+    alt_name: "",
+    name_latin: "Copadichromis azureus",
+    swim: "2",
+    cm_max: "15",
+    uncare: "2",
+    breeding_difficulty: "2",
+    availability: "2",
+    school: "2",
+    tank_size_liter: "300",
+    temperature_min: "25",
+    temperature_max: "28",
+    agression: "2",
+    origin: "Lake Malawi",
+    region: "2",
+    isfish: "1",
+    phmin: "7.5",
+    phmax: "8.5"
+  },
+  {
+    fish_id: "479",
+    name_english: "Black Pacu",
+    alt_name: "",
+    name_latin: "Colossoma macropomum",
+    swim: "2",
+    cm_max: "60",
+    uncare: "1",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "1",
+    tank_size_liter: "2500",
+    temperature_min: "22",
+    temperature_max: "28",
+    agression: "2",
+    origin: "South America",
+    region: "1",
+    isfish: "1",
+    phmin: "5.5",
+    phmax: "7.5"
+  },
+  {
+    fish_id: "480",
+    name_english: "Black Shark",
+    alt_name: "",
+    name_latin: "Labeo chrysophekadion",
+    swim: "2",
+    cm_max: "60",
+    uncare: "1",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "1",
+    tank_size_liter: "2500",
+    temperature_min: "20",
+    temperature_max: "26",
+    agression: "3",
+    origin: "Southeast Asia",
+    region: "3",
+    isfish: "1",
+    phmin: "6",
+    phmax: "8"
+  },
+  {
     fish_id: "900",
     name_english: "Cherry Shrimp",
     alt_name: "",
@@ -10819,4 +10925,4 @@ const fish_master =  [
 ]
 
 
-/////csv_master_v8.1
+////////////////csv_master_v8.2
