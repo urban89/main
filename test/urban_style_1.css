@@ -34,6 +34,55 @@ body {
   margin-bottom: 1vw;
  }
 
+ .increment-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 25%;
+  transform: translateY(-50%);
+  width: 25%;
+  text-align: center;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  border: 0.01rem solid #000;
+  overflow: hidden;
+
+}
+
+.decrement-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 25%;
+  transform: translateY(+50%);
+  width: 25%;
+  text-align: center;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-left: 1px solid #ccc;
+  border-top-right-radius: 0; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  
+  border: 0.01rem solid #000;
+  overflow: hidden;
+}
+
+
  .grid-container-cpanel {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -66,7 +115,7 @@ body {
   border-width: 0.01vw;
   padding-top: 0.3vw; 
   padding-bottom: 0.3vw; 
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 .dropbtnalert {
@@ -153,7 +202,7 @@ body {
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background:#89cff0;
+  background:#85c9c9ec;
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 1vw;
@@ -187,6 +236,8 @@ body {
   align-items: center;
 }
 
+
+
 /*fish card grid*/
 .column_result {
   display: grid;
@@ -210,7 +261,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 50%;
-  transform: translateX(-70%);
+  transform: translateX(-65%);
   margin: 1vw;
 }
 
@@ -219,7 +270,7 @@ body {
   color: rgb(136, 105, 3); 
   bottom: 0;
   left: 5%;
-  transform: translateX(-45%);
+  transform: translateX(-30%);
   margin: 1vw;
 }
 
@@ -265,13 +316,30 @@ body {
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
-position: relative; /*necessary for in card elements to allign as I want */ 
-  
+position: relative; 
 } 
+
+.nonfish_card, .ninfocard {
+    flex: 0 0 calc(33.33% - 2vw); 
+    margin: 5px; 
+    box-sizing: border-box;
+    border: 1px solid #010a14;
+    border-radius: 10px;
+    padding: 1vw;
+    background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
+  background-attachment: fixed;
+  box-shadow: 5px 5px 10px hsla(194, 40%, 41%, 0.904);
+  position: relative; 
+}
 
 .infocard {
   background: linear-gradient(125deg, #e1ec3edc 25%, #ca8b2de0 66%);
   box-shadow: 5px 5px 10px hsla(49, 90%, 25%, 0.904);
+}
+
+.ninfocard {
+  background: linear-gradient(125deg, #d4cbc1 25%, #89868f 66%);
+  box-shadow: 5px 5px 10px hsla(194, 35%, 45%, 0.904);
 }
 
 .infocardtext {
@@ -357,7 +425,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
 
   .titleicon {
-    content: url('icon/titleicon.webp'); 
+    content: url('titleicon.webp'); 
     height: 8vw;
     width:8vw;
 }
@@ -380,7 +448,7 @@ position: relative; /*necessary for in card elements to allign as I want */
   }
   .fishcardimage {
     width: 35vw;
-    height: 25vw;
+    height: 26.25vw;
   }
   .iconimage  {
     width: 10vw;
@@ -522,7 +590,7 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 1.5vw;
   }
 
-  .fish_card, .infocard {
+  .fish_card, .infocard, .nonfish_card, .ninfocard {
     padding: 0.5vw; 
   }
 
@@ -623,6 +691,11 @@ position: relative; /*necessary for in card elements to allign as I want */
     width: 65vw;
     margin-right: 17vw;
     margin-left: 17vw;
+
+    .grid-container_main { /*search tiles responsive*/
+  grid-template-columns: repeat(3, 1fr);
+  }
+
   }
   .fishsize, .fishtemp, .tanksize {
     font-size: 1.2vw;
@@ -726,7 +799,7 @@ position: relative; /*necessary for in card elements to allign as I want */
  .grid-container_main {
   gap: 10px; 
 }
-.fish_card, .infocard {
+.fish_card, .infocard, .nonfish_card, .ninfocard {
   padding:9px;
   padding-top: 8px;
 }
@@ -795,9 +868,9 @@ position: relative; /*necessary for in card elements to allign as I want */
 }
 
 .notselected {
-  background: linear-gradient(188deg, #b08df1f1 22%, #5354aaee 100%);
+  background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);
   border-radius: 14px;
-  padding: 2vw;
+  padding: 1vw;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
   border: 1px solid #ccc; 
     }
@@ -951,7 +1024,7 @@ input[type="radio"] {
 }
 
 
-.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp {
+.hardipertile, .availpertile, .behpertile ,.agrespertile, .breedpertile, #perliter, #pertemp, .swimpertile, .regiopertile {
   display: none;
   font-size: 0.7rem;
   font-weight: 400;
@@ -970,4 +1043,29 @@ input[type="radio"] {
 .menuhref {
   text-decoration: none;
   color: inherit;
+}
+
+
+#backToTop {
+  position: fixed !important;
+  border-color: #4B3F3F;
+  font-size: 20px;
+  bottom: 20px;
+  left: 10px;
+  display: none; 
+  background-color: rgba(152,251,152, 0.74);
+  color: #3b5268;
+  border-width: 2px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  font-weight: 700;
+}
+
+#backToTop:hover {
+  background-color:#66C966;
+  box-shadow:4px 4px 8px #6aad6a;
+  color: black;
 }
