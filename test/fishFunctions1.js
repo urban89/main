@@ -64,6 +64,30 @@ const codes_breed =
   2: "Medium",
   1: "Easy"
 }
+
+const codes_swim = 
+{
+  3: "Top",
+  2: "Middle",
+  1: "Bottom"
+}
+
+
+///this is not used in code but need it here for reference: 
+const regionsOb = 
+{
+  "1": "South America",
+  "2": "Africa",
+  "3": "Southeast Asia",
+  "4": "South Asia",
+  "5": "Central America",
+  "6": "East Asia",
+  "7": "Europe",
+  "8": "North America",
+  "9": "Australia",
+  "A": "Artificial Origin",
+  "W": "West Asia"
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +138,6 @@ const codes_breed =
   let convert_cf = document.getElementById("convert_cf");
 
   let main_form = document.getElementById("main_form");
-  // let more_options = document.getElementById("more_options");
   let view_options = document.getElementById("view_options"); 
   let search = document.getElementById("search"); 
 
@@ -145,11 +168,18 @@ const codes_breed =
   let b_hard = document.getElementById("b_hard"); 
   let impossible = document.getElementById("impossible");
 
+  let check_fish = document.getElementById("check_fish");
+  let check_notfish = document.getElementById("check_notfish");
+
+  let ph = document.getElementById("ph");
+
 let dropdownButtonHardi = document.getElementById("dropdownButtonHardi");
 let dropdownButtonAvail = document.getElementById("dropdownButtonAvail");
 let dropdownButtonBehavior = document.getElementById("dropdownButtonBehavior");
 let dropdownButtonAgression = document.getElementById("dropdownButtonAgression");
 let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
+let dropdownButtonSwim = document.getElementById("dropdownButtonSwim");
+let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
 
 
   let div_hardiness_x = document.getElementById("div_hardiness_x");
@@ -166,6 +196,8 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
   let social_chbx = document.querySelectorAll('input[name = "social"]');
   let agress_chbx = document.querySelectorAll('input[name = "agress"]');
   let breed_chbx = document.querySelectorAll('input[name = "breed"]');
+  let orig_chbx = document.querySelectorAll('input[name = "origin"]');
+  let swim_chbx = document.querySelectorAll('input[name = "swim"]');
 
   let result_div = document.getElementById("result");
   let fishcount = document.getElementById("fishcount");
@@ -186,13 +218,10 @@ let dropdownButtonBreeding = document.getElementById("dropdownButtonBreeding");
   let about_button = document.getElementById("about_button");
   let search_tiles = document.getElementById("search_tiles");
   let cpanel = document.getElementById("cpanel");
-  // let imagechanger = document.getElementById("imagechanger");
   let allcount = document.getElementById("allcount");
   let currentImage; 
 
   let details = []; 
-
-//  let feedback_button = document.getElementById("feedback_button"); 
 
 var selects = [
   {checkboxArray: hardi_chbx, targetSpan: div_hardiness_x},
@@ -200,6 +229,8 @@ var selects = [
   {checkboxArray: social_chbx, targetSpan: div_behavior_x},
   {checkboxArray: agress_chbx, targetSpan: div_agression_x},
   {checkboxArray: breed_chbx, targetSpan: div_breeding_x},
+  {checkboxArray: orig_chbx, targetSpan: div_origin_x},
+  {checkboxArray: swim_chbx, targetSpan: div_swim_x},
 ];
 
 //////////////////////////
@@ -228,13 +259,37 @@ let bmedium$$ = perCounter ("breeding_difficulty", 2);
 let bhard$$ = perCounter ("breeding_difficulty", 3);
 let norecord$$ = perCounter ("breeding_difficulty", 4);
 
+let bottom$$ = perCounter ("swim", 1);
+let middle$$ = perCounter ("swim", 2);
+let top$$ = perCounter ("swim", 3);
+
+let samerica$$  = perCounter ("region", 1);
+let camerica$$  = perCounter ("region", 5);
+let namerica$$  = perCounter ("region", 8);
+let africa$$  = perCounter ("region", 2);
+let australia$$  = perCounter ("region", 9);
+let seasia$$  = perCounter ("region",3);
+let sasia$$  = perCounter ("region", 4);
+let easia$$  = perCounter ("region", 6);
+//let europe$$  = perCounter ("region", 7);
+//let arti$$  = perCounter ("region", "A");
+//let wasia$$  = perCounter ("region", "W");
+
+
+function updatePool() { 
+let poolcount = poolCounter (); 
+allcount.textContent = poolcount;
+}
 
   /////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
-
-    allcount.textContent = fish_master.length;
+    check_fish.addEventListener('change', updatePool);
+    check_notfish.addEventListener('change', updatePool);
+    check_fish.addEventListener('change', PoolFlash);
+    check_notfish.addEventListener('change', PoolFlash);
+    
    
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
@@ -251,44 +306,22 @@ tempmin.addEventListener("click", updatePerTemp);
   document.getElementById("pertemp").textContent = perTempCount ();
     
 
-      liter_radio.checked = true;
-      convert_fc.checked = true; 
+  liter_radio.checked = true;
+  convert_fc.checked = true; 
       
       liter_radio.addEventListener("change", gallonliter);
       gallon_radio.addEventListener("change", litergallon);
       convert_fc.addEventListener("change", ftoc);
       convert_cf.addEventListener("change", ctof);
   
-      // all_1.addEventListener("change",function () {selectall(hardi_chbx, all_1);});
-      // all_2.addEventListener("change",function () {selectall(avail_chbx, all_2);});
-      // all_3.addEventListener("change",function () {selectall(social_chbx, all_3);});
-      // all_4.addEventListener("change",function () {selectall(agress_chbx, all_4);});
-      // all_5.addEventListener("change",function () {selectall(breed_chbx, all_5);});
-  
-      // listenAdder(hardi_chbx, uncheckBox.bind(null, hardi_chbx, all_1));
-      // listenAdder(avail_chbx, uncheckBox.bind(null, avail_chbx, all_2));
-      // listenAdder(social_chbx, uncheckBox.bind(null, social_chbx, all_3));
-      // listenAdder(agress_chbx, uncheckBox.bind(null, agress_chbx, all_4));
-      // listenAdder(breed_chbx, uncheckBox.bind(null, breed_chbx, all_5));
-  
-      // settings.addEventListener("click", settingsShow);   // Settings button 
-      
-      // verycommon.checked = true; 
-      // common.checked = true; 
-      // beginner.checked = true
-      // easy.checked = true;
-  
-      // all_3.checked = true; 
-      // selectall(social_chbx, all_3);
-      // all_4.checked = true; 
-      // selectall(agress_chbx, all_4);
-      // all_5.checked = true; 
-      // selectall(breed_chbx, all_5);
+
 
       ///All checkboxes checked as default: 
       checkboxes.forEach (checkbox => {
         checkbox.checked = true; 
       })
+
+      check_notfish.checked = false; 
   
       checkboxes.forEach (checkbox => {
         checkbox.addEventListener("change", search_button);
@@ -309,20 +342,7 @@ tempmin.addEventListener("click", updatePerTemp);
       tempalert.style.display = "none";
       capalert.style.display = "none";
       checkalert.style.display = "none";
-  
-  
-      ///Event listeners for SETTINGS dropdown --> removed this button because of responsiveness 
-    //   document.getElementById("info").addEventListener("click", function () {
-    //     var dropdown = document.getElementById("info_dropdown");
-    //     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-    // });
-  
-    // window.addEventListener("click", function (event) {
-    //   var dropdown = document.getElementById("info_dropdown");
-    //   if (event.target !== document.getElementById("info")) {
-    //       dropdown.style.display = "none";
-    //   }
-    // });
+
   
     ///Event listeners for INFORMATION dropdown 
   
@@ -331,10 +351,10 @@ tempmin.addEventListener("click", updatePerTemp);
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
-  document.getElementById("more").addEventListener("click", function () {
-    var dropdown = document.getElementById("more_dropdown");
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-});
+//   document.getElementById("more").addEventListener("click", function () {
+//     var dropdown = document.getElementById("more_dropdown");
+//     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+// });
   
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
@@ -343,12 +363,12 @@ tempmin.addEventListener("click", updatePerTemp);
     }
   });
 
-  window.addEventListener("click", function (event) {
-    var dropdown = document.getElementById("more_dropdown");
-    if (event.target !== document.getElementById("more")) {
-        dropdown.style.display = "none";
-    }
-  });
+  // window.addEventListener("click", function (event) {
+  //   var dropdown = document.getElementById("more_dropdown");
+  //   if (event.target !== document.getElementById("more")) {
+  //       dropdown.style.display = "none";
+  //   }
+  // });
 
 
   
@@ -358,10 +378,31 @@ tempmin.addEventListener("click", updatePerTemp);
   
   
 let keylist = ["beginner","easy","medium","difficult","verycommon","common","rare","veryrare",
-"schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord"];
+"schooling","social","solitary","peaceful","mpeaceful","agressive","beasy","bmedium","bhard","norecord",
+"bottom", "middle", "top",
+"samerica","camerica","namerica", "africa","australia","seasia", "sasia","easia",
+///"europe","arti","wasia" --> these are less than 1%
+];
     for (let fish of keylist) {
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
+
+    //home button
+    var backToTopButton = document.getElementById("backToTop");
+
+    // Show the button when scrolled down 20px from the top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // Scroll to the top of the page when the button is clicked
+    backToTopButton.onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
 // Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
 document.querySelectorAll('.dropdown-content').forEach(function(element) {
@@ -378,28 +419,69 @@ selects.forEach(function(group) {
     });
   });
 });
+///////////// HERE1
+document.getElementById('increment-button-tank').addEventListener('click', function() {
+  var input = parseInt(tank_size.value);
+  tank_size.value = input + 1;
+  search_button()
+});
 
-    });  /// Eventlisteners end here   
-    ///////////////////////////////////////////////
-
-    //////Functions supporting event listeners:
-    //////Event listener adder for checkbox select/unselect logic 
-
-    function listenAdder (arr, funk) {
-      for (box of arr) {
-        box.addEventListener("change", funk);
-      }
-
-  }
+document.getElementById('decrement-button-tank').addEventListener('click', function() {
+  var input = parseInt(tank_size.value);
+  if (input > 20) {
+    tank_size.value = input - 1;
+    search_button()
+    }
+});
 
 
+document.getElementById('increment-button-temp').addEventListener('click', function() {
+  var input = parseInt(tempmin.value);
+  tempmin.value = input + 1;
+  search_button()
+});
 
+document.getElementById('decrement-button-temp').addEventListener('click', function() {
+  var input = parseInt(tempmin.value);
+
+    tempmin.value = input - 1;
+    search_button()
+
+});
+
+document.getElementById('increment-button-ph').addEventListener('click', function() {
+  var input = parseFloat(ph.value);
+  ph.value = input + 0.5;
+  search_button()
+});
+
+document.getElementById('decrement-button-ph').addEventListener('click', function() {
+  var input = parseFloat(ph.value);
+  ph.value = input - 0.5;
+    search_button()
+
+});
+
+
+    });  
+
+///event listeners end here 
 ///Calculates the precentage value of each category compared to total
+
+function poolCounter () {
+  let num = 0;
+ for  (let fish of fish_master) {
+   if (check_fish.checked && fish.isfish == "1") {num = num + 1;}
+   if (check_notfish.checked && fish.isfish == "0") {num = num + 1;}
+ }
+ console.log(num);
+ return num;
+}
 
 function perCounter (property, code) {
   let list = []; 
   for (let fish of fish_master) {
-    if (fish[property] == parseInt(code)) {
+    if (fish[property] == parseInt(code) || fish[property] == code) {
       list.push(fish);
     }
   }
@@ -451,15 +533,6 @@ function updatePerTemp () {
   document.getElementById("pertemp").textContent = perTempCount ();
 }
 
-// ///// Metric change function (used in initial event listener)
-// function fishsizemetric () {
-//   console_fishsize = (console_fishsize === cm) ? inch : cm; 
-//   fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
-//   console.log(fishsize_option);
-//   size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
-//   cmtoinch.innerText = fishsize_option; 
-//   search_button()
-//  }
 
 
 function selectValueDisplay (checkboxArr, targetSpan) {
@@ -641,40 +714,6 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
 
 
 
-// /////Change background 
-// function imageChange() {
-//   if (currentImage === bcimages) {
-//     currentImage = 1; 
-//   }
-//   else {
-//     currentImage = currentImage+1; 
-//   }
-
-//   document.body.style.backgroundImage = `url('backgrounds/${currentImage}.jpg')`; 
-// }
-
-
-/////Background image as initial
-// function updateBackground() {
-//   if (window.innerWidth > 767) {
-//     if (!document.body.style.backgroundImage) {
-//       let initial = Math.floor(Math.random() * bcimages) + 1;
-//       currentImage = initial;
-//       document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-//     }
-//   } else {
-//     document.body.style.backgroundImage = '';
-//   }
-// }
-
-// function initialImage () {
-//   if (window.innerWidth > 767) {
-//   let initial = Math.floor(Math.random() * bcimages) + 1;
-//   currentImage = initial;
-//   document.body.style.backgroundImage = `url('backgrounds/${initial}.jpg')`; 
-// }
-// }
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///// Search button function //////////////////////////////////////////////////////////////////////////////////////////
@@ -684,6 +723,8 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         //// Declaring variables used in the function. 
         let v_tempmin = tempmin.value;
         let v_tank_size = tank_size.value; 
+        let v_ph = ph.value; 
+
         let v_beginner = beginner.checked; 
         let v_easy = easy.checked; 
         let v_medium = medium.checked; 
@@ -702,24 +743,56 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
         let v_b_medium = b_medium.checked;
         let v_b_hard = b_hard.checked;
         let v_impossible = impossible.checked;
+
+        let v_check_fish = check_fish.checked;
+        let v_check_notfish = check_notfish.checked;
+
+        let samerica = document.getElementById("r1").checked;
+        let camerica = document.getElementById("r5").checked;
+        let namerica = document.getElementById("r8").checked; 
+        let africa = document.getElementById("r2").checked; 
+        let australia = document.getElementById("r9").checked;
+        let seasia = document.getElementById("r3").checked;
+        let sasia = document.getElementById("r4").checked;
+        let easia = document.getElementById("r6").checked;
+        let europe = document.getElementById("r7").checked;
+        let arti = document.getElementById("rA").checked;
+        let wasia = document.getElementById("rw").checked;
+
+        let v_bottom = document.getElementById("bottom").checked;
+        let v_middle = document.getElementById("middle").checked;
+        let v_top = document.getElementById("top").checked;
+
         let srch_hardi = []; 
         let srch_avail = []; 
         let srch_soci = []; 
         let srch_agress = []; 
         let srch_breed = []; 
         let fish_list = []; 
+        let reg_list = [];
+        let srch_swim = []; 
+        let isit_fish = [];
 ///// Checking if temperature and tank size are ok; + checking if checkboxes were selected     
       preCheckTemperature(v_tempmin);
-      preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1, v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible);
+      preCheckCheckboxes (v_verycommon,v_common,v_rare, v_veryrare,
+        v_beginner,v_easy,v_medium,v_difficult,
+         v_schooling1,v_schooling2,v_solitary,v_peaceful1,
+          v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,
+          v_bottom,v_middle,v_top,
+          samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia);
       preCheckTank(); 
+      updatePool();
 ///// Adding search conditions to their respective arrays
+        isfish()
         avail_list();
         hardiness_list();
         behavior_list();
         agres_list();
         breed_list();
+        regio_list();
+        swim_list()
 /////Finding fish that meet selected criteria and pushing them to fish_list
-  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin); 
+  fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish, v_ph); 
 /////Outputting serach results to UI
   fishSelect ();
 /////search_button CORE -->|||||
@@ -738,6 +811,12 @@ noResultAlert (); // alert if no results were found
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////Functions defined within search_button function 
 ////building the array that I use to iterate over fish_master and find results 
+
+function isfish() {
+  if (v_check_fish) {isit_fish.push(1);}
+  if (v_check_notfish) {isit_fish.push(0);}
+}
+
     function hardiness_list() {
     if (v_beginner) {srch_hardi.push(4);}
     if (v_easy) {srch_hardi.push(3);}
@@ -766,6 +845,26 @@ noResultAlert (); // alert if no results were found
     if (v_b_hard) {srch_breed.push(3);}
     if (v_impossible) {srch_breed.push(4);}
   }      
+
+function swim_list() {
+  if (v_bottom) {srch_swim.push(1);}
+  if (v_middle) {srch_swim.push(2);}
+  if (v_top) {srch_swim.push(3);}
+}
+
+ function regio_list() {
+  if (samerica) {reg_list.push("1");}
+  if (camerica) {reg_list.push("5");}
+  if (namerica) {reg_list.push("8");}
+  if (africa) {reg_list.push("2");}
+  if (australia) {reg_list.push("9");}
+  if (seasia) {reg_list.push("3");}
+  if (sasia) {reg_list.push("4");}
+  if (easia) {reg_list.push("6");}
+  if (europe) {reg_list.push("7");}
+  if (arti) {reg_list.push("A");}
+  if (wasia) {reg_list.push("W");}
+ }
   }
 ////////////////// sort function
 function sort (fish_list) {
@@ -780,16 +879,28 @@ function sort (fish_list) {
   if (sort_select.value == "temp_min") {
     fish_list.sort(compare_temp);
   }
-
 }
 ///// search_button function ends here /////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////Using the user input to create a search result array by iterating over the fish_master array 
-function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin)  {   
-  for (fish of fish_master) {
+function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, srch_agress, srch_breed, v_tank_size, v_tempmin, reg_list, srch_swim, isit_fish, v_ph)  {   
+  for (let fish of fish_master) {
+    let region = fish.region; 
+    if (region.includes(',')) { 
+      region = region.split(',').map(num => num.trim());
+    } else {
+      region = [region.trim()]; 
+    }
+
+    let regionMatch = region.some(r => reg_list.includes(r));
+
     let fish_temp_min = parseFloat(fish.temperature_min);
     let fish_temp_max = parseFloat(fish.temperature_max); 
+
+    let phmin = parseFloat(fish.phmin); 
+    let phmax = parseFloat(fish.phmax); 
+
     let fish_cap = parseFloat(fish.tank_size_liter);
     if (console_capacity == gallon) {
       fish_cap = fish_cap * 0.264172;
@@ -798,18 +909,26 @@ function fishFinder(fish_list, fish_master, srch_hardi, srch_avail, srch_soci, s
       fish_temp_min = (fish_temp_min * 9/5)+32;
       fish_temp_max = (fish_temp_max * 9/5)+32;
     }
-    if ((srch_hardi.includes(parseInt(fish.uncare))) && 
+
+
+    if ((isit_fish.includes(parseInt(fish.isfish))) && 
+      
+      (srch_hardi.includes(parseInt(fish.uncare))) && 
     (srch_avail.includes(parseInt(fish.availability))) && 
     (srch_soci.includes(parseInt(fish.school))) && 
     (srch_agress.includes(parseInt(fish.agression))) &&
     (srch_breed.includes(parseInt(fish.breeding_difficulty))) &&
     (v_tank_size >= fish_cap) && 
-    (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max)){
+    (fish_temp_min <= v_tempmin) && (v_tempmin <= fish_temp_max) &&
+    (srch_swim.includes(parseInt(fish.swim))) &&
+    (v_ph <= phmax) && (phmin <= v_ph)
+    &&
+    regionMatch) {
 
     fish_list.push(fish); //pushing all that matches to fish list 
   } 
 }
-sort (fish_list)
+sort(fish_list)
 console.log(fish_list)
 
   ///Updating number of search result value 
@@ -823,12 +942,13 @@ console.log(fish_list)
   }, 1000);
 }
   previousFishcouont = fish_list.length;
-} 
+};
 /// fishFinder --> ||||| 
 /////Checking if user missed to checkbox the minimum required checkboxes 
 function preCheckCheckboxes (v_verycommon,v_common,v_rare,
   v_veryrare,v_beginner,v_easy,v_medium,v_difficult, v_schooling1,v_schooling2,v_solitary,v_peaceful1,
-  v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible) {
+  v_peaceful2,v_aggressive,v_b_easy,v_b_medium,v_b_hard,v_impossible,v_bottom,v_middle,v_top, 
+  samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia) {
 
   if (!v_verycommon && !v_common && !v_rare && !v_veryrare) {
   div_avail.classList.add('notselected');
@@ -900,32 +1020,79 @@ else {
   dropdownButtonBreeding.classList.remove("dropbtnalert");
   dropdownButtonBreeding.classList.add("dropbtn");
 }
+////
+if (!v_bottom && !v_middle && !v_top) {
+  div_swim.classList.add('notselected');
+  div_swim.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
+  dropdownButtonSwim.classList.add("dropbtnalert");
+  dropdownButtonSwim.classList.remove("dropbtn");
+}
+else {
+  div_swim.classList.remove('notselected');
+  div_swim.classList.add('tiles');
+  dropdownButtonSwim.classList.remove("dropbtnalert");
+  dropdownButtonSwim.classList.add("dropbtn");
+}
+/////
+
+////
+if (!samerica && !camerica && !namerica && !africa && !australia && !seasia && !sasia && !easia && !europe && !arti && !wasia) {
+  div_origin.classList.add('notselected');
+  div_origin.classList.remove('tiles');
+  checkalert.style.display = "inline-block";
+  invalid_search_checks = true; 
+  dropdownButtonOrigin.classList.add("dropbtnalert");
+  dropdownButtonOrigin.classList.remove("dropbtn");
+}
+else {
+  div_origin.classList.remove('notselected');
+  div_origin.classList.add('tiles');
+  dropdownButtonOrigin.classList.remove("dropbtnalert");
+  dropdownButtonOrigin.classList.add("dropbtn");
+}
+/////
+
 if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy || v_medium || v_difficult) && (v_schooling1 || v_schooling2 || v_solitary)
-&& (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)) {
+&& (v_peaceful1 || v_peaceful2 || v_aggressive) && (v_b_easy || v_b_medium || v_b_hard || v_impossible)
+&& (v_bottom || v_middle || v_top) && (samerica || camerica || namerica || africa || australia || seasia || sasia || easia || europe || arti || wasia)) {
   div_avail.classList.remove('notselected');
   div_hardiness.classList.remove('notselected');
   div_behavior.classList.remove('notselected');
   div_agression.classList.remove('notselected');
   div_breeding.classList.remove('notselected');
+  div_swim.classList.remove('notselected');
+  div_origin.classList.remove('notselected');
   dropdownButtonHardi.classList.remove("dropbtnalert");
   dropdownButtonAvail.classList.remove("dropbtnalert");
   dropdownButtonBehavior.classList.remove("dropbtnalert");
   dropdownButtonAgression.classList.remove("dropbtnalert");
   dropdownButtonBreeding.classList.remove("dropbtnalert");
+  dropdownButtonSwim.classList.remove("dropbtnalert");
+  dropdownButtonOrigin.classList.remove("dropbtnalert");
+
 
   div_avail.classList.add('tiles');
   div_hardiness.classList.add('tiles');
   div_behavior.classList.add('tiles');
   div_agression.classList.add('tiles');
   div_breeding.classList.add('tiles');
+  div_swim.classList.add('tiles');
+  div_origin.classList.add('tiles');
   dropdownButtonHardi.classList.add("dropbtn");
   dropdownButtonAvail.classList.add("dropbtn");
   dropdownButtonBehavior.classList.add("dropbtn");
   dropdownButtonAgression.classList.add("dropbtn");
   dropdownButtonBreeding.classList.add("dropbtn");
+  dropdownButtonSwim.classList.add("dropbtn");
+  dropdownButtonOrigin.classList.add("dropbtn");
   checkalert.style.display = "none";
   invalid_search_checks = false; 
 }
+
+
+
 }  
 /////Component functions below////////////// - there are some general UI functions I will keep them here for now 
 
@@ -997,32 +1164,6 @@ function noResultAlert () {
   }
 }
 
-
-///////no more flip for all!!
-// function flipCards() {
-//   flipped = (flipped === false) ? true : false; 
-//   console.log(flipped);
-//   whichcard = (flipped === true) ? infoshown: fishshown; 
-//   cardswticher.innerHTML = whichcard;
-//   if (flipped) {
-//     for (let fish of fish_master) {
-//       details.push(fish.fish_id);
-//     }} else {
-//       details = []; 
-//     }
-// //     search_button()
-//   } 
-  ////Remembering info card display based on iterating the 'details' array that serves as 'cache' 
-// function remember (details) {
-// for (let id of details) {
-//  var fishcard = document.getElementById(id);
-//  var infocard = document.getElementById("d" + id);
-//  if (fishcard && infocard) {
-//   fishcard.style.display = "none";
-//   infocard.style.display = "block";
-// }
-// }
-// }
 ///// Metric change function (used in initial event listener)
   function fishsizemetric () {
   console_fishsize = (console_fishsize === cm) ? inch : cm; 
@@ -1093,7 +1234,11 @@ function fishFiller(fish_list) {
  tanksize.textContent = `${cap} ${console_capacity}`;
  
  fishcard.id = fishid;  // changed from main card!! 
+ if (fish_list[i].isfish == "1")  {
  fishcard.className = "fish_card";
+}
+else {fishcard.className = "nonfish_card"}
+
  image_element.className = "fishcardimage"; 
  fishname.className = "fishname";
  size.className = "fishsize";
@@ -1119,35 +1264,6 @@ result_div.appendChild(result_lists);
 
 
 
-function createAndAppendIframe() {
-  // Check if the iframe already exists to avoid duplicates
-  const existingIframe = document.querySelector('#feedbackchecker');
-  if (!existingIframe) {
-      // Create the iframe element
-      const iframe = document.createElement('iframe');
-
-      // Set the iframe's attributes
-      iframe.setAttribute('src', 'https://docs.google.com/forms/d/e/1FAIpQLSdBJ_Cyacxbd-gubUAe9pKqTPwM-VMAKKRzTSkJ7eUVU2Iszg/viewform?embedded=true');
-      iframe.setAttribute('width', '640');
-      iframe.setAttribute('height', '371');
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('marginheight', '0');
-      iframe.setAttribute('marginwidth', '0');
-      iframe.innerHTML = 'Loading…';
-      iframe.id = "feedbackchecker";
-
-      // Find the feedback div and append the iframe to it
-      const iframed_div = document.getElementById('iframed');
-      if (iframed_div) {
-        iframed_div.appendChild(iframe);
-      } else {
-          console.error('No element with id "inframed" found to append the iframe.');
-      }
-  }
-  else {
-    document.getElementById("iframed").innerHTML = ""; 
-  }
-}
 
 function toggleDropdown(event) {
   // event.preventDefault();//it's a button right now but it won't be a button in the future and I will remove this comment 
@@ -1187,7 +1303,7 @@ window.onclick = function(event) {
 
 function flipListener() {
   //Event listener for flipcard to each main card//
-let fishcard_divs = document.querySelectorAll(".fish_card");
+let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
   let divId = div.id; 
   div.addEventListener("click", function () {
@@ -1199,6 +1315,8 @@ fishcard_divs.forEach(div => {
            fish = x; 
         }
     }
+
+    
     
     let info_id = `d${fish.fish_id}`; 
     let name = uppercaser(fish.name_english);
@@ -1232,7 +1350,12 @@ fishcard_divs.forEach(div => {
     let origin = document.createElement("p");
     
     // reveal_card.className = "reveal_card";
-    infocard.className = "infocard";
+    // infocard.className = "infocard";
+
+    if (fish.isfish == "1")  {
+      infocard.className = "infocard";
+     }
+     else {infocard.className = "ninfocard"}
     
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
@@ -1240,8 +1363,14 @@ fishcard_divs.forEach(div => {
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish.name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-    tempinfo.innerHTML = `Temperature: ${temp_min} - ${temp_max} ${console_temperature}`; 
-    sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+    tempinfo.innerHTML = `T: ${temp_min}-${temp_max}${console_temperature}   pH: ${fish.phmin}-${fish.phmax}`; 
+
+    if (fish.isfish == "1")  {
+      sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+     }
+     else { sizeinfo.innerHTML = `Creature size: ${card_size} ${console_fishsize}`;}
+
+   
     
     hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
     availability.innerHTML = `Availability: ${codes_avail[avail]}`;
@@ -1333,4 +1462,12 @@ function listFiller (fish_list) {
       list_view_divs.appendChild(brr);
   }
       result_div.appendChild(list_view_divs); 
+}
+
+
+function PoolFlash () {
+  allcount.classList.add('value-updated');
+  setTimeout(() => {
+    allcount.classList.remove('value-updated');
+  }, 1000);
 }

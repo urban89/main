@@ -39,22 +39,22 @@ body {
   font-weight: 900;
   position: absolute;
   right: 0%; 
-  top: 25%;
-  transform: translateY(-50%);
+  top: 0;
+  /* top: 25%;  */
+  height: 50%; 
+  /* transform: translateY(-50%); */
   width: 25%;
   text-align: center;
-  background-color: #f0f0f0;
   cursor: pointer;
   padding: 0.5%; 
   box-sizing: border-box;
-  
   border-top-right-radius: 10px; 
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
   border: 0.01rem solid #000;
-  overflow: hidden;
+  
 
 }
 
@@ -62,26 +62,60 @@ body {
   font-size: 1.5rem;
   font-weight: 900;
   position: absolute;
+  bottom: 0;
+  top: 50%;
   right: 0%; 
-  top: 25%;
-  transform: translateY(+50%);
+  /* top: 25%; */
+  /* transform: translateY(+50%); */
   width: 25%;
+  height: 50%; 
   text-align: center;
-  background-color: #f0f0f0;
   cursor: pointer;
   padding: 0.5%; 
   box-sizing: border-box;
-  border-left: 1px solid #ccc;
   border-top-right-radius: 0; 
   border-top-left-radius: 0;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 0;
   background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
-  
   border: 0.01rem solid #000;
-  overflow: hidden;
+ 
 }
 
+
+#increment-button-ph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border: 0.01rem solid #000;
+}
+
+#decrement-button-ph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 20%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.01rem solid #000;
+}
 
  .grid-container-cpanel {
   display: grid;
