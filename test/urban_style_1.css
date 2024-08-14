@@ -1041,6 +1041,27 @@ input[type="radio"] {
   100% { background-color: rgba(209, 209, 114, 0.301);  }
 }
 
+
+@keyframes inputflashup {
+  100% { background: linear-gradient(120deg, #b5d7f0ec 22%, #fff347f6 100%);}
+}
+
+.inputflashup{
+  animation: inputflashup 0.5s ease;
+ }
+
+ @keyframes inputflashdown {
+
+100% { background: linear-gradient(120deg, #94f0fcec 22%, #bdc4a9f6 100%);}
+  
+
+}
+
+.inputflashdown{
+  animation: inputflashdown 0.5s ease;
+ }
+
+
 .value-updated {
   animation: resultflash 1s ease;
   border-radius: 25px;
@@ -1093,21 +1114,15 @@ input[type="radio"] {
   font-weight: 400;
 }
 
-
-
-
-
 .filler {
   font-size: 0.7rem; 
   color:#413e07;
 }
 
-
 .menuhref {
   text-decoration: none;
   color: inherit;
 }
-
 
 #backToTop {
   position: fixed !important;

@@ -434,6 +434,10 @@ document.getElementById('increment-button-tank').addEventListener('click', funct
 
   if (console_capacity == gallon) {tank_size.value = input + 1;}
   if (console_capacity == liter) {tank_size.value = input + 10;}
+  tank_size.classList.add('inputflashup');
+  setTimeout(() => {
+    tank_size.classList.remove('inputflashup');
+  }, 400);
 
   search_button()
 });
@@ -443,6 +447,10 @@ document.getElementById('decrement-button-tank').addEventListener('click', funct
   if (input > 19) {
   if (console_capacity == gallon) {tank_size.value = input - 1;}
   if (console_capacity == liter) {tank_size.value = input - 10;}
+  tank_size.classList.add('inputflashdown');
+  setTimeout(() => {
+    tank_size.classList.remove('inputflashdown');
+  }, 400);
     search_button()
   }
 });
@@ -455,6 +463,12 @@ document.getElementById('increment-button-temp').addEventListener('click', funct
   if (console_temperature == farenheit && input < 96) {tempmin.value = input + 1;}
   
   search_button()
+
+  tempmin.classList.add('inputflashup');
+  setTimeout(() => {
+    tempmin.classList.remove('inputflashup');
+  }, 400);
+
 });
 
 document.getElementById('decrement-button-temp').addEventListener('click', function() {
@@ -463,19 +477,25 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
   if (console_temperature == celsius && input > 3) {tempmin.value = input - 1;}
   
   if (console_temperature == farenheit && input > 38) {tempmin.value = input - 1;}
+
+  tempmin.classList.add('inputflashdown');
+  setTimeout(() => {
+    tempmin.classList.remove('inputflashdown');
+  }, 400);
+
     search_button()
 
 });
 
 document.getElementById('increment-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  ph.value = input + 0.5;
+  if (input < 9.5) {ph.value = input + 0.5;}
   search_button()
 });
 
 document.getElementById('decrement-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  ph.value = input - 0.5;
+  if (input > 4.5) {ph.value = input - 0.5;}
     search_button()
 
 });
