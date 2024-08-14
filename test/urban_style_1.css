@@ -9,6 +9,24 @@ body {
   background-color: #235197;
   }
 
+  /* Hide arrows in input type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 
   #welcomepanel {
     margin-top:0;
@@ -79,9 +97,15 @@ body {
   border-bottom-left-radius: 0;
   background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
   border: 0.01rem solid #000;
- 
+  
 }
 
+.increment-button:hover {
+  background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);
+}
+.decrement-button:hover {
+  background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);
+}
 
 #increment-button-ph {
   font-size: 1.5rem;
@@ -116,6 +140,10 @@ body {
   box-sizing: border-box;
   border: 0.01rem solid #000;
 }
+
+#increment-button-ph:hover {background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);}
+#decrement-button-ph:hover {background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);}
+
 
  .grid-container-cpanel {
   display: grid;

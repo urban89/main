@@ -221,6 +221,15 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let allcount = document.getElementById("allcount");
   let currentImage; 
 
+  let incrementtank = document.getElementById('increment-button-tank');
+  let decrementtank = document.getElementById('decrement-button-tank');
+
+  let incrementtemp = document.getElementById('increment-button-temp');
+  let decrementtemp = document.getElementById('decrement-button-temp');
+
+  let incrementph = document.getElementById('increment-button-ph');
+  let decrementph = document.getElementById('decrement-button-ph');
+
   let details = []; 
 
 var selects = [
@@ -422,29 +431,38 @@ selects.forEach(function(group) {
 ///////////// HERE1
 document.getElementById('increment-button-tank').addEventListener('click', function() {
   var input = parseInt(tank_size.value);
-  tank_size.value = input + 1;
+
+  if (console_capacity == gallon) {tank_size.value = input + 1;}
+  if (console_capacity == liter) {tank_size.value = input + 10;}
+
   search_button()
 });
 
 document.getElementById('decrement-button-tank').addEventListener('click', function() {
   var input = parseInt(tank_size.value);
-  if (input > 20) {
-    tank_size.value = input - 1;
+  if (input > 19) {
+  if (console_capacity == gallon) {tank_size.value = input - 1;}
+  if (console_capacity == liter) {tank_size.value = input - 10;}
     search_button()
-    }
+  }
 });
 
 
 document.getElementById('increment-button-temp').addEventListener('click', function() {
   var input = parseInt(tempmin.value);
-  tempmin.value = input + 1;
+  if (console_temperature == celsius && input < 36) {tempmin.value = input + 1;}
+  
+  if (console_temperature == farenheit && input < 96) {tempmin.value = input + 1;}
+  
   search_button()
 });
 
 document.getElementById('decrement-button-temp').addEventListener('click', function() {
   var input = parseInt(tempmin.value);
 
-    tempmin.value = input - 1;
+  if (console_temperature == celsius && input > 3) {tempmin.value = input - 1;}
+  
+  if (console_temperature == farenheit && input > 38) {tempmin.value = input - 1;}
     search_button()
 
 });
