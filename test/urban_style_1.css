@@ -903,10 +903,11 @@ position: relative;
 
 .notselected {
   background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 1vw;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
   border: 1px solid #ccc; 
+  position: relative;
     }
 
 
