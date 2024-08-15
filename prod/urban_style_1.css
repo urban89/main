@@ -402,13 +402,18 @@ position: relative;
 
 
 /* Media queries ************************************************/ 
-
+@media screen and (max-width: 416px) {
+  .smallscreen {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 540px) {
   .buttonsdb {
    display: block;
    margin-top: 3vw;
   }
+
  }
  
 
@@ -900,6 +905,11 @@ select {
 .numberbox {
   background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
 cursor: text;
+font-weight: bold;
+text-align: center;
+border-radius: 4px;
+border-color: rgb(53, 124, 119);
+font-size: 1rem;
 }
 
 input[type="checkbox"] {
