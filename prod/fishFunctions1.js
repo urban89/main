@@ -490,13 +490,13 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
 
 document.getElementById('increment-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  if (input < 9.5) {ph.value = input + 0.5;}
+  if (input < 9) {ph.value = input + 0.5;}
   search_button()
 });
 
 document.getElementById('decrement-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  if (input > 4.5) {ph.value = input - 0.5;}
+  if (input > 5) {ph.value = input - 0.5;}
     search_button()
 
 });
