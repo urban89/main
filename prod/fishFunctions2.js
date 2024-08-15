@@ -486,6 +486,7 @@ function fishSelect (fish_list) {
  
 
   } // fishSelect contiune after for loop ends 
+  if (window.innerWidth > 600) { 
   for (let i = 0; i < 8; i++) {
     let ghost = document.createElement('div');
     let ghostpic = document.createElement('img');
@@ -493,7 +494,7 @@ function fishSelect (fish_list) {
     ghost.className = "ghostcard";
     ghost.appendChild(ghostpic);
     result_lists.appendChild(ghost); 
-  }
+  }}
   result_div.appendChild(result_lists);
   
   displayed.innerText = final_list.length; 
