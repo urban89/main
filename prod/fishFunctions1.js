@@ -1184,25 +1184,37 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     var tank = parseFloat(document.getElementById('tank_size').value);  
       if ((tank < 20) && (console_capacity === liter)) {
         div_tank_size.classList.remove('tiles');
-        div_tank_size.classList.add('notselected')
+        div_tank_size.classList.add('notselected');
+        decrementtank.classList.remove('numberbox');
+        incrementtank.classList.remove('numberbox');
         tank_size.classList.remove('numberbox');
         tank_size.classList.add('inputalert');
+        decrementtank.classList.add('decrement-button-notsel');
+        incrementtank.classList.add('increment-button-notsel');
         capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       } 
       if ((tank < 5.3) && (console_capacity === gallon)) {
         div_tank_size.classList.remove('tiles');
         div_tank_size.classList.add('notselected')
+           decrementtank.classList.remove('numberbox');
+           incrementtank.classList.remove('numberbox');
         tank_size.classList.remove('numberbox');
         tank_size.classList.add('inputalert');
         capalert.style.display = 'inline-block'; 
+          decrementtank.classList.add('decrement-button-notsel');
+          incrementtank.classList.add('increment-button-notsel');
         invalid_search_cap = true; 
       }
       if (((tank >= 20) && (console_capacity === liter)) || ((tank >= 5.3) && (console_capacity === gallon))) {
         div_tank_size.classList.add('tiles');
         div_tank_size.classList.remove('notselected')
+           decrementtank.classList.remove('decrement-button-notsel');
+           incrementtank.classList.remove('increment-button-notsel');
         tank_size.classList.add('numberbox');
         tank_size.classList.remove('inputalert');
+           decrementtank.classList.add('numberbox');
+           incrementtank.classList.add('numberbox');
         capalert.style.display = 'none';
         invalid_search_cap = false; 
       }
