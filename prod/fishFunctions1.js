@@ -1302,8 +1302,14 @@ function compare_temp(a, b) {
 }
 /////Filling up the fish cards - main_card and reveal_card
 function fishFiller(fish_list) {
+
+  
+
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
+
+
+
   for (let i = 0; i <fish_list.length; i++) {
  //Generating fish card (fish cards are displayed by default)
  let fishid = fish_list[i].fish_id; 
@@ -1315,6 +1321,7 @@ function fishFiller(fish_list) {
  let temp = document.createElement("span"); // temperature in fish card 
  let tanksize = document.createElement("span"); // tank size in fish card 
  let name = uppercaser(fish_list[i].name_english);
+
 
  let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
  let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
@@ -1342,6 +1349,7 @@ else {fishcard.className = "nonfish_card"}
  tanksize.className = "tanksize"; 
  main_card.className = "maincard"; //container card to hide/show info 
 
+
  fishcard.appendChild(image_element);
  fishcard.appendChild(fishname);
  fishcard.appendChild(size);
@@ -1351,9 +1359,17 @@ else {fishcard.className = "nonfish_card"}
  main_card.appendChild(fishcard);
  result_lists.appendChild(main_card);
 
-
 }
 
+//ghostcards because my grid view can messed up without it 
+for (let i = 0; i < 8; i++) {
+  let ghost = document.createElement('div');
+  let ghostpic = document.createElement('img');
+  ghostpic.src = "icon/ghost.png";
+  ghost.className = "ghostcard";
+  ghost.appendChild(ghostpic);
+  result_lists.appendChild(ghost); 
+}
 
 result_div.appendChild(result_lists); 
 }/// fishFiller ends here 

@@ -486,7 +486,14 @@ function fishSelect (fish_list) {
  
 
   } // fishSelect contiune after for loop ends 
-
+  for (let i = 0; i < 8; i++) {
+    let ghost = document.createElement('div');
+    let ghostpic = document.createElement('img');
+    ghostpic.src = "icon/ghost.png";
+    ghost.className = "ghostcard";
+    ghost.appendChild(ghostpic);
+    result_lists.appendChild(ghost); 
+  }
   result_div.appendChild(result_lists);
   
   displayed.innerText = final_list.length; 

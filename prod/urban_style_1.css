@@ -289,6 +289,16 @@ box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 position: relative; 
 } 
 
+.ghostcard {
+  flex: 0 0 calc(33.33% - 2vw); 
+  margin: 5px; 
+  box-sizing: border-box;
+  padding: 1vw;
+  background-color: #235197;
+background-attachment: fixed;
+position: relative;
+}
+
 .nonfish_card, .ninfocard {
     flex: 0 0 calc(33.33% - 2vw); 
     margin: 5px; 
