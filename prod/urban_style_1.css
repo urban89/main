@@ -9,6 +9,24 @@ body {
   background-color: #235197;
   }
 
+  /* Hide arrows in input type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 
   #welcomepanel {
     margin-top:0;
@@ -33,6 +51,7 @@ body {
  #main_form {
   margin-bottom: 1vw;
  }
+
 
  .grid-container-cpanel {
   display: grid;
@@ -186,6 +205,8 @@ body {
   /* justify-content: center; */
   align-items: center;
 }
+
+
 
 /*fish card grid*/
 .column_result {
@@ -818,10 +839,11 @@ position: relative;
 
 .notselected {
   background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);
-  border-radius: 14px;
+  border-radius: 10px;
   padding: 1vw;
   box-shadow: 5px 5px 10px rgb(70, 3, 4);
   border: 1px solid #ccc; 
+  position: relative;
     }
 
 
@@ -927,6 +949,27 @@ input[type="radio"] {
   100% { background-color: rgba(209, 209, 114, 0.301);  }
 }
 
+
+@keyframes inputflashup {
+  100% { background: linear-gradient(120deg, #b5d7f0ec 22%, #fff347f6 100%);}
+}
+
+.inputflashup{
+  animation: inputflashup 0.5s ease;
+ }
+
+ @keyframes inputflashdown {
+
+100% { background: linear-gradient(120deg, #94f0fcec 22%, #bdc4a9f6 100%);}
+  
+
+}
+
+.inputflashdown{
+  animation: inputflashdown 0.5s ease;
+ }
+
+
 .value-updated {
   animation: resultflash 1s ease;
   border-radius: 25px;
@@ -979,21 +1022,15 @@ input[type="radio"] {
   font-weight: 400;
 }
 
-
-
-
-
 .filler {
   font-size: 0.7rem; 
   color:#413e07;
 }
 
-
 .menuhref {
   text-decoration: none;
   color: inherit;
 }
-
 
 #backToTop {
   position: fixed !important;
@@ -1018,3 +1055,220 @@ input[type="radio"] {
   box-shadow:4px 4px 8px #6aad6a;
   color: black;
 }
+
+
+/* increment decrement UI */
+
+
+.increment-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 0;
+  /* top: 25%;  */
+  height: 50%; 
+  /* transform: translateY(-50%); */
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  border: 0.01rem solid #000;
+}
+
+.decrement-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  right: 0%; 
+  /* top: 25%; */
+  /* transform: translateY(+50%); */
+  width: 25%;
+  height: 50%; 
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 0; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  border: 0.01rem solid #000;
+  
+}
+
+.increment-button:hover {
+  background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);
+}
+
+.increment-button:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(209, 138, 32, 0.654);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+
+.decrement-button:hover {
+  background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);
+}
+
+.decrement-button:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(32, 209, 35, 0.654);
+  transform: translateY(+2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+.incremph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border: 0.01rem solid #000;
+}
+
+.decremph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 20%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.01rem solid #000;
+}
+
+.incremph:hover {background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);}
+.incremph:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(209, 138, 32, 0.654);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+.decremph:hover {background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);}
+
+.decremph:active {
+    box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+    inset 2px 2px 5px rgba(32, 209, 35, 0.654);
+    transform: translateY(+2px);
+    background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+
+.increment-button-notsel {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 0;
+  /* top: 25%;  */
+  height: 50%; 
+  /* transform: translateY(-50%); */
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #ea60ff 5%, #695F7A 50%);
+  border: 0.01rem solid #000;
+  
+
+}
+
+.decrement-button-notsel  {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  right: 0%; 
+  /* top: 25%; */
+  /* transform: translateY(+50%); */
+  width: 25%;
+  height: 50%; 
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 0; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #9a86eb 5%, #695F7A 50%);
+  border: 0.01rem solid #000;
+  
+}
+
+.increment-button-notsel:hover {
+  background: linear-gradient(145deg, #ea60ff 5%, #cfbeed 50%);
+}
+.decrement-button-notsel:hover {
+  background: linear-gradient(145deg, #9a86eb 5%, #cfbeed 50%);
+}
+
+.increment-button-ph-notsel  {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #A99BC5 22%, #695F7A 100%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border: 0.01rem solid #000;
+}
+
+.decrement-button-ph-notsel  {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 20%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #A99BC5 22%, #695F7A 100%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.01rem solid #000;
+}
+
+.increment-button-ph-notsel:hover {background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);}
+.decrement-button-ph-notsel:hover {background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);}

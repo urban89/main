@@ -206,6 +206,7 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let invalid_search_cap = false;
   let invalid_search_temp = false;
   let invalid_search_checks = false;
+  let invalid_search_ph = false; 
   let emptiness_checker; 
 
   let srch_arr = []; 
@@ -220,6 +221,15 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let cpanel = document.getElementById("cpanel");
   let allcount = document.getElementById("allcount");
   let currentImage; 
+
+  let incrementtank = document.getElementById('increment-button-tank');
+  let decrementtank = document.getElementById('decrement-button-tank');
+
+  let incrementtemp = document.getElementById('increment-button-temp');
+  let decrementtemp = document.getElementById('decrement-button-temp');
+
+  let incrementph = document.getElementById('increment-button-ph');
+  let decrementph = document.getElementById('decrement-button-ph');
 
   let details = []; 
 
@@ -419,6 +429,78 @@ selects.forEach(function(group) {
     });
   });
 });
+///////////// HERE1
+document.getElementById('increment-button-tank').addEventListener('click', function() {
+  var input = parseInt(tank_size.value);
+
+  if (console_capacity == gallon) {tank_size.value = input + 1;}
+  if (console_capacity == liter) {tank_size.value = input + 10;}
+  tank_size.classList.add('inputflashup');
+  setTimeout(() => {
+    tank_size.classList.remove('inputflashup');
+  }, 400);
+
+  search_button()
+});
+
+document.getElementById('decrement-button-tank').addEventListener('click', function() {
+  var input = parseInt(tank_size.value);
+  if (input > 19) {
+  if (console_capacity == gallon) {tank_size.value = input - 1;}
+  if (console_capacity == liter) {tank_size.value = input - 10;}
+  tank_size.classList.add('inputflashdown');
+  setTimeout(() => {
+    tank_size.classList.remove('inputflashdown');
+  }, 400);
+    search_button()
+  }
+});
+
+
+document.getElementById('increment-button-temp').addEventListener('click', function() {
+  var input = parseInt(tempmin.value);
+  if (console_temperature == celsius && input < 36) {tempmin.value = input + 1;}
+  
+  if (console_temperature == farenheit && input < 96) {tempmin.value = input + 1;}
+  
+  search_button()
+
+  tempmin.classList.add('inputflashup');
+  setTimeout(() => {
+    tempmin.classList.remove('inputflashup');
+  }, 400);
+
+});
+
+document.getElementById('decrement-button-temp').addEventListener('click', function() {
+  var input = parseInt(tempmin.value);
+
+  if (console_temperature == celsius && input > 3) {tempmin.value = input - 1;}
+  
+  if (console_temperature == farenheit && input > 38) {tempmin.value = input - 1;}
+
+  tempmin.classList.add('inputflashdown');
+  setTimeout(() => {
+    tempmin.classList.remove('inputflashdown');
+  }, 400);
+
+    search_button()
+
+});
+
+document.getElementById('increment-button-ph').addEventListener('click', function() {
+  var input = parseFloat(ph.value);
+  if (input < 9.5) {ph.value = input + 0.5;}
+  search_button()
+});
+
+document.getElementById('decrement-button-ph').addEventListener('click', function() {
+  var input = parseFloat(ph.value);
+  if (input > 4.5) {ph.value = input - 0.5;}
+    search_button()
+
+});
+
 
     });  
 
@@ -738,6 +820,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
           v_bottom,v_middle,v_top,
           samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia);
       preCheckTank(); 
+      preCheckPh() 
       updatePool();
 ///// Adding search conditions to their respective arrays
         isfish()
@@ -1059,17 +1142,25 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       tempalert.innerHTML = "Temperature should not be lower than 4℃ or higher than 35℃";
             div_temp.classList.remove('tiles');
+              incrementtemp.classList.remove('increment-button');
+              decrementtemp.classList.remove('decrement-button');
         div_temp.classList.add('notselected');
         tempmin.classList.remove('numberbox');
         tempmin.classList.add('inputalert');
+            incrementtemp.classList.add('increment-button-notsel');
+            decrementtemp.classList.add('decrement-button-notsel');
         tempalert.style.display = "inline-block";
         invalid_search_temp = true; 
       }
       else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
         tempalert.innerHTML = "Temperature should not be lower than 39℉ or higher than 95℉";
               div_temp.classList.remove('tiles');
+                incrementtemp.classList.remove('increment-button');
+                decrementtemp.classList.remove('decrement-button');
               div_temp.classList.add('notselected');
               tempmin.classList.remove('numberbox');
+                 incrementtemp.classList.add('increment-button-notsel');
+                 decrementtemp.classList.add('decrement-button-notsel');
               tempmin.classList.add('inputalert');
               tempalert.style.display = "inline-block";
               invalid_search_temp = true; 
@@ -1077,8 +1168,12 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     else {
             div_temp.classList.add('tiles');
               div_temp.classList.remove('notselected');
+                incrementtemp.classList.remove('increment-button-notsel');
+                decrementtemp.classList.remove('decrement-button-notsel');
               tempmin.classList.add('numberbox');
               tempmin.classList.remove('inputalert');
+                incrementtemp.classList.add('increment-button');
+                decrementtemp.classList.add('decrement-button');
               tempalert.style.display = "none";
               invalid_search_temp = false;
     }
@@ -1111,9 +1206,40 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
         invalid_search_cap = false; 
       }
     }
+
+function preCheckPh() {
+ if (parseFloat(ph.value) < 4.4 || parseFloat(ph.value) > 9.1) {
+  div_ph.classList.remove('tiles');
+  div_ph.classList.add('notselected')
+        ph.classList.remove('numberbox');
+        ph.classList.add('inputalert');
+        incrementph.classList.remove('incremph');
+        incrementph.classList.add('increment-button-ph-notsel');
+        decrementph.classList.remove('decremph');
+        decrementph.classList.add('decrement-button-ph-notsel');
+
+        phalert.style.display = 'inline-block'; 
+  invalid_search_ph = true;
+ }
+ else {
+  div_ph.classList.add('tiles');
+  div_ph.classList.remove('notselected')
+  ph.classList.add('numberbox');
+  ph.classList.remove('inputalert');
+  incrementph.classList.add('incremph');
+  incrementph.classList.remove('increment-button-ph-notsel');
+  decrementph.classList.add('decremph');
+  decrementph.classList.remove('decrement-button-ph-notsel');
+
+  phalert.style.display = 'none'; 
+invalid_search_ph = false;
+ }
+}
+
+
 //Checking if output list lenght is zero 
 function noResultAlert () {
-  if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks)) {
+  if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks) && (!invalid_search_ph)) {
     noresults.style.display = "inline-block"; 
   }
   else {
