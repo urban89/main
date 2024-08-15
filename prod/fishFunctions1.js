@@ -304,16 +304,16 @@ allcount.textContent = poolcount;
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
     tank_size.addEventListener("click", preCheckTank);
-tank_size.addEventListener("blur", updatePerCap);
-tank_size.addEventListener("keyup", updatePerCap);
-tank_size.addEventListener("click", updatePerCap);
-tempmin.addEventListener("blur", updatePerTemp);
-tempmin.addEventListener("keyup", updatePerTemp);
-tempmin.addEventListener("click", updatePerTemp);
+// tank_size.addEventListener("blur", updatePerCap);
+// tank_size.addEventListener("keyup", updatePerCap);
+// tank_size.addEventListener("click", updatePerCap);
+// tempmin.addEventListener("blur", updatePerTemp);
+// tempmin.addEventListener("keyup", updatePerTemp);
+// tempmin.addEventListener("click", updatePerTemp);
 
-  document.getElementById("perliter").textContent = perCapCount ();
+  // document.getElementById("perliter").textContent = perCapCount ();
 
-  document.getElementById("pertemp").textContent = perTempCount ();
+  // document.getElementById("pertemp").textContent = perTempCount ();
     
 
   liter_radio.checked = true;
@@ -528,49 +528,49 @@ function perCounter (property, code) {
 }
 
 
-function perCapCount () {
-  let tank_size = document.getElementById('tank_size').value;  
-  if (console_capacity === gallon) {
-    cap_modifier = 3.78541253426;
-  }
-  let bigger = [];
-  for (let fish of fish_master) {
-    if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
-      bigger.push(fish.fish_id);
-    }
-  }
-  return `(${Math.round((bigger.length/maincount)*100)}%)`; 
-}
+// function perCapCount () {
+//   let tank_size = document.getElementById('tank_size').value;  
+//   if (console_capacity === gallon) {
+//     cap_modifier = 3.78541253426;
+//   }
+//   let bigger = [];
+//   for (let fish of fish_master) {
+//     if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
+//       bigger.push(fish.fish_id);
+//     }
+//   }
+//   return `(${Math.round((bigger.length/maincount)*100)}%)`; 
+// }
 
 
-function updatePerCap () { 
-  document.getElementById("perliter").textContent = perCapCount ();
-}
+// function updatePerCap () { 
+//   document.getElementById("perliter").textContent = perCapCount ();
+// }
 
 
 
-function perTempCount () {
-  let temp = document.getElementById('tempmin').value; 
-  let included = [];
-  for (let fish of fish_master) {
-    let fish_temp_min = parseFloat(fish.temperature_min);
-    let fish_temp_max = parseFloat(fish.temperature_max);  
-    if (console_temperature === farenheit) {
-      fish_temp_min =  (fish_temp_min * 9/5)+32
-      fish_temp_max = (fish_temp_max * 9/5)+32
-    }
+// function perTempCount () {
+//   let temp = document.getElementById('tempmin').value; 
+//   let included = [];
+//   for (let fish of fish_master) {
+//     let fish_temp_min = parseFloat(fish.temperature_min);
+//     let fish_temp_max = parseFloat(fish.temperature_max);  
+//     if (console_temperature === farenheit) {
+//       fish_temp_min =  (fish_temp_min * 9/5)+32
+//       fish_temp_max = (fish_temp_max * 9/5)+32
+//     }
 
     
-    if ((fish_temp_min <= temp) && (temp <= fish_temp_max)) {
-      included.push(fish.fish_id);
-    }
-  }
-  return `(${Math.round((included.length/maincount)*100)}%)`; 
-}
+//     if ((fish_temp_min <= temp) && (temp <= fish_temp_max)) {
+//       included.push(fish.fish_id);
+//     }
+//   }
+//   return `(${Math.round((included.length/maincount)*100)}%)`; 
+// }
 
-function updatePerTemp () { 
-  document.getElementById("pertemp").textContent = perTempCount ();
-}
+// function updatePerTemp () { 
+//   document.getElementById("pertemp").textContent = perTempCount ();
+// }
 
 
 
