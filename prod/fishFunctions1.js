@@ -445,15 +445,16 @@ document.getElementById('increment-button-tank').addEventListener('click', funct
 
 document.getElementById('decrement-button-tank').addEventListener('click', function() {
   var input = parseInt(tank_size.value);
-  if (input > 19) {
-  if (console_capacity == gallon) {tank_size.value = input - 1;}
-  if (console_capacity == liter) {tank_size.value = input - 10;}
+  if (input > 19 && console_capacity == liter )
+{tank_size.value = input - 10;}
+
+  if (input > 5 && console_capacity == gallon) {tank_size.value = input - 1;}
+
   tank_size.classList.add('inputflashdown');
   setTimeout(() => {
     tank_size.classList.remove('inputflashdown');
   }, 400);
     search_button()
-  }
 });
 
 
