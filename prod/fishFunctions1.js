@@ -10,10 +10,10 @@ const cm = "cm";
 const inch = "inch";
 const show_inch = "Show fish size in inch";
 const show_cm = "Show fish size in cm";
-const show_farenheit = "Show water temperature in farenheit";
-const show_celsius = "Show water temperature in celsius";
-const show_liter =  "Show aquarium capacity in liter";
-const show_gallon = "Show aquarium capacity in gallon"; 
+const show_farenheit = "Temperature in Farenheit";
+const show_celsius = "Temperature in Celsius";
+const show_liter =  "Tank size in Liter";
+const show_gallon = "Tank size in Gallon"; 
 const fishshown = "Show all info cards";
 const infoshown = "Show all fish cards";
 const more = "Show more search options";
@@ -104,6 +104,8 @@ const regionsOb =
   let console_temperature = celsius; 
   let console_fishsize = cm; 
   let fishsize_option = show_inch;
+  let settings_tankcapacity = show_gallon; 
+  let settings_temp = show_farenheit; 
   let options_option = fewer; 
   let whichcard = fishshown; 
   let feedbackstatus = feedbacknotshown;
@@ -221,6 +223,13 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let cpanel = document.getElementById("cpanel");
   let allcount = document.getElementById("allcount");
   let currentImage; 
+
+  let f_cmtoinch = document.getElementById("f_cmtoinch");
+  let f_view_options = document.getElementById("f_view_options");
+  let f_tempconversion = document.getElementById("f_tempconversion");
+  let f_tankconversion = document.getElementById("f_tankconversion");
+  let f_about = document.getElementById("f_about");
+
 
   let incrementtank = document.getElementById('increment-button-tank');
   let decrementtank = document.getElementById('decrement-button-tank');
@@ -361,6 +370,11 @@ allcount.textContent = poolcount;
       dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
   });
 
+  document.getElementById("floatsettings").addEventListener("click", function () {
+    var dropdown = document.getElementById("floatsettingsdrop");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
 //   document.getElementById("more").addEventListener("click", function () {
 //     var dropdown = document.getElementById("more_dropdown");
 //     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
@@ -369,6 +383,13 @@ allcount.textContent = poolcount;
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
     if (event.target !== document.getElementById("settings")) {
+        dropdown.style.display = "none";
+    }
+  });
+
+  window.addEventListener("click", function (event) {
+    var dropdown = document.getElementById("floatsettingsdrop");
+    if (event.target !== document.getElementById("floatsettings")) {
         dropdown.style.display = "none";
     }
   });
@@ -383,7 +404,9 @@ allcount.textContent = poolcount;
 
   
     cmtoinch.addEventListener("click", fishsizemetric);
+    f_cmtoinch.addEventListener("click", fishsizemetric);
     view_options.addEventListener("click", viewToggle);
+    f_view_options.addEventListener("click",viewToggle);
   
   
   
@@ -396,16 +419,19 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
     for (let fish of keylist) {
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
-
+    //////////////////////////////////////////////////////////////
     //home button
     var backToTopButton = document.getElementById("backToTop");
+    var floatSettingsButton = document.getElementById("floatsettings");
 
     // Show the button when scrolled down 20px from the top
     window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             backToTopButton.style.display = "block";
+            floatSettingsButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
+            floatSettingsButton.style.display = "none";
         }
     };
 
@@ -414,6 +440,12 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    //////////////////////////////////////////////////////////////
+       //float settings
+       var floatSettingsButton = document.getElementById("floatsettings");
+
+   
+    //////////////////////////////////////////////////////////////
 // Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
 document.querySelectorAll('.dropdown-content').forEach(function(element) {
   element.addEventListener('click', function(event) {
@@ -528,6 +560,35 @@ inputElements.forEach(function(inputElement) {
         event.preventDefault(); // Prevents deselecting when the mouse is released
     });
 });
+
+f_tankconversion.addEventListener('click',function() {
+  if (liter_radio.checked) {
+    gallon_radio.checked = true;
+    litergallon()
+  } else {
+    liter_radio.checked = true;
+    gallonliter()
+  }
+  
+  settings_tankcapacity = (settings_tankcapacity === show_gallon) ? show_liter : show_gallon;
+  f_tankconversion.innerText = settings_tankcapacity;
+  search_button(); 
+});
+
+f_tempconversion.addEventListener('click',function() {
+  if (convert_fc.checked) {
+    convert_cf.checked = true;
+    ctof()
+  } else {
+    convert_fc.checked = true;
+    ftoc()
+  }
+  
+  settings_temp = (settings_temp === show_farenheit) ? show_celsius : show_farenheit;
+  f_tempconversion.innerText = settings_temp;
+  search_button(); 
+});
+
 
     });  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -646,6 +707,8 @@ x.forEach(function(box) {
   
 
 
+
+
 // Conversion from liter to gallon [radio buttons]         
 function litergallon() {
 if (gallon_radio.checked == true) {
@@ -653,6 +716,7 @@ let cal_cap = parseFloat(tank_size.value);
 document.getElementById("size").innerHTML = gallon;
 cap_modifier = 3.78541253426; 
 console_capacity = gallon;
+
 tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 inputAnimation(tank_size);
 }
@@ -1292,6 +1356,8 @@ function noResultAlert () {
   fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
   size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
   cmtoinch.innerText = fishsize_option; 
+  f_cmtoinch.innerText = fishsize_option; 
+
   search_button()
  }
 ///// Showing feedback page 
@@ -1308,6 +1374,7 @@ function viewToggle () {
 listview = (listview === false) ? true : false; 
 viewoption = (viewoption === listviewstring) ? tileviewstring : listviewstring; 
 view_options.textContent = viewoption;
+f_view_options.textContent = viewoption;
 search_button()
 //   toggle_options.innerText = options_option; 
 }

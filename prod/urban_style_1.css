@@ -172,7 +172,7 @@ input[type=number] {
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background: linear-gradient(145deg, #98c8ebec 5%, #59c1bff6 50%);
+  background: linear-gradient(145deg, #98c9eb9d 5%, #59c1bf6e 50%);
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 1vw;
@@ -499,6 +499,8 @@ position: relative;
     margin-right: 2vw;
     margin-left: 2vw;
   }
+
+
   .fishcardimage {
     width: 25vw;
     height: 18.75vw;
@@ -1063,7 +1065,7 @@ input[type="radio"] {
   bottom: 20px;
   left: 10px;
   display: none; 
-  background-color: rgba(152,251,152, 0.74);
+  background-color: rgba(152, 251, 152, 0.68);
   color: #3b5268;
   border-width: 2px;
   padding: 5px;
@@ -1074,12 +1076,67 @@ input[type="radio"] {
   font-weight: 700;
 }
 
+@media screen and (min-width: 550px) {
+  #backToTop {
+    padding-left: 20px;
+    padding-right: 20px;
+  }}
+
+#floatsettings {
+  position: fixed !important;
+  border-color: #4B3F3F;
+  font-size: 30px;
+
+  bottom: 20px;
+  right: 10px;
+  display: none; 
+  background: linear-gradient(145deg, #98c9eba3 5%, #59c1bfac 50%);
+  color: #3b5268;
+  border-width: 2px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  font-weight: 900;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  position: fixed; 
+  bottom: 10px;
+  right: 10px;
+
+  font-size: 1rem;
+  font-weight: 550;
+
+}
+
 #backToTop:hover {
   background-color:#66C966;
+  box-shadow:4px 4px 8px #26439b;
+  color: black;
+}
+
+
+#floatsettings:hover {
+  background: linear-gradient(145deg, #7aa1bdec 5%, #357ae8f6 50%);
   box-shadow:4px 4px 8px #6aad6a;
   color: black;
 }
 
+#floatsettingsdrop {
+  display:none; 
+
+  position: absolute;
+  bottom: 100%; /* Position above the parent */
+  right: 0; /* Align right edge with parent */
+  transform: translateY(-10px) translateX(-10px); /* Adjust position upwards and left */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+#floatsettingsdrop span:hover {
+background: #86a5def8;
+}
 
 /* increment decrement UI */
 
