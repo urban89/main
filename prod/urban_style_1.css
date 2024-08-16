@@ -172,7 +172,7 @@ input[type=number] {
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background:#85c9c9ec;
+  background: linear-gradient(145deg, #98c8ebec 5%, #59c1bff6 50%);
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 1vw;
@@ -189,12 +189,16 @@ input[type=number] {
 }
 
 .dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
-  background-color:  #86a5def8; 
+  background: linear-gradient(145deg, #c7e1f4ec 5%, #2ecfc9f6 50%);
   font-size: 1.05rem;
   border-top: 0.01vw solid #000;          
   border-bottom: 0.01vw solid #000;
   box-shadow:#05224f;
   box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
+}
+
+.dropbtn-cpanel:active {
+  background: linear-gradient(145deg, #596f96f6  5%, #7db6dfec 50%);
 }
   
 .grid-container_main {
