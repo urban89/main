@@ -52,6 +52,7 @@
 
     <div id = "maindiv"> 
     <button id="backToTop">⭡⭡⭡</button>
+    <button id="floatsettings">⚙</button>
  <div class = "grid-container-cpanel">
 
 <!--Welcome-->
@@ -113,7 +114,7 @@
       <div id="decrement-button-tank" class="decrement-button unselectable">-</div>
       <label for="tank_size" class = "parameter"> Aquarium size </label>
       <span id= "tank_size_block"> <input style="width:55px" value="90" min="20" type="number" id="tank_size" class = "numberbox" name="tank_size" min ="20">
-      <span id = size>L</span> <span id = perliter></span> </span>
+      <span id = size>L</span> </span>
       <br class = "smallvpbreak">
       <input type="radio" id = "liter_radio" name ="litergallon"> <label for = "liter_radio" class ="capradiolabel"> Liter</label>
       <input type="radio" id = "gallon_radio" name ="litergallon"> <label for = "gallon_radio" class ="capradiolabel"> Gallon</label>
@@ -125,7 +126,7 @@
       <div id="decrement-button-temp" class="decrement-button unselectable">-</div>
       <label for="tempmin" class = "parameter">Temperature </label> 
       <span id = "tempmin_block"> <input type="number" style="width:55px" id="tempmin" class = "numberbox" name="tempmin" min="4" max="35" value = "25" /> 
-      <span id = min_t> ℃ </span> <span id = pertemp></span> </span>
+      <span id = min_t> ℃ </span> </span>
       <br class = "smallvpbreak">
       <input type="radio" id = "convert_fc" name ="celsitofaren"> <label for = "convert_fc" class ="capradiolabel"> Celsius</label>
       <input type="radio" id = "convert_cf" name ="celsitofaren"> <label for = "convert_cf" class ="capradiolabel"> Farenheit</label> 
@@ -364,9 +365,9 @@
   <!-- ph-->
 
   <div id = "div_ph" class = "tiles grid-item"> 
-    <div id="increment-button-ph" class = "unselectable">+</div>
-    <div id="decrement-button-ph" class = "unselectable">-</div>
-    <label for="ph" class = "parameter"> pH level </label>
+    <div id="increment-button-ph" class = "unselectable incremph">+</div>
+    <div id="decrement-button-ph" class = "unselectable decremph">-</div>
+    <label for="ph" class = "parameter"> pH <span class = "smallscreen"> level </span></label>
    <input style="width:35px" value="7" type="number" step="0.5" id="ph" class = "numberbox" name="ph" min="5" max="9">
    <span id = perph></span> 
   </div> 
@@ -386,6 +387,8 @@
   <span id = "tempalert" class = "alert grid-item" style="display: none;"> </span>
   <br>
   <span id = "capalert" class = "alert grid-item"  style="display: none;"> Aquarium size too small.</span>
+  <br>
+  <span id = "phalert" class = "alert grid-item"  style="display: none;"> Ph must be between 5 and 9.</span>
   <br>
   <span id = "checkalert" class = "alert grid-item"  style="display: none;"> Some search parameters were not selected. </span>
   <br>
