@@ -514,15 +514,20 @@ document.getElementById('decrement-button-ph').addEventListener('click', functio
     ph.classList.remove('inputflashdown');
   }, 200);
 
-    search_button()
-
-    search_button()
-
-
-
+    search_button();
 
 });
+const inputElements = document.querySelectorAll('input[type="number"]');
 
+inputElements.forEach(function(inputElement) {
+    inputElement.addEventListener('focus', function() {
+        this.select();
+    });
+
+    inputElement.addEventListener('mouseup', function(event) {
+        event.preventDefault(); // Prevents deselecting when the mouse is released
+    });
+});
 
     });  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1382,7 +1387,7 @@ else {fishcard.className = "nonfish_card"}
 
 }
 
-//ghostcards because my grid view can messed up without it 
+//ghostcards because my grid view can messed up without it on bigger viewports 
 if (window.innerWidth > 600 && fish_list.length > 0) { 
 for (let i = 0; i < 8; i++) {
   let ghost = document.createElement('div');
