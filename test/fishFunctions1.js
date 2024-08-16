@@ -206,6 +206,7 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let invalid_search_cap = false;
   let invalid_search_temp = false;
   let invalid_search_checks = false;
+  let invalid_search_ph = false; 
   let emptiness_checker; 
 
   let srch_arr = []; 
@@ -290,7 +291,7 @@ let poolcount = poolCounter ();
 allcount.textContent = poolcount;
 }
 
-  /////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
@@ -303,16 +304,16 @@ allcount.textContent = poolcount;
     tank_size.addEventListener("blur", preCheckTank);
     tank_size.addEventListener("keyup", preCheckTank);
     tank_size.addEventListener("click", preCheckTank);
-tank_size.addEventListener("blur", updatePerCap);
-tank_size.addEventListener("keyup", updatePerCap);
-tank_size.addEventListener("click", updatePerCap);
-tempmin.addEventListener("blur", updatePerTemp);
-tempmin.addEventListener("keyup", updatePerTemp);
-tempmin.addEventListener("click", updatePerTemp);
+// tank_size.addEventListener("blur", updatePerCap);
+// tank_size.addEventListener("keyup", updatePerCap);
+// tank_size.addEventListener("click", updatePerCap);
+// tempmin.addEventListener("blur", updatePerTemp);
+// tempmin.addEventListener("keyup", updatePerTemp);
+// tempmin.addEventListener("click", updatePerTemp);
 
-  document.getElementById("perliter").textContent = perCapCount ();
+  // document.getElementById("perliter").textContent = perCapCount ();
 
-  document.getElementById("pertemp").textContent = perTempCount ();
+  // document.getElementById("pertemp").textContent = perTempCount ();
     
 
   liter_radio.checked = true;
@@ -395,16 +396,19 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
     for (let fish of keylist) {
       document.getElementById(fish + "$$$").textContent = eval(fish + "$$");  
     }
-
+    //////////////////////////////////////////////////////////////
     //home button
     var backToTopButton = document.getElementById("backToTop");
+    var floatSettingsButton = document.getElementById("floatsettings");
 
     // Show the button when scrolled down 20px from the top
     window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             backToTopButton.style.display = "block";
+            floatSettingsButton.style.display = "block";
         } else {
             backToTopButton.style.display = "none";
+            floatSettingsButton.style.display = "none";
         }
     };
 
@@ -413,6 +417,16 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
+    floatSettingsButton.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+    //////////////////////////////////////////////////////////////
+       //float settings
+       var floatSettingsButton = document.getElementById("floatsettings");
+
+   
+    //////////////////////////////////////////////////////////////
 // Stopping dropdown menu of search parameters from closing when user clicks on drop down content elements 
 document.querySelectorAll('.dropdown-content').forEach(function(element) {
   element.addEventListener('click', function(event) {
@@ -437,22 +451,23 @@ document.getElementById('increment-button-tank').addEventListener('click', funct
   tank_size.classList.add('inputflashup');
   setTimeout(() => {
     tank_size.classList.remove('inputflashup');
-  }, 400);
+  }, 200);
 
   search_button()
 });
 
 document.getElementById('decrement-button-tank').addEventListener('click', function() {
   var input = parseInt(tank_size.value);
-  if (input > 19) {
-  if (console_capacity == gallon) {tank_size.value = input - 1;}
-  if (console_capacity == liter) {tank_size.value = input - 10;}
+  if (input > 19 && console_capacity == liter )
+{tank_size.value = input - 10;}
+
+  if (input > 5 && console_capacity == gallon) {tank_size.value = input - 1;}
+
   tank_size.classList.add('inputflashdown');
   setTimeout(() => {
     tank_size.classList.remove('inputflashdown');
-  }, 400);
+  }, 200);
     search_button()
-  }
 });
 
 
@@ -467,7 +482,7 @@ document.getElementById('increment-button-temp').addEventListener('click', funct
   tempmin.classList.add('inputflashup');
   setTimeout(() => {
     tempmin.classList.remove('inputflashup');
-  }, 400);
+  }, 200);
 
 });
 
@@ -481,7 +496,7 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
   tempmin.classList.add('inputflashdown');
   setTimeout(() => {
     tempmin.classList.remove('inputflashdown');
-  }, 400);
+  }, 200);
 
     search_button()
 
@@ -489,20 +504,46 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
 
 document.getElementById('increment-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  if (input < 9.5) {ph.value = input + 0.5;}
+  if (input < 9) {ph.value = input + 0.5;}
+
+
+  ph.classList.add('inputflashup');
+  setTimeout(() => {
+    ph.classList.remove('inputflashup');
+  }, 200);
+
+    search_button()
+
   search_button()
+
 });
 
 document.getElementById('decrement-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
-  if (input > 4.5) {ph.value = input - 0.5;}
-    search_button()
+  if (input > 5) {ph.value = input - 0.5;}
+
+  ph.classList.add('inputflashdown');
+  setTimeout(() => {
+    ph.classList.remove('inputflashdown');
+  }, 200);
+
+    search_button();
 
 });
+const inputElements = document.querySelectorAll('input[type="number"]');
 
+inputElements.forEach(function(inputElement) {
+    inputElement.addEventListener('focus', function() {
+        this.select();
+    });
+
+    inputElement.addEventListener('mouseup', function(event) {
+        event.preventDefault(); // Prevents deselecting when the mouse is released
+    });
+});
 
     });  
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///event listeners end here 
 ///Calculates the precentage value of each category compared to total
 
@@ -527,49 +568,49 @@ function perCounter (property, code) {
 }
 
 
-function perCapCount () {
-  let tank_size = document.getElementById('tank_size').value;  
-  if (console_capacity === gallon) {
-    cap_modifier = 3.78541253426;
-  }
-  let bigger = [];
-  for (let fish of fish_master) {
-    if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
-      bigger.push(fish.fish_id);
-    }
-  }
-  return `(${Math.round((bigger.length/maincount)*100)}%)`; 
-}
+// function perCapCount () {
+//   let tank_size = document.getElementById('tank_size').value;  
+//   if (console_capacity === gallon) {
+//     cap_modifier = 3.78541253426;
+//   }
+//   let bigger = [];
+//   for (let fish of fish_master) {
+//     if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
+//       bigger.push(fish.fish_id);
+//     }
+//   }
+//   return `(${Math.round((bigger.length/maincount)*100)}%)`; 
+// }
 
 
-function updatePerCap () { 
-  document.getElementById("perliter").textContent = perCapCount ();
-}
+// function updatePerCap () { 
+//   document.getElementById("perliter").textContent = perCapCount ();
+// }
 
 
 
-function perTempCount () {
-  let temp = document.getElementById('tempmin').value; 
-  let included = [];
-  for (let fish of fish_master) {
-    let fish_temp_min = parseFloat(fish.temperature_min);
-    let fish_temp_max = parseFloat(fish.temperature_max);  
-    if (console_temperature === farenheit) {
-      fish_temp_min =  (fish_temp_min * 9/5)+32
-      fish_temp_max = (fish_temp_max * 9/5)+32
-    }
+// function perTempCount () {
+//   let temp = document.getElementById('tempmin').value; 
+//   let included = [];
+//   for (let fish of fish_master) {
+//     let fish_temp_min = parseFloat(fish.temperature_min);
+//     let fish_temp_max = parseFloat(fish.temperature_max);  
+//     if (console_temperature === farenheit) {
+//       fish_temp_min =  (fish_temp_min * 9/5)+32
+//       fish_temp_max = (fish_temp_max * 9/5)+32
+//     }
 
     
-    if ((fish_temp_min <= temp) && (temp <= fish_temp_max)) {
-      included.push(fish.fish_id);
-    }
-  }
-  return `(${Math.round((included.length/maincount)*100)}%)`; 
-}
+//     if ((fish_temp_min <= temp) && (temp <= fish_temp_max)) {
+//       included.push(fish.fish_id);
+//     }
+//   }
+//   return `(${Math.round((included.length/maincount)*100)}%)`; 
+// }
 
-function updatePerTemp () { 
-  document.getElementById("pertemp").textContent = perTempCount ();
-}
+// function updatePerTemp () { 
+//   document.getElementById("pertemp").textContent = perTempCount ();
+// }
 
 
 
@@ -819,6 +860,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
           v_bottom,v_middle,v_top,
           samerica,camerica,namerica,africa,australia,seasia,sasia,easia,europe,arti,wasia);
       preCheckTank(); 
+      preCheckPh() 
       updatePool();
 ///// Adding search conditions to their respective arrays
         isfish()
@@ -1140,17 +1182,25 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     if ((temp < 4 || temp > 35) && console_temperature === celsius) {
       tempalert.innerHTML = "Temperature should not be lower than 4℃ or higher than 35℃";
             div_temp.classList.remove('tiles');
+              incrementtemp.classList.remove('increment-button');
+              decrementtemp.classList.remove('decrement-button');
         div_temp.classList.add('notselected');
         tempmin.classList.remove('numberbox');
         tempmin.classList.add('inputalert');
+            incrementtemp.classList.add('increment-button-notsel');
+            decrementtemp.classList.add('decrement-button-notsel');
         tempalert.style.display = "inline-block";
         invalid_search_temp = true; 
       }
       else if ((temp <  39 || temp >  95) && console_temperature === farenheit) {
         tempalert.innerHTML = "Temperature should not be lower than 39℉ or higher than 95℉";
               div_temp.classList.remove('tiles');
+                incrementtemp.classList.remove('increment-button');
+                decrementtemp.classList.remove('decrement-button');
               div_temp.classList.add('notselected');
               tempmin.classList.remove('numberbox');
+                 incrementtemp.classList.add('increment-button-notsel');
+                 decrementtemp.classList.add('decrement-button-notsel');
               tempmin.classList.add('inputalert');
               tempalert.style.display = "inline-block";
               invalid_search_temp = true; 
@@ -1158,8 +1208,12 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     else {
             div_temp.classList.add('tiles');
               div_temp.classList.remove('notselected');
+                incrementtemp.classList.remove('increment-button-notsel');
+                decrementtemp.classList.remove('decrement-button-notsel');
               tempmin.classList.add('numberbox');
               tempmin.classList.remove('inputalert');
+                incrementtemp.classList.add('increment-button');
+                decrementtemp.classList.add('decrement-button');
               tempalert.style.display = "none";
               invalid_search_temp = false;
     }
@@ -1169,32 +1223,75 @@ if ((v_verycommon || v_common || v_rare || v_veryrare) && (v_beginner || v_easy 
     var tank = parseFloat(document.getElementById('tank_size').value);  
       if ((tank < 20) && (console_capacity === liter)) {
         div_tank_size.classList.remove('tiles');
-        div_tank_size.classList.add('notselected')
+        div_tank_size.classList.add('notselected');
+        decrementtank.classList.remove('numberbox');
+        incrementtank.classList.remove('numberbox');
         tank_size.classList.remove('numberbox');
         tank_size.classList.add('inputalert');
+        decrementtank.classList.add('decrement-button-notsel');
+        incrementtank.classList.add('increment-button-notsel');
         capalert.style.display = 'inline-block'; 
         invalid_search_cap = true; 
       } 
       if ((tank < 5.3) && (console_capacity === gallon)) {
         div_tank_size.classList.remove('tiles');
         div_tank_size.classList.add('notselected')
+           decrementtank.classList.remove('numberbox');
+           incrementtank.classList.remove('numberbox');
         tank_size.classList.remove('numberbox');
         tank_size.classList.add('inputalert');
         capalert.style.display = 'inline-block'; 
+          decrementtank.classList.add('decrement-button-notsel');
+          incrementtank.classList.add('increment-button-notsel');
         invalid_search_cap = true; 
       }
       if (((tank >= 20) && (console_capacity === liter)) || ((tank >= 5.3) && (console_capacity === gallon))) {
         div_tank_size.classList.add('tiles');
         div_tank_size.classList.remove('notselected')
+           decrementtank.classList.remove('decrement-button-notsel');
+           incrementtank.classList.remove('increment-button-notsel');
         tank_size.classList.add('numberbox');
         tank_size.classList.remove('inputalert');
+           decrementtank.classList.add('numberbox');
+           incrementtank.classList.add('numberbox');
         capalert.style.display = 'none';
         invalid_search_cap = false; 
       }
     }
+
+function preCheckPh() {
+ if (parseFloat(ph.value) < 4.4 || parseFloat(ph.value) > 9.1) {
+  div_ph.classList.remove('tiles');
+  div_ph.classList.add('notselected')
+        ph.classList.remove('numberbox');
+        ph.classList.add('inputalert');
+        incrementph.classList.remove('incremph');
+        incrementph.classList.add('increment-button-ph-notsel');
+        decrementph.classList.remove('decremph');
+        decrementph.classList.add('decrement-button-ph-notsel');
+
+        phalert.style.display = 'inline-block'; 
+  invalid_search_ph = true;
+ }
+ else {
+  div_ph.classList.add('tiles');
+  div_ph.classList.remove('notselected')
+  ph.classList.add('numberbox');
+  ph.classList.remove('inputalert');
+  incrementph.classList.add('incremph');
+  incrementph.classList.remove('increment-button-ph-notsel');
+  decrementph.classList.add('decremph');
+  decrementph.classList.remove('decrement-button-ph-notsel');
+
+  phalert.style.display = 'none'; 
+invalid_search_ph = false;
+ }
+}
+
+
 //Checking if output list lenght is zero 
 function noResultAlert () {
-  if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks)) {
+  if ((emptiness_checker < 1) && (!invalid_search_temp) && (!invalid_search_cap) && (!invalid_search_checks) && (!invalid_search_ph)) {
     noresults.style.display = "inline-block"; 
   }
   else {
@@ -1244,8 +1341,14 @@ function compare_temp(a, b) {
 }
 /////Filling up the fish cards - main_card and reveal_card
 function fishFiller(fish_list) {
+
+  
+
   let result_lists = document.createElement("div");
   result_lists.className = "column_result"; 
+
+
+
   for (let i = 0; i <fish_list.length; i++) {
  //Generating fish card (fish cards are displayed by default)
  let fishid = fish_list[i].fish_id; 
@@ -1257,6 +1360,7 @@ function fishFiller(fish_list) {
  let temp = document.createElement("span"); // temperature in fish card 
  let tanksize = document.createElement("span"); // tank size in fish card 
  let name = uppercaser(fish_list[i].name_english);
+
 
  let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
  let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
@@ -1284,6 +1388,7 @@ else {fishcard.className = "nonfish_card"}
  tanksize.className = "tanksize"; 
  main_card.className = "maincard"; //container card to hide/show info 
 
+
  fishcard.appendChild(image_element);
  fishcard.appendChild(fishname);
  fishcard.appendChild(size);
@@ -1293,9 +1398,18 @@ else {fishcard.className = "nonfish_card"}
  main_card.appendChild(fishcard);
  result_lists.appendChild(main_card);
 
-
 }
 
+//ghostcards because my grid view can messed up without it on bigger viewports 
+if (window.innerWidth > 600 && fish_list.length > 0) { 
+for (let i = 0; i < 8; i++) {
+  let ghost = document.createElement('div');
+  let ghostpic = document.createElement('img');
+  ghostpic.src = "icon/ghost.png";
+  ghost.className = "ghostcard";
+  ghost.appendChild(ghostpic);
+  result_lists.appendChild(ghost); 
+}}
 
 result_div.appendChild(result_lists); 
 }/// fishFiller ends here 

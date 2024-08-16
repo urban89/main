@@ -52,98 +52,6 @@ input[type=number] {
   margin-bottom: 1vw;
  }
 
- .increment-button {
-  font-size: 1.5rem;
-  font-weight: 900;
-  position: absolute;
-  right: 0%; 
-  top: 0;
-  /* top: 25%;  */
-  height: 50%; 
-  /* transform: translateY(-50%); */
-  width: 25%;
-  text-align: center;
-  cursor: pointer;
-  padding: 0.5%; 
-  box-sizing: border-box;
-  border-top-right-radius: 10px; 
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
-  border: 0.01rem solid #000;
-  
-
-}
-
-.decrement-button {
-  font-size: 1.5rem;
-  font-weight: 900;
-  position: absolute;
-  bottom: 0;
-  top: 50%;
-  right: 0%; 
-  /* top: 25%; */
-  /* transform: translateY(+50%); */
-  width: 25%;
-  height: 50%; 
-  text-align: center;
-  cursor: pointer;
-  padding: 0.5%; 
-  box-sizing: border-box;
-  border-top-right-radius: 0; 
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 0;
-  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
-  border: 0.01rem solid #000;
-  
-}
-
-.increment-button:hover {
-  background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);
-}
-.decrement-button:hover {
-  background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);
-}
-
-#increment-button-ph {
-  font-size: 1.5rem;
-  position: absolute;
-  top: 0;
-  right: 0%; 
-  width: 20%;
-  height: 100%;
-  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
-  cursor: pointer;
-  padding: 0.5%; 
-  text-align: center;
-  box-sizing: border-box;
-  border-top-right-radius: 10px; 
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 0;
-  border: 0.01rem solid #000;
-}
-
-#decrement-button-ph {
-  font-size: 1.5rem;
-  position: absolute;
-  top: 0;
-  right: 20%; 
-  width: 20%;
-  height: 100%;
-  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
-  cursor: pointer;
-  padding: 0.5%; 
-  text-align: center;
-  box-sizing: border-box;
-  border: 0.01rem solid #000;
-}
-
-#increment-button-ph:hover {background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);}
-#decrement-button-ph:hover {background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);}
-
 
  .grid-container-cpanel {
   display: grid;
@@ -264,7 +172,7 @@ input[type=number] {
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background:#85c9c9ec;
+  background: linear-gradient(145deg, #98c9eb9d 5%, #59c1bf6e 50%);
   /* background-color: #72a2c2; */
   color: rgb(8, 1, 1);
   padding: 1vw;
@@ -281,12 +189,16 @@ input[type=number] {
 }
 
 .dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
-  background-color:  #86a5def8; 
+  background: linear-gradient(145deg, #c7e1f4ec 5%, #2ecfc9f6 50%);
   font-size: 1.05rem;
   border-top: 0.01vw solid #000;          
   border-bottom: 0.01vw solid #000;
   box-shadow:#05224f;
   box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
+}
+
+.dropbtn-cpanel:active {
+  background: linear-gradient(145deg, #596f96f6  5%, #7db6dfec 50%);
 }
   
 .grid-container_main {
@@ -380,6 +292,16 @@ background-attachment: fixed;
 box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
 position: relative; 
 } 
+
+.ghostcard {
+  flex: 0 0 calc(33.33% - 2vw); 
+  margin: 5px; 
+  box-sizing: border-box;
+  padding: 1vw;
+  background-color: #235197;
+background-attachment: fixed;
+position: relative;
+}
 
 .nonfish_card, .ninfocard {
     flex: 0 0 calc(33.33% - 2vw); 
@@ -494,13 +416,18 @@ position: relative;
 
 
 /* Media queries ************************************************/ 
-
+@media screen and (max-width: 416px) {
+  .smallscreen {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 540px) {
   .buttonsdb {
    display: block;
    margin-top: 3vw;
   }
+
  }
  
 
@@ -992,6 +919,11 @@ select {
 .numberbox {
   background: linear-gradient(120deg, #b5d7f0ec 22%, #e2f0b3f6 100%);
 cursor: text;
+font-weight: bold;
+text-align: center;
+border-radius: 4px;
+border-color: rgb(60, 93, 91);
+font-size: 1rem;
 }
 
 input[type="checkbox"] {
@@ -1047,7 +979,7 @@ input[type="radio"] {
 }
 
 .inputflashup{
-  animation: inputflashup 0.5s ease;
+  animation: inputflashup 0.2s ease;
  }
 
  @keyframes inputflashdown {
@@ -1058,7 +990,7 @@ input[type="radio"] {
 }
 
 .inputflashdown{
-  animation: inputflashdown 0.5s ease;
+  animation: inputflashdown 0.2s ease;
  }
 
 
@@ -1131,7 +1063,7 @@ input[type="radio"] {
   bottom: 20px;
   left: 10px;
   display: none; 
-  background-color: rgba(152,251,152, 0.74);
+  background-color: rgba(152, 251, 152, 0.68);
   color: #3b5268;
   border-width: 2px;
   padding: 5px;
@@ -1142,8 +1074,252 @@ input[type="radio"] {
   font-weight: 700;
 }
 
+#floatsettings {
+  position: fixed !important;
+  border-color: #4B3F3F;
+  font-size: 30px;
+
+  bottom: 20px;
+  right: 10px;
+  display: none; 
+  background: linear-gradient(145deg, #98c9eba3 5%, #59c1bfac 50%);
+  color: #3b5268;
+  border-width: 2px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  font-weight: 900;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 #backToTop:hover {
   background-color:#66C966;
+  box-shadow:4px 4px 8px #26439b;
+  color: black;
+}
+
+
+#floatsettings:hover {
+  background: linear-gradient(145deg, #7aa1bdec 5%, #357ae8f6 50%);
   box-shadow:4px 4px 8px #6aad6a;
   color: black;
 }
+
+/* increment decrement UI */
+
+
+.increment-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 0;
+  /* top: 25%;  */
+  height: 50%; 
+  /* transform: translateY(-50%); */
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  border: 0.01rem solid #000;
+}
+
+.decrement-button {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  right: 0%; 
+  /* top: 25%; */
+  /* transform: translateY(+50%); */
+  width: 25%;
+  height: 50%; 
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 0; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  border: 0.01rem solid #000;
+  
+}
+
+.increment-button:hover {
+  background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);
+}
+
+.increment-button:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(209, 138, 32, 0.654);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+
+.decrement-button:hover {
+  background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);
+}
+
+.decrement-button:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(32, 209, 35, 0.654);
+  transform: translateY(+2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+.incremph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border: 0.01rem solid #000;
+}
+
+.decremph {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 20%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.01rem solid #000;
+}
+
+.incremph:hover {background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);}
+.incremph:active {
+  box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+  inset 2px 2px 5px rgba(209, 138, 32, 0.654);
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+.decremph:hover {background: linear-gradient(145deg, #8ff157f6  5%, #5eb5eeec 50%);}
+
+.decremph:active {
+    box-shadow: inset 0 2px 4px rgba(75, 83, 224, 0.2),
+    inset 2px 2px 5px rgba(32, 209, 35, 0.654);
+    transform: translateY(+2px);
+    background: linear-gradient(145deg, #f4f096f6  5%, #acd8f5ec 50%);
+}
+
+
+.increment-button-notsel {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  right: 0%; 
+  top: 0;
+  /* top: 25%;  */
+  height: 50%; 
+  /* transform: translateY(-50%); */
+  width: 25%;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #ea60ff 5%, #695F7A 50%);
+  border: 0.01rem solid #000;
+  
+
+}
+
+.decrement-button-notsel  {
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+  top: 50%;
+  right: 0%; 
+  /* top: 25%; */
+  /* transform: translateY(+50%); */
+  width: 25%;
+  height: 50%; 
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5%; 
+  box-sizing: border-box;
+  border-top-right-radius: 0; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  background: linear-gradient(145deg, #9a86eb 5%, #695F7A 50%);
+  border: 0.01rem solid #000;
+  
+}
+
+.increment-button-notsel:hover {
+  background: linear-gradient(145deg, #ea60ff 5%, #cfbeed 50%);
+}
+.decrement-button-notsel:hover {
+  background: linear-gradient(145deg, #9a86eb 5%, #cfbeed 50%);
+}
+
+.increment-button-ph-notsel  {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #ea60ff 5%, #695F7A 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border-top-right-radius: 10px; 
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border: 0.01rem solid #000;
+}
+
+.decrement-button-ph-notsel  {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 20%; 
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(145deg, #9a86eb 5%, #695F7A 50%);
+  cursor: pointer;
+  padding: 0.5%; 
+  text-align: center;
+  box-sizing: border-box;
+  border: 0.01rem solid #000;
+}
+
+.increment-button-ph-notsel:hover {background: linear-gradient(145deg, #ea60ff 5%, #cfbeed 50%);}
+.decrement-button-ph-notsel:hover {background: linear-gradient(145deg, #9a86eb 5%, #cfbeed 50%);}
