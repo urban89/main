@@ -1383,7 +1383,7 @@ else {fishcard.className = "nonfish_card"}
 }
 
 //ghostcards because my grid view can messed up without it 
-if (window.innerWidth > 600) { 
+if (window.innerWidth > 600 && fish_list.length > 0) { 
 for (let i = 0; i < 8; i++) {
   let ghost = document.createElement('div');
   let ghostpic = document.createElement('img');

@@ -486,7 +486,7 @@ function fishSelect (fish_list) {
  
 
   } // fishSelect contiune after for loop ends 
-  if (window.innerWidth > 600) { 
+  if (window.innerWidth > 600 && final_list.length > 0) { 
   for (let i = 0; i < 8; i++) {
     let ghost = document.createElement('div');
     let ghostpic = document.createElement('img');
