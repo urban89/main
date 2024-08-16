@@ -291,7 +291,7 @@ let poolcount = poolCounter ();
 allcount.textContent = poolcount;
 }
 
-  /////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
 
@@ -438,7 +438,7 @@ document.getElementById('increment-button-tank').addEventListener('click', funct
   tank_size.classList.add('inputflashup');
   setTimeout(() => {
     tank_size.classList.remove('inputflashup');
-  }, 400);
+  }, 200);
 
   search_button()
 });
@@ -453,7 +453,7 @@ document.getElementById('decrement-button-tank').addEventListener('click', funct
   tank_size.classList.add('inputflashdown');
   setTimeout(() => {
     tank_size.classList.remove('inputflashdown');
-  }, 400);
+  }, 200);
     search_button()
 });
 
@@ -469,7 +469,7 @@ document.getElementById('increment-button-temp').addEventListener('click', funct
   tempmin.classList.add('inputflashup');
   setTimeout(() => {
     tempmin.classList.remove('inputflashup');
-  }, 400);
+  }, 200);
 
 });
 
@@ -483,7 +483,7 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
   tempmin.classList.add('inputflashdown');
   setTimeout(() => {
     tempmin.classList.remove('inputflashdown');
-  }, 400);
+  }, 200);
 
     search_button()
 
@@ -492,19 +492,40 @@ document.getElementById('decrement-button-temp').addEventListener('click', funct
 document.getElementById('increment-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
   if (input < 9) {ph.value = input + 0.5;}
+
+
+  ph.classList.add('inputflashup');
+  setTimeout(() => {
+    ph.classList.remove('inputflashup');
+  }, 200);
+
+    search_button()
+
   search_button()
+
 });
 
 document.getElementById('decrement-button-ph').addEventListener('click', function() {
   var input = parseFloat(ph.value);
   if (input > 5) {ph.value = input - 0.5;}
+
+  ph.classList.add('inputflashdown');
+  setTimeout(() => {
+    ph.classList.remove('inputflashdown');
+  }, 200);
+
     search_button()
+
+    search_button()
+
+
+
 
 });
 
 
     });  
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///event listeners end here 
 ///Calculates the precentage value of each category compared to total
 

@@ -975,7 +975,7 @@ input[type="radio"] {
 }
 
 .inputflashup{
-  animation: inputflashup 0.5s ease;
+  animation: inputflashup 0.2s ease;
  }
 
  @keyframes inputflashdown {
@@ -986,7 +986,7 @@ input[type="radio"] {
 }
 
 .inputflashdown{
-  animation: inputflashdown 0.5s ease;
+  animation: inputflashdown 0.2s ease;
  }
 
 
