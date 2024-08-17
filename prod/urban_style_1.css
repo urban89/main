@@ -1037,6 +1037,32 @@ input[type="radio"] {
 }
 
 
+.converflash {
+  animation: converflash 1s ease;
+}
+
+
+@keyframes converflash {
+  10% {color:yellow; font-weight: 800;}
+  20% {color:yellow; font-weight: 800;}
+  30% {color:rgb(250, 250, 220); font-weight: 999;}
+  40% {color:rgb(250, 250, 220); font-weight: 999;}
+  50% {color:rgb(250, 250, 220); font-weight: 999;}
+  60% {color:yellow; font-weight: 800;}
+  70% {color:yellow; font-weight: 800;}
+  80% {color:yellow; font-weight: 800;}
+  90% {color:yellow; font-weight: 800;}
+  100% {color:rgb(255, 255, 9); font-weight: 800;}
+}
+
+
+
+
+
+
+
+
+
 .infocard:hover .iconimage { 
   animation: glow 7s infinite; 
 }

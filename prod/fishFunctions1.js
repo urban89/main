@@ -330,6 +330,7 @@ allcount.textContent = poolcount;
       
       liter_radio.addEventListener("change", gallonliter);
       gallon_radio.addEventListener("change", litergallon);
+      
       convert_fc.addEventListener("change", ftoc);
       convert_cf.addEventListener("change", ctof);
   
@@ -570,6 +571,7 @@ f_tankconversion.addEventListener('click',function() {
     gallonliter()
   }
   search_button(); 
+
 // cap_switcher ();
 
 
@@ -604,6 +606,23 @@ f_tempconversion.addEventListener('click',function() {
 //   f_tempconversion.innerText = settings_temp;
 //   search_button(); 
 // }
+
+
+function cap_flash(elementclass) {
+  // Delay the execution by 0.1 seconds (100 milliseconds)
+  setTimeout(() => {
+    var elements = document.querySelectorAll(`.${elementclass}`);
+
+    elements.forEach((element) => {
+      element.classList.add('converflash');
+      setTimeout(() => {
+        element.classList.remove('converflash');
+      }, 200);
+    });
+  }, 100); // 0.1 second delay
+}
+
+
 
 ///Calculates the precentage value of each category compared to total
 function poolCounter () {
@@ -678,6 +697,7 @@ x.forEach(function(box) {
 
 // Conversion from liter to gallon [radio buttons]         
 function litergallon() {
+  cap_flash("tanksize");
 if (gallon_radio.checked == true) {
 let cal_cap = parseFloat(tank_size.value);
 document.getElementById("size").innerHTML = gallon;
@@ -687,12 +707,15 @@ f_tankconversion.innerText = show_liter;
 
 tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 inputAnimation(tank_size);
+
 }
+
 }
 
 
 // Conversion from gallon to liter [radio buttons]        
 function gallonliter() {
+  cap_flash("tanksize");
   if (liter_radio.checked == true) {
 let cal_cap = parseFloat(tank_size.value);
 document.getElementById("size").innerHTML = liter;
@@ -701,13 +724,16 @@ console_capacity = liter;
 f_tankconversion.innerText = show_gallon; 
 tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 inputAnimation(tank_size);
+
 }
+
 }
 
 
 
 // Conversion from celsius to farenheit [button]      
 function ctof() {
+  cap_flash("fishtemp");
 let cal_tempmin = parseFloat(tempmin.value);
 
 if (!exactCel || cal_tempmin !== Math.round(exactCel*10)/10) {
@@ -730,6 +756,7 @@ inputAnimation(tempmin);
         
 // Conversion from farenheit to celsius [button] 
 function ftoc() {
+  cap_flash("fishtemp");
 let cal_tempmin = parseFloat(tempmin.value);
 
 if (!exactFar ||cal_tempmin !==  Math.round(exactFar*10)/10) {
@@ -1327,6 +1354,7 @@ function noResultAlert () {
   size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
   cmtoinch.innerText = fishsize_option; 
   f_cmtoinch.innerText = fishsize_option; 
+  cap_flash("fishsize");
 
   search_button()
  }
