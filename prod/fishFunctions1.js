@@ -569,10 +569,10 @@ f_tankconversion.addEventListener('click',function() {
     liter_radio.checked = true;
     gallonliter()
   }
-  
-  settings_tankcapacity = (settings_tankcapacity === show_gallon) ? show_liter : show_gallon;
-  f_tankconversion.innerText = settings_tankcapacity;
   search_button(); 
+// cap_switcher ();
+
+
 });
 
 f_tempconversion.addEventListener('click',function() {
@@ -583,18 +583,29 @@ f_tempconversion.addEventListener('click',function() {
     convert_fc.checked = true;
     ftoc()
   }
-  
-  settings_temp = (settings_temp === show_farenheit) ? show_celsius : show_farenheit;
-  f_tempconversion.innerText = settings_temp;
   search_button(); 
-});
+  // temp_switcher ();
 
+
+});
 
     });  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///event listeners end here 
-///Calculates the precentage value of each category compared to total
+///event listeners end above 
+/////////////////////////////////////////////////////////////////////////////
+// function cap_switcher () {
+//   settings_tankcapacity = (settings_tankcapacity === show_gallon) ? show_liter : show_gallon;
+//   f_tankconversion.innerText = settings_tankcapacity;
+//   search_button(); 
+// }
 
+// function temp_switcher () {
+//   settings_temp = (settings_temp === show_farenheit) ? show_celsius : show_farenheit;
+//   f_tempconversion.innerText = settings_temp;
+//   search_button(); 
+// }
+
+///Calculates the precentage value of each category compared to total
 function poolCounter () {
   let num = 0;
  for  (let fish of fish_master) {
@@ -615,50 +626,6 @@ function perCounter (property, code) {
   return `(${Math.round((list.length/maincount)*100)}%)`; 
 }
 
-
-// function perCapCount () {
-//   let tank_size = document.getElementById('tank_size').value;  
-//   if (console_capacity === gallon) {
-//     cap_modifier = 3.78541253426;
-//   }
-//   let bigger = [];
-//   for (let fish of fish_master) {
-//     if ((parseInt(fish.tank_size_liter)) / cap_modifier <= tank_size) {
-//       bigger.push(fish.fish_id);
-//     }
-//   }
-//   return `(${Math.round((bigger.length/maincount)*100)}%)`; 
-// }
-
-
-// function updatePerCap () { 
-//   document.getElementById("perliter").textContent = perCapCount ();
-// }
-
-
-
-// function perTempCount () {
-//   let temp = document.getElementById('tempmin').value; 
-//   let included = [];
-//   for (let fish of fish_master) {
-//     let fish_temp_min = parseFloat(fish.temperature_min);
-//     let fish_temp_max = parseFloat(fish.temperature_max);  
-//     if (console_temperature === farenheit) {
-//       fish_temp_min =  (fish_temp_min * 9/5)+32
-//       fish_temp_max = (fish_temp_max * 9/5)+32
-//     }
-
-    
-//     if ((fish_temp_min <= temp) && (temp <= fish_temp_max)) {
-//       included.push(fish.fish_id);
-//     }
-//   }
-//   return `(${Math.round((included.length/maincount)*100)}%)`; 
-// }
-
-// function updatePerTemp () { 
-//   document.getElementById("pertemp").textContent = perTempCount ();
-// }
 
 
 
@@ -716,6 +683,7 @@ let cal_cap = parseFloat(tank_size.value);
 document.getElementById("size").innerHTML = gallon;
 cap_modifier = 3.78541253426; 
 console_capacity = gallon;
+f_tankconversion.innerText = show_liter; 
 
 tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 inputAnimation(tank_size);
@@ -730,6 +698,7 @@ let cal_cap = parseFloat(tank_size.value);
 document.getElementById("size").innerHTML = liter;
 cap_modifier = 1; 
 console_capacity = liter;
+f_tankconversion.innerText = show_gallon; 
 tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 inputAnimation(tank_size);
 }
@@ -748,6 +717,7 @@ if (!exactCel || cal_tempmin !== Math.round(exactCel*10)/10) {
  
 
 console_temperature =  farenheit;
+f_tempconversion.innerText = show_celsius;
 let rouondedFar = Math.round(exactFar*10)/10;
 tempmin.value = rouondedFar;
 temp_modifier1 = 1.8; 
@@ -756,7 +726,6 @@ tempmin.min = 39;
 tempmin.max = 95;
 document.getElementById("min_t").innerHTML = farenheit;
 inputAnimation(tempmin);
-
   }
         
 // Conversion from farenheit to celsius [button] 
@@ -770,6 +739,7 @@ if (!exactFar ||cal_tempmin !==  Math.round(exactFar*10)/10) {
 
 
 console_temperature = celsius;
+f_tempconversion.innerText = show_farenheit;
 let rouondedCel = Math.round(exactCel*10)/10; 
 tempmin.value = rouondedCel;
 temp_modifier1 = 1; 
