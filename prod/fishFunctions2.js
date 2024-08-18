@@ -9,10 +9,10 @@ const cm = "cm";
 const inch = "inch";
 const show_inch = "Show fish size in inch";
 const show_cm = "Show fish size in cm";
-const show_farenheit = "Show water temperature in farenheit";
-const show_celsius = "Show water temperature in celsius";
-const show_liter =  "Show aquarium capacity in liter";
-const show_gallon = "Show aquarium capacity in gallon"; 
+const show_farenheit = "Temperature in Farenheit";
+const show_celsius = "Temperature in Celsius";
+const show_liter =  "Tank size in Liter";
+const show_gallon = "Tank size in Gallon"; 
 const maincount = fish_master.length; 
 const bcimages = 5; 
 
@@ -85,8 +85,7 @@ let searchInput = document.getElementById("searchInput");
 
 let result_div = document.getElementById("result");
 let sort_select = document.getElementById("sortdb");
-let cap_conversion = document.getElementById("cap_conversion");
-let temp_conversion = document.getElementById("temp_conversion");
+
 let notfound = document.getElementById("notfound"); 
 let fishcount = document.getElementById("fishcount");
 let displayed = document.getElementById("displayed");
@@ -95,6 +94,13 @@ let about_button = document.getElementById("about_button");
 
 let check_fish = document.getElementById("check_fish");
 let check_notfish = document.getElementById("check_notfish");
+
+let f_cmtoinch = document.getElementById("f_cmtoinch");
+// let f_view_options = document.getElementById("f_view_options");
+let f_tempconversion = document.getElementById("f_tempconversion");
+let f_tankconversion = document.getElementById("f_tankconversion");
+let f_about = document.getElementById("f_about");
+
 
 
 ///checkes categories and creates new list that will be displayed 
@@ -158,23 +164,20 @@ document.addEventListener("DOMContentLoaded", function() {
  check_notfish.addEventListener('change', poolChanges);
 
 
-
-  // check_fish.addEventListener('change', updatePool);
-  // check_notfish.addEventListener('change', updatePool);
-  // check_fish.addEventListener('change', PoolFlash);
-  // check_notfish.addEventListener('change', PoolFlash);
-
      //home button
      var backToTopButton = document.getElementById("backToTop");
+     var floatSettingsButton = document.getElementById("floatsettings");
 
      // Show the button when scrolled down 250px from the top
      window.onscroll = function() {
-         if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-             backToTopButton.style.display = "block";
-         } else {
-             backToTopButton.style.display = "none";
-         }
-     };
+      if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+          backToTopButton.style.display = "block";
+          floatSettingsButton.style.display = "block";
+      } else {
+          backToTopButton.style.display = "none";
+          floatSettingsButton.style.display = "none";
+      }
+  };
  
      // Scroll to the top of the page when the button is clicked
      backToTopButton.onclick = function() {
@@ -186,13 +189,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("settings").addEventListener("click", function () {
       var dropdown = document.getElementById("settings_dropdown");
-      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";fishsizemetric
   });
 
-//   document.getElementById("more").addEventListener("click", function () {
-//     var dropdown = document.getElementById("more_dropdown");
-//     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-// });
 
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
@@ -201,14 +200,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // window.addEventListener("click", function (event) {
-  //   var dropdown = document.getElementById("more_dropdown");
-  //   if (event.target !== document.getElementById("more")) {
-  //       dropdown.style.display = "none";
-  //   }
-  // });
+  document.getElementById("floatsettings").addEventListener("click", function () {
+    var dropdown = document.getElementById("floatsettingsdrop");
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+});
+
+window.addEventListener("click", function (event) {
+  var dropdown = document.getElementById("floatsettingsdrop");
+  if (event.target !== document.getElementById("floatsettings")) {
+      dropdown.style.display = "none";
+  }
+});
+
 
   cmtoinch.addEventListener("click", fishsizemetric);
+  f_cmtoinch.addEventListener("click", fishsizemetric);
   cap_conversion.addEventListener("click", litergallon);
   temp_conversion.addEventListener("click", celtofaren);
   // cardswticher.addEventListener("click", flipCards);   
@@ -217,10 +223,23 @@ document.addEventListener("DOMContentLoaded", function() {
   searchInput.addEventListener("input",filterFishByName); 
   searchInput.addEventListener("keyup",filterFishByName); 
 
+
+  f_tempconversion.addEventListener('click',celtofaren);
+  f_tankconversion.addEventListener('click',litergallon);
+
+
+
+
   
   });
 
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///event listeners end above 
+/////////////////////////////////////////////////////////////////////////////
 ///Calculates the precentage value of each category compared to total
 function perCounter (property, code) {
   let list = []; 
@@ -234,6 +253,24 @@ function perCounter (property, code) {
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//animation for updating metrics - flashing fish card numbers 
+ function cap_flash(elementclass) {
+  // Delay the execution by 0.1 seconds (100 milliseconds)
+  setTimeout(() => {
+    var elements = document.querySelectorAll(`.${elementclass}`);
+
+    elements.forEach((element) => {
+      element.classList.add('converflash');
+      setTimeout(() => {
+        element.classList.remove('converflash');
+      }, 200);
+    });
+  }, 100); // 0.1 second delay
+}
+
+
 
 // Used for checking all checkboxes when advanced options are collapsed 
         
@@ -543,7 +580,9 @@ function compare_size(a, b) {
       fishsize_option = (fishsize_option === show_inch) ? show_cm : show_inch; 
       size_modifier = (size_modifier === 1 ) ? 0.393 : 1;
       cmtoinch.innerText = fishsize_option; 
+      f_cmtoinch.innerText = fishsize_option; 
       output ();
+      cap_flash("fishsize");
     }
 
     //removing ".0" from round numbers 
@@ -559,18 +598,24 @@ function sizeFormatter (num) {
   function litergallon () {
     console_capacity = (console_capacity === liter) ? gallon : liter; 
     capacity_button = (capacity_button === show_gallon) ? show_liter: show_gallon;
+    // f_tankconversion = (f_tankconversion === show_gallon) ? show_liter: show_gallon;
     cap_modifier = (cap_modifier === 1) ? 0.264172 : 1; 
     cap_conversion.innerText = capacity_button;
+    f_tankconversion.innerText = capacity_button; 
     output ();
+    cap_flash("tanksize");
   }
 
   function celtofaren () {
     console_temperature = (console_temperature === celsius) ? farenheit : celsius; 
     temp_button = (temp_button === show_farenheit) ? show_celsius: show_farenheit;
+    // f_tempconversion = (f_tempconversion === show_farenheit) ? show_celsius: show_farenheit;
     temp_modifier1 = (temp_modifier1 === 1) ? 1.8 : 1; 
     temp_modifier2 = (temp_modifier2 ===  0) ? 32 : 0; 
     temp_conversion.innerText = temp_button;
+    f_tempconversion.innerText = temp_button;
     output ();
+    cap_flash("fishtemp");
   }
 
 

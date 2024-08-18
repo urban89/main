@@ -376,10 +376,6 @@ allcount.textContent = poolcount;
     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
 });
 
-//   document.getElementById("more").addEventListener("click", function () {
-//     var dropdown = document.getElementById("more_dropdown");
-//     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-// });
   
   window.addEventListener("click", function (event) {
     var dropdown = document.getElementById("settings_dropdown");
@@ -394,13 +390,6 @@ allcount.textContent = poolcount;
         dropdown.style.display = "none";
     }
   });
-
-  // window.addEventListener("click", function (event) {
-  //   var dropdown = document.getElementById("more_dropdown");
-  //   if (event.target !== document.getElementById("more")) {
-  //       dropdown.style.display = "none";
-  //   }
-  // });
 
 
   
@@ -443,7 +432,7 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
 
     //////////////////////////////////////////////////////////////
        //float settings
-       var floatSettingsButton = document.getElementById("floatsettings");
+      //  var floatSettingsButton = document.getElementById("floatsettings");
 
    
     //////////////////////////////////////////////////////////////
@@ -607,7 +596,7 @@ f_tempconversion.addEventListener('click',function() {
 //   search_button(); 
 // }
 
-
+//animation for updating metrics - flashing fish card numbers 
 function cap_flash(elementclass) {
   // Delay the execution by 0.1 seconds (100 milliseconds)
   setTimeout(() => {
