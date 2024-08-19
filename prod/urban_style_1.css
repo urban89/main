@@ -1407,6 +1407,7 @@ background-color:  #86a5def8;
 
 .more_button:hover {
   background: linear-gradient(145deg, #d5bf90e0 22%, #b69c73e0 88%);
+  cursor: pointer; 
 }
 
 
