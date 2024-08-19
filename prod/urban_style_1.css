@@ -1093,12 +1093,12 @@ input[type="radio"] {
   display: none; 
   background-color: rgba(152, 251, 152, 0.68);
   color: #3b5268;
-  border-width: 2px;
+  border-width: 1px;
   padding: 5px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 1000;
-  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  box-shadow:3px 3px 7px rgba(28, 198, 28, 0.414);
   font-weight: 700;
 }
 
@@ -1110,31 +1110,25 @@ input[type="radio"] {
 
 #floatsettings {
   position: fixed !important;
+  border-style: solid;
   border-color: #4B3F3F;
-  font-size: 30px;
+  border-width: 1px;
+  font-size: 1.5rem;
 
   bottom: 20px;
   right: 10px;
   display: none; 
-  background: linear-gradient(145deg, #98c9eba3 5%, #59c1bfac 50%);
+  background: linear-gradient(145deg, #98c9ebc7 5%, #59c1bfac 50%);
   color: #3b5268;
-  border-width: 2px;
+ 
   padding: 5px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 1000;
-  box-shadow:3px 3px 7px rgba(154, 209, 154, 0.74);
+  box-shadow:3px 3px 7px rgba(154, 206, 209, 0.347);
   font-weight: 900;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  position: fixed; 
-  bottom: 10px;
-  right: 10px;
-
-  font-size: 1rem;
-  font-weight: 550;
-
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #backToTop:hover {
