@@ -1363,13 +1363,9 @@ viewoption = (viewoption === listviewstring) ? tileviewstring : listviewstring;
 view_options.textContent = viewoption;
 f_view_options.textContent = viewoption;
 search_button()
-//   toggle_options.innerText = options_option; 
+
 }
-//////Showing info page 
-// function explain () {
-//   about.style.display = (about.style.display  === "flex") ? "none" : "flex"; 
-//   about_button.innerHTML = (about.style.display  === "flex") ? abouton: aboutoff;
-// }
+
 ///// Sorting functions 
 function compare_size(a, b) {
   return a.cm_max - b.cm_max;
@@ -1435,6 +1431,7 @@ else {fishcard.className = "nonfish_card"}
  fishcard.appendChild(size);
  fishcard.appendChild(temp);
  fishcard.appendChild(tanksize);
+
 
  main_card.appendChild(fishcard);
  result_lists.appendChild(main_card);
@@ -1597,6 +1594,19 @@ fishcard_divs.forEach(div => {
     agression.className = "infocardtext";
     breeding.className = "infocardtext";
     origin.className = "infocardtext";
+
+
+    //// more module button 
+    if (fish.more == 1) {
+      let moreButton = document.createElement('button');
+      moreButton.className = 'more_button';
+      moreButton.innerHTML = 'More';
+      // moreButton.id = `m${fish.fish_id}`; 
+      infocard.appendChild(moreButton);
+      moreButton.onclick = function() {
+      showMore(`more/${fish.fish_id}.html`); 
+      };
+    }
     
     infocard.id = info_id; 
     infocard.appendChild(iconimage);
@@ -1663,4 +1673,57 @@ function PoolFlash () {
   setTimeout(() => {
     allcount.classList.remove('value-updated');
   }, 1000);
+}
+
+//// more module onclick 
+
+function showMore(src) {
+  // Create the modal div
+  const modal = document.createElement('div');
+  modal.id = 'moreModal';
+  modal.className = 'modal';
+
+  // Create the modal content div
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal_content';
+
+  // Create the close button
+  const closeButton = document.createElement('span');
+  closeButton.className = 'close_button';
+  closeButton.innerHTML = '&times;';
+  closeButton.onclick = function() {
+      closeMore(modal);
+  };
+
+  // Create the iframe
+  const iframe = document.createElement('iframe');
+  iframe.className = 'iframe_content';
+  iframe.src = src;
+
+  // Append the close button and iframe to the modal content
+  modalContent.appendChild(closeButton);
+  modalContent.appendChild(iframe);
+
+  // Append the modal content to the modal
+  modal.appendChild(modalContent);
+
+  // Append the modal to the body
+  document.body.appendChild(modal);
+
+  // Display the modal
+  modal.style.display = 'block';
+
+  // Disable scrolling on the main page
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMore(modal) {
+  // Hide the modal
+  modal.style.display = 'none';
+
+  // Remove the modal from the DOM
+  document.body.removeChild(modal);
+
+  // Re-enable scrolling on the main page
+  document.body.style.overflow = 'auto';
 }
