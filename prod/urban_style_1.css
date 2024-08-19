@@ -168,6 +168,11 @@ input[type=number] {
   text-decoration: none;
   display: block;
 }
+.dropdown-cpcontent span:hover {
+  box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+background-color:  #86a5def8; 
+}
+
 
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
@@ -1131,6 +1136,18 @@ input[type="radio"] {
   padding-right: 30px;
 }
 
+
+/*should probably standardize all menu dopdowns with this one*/ 
+.menu-drop-item {
+  font-size: 1rem;
+  font-weight: 550;
+  color: black;
+  padding: 1vh 1.5vh;
+  text-decoration: none;
+  display: block;
+
+}
+
 #backToTop:hover {
   background-color:#66C966;
   box-shadow:4px 4px 8px #26439b;
@@ -1150,12 +1167,15 @@ input[type="radio"] {
   position: absolute;
   bottom: 100%; /* Position above the parent */
   right: 0; /* Align right edge with parent */
-  transform: translateY(-10px) translateX(-10px); /* Adjust position upwards and left */
+  transform: translateY(-3px) translateX(-25px); /* Adjust position upwards and left */
   z-index: 1000; /* Ensure it's above other elements */
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
 }
 
 #floatsettingsdrop span:hover {
-background: #86a5def8;
+box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
+background-color:  #86a5def8; 
 }
 
 /* increment decrement UI */
