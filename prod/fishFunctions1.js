@@ -1685,6 +1685,8 @@ function showMore(src, id) {
   const fishsummary = document.createElement('div');
   const fishname = document.createElement('h1');
   const latin = document.createElement('span');
+  const moreimg = document.createElement('img');
+
 
   modal.id = 'moreModal';
   modal.className = 'modal';
@@ -1706,7 +1708,8 @@ function showMore(src, id) {
 fishsummary.className = "fishsummary";
 fishname.className = "namesummary";
 latin.className = "latinsummary";
-
+moreimg.className = "moreimg"; 
+moreimg.src = `webps1/${id}.webp`;
 
   // Create the iframe
   const iframe = document.createElement('iframe');
@@ -1718,12 +1721,13 @@ latin.className = "latinsummary";
 //Obtain fish id here
 const fish = fish_master.find(fish => fish.fish_id === id);
 fishname.innerText = fish.name_english;
-latin.innerText = fish.name_latin;
+latin.innerText = `(${fish.name_latin})`;
 
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
   fishsummary.appendChild(fishname);
   fishsummary.appendChild(latin);
+  fishsummary.appendChild(moreimg);
   modalContent.appendChild(fishsummary);
  
 
