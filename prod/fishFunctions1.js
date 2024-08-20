@@ -1675,7 +1675,9 @@ function PoolFlash () {
   }, 1000);
 }
 
-//// more module onclick 
+
+////////////////////////////////////////////////////////////////////////////
+//// "MORE" MODULES creation 
 
 function showMore(src, id) {
   // Create the modal div
@@ -1710,6 +1712,8 @@ latin.className = "latinsummary";
   const iframe = document.createElement('iframe');
   iframe.className = 'iframe_content';
   iframe.src = src;
+  iframe.setAttribute('scrolling', 'no');
+  iframe.style.overflow = 'hidden';
 
 //Obtain fish id here
 const fish = fish_master.find(fish => fish.fish_id === id);
@@ -1719,8 +1723,9 @@ latin.innerText = fish.name_latin;
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
   fishsummary.appendChild(fishname);
+  fishsummary.appendChild(latin);
   modalContent.appendChild(fishsummary);
-  modalContent.appendChild(latin);
+ 
 
   modalContent.appendChild(iframe);
 
@@ -1739,13 +1744,16 @@ latin.innerText = fish.name_latin;
   document.body.style.overflow = 'hidden';
 
 
-  iframe.onload = function() {
-    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    const iframeBody = iframeDocument.body;
+//   iframe.onload = function() {
+//     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+//     const iframeBody = iframeDocument.body;
 
-    // Example: Apply some padding to the body inside the iframe
-    iframeBody.style.padding = '20px';
-};
+
+//     iframeBody.style.padding = '100px';
+//     iframeBody.style.font = 'red';
+// };
+
+
 }
 
 
