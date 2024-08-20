@@ -1604,7 +1604,7 @@ fishcard_divs.forEach(div => {
       // moreButton.id = `m${fish.fish_id}`; 
       infocard.appendChild(moreButton);
       moreButton.onclick = function() {
-      showMore(`more/${fish.fish_id}.html`); 
+      showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
       };
     }
     
@@ -1677,9 +1677,13 @@ function PoolFlash () {
 
 //// more module onclick 
 
-function showMore(src) {
+function showMore(src, id) {
   // Create the modal div
   const modal = document.createElement('div');
+  const fishsummary = document.createElement('div');
+  const fishname = document.createElement('h1');
+  const latin = document.createElement('span');
+
   modal.id = 'moreModal';
   modal.className = 'modal';
 
@@ -1695,14 +1699,32 @@ function showMore(src) {
       closeMore(modal);
   };
 
+
+////Adding classes:
+fishsummary.className = "fishsummary";
+fishname.className = "namesummary";
+latin.className = "latinsummary";
+
+
   // Create the iframe
   const iframe = document.createElement('iframe');
   iframe.className = 'iframe_content';
   iframe.src = src;
 
+//Obtain fish id here
+const fish = fish_master.find(fish => fish.fish_id === id);
+fishname.innerText = fish.name_english;
+latin.innerText = fish.name_latin;
+
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
+  fishsummary.appendChild(fishname);
+  modalContent.appendChild(fishsummary);
+  modalContent.appendChild(latin);
+
   modalContent.appendChild(iframe);
+
+
 
   // Append the modal content to the modal
   modal.appendChild(modalContent);
@@ -1715,7 +1737,17 @@ function showMore(src) {
 
   // Disable scrolling on the main page
   document.body.style.overflow = 'hidden';
+
+
+  iframe.onload = function() {
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    const iframeBody = iframeDocument.body;
+
+    // Example: Apply some padding to the body inside the iframe
+    iframeBody.style.padding = '20px';
+};
 }
+
 
 function closeMore(modal) {
   // Hide the modal

@@ -1407,7 +1407,6 @@ background-color:  #86a5def8;
 
 .more_button:hover {
   background: linear-gradient(145deg, #d5bf90e0 22%, #b69c73e0 88%);
-  cursor: pointer; 
 }
 
 
@@ -1455,4 +1454,27 @@ background-color:  #86a5def8;
   width: 100%;
   height: 100%;
   border: none;
+}
+
+
+.fishsummary {
+  font-family: "Trebuchet MS", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.namesummary {
+  padding-left: 2vw; 
+  padding-right: 1vw;
+  padding-top: 2vw;
+  padding-bottom: 0;
+  margin-bottom: 0.5vw;
+}
+
+.latinsummary {
+  padding-left: 2vw; 
+  padding-right: 1vw;
+  padding-top: 0;
+  padding-bottom: 2vw;
 }
