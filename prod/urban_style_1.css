@@ -1478,6 +1478,7 @@ background-color:  #86a5def8;
   padding-top: 2vw;
   padding-bottom: 0;
   margin-bottom: 0.5vw;
+  text-shadow: 0.2vw 0.2vw 0.4vw #7dbebbd0;
 }
 
 .latinsummary {
@@ -1491,11 +1492,12 @@ background-color:  #86a5def8;
   width: 40vw;
   height: 30vw;
   border-radius: 8px;
-  border-style: solid;
-  border-color: #f0fc07ba;
+  border-style:groove;
+  border-color: #f0fc07ba;  
   border-width: 0.11vw;
   display: block;
   margin-left: 2vw; 
+  box-shadow: 1vw 1vw 2vw #2c2a14ba;
 }
 
 .summarybox {
