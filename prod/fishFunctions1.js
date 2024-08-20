@@ -1686,6 +1686,17 @@ function showMore(src, id) {
   const fishname = document.createElement('h1');
   const latin = document.createElement('span');
   const moreimg = document.createElement('img');
+  const summarybox = document.createElement('div');
+
+  let mintanksize = document.createElement("p");
+  let tempinfo = document.createElement("p");
+  let sizeinfo = document.createElement("p");
+  let hardiness = document.createElement("p");
+  let availability = document.createElement("p");
+  let social = document.createElement("p");
+  let agression = document.createElement("p");
+  let breeding = document.createElement("p");
+  let origin = document.createElement("p");
 
 
   modal.id = 'moreModal';
@@ -1710,6 +1721,41 @@ fishname.className = "namesummary";
 latin.className = "latinsummary";
 moreimg.className = "moreimg"; 
 moreimg.src = `webps1/${id}.webp`;
+summarybox.className = "summarybox";
+
+mintanksize.className = "infocardtext";
+tempinfo.className = "infocardtext";
+sizeinfo.className = "infocardtext";
+    
+hardiness.className = "infocardtext";
+availability.className = "infocardtext";
+social.className = "infocardtext";
+agression.className = "infocardtext";
+breeding.className = "infocardtext";
+origin.className = "infocardtext";
+
+const fish = fish_master.find(fish => fish.fish_id === id);
+let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
+let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+let card_size_cal = Math.round(fish.cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+let hardi = fish.uncare; 
+let avail = fish.availability; 
+let behave = fish.school; 
+let agres = fish.agression; 
+let breed = fish.breeding_difficulty; 
+
+
+mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+tempinfo.innerHTML = `T: ${temp_min}-${temp_max}${console_temperature}   pH: ${fish.phmin}-${fish.phmax}`; 
+sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`
+hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
+availability.innerHTML = `Availability: ${codes_avail[avail]}`;
+social.innerHTML = `Behavior: ${codes_behave[behave]}`;
+agression.innerHTML = `Agression: ${codes_agres[agres]}`;
+breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
+origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
 
   // Create the iframe
   const iframe = document.createElement('iframe');
@@ -1719,7 +1765,7 @@ moreimg.src = `webps1/${id}.webp`;
   iframe.style.overflow = 'hidden';
 
 //Obtain fish id here
-const fish = fish_master.find(fish => fish.fish_id === id);
+
 fishname.innerText = fish.name_english;
 latin.innerText = `(${fish.name_latin})`;
 
@@ -1728,7 +1774,20 @@ latin.innerText = `(${fish.name_latin})`;
   fishsummary.appendChild(fishname);
   fishsummary.appendChild(latin);
   fishsummary.appendChild(moreimg);
+
+  summarybox.appendChild(mintanksize);
+  summarybox.appendChild(tempinfo);
+  summarybox.appendChild(sizeinfo);
+  summarybox.appendChild(hardiness);
+  summarybox.appendChild(availability);
+  summarybox.appendChild(social);
+  summarybox.appendChild(agression);
+  summarybox.appendChild(breeding);
+  summarybox.appendChild(origin);
+
+
   modalContent.appendChild(fishsummary);
+  modalContent.appendChild(summarybox);
  
 
   modalContent.appendChild(iframe);
