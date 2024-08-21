@@ -1697,6 +1697,7 @@ function showMore(src, id) {
   let agression = document.createElement("p");
   let breeding = document.createElement("p");
   let origin = document.createElement("p");
+  let ph = document.createElement("p");
 
 
   modal.id = 'moreModal';
@@ -1733,6 +1734,7 @@ social.className = "infocardtext";
 agression.className = "infocardtext";
 breeding.className = "infocardtext";
 origin.className = "infocardtext";
+ph.className = "infocardtext";
 
 const fish = fish_master.find(fish => fish.fish_id === id);
 let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
@@ -1746,9 +1748,10 @@ let behave = fish.school;
 let agres = fish.agression; 
 let breed = fish.breeding_difficulty; 
 
-
+if (window.innerWidth <= 550) {
 mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `T: ${temp_min}-${temp_max}${console_temperature}   pH: ${fish.phmin}-${fish.phmax}`; 
+tempinfo.innerHTML = `Temperature: ${temp_min}-${temp_max}${console_temperature}`; 
+ph.innerHTML =  `pH: ${fish.phmin}-${fish.phmax}`;
 sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`
 hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
 availability.innerHTML = `Availability: ${codes_avail[avail]}`;
@@ -1756,6 +1759,20 @@ social.innerHTML = `Behavior: ${codes_behave[behave]}`;
 agression.innerHTML = `Agression: ${codes_agres[agres]}`;
 breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
 origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
+}
+
+else {
+mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+tempinfo.innerHTML = `Water temperature: ${temp_min}-${temp_max}${console_temperature}`; 
+ph.innerHTML = `pH: ${fish.phmin}-${fish.phmax}`;
+sizeinfo.innerHTML = `Max fish size: ${card_size} ${console_fishsize}`
+hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
+availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
+social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
+agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
+breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`; 
+}
 
   // Create the iframe
   const iframe = document.createElement('iframe');
@@ -1772,11 +1789,12 @@ latin.innerText = `(${fish.name_latin})`;
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
   fishsummary.appendChild(fishname);
-  fishsummary.appendChild(latin);
+  // fishsummary.appendChild(latin);
   fishsummary.appendChild(moreimg);
 
   summarybox.appendChild(mintanksize);
   summarybox.appendChild(tempinfo);
+  summarybox.appendChild(ph);
   summarybox.appendChild(sizeinfo);
   summarybox.appendChild(hardiness);
   summarybox.appendChild(availability);
