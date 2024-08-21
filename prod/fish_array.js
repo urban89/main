@@ -3541,7 +3541,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "6",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "270",
