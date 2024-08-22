@@ -1404,7 +1404,6 @@ background-color:  #86a5def8;
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
   font-weight: 500;
   border-radius: 5px;
-  cursor: pointer; 
 }
 
 .more_button:hover {
@@ -1513,4 +1512,17 @@ background-color:  #86a5def8;
   border-radius: 8px;
   box-shadow: 1vw 1vw 2vw #4c8ee6ba;
   display: inline-block;
+}
+
+.moreconsole{
+  position: absolute;
+  left: 3px;
+  top: 5px;
+}
+
+
+.moreConsoleText {
+  font-size: 0.8rem;
+  color: grey;
+margin: 0;
 }
