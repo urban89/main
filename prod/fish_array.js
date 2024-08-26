@@ -1,4 +1,5 @@
-//////csv_master_v8.4
+///csv_master_v9.0
+
 
 const fish_master =  [
   {
@@ -307,7 +308,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "116",
@@ -395,7 +396,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "121",
@@ -3539,8 +3540,8 @@ const fish_master =  [
     origin: "Myanmar,",
     region: "3",
     isfish: "1",
-    phmin: "6",
-    phmax: "7",
+    phmin: "6.5",
+    phmax: "7.5",
     more: "1"
   },
   {
@@ -7215,7 +7216,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "460",
@@ -10760,6 +10761,116 @@ const fish_master =  [
     more: "0"
   },
   {
+    fish_id: "491",
+    name_english: "Yellow Phantom Tetra",
+    alt_name: "",
+    name_latin: "Hyphessobrycon roseus",
+    swim: "2",
+    cm_max: "2",
+    uncare: "2",
+    breeding_difficulty: "2",
+    availability: "2",
+    school: "3",
+    tank_size_liter: "25",
+    temperature_min: "20",
+    temperature_max: "28",
+    agression: "1",
+    origin: "Suriname, French Guiana",
+    region: "1",
+    isfish: "1",
+    phmin: "5",
+    phmax: "7",
+    more: "1"
+  },
+  {
+    fish_id: "492",
+    name_english: "African Banded Barb",
+    alt_name: "",
+    name_latin: "Barbus fasciolatus",
+    swim: "2",
+    cm_max: "6",
+    uncare: "3",
+    breeding_difficulty: "3",
+    availability: "2",
+    school: "3",
+    tank_size_liter: "75",
+    temperature_min: "20",
+    temperature_max: "26",
+    agression: "1",
+    origin: "Africa",
+    region: "2",
+    isfish: "1",
+    phmin: "5",
+    phmax: "6.5",
+    more: "1"
+  },
+  {
+    fish_id: "493",
+    name_english: "Brevis Shell Dweller",
+    alt_name: "",
+    name_latin: "Neolamprologus brevis",
+    swim: "2",
+    cm_max: "6",
+    uncare: "2",
+    breeding_difficulty: "2",
+    availability: "2",
+    school: "2",
+    tank_size_liter: "60",
+    temperature_min: "23",
+    temperature_max: "27",
+    agression: "2",
+    origin: "Lake Tanganyika",
+    region: "2",
+    isfish: "1",
+    phmin: "7.5",
+    phmax: "9",
+    more: "1"
+  },
+  {
+    fish_id: "494",
+    name_english: "Brittan’s rasbora",
+    alt_name: "",
+    name_latin: "Kottelatia brittani",
+    swim: "2",
+    cm_max: "6",
+    uncare: "2",
+    breeding_difficulty: "2",
+    availability: "1",
+    school: "3",
+    tank_size_liter: "60",
+    temperature_min: "20",
+    temperature_max: "26",
+    agression: "1",
+    origin: "Malaysia",
+    region: "3",
+    isfish: "1",
+    phmin: "6",
+    phmax: "7.5",
+    more: "1"
+  },
+  {
+    fish_id: "495",
+    name_english: "Ceros Tetra",
+    alt_name: "",
+    name_latin: "Moenkhausia ceros",
+    swim: "2",
+    cm_max: "5",
+    uncare: "2",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "3",
+    tank_size_liter: "60",
+    temperature_min: "24",
+    temperature_max: "28",
+    agression: "1",
+    origin: "Peru, Brazil",
+    region: "1",
+    isfish: "1",
+    phmin: "5.5",
+    phmax: "7",
+    more: "1"
+  },
+  {
     fish_id: "900",
     name_english: "Cherry Shrimp",
     alt_name: "",
@@ -11664,4 +11775,4 @@ const fish_master =  [
 ]
 
 
-//////csv_master_v8.4
+///csv_master_v9.0
