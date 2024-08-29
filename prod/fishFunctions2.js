@@ -783,6 +783,19 @@ fishcard_divs.forEach(div => {
     fishcard.style.display = "none";
     father.appendChild(infocard);
     
+    //// more module button 
+    if (fish.more == 1) {
+      let moreButton = document.createElement('button');
+      moreButton.className = 'more_button';
+      moreButton.innerHTML = 'More';
+      // moreButton.id = `m${fish.fish_id}`; 
+      infocard.appendChild(moreButton);
+      moreButton.onclick = function() {
+      showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
+      };
+    }
+
+
 
     iconimage.addEventListener("click", infocardKill);
     function infocardKill() {
@@ -801,4 +814,181 @@ function poolChanges () {
   setTimeout(() => {
     fishcount.classList.remove('value-updated');
   }, 1000);
+}
+
+
+function showMore(src, id) {
+  // Create the modal div
+  const modal = document.createElement('div');
+  const fishsummary = document.createElement('div');
+  const fishname = document.createElement('h1');
+  const latin = document.createElement('span');
+  const moreimg = document.createElement('img');
+  const summarybox = document.createElement('div');
+
+  let mintanksize = document.createElement("p");
+  let tempinfo = document.createElement("p");
+  let sizeinfo = document.createElement("p");
+  let hardiness = document.createElement("p");
+  let availability = document.createElement("p");
+  let social = document.createElement("p");
+  let agression = document.createElement("p");
+  let breeding = document.createElement("p");
+  let origin = document.createElement("p");
+  let ph = document.createElement("p");
+  let more_console = document.createElement("div");
+  let idshown = document.createElement("p");
+  let isfishshown = document.createElement("p");
+
+
+
+  modal.id = 'moreModal';
+  modal.className = 'modal';
+
+  // Create the modal content div
+  const modalContent = document.createElement('div');
+  modalContent.className = 'modal_content';
+
+  // Create the close button
+  const closeButton = document.createElement('span');
+  closeButton.className = 'close_button';
+  closeButton.innerHTML = '&times;';
+  closeButton.onclick = function() {
+      closeMore(modal);
+  };
+
+
+////Adding classes:
+fishsummary.className = "fishsummary";
+fishname.className = "namesummary";
+latin.className = "latinsummary";
+moreimg.className = "moreimg"; 
+moreimg.src = `webps1/${id}.webp`;
+summarybox.className = "summarybox";
+more_console.className = "moreconsole";
+idshown.className = "moreConsoleText";
+isfishshown.className = "moreConsoleText";
+
+mintanksize.className = "infocardtext";
+tempinfo.className = "infocardtext";
+sizeinfo.className = "infocardtext";
+    
+hardiness.className = "infocardtext";
+availability.className = "infocardtext";
+social.className = "infocardtext";
+agression.className = "infocardtext";
+breeding.className = "infocardtext";
+origin.className = "infocardtext";
+ph.className = "infocardtext";
+
+
+const fish = fish_master.find(fish => fish.fish_id === id);
+
+var isfish = (fish.isfish === 1) ? "false" : "true";
+idshown.innerHTML = `species ID: #${id}`;
+isfishshown.innerHTML = `isFish?: ${isfish}`;
+
+let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
+let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+let card_size_cal = Math.round(fish.cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+let hardi = fish.uncare; 
+let avail = fish.availability; 
+let behave = fish.school; 
+let agres = fish.agression; 
+let breed = fish.breeding_difficulty; 
+
+if (window.innerWidth <= 550) {
+mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+tempinfo.innerHTML = `Temperature: ${temp_min}-${temp_max}${console_temperature}`; 
+ph.innerHTML =  `pH: ${fish.phmin}-${fish.phmax}`;
+sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`
+hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
+availability.innerHTML = `Availability: ${codes_avail[avail]}`;
+social.innerHTML = `Behavior: ${codes_behave[behave]}`;
+agression.innerHTML = `Agression: ${codes_agres[agres]}`;
+breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
+origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
+}
+
+else {
+mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+tempinfo.innerHTML = `Water temperature: ${temp_min}-${temp_max}${console_temperature}`; 
+ph.innerHTML = `pH: ${fish.phmin}-${fish.phmax}`;
+sizeinfo.innerHTML = `Max fish size: ${card_size} ${console_fishsize}`
+hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
+availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
+social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
+agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
+breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
+origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`; 
+}
+
+  // Create the iframe
+  const iframe = document.createElement('iframe');
+  iframe.className = 'iframe_content';
+  iframe.src = src;
+  iframe.setAttribute('scrolling', 'no');
+  iframe.style.overflow = 'hidden';
+
+//Obtain fish id here
+
+fishname.innerText = fish.name_english;
+latin.innerText = `(${fish.name_latin})`;
+
+  // Append the close button and iframe to the modal content
+  modalContent.appendChild(closeButton);
+  fishsummary.appendChild(fishname);
+  // fishsummary.appendChild(latin);
+  fishsummary.appendChild(moreimg);
+
+  more_console.appendChild(idshown);
+  more_console.appendChild(isfishshown);
+
+
+  summarybox.appendChild(mintanksize);
+  summarybox.appendChild(tempinfo);
+  summarybox.appendChild(ph);
+  summarybox.appendChild(sizeinfo);
+  summarybox.appendChild(hardiness);
+  summarybox.appendChild(availability);
+  summarybox.appendChild(social);
+  summarybox.appendChild(agression);
+  summarybox.appendChild(breeding);
+  summarybox.appendChild(origin);
+
+
+  modalContent.appendChild(fishsummary);
+  modalContent.appendChild(summarybox);
+  modalContent.appendChild(more_console);
+
+  modalContent.appendChild(iframe);
+
+
+
+  // Append the modal content to the modal
+  modal.appendChild(modalContent);
+
+  // Append the modal to the body
+  document.body.appendChild(modal);
+
+  // Display the modal
+  modal.style.display = 'block';
+
+  // Disable scrolling on the main page
+  document.body.style.overflow = 'hidden';
+
+}
+
+
+function closeMore(modal) {
+  // Hide the modal
+  modal.style.display = 'none';
+
+  // Remove the modal from the DOM
+  document.body.removeChild(modal);
+
+  // Re-enable scrolling on the main page
+  document.body.style.overflow = 'auto';
 }

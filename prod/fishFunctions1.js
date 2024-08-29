@@ -1841,17 +1841,6 @@ latin.innerText = `(${fish.name_latin})`;
   // Disable scrolling on the main page
   document.body.style.overflow = 'hidden';
 
-
-//   iframe.onload = function() {
-//     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-//     const iframeBody = iframeDocument.body;
-
-
-//     iframeBody.style.padding = '100px';
-//     iframeBody.style.font = 'red';
-// };
-
-
 }
 
 
