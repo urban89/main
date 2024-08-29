@@ -1,7 +1,5 @@
-///csv_master_v9.0
-
-
-const fish_master =  [
+ ////csv_master_v9.1
+const fish_master = [
   {
     fish_id: "102",
     name_english: "Black phantom tetra",
@@ -770,7 +768,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "138",
@@ -990,7 +988,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "148",
@@ -1012,7 +1010,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "149",
@@ -3366,7 +3364,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "262",
@@ -6424,7 +6422,7 @@ const fish_master =  [
     isfish: "1",
     phmin: "6.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "423",
@@ -10871,6 +10869,116 @@ const fish_master =  [
     more: "1"
   },
   {
+    fish_id: "496",
+    name_english: "Checkered Barb",
+    alt_name: "",
+    name_latin: "Oliotius oligolepis ",
+    swim: "2",
+    cm_max: "4.5",
+    uncare: "3",
+    breeding_difficulty: "2",
+    availability: "3",
+    school: "3",
+    tank_size_liter: "60",
+    temperature_min: "20",
+    temperature_max: "26",
+    agression: "1",
+    origin: "Sumatra",
+    region: "3",
+    isfish: "1",
+    phmin: "5.5",
+    phmax: "7.5",
+    more: "1"
+  },
+  {
+    fish_id: "497",
+    name_english: "Crocodile Catfish",
+    alt_name: "",
+    name_latin: "Bagarius suchus",
+    swim: "1",
+    cm_max: "70",
+    uncare: "1",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "1",
+    tank_size_liter: "2500",
+    temperature_min: "18",
+    temperature_max: "23",
+    agression: "3",
+    origin: "Thailand, Laos, Cambodia",
+    region: "3",
+    isfish: "1",
+    phmin: "65",
+    phmax: "7.5",
+    more: "1"
+  },
+  {
+    fish_id: "498",
+    name_english: "White-Spotted Cichlid",
+    alt_name: "",
+    name_latin: "Tropheus duboisi",
+    swim: "2",
+    cm_max: "12",
+    uncare: "2",
+    breeding_difficulty: "3",
+    availability: "2",
+    school: "2",
+    tank_size_liter: "110",
+    temperature_min: "23",
+    temperature_max: "28",
+    agression: "2",
+    origin: "Lake Tanganyika",
+    region: "2",
+    isfish: "1",
+    phmin: "7.5",
+    phmax: "9",
+    more: "1"
+  },
+  {
+    fish_id: "499",
+    name_english: "Chukai Betta",
+    alt_name: "",
+    name_latin: "Betta tussyae",
+    swim: "2",
+    cm_max: "4",
+    uncare: "2",
+    breeding_difficulty: "4",
+    availability: "1",
+    school: "1",
+    tank_size_liter: "40",
+    temperature_min: "23",
+    temperature_max: "28",
+    agression: "1",
+    origin: "Malaysia",
+    region: "3",
+    isfish: "1",
+    phmin: "5",
+    phmax: "6.5",
+    more: "1"
+  },
+  {
+    fish_id: "500",
+    name_english: "Clown Barb",
+    alt_name: "",
+    name_latin: "Barbodes everetti ",
+    swim: "2",
+    cm_max: "12",
+    uncare: "3",
+    breeding_difficulty: "4",
+    availability: "2",
+    school: "3",
+    tank_size_liter: "150",
+    temperature_min: "18",
+    temperature_max: "28",
+    agression: "1",
+    origin: "Bornea",
+    region: "3",
+    isfish: "1",
+    phmin: "6",
+    phmax: "7",
+    more: "1"
+  },
+  {
     fish_id: "900",
     name_english: "Cherry Shrimp",
     alt_name: "",
@@ -11774,5 +11882,4 @@ const fish_master =  [
   }
 ]
 
-
-///csv_master_v9.0
+////csv_master_v9.1
