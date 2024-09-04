@@ -1560,7 +1560,7 @@ margin: 0;
       opacity: 1;
   }
   100% {
-      bottom: 100%;
+      bottom: 95%;
       opacity: 0;
   }
 }
