@@ -1,4 +1,5 @@
- ////csv_master_v9.1
+ ////csv_master_v9.2
+
 const fish_master = [
   {
     fish_id: "102",
@@ -42,7 +43,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "104",
@@ -614,7 +615,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "131",
@@ -966,7 +967,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "147",
@@ -1032,7 +1033,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "150",
@@ -1054,7 +1055,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "151",
@@ -3386,7 +3387,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "263",
@@ -4640,7 +4641,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "324",
@@ -4777,7 +4778,7 @@ const fish_master = [
   {
     fish_id: "330",
     name_english: "Clown Killifish",
-    alt_name: "",
+    alt_name: "Banded Panchax",
     name_latin: "Epiplatys annulatus",
     swim: "2",
     cm_max: "3.5",
@@ -4794,7 +4795,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "331",
@@ -6202,7 +6203,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "410",
@@ -6224,7 +6225,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "411",
@@ -7632,7 +7633,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.2",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "5",
@@ -7786,7 +7787,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "12",
@@ -8050,7 +8051,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "24",
@@ -8292,7 +8293,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "35",
@@ -8336,7 +8337,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "37",
@@ -8776,7 +8777,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "60",
@@ -9920,7 +9921,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "380",
@@ -11882,4 +11883,4 @@ const fish_master = [
   }
 ]
 
-////csv_master_v9.1
+////csv_master_v9.2
