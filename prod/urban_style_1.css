@@ -1542,3 +1542,25 @@ margin: 0;
   width: 15px;
 
 }}
+
+.bubble {
+  position: absolute;
+  bottom: 1%;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(44, 241, 255, 0.8);
+  border-radius: 50%;
+  animation: rise 5s infinite;
+  box-shadow: 1px 1px 1px rgb(168, 255, 248);
+}
+
+@keyframes rise {
+  0% {
+      bottom: 1%;
+      opacity: 1;
+  }
+  100% {
+      bottom: 100%;
+      opacity: 0;
+  }
+}
