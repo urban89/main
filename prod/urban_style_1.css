@@ -1526,3 +1526,18 @@ background-color:  #86a5def8;
   color: grey;
 margin: 0;
 }
+
+
+.copy {
+  position: absolute;
+  top: 7px;
+  right: 7px; 
+  height: 10px;
+  width: 10px;
+}
+
+@media screen and (min-width: 770px) { .copy  {
+  height: 15px;
+  width: 15px;
+
+}}
