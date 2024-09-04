@@ -1447,9 +1447,9 @@ background-color:  #86a5def8;
 
 .close_button {
   position: absolute;
-  top: 10px;
-  left: 25px;
-  color: #1d0707;
+  top: 5px;
+  left: 3px;
+  color: #360e0e;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
@@ -1457,9 +1457,10 @@ background-color:  #86a5def8;
 
 .close_button:hover,
 .close_button:focus {
-  color: black;
+  color: rgb(36, 28, 4);
   text-decoration: none;
   cursor: pointer;
+  text-shadow: 3px 3px 6px #6f7417;
 }
 
 
