@@ -1448,7 +1448,7 @@ background-color:  #86a5def8;
 .close_button {
   position: absolute;
   top: 10px;
-  right: 25px;
+  left: 25px;
   color: #1d0707;
   font-size: 30px;
   font-weight: bold;
@@ -1516,7 +1516,7 @@ background-color:  #86a5def8;
 
 .moreconsole{
   position: absolute;
-  left: 3px;
+  right: 3px;
   top: 5px;
 }
 
