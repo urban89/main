@@ -1528,7 +1528,7 @@ background-color:  #86a5def8;
 margin: 0;
 }
 
-
+/*copy to clipboard*/ 
 .copy {
   position: absolute;
   top: 7px;
@@ -1543,9 +1543,11 @@ margin: 0;
 
 }}
 
+
+/*bubble animation*/ 
 .bubble {
   position: absolute;
-  bottom: 1%;
+  bottom: 0;
   width: 2px;
   height: 2px;
   background-color: rgba(44, 241, 255, 0.8);
@@ -1556,11 +1558,15 @@ margin: 0;
 
 @keyframes rise {
   0% {
-      bottom: 1%;
-      opacity: 1;
+      bottom: 0;
+      opacity: 0; /* Start invisible */
+      transform: translateY(0); /* Initial state */
+  }
+  10% {
+      opacity: 1; /* Fade in */
   }
   100% {
-      bottom: 95%;
-      opacity: 0;
+      bottom: 100%; /* Move to the top */
+      opacity: 0; /* Fade out */
   }
 }
