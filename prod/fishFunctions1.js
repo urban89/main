@@ -1815,7 +1815,7 @@ origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`;
 
 //Obtain fish id here
 
-fishname.innerText = fish.name_english;
+fishname.innerText = uppercaser(fish.name_english);
 latin.innerText = `(${fish.name_latin})`;
 
   // Append the close button and iframe to the modal content
