@@ -852,7 +852,7 @@ function showMore(src, id) {
   // Create the close button
   const closeButton = document.createElement('span');
   closeButton.className = 'close_button';
-  closeButton.innerHTML = '&times;';
+  closeButton.innerHTML = '←';
   closeButton.onclick = function() {
       closeMore(modal);
   };
