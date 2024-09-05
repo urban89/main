@@ -14,7 +14,6 @@ const show_celsius = "Temperature in Celsius";
 const show_liter =  "Tank size in Liter";
 const show_gallon = "Tank size in Gallon"; 
 const maincount = fish_master.length; 
-const bcimages = 5; 
 
 
  //////////////////////////////////////////////
@@ -694,6 +693,7 @@ fishcard_divs.forEach(div => {
     let infocard = document.createElement('div'); 
     
     let iconimage = document.createElement("img");
+    let copyimage = document.createElement("img");
     let fishname2 = document.createElement("p");
     let latin = document.createElement("p");
     let mintanksize = document.createElement("p");
@@ -716,6 +716,7 @@ fishcard_divs.forEach(div => {
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
     iconimage.id = info_id; //might be completely unnecessary 
+    copyimage.src = 'icon/copy.png';
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish.name_latin}`;
     mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
@@ -762,9 +763,11 @@ fishcard_divs.forEach(div => {
     agression.className = "infocardtext";
     breeding.className = "infocardtext";
     origin.className = "infocardtext";
+    copyimage.className = "copy";
     
     infocard.id = info_id; 
     infocard.appendChild(iconimage);
+    infocard.appendChild(copyimage);
     infocard.appendChild(fishname2);
     infocard.appendChild(latin);
     infocard.appendChild(mintanksize);
@@ -782,6 +785,9 @@ fishcard_divs.forEach(div => {
     let father = fishcard.parentNode;
     fishcard.style.display = "none";
     father.appendChild(infocard);
+
+
+    let textCopy = `${name} (${fish.name_latin})`;
     
     //// more module button 
     if (fish.more == 1) {
@@ -798,10 +804,21 @@ fishcard_divs.forEach(div => {
 
 
     iconimage.addEventListener("click", infocardKill);
+    copyimage.addEventListener("click", copyname);
     function infocardKill() {
       infocard.remove();
       fishcard.style.display = "block";
     }
+
+    function copyname () {
+      // Use the Clipboard API to copy the text
+      navigator.clipboard.writeText(textCopy).then(() => {
+       // Optional: Provide feedback to the user
+       alert(`Copied to clipboard: ${textCopy}`);
+     }).catch(err => {
+       console.error('Failed to copy: ', err);
+     });
+   }
 
     });
 });
