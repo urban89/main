@@ -1861,18 +1861,25 @@ latin.innerText = `(${fish.name_latin})`;
   // Disable scrolling on the main page
   document.body.style.overflow = 'hidden';
 
+  // Event listener for keydown ESC
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' || event.key === 'Esc') { // Check if 'ESC' key is pressed
+    closeMore(modal); // Call the function to close the modal
+  }
+});
+
 }
 
 
 function closeMore(modal) {
+  if (modal && modal.parentNode) {
   // Hide the modal
   modal.style.display = 'none';
-
   // Remove the modal from the DOM
   document.body.removeChild(modal);
-
   // Re-enable scrolling on the main page
   document.body.style.overflow = 'auto';
+}
 }
 
 
