@@ -6,7 +6,10 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background-color: #235197;
+  /* background-color: #235197; */
+  background-color: rgb(35, 81, 151);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="5" d="M 0 100 Q 50 150 100 100 T 200 100" /><path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="4" d="M 0 150 Q 50 200 100 150 T 200 150" />  <path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="5" d="M 0 50 Q 50 0 100 50 T 200 50" />   </svg>');
+  background-size: 200px 200px;
   }
 
   /* Hide arrows in input type number */
@@ -302,9 +305,10 @@ position: relative;
 .ghostcard {
   flex: 0 0 calc(33.33% - 2vw); 
   margin: 5px; 
+  opacity: 0;
   box-sizing: border-box;
   padding: 1vw;
-  background-color: #235197;
+  /* background-color: #23519700; */
 background-attachment: fixed;
 position: relative;
 }
