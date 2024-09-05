@@ -1444,6 +1444,7 @@ for (let i = 0; i < 8; i++) {
   let ghost = document.createElement('div');
   let ghostpic = document.createElement('img');
   ghostpic.src = "icon/ghost.png";
+  ghostpic.alt = "ignore this user interface element";
   ghost.className = "ghostcard";
   ghost.appendChild(ghostpic);
   result_lists.appendChild(ghost); 
