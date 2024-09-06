@@ -1414,6 +1414,19 @@ background-color:  #86a5def8;
   background: linear-gradient(145deg, #d5bf90e0 22%, #b69c73e0 88%);
 }
 
+.more_button_nonfish {
+  position: absolute;
+  bottom: 53%;
+  right: 4%;
+  background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.more_button_nonfish:hover {
+  background: linear-gradient(145deg, #bebebe 22%, #bcb1d2 88%);
+}
+
 
 /*****************/ 
 .modal {
@@ -1438,6 +1451,19 @@ background-color:  #86a5def8;
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
   border-radius: 5px;
 }
+
+
+.modal_content_nonfish {
+  position: relative;
+  /* margin: auto; */
+  padding: 2%;
+  width: 96%;
+  height: 170%;
+  /* max-width: 800px;  */
+  background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
+  border-radius: 5px;
+}
+
 
 .iframe_content {
   width: 100%;
