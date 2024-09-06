@@ -1603,7 +1603,7 @@ fishcard_divs.forEach(div => {
     //// more module button 
     if (fish.more == 1) {
       let moreButton = document.createElement('button');
-      moreButton.className = 'more_button';
+      moreButton.className = fish.isfish == 1 ? 'more_button' : 'more_button_nonfish';
       moreButton.innerHTML = 'More';
       // moreButton.id = `m${fish.fish_id}`; 
       infocard.appendChild(moreButton);
@@ -1729,7 +1729,7 @@ function showMore(src, id) {
 
   // Create the modal content div
   const modalContent = document.createElement('div');
-  modalContent.className = 'modal_content';
+  modalContent.className = fish.isfish == 1 ? 'modal_content' : 'modal_content_nonfish';
 
   // Create the close button
   const closeButton = document.createElement('span');
