@@ -1571,6 +1571,9 @@ fishcard_divs.forEach(div => {
     agression.innerHTML = `Agression: ${codes_agres[agres]}`;
     breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
     origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
+
+    var origin_len = (fish.origin).length;
+  
     
     iconimage.className = "iconimage";
     fishname2.className = "title";
@@ -1596,7 +1599,13 @@ fishcard_divs.forEach(div => {
     social.className = "infocardtext";
     agression.className = "infocardtext";
     breeding.className = "infocardtext";
-    origin.className = "infocardtext";
+
+    if (origin_len <25) {
+      origin.className = "infocardtext";
+    }
+else {
+  origin.className = "infocardtext_long";
+}
     copyimage.className = "copy";
 
 
@@ -1762,7 +1771,12 @@ availability.className = "infocardtext";
 social.className = "infocardtext";
 agression.className = "infocardtext";
 breeding.className = "infocardtext";
+
+
+
 origin.className = "infocardtext";
+
+
 ph.className = "infocardtext";
 
 

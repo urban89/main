@@ -340,6 +340,11 @@ position: relative;
   font-size: 2.5vw;
   margin: 0; 
 }
+.infocardtext_long {
+  font-size: 2.5vw;
+  margin: 0; 
+}
+
 
 .fishcardimage {
   width: 20vw;
@@ -589,6 +594,11 @@ position: relative;
    }
    .infocardtext {
     font-size: 1.5vw;
+  }
+
+  .infocardtext_long {
+    font-size: 1.3vw;
+    margin: 0; 
   }
 
   .fish_card, .infocard, .nonfish_card, .ninfocard {
