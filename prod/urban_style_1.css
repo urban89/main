@@ -340,10 +340,7 @@ position: relative;
   font-size: 2.5vw;
   margin: 0; 
 }
-.infocardtext_long {
-  font-size: 2.5vw;
-  margin: 0; 
-}
+
 
 
 .fishcardimage {
@@ -462,9 +459,7 @@ position: relative;
     font-size: 2.92vw;
   }
 
-  .infocardtext_long {
-    font-size: 2vw;
-  }
+
   .capradiolabel {
     font-size: 3vw;
   }
@@ -600,10 +595,7 @@ position: relative;
     font-size: 1.5vw;
   }
 
-  .infocardtext_long {
-    font-size: 1.3vw;
-    margin: 0; 
-  }
+
 
   .fish_card, .infocard, .nonfish_card, .ninfocard {
     padding: 0.5vw; 
@@ -763,9 +755,7 @@ position: relative;
   font-size: 0.8vw;
 }
 
-.infocardtext_long {
-  font-size: 0.7vw;
-}
+
 
 #cpanel, #cpanel1, #cpanel2  {
   padding: 1vw;
@@ -811,11 +801,7 @@ position: relative;
   margin-bottom: 0.18rem;
 }
 
-.infocardtext_long {
-  font-size: 1rem;
-  margin-top: 0.18rem;
-  margin-bottom: 0.18rem;
-}
+
 
 #cpanel, #cpanel1, #cpanel2  {
   padding: 17px;

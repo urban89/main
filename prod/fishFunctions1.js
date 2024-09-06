@@ -1599,13 +1599,9 @@ fishcard_divs.forEach(div => {
     social.className = "infocardtext";
     agression.className = "infocardtext";
     breeding.className = "infocardtext";
+    origin.className = "infocardtext";
 
-    if (origin_len <25) {
-      origin.className = "infocardtext";
-    }
-else {
-  origin.className = "infocardtext_long";
-}
+  
     copyimage.className = "copy";
 
 
