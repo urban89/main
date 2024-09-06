@@ -1701,6 +1701,8 @@ function PoolFlash () {
 
 function showMore(src, id) {
   // Create the modal div
+  const fish = fish_master.find(fish => fish.fish_id === id);
+  
   const modal = document.createElement('div');
   const fishsummary = document.createElement('div');
   const fishname = document.createElement('h1');
@@ -1764,7 +1766,7 @@ origin.className = "infocardtext";
 ph.className = "infocardtext";
 
 
-const fish = fish_master.find(fish => fish.fish_id === id);
+
 
 var isfish = (fish.isfish === 1) ? "false" : "true";
 idshown.innerHTML = `species ID: #${id}`;
