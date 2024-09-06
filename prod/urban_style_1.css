@@ -461,6 +461,10 @@ position: relative;
   .fishsize, .fishtemp, .tanksize, .infocardtext {
     font-size: 2.92vw;
   }
+
+  .infocardtext_long {
+    font-size: 2vw;
+  }
   .capradiolabel {
     font-size: 3vw;
   }
@@ -759,6 +763,10 @@ position: relative;
   font-size: 0.8vw;
 }
 
+.infocardtext_long {
+  font-size: 0.7vw;
+}
+
 #cpanel, #cpanel1, #cpanel2  {
   padding: 1vw;
  }
@@ -798,6 +806,12 @@ position: relative;
   top: 30px;
  }
 .infocardtext {
+  font-size: 1rem;
+  margin-top: 0.18rem;
+  margin-bottom: 0.18rem;
+}
+
+.infocardtext_long {
   font-size: 1rem;
   margin-top: 0.18rem;
   margin-bottom: 0.18rem;
