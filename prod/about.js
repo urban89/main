@@ -121,6 +121,7 @@ let wasia$$  = perCounter ("region", "W");
 
 let count_fish = document.getElementById("count_fish");
 let count_other = document.getElementById("count_other");
+let morecount = document.getElementById("morecount");
 
 
 //adding event listeners 
@@ -140,6 +141,7 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
 
     count_fish.innerText = fishCounter ();
     count_other.innerText = maincount - fishCounter ();
+    morecount.innerText =  moreCounter ();
 }); // event listeners end here 
 
   
@@ -235,9 +237,9 @@ else {fishcard.className = "nonfish_card"}
 
 
 
-exampleFiller ()
-flipListener()
-
+// exampleFiller ()
+// flipListener()
+//--> won't show examples for now 
 
 
 
@@ -411,4 +413,14 @@ function commaRemover (x) {
         }
       }
       return count
+    }
+
+    function moreCounter () {
+     var count = 0; 
+      for (fish of fish_master) {
+        if (fish.more == "1") {
+          count = count + 1; 
+        }
+    }
+    return count; 
     }
