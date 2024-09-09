@@ -141,7 +141,7 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
 
     count_fish.innerText = fishCounter ();
     count_other.innerText = maincount - fishCounter ();
-    morecount.innerText =  moreCounter ();
+     morecount.innerText =  `${moreCounter ()} (${Math.round(((moreCounter ()/maincount)*100)*10)/10}%)`;
 }); // event listeners end here 
 
   
