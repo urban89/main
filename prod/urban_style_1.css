@@ -1547,12 +1547,16 @@ background-color:  #86a5def8;
   border-style: solid;
   border-width: 1px;
   position: absolute; 
-  right: 8vw; 
+  right: 6vw; 
   top: 10vh; 
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cd89 50%);
   border-radius: 8px;
   box-shadow: 1vw 1vw 2vw #4c8ee6ba;
   display: inline-block;
+  width: 40vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
 }
 
 .moreconsole{
