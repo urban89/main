@@ -1880,6 +1880,11 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+document.querySelectorAll('.summarybox').forEach(container => {
+  // Use setInterval to create bubbles at regular intervals
+  setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
+});
+
 }
 
 
@@ -1929,6 +1934,7 @@ function startBubbles() {
       // Use setInterval to create bubbles at regular intervals
       setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
   });
+
 }
 
 // Start the bubbles when the page loads
