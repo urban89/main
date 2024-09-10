@@ -1559,7 +1559,7 @@ background-color:  #86a5def8;
   top: 10vh;  */
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cd89 50%);
   border-radius: 8px;
-  box-shadow: 1vw 1vw 2vw #4c8ee6ba;
+  /* box-shadow: 1vw 1vw 2vw #4c8ee6ba; */
   /* display: inline; */
   /* width: 40vw;
   height: 30vw; */
@@ -1581,6 +1581,7 @@ background-color:  #86a5def8;
   width: 40vw;
   height: 30vw;
   margin-left: 5%;
+  box-shadow: 1vw 1vw 2vw #4c8ee6ba;
 }
 
 .moreconsole{
