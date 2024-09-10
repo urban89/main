@@ -1566,6 +1566,7 @@ background-color:  #86a5def8;
   word-wrap: break-word;
   overflow-wrap: break-word;
   position: relative;
+  overflow-y: auto;
   
 }
 
