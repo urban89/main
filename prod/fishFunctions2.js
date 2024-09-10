@@ -845,6 +845,7 @@ function showMore(src, id) {
   const fish = fish_master.find(fish => fish.fish_id === id);
   const modal = document.createElement('div');
   const fishsummary = document.createElement('div');
+  const masterline = document.createElement('span');
   const fishname = document.createElement('h1');
   const latin = document.createElement('span');
   const moreimg = document.createElement('img');
@@ -889,6 +890,7 @@ latin.className = "latinsummary";
 moreimg.className = "moreimg"; 
 moreimg.src = `webps1/${id}.webp`;
 summarybox.className = "summarybox";
+masterline.className = "masterline";
 more_console.className = "moreconsole";
 idshown.className = "moreConsoleText";
 isfishshown.className = "moreConsoleText";
@@ -964,7 +966,7 @@ latin.innerText = `(${fish.name_latin})`;
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
   fishsummary.appendChild(fishname);
-  // fishsummary.appendChild(latin);
+  fishsummary.appendChild(masterline);
   fishsummary.appendChild(moreimg);
 
   more_console.appendChild(idshown);
@@ -982,9 +984,10 @@ latin.innerText = `(${fish.name_latin})`;
   summarybox.appendChild(breeding);
   summarybox.appendChild(origin);
 
-
+  masterline.appendChild(moreimg);
+  masterline.appendChild(summarybox);
   modalContent.appendChild(fishsummary);
-  modalContent.appendChild(summarybox);
+  // modalContent.appendChild(summarybox);
   modalContent.appendChild(more_console);
 
   modalContent.appendChild(iframe);
