@@ -1530,6 +1530,12 @@ background-color:  #86a5def8;
   padding-bottom: 2vw;
 }
 
+.masterline {
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Aligns items vertically in the center */
+  position: relative; 
+}
+
 .moreimg {
   width: 40vw;
   height: 30vw;
@@ -1544,18 +1550,22 @@ background-color:  #86a5def8;
 
 .summarybox {
   padding: 2vw;
+  box-sizing: border-box;
   border-style: solid;
+  margin-left: 5%;
   border-width: 1px;
-  position: absolute; 
-  right: 6vw; 
-  top: 10vh; 
+  /* position: absolute;  */
+  /* right: 6vw; 
+  top: 10vh;  */
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cd89 50%);
   border-radius: 8px;
   box-shadow: 1vw 1vw 2vw #4c8ee6ba;
-  display: inline-block;
+  display: inline;
   width: 40vw;
+  height: 30vw;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  position: relative;
   
 }
 
