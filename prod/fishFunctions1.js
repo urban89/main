@@ -1715,6 +1715,7 @@ function showMore(src, id) {
   const latin = document.createElement('span');
   const moreimg = document.createElement('img');
   const summarybox = document.createElement('div');
+  const bubbleghost = document.createElement('div');
 
   let mintanksize = document.createElement("p");
   let tempinfo = document.createElement("p");
@@ -1756,6 +1757,7 @@ moreimg.className = "moreimg";
 moreimg.src = `webps1/${id}.webp`;
 summarybox.className = "summarybox";
 masterline.className = "masterline";
+bubbleghost.className = "bubbleghost"; 
 
 more_console.className = "moreconsole";
 idshown.className = "moreConsoleText";
@@ -1857,7 +1859,9 @@ latin.innerText = `(${fish.name_latin})`;
   summarybox.appendChild(origin);
 
   masterline.appendChild(moreimg);
-  masterline.appendChild(summarybox);
+  bubbleghost.appendChild(summarybox);
+  // masterline.appendChild(summarybox);
+  masterline.appendChild(bubbleghost);
 
 
   modalContent.appendChild(fishsummary);
@@ -1887,7 +1891,7 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-document.querySelectorAll('.summarybox').forEach(container => {
+document.querySelectorAll('.bubbleghost').forEach(container => {
   // Use setInterval to create bubbles at regular intervals
   setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
 });

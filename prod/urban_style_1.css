@@ -1552,7 +1552,7 @@ background-color:  #86a5def8;
   padding: 2vw;
   box-sizing: border-box;
   border-style: solid;
-  margin-left: 5%;
+  /* margin-left: 5%; */
   border-width: 1px;
   /* position: absolute;  */
   /* right: 6vw; 
@@ -1560,14 +1560,27 @@ background-color:  #86a5def8;
   background: linear-gradient(145deg, #bdce86f6  5%, #9bb8cd89 50%);
   border-radius: 8px;
   box-shadow: 1vw 1vw 2vw #4c8ee6ba;
-  display: inline;
-  width: 40vw;
-  height: 30vw;
+  /* display: inline; */
+  /* width: 40vw;
+  height: 30vw; */
+  width: 100%;
+  height: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   position: relative;
   overflow-y: auto;
-  
+ 
+}
+
+.bubbleghost {
+  /* padding: 2vw;
+  box-sizing: border-box; */
+  display: inline;
+  overflow: hidden;  /* Prevents scrolling of bubbles */
+  position: relative; /* Ensures bubbles are positioned relative to this container */
+  width: 40vw;
+  height: 30vw;
+  margin-left: 5%;
 }
 
 .moreconsole{
