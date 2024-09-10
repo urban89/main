@@ -850,6 +850,7 @@ function showMore(src, id) {
   const latin = document.createElement('span');
   const moreimg = document.createElement('img');
   const summarybox = document.createElement('div');
+  const bubbleghost = document.createElement('div');
 
   let mintanksize = document.createElement("p");
   let tempinfo = document.createElement("p");
@@ -891,6 +892,8 @@ moreimg.className = "moreimg";
 moreimg.src = `webps1/${id}.webp`;
 summarybox.className = "summarybox";
 masterline.className = "masterline";
+bubbleghost.className = "bubbleghost"; 
+
 more_console.className = "moreconsole";
 idshown.className = "moreConsoleText";
 isfishshown.className = "moreConsoleText";
@@ -985,9 +988,11 @@ latin.innerText = `(${fish.name_latin})`;
   summarybox.appendChild(origin);
 
   masterline.appendChild(moreimg);
-  masterline.appendChild(summarybox);
+  bubbleghost.appendChild(summarybox);
   modalContent.appendChild(fishsummary);
-  // modalContent.appendChild(summarybox);
+  // masterline.appendChild(summarybox);
+  masterline.appendChild(bubbleghost);
+
   modalContent.appendChild(more_console);
 
   modalContent.appendChild(iframe);
@@ -1011,6 +1016,11 @@ latin.innerText = `(${fish.name_latin})`;
       closeMore(modal); // Call the function to close the modal
     }
   });
+
+  document.querySelectorAll('.bubbleghost').forEach(container => {
+    // Use setInterval to create bubbles at regular intervals
+    setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
+  });
   
 }
 
@@ -1025,3 +1035,43 @@ function closeMore(modal) {
   document.body.style.overflow = 'auto';
 }
 }
+
+
+
+////////////////////////////////////
+///Bubble animation
+function calculateMaxBubbles(container) {
+  const area = container.clientWidth * container.clientHeight; // Calculate area of the div
+  const bubbleDensity = 0.0005; // Adjust this value to control bubble density (bubbles per square pixel)
+  return Math.floor(area * bubbleDensity); // Calculate max bubbles based on area
+}
+
+function createBubble(container) {
+  const maxBubbles = calculateMaxBubbles(container);
+  if (container.childElementCount >= maxBubbles) {
+    return; // Exit the function if the limit is reached
+}
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  bubble.style.left = Math.random() * container.clientWidth + 'px';
+  bubble.style.animationDuration = 3 + Math.random() * 2 + 's'; // random duration between 3 to 5 seconds
+  bubble.style.animationDelay = Math.random() * 0.1 + 's'; 
+  container.appendChild(bubble);
+
+  // Remove bubble after animation ends
+  bubble.addEventListener('animationend', () => {
+      container.removeChild(bubble);
+  });
+}
+
+// start bubbles
+function startBubbles() {
+  document.querySelectorAll('.tiles').forEach(container => {
+      // Use setInterval to create bubbles at regular intervals
+      setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
+  });
+
+}
+
+// Start the bubbles when the page loads
+window.onload = startBubbles;
