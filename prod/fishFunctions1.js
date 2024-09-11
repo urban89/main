@@ -24,7 +24,7 @@ const aboutoff = "About this page";
 const abouton = "Hide page info";
 const maincount = fish_master.length; 
 const bcimages = 5; 
-
+const logupdate = "fish list has been updated"; 
 
  //////////////////////////////////////////////
  //// Dictionary for numerical codes to categories
@@ -294,6 +294,10 @@ let easia$$  = perCounter ("region", 6);
 //let arti$$  = perCounter ("region", "A");
 //let wasia$$  = perCounter ("region", "W");
 
+
+let first_run = true; 
+let updateCount = 0;
+let isVisible = false; 
 
 function updatePool() { 
 let poolcount = poolCounter (); 
@@ -1053,6 +1057,7 @@ console.log(fish_list)
   emptiness_checker = fish_list.length;
   ///Displaying animation of selector result value changes
   if (previousFishcouont !== fish_list.length) {
+  log_message();
   fishcount.classList.add('value-updated');
   setTimeout(() => {
     fishcount.classList.remove('value-updated');
@@ -1950,3 +1955,50 @@ function startBubbles() {
 
 // Start the bubbles when the page loads
 window.onload = startBubbles;
+
+
+
+function log_message() {
+  updateCount++;
+
+  if (first_run) {
+    first_run = false;
+    return; 
+  }
+
+  if (isVisible) {
+    // If visible, update the text with the current count
+    document.getElementById('updateMessage').innerText = `${logupdate} (${updateCount}x)`;
+    
+    // Extend the display time by clearing the old timeout and setting a new one
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(hidePopup, 2000); // Extend by 2 seconds
+    return; // Exit the function early
+  }
+
+  isVisible = true; 
+  console.log(logupdate);
+  let updateMessage = document.createElement('span');
+  updateMessage.classList.add('popup', 'show');
+  updateMessage.id = "updateMessage";
+  document.body.appendChild(updateMessage);
+  updateMessage.innerText = logupdate;
+  isVisible = true;
+  timeoutId = setTimeout(hidePopup, 2000);
+}
+
+
+  
+function hidePopup() {
+  const updateMessage = document.getElementById('updateMessage');
+  if (updateMessage) {
+    updateMessage.classList.remove('show');
+
+    // Wait for the transition to complete before removing the element
+    setTimeout(() => {
+      document.body.removeChild(updateMessage); // Remove the element from the DOM
+      isVisible = false; // Reset the visibility flag
+      updateCount = 0; // Reset the counter
+    }, 500); // Match the duration of the CSS transition (0.5s)
+  }
+}
