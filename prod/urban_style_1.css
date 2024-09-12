@@ -1667,3 +1667,7 @@ margin: 0;
   bottom: 30px; /* Moves the message to visible position */
   opacity: 1; /* Makes the message visible */
 }
+
+.parameter {
+  text-shadow:  1px 2px rgba(35, 81, 151, 0.344);
+}
