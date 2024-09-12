@@ -272,6 +272,7 @@ background-color:  #86a5def8;
 
 .fishsize, .fishtemp, .tanksize {
   font-size: 2vw;
+  text-shadow: 0.1vw 0.1vw 0.2vw #f1f3857d;
 }
 
 .fishname {
