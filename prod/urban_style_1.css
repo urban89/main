@@ -1462,11 +1462,24 @@ background-color:  #86a5def8;
   left: 1%;
   right: 1%; 
   top: 0;
-  width: 99%;
+  width: 97%;
   height: 99%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8); /* Dark background */
 }
+
+@media screen and (min-width: 700px) {
+  .modal {
+    width: 80%; /* Set the desired width */
+    left: 50%; /* Position from the left */
+    top: 50%; /* Position from the top */
+    transform: translate(-50%, -50%); /* Center the modal */
+    height: 100vh; /* Adjust height as needed */
+    max-height: 100vh; 
+    overflow-y: auto; 
+  }
+}
+
 
 .modal_content {
   position: relative;
