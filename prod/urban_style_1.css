@@ -80,12 +80,12 @@ input[type=number] {
 .welcometext {
 font-weight: 999;
 
-text-shadow: 1px 2px#5f7dd851;
+text-shadow: 2px 2px 2px#6c8ced86;
 }
 
 .welcometitle {
   font-weight: 777;
-  text-shadow: 1px 2px#26439b51;
+  text-shadow: 2px 2px 2px#486bd37a;
 }
 
 
@@ -890,9 +890,6 @@ position: relative;
 /**************media queries end here**********************************/ 
 
 
-.parameter {
- font-weight: 666;
-}
 
 .notselected {
   background: linear-gradient(188deg, #A99BC5 22%, #695F7A 100%);
@@ -1688,5 +1685,5 @@ margin: 0;
 }
 
 .parameter {
-  text-shadow:  1px 2px rgba(64, 109, 177, 0.344);
+  text-shadow:  2px 2px 2px rgba(64, 109, 177, 0.344);
 }
