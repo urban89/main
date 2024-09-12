@@ -1786,8 +1786,6 @@ origin.className = "infocardtext";
 ph.className = "infocardtext";
 
 
-
-
 var isfish = (fish.isfish === 1) ? "false" : "true";
 idshown.innerHTML = `species ID: #${id}`;
 isfishshown.innerHTML = `isFish?: ${isfish}`;
@@ -1922,7 +1920,7 @@ function closeMore(modal) {
 ///Bubble animation
 function calculateMaxBubbles(container) {
   const area = container.clientWidth * container.clientHeight; // Calculate area of the div
-  const bubbleDensity = 0.0005; // Adjust this value to control bubble density (bubbles per square pixel)
+  const bubbleDensity = 0.0004; // Adjust this value to control bubble density (bubbles per square pixel)
   return Math.floor(area * bubbleDensity); // Calculate max bubbles based on area
 }
 
