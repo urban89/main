@@ -76,6 +76,20 @@ input[type=number] {
   display: inline-block;
 }
 
+/*welcome texts*/ 
+.welcometext {
+font-weight: 999;
+
+text-shadow: 1px 2px#5f7dd851;
+}
+
+.welcometitle {
+  font-weight: 777;
+  text-shadow: 1px 2px#26439b51;
+}
+
+
+
 /*The button that opens the dropdown for Settings */ 
 .dropbtn {
   text-decoration: none;
@@ -1669,5 +1683,5 @@ margin: 0;
 }
 
 .parameter {
-  text-shadow:  1px 2px rgba(35, 81, 151, 0.344);
+  text-shadow:  1px 2px rgba(64, 109, 177, 0.344);
 }
