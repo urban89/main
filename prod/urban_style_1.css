@@ -1230,7 +1230,8 @@ background-color:  #86a5def8;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background: linear-gradient(145deg, #ddd963f6  5%, #90c8edec 50%);
-  border: 0.01rem solid #000;
+  border: 0.01rem solid #00000088;
+  text-shadow: 1px 1px rgba(255, 255, 0, 0.308);
 }
 
 .decrement-button {
@@ -1253,7 +1254,8 @@ background-color:  #86a5def8;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 0;
   background: linear-gradient(145deg, #b3ef90f6  5%, #91ccf4ec 50%);
-  border: 0.01rem solid #000;
+  border: 0.01rem solid #0000009a;
+  text-shadow: 1px 1px rgba(152, 246, 240, 0.343);
   
 }
 
@@ -1296,7 +1298,8 @@ background-color:  #86a5def8;
   border-top-left-radius: 0;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 0;
-  border: 0.01rem solid #000;
+  border: 0.01rem solid #000000b0;
+  text-shadow: 1px 1px rgba(255, 255, 0, 0.308);
 }
 
 .decremph {
@@ -1311,7 +1314,8 @@ background-color:  #86a5def8;
   padding: 0.5%; 
   text-align: center;
   box-sizing: border-box;
-  border: 0.01rem solid #000;
+  border: 0.01rem solid #0000009f;
+  text-shadow: 1px 1px rgba(152, 246, 240, 0.343);
 }
 
 .incremph:hover {background: linear-gradient(145deg, #ebc838f6  5%, #5eb5eeec  50%);}
