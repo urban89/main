@@ -1722,6 +1722,8 @@ function showMore(src, id) {
   const summarybox = document.createElement('div');
   const bubbleghost = document.createElement('div');
 
+  const similar_results = document.createElement('div');
+
   let mintanksize = document.createElement("p");
   let tempinfo = document.createElement("p");
   let sizeinfo = document.createElement("p");
@@ -1815,16 +1817,16 @@ origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`;
 }
 
 else {
-mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `Water temperature: ${temp_min}-${temp_max}${console_temperature}`; 
-ph.innerHTML = `pH: ${fish.phmin}-${fish.phmax}`;
-sizeinfo.innerHTML = `Max fish size: ${card_size} ${console_fishsize}`
-hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
-availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
-social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
-agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
-breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
-origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`; 
+mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
+tempinfo.innerHTML = `Water temperature: <span class = "more_param"> ${temp_min}-${temp_max}${console_temperature}</span>`; 
+ph.innerHTML = `pH: <span class = "more_param"> ${fish.phmin}-${fish.phmax}</span>`;
+sizeinfo.innerHTML = `Max fish size: <span class = "more_param"> ${card_size} ${console_fishsize}</span>`;
+hardiness.innerHTML = `Keeping difficulty: <span class = "more_param"> ${codes_hardi[hardi]}</span>`;
+availability.innerHTML = `Purchase availability: <span class = "more_param"> ${codes_avail[avail]}</span>`;
+social.innerHTML = `Social behavior: <span class = "more_param"> ${codes_behave[behave]}</span>`;
+agression.innerHTML = `Agression level: <span class = "more_param"> ${codes_agres[agres]}</span>`;
+breeding.innerHTML =  `Breeding difficulty: <span class = "more_param"> ${codes_breed[breed]}</span>`;
+origin.innerHTML = `Geographical origin: <span class = "more_param"> ${commaRemover(fish.origin)}</span>`; 
 }
 
   // Create the iframe
@@ -1838,6 +1840,32 @@ origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`;
 
 fishname.innerText = uppercaser(fish.name_english);
 latin.innerText = `(${fish.name_latin})`;
+
+// const similars_ids = []; 
+// ///Similarity analysis: 
+// for (const species of fish_master) {
+//   let similarity_score = 0;
+
+//    if (fish.school === species.school) {
+//     similarity_score += 1; // Exact match
+//   } else if (Math.abs(fish.school - species.school) < 2) {
+//     similarity_score += 0.5; // Close match
+//   } else {
+//     similarity_score += 0; // No match
+//   }
+//   // Add the species id and similarity score to the similars array
+//   similars_ids.push({
+//     id: species.id,
+//     score: similarity_score
+//   });
+
+// }
+
+// Sort the similars array by similarity score in descending order
+// similars.sort((a, b) => b.score - a.score);
+// console.log(similars);
+
+
 
   // Append the close button and iframe to the modal content
   modalContent.appendChild(closeButton);
