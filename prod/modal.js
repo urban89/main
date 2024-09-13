@@ -121,7 +121,8 @@ function showMore(src, id) {
   ph.className = "mo_infocardtext";
   
   
-  var isfish = (fish.isfish === 1) ? "false" : "true";
+  var isfish = (fish.isfish === "1") ? "true" : "false";
+  console.log(isfish);
   idshown.innerHTML = `species ID: #${id}`;
   isfishshown.innerHTML = `isFish?: ${isfish}`;
   
@@ -137,31 +138,31 @@ function showMore(src, id) {
   let breed = fish.breeding_difficulty; 
   
   if (window.innerWidth <= 550) {
-    if (altname) {altname.innerHTML = `Alt. name: <span class = "more_param">${uppercaser(fish.alt_name)}</span>`}; 
-  mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
-  tempinfo.innerHTML = `Temperature: <span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
-  ph.innerHTML =  `pH: <span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
-  sizeinfo.innerHTML = `Fish size:<span class = "more_param"> ${card_size} ${console_fishsize}</span>`
-  hardiness.innerHTML = `Difficulty: <span class = "more_param">${codes_hardi[hardi]}</span>`;
-  availability.innerHTML = `Availability: <span class = "more_param">${codes_avail[avail]}</span>`;
-  social.innerHTML = `Behavior: <span class = "more_param">${codes_behave[behave]}</span>`;
-  agression.innerHTML = `Agression: <span class = "more_param">${codes_agres[agres]}</span>`;
-  breeding.innerHTML =  `Breeding: <span class = "more_param">${codes_breed[breed]}</span>`;
-  origin.innerHTML = `Origin: <span class = "more_param">${commaRemover(fish.origin)}</span>`; 
+    if (altname) {altname.innerHTML = `<span class = "param_label">Alt. name: </span><span class = "more_param">${uppercaser(fish.alt_name)}</span>`}; 
+  mintanksize.innerHTML = `<span class = "param_label">Minimum tank size: </span><span class = "more_param">${cap} ${console_capacity}</span>`;
+  tempinfo.innerHTML = `<span class = "param_label">Temperature: </span><span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
+  ph.innerHTML =  `<span class = "param_label">pH: </span><span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
+  sizeinfo.innerHTML = `<span class = "param_label">Fish size: </span><span class = "more_param"> ${card_size} ${console_fishsize}</span>`
+  hardiness.innerHTML = `<span class = "param_label">Difficulty: </span><span class = "more_param">${codes_hardi[hardi]}</span>`;
+  availability.innerHTML = `<span class = "param_label">Availability: </span><span class = "more_param">${codes_avail[avail]}</span>`;
+  social.innerHTML = `<span class = "param_label">Behavior: </span><span class = "more_param">${codes_behave[behave]}</span>`;
+  agression.innerHTML = `<span class = "param_label">Agression: </span><span class = "more_param">${codes_agres[agres]}</span>`;
+  breeding.innerHTML =  `<span class = "param_label">Breeding: </span><span class = "more_param">${codes_breed[breed]}</span>`;
+  origin.innerHTML = `<span class = "param_label">Origin: </span><span class = "more_param">${commaRemover(fish.origin)}</span>`; 
   }
   
   else {
-    if (altname) {altname.innerHTML = `Alternative name: ${uppercaser(fish.alt_name)}`; }
-  mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
-  tempinfo.innerHTML = `Water temperature: <span class = "more_param"> ${temp_min}-${temp_max}${console_temperature}</span>`; 
-  ph.innerHTML = `pH: <span class = "more_param"> ${fish.phmin}-${fish.phmax}</span>`;
-  sizeinfo.innerHTML = `Max fish size: <span class = "more_param"> ${card_size} ${console_fishsize}</span>`;
-  hardiness.innerHTML = `Keeping difficulty: <span class = "more_param"> ${codes_hardi[hardi]}</span>`;
-  availability.innerHTML = `Purchase availability: <span class = "more_param"> ${codes_avail[avail]}</span>`;
-  social.innerHTML = `Social behavior: <span class = "more_param"> ${codes_behave[behave]}</span>`;
-  agression.innerHTML = `Agression level: <span class = "more_param"> ${codes_agres[agres]}</span>`;
-  breeding.innerHTML =  `Breeding difficulty: <span class = "more_param"> ${codes_breed[breed]}</span>`;
-  origin.innerHTML = `Geographical origin: <span class = "more_param"> ${commaRemover(fish.origin)}</span>`; 
+    if (altname) {altname.innerHTML = `<span class = "param_label">Alternative name: </span><span class = "more_param">${uppercaser(fish.alt_name)}</span>`; }
+  mintanksize.innerHTML = `<span class = "param_label">Minimum tank size: </span><span class = "more_param">${cap} ${console_capacity}</span>`;
+  tempinfo.innerHTML = `<span class = "param_label">Water temperature: </span><span class = "more_param"> ${temp_min}-${temp_max}${console_temperature}</span>`; 
+  ph.innerHTML = `<span class = "param_label">pH: </span><span class = "more_param"> ${fish.phmin}-${fish.phmax}</span>`;
+  sizeinfo.innerHTML = `<span class = "param_label">Max fish size: </span><span class = "more_param"> ${card_size} ${console_fishsize}</span>`;
+  hardiness.innerHTML = `<span class = "param_label">Keeping difficulty: </span><span class = "more_param"> ${codes_hardi[hardi]}</span>`;
+  availability.innerHTML = `<span class = "param_label">Purchase availability: </span><span class = "more_param"> ${codes_avail[avail]}</span>`;
+  social.innerHTML = `<span class = "param_label">Social behavior: </span><span class = "more_param"> ${codes_behave[behave]}</span>`;
+  agression.innerHTML = `<span class = "param_label">Agression level: </span><span class = "more_param"> ${codes_agres[agres]}</span>`;
+  breeding.innerHTML =  `<span class = "param_label">Breeding difficulty: </span><span class = "more_param"> ${codes_breed[breed]}</span>`;
+  origin.innerHTML = `<span class = "param_label">Geographical origin: </span><span class = "more_param"> ${commaRemover(fish.origin)}</span>`; 
   }
   
   
@@ -266,7 +267,7 @@ function showMore(src, id) {
   
   document.querySelectorAll('.bubbleghost').forEach(container => {
     // Use setInterval to create bubbles at regular intervals
-    setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
+    setInterval(() => createBubble(container), 456); // Create a bubble every 500ms
   });
   
   }
