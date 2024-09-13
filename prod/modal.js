@@ -29,6 +29,11 @@ function showMore(src, id) {
     let more_console = document.createElement("div");
     let idshown = document.createElement("p");
     let isfishshown = document.createElement("p");
+
+    let altname;
+    if (fish.alt_name !== "") {
+      altname = document.createElement("p");
+    }
   
   
   
@@ -61,6 +66,10 @@ function showMore(src, id) {
   more_console.className = "moreconsole";
   idshown.className = "moreConsoleText";
   isfishshown.className = "moreConsoleText";
+  
+  if (altname) {
+    altname.className = "mo_infocardtext";
+  }
   
   mintanksize.className = "mo_infocardtext";
   tempinfo.className = "mo_infocardtext";
@@ -96,6 +105,7 @@ function showMore(src, id) {
   let breed = fish.breeding_difficulty; 
   
   if (window.innerWidth <= 550) {
+    if (altname) {altname.innerHTML = `Alt. name: ${uppercaser(fish.alt_name)}`; }
   mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
   tempinfo.innerHTML = `Temperature: <span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
   ph.innerHTML =  `pH: <span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
@@ -109,6 +119,7 @@ function showMore(src, id) {
   }
   
   else {
+    if (altname) {altname.innerHTML = `Alternative name: ${uppercaser(fish.alt_name)}`; }
   mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
   tempinfo.innerHTML = `Water temperature: <span class = "more_param"> ${temp_min}-${temp_max}${console_temperature}</span>`; 
   ph.innerHTML = `pH: <span class = "more_param"> ${fish.phmin}-${fish.phmax}</span>`;
@@ -181,7 +192,7 @@ function showMore(src, id) {
     more_console.appendChild(idshown);
     more_console.appendChild(isfishshown);
   
-  
+    if (altname) {summarybox.appendChild(altname);}
     summarybox.appendChild(mintanksize);
     summarybox.appendChild(tempinfo);
     summarybox.appendChild(ph);
@@ -192,6 +203,7 @@ function showMore(src, id) {
     summarybox.appendChild(agression);
     summarybox.appendChild(breeding);
     summarybox.appendChild(origin);
+    
   
     masterline.appendChild(moreimg);
     bubbleghost.appendChild(summarybox);
