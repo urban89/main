@@ -313,7 +313,7 @@ background-color:  #86a5def8;
   padding: 1vw;
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
-box-shadow: 5px 5px 10px hsla(49, 98%, 21%, 0.904);
+box-shadow: 6px 6px 5px hsla(49, 98%, 62%, 0.486);
 position: relative; 
 } 
 
@@ -337,7 +337,7 @@ position: relative;
     padding: 1vw;
     background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
   background-attachment: fixed;
-  box-shadow: 5px 5px 10px hsla(194, 40%, 41%, 0.904);
+  box-shadow: 6px 6px 5px hsla(194, 40%, 41%, 0.904);
   position: relative; 
 }
 
@@ -368,8 +368,14 @@ position: relative;
   height: 15vh;
   border-color: #05224f;
   border-width: 1px; 
-  border-radius: 3px;
+  border-radius: 10px 10px 10px 10px;
+ 
   border-style: solid;
+  }
+
+  .fishcardimage:hover {
+    border-radius: 10px 3px 3px 3px;
+    box-shadow: 2px 2px 2px rgba(64, 114, 67, 0.432); 
   }
 
   .iconimage {
@@ -390,7 +396,7 @@ position: relative;
       white-space: nowrap;
       font-size: 2.5vw; 
       margin: 0.5vw; 
-      text-shadow: 0.1vw 0.1vw 0.2vw #bcbd8ad0;
+      text-shadow: 0.1vw 0.1vw #ff782a34;
     }
     
     .subtitle, .bigsubtitle, .verybigsubtitle {
@@ -401,6 +407,12 @@ position: relative;
       white-space: nowrap;
       font-size: 2vw; 
       margin: 0.5vw; 
+      background: linear-gradient(
+        45deg, /* Angle of the gradient */
+        rgba(245, 50, 50, 0.08), /* Starting color */
+        rgba(255, 105, 5, 0.24) /* Ending color with a different opacity */
+      );
+      border-radius: 10px;
     }
 
     .bigsubtitle, .verybigsubtitle {
@@ -1735,10 +1747,14 @@ margin: 0;
 
 
 .more_param {
-  text-shadow:0.25px 0.25px 0.25px #faf215e8;
+  text-shadow:1px 0.25px 0.25px #faf215e8;
   
 }
 
+.param_label {
+  position: relative;
+  text-shadow:0.25px 0.25px 0.25px #faf215e8, -1px -0.25px rgba(86, 255, 44, 0.150)
+}
 
 
 
