@@ -105,7 +105,7 @@ function showMore(src, id) {
   let breed = fish.breeding_difficulty; 
   
   if (window.innerWidth <= 550) {
-    if (altname) {altname.innerHTML = `Alt. name: ${uppercaser(fish.alt_name)}`; }
+    if (altname) {altname.innerHTML = `Alt. name: <span class = "more_param">${uppercaser(fish.alt_name)}</span>`}; 
   mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
   tempinfo.innerHTML = `Temperature: <span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
   ph.innerHTML =  `pH: <span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
