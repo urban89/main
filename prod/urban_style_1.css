@@ -1643,6 +1643,7 @@ background-color:  #86a5def8;
   height: 30vw;
   margin-left: 5%;
   box-shadow: 1vw 1vw 2vw #4c8ee6ba;
+  border-radius: 8px; 
 }
 
 .moreconsole{
