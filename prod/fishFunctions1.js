@@ -1804,16 +1804,16 @@ let agres = fish.agression;
 let breed = fish.breeding_difficulty; 
 
 if (window.innerWidth <= 550) {
-mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `Temperature: ${temp_min}-${temp_max}${console_temperature}`; 
-ph.innerHTML =  `pH: ${fish.phmin}-${fish.phmax}`;
-sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`
-hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
-availability.innerHTML = `Availability: ${codes_avail[avail]}`;
-social.innerHTML = `Behavior: ${codes_behave[behave]}`;
-agression.innerHTML = `Agression: ${codes_agres[agres]}`;
-breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
-origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
+mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
+tempinfo.innerHTML = `Temperature: <span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
+ph.innerHTML =  `pH: <span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
+sizeinfo.innerHTML = `Fish size:<span class = "more_param"> ${card_size} ${console_fishsize}</span>`
+hardiness.innerHTML = `Difficulty: <span class = "more_param">${codes_hardi[hardi]}</span>`;
+availability.innerHTML = `Availability: <span class = "more_param">${codes_avail[avail]}</span>`;
+social.innerHTML = `Behavior: <span class = "more_param">${codes_behave[behave]}</span>`;
+agression.innerHTML = `Agression: <span class = "more_param">${codes_agres[agres]}</span>`;
+breeding.innerHTML =  `Breeding: <span class = "more_param">${codes_breed[breed]}</span>`;
+origin.innerHTML = `Origin: <span class = "more_param">${commaRemover(fish.origin)}</span>`; 
 }
 
 else {
