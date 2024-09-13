@@ -180,16 +180,15 @@ function showMore(src, id) {
     let similarity_score = 0;
   
   ///Scholing comparison 
-  if (fish.school === 1 & fish.school === species.school) {
-    similarity_score += 1;
+  if (fish.school === 1 && fish.school === species.school) {
+    similarity_score += 1; // Exact match when fish.school is 1
+  } else if (fish.school === species.school && fish.school !== 1) {
+    similarity_score += 1; // Exact match
+  } else if (Math.abs(fish.school - species.school) < 2) {
+    similarity_score += 0.5; // Close match
+  } else {
+    similarity_score += 0; // No match
   }
-     if (fish.school === species.school & fish.school !== 1) {
-      similarity_score += 1; // Exact match
-    } else if (Math.abs(fish.school - species.school) < 2) {
-      similarity_score += 0.5; // Close match
-    } else {
-      similarity_score += 0; // No match
-    }
   
   
   
