@@ -898,17 +898,17 @@ more_console.className = "moreconsole";
 idshown.className = "moreConsoleText";
 isfishshown.className = "moreConsoleText";
 
-mintanksize.className = "infocardtext";
-tempinfo.className = "infocardtext";
-sizeinfo.className = "infocardtext";
+mintanksize.className = "mo_infocardtext";
+tempinfo.className = "mo_infocardtext";
+sizeinfo.className = "mo_infocardtext";
     
-hardiness.className = "infocardtext";
-availability.className = "infocardtext";
-social.className = "infocardtext";
-agression.className = "infocardtext";
-breeding.className = "infocardtext";
-origin.className = "infocardtext";
-ph.className = "infocardtext";
+hardiness.className = "mo_infocardtext";
+availability.className = "mo_infocardtext";
+social.className = "mo_infocardtext";
+agression.className = "mo_infocardtext";
+breeding.className = "mo_infocardtext";
+origin.className = "mo_infocardtext";
+ph.className = "mo_infocardtext";
 
 
 
@@ -929,30 +929,30 @@ let agres = fish.agression;
 let breed = fish.breeding_difficulty; 
 
 if (window.innerWidth <= 550) {
-mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `Temperature: ${temp_min}-${temp_max}${console_temperature}`; 
-ph.innerHTML =  `pH: ${fish.phmin}-${fish.phmax}`;
-sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`
-hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
-availability.innerHTML = `Availability: ${codes_avail[avail]}`;
-social.innerHTML = `Behavior: ${codes_behave[behave]}`;
-agression.innerHTML = `Agression: ${codes_agres[agres]}`;
-breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
-origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
-}
-
-else {
-mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
-tempinfo.innerHTML = `Water temperature: ${temp_min}-${temp_max}${console_temperature}`; 
-ph.innerHTML = `pH: ${fish.phmin}-${fish.phmax}`;
-sizeinfo.innerHTML = `Max fish size: ${card_size} ${console_fishsize}`
-hardiness.innerHTML = `Keeping difficulty: ${codes_hardi[hardi]}`;
-availability.innerHTML = `Purchase availability: ${codes_avail[avail]}`;
-social.innerHTML = `Social behavior: ${codes_behave[behave]}`;
-agression.innerHTML = `Agression level: ${codes_agres[agres]}`;
-breeding.innerHTML =  `Breeding difficulty: ${codes_breed[breed]}`;
-origin.innerHTML = `Geographical origin: ${commaRemover(fish.origin)}`; 
-}
+  mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
+  tempinfo.innerHTML = `Temperature: <span class = "more_param">${temp_min}-${temp_max}${console_temperature}</span>`; 
+  ph.innerHTML =  `pH: <span class = "more_param">${fish.phmin}-${fish.phmax}</span>`;
+  sizeinfo.innerHTML = `Fish size:<span class = "more_param"> ${card_size} ${console_fishsize}</span>`
+  hardiness.innerHTML = `Difficulty: <span class = "more_param">${codes_hardi[hardi]}</span>`;
+  availability.innerHTML = `Availability: <span class = "more_param">${codes_avail[avail]}</span>`;
+  social.innerHTML = `Behavior: <span class = "more_param">${codes_behave[behave]}</span>`;
+  agression.innerHTML = `Agression: <span class = "more_param">${codes_agres[agres]}</span>`;
+  breeding.innerHTML =  `Breeding: <span class = "more_param">${codes_breed[breed]}</span>`;
+  origin.innerHTML = `Origin: <span class = "more_param">${commaRemover(fish.origin)}</span>`; 
+  }
+  
+  else {
+  mintanksize.innerHTML = `Minimum tank size: <span class = "more_param">${cap} ${console_capacity}</span>`;
+  tempinfo.innerHTML = `Water temperature: <span class = "more_param"> ${temp_min}-${temp_max}${console_temperature}</span>`; 
+  ph.innerHTML = `pH: <span class = "more_param"> ${fish.phmin}-${fish.phmax}</span>`;
+  sizeinfo.innerHTML = `Max fish size: <span class = "more_param"> ${card_size} ${console_fishsize}</span>`;
+  hardiness.innerHTML = `Keeping difficulty: <span class = "more_param"> ${codes_hardi[hardi]}</span>`;
+  availability.innerHTML = `Purchase availability: <span class = "more_param"> ${codes_avail[avail]}</span>`;
+  social.innerHTML = `Social behavior: <span class = "more_param"> ${codes_behave[behave]}</span>`;
+  agression.innerHTML = `Agression level: <span class = "more_param"> ${codes_agres[agres]}</span>`;
+  breeding.innerHTML =  `Breeding difficulty: <span class = "more_param"> ${codes_breed[breed]}</span>`;
+  origin.innerHTML = `Geographical origin: <span class = "more_param"> ${commaRemover(fish.origin)}</span>`; 
+  }
 
   // Create the iframe
   const iframe = document.createElement('iframe');
