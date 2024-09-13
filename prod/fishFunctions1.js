@@ -1770,22 +1770,22 @@ more_console.className = "moreconsole";
 idshown.className = "moreConsoleText";
 isfishshown.className = "moreConsoleText";
 
-mintanksize.className = "infocardtext";
-tempinfo.className = "infocardtext";
-sizeinfo.className = "infocardtext";
+mintanksize.className = "mo_infocardtext";
+tempinfo.className = "mo_infocardtext";
+sizeinfo.className = "mo_infocardtext";
     
-hardiness.className = "infocardtext";
-availability.className = "infocardtext";
-social.className = "infocardtext";
-agression.className = "infocardtext";
-breeding.className = "infocardtext";
+hardiness.className = "mo_infocardtext";
+availability.className = "mo_infocardtext";
+social.className = "mo_infocardtext";
+agression.className = "mo_infocardtext";
+breeding.className = "mo_infocardtext";
 
 
 
-origin.className = "infocardtext";
+origin.className = "mo_infocardtext";
 
 
-ph.className = "infocardtext";
+ph.className = "mo_infocardtext";
 
 
 var isfish = (fish.isfish === 1) ? "false" : "true";

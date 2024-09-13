@@ -356,6 +356,11 @@ position: relative;
   margin: 0; 
 }
 
+.mo_infocardtext {
+  font-size: 4vw; 
+  margin: 0.2em 
+}
+
 
 
 .fishcardimage {
@@ -443,7 +448,8 @@ position: relative;
 }
 
 
-/* Media queries ************************************************/ 
+/* Media queries ************************************************/ /************************************************/ 
+/************************************************/ 
 @media screen and (max-width: 416px) {
   .smallscreen {
     display: none;
@@ -475,6 +481,9 @@ position: relative;
     font-size: 2.92vw;
   }
 
+  .mo_infocardtext  {
+font-size: 3vw; 
+  }
 
   .capradiolabel {
     font-size: 3vw;
@@ -535,9 +544,15 @@ position: relative;
     width: 25vw;
     height: 18.75vw;
   }
-  .fishsize, .fishtemp, .tanksize, .infocardtext {
+  .fishsize, .fishtemp, .tanksize, .infocardtext{
     font-size: 2vw;
   }
+
+ .mo_infocardtext {
+  font-size: 3vw;
+  margin: 0.1em 
+ }
+
   .fishname {
     font-size: 2.5vw;
   }
@@ -609,6 +624,11 @@ position: relative;
    }
    .infocardtext {
     font-size: 1.5vw;
+  }
+
+  .mo_infocardtext {
+    font-size: 2.5vw;
+    margin: 0.2em 
   }
 
 
@@ -771,6 +791,10 @@ position: relative;
   font-size: 0.8vw;
 }
 
+.mo_infocardtext {
+  font-size: 1.5vw;
+  margin: 0.2em 
+}
 
 
 #cpanel, #cpanel1, #cpanel2  {
@@ -815,6 +839,13 @@ position: relative;
   font-size: 1rem;
   margin-top: 0.18rem;
   margin-bottom: 0.18rem;
+}
+
+
+.mo_infocardtext {
+  font-size: 2rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 
