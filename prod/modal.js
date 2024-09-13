@@ -2,6 +2,35 @@
 //// "MORE" MODULES creation 
 
 function showMore(src, id) {
+    // Create the iframe
+    const iframe = document.createElement('iframe');
+    iframe.className = 'iframe_content';
+    iframe.src = src;
+    iframe.setAttribute('scrolling', 'no');
+    iframe.style.overflow = 'hidden';
+
+       // Inject CSS once the iframe is fully loaded
+       iframe.onload = function () {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+
+        if (iframeDocument) {
+            // Create a new <style> element
+            const style = iframeDocument.createElement('style');
+            style.type = 'text/css';
+
+            // Add your CSS styles as text content
+            style.textContent = `
+            .more_section {
+              text-shadow: 0.25px 0.25px 0.25px #08d305e8;
+            }
+            /* Add more CSS rules here if needed */
+          `;
+
+            // Append the <style> element to the <head> of the iframe document
+            iframeDocument.head.appendChild(style);
+        }
+    };
+
     // Create the modal div
     const fish = fish_master.find(fish => fish.fish_id === id);
     
@@ -13,6 +42,7 @@ function showMore(src, id) {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
+
   
     const similar_results = document.createElement('div');
   
@@ -132,12 +162,7 @@ function showMore(src, id) {
   origin.innerHTML = `Geographical origin: <span class = "more_param"> ${commaRemover(fish.origin)}</span>`; 
   }
   
-    // Create the iframe
-    const iframe = document.createElement('iframe');
-    iframe.className = 'iframe_content';
-    iframe.src = src;
-    iframe.setAttribute('scrolling', 'no');
-    iframe.style.overflow = 'hidden';
+  
   
   //Obtain fish id here
   
@@ -214,7 +239,6 @@ function showMore(src, id) {
     modalContent.appendChild(fishsummary);
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
-  
     modalContent.appendChild(iframe);
   
   
