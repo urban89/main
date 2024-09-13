@@ -549,7 +549,7 @@ font-size: 3vw;
   }
 
  .mo_infocardtext {
-  font-size: 3vw;
+  font-size: 1.8vw;
   margin: 0.1em 
  }
 
@@ -1738,6 +1738,14 @@ margin: 0;
   
 }
 
+
+
+
+
+
+
+
+/******************* this is just for reference since it's used in modal.js***********/ 
 .more_section {
   text-shadow:0.25px 0.25px 0.25px #f7de1ed8;
 }
