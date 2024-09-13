@@ -22,7 +22,7 @@ function showMore(src, id) {
             style.textContent = `
             .more_section {
                text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
-                background: rgba(255, 255, 0, 0.216);
+                background: rgba(255, 255, 0, 0.1989);
                 border-radius: 5px;
             }
             /* Add more CSS rules here if needed */
