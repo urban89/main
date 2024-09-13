@@ -21,7 +21,7 @@ function showMore(src, id) {
             // Add your CSS styles as text content
             style.textContent = `
             .more_section {
-               text-shadow:0.25px 0.25px 0.25px #f7de1ed8;
+               text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
                 background: rgba(255, 255, 0, 0.416);
                 border-radius: 5px;
             }
