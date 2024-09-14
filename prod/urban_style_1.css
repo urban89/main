@@ -279,6 +279,7 @@ background-color:  #86a5def8;
   margin-top: 0px;
   font-size: 3vw;
   text-shadow: 0.1vw 0.1vw 0.2vw #d7da2dd0;
+  font-weight: 500;
 }
 
 /*Tiles*/ 
@@ -309,11 +310,11 @@ background-color:  #86a5def8;
   margin: 5px; 
   box-sizing: border-box;
   border: 1px solid #010a14;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 1vw;
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
 background-attachment: fixed;
-box-shadow: 6px 6px 5px hsla(49, 98%, 62%, 0.486);
+box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
 position: relative; 
 } 
 
@@ -368,14 +369,15 @@ position: relative;
   height: 15vh;
   border-color: #05224f;
   border-width: 1px; 
-  border-radius: 10px 10px 10px 10px;
- 
+  border-radius: 3px;
   border-style: solid;
+  box-shadow: 2px 2px 2px rgba(64, 114, 67, 0.432); 
   }
 
   .fishcardimage:hover {
-    border-radius: 10px 3px 3px 3px;
-    box-shadow: 2px 2px 2px rgba(64, 114, 67, 0.432); 
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(255, 174, 23, 0.555); 
+    border-width: 1.5px; 
   }
 
   .iconimage {
