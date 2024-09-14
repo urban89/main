@@ -99,12 +99,13 @@ body {
   }
   
   h2 {
-    font-size: 1rem; 
+    font-size: 1.3rem; 
     margin-bottom: 2px;
     font-weight: 650;
-    text-shadow: 0.1vh 0.1vh 0.1vh rgba(17, 214, 228, 0.247); 
-    background: rgba(189, 223, 109, 0.425);
+    text-shadow: -0.1vh -0.1vh 0.1vh rgba(17, 214, 228, 0.247), 0.1vh 0.1vh 0.05vh yellow; 
+    background: rgba(189, 223, 109, 0.233);
     border-radius: 0px 1vh 1vh 0px;
+    color:#4b5058c0;
   }
 
   .titleicon {
@@ -279,7 +280,7 @@ position: relative; /*necessary for in card elements to allign as I want */
     font-size: 8vw; 
   }
   h2 {
-    font-size: 3vw; 
+    font-size: 4vw; 
   }
 p {
   font-size: 3.5vw; 
