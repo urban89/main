@@ -122,7 +122,6 @@ function showMore(src, id) {
   
   
   var isfish = (fish.isfish === "1") ? "true" : "false";
-  console.log(isfish);
   idshown.innerHTML = `species ID: #${id}`;
   isfishshown.innerHTML = `isFish?: ${isfish}`;
   
@@ -184,28 +183,153 @@ function showMore(src, id) {
     similarity_score += 1; // Exact match when fish.school is 1
   } else if (fish.school === species.school && fish.school !== 1) {
     similarity_score += 1; // Exact match
-  } else if (Math.abs(fish.school - species.school) < 2) {
+  } else if (Math.abs(fish.school - species.school) === 1) {
     similarity_score += 0.5; // Close match
   } else {
     similarity_score += 0; // No match
   }
   
+  /// Name comparison
+    const fishNameWords = fish.name_english.toLowerCase().split(' ');
+    const speciesNameWords = species.name_english.toLowerCase().split(' ');
+    const commonWords = fishNameWords.filter(word => speciesNameWords.includes(word));
   
-  
+    if (commonWords.length > 0) {
+      similarity_score += 1; 
+    }
+
+///Region comparison 
+const fishRegion = fish.region.split(',').map(item => item.trim());
+const speciesRegion = species.region.split(',').map(item => item.trim());
+const commonRegions = fishRegion.filter(word => speciesRegion.includes(word));
+
+if (commonRegions.length > 0) {
+  similarity_score += 0.5; 
+}
+
+/// Origin comparison 
+const fishOriginWords = fish.origin.toLowerCase().split(' ').map(word => word.trim());
+const speciesOriginWords = species.origin.toLowerCase().split(' ').map(word => word.trim());
+const commonOrigin = fishOriginWords.filter(word => speciesOriginWords.includes(word));
+if (commonOrigin.length > 0) {
+  similarity_score += 1; 
+}
+
+
+      /// Latin name first word comparison
+  const fishFirstWordLatin = fish.name_latin.split(' ')[0].toLowerCase();
+  const speciesFirstWordLatin = species.name_latin.split(' ')[0].toLowerCase();
+
+  if (fishFirstWordLatin === speciesFirstWordLatin) {
+    similarity_score += 3; // Add score if the first word of the Latin names matches
+  }
+
+
+  ///cm_max comparison 
+  if ((parseFloat(fish.cm_max) < 15) && (fish.cm_max * 0.75 <= species.cm_max && fish.cm_max *1.25 >= species.cm_max)) {
+    similarity_score += 3; 
+  }
+  else if ((parseFloat(fish.cm_max) >= 15) && (fish.cm_max * 0.8 <= species.cm_max && fish.cm_max *1.2 >= species.cm_max)){
+    similarity_score += 3; 
+  }
+
+    ///Tank size comparison 
+    if ((parseFloat(fish.tank_size_liter) < 15) && (fish.tank_size_liter * 0.75 <= species.tank_size_liter && fish.tank_size_liter *1.25 >= species.tank_size_liter)) {
+      similarity_score += 0.8; 
+    }
+    else if ((parseFloat(fish.tank_size_liter) >= 15) && (fish.tank_size_liter * 0.8 <= species.tank_size_liter && fish.tank_size_liter *1.2 >= species.tank_size_liter)){
+      similarity_score += 0.8; 
+    }
+
+
+  ///Uncare level comparison 
+  if (fish.uncare === species.uncare) {
+    similarity_score += 0.5; 
+  }
+    else if (Math.abs(fish.uncare - species.uncare) === 1) {
+      similarity_score += 0.3; 
+  }
+  else if (Math.abs(fish.uncare - species.uncare) === 2) {
+    similarity_score += 0.05; 
+}
+
+
+///breeding_difficulty comparison 
+if (fish.breeding_difficulty === species.breeding_difficulty) {
+  similarity_score += 0.5; 
+} 
+else if (Math.abs(fish.breeding_difficulty - species.breeding_difficulty) === 1) {
+  similarity_score += 0.25; 
+}
+
+///availability comparison 
+if (fish.availability === species.availability) {
+  similarity_score += 0.2; 
+} 
+else if (Math.abs(fish.availability - species.availability) === 1) {
+  similarity_score += 0.1; 
+}
+
+///agression comparision 
+if (fish.agression === species.agression) {
+  similarity_score += 0.5; 
+}
+
+/// Temperature comparison
+if ((fish.temperature_min === species.temperature_min) && (fish.temperature_max === species.temperature_max)) {
+  similarity_score += 2;  
+} 
+else if ((species.temperature_min <= fish.temperature_min + 1) && (species.temperature_max >= fish.temperature_max - 1)) {
+  similarity_score += 1; 
+} 
+else if ((species.temperature_min <= fish.temperature_min + 2) && (species.temperature_max >= fish.temperature_max - 2)) {
+  similarity_score += 0.7; 
+}
+else if ((species.temperature_min <= fish.temperature_min + 3) && (species.temperature_max >= fish.temperature_max - 3)) {
+  similarity_score += 0.25; 
+}
+
     
+///Swim location comparison 
+if (fish.swim === species.swim) {
+  similarity_score += 0.7; 
+}
+
+
+
+//species type comparison and final score punishment
+if (fish.isfish !== species.isfish) {
+  similarity_score -= 10; 
+}
+
+///ph comparison 
+if ((fish.phmin === species.phmin) && (fish.phmax === species.phmax)) {
+  similarity_score += 0.4;  
+} 
+else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0.5)) {
+  similarity_score += 0.2; 
+}
+
     // Add the species id and similarity score to the similars array
     similars_ids.push({
-      id: species.id,
+      id: species.fish_id,
       score: similarity_score,
       species: species.name_english
     });
   
+
   }
+
+  // Filter out species with a similarity score less than 5
+  const filtered_similars_ids = similars_ids.filter(item => {
+    return item.score >= 5 && item.id !== fish.fish_id;
+  });
   
   // Sort the similars array by similarity score in descending order
-  similars_ids.sort((a, b) => b.score - a.score);
-  console.log(similars_ids);
+  filtered_similars_ids.sort((a, b) => b.score - a.score);
+  console.log(filtered_similars_ids);
   
+
   /////Similarity analysis END
   ////////////////////////////////////////
   
