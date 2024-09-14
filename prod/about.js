@@ -424,3 +424,42 @@ function commaRemover (x) {
     }
     return count; 
     }
+
+
+    ////////////////////////////////////
+///Bubble animation
+function calculateMaxBubbles(container) {
+  const area = container.clientWidth * container.clientHeight; // Calculate area of the div
+  const bubbleDensity = 0.0004; // Adjust this value to control bubble density (bubbles per square pixel)
+  return Math.floor(area * bubbleDensity); // Calculate max bubbles based on area
+}
+
+function createBubble(container) {
+  const maxBubbles = calculateMaxBubbles(container);
+  if (container.childElementCount >= maxBubbles) {
+    return; // Exit the function if the limit is reached
+}
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  bubble.style.left = Math.random() * container.clientWidth + 'px';
+  bubble.style.animationDuration = 3 + Math.random() * 2 + 's'; // random duration between 3 to 5 seconds
+  bubble.style.animationDelay = Math.random() * 0.1 + 's'; 
+  container.appendChild(bubble);
+
+  // Remove bubble after animation ends
+  bubble.addEventListener('animationend', () => {
+      container.removeChild(bubble);
+  });
+}
+
+// start bubbles
+function startBubbles() {
+  document.querySelectorAll('.about_h1').forEach(container => {
+      // Use setInterval to create bubbles at regular intervals
+      setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
+  });
+
+}
+
+// Start the bubbles when the page loads
+window.onload = startBubbles;

@@ -86,7 +86,7 @@ body {
     color:hsl(207, 100%, 50%);
     font-size: 5rem; 
     font-weight: 700;
-    text-shadow: 0.2vh 0.2vh 0.2vh rgb(59, 74, 212), -0.2vh -0.2vh 0.25vh rgb(70, 255, 178); 
+    text-shadow: 0.2vh 0.2vh 0.2vh rgb(59, 74, 212), -0.15vh -0.15vh 0.2vh rgb(70, 255, 178); 
     -webkit-text-stroke: 0.2vh rgba(102, 250, 230, 0.658); /* Outline width and color */
     text-stroke: 0.2vh rgba(102, 250, 230, 0.658); /* Non-prefixed property for future compatibility */
     background: linear-gradient(to bottom, rgba(38, 243, 226, 0.336), rgba(0, 100, 0, 0.473));
@@ -529,4 +529,32 @@ p {
 
 #dbcount, #count_fish, #count_other, #morecount {
   text-shadow: 0.1vh 0.1vh yellow; 
+}
+
+
+/*bubble animation*/ 
+.bubble {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(44, 241, 255, 0.8);
+  border-radius: 50%;
+  animation: rise 5s infinite;
+  box-shadow: 1px 1px 1px rgb(168, 255, 248);
+}
+
+@keyframes rise {
+  0% {
+      bottom: 0;
+      opacity: 0; /* Start invisible */
+      transform: translateY(0); /* Initial state */
+  }
+  10% {
+      opacity: 1; /* Fade in */
+  }
+  100% {
+      bottom: 100%; /* Move to the top */
+      opacity: 0; /* Fade out */
+  }
 }
