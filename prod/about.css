@@ -90,18 +90,21 @@ body {
     -webkit-text-stroke: 0.2vh rgba(102, 250, 230, 0.658); /* Outline width and color */
     text-stroke: 0.2vh rgba(102, 250, 230, 0.658); /* Non-prefixed property for future compatibility */
     background: linear-gradient(to bottom, rgba(38, 243, 226, 0.336), rgba(0, 100, 0, 0.473));
-    border: 0.5vh solid rgba(79, 214, 255, 0.671); /* Red border around the text element */
+    border: 0.5vh solid #9bb8cdec; /* Red border around the text element */
     /* background: rgba(0, 128, 0, 0.397); */
     border-radius: 1vh;
     padding: 1vh; 
    /* border-style: groove; */
-   box-shadow: 2vh -2vh 2.5vh rgba(12, 107, 71, 0.3); 
+   box-shadow: 1vh 0.5vh 0.5vh rgba(12, 107, 71, 0.3); 
   }
   
   h2 {
     font-size: 1rem; 
     margin-bottom: 2px;
     font-weight: 650;
+    text-shadow: 0.1vh 0.1vh 0.1vh rgba(17, 214, 228, 0.247); 
+    background: rgba(189, 223, 109, 0.425);
+    border-radius: 0px 1vh 1vh 0px;
   }
 
   .titleicon {
@@ -521,4 +524,9 @@ p {
 }
 
 
+}
+
+
+#dbcount, #count_fish, #count_other, #morecount {
+  text-shadow: 0.1vh 0.1vh yellow; 
 }
