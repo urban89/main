@@ -46,7 +46,7 @@ function showMore(src, id) {
     const bubbleghost = document.createElement('div');
 
   
-    const similar_results = document.createElement('div');
+
   
     let mintanksize = document.createElement("p");
     let tempinfo = document.createElement("p");
@@ -61,6 +61,7 @@ function showMore(src, id) {
     let more_console = document.createElement("div");
     let idshown = document.createElement("p");
     let isfishshown = document.createElement("p");
+
 
     let altname;
     if (fish.alt_name !== "") {
@@ -366,9 +367,33 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
     modalContent.appendChild(iframe);
-  
-  
-  
+
+
+
+
+
+
+
+//////////////////
+
+    let id_repetition = 0;
+    fishFiller(similars_ids, modalContent);
+
+
+
+
+//////////////////
+
+
+
+
+
+
+
+
+
+
+
     // Append the modal content to the modal
     modal.appendChild(modalContent);
   
@@ -392,6 +417,320 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     // Use setInterval to create bubbles at regular intervals
     setInterval(() => createBubble(container), 456); // Create a bubble every 500ms
   });
+
+   ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+///// FISH CARD  
+ 
+function fishFiller(similars_ids, modalContent) {
+id_repetition += 1; 
+
+
+  const similar_results = document.createElement('div');
+  similar_results.className = "column_result"; 
+
+
+// Create a Map for quick lookup
+const fishMap = new Map(fish_master.map(fish => [String(fish.fish_id), fish]));
+
+// Initialize an empty array to store the matching fish in order
+const fish_list = [];
+
+// Loop over each id in filtered_similars_ids and retrieve the matching fish from the Map
+for (let j = 0; j < filtered_similars_ids.length; j++) {
+    const similar_id = String(filtered_similars_ids[j].id); // Get the current id from filtered_similars_ids
+
+    if (fishMap.has(similar_id)) {
+        fish_list.push(fishMap.get(similar_id)); // Push the matching fish object to fish_list
+    }
+}
+
+console.log("Filtered fish list in correct order:", fish_list);
+console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
+
+
+  for (let i = 0; i <fish_list.length; i++) {
+
+ //Generating fish card (fish cards are displayed by default)
+ let fishid = `${id_repetition}id${fish_list[i].fish_id}`; 
+ let main_card = document.createElement('div'); //container card to hide/show info 
+ let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
+ let fishname = document.createElement("p"); // <p> holding the fish name 
+ let image_element = document.createElement('img'); // <img> holding the fish image 
+ let size = document.createElement("span"); // fish size in fish card 
+ let temp = document.createElement("span"); // temperature in fish card 
+ let tanksize = document.createElement("span"); // tank size in fish card 
+ let name = uppercaser(fish_list[i].name_english);
+
+
+ let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+ let temp_max = Math.round((fish_list[i].temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+ let cap = Math.round(((fish_list[i].tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
+ let card_size_cal = Math.round(fish_list[i].cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+ let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+
+ image_element.src = `webps1/${fish_list[i].fish_id}.webp`; //finding webp file for each fish based on fish ID 
+ image_element.alt = `"image of ${name}`;
+ fishname.textContent = name; // adding name to <p> result_lists_element
+ size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
+ temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
+ tanksize.textContent = `${cap} ${console_capacity}`;
+ 
+ fishcard.id = fishid;  // changed from main card!! 
+ if (fish_list[i].isfish == "1")  {
+ fishcard.className = "fish_card";
+}
+else {fishcard.className = "nonfish_card"}
+
+ image_element.className = "fishcardimage"; 
+ fishname.className = "fishname";
+ size.className = "fishsize";
+ temp.className = "fishtemp";
+ tanksize.className = "tanksize"; 
+ main_card.className = "maincard"; //container card to hide/show info 
+
+
+ fishcard.appendChild(image_element);
+ fishcard.appendChild(fishname);
+ fishcard.appendChild(size);
+ fishcard.appendChild(temp);
+ fishcard.appendChild(tanksize);
+
+
+//  main_card.appendChild(fishcard);
+// const modalContent = document.getElementById('modal-content');
+ similar_results.appendChild(fishcard);
+//  similar_results.innerHTML = "what up yo";
+ modalContent.appendChild(similar_results);
+
+}
+
+//ghostcards because my grid view can messed up without it on bigger viewports 
+if (window.innerWidth > 600 && fish_list.length > 0) { 
+for (let i = 0; i < 8; i++) {
+  let ghost = document.createElement('div');
+  let ghostpic = document.createElement('img');
+  ghostpic.src = "icon/ghost.png";
+  ghostpic.alt = "ignore this user interface element";
+  ghost.className = "ghostcard";
+  ghost.appendChild(ghostpic);
+  similar_results.appendChild(ghost); 
+}}
+
+// similar_results.appendChild(result_lists); 
+}/// fishFiller ends here 
+
+
+
+
+function toggleDropdown(event) {
+  // event.preventDefault();//it's a button right now but it won't be a button in the future and I will remove this comment 
+  event.stopPropagation();
+  // Find the closest parent element with the class 'dropdown' from the clicked button
+  let dropdown = event.target.closest('.dropdown');
+
+   // Close all other dropdowns before toggling the current one
+  var allDropdowns = document.querySelectorAll('.dropdown-content');
+  allDropdowns.forEach(function(dropdownContent) {
+    if (dropdown && !dropdown.contains(dropdownContent)) {
+      dropdownContent.classList.remove('show');
+    }
+  });
+
+  // Toggle the 'show' class on the dropdown-content within this specific dropdown
+  if (dropdown) {
+    let content = dropdown.querySelector('.dropdown-content');
+    if (content) {
+      content.classList.toggle('show');
+    }
+  }
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content') && !event.target.closest('.dropdown-content')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+
+function flipListener() {
+  //Event listener for flipcard to each main card//
+let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
+fishcard_divs.forEach(div => {
+  let divId = div.id; 
+  div.addEventListener("click", function () {
+    // var clickedDivID = event.target.id;
+    let fishcard = document.getElementById(divId);
+    let fish;  
+    for (let x of fish_master) {
+        if (x.fish_id === divId) {   
+           fish = x; 
+        }
+    }
+
+    
+    
+    let info_id = `d${fish.fish_id}`; 
+    let name = uppercaser(fish.name_english);
+    let hardi = fish.uncare; 
+    let avail = fish.availability; 
+    let behave = fish.school; 
+    let agres = fish.agression; 
+    let breed = fish.breeding_difficulty; 
+    let latin_len = (`${fish.name_latin}`).length
+    
+    let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+    let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+    let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
+    let card_size_cal = Math.round(fish.cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+    let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+    
+    // let reveal_card = document.createElement('div'); //container card to hide/show info 
+    let infocard = document.createElement('div'); 
+    
+    let iconimage = document.createElement("img");
+    let copyimage = document.createElement("img");
+    let fishname2 = document.createElement("p");
+    let latin = document.createElement("p");
+    let mintanksize = document.createElement("p");
+    let tempinfo = document.createElement("p");
+    let sizeinfo = document.createElement("p");
+    let hardiness = document.createElement("p");
+    let availability = document.createElement("p");
+    let social = document.createElement("p");
+    let agression = document.createElement("p");
+    let breeding = document.createElement("p");
+    let origin = document.createElement("p");
+    
+    // reveal_card.className = "reveal_card";
+    // infocard.className = "infocard";
+
+    if (fish.isfish == "1")  {
+      infocard.className = "infocard";
+     }
+     else {infocard.className = "ninfocard"}
+    
+    iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
+    iconimage.alt = `"small image of ${name}`;
+    iconimage.id = info_id; //might be completely unnecessary 
+    copyimage.src = 'icon/copy.png';
+    fishname2.innerHTML = name;
+    latin.innerHTML = `${fish.name_latin}`;
+    mintanksize.innerHTML = `Minimum tank size: ${cap} ${console_capacity}`;
+    tempinfo.innerHTML = `T: ${temp_min}-${temp_max}${console_temperature}   pH: ${fish.phmin}-${fish.phmax}`; 
+
+    if (fish.isfish == "1")  {
+      sizeinfo.innerHTML = `Fish size: ${card_size} ${console_fishsize}`;
+     }
+     else { sizeinfo.innerHTML = `Creature size: ${card_size} ${console_fishsize}`;}
+
+   
+    
+    hardiness.innerHTML = `Difficulty: ${codes_hardi[hardi]}`;
+    availability.innerHTML = `Availability: ${codes_avail[avail]}`;
+    social.innerHTML = `Behavior: ${codes_behave[behave]}`;
+    agression.innerHTML = `Agression: ${codes_agres[agres]}`;
+    breeding.innerHTML =  `Breeding: ${codes_breed[breed]}`;
+    origin.innerHTML = `Origin: ${commaRemover(fish.origin)}`; 
+
+    var origin_len = (fish.origin).length;
+  
+    
+    iconimage.className = "iconimage";
+    fishname2.className = "title";
+    
+    
+    //Fitting latin names to info card UI 
+    if (latin_len > 21) {
+      latin.className = "bigsubtitle";
+    }
+     if (latin_len > 25)  {
+      latin.className = "verybigsubtitle";
+     }
+    if (latin_len <= 21) {
+      latin.className = "subtitle";
+    }
+    
+    mintanksize.className = "infocardtext";
+    tempinfo.className = "infocardtext";
+    sizeinfo.className = "infocardtext";
+    
+    hardiness.className = "infocardtext";
+    availability.className = "infocardtext";
+    social.className = "infocardtext";
+    agression.className = "infocardtext";
+    breeding.className = "infocardtext";
+    origin.className = "infocardtext";
+
+  
+    copyimage.className = "copy";
+
+
+    //// more module button 
+    if (fish.more == 1) {
+      let moreButton = document.createElement('button');
+      moreButton.className = fish.isfish == 1 ? 'more_button' : 'more_button_nonfish';
+      moreButton.innerHTML = 'More';
+      // moreButton.id = `m${fish.fish_id}`; 
+      infocard.appendChild(moreButton);
+      moreButton.onclick = function() {
+      showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
+      };
+    }
+    
+    infocard.id = info_id; 
+    infocard.appendChild(iconimage);
+    infocard.appendChild(copyimage);
+    infocard.appendChild(fishname2);
+    infocard.appendChild(latin);
+    infocard.appendChild(mintanksize);
+    infocard.appendChild(tempinfo);
+    infocard.appendChild(sizeinfo);
+    
+    infocard.appendChild(hardiness);
+    infocard.appendChild(availability);
+    infocard.appendChild(social);
+    infocard.appendChild(agression);
+    infocard.appendChild(breeding);
+    infocard.appendChild(origin);
+    
+    // reveal_card.appendChild(infocard); //container card to hide/show info 
+    let father = fishcard.parentNode;
+    fishcard.style.display = "none";
+    father.appendChild(infocard);
+
+    let textCopy = `${name} (${fish.name_latin})`;
+  
+
+    iconimage.addEventListener("click", infocardKill);
+    copyimage.addEventListener("click", copyname);
+
+    function infocardKill() {
+      infocard.remove();
+      fishcard.style.display = "block";
+    }
+
+function copyname () {
+   // Use the Clipboard API to copy the text
+   navigator.clipboard.writeText(textCopy).then(() => {
+    // Optional: Provide feedback to the user
+    alert(`Copied to clipboard: ${textCopy}`);
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+}
+
+
+    });
+});
+}
+
   
   }
   
@@ -406,3 +745,6 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     document.body.style.overflow = 'auto';
   }
   }
+
+
+ 
