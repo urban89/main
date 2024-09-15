@@ -44,7 +44,7 @@ function closeModal() {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
-
+    const floating_backarrow = document.createElement('img');
 
   
     let mintanksize = document.createElement("p");
@@ -82,9 +82,9 @@ function closeModal() {
    
   
     // Create the close button
-    const closeButton = document.createElement('span');
+    const closeButton = document.createElement('img');
     closeButton.className = 'close_button';
-    closeButton.innerHTML = '←';
+    closeButton.src = `icon/upper_backarrow.png`;
     closeButton.onclick = function() {
         closeMore(modal);
     };
@@ -99,6 +99,12 @@ function closeModal() {
   summarybox.className = "summarybox";
   masterline.className = "masterline";
   bubbleghost.className = "bubbleghost"; 
+  floating_backarrow.className = "floating_close_modal"; 
+  floating_backarrow.src = `icon/backarrow.png`; 
+
+  floating_backarrow.onclick = function() {
+    closeMore(modal);
+};
   
   more_console.className = "moreconsole";
   idshown.className = "moreConsoleText";
@@ -365,8 +371,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     bubbleghost.appendChild(summarybox);
     // masterline.appendChild(summarybox);
     masterline.appendChild(bubbleghost);
-  
-  
+    modalContent.appendChild(floating_backarrow);
     modalContent.appendChild(fishsummary);
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
