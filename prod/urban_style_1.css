@@ -1511,7 +1511,7 @@ background-color:  #86a5def8;
   left: 1%;
   right: 1%; 
   top: 0;
-  width: 97%;
+  width: 80%;
   height: 99%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8); /* Dark background */
@@ -1519,7 +1519,7 @@ background-color:  #86a5def8;
 
 @media screen and (min-width: 700px) {
   .modal {
-    width: 97%; /* Set the desired width */
+    width: 98%; /* Set the desired width */
     left: 50%; /* Position from the left */
     top: 50%; /* Position from the top */
     transform: translate(-50%, -50%); /* Center the modal */
@@ -1535,7 +1535,7 @@ background-color:  #86a5def8;
   /* margin: auto; */
   padding: 2%;
   width: 96%;
-  height: 100%;
+  height: auto;
   /* max-width: 800px;  */
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
   border-radius: 5px;

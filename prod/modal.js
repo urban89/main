@@ -32,7 +32,7 @@ function showMore(src, id) {
                text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
                 background: rgba(255, 255, 0, 0.15);
                 border-radius: 5px;
-                height: 100%; 
+                height: auto; 
             }
             /* Add more CSS rules here if needed */
 
