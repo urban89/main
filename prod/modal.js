@@ -6,26 +6,27 @@ const similar_h2 = "Similar species:";
 
 function showMore(url, fishId) {
   const written_content = document.createElement('div');
-  written_content.id = `mod${fishId}`;
+  der_id = `mod${fishId}`;
+  written_content.id = der_id;
 
   // Fetch the content from the URL dynamically
   fetch(url)
     .then(response => response.text()) // Get the content as text
     .then(data => {
       // Inject the fetched content into the modal
-      document.getElementById('written_content').innerHTML = data;
+      document.getElementById(der_id).innerHTML = data;
       console.log(data);
 
       // Show the modal
       document.getElementById('modal').style.display = 'block';
     })
     .catch(error => console.error('Error loading content:', error));
-}
+
 
 // Function to close the modal
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
-
+}
 
 
 
@@ -33,7 +34,7 @@ function closeModal() {
 
 
     // Create the modal div
-    const fish = fish_master.find(fish => fish.fish_id === id);
+    const fish = fish_master.find(fish => fish.fish_id === fishId);
     
     const modal = document.createElement('div');
     const fishsummary = document.createElement('div');
@@ -94,7 +95,7 @@ function closeModal() {
   fishname.className = "namesummary";
   latin.className = "latinsummary";
   moreimg.className = "moreimg"; 
-  moreimg.src = `webps1/${id}.webp`;
+  moreimg.src = `webps1/${fishId}.webp`;
   summarybox.className = "summarybox";
   masterline.className = "masterline";
   bubbleghost.className = "bubbleghost"; 
@@ -126,7 +127,7 @@ function closeModal() {
   
   
   var isfish = (fish.isfish === "1") ? "true" : "false";
-  idshown.innerHTML = `species ID: #${id}`;
+  idshown.innerHTML = `species ID: #${fishId}`;
   isfishshown.innerHTML = `isFish?: ${isfish}`;
   
   let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
@@ -756,7 +757,6 @@ function copyname () {
     });
 });
 }
-}
   
   function closeMore(modal) {
     if (modal && modal.parentNode) {
@@ -770,4 +770,4 @@ function copyname () {
   }
 
 
- 
+}
