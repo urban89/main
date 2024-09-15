@@ -33,6 +33,7 @@ function showMore(src, id) {
                 background: rgba(255, 255, 0, 0.15);
                 border-radius: 5px;
                 height: auto; 
+                  overflow: auto;
             }
             /* Add more CSS rules here if needed */
 
@@ -403,7 +404,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     let id_repetition = 0;
     fishFillerCompa();
-
+    flipListenerCompa()
 
 
 
@@ -603,7 +604,7 @@ window.onclick = function(event) {
   }
 };
 
-function flipListener() {
+function flipListenerCompa() {
   //Event listener for flipcard to each main card//
 let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {

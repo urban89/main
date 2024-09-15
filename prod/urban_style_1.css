@@ -1511,7 +1511,7 @@ background-color:  #86a5def8;
   left: 1%;
   right: 1%; 
   top: 0;
-  width: 80%;
+  width: 98%;
   height: 99%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8); /* Dark background */
@@ -1519,7 +1519,7 @@ background-color:  #86a5def8;
 
 @media screen and (min-width: 700px) {
   .modal {
-    width: 98%; /* Set the desired width */
+    width: 80%; /* Set the desired width */
     left: 50%; /* Position from the left */
     top: 50%; /* Position from the top */
     transform: translate(-50%, -50%); /* Center the modal */
