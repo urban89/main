@@ -1,10 +1,19 @@
 const similar_h2 = "Similar species:";
-
+const maindiv = document.getElementById("maindiv");
 
 ////////////////////////////////////////////////////////////////////////////
 //// "MORE" MODULES creation 
 
 function showMore(url, fishId) {
+  const floating_backarrow = document.createElement('img');
+  floating_backarrow.className = "floating_close_modal"; 
+  floating_backarrow.src = `icon/backarrow.png`; 
+  floating_backarrow.onclick = function() {
+    closeMore(modal);
+};
+maindiv.appendChild(floating_backarrow);
+
+
   const written_content = document.createElement('div');
   der_id = `mod${fishId}`;
   written_content.id = der_id;
@@ -44,7 +53,7 @@ function closeModal() {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
-    const floating_backarrow = document.createElement('img');
+
 
   
     let mintanksize = document.createElement("p");
@@ -99,12 +108,9 @@ function closeModal() {
   summarybox.className = "summarybox";
   masterline.className = "masterline";
   bubbleghost.className = "bubbleghost"; 
-  floating_backarrow.className = "floating_close_modal"; 
-  floating_backarrow.src = `icon/backarrow.png`; 
 
-  floating_backarrow.onclick = function() {
-    closeMore(modal);
-};
+
+
   
   more_console.className = "moreconsole";
   idshown.className = "moreConsoleText";
@@ -306,6 +312,9 @@ if (fish.swim === species.swim) {
   similarity_score += 0.7; 
 }
 
+if (fish.swim !== species.swim) {
+  similarity_score -= 2; 
+}
 
 
 //species type comparison and final score punishment
@@ -771,6 +780,7 @@ function copyname () {
     document.body.removeChild(modal);
     // Re-enable scrolling on the main page
     document.body.style.overflow = 'auto';
+    maindiv.removeChild(floating_backarrow);
   }
   }
 

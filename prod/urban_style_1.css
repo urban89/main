@@ -1564,8 +1564,8 @@ margin-top: 0;
 
 .floating_close_modal {
    position: fixed;
-  bottom: 4vh;
-  right: 4vh;
+  bottom: 4%;
+  right: 4%;
   z-index: 1000;
   width: 5vh;
   border-radius: 30px;
