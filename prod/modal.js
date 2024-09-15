@@ -4,51 +4,26 @@ const similar_h2 = "Similar species:";
 ////////////////////////////////////////////////////////////////////////////
 //// "MORE" MODULES creation 
 
-function showMore(src, id) {
-    // Create the iframe
-    const iframe = document.createElement('iframe');
-    iframe.className = 'iframe_content';
-    iframe.src = src;
-    iframe.setAttribute('scrolling', 'no');
-    iframe.style.overflow = 'hidden';
+function showMore(url, fishId) {
+  // Fetch the content from the URL dynamically
+  fetch(url)
+    .then(response => response.text()) // Get the content as text
+    .then(data => {
+      // Inject the fetched content into the modal
+      document.getElementById('written_content').innerHTML = data;
+      console.log(data);
 
-  
-// iframe.onload = function() {
-//     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-// };
+      // Show the modal
+      document.getElementById('modal').style.display = 'block';
+    })
+    .catch(error => console.error('Error loading content:', error));
+}
 
-       // Inject CSS once the iframe is fully loaded
-       iframe.onload = function () {
-        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+// Function to close the modal
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
 
-        if (iframeDocument) {
-            // Create a new <style> element
-            const style = iframeDocument.createElement('style');
-            style.type = 'text/css';
 
-            // Add your CSS styles as text content
-            style.textContent = `
-            .more_section {
-               text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
-                background: rgba(255, 255, 0, 0.15);
-                border-radius: 5px;
-               
-            }
-            
-            }
-          
-          `
-          ;
-
-            // Append the <style> element to the <head> of the iframe document
-            iframeDocument.head.appendChild(style);
-        }
-        iframe.onload = function() {
-          const iframeDocument = iframe.contentWindow.document;
-          const contentHeight = iframeDocument.body.scrollHeight; // Get the height of the iframe content
-          iframe.style.height = contentHeight + 'px'; // Set the iframe height dynamically
-      };
-    };
 
 
 
@@ -65,7 +40,7 @@ function showMore(src, id) {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
-
+    const written_content = document.createElement('div');
 
   
     let mintanksize = document.createElement("p");
@@ -391,7 +366,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     modalContent.appendChild(fishsummary);
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
-    modalContent.appendChild(iframe);
+    modalContent.appendChild(written_content);
     modalContent.appendChild(similar_title);
 
 
@@ -726,7 +701,9 @@ fishcard_divs.forEach(div => {
       // moreButton.id = `m${fish.fish_id}`; 
       infocard.appendChild(moreButton);
       moreButton.onclick = function() {
+
       showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
+      
       };
     }
     
@@ -776,10 +753,7 @@ function copyname () {
     });
 });
 }
-
-  
-  }
-  
+}
   
   function closeMore(modal) {
     if (modal && modal.parentNode) {
