@@ -402,9 +402,8 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 
 //////////////////
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
-    let id_repetition = 0;
     fishFillerCompa();
-    flipListenerCompa();
+    // flipListenerCompa();
 
 
 
@@ -449,7 +448,6 @@ const max_similarity_score = Math.max(...similars_ids.map(similar => similar.sco
 ///// FISH CARD  
  
 function fishFillerCompa() {
-id_repetition += 1; 
 
 
   const similar_results = document.createElement('div');
@@ -491,7 +489,7 @@ console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
   for (let i = 0; i <fish_list.length; i++) {
 
  //Generating fish card (fish cards are displayed by default)
- let fishid = `${id_repetition}id${fish_list[i].fish_id}`; 
+ let fishid = `id${fish_list[i].fish_id}`; 
  let main_card = document.createElement('div'); //container card to hide/show info 
  let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
  let fishname = document.createElement("p"); // <p> holding the fish name 
