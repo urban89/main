@@ -1788,4 +1788,5 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 .simvalue {
   text-shadow: 0.2vh 0.2vh 0.1vh yellow;
   font-weight: 400;
+  color: rgb(43, 29, 29);
 }
