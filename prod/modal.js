@@ -32,7 +32,7 @@ function showMore(src, id) {
                text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
                 background: rgba(255, 255, 0, 0.15);
                 border-radius: 5px;
-                height: auto; 
+                height: 100%; 
             }
             /* Add more CSS rules here if needed */
 
@@ -42,6 +42,11 @@ function showMore(src, id) {
             // Append the <style> element to the <head> of the iframe document
             iframeDocument.head.appendChild(style);
         }
+        iframe.onload = function() {
+          const iframeDocument = iframe.contentWindow.document;
+          const contentHeight = iframeDocument.body.scrollHeight; // Get the height of the iframe content
+          iframe.style.height = contentHeight + 'px'; // Set the iframe height dynamically
+      };
     };
 
 

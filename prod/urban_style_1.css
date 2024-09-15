@@ -1562,7 +1562,7 @@ background-color:  #86a5def8;
 
 .iframe_content {
   width: 100%;
-  height: 100%; /* Set to auto so it adjusts to its content */
+  height: auto; /* Set to auto so it adjusts to its content */
   border: none;
   display: block; 
   margin: 0;
