@@ -1517,7 +1517,7 @@ background-color:  #86a5def8;
   background-color: rgba(0, 0, 0, 0.8); /* Dark background */
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .modal {
     width: 80%; /* Set the desired width */
     left: 50%; /* Position from the left */
