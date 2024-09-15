@@ -404,7 +404,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     let id_repetition = 0;
     fishFillerCompa();
-    flipListenerCompa()
+    flipListenerCompa();
 
 
 
@@ -605,6 +605,7 @@ window.onclick = function(event) {
 };
 
 function flipListenerCompa() {
+  console.log("test");
   //Event listener for flipcard to each main card//
 let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
@@ -621,7 +622,7 @@ fishcard_divs.forEach(div => {
 
     
     
-    let info_id = `d${fish.fish_id}`; 
+    let info_id = `m${fish.fish_id}`; 
     let name = uppercaser(fish.name_english);
     let hardi = fish.uncare; 
     let avail = fish.availability; 
