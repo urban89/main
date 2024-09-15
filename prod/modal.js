@@ -1,3 +1,6 @@
+const similar_h2 = "Similar species:";
+
+
 ////////////////////////////////////////////////////////////////////////////
 //// "MORE" MODULES creation 
 
@@ -8,6 +11,11 @@ function showMore(src, id) {
     iframe.src = src;
     iframe.setAttribute('scrolling', 'no');
     iframe.style.overflow = 'hidden';
+
+  
+// iframe.onload = function() {
+//     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+// };
 
        // Inject CSS once the iframe is fully loaded
        iframe.onload = function () {
@@ -24,14 +32,21 @@ function showMore(src, id) {
                text-shadow:0.75px 0.25px 0.25px #f7de1ed8;
                 background: rgba(255, 255, 0, 0.15);
                 border-radius: 5px;
+                height: auto; 
             }
             /* Add more CSS rules here if needed */
+
+          
           `;
 
             // Append the <style> element to the <head> of the iframe document
             iframeDocument.head.appendChild(style);
         }
     };
+
+
+
+
 
     // Create the modal div
     const fish = fish_master.find(fish => fish.fish_id === id);
@@ -45,7 +60,6 @@ function showMore(src, id) {
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
 
-  
 
   
     let mintanksize = document.createElement("p");
@@ -76,6 +90,11 @@ function showMore(src, id) {
     // Create the modal content div
     const modalContent = document.createElement('div');
     modalContent.className = fish.isfish == 1 ? 'modal_content' : 'modal_content_nonfish';
+
+    const similar_title = document.createElement('div');
+    similar_title.className = "more_section";
+    similar_title.innerHTML = similar_h2; 
+   
   
     // Create the close button
     const closeButton = document.createElement('span');
@@ -367,6 +386,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
     modalContent.appendChild(iframe);
+    modalContent.appendChild(similar_title);
 
 
 
