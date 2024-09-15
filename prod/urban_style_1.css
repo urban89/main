@@ -247,6 +247,7 @@ background-color:  #86a5def8;
   padding: 0; /* Add this to remove any extra padding */
 } 
 
+
 /*fish card items*/
 .fishsize {
   position: absolute;
@@ -1525,7 +1526,7 @@ background-color:  #86a5def8;
     transform: translate(-50%, -50%); /* Center the modal */
     /* height: 200vh;  */
     max-height: auto; 
-    /* overflow-y: auto;  */
+    overflow-y: auto; 
   }
 }
 
@@ -1533,8 +1534,8 @@ background-color:  #86a5def8;
 .modal_content {
   position: relative;
   /* margin: auto; */
-  padding: 2%;
-  width: 96%;
+  padding: 0;
+  width: 100%;
   height: auto;
   /* max-width: 800px;  */
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
@@ -1550,8 +1551,8 @@ background-color:  #86a5def8;
 
   position: relative;
   /* margin: auto; */
-  padding: 2%;
-  width: 96%;
+  padding: 0;
+  width: 100%;
   height: auto;
   /* max-width: 800px;  */
   background: linear-gradient(145deg, #d4cbc1 22%, #89868f 88%);
@@ -1562,13 +1563,21 @@ background-color:  #86a5def8;
 
 .iframe_content {
   width: 100%;
-  height: auto; /* Set to auto so it adjusts to its content */
+  height: 100vh; /* Set to auto so it adjusts to its content */
+  max-height: max-content;
   border: none;
-  display: block; 
+  /* display: block;  */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 500px) { 
+  .iframe_content {
+  
+  height: 150vh;
+}}
+
 
 
 .close_button {
@@ -1782,6 +1791,7 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   background: rgba(255, 255, 0, 0.15);
   border-radius: 5px;
 
+/* "similar species" */ 
   font-size: 1.5rem;
 }
 
@@ -1802,4 +1812,11 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   text-shadow: 0.2vh 0.2vh 0.1vh yellow;
   font-weight: 400;
   color: rgb(43, 29, 29);
+}
+
+
+.similar_container {
+  background-color: rgb(35, 81, 151);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="5" d="M 0 100 Q 50 150 100 100 T 200 100" /><path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="4" d="M 0 150 Q 50 200 100 150 T 200 150" />  <path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="5" d="M 0 50 Q 50 0 100 50 T 200 50" />   </svg>');
+  background-size: 200px 200px;
 }

@@ -35,8 +35,6 @@ function showMore(src, id) {
                
             }
             
-            .more_info {
-             height: auto; 
             }
           
           `
@@ -454,7 +452,8 @@ function fishFillerCompa() {
 
   const similar_results = document.createElement('div');
   similar_results.className = "column_result"; 
-
+  const similar_container = document.createElement('div');
+  similar_container.className = "similar_container";
 
 // Create a Map for quick lookup
 const fishMap = new Map(fish_master.map(fish => [String(fish.fish_id), fish]));
@@ -545,8 +544,9 @@ else {fishcard.className = "nonfish_card"}
 //  main_card.appendChild(fishcard);
 // const modalContent = document.getElementById('modal-content');
  similar_results.appendChild(fishcard);
+ similar_container.appendChild(similar_results);
 //  similar_results.innerHTML = "what up yo";
- modalContent.appendChild(similar_results);
+ modalContent.appendChild(similar_container);
 
 }
 
