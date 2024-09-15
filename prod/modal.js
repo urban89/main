@@ -5,6 +5,9 @@ const similar_h2 = "Similar species:";
 //// "MORE" MODULES creation 
 
 function showMore(url, fishId) {
+  const written_content = document.createElement('div');
+  written_content.id = `mod${fishId}`;
+
   // Fetch the content from the URL dynamically
   fetch(url)
     .then(response => response.text()) // Get the content as text
@@ -40,7 +43,7 @@ function closeModal() {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
-    const written_content = document.createElement('div');
+
 
   
     let mintanksize = document.createElement("p");
