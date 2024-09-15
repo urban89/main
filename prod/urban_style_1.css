@@ -1771,3 +1771,21 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   background: rgba(255, 255, 0, 0.416);
   border-radius: 5px;
 }
+
+#about {
+  border-radius: 0px 0px 50px 0px;
+}
+
+.comp_score {
+  font-weight: 200;
+  font-size: 0.9rem;
+  margin:0;
+  color: rgb(146, 97, 97);
+  -webkit-text-stroke: 0.5px #f7db397e; /* Outline width and color */
+  text-stroke: 0.5px rgba(240, 214, 68, 0.459); /* Non-prefixed property for future compatibility */
+}
+
+.simvalue {
+  text-shadow: 0.2vh 0.2vh 0.1vh yellow;
+  font-weight: 400;
+}

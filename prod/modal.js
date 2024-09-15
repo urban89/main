@@ -315,9 +315,9 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     similars_ids.push({
       id: species.fish_id,
       score: similarity_score,
-      species: species.name_english
+      species: species.name_english,
+
     });
-  
 
   }
 
@@ -375,9 +375,9 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 
 
 //////////////////
-
+const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     let id_repetition = 0;
-    fishFiller(similars_ids, modalContent);
+    fishFillerCompa();
 
 
 
@@ -422,7 +422,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
   ///////////////////////////////////////////////
 ///// FISH CARD  
  
-function fishFiller(similars_ids, modalContent) {
+function fishFillerCompa() {
 id_repetition += 1; 
 
 
@@ -438,14 +438,27 @@ const fish_list = [];
 
 // Loop over each id in filtered_similars_ids and retrieve the matching fish from the Map
 for (let j = 0; j < filtered_similars_ids.length; j++) {
-    const similar_id = String(filtered_similars_ids[j].id); // Get the current id from filtered_similars_ids
+  const similar_id = String(filtered_similars_ids[j].id); // Get the current id from filtered_similars_ids
 
-    if (fishMap.has(similar_id)) {
-        fish_list.push(fishMap.get(similar_id)); // Push the matching fish object to fish_list
-    }
+  if (fishMap.has(similar_id)) {
+      // Get the matching fish object from the Map
+      const fish = fishMap.get(similar_id);
+
+      // Create a copy of the fish object and add the similarity_score
+      const fishWithScore = {
+          ...fish, // Spread the properties of the original fish object
+          similarity_score: `${Math.round((filtered_similars_ids[j].score/max_similarity_score)*100)}%` // Add the similarity_score
+      };
+
+      // Push the modified fish object to fish_list
+      fish_list.push(fishWithScore);
+  }
 }
 
-console.log("Filtered fish list in correct order:", fish_list);
+console.log("Filtered fish list with similarity scores:", fish_list);
+
+
+
 console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
 
 
@@ -461,6 +474,7 @@ console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
  let temp = document.createElement("span"); // temperature in fish card 
  let tanksize = document.createElement("span"); // tank size in fish card 
  let name = uppercaser(fish_list[i].name_english);
+ let score = document.createElement("p");
 
 
  let temp_min = Math.round((fish_list[i].temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
@@ -488,13 +502,18 @@ else {fishcard.className = "nonfish_card"}
  temp.className = "fishtemp";
  tanksize.className = "tanksize"; 
  main_card.className = "maincard"; //container card to hide/show info 
+ score.className = "comp_score"
 
 
+ score.innerHTML = ` Similarity: <span class = "simvalue">${fish_list[i].similarity_score}</span>`; 
+ fishcard.appendChild(score);////
  fishcard.appendChild(image_element);
  fishcard.appendChild(fishname);
+
  fishcard.appendChild(size);
  fishcard.appendChild(temp);
  fishcard.appendChild(tanksize);
+
 
 
 //  main_card.appendChild(fishcard);
