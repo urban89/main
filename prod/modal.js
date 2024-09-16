@@ -380,7 +380,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
     bubbleghost.appendChild(summarybox);
     // masterline.appendChild(summarybox);
     masterline.appendChild(bubbleghost);
-    modalContent.appendChild(floating_backarrow);
+    // modalContent.appendChild(floating_backarrow);
     modalContent.appendChild(fishsummary);
     // modalContent.appendChild(summarybox);
     modalContent.appendChild(more_console);
@@ -396,7 +396,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 //////////////////
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     fishFillerCompa();
-    // flipListenerCompa();
+    flipListenerCompa();
 
 
 
@@ -602,7 +602,7 @@ function flipListenerCompa() {
   //Event listener for flipcard to each main card//
 let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
-  let divId = div.id; 
+  let divId = div.id.substring(2);
   div.addEventListener("click", function () {
     // var clickedDivID = event.target.id;
     let fishcard = document.getElementById(divId);
