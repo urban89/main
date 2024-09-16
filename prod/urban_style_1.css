@@ -310,7 +310,7 @@ background-color:  #86a5def8;
 }
 
 
-.fish_card, .infocard {
+.fish_card, .infocard, .modal_fish_card, .modal_infocard{
   flex: 0 0 calc(33.33% - 2vw); 
   margin: 5px; 
   box-sizing: border-box;
@@ -334,7 +334,7 @@ background-attachment: fixed;
 position: relative;
 }
 
-.nonfish_card, .ninfocard {
+.nonfish_card, .ninfocard, .modal_nonfish_card, .modal_ninfocard{
     flex: 0 0 calc(33.33% - 2vw); 
     margin: 5px; 
     box-sizing: border-box;

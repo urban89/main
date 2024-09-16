@@ -404,7 +404,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 //////////////////
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     fishFillerCompa();
-    flipListenerCompa();
+  
 //////////////////
 
     // Append the modal content to the modal
@@ -418,7 +418,7 @@ const max_similarity_score = Math.max(...similars_ids.map(similar => similar.sco
   
     // Disable scrolling on the main page
     document.body.style.overflow = 'hidden';
-  
+    flipListenerCompa();
     // Event listener for keydown ESC
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape' || event.key === 'Esc') { // Check if 'ESC' key is pressed
@@ -474,6 +474,7 @@ console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
   for (let i = 0; i <fish_list.length; i++) {
 
  //Generating fish card (fish cards are displayed by default)
+
  let fishid = `id${fish_list[i].fish_id}`; 
  let main_card = document.createElement('div'); //container card to hide/show info 
  let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
@@ -501,9 +502,9 @@ console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
  
  fishcard.id = fishid;  // changed from main card!! 
  if (fish_list[i].isfish == "1")  {
- fishcard.className = "fish_card";
+ fishcard.className = "modal_fish_card";
 }
-else {fishcard.className = "nonfish_card"}
+else {fishcard.className = "modal_nonfish_card"}
 
  image_element.className = "fishcardimage"; 
  fishname.className = "fishname";
@@ -512,7 +513,7 @@ else {fishcard.className = "nonfish_card"}
  tanksize.className = "tanksize"; 
  main_card.className = "maincard"; //container card to hide/show info 
  score.className = "comp_score"
-
+ main_card.className = "maincard";
 
  score.innerHTML = ` Similarity: <span class = "simvalue">${fish_list[i].similarity_score}</span>`; 
  fishcard.appendChild(score);////
@@ -522,12 +523,12 @@ else {fishcard.className = "nonfish_card"}
  fishcard.appendChild(size);
  fishcard.appendChild(temp);
  fishcard.appendChild(tanksize);
-
+ main_card.appendChild(fishcard);
 
 
 //  main_card.appendChild(fishcard);
 // const modalContent = document.getElementById('modal-content');
- similar_results.appendChild(fishcard);
+ similar_results.appendChild(main_card);
  similar_container.appendChild(similar_results);
 //  similar_results.innerHTML = "what up yo";
  modalContent.appendChild(similar_container);
@@ -556,15 +557,15 @@ function flipListenerCompa() {
   console.log("test");
 
   //Event listener for flipcard to each main card//
-let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
+let fishcard_divs = document.querySelectorAll(".modal_fish_card, .modal_nonfish_card");
 fishcard_divs.forEach(div => {
-  let divId = `id${div.id}`;
-  // console.log(divId);
+  let divId = div.id;
   let true_id = div.id.substring(2);
-  div.addEventListener("click", function () {
+    div.addEventListener("click", function () {
     // var clickedDivID = event.target.id;
     let fishcard = document.getElementById(divId);
     let fish;  
+  
     for (let x of fish_master) {
         if (x.fish_id === true_id) {   
            fish = x; 
@@ -572,7 +573,7 @@ fishcard_divs.forEach(div => {
     }
 
     
-    
+ 
     let info_id = `m${fish.fish_id}`; 
     let name = uppercaser(fish.name_english);
     let hardi = fish.uncare; 
@@ -609,9 +610,9 @@ fishcard_divs.forEach(div => {
     // infocard.className = "infocard";
 
     if (fish.isfish == "1")  {
-      infocard.className = "infocard";
+      infocard.className = "modal_infocard";
      }
-     else {infocard.className = "ninfocard"}
+     else {infocard.className = "modal_ninfocard"}
     
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
@@ -670,18 +671,18 @@ fishcard_divs.forEach(div => {
 
 
     //// more module button 
-    if (fish.more == 1) {
-      let moreButton = document.createElement('button');
-      moreButton.className = fish.isfish == 1 ? 'more_button' : 'more_button_nonfish';
-      moreButton.innerHTML = 'More';
-      // moreButton.id = `m${fish.fish_id}`; 
-      infocard.appendChild(moreButton);
-      moreButton.onclick = function() {
+    // if (fish.more == 1) {
+    //   let moreButton = document.createElement('button');
+    //   moreButton.className = fish.isfish == 1 ? 'more_button' : 'more_button_nonfish';
+    //   moreButton.innerHTML = 'More';
 
-      showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
+    //   infocard.appendChild(moreButton);
+    //   moreButton.onclick = function() {
+
+    //   showMore(`more/${fish.fish_id}.html`,fish.fish_id); 
       
-      };
-    }
+    //   };
+    // }
     
     infocard.id = info_id; 
     infocard.appendChild(iconimage);
@@ -744,6 +745,5 @@ function copyname () {
     floatSettingsButton.style.display = "block";
   }
   }
-
 
 }
