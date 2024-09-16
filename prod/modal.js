@@ -19,7 +19,7 @@ function showMore(url, fishId) {
   floating_backarrow.onclick = function() {
     closeMore(modal);
 };
-maindiv.appendChild(floating_backarrow);
+document.body.appendChild(floating_backarrow);
 
 
   const written_content = document.createElement('div');
@@ -405,20 +405,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
 const max_similarity_score = Math.max(...similars_ids.map(similar => similar.score));
     fishFillerCompa();
     flipListenerCompa();
-
-
-
 //////////////////
-
-
-
-
-
-
-
-
-
-
 
     // Append the modal content to the modal
     modal.appendChild(modalContent);
@@ -449,7 +436,6 @@ const max_similarity_score = Math.max(...similars_ids.map(similar => similar.sco
 ///// FISH CARD  
  
 function fishFillerCompa() {
-
 
   const similar_results = document.createElement('div');
   similar_results.className = "column_result"; 
@@ -482,9 +468,6 @@ for (let j = 0; j < filtered_similars_ids.length; j++) {
 }
 
 console.log("Filtered fish list with similarity scores:", fish_list);
-
-
-
 console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
 
 
@@ -566,57 +549,24 @@ for (let i = 0; i < 8; i++) {
 // similar_results.appendChild(result_lists); 
 }/// fishFiller ends here 
 
-
-
-
-function toggleDropdown(event) {
-  // event.preventDefault();//it's a button right now but it won't be a button in the future and I will remove this comment 
-  event.stopPropagation();
-  // Find the closest parent element with the class 'dropdown' from the clicked button
-  let dropdown = event.target.closest('.dropdown');
-
-   // Close all other dropdowns before toggling the current one
-  var allDropdowns = document.querySelectorAll('.dropdown-content');
-  allDropdowns.forEach(function(dropdownContent) {
-    if (dropdown && !dropdown.contains(dropdownContent)) {
-      dropdownContent.classList.remove('show');
-    }
-  });
-
-  // Toggle the 'show' class on the dropdown-content within this specific dropdown
-  if (dropdown) {
-    let content = dropdown.querySelector('.dropdown-content');
-    if (content) {
-      content.classList.toggle('show');
-    }
-  }
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content') && !event.target.closest('.dropdown-content')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
+////////////////////////////////////////////////////////
+//////////////////////Flip Listener 
 
 function flipListenerCompa() {
   console.log("test");
+
   //Event listener for flipcard to each main card//
 let fishcard_divs = document.querySelectorAll(".fish_card, .nonfish_card");
 fishcard_divs.forEach(div => {
-  let divId = div.id.substring(2);
+  let divId = `id${div.id}`;
+  // console.log(divId);
+  let true_id = div.id.substring(2);
   div.addEventListener("click", function () {
     // var clickedDivID = event.target.id;
     let fishcard = document.getElementById(divId);
     let fish;  
     for (let x of fish_master) {
-        if (x.fish_id === divId) {   
+        if (x.fish_id === true_id) {   
            fish = x; 
         }
     }
@@ -788,7 +738,7 @@ function copyname () {
     document.body.removeChild(modal);
     // Re-enable scrolling on the main page
     document.body.style.overflow = 'auto';
-    maindiv.removeChild(floating_backarrow);
+    document.body.removeChild(floating_backarrow);
 
     backToTopButton.style.display = "block";
     floatSettingsButton.style.display = "block";

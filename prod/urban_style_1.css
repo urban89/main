@@ -1508,7 +1508,7 @@ background-color:  #86a5def8;
 /*****************/ 
 .modal {
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
   left: 1%;
   right: 1%; 
   top: 0;
@@ -1573,6 +1573,7 @@ margin-top: 0;
   padding: 1vh; 
   box-shadow: 2px 2px 2px rgba(73, 255, 73, 0.555);
   cursor: pointer;
+  overflow: hidden;
 }
 
 
