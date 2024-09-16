@@ -1,4 +1,4 @@
- ///csv_master_v9.4
+ /// csv_master_v9.4
 
 const fish_master = [
   {
@@ -65,7 +65,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "105",
@@ -87,7 +87,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "106",
@@ -109,7 +109,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "107",
@@ -153,7 +153,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "109",
@@ -175,7 +175,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "110",
@@ -197,7 +197,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "111",
@@ -219,7 +219,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "112",
@@ -241,7 +241,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "113",
@@ -285,7 +285,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "115",
@@ -329,7 +329,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "117",
@@ -351,7 +351,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "118",
@@ -417,7 +417,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "122",
@@ -505,7 +505,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "126",
@@ -527,7 +527,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "127",
@@ -549,7 +549,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "128",
@@ -637,7 +637,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "132",
@@ -659,7 +659,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "133",
@@ -681,7 +681,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "134",
@@ -725,7 +725,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "136",
@@ -747,7 +747,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "137",
@@ -791,7 +791,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "139",
@@ -813,7 +813,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "140",
@@ -835,7 +835,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "141",
@@ -879,7 +879,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "143",
@@ -901,7 +901,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "144",
@@ -923,7 +923,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "145",
@@ -3497,7 +3497,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "268",
@@ -4355,7 +4355,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6.8",
     phmax: "7.8",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "311",
@@ -5103,7 +5103,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "345",
@@ -5191,7 +5191,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "349",
@@ -10361,7 +10361,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0"
+    more: "1"
   },
   {
     fish_id: "474",
