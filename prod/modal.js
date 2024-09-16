@@ -5,6 +5,14 @@ const maindiv = document.getElementById("maindiv");
 //// "MORE" MODULES creation 
 
 function showMore(url, fishId) {
+
+  var backToTopButton = document.getElementById("backToTop");
+  var floatSettingsButton = document.getElementById("floatsettings");
+
+  backToTopButton.style.display = "none";
+  floatSettingsButton.style.display = "none";
+
+
   const floating_backarrow = document.createElement('img');
   floating_backarrow.className = "floating_close_modal"; 
   floating_backarrow.src = `icon/backarrow.png`; 
@@ -32,7 +40,7 @@ maindiv.appendChild(floating_backarrow);
     .catch(error => console.error('Error loading content:', error));
 
 
-// Function to close the modal
+// Function to close the modal // this function is not used 
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
 }
@@ -781,6 +789,9 @@ function copyname () {
     // Re-enable scrolling on the main page
     document.body.style.overflow = 'auto';
     maindiv.removeChild(floating_backarrow);
+
+    backToTopButton.style.display = "block";
+    floatSettingsButton.style.display = "block";
   }
   }
 
