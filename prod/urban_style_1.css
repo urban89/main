@@ -310,7 +310,9 @@ background-color:  #86a5def8;
 }
 
 
+
 .fish_card, .infocard, .modal_fish_card, .modal_infocard{
+  position: relative; 
   flex: 0 0 calc(33.33% - 2vw); 
   margin: 5px; 
   box-sizing: border-box;
@@ -1798,8 +1800,13 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   background: rgba(255, 255, 0, 0.15);
   border-radius: 5px;
 
-/* "similar species" */ 
-  font-size: 1.5rem;
+  
+}
+
+.similar_title {
+  font-size: 2rem;
+  text-shadow: 3px 2px 1px yellow;
+  margin-left: 5vh; 
 }
 
 #about {
@@ -1816,6 +1823,9 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 }
 
 .simvalue {
+  position: absolute; 
+  top: 2%;
+  right: 2%; 
   text-shadow: 0.2vh 0.2vh 0.1vh yellow;
   font-weight: 400;
   color: rgb(43, 29, 29);

@@ -101,7 +101,7 @@ function closeModal() {
     modalContent.className = fish.isfish == 1 ? 'modal_content' : 'modal_content_nonfish';
 
     const similar_title = document.createElement('div');
-    similar_title.className = "more_section";
+    similar_title.classList.add("more_section", "similar_title");
     similar_title.innerHTML = similar_h2; 
    
   
@@ -522,7 +522,7 @@ else {fishcard.className = "modal_nonfish_card"}
  score.className = "comp_score"
  main_card.className = "maincard";
 
- score.innerHTML = ` Similarity: <span class = "simvalue">${fish_list[i].similarity_score}</span>`; 
+ score.innerHTML = `<span class = "simvalue">${fish_list[i].similarity_score}</span>`; 
  fishcard.appendChild(score);////
  fishcard.appendChild(image_element);
  fishcard.appendChild(fishname);
