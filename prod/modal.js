@@ -7,11 +7,17 @@ let modal_satus = false;
 
 function showMore(url, fishId) {
   modal_satus = true; 
+
   var backToTopButton = document.getElementById("backToTop");
   var floatSettingsButton = document.getElementById("floatsettings");
 
   backToTopButton.style.display = "none";
   floatSettingsButton.style.display = "none";
+
+  setTimeout(() => {
+    backToTopButton.style.display = "none";
+    floatSettingsButton.style.display = "none";
+  }, 1000);
 
 
   const floating_backarrow = document.createElement('img');
