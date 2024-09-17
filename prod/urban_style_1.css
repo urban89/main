@@ -1193,15 +1193,16 @@ input[type="radio"] {
 
 #floatsettings {
   position: fixed !important;
-  border-style: solid;
+  /* border-style: solid;
   border-color: #4B3F3F;
-  border-width: 1px;
+  border-width: 1px; */
   font-size: 1.5rem;
 
   bottom: 20px;
   right: 10px;
   display: none; 
-  background: linear-gradient(145deg, #98c9ebc7 5%, #59c1bfac 50%);
+  background: linear-gradient(145deg, #2bfff457 22%, #20e2fcc4 88%);
+  /* background: linear-gradient(145deg, #98c9ebc7 5%, #59c1bfac 50%); */
   color: #3b5268;
  
   padding: 5px;

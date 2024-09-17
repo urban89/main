@@ -741,9 +741,13 @@ function copyname () {
     document.body.style.overflow = 'auto';
     document.body.removeChild(floating_backarrow);
 
-    backToTopButton.style.display = "block";
-    floatSettingsButton.style.display = "block";
+// Delay showing the floatSettingsButton by 2 seconds (2000 milliseconds)
+setTimeout(function() {
+  backToTopButton.style.display = "block";
+  floatSettingsButton.style.display = "block";
+}, 2000);
   }
   }
+
 
 }
