@@ -319,7 +319,7 @@ background-color:  #86a5def8;
   border: 1px solid #010a14;
   border-radius: 5px;
   padding: 1vw;
-  background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
+  background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
 position: relative; 
@@ -1579,6 +1579,13 @@ margin-top: 0;
   overflow: hidden;
 }
 
+floating_close_modal:hover, floating_close_modal:focus {
+  color: rgb(36, 28, 4);
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #f1fc1f9c; 
+  /*this is not applied for some reason*/ 
+}
+
 
 
 .close_button {
@@ -1601,7 +1608,6 @@ margin-top: 0;
 .close_button:hover,
 .close_button:focus {
   color: rgb(36, 28, 4);
-  text-decoration: none;
   cursor: pointer;
   box-shadow: 3px 3px 6px #f1fc1f9c;
 
@@ -1820,7 +1826,10 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   color: rgb(146, 97, 97);
   -webkit-text-stroke: 0.5px #f7db397e; /* Outline width and color */
   text-stroke: 0.5px rgba(240, 214, 68, 0.459); /* Non-prefixed property for future compatibility */
+
 }
+
+
 
 .simvalue {
   position: absolute; 
@@ -1829,9 +1838,32 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   text-shadow: 0.2vh 0.2vh 0.1vh yellow;
   font-weight: 400;
   color: rgb(43, 29, 29);
+  cursor: pointer;
+}
+
+.simvalue::after{
+  content: "Similarity Score"; /* Tooltip text */
+  position: absolute; /* Position relative to the element */
+  bottom: 100%; /* Position above the element */
+  left: 50%; /* Center the tooltip */
+  transform: translateX(-50%); /* Centering adjustment */
+  background-color: rgb(223, 140, 31); /* Background color for tooltip */
+  color: rgb(19, 14, 14); /* Text color */
+  padding: 5px; /* Some padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  white-space: nowrap; /* Prevent text from wrapping */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Fully transparent by default */
+  transition: opacity 0.3s; /* Smooth fade-in effect */
+  z-index: 1; /* Ensure it appears above other elements */
+  text-shadow: unset; 
 }
 
 
+.simvalue:hover::after {
+  visibility: visible; /* Show on hover */
+  opacity: 1; /* Make it fully visible */
+}
 .similar_container {
   background-color: rgb(35, 81, 151);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="5" d="M 0 100 Q 50 150 100 100 T 200 100" /><path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="4" d="M 0 150 Q 50 200 100 150 T 200 150" />  <path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="5" d="M 0 50 Q 50 0 100 50 T 200 50" />   </svg>');
