@@ -169,7 +169,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
      // Show the button when scrolled down 250px from the top
      window.onscroll = function() {
-      if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+   
+      if ((document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)&& !modal_satus){
+        // console.log("modal status in window onscroll" + modal_status);
           backToTopButton.style.display = "block";
           floatSettingsButton.style.display = "block";
       } else {

@@ -420,7 +420,7 @@ let keylist = ["beginner","easy","medium","difficult","verycommon","common","rar
 
     // Show the button when scrolled down 20px from the top
     window.onscroll = function() {
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        if ((document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) && !modal_satus) {
             backToTopButton.style.display = "block";
             floatSettingsButton.style.display = "block";
         } else {

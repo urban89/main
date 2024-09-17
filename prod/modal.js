@@ -1,11 +1,12 @@
 const similar_h2 = "Similar species:";
 const maindiv = document.getElementById("maindiv");
+let modal_satus = false; 
 
 ////////////////////////////////////////////////////////////////////////////
 //// "MORE" MODULES creation 
 
 function showMore(url, fishId) {
-
+  modal_satus = true; 
   var backToTopButton = document.getElementById("backToTop");
   var floatSettingsButton = document.getElementById("floatsettings");
 
@@ -740,6 +741,7 @@ function copyname () {
     // Re-enable scrolling on the main page
     document.body.style.overflow = 'auto';
     document.body.removeChild(floating_backarrow);
+    modal_satus = false; 
 
 // Delay showing the floatSettingsButton by 2 seconds (2000 milliseconds)
 setTimeout(function() {
