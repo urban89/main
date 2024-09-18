@@ -1766,10 +1766,10 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   bottom: 0;
   width: 2px;
   height: 2px;
-  background-color: rgba(37, 240, 166, 0.8);
+  background-color: rgba(186, 240, 91, 0.8);
   border-radius: 50%;
   animation: rise 2s linear forwards;
-  box-shadow: 1px 1px 1px rgb(168, 255, 248);
+  box-shadow: 1px 1px 1px rgba(203, 223, 163, 0.657);
 }
 
 @keyframes rise_flip {
