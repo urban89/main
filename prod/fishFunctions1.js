@@ -1753,7 +1753,6 @@ function flipBubblesCreate(container) {
 
   // Remove bubble after animation ends
   bubble.addEventListener('animationend', () => {
-    console.log("Bubble removed");
     container.removeChild(bubble);
   });
 }
@@ -1781,9 +1780,7 @@ function startFlipBubble(elementId) {
         bubbleCount++; // Increment bubble count
       } else {
         clearInterval(intervalId); // Stop the interval after 25 bubbles
-        console.log("Bubble creation stopped.");
       }
-      console.log("Bubble");
     }, 50); // Create bubbles every 500ms
     console.log(intervalId);
   }
