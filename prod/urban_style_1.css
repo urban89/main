@@ -1761,6 +1761,31 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   }
 }
 
+.bubble_inflip {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(37, 240, 166, 0.8);
+  border-radius: 50%;
+  animation: rise 2s linear forwards;
+  box-shadow: 1px 1px 1px rgb(168, 255, 248);
+}
+
+@keyframes rise_flip {
+  0% {
+      bottom: 0;
+      opacity: 0; /* Start invisible */
+      transform: translateY(0); /* Initial state */
+  }
+  10% {
+      opacity: 1; /* Fade in */
+  }
+  100% {
+      bottom: 100%; /* Move to the top */
+      opacity: 0; /* Fade out */
+  }
+}
 
 
 

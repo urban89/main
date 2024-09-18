@@ -1556,7 +1556,7 @@ fishcard_divs.forEach(div => {
     
     iconimage.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
     iconimage.alt = `"small image of ${name}`;
-    iconimage.id = info_id; //might be completely unnecessary 
+    // iconimage.id = info_id; //might be completely unnecessary 
     copyimage.src = 'icon/copy.png';
     fishname2.innerHTML = name;
     latin.innerHTML = `${fish.name_latin}`;
@@ -1644,6 +1644,11 @@ fishcard_divs.forEach(div => {
     father.appendChild(infocard);
 
     let textCopy = `${name} (${fish.name_latin})`;
+
+    startFlipBubble(info_id); 
+    //Bubble animation when flipped 
+
+  
   
 
     iconimage.addEventListener("click", infocardKill);
@@ -1737,6 +1742,22 @@ function createBubble(container) {
   });
 }
 
+
+function flipBubblesCreate(container) {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble_inflip');
+  bubble.style.left = Math.random() * container.clientWidth + 'px';
+  bubble.style.animationDuration = 1 + Math.random() * 1 + 's'; // random duration between 3 to 5 seconds
+  bubble.style.animationDelay = Math.random() * 0.1 + 's'; 
+  container.appendChild(bubble);
+
+  // Remove bubble after animation ends
+  bubble.addEventListener('animationend', () => {
+    console.log("Bubble removed");
+    container.removeChild(bubble);
+  });
+}
+
 // start bubbles
 function startBubbles() {
   document.querySelectorAll('.tiles').forEach(container => {
@@ -1744,6 +1765,28 @@ function startBubbles() {
       setInterval(() => createBubble(container), 500); // Create a bubble every 500ms
   });
 
+}
+
+//Flip page bubbles 
+function startFlipBubble(elementId) {
+  const flip_bubble_pane = document.getElementById(elementId);
+  if (flip_bubble_pane) {
+    let bubbleCount = 0;
+    const maxBubblesFlip = 25;
+
+    // Set an interval to create bubbles
+    const intervalId = setInterval(() => {
+      if (bubbleCount < maxBubblesFlip) {
+        flipBubblesCreate(flip_bubble_pane); // Create a simple bubble
+        bubbleCount++; // Increment bubble count
+      } else {
+        clearInterval(intervalId); // Stop the interval after 25 bubbles
+        console.log("Bubble creation stopped.");
+      }
+      console.log("Bubble");
+    }, 50); // Create bubbles every 500ms
+    console.log(intervalId);
+  }
 }
 
 // Start the bubbles when the page loads
