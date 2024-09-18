@@ -1845,11 +1845,13 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   position: absolute; 
   top: 2%;
   right: 2%; 
-  text-shadow: 0.2vh 0.2vh 0.1vh yellow;
+  text-shadow: 0.2vh 0.2vh 0.2vh rgba(255, 255, 0, 0.593);
   font-weight: 400;
   color: rgb(43, 29, 29);
   cursor: pointer;
 }
+
+
 
 .simvalue::after{
   content: "Similarity Score"; /* Tooltip text */
