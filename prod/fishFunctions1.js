@@ -1782,7 +1782,6 @@ function startFlipBubble(elementId) {
         clearInterval(intervalId); // Stop the interval after 25 bubbles
       }
     }, 50); // Create bubbles every 500ms
-    console.log(intervalId);
   }
 }
 
