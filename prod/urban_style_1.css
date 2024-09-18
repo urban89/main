@@ -1516,9 +1516,14 @@ background-color:  #86a5def8;
   right: 1%; 
   top: 0;
   width: 98%;
+  width: 100%; /* Ensure the modal spans the full width of the viewport */
+  max-width: 100%; /* Prevents any horizontal overflow */
+  overflow-y: auto; /* Vertical scrolling for modal content */
+  overflow-x: hidden; /* Disable horizontal scrolling within the modal */
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+
+  background-color: rgba(137, 151, 152, 0.671); 
 }
 
 @media screen and (min-width: 900px) {
@@ -1539,6 +1544,10 @@ background-color:  #86a5def8;
   /* margin: auto; */
   padding: 0;
   width: 100%;
+  width: 100%; /* Ensure the modal spans the full width of the viewport */
+  max-width: 100%; /* Prevents any horizontal overflow */
+  overflow-y: auto; /* Vertical scrolling for modal content */
+  overflow-x: hidden; /* Disable horizontal scrolling within the modal */
   height: auto;
   /* max-width: 800px;  */
   background: linear-gradient(145deg, #dbb96fe0 22%, #ca8b2de0 88%);
