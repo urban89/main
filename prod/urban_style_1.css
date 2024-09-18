@@ -1812,7 +1812,8 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 .similar_title {
   font-size: 2rem;
   text-shadow: 3px 2px 1px yellow;
-  margin-left: 5vh; 
+  margin-left: 2vh; 
+  margin-right: 2vh 
 }
 
 #about {
