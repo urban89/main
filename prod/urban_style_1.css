@@ -1955,11 +1955,11 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
  right: 1vh; 
  width: 2.5vh; 
  cursor: pointer;
- background: rgba(114, 148, 235, 0.529);
+ background: rgba(165, 176, 204, 0.529);
  border-radius: 1vh; 
  padding: 0.5vh; 
 }
 
 .grid_icon:hover, .grid_icon:focus {
-  background: rgba(55, 228, 255, 0.442);
+  background: rgba(198, 240, 30, 0.442);
 }
