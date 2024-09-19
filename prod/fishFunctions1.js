@@ -1718,7 +1718,7 @@ function listFiller (fish_list) {
       result_div.appendChild(list_view_divs); 
 }
 
-
+///Super good micro tiles view 
 function microTileFiler(fish_list) {
   let micro_tiles_div = document.createElement("div");
   let result_lists = document.createElement("div");
