@@ -401,12 +401,8 @@ allcount.textContent = poolcount;
 
 
   grid_icon_id.addEventListener("click", function () {
-    grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
+  grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
   grid_toggle = (grid_toggle === "small") ? "big" : "small"; 
-  
-
-
-    // grid_icon_id.src = (grid_icon_id.src === "icon/grid_small.png") ? "icon/grid.png" : "icon/grid_small.png"; 
     search_button()
   }); 
   
@@ -1728,6 +1724,7 @@ function microTileFiler(fish_list) {
     let micro_image = document.createElement("img");
     micro_image.className = "micro_tile_element"; 
     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
+    micro_image.id = `im${fish_list[i].fish_id}`;
 
     micro_tiles_div.appendChild(micro_image)
     // result_lists.appendChild(micro_image); 

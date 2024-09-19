@@ -910,6 +910,7 @@ function microTileFiler(fish_list) {
     let micro_image = document.createElement("img");
     micro_image.className = "micro_tile_element"; 
     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
+    micro_image.id = `im${fish_list[i].fish_id}`;
 
     micro_tiles_div.appendChild(micro_image)
     // result_lists.appendChild(micro_image); 
