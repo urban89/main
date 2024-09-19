@@ -100,6 +100,7 @@ const regionsOb =
   const listviewstring = "Results in list view";
   const tileviewstring = "Results in tiles view"
 
+
   let console_capacity = liter;
   let console_temperature = celsius; 
   let console_fishsize = cm; 
@@ -241,6 +242,8 @@ let dropdownButtonOrigin = document.getElementById("dropdownButtonOrigin");
   let decrementph = document.getElementById('decrement-button-ph');
 
   let details = []; 
+  let grid_icon_id = document.getElementById('grid_icon_id');
+  let grid_toggle = "small";
 
 var selects = [
   {checkboxArray: hardi_chbx, targetSpan: div_hardiness_x},
@@ -396,6 +399,16 @@ allcount.textContent = poolcount;
   });
 
 
+
+  grid_icon_id.addEventListener("click", function () {
+    grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
+  grid_toggle = (grid_toggle === "small") ? "big" : "small"; 
+  
+
+
+    // grid_icon_id.src = (grid_icon_id.src === "icon/grid_small.png") ? "icon/grid.png" : "icon/grid_small.png"; 
+    search_button()
+  }); 
   
     cmtoinch.addEventListener("click", fishsizemetric);
     f_cmtoinch.addEventListener("click", fishsizemetric);
@@ -918,10 +931,13 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
   fishSelect ();
 /////search_button CORE -->|||||
 ///////////////////Outputting serach results to UI
-function fishSelect () {
+function fishSelect() {
   if (listview) {
     listFiller (fish_list)
   }
+ else if (grid_toggle === "big"){
+  microTileFiler(fish_list) 
+}
   else {
   fishFiller(fish_list); //fills all the fish info card divs displayed on page 
 } 
@@ -1700,6 +1716,24 @@ function listFiller (fish_list) {
       list_view_divs.appendChild(brr);
   }
       result_div.appendChild(list_view_divs); 
+}
+
+
+function microTileFiler(fish_list) {
+  let micro_tiles_div = document.createElement("div");
+  let result_lists = document.createElement("div");
+  result_lists.className = "column_result"; 
+  micro_tiles_div.className = "micro_tiles_div"; 
+  for (let i = 0; i <fish_list.length; i++) { 
+    let micro_image = document.createElement("img");
+    micro_image.className = "micro_tile_element"; 
+    micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
+
+    micro_tiles_div.appendChild(micro_image)
+    // result_lists.appendChild(micro_image); 
+
+  }
+  result.appendChild(micro_tiles_div);
 }
 
 

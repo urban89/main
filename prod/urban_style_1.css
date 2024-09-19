@@ -33,6 +33,7 @@ input[type=number] {
 
   #welcomepanel {
     margin-top:0;
+    position: relative; 
   }
 
   #search_tiles, #cpanel, #cpanel1, #cpanel2, #welcomepanel {
@@ -322,7 +323,6 @@ background-color:  #86a5def8;
   background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%);
 background-attachment: fixed;
 box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
-position: relative; 
 } 
 
 .ghostcard {
@@ -433,6 +433,7 @@ position: relative;
       flex-wrap: wrap;
       border-radius: 5px;
       padding: 0.5vw;
+      box-shadow: 1vh 1vh 2vh rgba(142, 142, 30, 0.583);
     }
 
     .list-view p {
@@ -1905,4 +1906,46 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   background-color: rgb(35, 81, 151);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="5" d="M 0 100 Q 50 150 100 100 T 200 100" /><path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="4" d="M 0 150 Q 50 200 100 150 T 200 150" />  <path fill="none" stroke="rgba(255, 255, 255, 0.02)" stroke-width="5" d="M 0 50 Q 50 0 100 50 T 200 50" />   </svg>');
   background-size: 200px 200px;
+}
+
+
+.micro_tiles_div {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto; 
+  gap: 0.5vw; 
+  justify-content: center;
+  justify-items: center; 
+  /*!!!!!!!!!!!!!!!!!!!!???*/
+  margin: 0; /* Add this to remove any extra margin */
+  padding: 0; /* Add this to remove any extra padding */
+} 
+
+.micro_tile_element {
+  position: relative; 
+  flex: 0 0 calc(12.5% - 2vw); 
+  /* margin: 5px;  */
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 5px;
+  /* background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%); */
+background-attachment: fixed;
+box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
+width: 8vw; 
+}
+
+
+.grid_icon {
+ position: absolute;
+ top: 1vh;
+ right: 1vh; 
+ width: 2.5vh; 
+ cursor: pointer;
+ background: rgba(114, 148, 235, 0.529);
+ border-radius: 1vh; 
+ padding: 0.5vh; 
+}
+
+.grid_icon:hover, .grid_icon:focus {
+  background: rgba(55, 228, 255, 0.442);
 }
