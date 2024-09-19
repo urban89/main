@@ -248,6 +248,31 @@ background-color:  #86a5def8;
   padding: 0; /* Add this to remove any extra padding */
 } 
 
+.micro_tiles_div {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto; 
+  gap: 0.5vw; 
+  justify-content: center;
+  justify-items: center; 
+  /*!!!!!!!!!!!!!!!!!!!!???*/
+  margin: 0; /* Add this to remove any extra margin */
+  padding: 0; /* Add this to remove any extra padding */
+} 
+
+.micro_tile_element {
+  position: relative; 
+  flex: 0 0 calc(12.5% - 2vw); 
+  /* margin: 5px;  */
+  box-sizing: border-box;
+  border: 1px solid #010a14;
+  border-radius: 5px;
+  /* background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%); */
+background-attachment: fixed;
+box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
+width: 8vw; 
+}
+
 
 /*fish card items*/
 .fishsize {
@@ -491,6 +516,18 @@ position: relative;
   .column_result {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+.micro_tiles_div {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+  .micro_tile_element {
+    width: 11vw;
+  }
+  /* width: 8vw;  */
+
+
+
   .fishcardimage {
     width: 35vw;
     height: 26.25vw;
@@ -1909,30 +1946,7 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 }
 
 
-.micro_tiles_div {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: auto; 
-  gap: 0.5vw; 
-  justify-content: center;
-  justify-items: center; 
-  /*!!!!!!!!!!!!!!!!!!!!???*/
-  margin: 0; /* Add this to remove any extra margin */
-  padding: 0; /* Add this to remove any extra padding */
-} 
 
-.micro_tile_element {
-  position: relative; 
-  flex: 0 0 calc(12.5% - 2vw); 
-  /* margin: 5px;  */
-  box-sizing: border-box;
-  border: 1px solid #010a14;
-  border-radius: 5px;
-  /* background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%); */
-background-attachment: fixed;
-box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
-width: 8vw; 
-}
 
 
 .grid_icon {
