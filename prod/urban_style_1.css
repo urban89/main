@@ -260,6 +260,10 @@ background-color:  #86a5def8;
   padding: 0; /* Add this to remove any extra padding */
 } 
 
+.hover_div {
+  z-index: 1000;
+}
+
 .micro_tile_element {
   position: relative; 
   flex: 0 0 calc(12.5% - 2vw); 
@@ -271,6 +275,7 @@ background-color:  #86a5def8;
 background-attachment: fixed;
 box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
 width: 8vw; 
+cursor: pointer;
 }
 
 

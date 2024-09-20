@@ -1717,43 +1717,110 @@ function listFiller (fish_list) {
       result_div.appendChild(list_view_divs); 
 }
 
-///Super good micro tiles view 
+// ///Super good micro tiles view 
+// function microTileFiler(fish_list) {
+//   console.log("test1");
+//   let micro_tiles_div = document.createElement("div");
+//   let result_lists = document.createElement("div");
+//   result_lists.className = "column_result"; 
+//   micro_tiles_div.className = "micro_tiles_div"; 
+//   for (let i = 0; i <fish_list.length; i++) { 
+//     let micro_image = document.createElement("img");
+//     micro_image.className = "micro_tile_element"; 
+//     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
+//     micro_image.id = `im${fish_list[i].fish_id}`;
+
+//     micro_tiles_div.appendChild(micro_image)
+//     // result_lists.appendChild(micro_image); 
+
+//   }
+//   const micros = document.querySelectorAll(`.micro_tiles_div`);
+//   micros.forEach(function(element) { element.addEventListener('click', function() {
+//   var elementID = element.id.substring(2); 
+
+//   var fishID = fish_master.find(function(fish) {
+//     return fish.fish_id === elementID;
+//   });
+// // Hover events
+// element.addEventListener("mouseover", function () {
+//   console.log("Mouse is over the element.");
+//   const hover_div = document.createElement("span");
+//   hover_div.innerHTML = "test";
+//   var element_element = document.getElementById(element.id);
+//   element_element.appendChild(hover_div);
+//   console.log("test2");
+// });
+
+// }); }); 
+//   result.appendChild(micro_tiles_div);
+// }
+/// Super good micro tiles view 
 function microTileFiler(fish_list) {
+  console.log("test1");
   let micro_tiles_div = document.createElement("div");
-  let result_lists = document.createElement("div");
-  result_lists.className = "column_result"; 
   micro_tiles_div.className = "micro_tiles_div"; 
-  for (let i = 0; i <fish_list.length; i++) { 
+
+  for (let i = 0; i < fish_list.length; i++) { 
     let micro_image = document.createElement("img");
     micro_image.className = "micro_tile_element"; 
     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
     micro_image.id = `im${fish_list[i].fish_id}`;
 
-    micro_tiles_div.appendChild(micro_image)
-    // result_lists.appendChild(micro_image); 
+    // Create a hover div to show the fish name, but do not add it yet
+    const hover_div = document.createElement("span");
+    hover_div.className = "hover_div";
+    hover_div.innerHTML = uppercaser(fish_list[i].name_english);
+    hover_div.style.position = "absolute";
+    hover_div.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    hover_div.style.color = "white";
+    hover_div.style.padding = "5px";
+    hover_div.style.borderRadius = "5px";
+    hover_div.style.display = "none"; // Hide by default
 
+    // Append hover_div to the micro_tiles_div, not to the image directly
+    micro_tiles_div.appendChild(hover_div);
+
+    // Hover events
+    micro_image.addEventListener("mouseover", function (event) {
+      // Show the hover_div near the image
+      hover_div.style.display = "block";
+      hover_div.style.left = `${event.pageX + 10}px`; // Position near the cursor
+      hover_div.style.top = `${event.pageY + 10}px`;
+    });
+
+    micro_image.addEventListener("mousemove", function (event) {
+      // Move the hover_div with the cursor
+      hover_div.style.left = `${event.pageX + 10}px`;
+      hover_div.style.top = `${event.pageY + 10}px`;
+    });
+
+    micro_image.addEventListener("mouseout", function () {
+      // Hide the hover_div when the mouse is not over the image
+      hover_div.style.display = "none";
+    });
+
+    // Add click event listener to each image element directly
+    micro_image.addEventListener('click', function() {
+      var elementID = micro_image.id.substring(2); // Remove 'im' prefix to get the fish ID
+
+      var fishID = fish_master.find(function(fish) {
+        return fish.fish_id === elementID;
+      });
+
+      if (fishID) {
+        console.log(fishID); // Do something with the found fish object
+      }
+    });
+
+    // Append the micro_image to the micro_tiles_div
+    micro_tiles_div.appendChild(micro_image);
   }
-  const micros = document.querySelectorAll(`.micro_tiles_div`);
-  micros.forEach(function(element) { element.addEventListener('click', function() {
-  var elementID = element.id.substring(2); 
 
-  var fishID = fish_master.find(function(fish) {
-    return fish.fish_id === elementID;
-  });
-// Hover events
-element.addEventListener("mouseover", function () {
-  console.log("Mouse is over the element.");
-  const hover_div = document.createElement("span");
-  hover_div.innerHTML = "test";
-});
-
-
-
-}); }); 
-
-
+  // Append the micro_tiles_div to the result element
   result.appendChild(micro_tiles_div);
 }
+
+/// Super good micro tiles view <----------------
 
 
 function PoolFlash () {
