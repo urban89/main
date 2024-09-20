@@ -1997,6 +1997,9 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   justify-content: space-between; /* Distribute inner spans evenly */
   align-items: center; /* Aligns items vertically */
   width: 100%; /* Ensure it takes the full width of .list-view */
+  padding: 0.5vh;
+  cursor: pointer;
+ 
 }
 
 
@@ -2012,4 +2015,16 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
     background: linear-gradient(145deg, #c7c261aa 22%, #bddb388d 88%);
     display: inline-block;
     margin: 0; 
+  }
+
+  .list-view > span:nth-of-type(2n + 1):hover, .list-view > span:nth-of-type(2n + 1):focus {
+    background: linear-gradient(145deg, #cbab66aa 22%, #f8af418d 88%);
+    border-width: 2px;
+    border: 0.01rem solid #00000088;
+  }
+
+  .list-view > span:nth-of-type(2n + 0):hover, .list-view > span:nth-of-type(2n + 0):focus {
+    background: linear-gradient(145deg, #efe976aa 22%, #d2f43e8d 88%);
+    border-width: 2px;
+    border: 0.1rem solid #00000088;
   }
