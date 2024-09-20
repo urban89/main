@@ -1989,3 +1989,25 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
       border-width: 0.1vw;
       border-color: #003d99;
     }
+
+.listline {
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-between; /* Distribute inner spans evenly */
+  align-items: center; /* Aligns items vertically */
+  width: 100%; /* Ensure it takes the full width of .list-view */
+}
+
+
+  /* Style only direct child spans within the .list-view div */
+  .list-view > span:nth-of-type(2n + 1) {
+    background: linear-gradient(145deg, #9c834daa 22%, #db9a388d 88%);
+    display: inline-block;
+    margin: 0; 
+
+  }
+
+  .list-view > span:nth-of-type(2n + 0) {
+    background: linear-gradient(145deg, #c7c261aa 22%, #bddb388d 88%);
+    display: inline-block;
+    margin: 0; 
+  }

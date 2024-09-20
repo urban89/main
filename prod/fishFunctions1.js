@@ -1691,6 +1691,7 @@ function listFiller (fish_list) {
   let list_view_divs = document.createElement("div");
   list_view_divs.classList.add("list-view");
   for (let i = 0; i <fish_list.length; i++) {
+      let list_line = document.createElement("span");
       let listnumber = document.createElement("span");
       let fishname = document.createElement("span");
       let latinname = document.createElement("span");
@@ -1701,15 +1702,17 @@ function listFiller (fish_list) {
       listnumber.className ="listnum";
       fishname.className = "listname";
       latinname.className = "listlatin";
+      list_line.className = "listline"; 
       
       
       listnumber.textContent = `${i+1}. `
       fishname.textContent = `${name} `;
       latinname.textContent =  `(${latin})`;
-      list_view_divs.appendChild(listnumber);
-      list_view_divs.appendChild(fishname);
-      list_view_divs.appendChild(latinname);
+      list_line.appendChild(listnumber);
+      list_line.appendChild(fishname);
+      list_line.appendChild(latinname);
       list_view_divs.appendChild(brr);
+      list_view_divs.appendChild(list_line);
   }
       result_div.appendChild(list_view_divs); 
 }
@@ -1730,6 +1733,25 @@ function microTileFiler(fish_list) {
     // result_lists.appendChild(micro_image); 
 
   }
+  const micros = document.querySelectorAll(`.micro_tiles_div`);
+  micros.forEach(function(element) { element.addEventListener('click', function() {
+  var elementID = element.id.substring(2); 
+
+  var fishID = fish_master.find(function(fish) {
+    return fish.fish_id === elementID;
+  });
+// Hover events
+element.addEventListener("mouseover", function () {
+  console.log("Mouse is over the element.");
+  const hover_div = document.createElement("span");
+  hover_div.innerHTML = "test";
+});
+
+
+
+}); }); 
+
+
   result.appendChild(micro_tiles_div);
 }
 
