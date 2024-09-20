@@ -502,6 +502,13 @@ position: relative;
 .listname {
   text-shadow: 0.1vh 0.1vh 0.1vh rgba(255, 255, 0, 0.547)
 }
+
+.infocardtext {
+  border-width: 0.1rem 0 0.1rem 0;
+  border-radius: 0.1rem;
+  border: solid 0.05rem #c1a61266;
+}
+
 /* Media queries ************************************************/ /************************************************/ 
 /************************************************/ 
 @media screen and (max-width: 416px) {
