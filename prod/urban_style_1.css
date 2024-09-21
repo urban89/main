@@ -278,6 +278,13 @@ width: 8vw;
 cursor: pointer;
 }
 
+/* .micro_tile_element:hover, micro_tile_element:focus {
+  width: 9vw; 
+  border-color: yellow;
+} */
+
+
+
 
 /*fish card items*/
 .fishsize {
@@ -435,7 +442,7 @@ position: relative;
       white-space: nowrap;
       font-size: 2.5vw; 
       margin: 0.5vw; 
-      text-shadow: 1px 1px #ff782a34, -1px -1px 1px white; 
+      text-shadow: 0.1vw 0.1vw #ff782a34, -1px -1px 1px rgba(228, 226, 120, 0.767);
     }
     
     .subtitle, .bigsubtitle, .verybigsubtitle {
@@ -485,6 +492,9 @@ position: relative;
     .welcometitle {
       text-align: center;
       font-weight: 600;
+      text-shadow: -2px -2px 2px white, -2.2px -2.2px 2px rgba(41, 250, 86, 0.596);
+     font-size: 1.5rem;
+     text-decoration: underline;
     }
 
     .welcometext.welcometitle {
@@ -538,8 +548,10 @@ position: relative;
   .micro_tile_element {
     width: 11vw;
   }
-  /* width: 8vw;  */
-
+  /* .micro_tile_element:hover, micro_tile_element:focus {
+    width: 12vw; 
+    border-color: yellow;
+  } */
 
 
   .fishcardimage {
@@ -1691,7 +1703,7 @@ floating_close_modal:hover, floating_close_modal:focus {
   padding-top: 0;
   padding-bottom: 0;
   margin-bottom: 0.5vw;
-  text-shadow: 0.2vw 0.2vw 0.4vw #7dbebbd0;
+  text-shadow: 0.2vw 0.2vw 0.4vw #7dbebbd0, -2px -2px 2px rgb(244, 253, 166);
 }
 
 .latinsummary {
