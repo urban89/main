@@ -435,7 +435,7 @@ position: relative;
       white-space: nowrap;
       font-size: 2.5vw; 
       margin: 0.5vw; 
-      text-shadow: 0.1vw 0.1vw #ff782a34;
+      text-shadow: 1px 1px #ff782a34, -1px -1px 1px white; 
     }
     
     .subtitle, .bigsubtitle, .verybigsubtitle {
