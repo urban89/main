@@ -146,6 +146,36 @@ text-shadow: 1px 1px 1px#c0f1e7b3;
   white-space: nowrap; 
 }
 
+
+.show div:first-child {
+  border: solid;
+  cursor: pointer;
+  border-width: 0.01vw;
+}
+
+.show div:last-child {
+    border: solid;
+    cursor: pointer;
+    border-width: 0.01vw;
+    border-radius: 0px 0px 10px 0px; 
+  }
+
+  .show div:not(:first-child):not(:last-child) {
+      border: solid;
+      cursor: pointer;
+      border-width: 0.01vw;
+      
+    }
+
+    .show div:first-child:hover,  .dropdown-item div:last-child:hover,  .dropdown-item div:not(:first-child):not(:last-child):hover {
+      border-width: 0.1vw;
+      border-color: #003d99;
+    }
+
+
+
+
+
 .dropdown-item:hover {
   box-shadow: 5px 5px 10px rgba(31, 51, 236, 0.795);
   background-color:  #86a5def8; 
@@ -197,7 +227,7 @@ background-color:  #86a5def8;
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
   background: linear-gradient(145deg, #98c9eb9d 5%, #59c1bf6e 50%);
   /* background-color: #72a2c2; */
-  color: rgb(8, 1, 1);
+  color: rgb(255, 255, 178); 
   padding: 1vw;
   padding-top: 1vw;
   padding-bottom:1vw; 
@@ -209,6 +239,8 @@ background-color:  #86a5def8;
   border-top: none;        
   border-bottom: none;   
   border-radius: 10px;
+  text-shadow: 1px 1px 1px brown
+
 }
 
 .dropbtn-cpanel:hover, .dropbtn-cpanel:focus {
@@ -218,6 +250,7 @@ background-color:  #86a5def8;
   border-bottom: 0.01vw solid #000;
   box-shadow:#05224f;
   box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
+  color: orange;
 }
 
 .dropbtn-cpanel:active {
@@ -491,8 +524,9 @@ position: relative;
 
     .welcometitle {
       text-align: center;
+      color: rgb(255, 255, 178); 
       font-weight: 600;
-      text-shadow: -2px -2px 2px white, -2.2px -2.2px 2px rgba(41, 250, 86, 0.596);
+      text-shadow: -2px -2px 2px rgb(134, 115, 26), -2.2px -2.2px 2px rgba(33, 94, 46, 0.596), 2px 2px 2px rgb(86, 105, 105);
      font-size: 1.5rem;
      text-decoration: underline;
     }
