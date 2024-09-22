@@ -1772,6 +1772,7 @@ floating_close_modal:hover, floating_close_modal:focus {
   position: absolute;
   right: 3px;
   top: 5px;
+  margin-right: 3vh; 
 }
 
 

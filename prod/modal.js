@@ -84,6 +84,7 @@ function closeModal() {
     let more_console = document.createElement("div");
     let idshown = document.createElement("p");
     let isfishshown = document.createElement("p");
+    let family_element = document.createElement("p");
 
 
     let altname;
@@ -130,6 +131,7 @@ function closeModal() {
   more_console.className = "moreconsole";
   idshown.className = "moreConsoleText";
   isfishshown.className = "moreConsoleText";
+  family_element.className = "moreConsoleText"; 
   
   if (altname) {
     altname.className = "mo_infocardtext";
@@ -156,6 +158,7 @@ function closeModal() {
   var isfish = (fish.isfish === "1") ? "true" : "false";
   idshown.innerHTML = `species ID: #${fishId}`;
   isfishshown.innerHTML = `isFish?: ${isfish}`;
+  family_element.innerHTML = `family: ${fish.family}`;
   
   let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
   let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
@@ -345,6 +348,11 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
   similarity_score += 0.2; 
 }
 
+
+if (species.family === fish.family) {
+  similarity_score += 3;
+}
+
     // Add the species id and similarity score to the similars array
     similars_ids.push({
       id: species.fish_id,
@@ -377,6 +385,7 @@ else if ((species.phmin <= fish.phmin + 0.5) && (species.phmax >= fish.phmax - 0
   
     more_console.appendChild(idshown);
     more_console.appendChild(isfishshown);
+    more_console.appendChild(family_element);
   
     if (altname) {summarybox.appendChild(altname);}
     summarybox.appendChild(mintanksize);
