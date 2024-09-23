@@ -526,7 +526,7 @@ position: relative;
       text-align: center;
       color: yellow; 
       font-weight: 600;
-      text-shadow: -2px -2px 2px rgba(134, 114, 26, 0.781), -2.2px -2.2px 2px rgba(50, 156, 73, 0.596), 1px 1px 1px brown;
+      text-shadow: -1.5px -1.5px 1px rgb(12, 61, 255), -2.2px -2.2px 2px rgba(210, 255, 220, 0.596), 1px 1px 1px brown;
      font-size: 1.5rem;
      text-decoration: underline;
     }
