@@ -1,6 +1,13 @@
 const similar_h2 = "Similar species:";
 const maindiv = document.getElementById("maindiv");
-let modal_satus = false; 
+let modal_satus = false;
+
+const creature_types = {
+  0: "snail",
+  1: "fish",
+  2: "shrimp",
+  3: "crab"
+}
 
 ////////////////////////////////////////////////////////////////////////////
 //// "MORE" MODULES creation 
@@ -132,6 +139,8 @@ function closeModal() {
   idshown.className = "moreConsoleText";
   isfishshown.className = "moreConsoleText";
   family_element.className = "moreConsoleText"; 
+
+  
   
   if (altname) {
     altname.className = "mo_infocardtext";
@@ -155,10 +164,11 @@ function closeModal() {
   ph.className = "mo_infocardtext";
   
   
-  var isfish = (fish.isfish === "1") ? "true" : "false";
+  var isfish = creature_types[fish.isfish];
   idshown.innerHTML = `species ID: #${fishId}`;
-  isfishshown.innerHTML = `isFish?: ${isfish}`;
+  isfishshown.innerHTML = `Type: ${isfish}`;
   family_element.innerHTML = `family: ${fish.family}`;
+
   
   let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
   let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
@@ -386,7 +396,8 @@ if (species.family === fish.family) {
     more_console.appendChild(idshown);
     more_console.appendChild(isfishshown);
     more_console.appendChild(family_element);
-  
+ 
+
     if (altname) {summarybox.appendChild(altname);}
     summarybox.appendChild(mintanksize);
     summarybox.appendChild(tempinfo);

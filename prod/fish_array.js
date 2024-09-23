@@ -1,4 +1,4 @@
- ///csv_master_v10.0
+ ///csv_master_v10.1
 
 const fish_master = [
   {
@@ -1884,7 +1884,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -1907,7 +1907,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -1930,7 +1930,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -1953,7 +1953,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -1976,7 +1976,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -1999,7 +1999,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2022,7 +2022,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2045,7 +2045,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2068,7 +2068,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2091,7 +2091,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2114,7 +2114,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2137,7 +2137,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.5",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2160,7 +2160,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2183,7 +2183,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2206,7 +2206,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2229,7 +2229,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2252,7 +2252,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2275,7 +2275,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2298,7 +2298,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2321,7 +2321,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7.8",
     phmax: "9",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2344,7 +2344,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2367,7 +2367,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -11909,7 +11909,7 @@ const fish_master = [
     agression: "1",
     origin: "South America",
     region: "1",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -11932,7 +11932,7 @@ const fish_master = [
     agression: "1",
     origin: "Central America, South America",
     region: "5",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -11955,7 +11955,7 @@ const fish_master = [
     agression: "1",
     origin: "Europe, Middle East",
     region: "7, W",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12001,7 +12001,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "7.5",
     more: "0",
@@ -12024,7 +12024,7 @@ const fish_master = [
     agression: "1",
     origin: "Japan",
     region: "6",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12047,7 +12047,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12070,7 +12070,7 @@ const fish_master = [
     agression: "1",
     origin: "Thailand, Laos, Cambodia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.8",
     phmax: "8",
     more: "0",
@@ -12093,7 +12093,7 @@ const fish_master = [
     agression: "1",
     origin: "Europe",
     region: "7",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12116,7 +12116,7 @@ const fish_master = [
     agression: "1",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "7",
     phmax: "8.5",
     more: "0",
@@ -12139,7 +12139,7 @@ const fish_master = [
     agression: "1",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "7",
     phmax: "8.5",
     more: "0",
@@ -12162,7 +12162,7 @@ const fish_master = [
     agression: "1",
     origin: "South America",
     region: "1",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12185,7 +12185,7 @@ const fish_master = [
     agression: "1",
     origin: "Europe",
     region: "7",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12231,7 +12231,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12254,7 +12254,7 @@ const fish_master = [
     agression: "1",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "7",
     phmax: "8.5",
     more: "0",
@@ -12277,7 +12277,7 @@ const fish_master = [
     agression: "1",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "7",
     phmax: "8.5",
     more: "0",
@@ -12300,7 +12300,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia, Northern Australia",
     region: "9",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "0",
@@ -12346,7 +12346,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia, South Asia",
     region: "3, 4",
-    isfish: "0",
+    isfish: "3",
     phmin: "6.5",
     phmax: "7.5",
     more: "0",
@@ -12369,7 +12369,7 @@ const fish_master = [
     agression: "2",
     origin: "Africa",
     region: "2",
-    isfish: "0",
+    isfish: "3",
     phmin: "7",
     phmax: "8.5",
     more: "0",
@@ -12392,7 +12392,7 @@ const fish_master = [
     agression: "2",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "3",
     phmin: "7.5",
     phmax: "8.5",
     more: "0",
@@ -12415,7 +12415,7 @@ const fish_master = [
     agression: "2",
     origin: "Sulawesi",
     region: "3",
-    isfish: "0",
+    isfish: "3",
     phmin: "7.3",
     phmax: "8.5",
     more: "0",
