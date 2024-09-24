@@ -1,11 +1,11 @@
-const similar_h2 = "Similar species:";
+const similar_h2 = "Similar species";
 const maindiv = document.getElementById("maindiv");
 let modal_satus = false;
 
 const creature_types = {
-  0: "snail",
+  0: "shrimp",
   1: "fish",
-  2: "shrimp",
+  2: "snail",
   3: "crab"
 }
 
@@ -110,7 +110,7 @@ function closeModal() {
 
     const similar_title = document.createElement('div');
     similar_title.classList.add("more_section", "similar_title");
-    similar_title.innerHTML = similar_h2; 
+    /// adding similar_count below in code 
    
   
     // Create the close button
@@ -165,8 +165,9 @@ function closeModal() {
   
   
   var isfish = creature_types[fish.isfish];
+  console.log(isfish);
   idshown.innerHTML = `species ID: #${fishId}`;
-  isfishshown.innerHTML = `Type: ${isfish}`;
+  isfishshown.innerHTML = `type: ${isfish}`;
   family_element.innerHTML = `family: ${fish.family}`;
 
   
@@ -374,14 +375,25 @@ if (species.family === fish.family) {
   }
 
   // Filter out species with a similarity score less than 5
-  const filtered_similars_ids = similars_ids.filter(item => {
-    return item.score >= 5 && item.id !== fish.fish_id;
+  let filtered_similars_ids = similars_ids.filter(item => {
+    return item.score >= 5 && item.id !== fish.fish_id; ///!== to remove modal species itself. 
   });
-  
+
+  let sorted_similars = similars_ids.sort((a, b) => b.score - a.score); 
+let top_5_ids = sorted_similars.slice(1, 6);  ///(1, 6) and not (0, 5) to remove modal species itself. 
+
+//this is for outputting some similar species even when similarity is low thus filtered_similars_ids.length === 0 
+ if (filtered_similars_ids.length === 0) {
+  filtered_similars_ids =  top_5_ids; 
+ }
+
+
   // Sort the similars array by similarity score in descending order
   filtered_similars_ids.sort((a, b) => b.score - a.score);
   console.log(filtered_similars_ids);
   
+  let similar_count = filtered_similars_ids.length; 
+  similar_title.innerHTML = `${similar_h2}(${similar_count})`; 
 
   /////Similarity analysis END
   ////////////////////////////////////////
