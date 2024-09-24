@@ -92,6 +92,17 @@ const regionsOb =
   "A": "Artificial Origin",
   "W": "West Asia"
 };
+
+
+const log_messages = 
+{
+  "L": "Liter",
+  "gal" : "gallon",
+"℃" : "Celsius",
+"℉": "Farenheit",
+"cm": "centimeters",
+"inch" : "inches"
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1916,7 +1927,7 @@ function startFlipBubble(elementId) {
 window.onload = startBubbles;
 
 
-
+/// Log messages about results number change and unit changes 
 function log_message() {
   updateCount++;
 
@@ -1925,10 +1936,10 @@ function log_message() {
     return; 
   }
 
-  if (isVisible2) {
-    var updateUnit_already_there = document.getElementById('updateUnit');
-    document.body.removeChild(updateUnit_already_there);
-  }
+  // if (isVisible2) {
+  //   var updateUnit_already_there = document.getElementById('updateUnit');
+  //   document.body.removeChild(updateUnit_already_there);
+  // }
 
   if (isVisible1) {
     // If visible, update the text with the current count
@@ -1967,29 +1978,29 @@ function hidePopuplog() {
   }
 }
 
-
+///Units updated log message 
 function unit_message(template, unit) {
-  if (isVisible1) {
-    var updateMessage_already_there = document.getElementById('updateMessage');
-    if (updateMessage_already_there) {
-    document.body.removeChild(updateMessage_already_there);
-    isVisible1 = false; 
-  }
-  }
+//   if (isVisible1) {
+//     var updateMessage_already_there = document.getElementById('updateMessage');
+//     if (updateMessage_already_there) {
+//     document.body.removeChild(updateMessage_already_there);
+//     isVisible1 = false; 
+//   }
+//   }
 
-if (isVisible2) {
-  var updateUnit_already_there = document.getElementById('updateUnit');
-  if (updateUnit_already_there) {
-  document.body.removeChild(updateUnit_already_there);
-  isVisible2 = false; 
-}
-}
+// if (isVisible2) {
+//   var updateUnit_already_there = document.getElementById('updateUnit');
+//   if (updateUnit_already_there) {
+//   document.body.removeChild(updateUnit_already_there);
+//   isVisible2 = false; 
+// }
+// }
 
   let updateUnit = document.createElement('span');
   updateUnit.classList.add('popup2', 'show');
   updateUnit.id = "updateUnit";
   document.body.appendChild(updateUnit);
-  updateUnit.innerText = `${template} ${unit}`;
+  updateUnit.innerText = `${template} ${log_messages[unit]}`;
   isVisible2 = true; 
   timeoutId = setTimeout(hidePopuplog2, 2000);
 }
