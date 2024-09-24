@@ -84,10 +84,7 @@ font-weight: 999;
 text-shadow: 1px 1px 1px#c0f1e7b3;
 }
 
-.welcometitle {
-  font-weight: 777;
-  text-shadow: 1px 1px 1px#486bd37a;
-}
+
 
 
 
@@ -225,9 +222,9 @@ background-color:  #86a5def8;
 /* Cpanel dropdown */ 
 .dropbtn-cpanel {
   text-decoration: none; /* Remove underline from the anchor element; I might separate this.*/
-  background: linear-gradient(145deg, #98c9eb9d 5%, #59c1bf6e 50%);
+  background: linear-gradient(145deg, #6ac0fd9d 5%, #6ddbd9e1 50%);
   /* background-color: #72a2c2; */
-  color:yellow; 
+  color:rgb(40, 41, 51); 
   padding: 1vw;
   padding-top: 1vw;
   padding-bottom:1vw; 
@@ -239,7 +236,7 @@ background-color:  #86a5def8;
   border-top: none;        
   border-bottom: none;   
   border-radius: 10px;
-  text-shadow: 1px 1px 1px brown
+  text-shadow: 1px 1px 1px rgb(240, 229, 84)
 
 }
 
@@ -248,13 +245,14 @@ background-color:  #86a5def8;
   font-size: 1.05rem;
   border-top: 0.01vw solid #000;          
   border-bottom: 0.01vw solid #000;
-  box-shadow:#05224f;
   box-shadow: 1px 1px 2px rgba(31, 51, 236, 0.795);
-  color: orange;
+  color: rgb(251, 255, 17);
+  text-shadow: 1px 1px 1px black;
 }
 
 .dropbtn-cpanel:active {
   background: linear-gradient(145deg, #596f96f6  5%, #7db6dfec 50%);
+  box-shadow: 1px 1px 2px rgba(37, 37, 11, 0.795);
 }
   
 .grid-container_main {
@@ -524,11 +522,13 @@ position: relative;
 
     .welcometitle {
       text-align: center;
-      color: yellow; 
-      font-weight: 600;
-      text-shadow: -1.5px -1.5px 1px rgb(12, 61, 255), -2.2px -2.2px 2px rgba(210, 255, 220, 0.596), 1px 1px 1px brown;
+      text-shadow: 1px 1px 1px rgba(248, 240, 124, 0.788), -1px -1px 1px rgb(207, 207, 207), 5px 5px 25px rgba(221, 255, 30, 0.678);
+      color: rgb(10, 53, 94); 
+      /* font-weight: 600; */
+      /* text-shadow: -1.5px -1.5px 1px rgba(12, 61, 255, 0.377), -2.2px -2.2px 2px rgba(210, 255, 220, 0.596), 1px 1px 1px brown; */
      font-size: 1.5rem;
-     text-decoration: underline;
+     /* text-decoration: underline; */
+     font-weight: 999;
     }
 
     .welcometext.welcometitle {
@@ -1258,13 +1258,16 @@ input[type="radio"] {
 }
 
 .filler {
-  font-size: 0.7rem; 
+  font-size: 0.95rem; 
   color:#413e07;
+
 }
+
 
 .menuhref {
   text-decoration: none;
   color: inherit;
+ 
 }
 
 #backToTop {
