@@ -8,6 +8,7 @@ const celsius = "℃";
 const farenheit = "℉";
 const cm = "cm";
 const inch = "inch";
+
 const show_inch = "Show fish size in inch";
 const show_cm = "Show fish size in cm";
 const show_farenheit = "Temperature in Farenheit";
@@ -715,7 +716,7 @@ tank_size.value = Math.round((cal_cap * 0.264172)*10)/10;
 inputAnimation(tank_size);
 
 }
-
+unit_message(log_cap_change, console_capacity); 
 }
 
 
@@ -730,9 +731,8 @@ console_capacity = liter;
 f_tankconversion.innerText = show_gallon; 
 tank_size.value = Math.round((cal_cap * 3.785)*10)/10; 
 inputAnimation(tank_size);
-
 }
-
+unit_message(log_cap_change, console_capacity); 
 }
 
 
@@ -758,6 +758,7 @@ tempmin.min = 39;
 tempmin.max = 95;
 document.getElementById("min_t").innerHTML = farenheit;
 inputAnimation(tempmin);
+unit_message(log_temp_change, console_temperature); 
   }
         
 // Conversion from farenheit to celsius [button] 
@@ -781,6 +782,7 @@ tempmin.min = 4;
 tempmin.max = 35;
 document.getElementById("min_t").innerHTML = celsius;
 inputAnimation(tempmin);
+unit_message(log_temp_change, console_temperature); 
   }
 
 /////Slicing comma off from the end for origin string 
@@ -1365,7 +1367,7 @@ function noResultAlert () {
   cmtoinch.innerText = fishsize_option; 
   f_cmtoinch.innerText = fishsize_option; 
   cap_flash("fishsize");
-
+  unit_message(log_size_change, console_fishsize); 
   search_button()
  }
 ///// Showing feedback page 
@@ -1928,7 +1930,7 @@ function log_message() {
     
     // Extend the display time by clearing the old timeout and setting a new one
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(hidePopup, 2000); // Extend by 2 seconds
+    timeoutId = setTimeout(hidePopuplog, 2000); // Extend by 2 seconds
     return; // Exit the function early
   }
 
@@ -1940,12 +1942,12 @@ function log_message() {
   document.body.appendChild(updateMessage);
   updateMessage.innerText = logupdate;
   isVisible = true;
-  timeoutId = setTimeout(hidePopup, 2000);
+  timeoutId = setTimeout(hidePopuplog, 2000);
 }
 
 
   
-function hidePopup() {
+function hidePopuplog() {
   const updateMessage = document.getElementById('updateMessage');
   if (updateMessage) {
     updateMessage.classList.remove('show');
@@ -1955,6 +1957,29 @@ function hidePopup() {
       document.body.removeChild(updateMessage); // Remove the element from the DOM
       isVisible = false; // Reset the visibility flag
       updateCount = 0; // Reset the counter
+    }, 500); // Match the duration of the CSS transition (0.5s)
+  }
+}
+
+
+function unit_message(template, unit) {
+  let updateUnit = document.createElement('span');
+  updateUnit.classList.add('popup2', 'show');
+  updateUnit.id = "updateUnit";
+  document.body.appendChild(updateUnit);
+  updateUnit.innerText = `${template} ${unit}`;
+  timeoutId = setTimeout(hidePopuplog2, 2000);
+}
+
+
+function hidePopuplog2() {
+  const updateUnit = document.getElementById('updateUnit');
+  if (updateUnit) {
+    updateUnit.classList.remove('show');
+
+    // Wait for the transition to complete before removing the element
+    setTimeout(() => {
+      document.body.removeChild(updateUnit); // Remove the element from the DOM
     }, 500); // Match the duration of the CSS transition (0.5s)
   }
 }
