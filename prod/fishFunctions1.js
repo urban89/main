@@ -25,6 +25,9 @@ const abouton = "Hide page info";
 const maincount = fish_master.length; 
 const bcimages = 5; 
 const logupdate = "fish list has been updated"; 
+const log_temp_change = "temperature unit changed to ";
+const log_cap_change = "capacity unit changed to ";
+const log_size_change = "size unit changed to ";
 
  //////////////////////////////////////////////
  //// Dictionary for numerical codes to categories
