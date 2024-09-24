@@ -1911,6 +1911,24 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   text-shadow: 1px 1px 1px yellow; 
 }
 
+.popup2 { 
+  position: fixed;
+  bottom: -50px; /* Start off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(224, 255, 68, 0.669);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  opacity: 0; /* Start with opacity 0 */
+  transition: bottom 0.5s ease-out, opacity 0.5s ease-out; /* Animate both bottom and opacity */
+  z-index: 1000; /* Ensures it's above other content */
+  display: inline-block;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px rgb(0, 255, 242); 
+}
+
+
 .show {
   bottom: 30px; /* Moves the message to visible position */
   opacity: 1; /* Makes the message visible */
