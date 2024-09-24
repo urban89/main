@@ -304,7 +304,8 @@ let easia$$  = perCounter ("region", 6);
 
 let first_run = true; 
 let updateCount = 0;
-let isVisible = false; 
+let isVisible1 = false; 
+let isVisible2 = false; 
 
 function updatePool() { 
 let poolcount = poolCounter (); 
@@ -1924,7 +1925,12 @@ function log_message() {
     return; 
   }
 
-  if (isVisible) {
+  if (isVisible2) {
+    var updateUnit_already_there = document.getElementById('updateUnit');
+    document.body.removeChild(updateUnit_already_there);
+  }
+
+  if (isVisible1) {
     // If visible, update the text with the current count
     document.getElementById('updateMessage').innerText = `${logupdate} (${updateCount}x)`;
     
@@ -1934,14 +1940,14 @@ function log_message() {
     return; // Exit the function early
   }
 
-  isVisible = true; 
+  isVisible1 = true; 
   console.log(logupdate);
   let updateMessage = document.createElement('span');
   updateMessage.classList.add('popup', 'show');
   updateMessage.id = "updateMessage";
   document.body.appendChild(updateMessage);
   updateMessage.innerText = logupdate;
-  isVisible = true;
+  isVisible1 = true;
   timeoutId = setTimeout(hidePopuplog, 2000);
 }
 
@@ -1955,7 +1961,7 @@ function hidePopuplog() {
     // Wait for the transition to complete before removing the element
     setTimeout(() => {
       document.body.removeChild(updateMessage); // Remove the element from the DOM
-      isVisible = false; // Reset the visibility flag
+      isVisible1 = false; // Reset the visibility flag
       updateCount = 0; // Reset the counter
     }, 500); // Match the duration of the CSS transition (0.5s)
   }
@@ -1963,11 +1969,28 @@ function hidePopuplog() {
 
 
 function unit_message(template, unit) {
+  if (isVisible1) {
+    var updateMessage_already_there = document.getElementById('updateMessage');
+    if (updateMessage_already_there) {
+    document.body.removeChild(updateMessage_already_there);
+    isVisible1 = false; 
+  }
+  }
+
+if (isVisible2) {
+  var updateUnit_already_there = document.getElementById('updateUnit');
+  if (updateUnit_already_there) {
+  document.body.removeChild(updateUnit_already_there);
+  isVisible2 = false; 
+}
+}
+
   let updateUnit = document.createElement('span');
   updateUnit.classList.add('popup2', 'show');
   updateUnit.id = "updateUnit";
   document.body.appendChild(updateUnit);
   updateUnit.innerText = `${template} ${unit}`;
+  isVisible2 = true; 
   timeoutId = setTimeout(hidePopuplog2, 2000);
 }
 
@@ -1979,7 +2002,10 @@ function hidePopuplog2() {
 
     // Wait for the transition to complete before removing the element
     setTimeout(() => {
-      document.body.removeChild(updateUnit); // Remove the element from the DOM
+      if (updateUnit) {
+      document.body.removeChild(updateUnit); 
+      } // Remove the element from the DOM
+      isVisible2 = false; 
     }, 500); // Match the duration of the CSS transition (0.5s)
   }
 }
