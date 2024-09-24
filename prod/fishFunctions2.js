@@ -471,7 +471,7 @@ function fishSelect (fish_list) {
     if (check_fish.checked && fish_list[i].isfish == "1") {
       final_list.push(fish_list[i]);
     }
-      if (check_notfish.checked && fish_list[i].isfish == "0") {
+    if (check_notfish.checked && (fish_list[i].isfish == "0" || fish_list[i].isfish == "2" || fish_list[i].isfish == "3")) {
         final_list.push(fish_list[i]);
     }
   }

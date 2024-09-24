@@ -631,7 +631,8 @@ function poolCounter () {
   let num = 0;
  for  (let fish of fish_master) {
    if (check_fish.checked && fish.isfish == "1") {num = num + 1;}
-   if (check_notfish.checked && fish.isfish == "0") {num = num + 1;}
+   if (check_notfish.checked && (fish.isfish == "0" || fish.isfish == "2" || fish.isfish == "3"))
+    num = num + 1;
  }
  console.log(num);
  return num;
@@ -947,7 +948,7 @@ noResultAlert (); // alert if no results were found
 
 function isfish() {
   if (v_check_fish) {isit_fish.push(1);}
-  if (v_check_notfish) {isit_fish.push(0);}
+  if (v_check_notfish) {isit_fish.push(0, 2, 3);}
 }
 
     function hardiness_list() {
