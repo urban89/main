@@ -1,4 +1,4 @@
- ///csv_master_v10.1
+ ///csv_master_v10.2
 
 const fish_master = [
   {
@@ -11840,7 +11840,7 @@ const fish_master = [
     agression: "1",
     origin: "Europe",
     region: "7",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "1",
@@ -11863,7 +11863,7 @@ const fish_master = [
     agression: "1",
     origin: "Africa",
     region: "2",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "1",
@@ -11886,7 +11886,7 @@ const fish_master = [
     agression: "2",
     origin: "Malaysia, Thailand, Indonesia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "1",
@@ -11978,7 +11978,7 @@ const fish_master = [
     agression: "1",
     origin: "Florida",
     region: "8",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "1",
@@ -12208,7 +12208,7 @@ const fish_master = [
     agression: "1",
     origin: "Southeast Asia",
     region: "3",
-    isfish: "0",
+    isfish: "2",
     phmin: "6.5",
     phmax: "8",
     more: "1",
@@ -12323,7 +12323,7 @@ const fish_master = [
     agression: "1",
     origin: "Thailand",
     region: "3",
-    isfish: "0",
+    isfish: "3",
     phmin: "6.5",
     phmax: "7.5",
     more: "1",
