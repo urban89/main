@@ -2054,6 +2054,10 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   box-shadow: inset 0 4px 8px rgba(65, 221, 164, 0.444);
 }
 
+.grid_icon:active {
+  box-shadow: 0 4px 8px rgba(45, 82, 250, 0.839);
+}
+
 
 .dropdown-cpcontent span:first-child {
   border: solid;
