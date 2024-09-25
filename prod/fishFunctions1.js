@@ -112,8 +112,9 @@ const log_messages =
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const numberinputs = document.querySelectorAll('input[type="number"]');
   const radioinputs = document.querySelectorAll('input[type = "radio"]');
-  const listviewstring = "Results in list view";
-  const tileviewstring = "Results in tiles view"
+  const listviewstring = "Change to list view";
+  const tileviewstring = "Change to fish card view"
+  const smalltileviewstring = "Change to tiles view"
 
 
   let console_capacity = liter;
@@ -126,8 +127,8 @@ const log_messages =
   let whichcard = fishshown; 
   let feedbackstatus = feedbacknotshown;
   let aboutstatus = aboutoff; 
-  let viewoption = listviewstring;
-  let listview = false; 
+  let viewoption = smalltileviewstring;
+  let listview = 0; 
 
   let cap_modifier = 1; 
   let temp_modifier1 = 1;
@@ -326,7 +327,10 @@ allcount.textContent = poolcount;
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
+    view_options.textContent = viewoption;
+    f_view_options.textContent = viewoption;
 
+    grid_icon_id.src = "icon/smalltiles.png";
     check_fish.addEventListener('change', updatePool);
     check_notfish.addEventListener('change', updatePool);
     check_fish.addEventListener('change', PoolFlash);
@@ -416,11 +420,13 @@ allcount.textContent = poolcount;
 
 
 
-  grid_icon_id.addEventListener("click", function () {
-  grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
-  grid_toggle = (grid_toggle === "small") ? "big" : "small"; 
-    search_button()
-  }); 
+  grid_icon_id.addEventListener("click", viewToggle);
+  
+  // () {
+  // grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
+  // grid_toggle = (grid_toggle === "small") ? "big" : "small"; 
+  //   search_button()
+  // }); 
   
     cmtoinch.addEventListener("click", fishsizemetric);
     f_cmtoinch.addEventListener("click", fishsizemetric);
@@ -946,15 +952,17 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
 /////search_button CORE -->|||||
 ///////////////////Outputting serach results to UI
 function fishSelect() {
-  if (listview) {
-    listFiller (fish_list)
-  }
- else if (grid_toggle === "big"){
-  microTileFiler(fish_list) 
-}
-  else {
-  fishFiller(fish_list); //fills all the fish info card divs displayed on page 
-} 
+  if (listview === 0) {fishFiller(fish_list);}
+  else if (listview === 1) {microTileFiler(fish_list);}
+  else if (listview === 2) {listFiller (fish_list);}
+
+//   }
+//  else if (grid_toggle === "big"){
+//   microTileFiler(fish_list) 
+// }
+//   else {
+//   fishFiller(fish_list); //fills all the fish info card divs displayed on page 
+// } 
   flipListener() // adds event listeners to newly created divs responsibe for toggling the two sides of the displayed cards 
 // remember (details); //checks array to see which should remain flipped and which shouldn't
 noResultAlert (); // alert if no results were found 
@@ -1391,10 +1399,35 @@ function gotofeedback () {
 }
 ///// List/tiles view of results toggle 
 function viewToggle () {
-  console.log("test");
-//   more_options.style.display = (more_options.style.display === "grid") ? "none" : "grid";
-listview = (listview === false) ? true : false; 
-viewoption = (viewoption === listviewstring) ? tileviewstring : listviewstring; 
+
+if (listview === 0) {
+  listview +=1; 
+  viewoption = listviewstring;
+  grid_icon_id.src = "icon/list_view.png";
+ console.log(listview + " " + grid_icon_id.src);
+}
+
+
+else if (listview === 1) {
+  listview +=1; 
+  viewoption = tileviewstring;
+  grid_icon_id.src = "icon/fishcards.png";
+  console.log(listview + " " + grid_icon_id.src);
+}
+
+
+else if (listview === 2) {
+  listview = 0; 
+  viewoption = smalltileviewstring;
+  grid_icon_id.src = "icon/smalltiles.png";
+  console.log(listview + " " + grid_icon_id.src);
+}
+
+
+
+
+// listview = (listview === false) ? true : false; 
+// viewoption = (viewoption === listviewstring) ? tileviewstring : listviewstring; 
 view_options.textContent = viewoption;
 f_view_options.textContent = viewoption;
 search_button()

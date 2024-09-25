@@ -217,8 +217,10 @@ window.addEventListener("click", function (event) {
   }
 });
 
+
+grid_icon_id.src = "icon/smalltiles.png"; 
 grid_icon_id.addEventListener("click", function () {
-  grid_icon_id.src = (grid_toggle === "small") ? "icon/grid.png" : "icon/grid_small.png"; 
+  grid_icon_id.src = (grid_toggle === "small") ? "icon/fishcards.png" : "icon/smalltiles.png"; 
   grid_toggle = (grid_toggle === "small") ? "big" : "small"; 
   output();
   }); 
