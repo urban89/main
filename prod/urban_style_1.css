@@ -456,6 +456,24 @@ position: relative;
 }}
 
 
+.score_arrow {
+  width: 10%; 
+  position: absolute;
+  top: 12%;
+  right: 2%; 
+}
+
+.score_text {
+  font-size: 0.7rem;
+  font-weight: 200;
+  position: absolute;
+  top: 22%;
+  right: -8%; 
+  color: #63E1FF; 
+  background-color: #000;
+  border-radius: 10%;
+}
+
 .fishcardimage {
   width: 20vw;
   height: 15vh;

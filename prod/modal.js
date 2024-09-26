@@ -512,10 +512,13 @@ for (let j = 0; j < filtered_similars_ids.length; j++) {
 console.log("Filtered fish list with similarity scores:", fish_list);
 console.log("Contents of filtered_similars_ids:", filtered_similars_ids);
 
-
+let similarity_score_arrow = null;
+let similarity_score_text = null;
   for (let i = 0; i <fish_list.length; i++) {
 
  //Generating fish card (fish cards are displayed by default)
+
+
 
  let fishid = `id${fish_list[i].fish_id}`; 
  let main_card = document.createElement('div'); //container card to hide/show info 
@@ -557,14 +560,30 @@ else {fishcard.className = "modal_nonfish_card"}
  score.className = "comp_score"
  main_card.className = "maincard";
 
+
+
  score.innerHTML = `<span class = "simvalue">${fish_list[i].similarity_score}</span>`; 
  fishcard.appendChild(score);////
  fishcard.appendChild(image_element);
  fishcard.appendChild(fishname);
 
+ if (i === 0) {
+  similarity_score_arrow = document.createElement('img');
+  similarity_score_text = document.createElement('p');
+  similarity_score_arrow.className = "score_arrow";
+  similarity_score_arrow.src = `icon/score_arrow.png`; 
+  similarity_score_text.className = "score_text";
+  similarity_score_text.innerHTML = "similarity score";
+ fishcard.appendChild(similarity_score_arrow);
+fishcard.appendChild(similarity_score_text);
+ }
+
  fishcard.appendChild(size);
  fishcard.appendChild(temp);
  fishcard.appendChild(tanksize);
+
+
+
  main_card.appendChild(fishcard);
 
 
