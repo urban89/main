@@ -1917,7 +1917,9 @@ function createBubble(container) {
 function flipBubblesCreate(container) {
   const bubble = document.createElement('div');
   bubble.classList.add('bubble_inflip');
-  bubble.style.left = Math.random() * container.clientWidth + 'px';
+  const minLeft = 0.3 * container.clientWidth; // Minimum left position is 30% of the container width
+  const maxLeft = container.clientWidth; // Maximum left position is 100% of the container width
+  bubble.style.left = minLeft + Math.random() * (maxLeft - minLeft) + 'px';
   bubble.style.animationDuration = 1 + Math.random() * 1 + 's'; // random duration between 3 to 5 seconds
   bubble.style.animationDelay = Math.random() * 0.1 + 's'; 
   container.appendChild(bubble);
