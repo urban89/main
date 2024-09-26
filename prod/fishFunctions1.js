@@ -1457,13 +1457,13 @@ function fishFiller(fish_list) {
   for (let i = 0; i <fish_list.length; i++) {
  //Generating fish card (fish cards are displayed by default)
  let fishid = fish_list[i].fish_id; 
- let main_card = document.createElement('div'); //container card to hide/show info 
- let fishcard = document.createElement('div'); // fish card for each fish; all the other elements generated will be appended to this 
- let fishname = document.createElement("p"); // <p> holding the fish name 
- let image_element = document.createElement('img'); // <img> holding the fish image 
- let size = document.createElement("span"); // fish size in fish card 
- let temp = document.createElement("span"); // temperature in fish card 
- let tanksize = document.createElement("span"); // tank size in fish card 
+ let main_card = document.createElement('div');
+ let fishcard = document.createElement('div'); 
+ let fishname = document.createElement("p"); 
+ let image_element = document.createElement('img'); 
+ let size = document.createElement("span"); 
+ let temp = document.createElement("span"); 
+ let tanksize = document.createElement("span"); 
  let name = uppercaser(fish_list[i].name_english);
 
 
@@ -1851,7 +1851,7 @@ function microTileFiler(fish_list) {
     });
 
     // Add click event listener to each image element directly
-    micro_image.addEventListener('click', function() {
+    micro_image.addEventListener('click', function(event) {
       var elementID = micro_image.id.substring(2); // Remove 'im' prefix to get the fish ID
 
       var fishID = fish_master.find(function(fish) {
@@ -1861,6 +1861,8 @@ function microTileFiler(fish_list) {
       if (fishID) {
         console.log(fishID); // Do something with the found fish object
       }
+      loneFiller (fishID, event);
+      ///!!!!!!!!!!!!!! HEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEE
     });
 
     // Append the micro_image to the micro_tiles_div
@@ -2056,4 +2058,73 @@ function hidePopuplog2() {
       isVisible2 = false; 
     }, 500); // Match the duration of the CSS transition (0.5s)
   }
+}
+
+
+
+function loneFiller (fish, clickEvent){
+  let main_card = document.createElement('div');
+  let fishcard = document.createElement('div'); 
+  let fishname = document.createElement("p"); 
+  let image_element = document.createElement('img'); 
+  let size = document.createElement("span"); 
+  let temp = document.createElement("span"); 
+  let tanksize = document.createElement("span"); 
+
+  let close_loner = document.createElement("div");
+
+  let name = uppercaser(fish.name_english);
+
+  let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
+  let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
+  let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10); //converting to gallon if necessary with "cap_modifier" and also rounding the number 
+  let card_size_cal = Math.round(fish.cm_max * size_modifier*10)/10; //rounding up potentially converted fish size to 1 decimal place
+  let card_size =  sizeFormatter(card_size_cal); //removing ".0" from round numbers 
+
+  image_element.src = `webps1/${fish.fish_id}.webp`; //finding webp file for each fish based on fish ID 
+  image_element.alt = `"image of ${name}`;
+  fishname.textContent = name; // adding name to <p> result_lists_element
+  size.textContent = `${card_size} ${console_fishsize}`; // getting fish size from fish_master 
+  temp.textContent = `${temp_min} - ${temp_max} ${console_temperature}`; 
+  tanksize.textContent = `${cap} ${console_capacity}`;
+
+
+  fishcard.id = `loner${fish.fish_id}`;  
+  if (fish.isfish == "1")  {
+  fishcard.className = "fish_card";
+ }
+ else {fishcard.className = "nonfish_card"}
+
+ image_element.className = "fishcardimage"; 
+ fishname.className = "fishname";
+ size.className = "fishsize";
+ temp.className = "fishtemp";
+ tanksize.className = "tanksize"; 
+ main_card.className = "maincard"; //container card to hide/show info 
+ close_loner.className = "close_loner"; 
+ close_loner.id = `close${fish.fish_id}`; 
+ close_loner.innerHTML = "X"; 
+ main_card.style.position = 'absolute'; 
+
+   // Set the position based on click event
+   main_card.style.left = clickEvent.pageX + 'px';
+   main_card.style.top = clickEvent.pageY + 'px';
+
+
+   close_loner.addEventListener("click", function () {
+    let main_card = close_loner.parentElement.parentElement; // Get the main_card directly
+    if (main_card) {
+        main_card.remove(); // Remove the main_card which contains everything
+    }
+});
+
+ fishcard.appendChild(image_element);
+ fishcard.appendChild(fishname);
+ fishcard.appendChild(size);
+ fishcard.appendChild(temp);
+ fishcard.appendChild(tanksize);
+ fishcard.appendChild(close_loner);
+ 
+ main_card.appendChild(fishcard);
+ document.body.appendChild(main_card);
 }

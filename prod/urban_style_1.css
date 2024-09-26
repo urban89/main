@@ -672,13 +672,7 @@ font-size: 3vw;
   }
 }
 
-.listline:hover .listnum, .listline:hover .listname, .listline:focus .listnum, .listline:focus .listname  {
-  /* Styles to apply to .listnum when .listline is hovered */
-  color: rgb(0, 0, 0); 
-  font-weight: bold; 
-  font-size: 2.1vw;
-  border-radius: 50%;
-}
+
 
 
 @media screen and (max-width: 820px) {
@@ -739,6 +733,10 @@ font-size: 3vw;
 .listname {
   font-size: 2.4vw;
 }
+
+/* .listline:hover .listnum, .listline:hover .listname, .listline:focus .listnum, .listline:active .listname, .listline:active .listnum, .listline:focus .listname   {
+  font-size: 4vw;
+} */
   .listlatin {
     font-size: 1.8vw;
   }
@@ -2138,6 +2136,13 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
  
 }
 
+.listline:hover .listnum, .listline:hover .listname, .listline:focus .listnum, .listline:active .listname, .listline:active .listnum, .listline:focus .listname   {
+  /* Styles to apply to .listnum when .listline is hovered */
+  color: rgb(0, 0, 0); 
+  font-weight: bold; 
+  font-size: 2.1vw;
+  border-radius: 50%;
+}
 
   /* Style only direct child spans within the .list-view div */
   .list-view > span:nth-of-type(2n + 1) {
@@ -2163,4 +2168,16 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
     background: linear-gradient(145deg, #efe976aa 22%, #d2f43e8d 88%);
     border-width: 2px;
     border: 0.1rem solid #00000088;
+  }
+
+
+  .close_loner {
+    font-weight: 900;
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    background: rgba(255, 255, 0, 0.575);
+    border-radius: 50%;
+    cursor: pointer; 
+    padding: 1px 3px 1px 3px;
   }
