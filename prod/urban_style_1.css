@@ -434,7 +434,10 @@ position: relative;
 
 .mo_infocardtext {
   font-size: 4vw; 
-  margin: 0.2em 
+  margin: 0.2em; 
+  border-style: solid;
+  border-color: rgba(141, 151, 149, 0.228);
+  border-width: 0px 0px 1px 0px;
 }
 
 
