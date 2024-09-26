@@ -672,7 +672,7 @@ font-size: 3vw;
   }
 }
 
-.listline:hover .listnum, .listline:hover .listname {
+.listline:hover .listnum, .listline:hover .listname, .listline:focus .listnum, .listline:focus .listname  {
   /* Styles to apply to .listnum when .listline is hovered */
   color: rgb(0, 0, 0); 
   font-weight: bold; 
