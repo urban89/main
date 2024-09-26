@@ -75,9 +75,9 @@ function closeModal() {
     const moreimg = document.createElement('img');
     const summarybox = document.createElement('div');
     const bubbleghost = document.createElement('div');
+    
 
-
-  
+    let modal_latin = document.createElement("p");
     let mintanksize = document.createElement("p");
     let tempinfo = document.createElement("p");
     let sizeinfo = document.createElement("p");
@@ -92,6 +92,8 @@ function closeModal() {
     let idshown = document.createElement("p");
     let isfishshown = document.createElement("p");
     let family_element = document.createElement("p");
+
+
 
 
     let altname;
@@ -155,7 +157,7 @@ function closeModal() {
   social.className = "mo_infocardtext";
   agression.className = "mo_infocardtext";
   breeding.className = "mo_infocardtext";
-  
+  modal_latin.className = "latire"; 
   
   
   origin.className = "mo_infocardtext";
@@ -170,7 +172,8 @@ function closeModal() {
   isfishshown.innerHTML = `type: ${isfish}`;
   family_element.innerHTML = `family: ${fish.family}`;
 
-  
+  modal_latin.innerHTML = fish.name_latin; 
+
   let cap = Math.round(((fish.tank_size_liter / cap_modifier) * 10)/10);
   let temp_min = Math.round((fish.temperature_min * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used 
   let temp_max = Math.round((fish.temperature_max * temp_modifier1) + temp_modifier2); // checking if ℃ or ℉ is used
@@ -409,7 +412,7 @@ let top_5_ids = sorted_similars.slice(1, 6);  ///(1, 6) and not (0, 5) to remove
     more_console.appendChild(isfishshown);
     more_console.appendChild(family_element);
  
-
+    summarybox.appendChild(modal_latin);
     if (altname) {summarybox.appendChild(altname);}
     summarybox.appendChild(mintanksize);
     summarybox.appendChild(tempinfo);

@@ -440,6 +440,20 @@ position: relative;
   border-width: 0px 0px 1px 0px;
 }
 
+.latire {
+  font-size: 1.2rem;
+  margin: 0; 
+  color: rgba(26, 26, 249, 0.664);
+  background: linear-gradient(145deg, #d7e7a3f6  5%, #b8bd8aa3 50%);
+  border-bottom: 1px solid rgb(232, 243, 25); 
+  padding: 2px; 
+  border-radius: 10%;
+  text-shadow: -1px -1px 1px white;
+}
+
+@media screen and (max-width: 550px) { .latire {
+  font-size: 0.8rem;
+}}
 
 
 .fishcardimage {
@@ -1772,7 +1786,7 @@ floating_close_modal:hover, floating_close_modal:focus {
 }
 
 .summarybox {
-  padding: 2vw;
+  padding: 1vw 2vw 2vw 2vw;
   box-sizing: border-box;
   border-style: solid;
   /* margin-left: 5%; */
@@ -1792,6 +1806,7 @@ floating_close_modal:hover, floating_close_modal:focus {
   overflow-wrap: break-word;
   position: relative;
   overflow-y: auto;
+
  
 }
 
