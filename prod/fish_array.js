@@ -2390,7 +2390,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2413,7 +2413,7 @@ const fish_master = [
     isfish: "1",
     phmin: "7",
     phmax: "8.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2436,7 +2436,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2459,7 +2459,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2482,7 +2482,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6.5",
     phmax: "8",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2505,7 +2505,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2528,7 +2528,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2551,7 +2551,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2574,7 +2574,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5.5",
     phmax: "7",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2597,7 +2597,7 @@ const fish_master = [
     isfish: "1",
     phmin: "5",
     phmax: "6.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2620,7 +2620,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -2643,7 +2643,7 @@ const fish_master = [
     isfish: "1",
     phmin: "6",
     phmax: "7.5",
-    more: "0",
+    more: "1",
     family : "Cichlidae"
   },
   {
@@ -11477,6 +11477,29 @@ const fish_master = [
     phmax: "7",
     more: "1",
     family : "Cyprinidae"
+  },
+  {
+    fish_id: "501",
+    name_english: "Burmese Badis",
+    alt_name: "",
+    name_latin: "Badis ruber ",
+    swim: "2",
+    cm_max: "5",
+    uncare: "3",
+    breeding_difficulty: "3",
+    availability: "2",
+    school: "1",
+    tank_size_liter: "75",
+    temperature_min: "18",
+    temperature_max: "25",
+    agression: "2",
+    origin: "Myanmar, Thailand, Laos",
+    region: "3",
+    isfish: "1",
+    phmin: "6.5",
+    phmax: "7.5",
+    more: "1",
+    family : "Badidae"
   },
   {
     fish_id: "900",
