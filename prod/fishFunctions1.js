@@ -318,6 +318,7 @@ let first_run = true;
 let updateCount = 0;
 let isVisible1 = false; 
 let isVisible2 = false; 
+let card_flush_list = []; ///for storing floating fish cards to be removed when view is changed 
 
 function updatePool() { 
 let poolcount = poolCounter (); 
@@ -330,6 +331,22 @@ function isTouchDevice() {
          (navigator.msMaxTouchPoints > 0);
 }
 
+
+function lonerFlusher (array) {
+  if (!Array.isArray(array) || array.length === 0) {
+    return; // Exit the function if the array is empty or invalid
+  }
+
+
+  for (let id of array) {
+    let child = document.getElementById(id);
+    if (child) { 
+    let main_card = child.parentElement;
+    if (main_card) {
+      main_card.remove(); 
+  }}}}
+// Start the bubbles when the page loads
+window.onload = startBubbles;
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////// Adding initial event listeners   
@@ -959,6 +976,7 @@ return `(${Math.round((list.length/maincount)*100)}%)`;
 /////search_button CORE -->|||||
 ///////////////////Outputting serach results to UI
 function fishSelect() {
+  lonerFlusher (card_flush_list);
   if (listview === 0) {fishFiller(fish_list);}
   else if (listview === 1) {microTileFiler(fish_list);}
   else if (listview === 2) {listFiller (fish_list);}
@@ -1769,8 +1787,26 @@ function listFiller (fish_list) {
       list_line.appendChild(listnumber);
       list_line.appendChild(fishname);
       list_line.appendChild(latinname);
+      list_line.id = `list${fish_list[i].fish_id}`;
       list_view_divs.appendChild(brr);
       list_view_divs.appendChild(list_line);
+
+ // Add click event listener to each list element directly
+ list_line.addEventListener('click', function(event) {
+  var elementID = list_line.id.substring(4); // Remove 'im' prefix to get the fish ID
+
+  var fishID = fish_master.find(function(fish) {
+    return fish.fish_id === elementID;
+  });
+
+  if (fishID) {
+    console.log(fishID); // Do something with the found fish object
+  }
+  loneFiller (fishID, event);
+
+});
+
+
   }
       result_div.appendChild(list_view_divs); 
 }
@@ -1837,7 +1873,7 @@ function microTileFiler(fish_list) {
         console.log(fishID); // Do something with the found fish object
       }
       loneFiller (fishID, event);
-      ///!!!!!!!!!!!!!! HEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEEHEREEE
+    
     });
 
     // Append the micro_image to the micro_tiles_div
@@ -1937,10 +1973,6 @@ function startFlipBubble(elementId) {
   }
 }
 
-// Start the bubbles when the page loads
-window.onload = startBubbles;
-
-
 /// Log messages about results number change and unit changes 
 function log_message() {
   updateCount++;
@@ -1949,11 +1981,6 @@ function log_message() {
     first_run = false;
     return; 
   }
-
-  // if (isVisible2) {
-  //   var updateUnit_already_there = document.getElementById('updateUnit');
-  //   document.body.removeChild(updateUnit_already_there);
-  // }
 
   if (isVisible1) {
     // If visible, update the text with the current count
@@ -1994,22 +2021,6 @@ function hidePopuplog() {
 
 ///Units updated log message 
 function unit_message(template, unit) {
-//   if (isVisible1) {
-//     var updateMessage_already_there = document.getElementById('updateMessage');
-//     if (updateMessage_already_there) {
-//     document.body.removeChild(updateMessage_already_there);
-//     isVisible1 = false; 
-//   }
-//   }
-
-// if (isVisible2) {
-//   var updateUnit_already_there = document.getElementById('updateUnit');
-//   if (updateUnit_already_there) {
-//   document.body.removeChild(updateUnit_already_there);
-//   isVisible2 = false; 
-// }
-// }
-
   let updateUnit = document.createElement('span');
   updateUnit.classList.add('popup2', 'show');
   updateUnit.id = "updateUnit";
@@ -2035,8 +2046,7 @@ function hidePopuplog2() {
   }
 }
 
-
-
+///Pop up solitary fish card for micro tile and list view
 function loneFiller (fish, clickEvent){
   let main_card = document.createElement('div');
   let fishcard = document.createElement('div'); 
@@ -2065,6 +2075,9 @@ function loneFiller (fish, clickEvent){
 
 
   fishcard.id = `loner${fish.fish_id}`;  
+  card_flush_list.push(fishcard.id);
+
+
   if (fish.isfish == "1")  {
   fishcard.className = "fish_card";
  }
@@ -2078,7 +2091,7 @@ function loneFiller (fish, clickEvent){
  main_card.className = "maincard"; //container card to hide/show info 
  close_loner.className = "close_loner"; 
  close_loner.id = `close${fish.fish_id}`; 
- close_loner.innerHTML = "X"; 
+ close_loner.innerHTML = "x"; 
  main_card.style.position = 'absolute'; 
 
    // Set the position based on click event
