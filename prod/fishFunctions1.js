@@ -2108,10 +2108,23 @@ function loneFiller (fish, clickEvent){
  close_loner.innerHTML = "x"; 
  main_card.style.position = 'absolute'; 
 
-   // Set the position based on click event
-   main_card.style.left = clickEvent.pageX + 'px';
-   main_card.style.top = clickEvent.pageY + 'px';
+  // Get the viewport width
+  const viewportWidth = window.innerWidth;
 
+  // Check if click is in the right 50% of the viewport
+  if (clickEvent.pageX > viewportWidth / 2) {
+    main_card.style.left = (clickEvent.pageX - main_card.offsetWidth - 140) + 'px';
+  } else {
+    main_card.style.left = clickEvent.pageX + 'px';
+  }
+  
+  main_card.style.top = clickEvent.pageY + 'px';
+
+//////// <-- floating fish card pop up location 
+console.log('Pop-up Width:', main_card.offsetWidth);
+console.log('Click Position:', clickEvent.pageX, clickEvent.pageY);
+console.log('Viewport Width:', viewportWidth);
+console.log('Calculated Left Position:', main_card.style.left);
 
    close_loner.addEventListener("click", function () {
     let main_card = close_loner.parentElement.parentElement; // Get the main_card directly
