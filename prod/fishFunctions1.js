@@ -324,6 +324,13 @@ let poolcount = poolCounter ();
 allcount.textContent = poolcount;
 }
 
+function isTouchDevice() {
+  return ('ontouchstart' in window) || 
+         (navigator.maxTouchPoints > 0) || 
+         (navigator.msMaxTouchPoints > 0);
+}
+
+
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////// Adding initial event listeners   
   document.addEventListener("DOMContentLoaded", function() {
@@ -1768,43 +1775,7 @@ function listFiller (fish_list) {
       result_div.appendChild(list_view_divs); 
 }
 
-// ///Super good micro tiles view 
-// function microTileFiler(fish_list) {
-//   console.log("test1");
-//   let micro_tiles_div = document.createElement("div");
-//   let result_lists = document.createElement("div");
-//   result_lists.className = "column_result"; 
-//   micro_tiles_div.className = "micro_tiles_div"; 
-//   for (let i = 0; i <fish_list.length; i++) { 
-//     let micro_image = document.createElement("img");
-//     micro_image.className = "micro_tile_element"; 
-//     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
-//     micro_image.id = `im${fish_list[i].fish_id}`;
 
-//     micro_tiles_div.appendChild(micro_image)
-//     // result_lists.appendChild(micro_image); 
-
-//   }
-//   const micros = document.querySelectorAll(`.micro_tiles_div`);
-//   micros.forEach(function(element) { element.addEventListener('click', function() {
-//   var elementID = element.id.substring(2); 
-
-//   var fishID = fish_master.find(function(fish) {
-//     return fish.fish_id === elementID;
-//   });
-// // Hover events
-// element.addEventListener("mouseover", function () {
-//   console.log("Mouse is over the element.");
-//   const hover_div = document.createElement("span");
-//   hover_div.innerHTML = "test";
-//   var element_element = document.getElementById(element.id);
-//   element_element.appendChild(hover_div);
-//   console.log("test2");
-// });
-
-// }); }); 
-//   result.appendChild(micro_tiles_div);
-// }
 /// Super good micro tiles view 
 function microTileFiler(fish_list) {
   console.log("test1");
@@ -1816,6 +1787,8 @@ function microTileFiler(fish_list) {
     micro_image.className = "micro_tile_element"; 
     micro_image.src = `webps1/${fish_list[i].fish_id}.webp`;
     micro_image.id = `im${fish_list[i].fish_id}`;
+
+    if (!isTouchDevice()) {
 
     // Create a hover div to show the fish name, but do not add it yet
     const hover_div = document.createElement("span");
@@ -1849,6 +1822,8 @@ function microTileFiler(fish_list) {
       // Hide the hover_div when the mouse is not over the image
       hover_div.style.display = "none";
     });
+  }
+
 
     // Add click event listener to each image element directly
     micro_image.addEventListener('click', function(event) {
