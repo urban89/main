@@ -2173,11 +2173,22 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 
   .close_loner {
     font-weight: 900;
+    font-size: 1.5rem;
+    color: rgb(65, 65, 31); 
     position: absolute;
-    top: -1%;
-    left: -1%;
-    background: rgba(255, 255, 0, 0.575);
+    top: -7%;
+    right: -7%;
+    /* background: rgba(17, 235, 180, 0.575); */
+    background: linear-gradient(145deg, #f0cb7bc7 22%, #ca8b2de0 88%);
     border-radius: 50%;
     cursor: pointer; 
-    padding: 1px 3px 1px 3px;
+    padding: 1px 10px 1px 10px;
+    box-shadow: 4px 4px 6px hsla(49, 98%, 62%, 0.486);
+  }
+
+
+  .close_loner:hover {
+    background: linear-gradient(145deg, #f1b32bc7 22%, #9f6816e0 88%);
+    box-shadow: 4px 4px 6px hsla(49, 92%, 65%, 0.812);
+    color: rgba(54, 222, 240, 0.72); 
   }

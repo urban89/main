@@ -331,13 +331,11 @@ function isTouchDevice() {
          (navigator.msMaxTouchPoints > 0);
 }
 
-
+///Clearing floating fish cards when view is changed 
 function lonerFlusher (array) {
   if (!Array.isArray(array) || array.length === 0) {
     return; // Exit the function if the array is empty or invalid
   }
-
-
   for (let id of array) {
     let child = document.getElementById(id);
     if (child) { 
@@ -345,6 +343,21 @@ function lonerFlusher (array) {
     if (main_card) {
       main_card.remove(); 
   }}}}
+
+///Popping and removing floating fish cards if more than 3 
+function lonerPopper(array) {
+  if (array.length > 2) {
+    let killthisid = document.getElementById(card_flush_list[0]); 
+    if (killthisid) {
+    let main_card = killthisid.parentElement;
+    if (main_card) {
+      main_card.remove(); 
+    }
+  }
+  array.shift(); 
+}
+}
+
 // Start the bubbles when the page loads
 window.onload = startBubbles;
 
@@ -982,7 +995,7 @@ function fishSelect() {
   else if (listview === 2) {listFiller (fish_list);}
 
 //   }
-//  else if (grid_toggle === "big"){
+//  else if (grid_toggle === "big"){  ////////// --> "big" string variable remove from document 
 //   microTileFiler(fish_list) 
 // }
 //   else {
@@ -2048,6 +2061,7 @@ function hidePopuplog2() {
 
 ///Pop up solitary fish card for micro tile and list view
 function loneFiller (fish, clickEvent){
+  lonerPopper(card_flush_list);
   let main_card = document.createElement('div');
   let fishcard = document.createElement('div'); 
   let fishname = document.createElement("p"); 
