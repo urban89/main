@@ -2147,7 +2147,7 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   /* Style only direct child spans within the .list-view div */
   .list-view > span:nth-of-type(2n + 1) {
     background: linear-gradient(145deg, #9c834daa 22%, #db9a388d 88%);
-    display: inline-block;
+    display: inline-block;`
     margin: 0; 
 
   }
@@ -2192,3 +2192,9 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
     box-shadow: 4px 4px 6px hsla(49, 92%, 65%, 0.812);
     color: rgba(54, 222, 240, 0.72); 
   }
+
+
+
+  .glow-border {
+    border: 2px solid yellow;
+}

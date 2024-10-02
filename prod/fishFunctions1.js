@@ -1469,7 +1469,7 @@ else if (listview === 2) {
 view_options.textContent = viewoption;
 f_view_options.textContent = viewoption;
 search_button()
-
+card_flush_list = []; 
 }
 
 ///// Sorting functions 
@@ -2061,6 +2061,7 @@ function hidePopuplog2() {
 
 ///Pop up solitary fish card for micro tile and list view
 function loneFiller (fish, clickEvent){
+
   lonerPopper(card_flush_list);
   let main_card = document.createElement('div');
   let fishcard = document.createElement('div'); 
@@ -2090,7 +2091,7 @@ function loneFiller (fish, clickEvent){
 
   fishcard.id = `loner${fish.fish_id}`;  
   card_flush_list.push(fishcard.id);
-
+microTileGlower (card_flush_list);
 
   if (fish.isfish == "1")  {
   fishcard.className = "fish_card";
@@ -2120,11 +2121,7 @@ function loneFiller (fish, clickEvent){
   
   main_card.style.top = clickEvent.pageY + 'px';
 
-//////// <-- floating fish card pop up location 
-console.log('Pop-up Width:', main_card.offsetWidth);
-console.log('Click Position:', clickEvent.pageX, clickEvent.pageY);
-console.log('Viewport Width:', viewportWidth);
-console.log('Calculated Left Position:', main_card.style.left);
+
 
    close_loner.addEventListener("click", function () {
     let main_card = close_loner.parentElement.parentElement; // Get the main_card directly
@@ -2142,4 +2139,16 @@ console.log('Calculated Left Position:', main_card.style.left);
  
  main_card.appendChild(fishcard);
  document.body.appendChild(main_card);
+}
+
+
+
+function microTileGlower (card_flush_list) {
+for (let div of card_flush_list) {
+  let id = div.substring(5);
+  let element = document.getElementById(`im${id}`);
+  if (element) {
+  element.classList.add('glow-border');
+}
+}
 }
