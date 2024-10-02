@@ -2138,9 +2138,9 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
 
 .listline:hover .listnum, .listline:hover .listname, .listline:focus .listnum, .listline:active .listname, .listline:active .listnum, .listline:focus .listname   {
   /* Styles to apply to .listnum when .listline is hovered */
-  color: rgb(0, 0, 0); 
+  color: rgba(0, 0, 0, 0.76); 
   font-weight: bold; 
-  font-size: 2.1vw;
+  font-size: 1.5vw;
   border-radius: 50%;
 }
 
@@ -2159,13 +2159,13 @@ text-shadow: -0.2px -0.1px rgba(178, 231, 255, 0.829);
   }
 
   .list-view > span:nth-of-type(2n + 1):hover, .list-view > span:nth-of-type(2n + 1):focus {
-    background: linear-gradient(145deg, #cbab66aa 22%, #f8af418d 88%);
+    background: linear-gradient(145deg, #ebc87ebe 22%, #ddba2096 88%);
     border-width: 2px;
     border: 0.01rem solid #00000088;
   }
 
   .list-view > span:nth-of-type(2n + 0):hover, .list-view > span:nth-of-type(2n + 0):focus {
-    background: linear-gradient(145deg, #efe976aa 22%, #d2f43e8d 88%);
+    background: linear-gradient(145deg, #efe976aa 22%, #bbf07f8d 88%);
     border-width: 2px;
     border: 0.1rem solid #00000088;
   }
